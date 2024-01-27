@@ -61,28 +61,32 @@ menu:
       name: Inicio
       pageRef: /
       weight: 1
+    - identifier: typescript
+      name: TypeScript
+      pageRef: /typescript/comenzando/typescript-desde-cero/
+      weight: 2
     - identifier: bootstrap
       name: Bootstrap
       pageRef: /bootstrap/5.3/getting-started/introduction/
-      weight: 2
+      weight: 3
     - identifier: momentjs
       name: Moment.js
       pageRef: /momentjs/use-it/
-      weight: 3
+      weight: 4
     # - identifier: blog
     #   name: Blog
     #   pageRef: /blog
     #   weight: 3
     - identifier: contact
-      name: Contacto ↗
-      url: mailto:hola.esdocu@gmail.com
-      weight: 4
-    - name: Search
+      name: Contacto (IG) ↗
+      url: https://www.instagram.com/fab.k.dev
       weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 6
+      weight: 7
       url: "https://github.com/fabiankaraben/esdocu-net"
       params:
         icon: github

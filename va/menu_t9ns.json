@@ -1,0 +1,627 @@
+[
+  {
+    "checksum": "",
+    "en": "Project Configuration",
+    "es": "Configuración del proyecto"
+  },
+  {
+    "checksum": "",
+    "en": "Nightly Builds",
+    "es": "Compilaciones nocturnas"
+  },
+  {
+    "checksum": "",
+    "en": "Configuring Watch",
+    "es": "Configurar Watch"
+  },
+  {
+    "checksum": "",
+    "en": "Integrating with Build Tools",
+    "es": "Integración con herramientas de compilación"
+  },
+  {
+    "checksum": "",
+    "en": "Project References",
+    "es": "Referencias del proyecto"
+  },
+  {
+    "checksum": "",
+    "en": "tsc CLI Options",
+    "es": "Opciones CLI de tsc"
+  },
+  {
+    "checksum": "",
+    "en": "TSConfig Reference",
+    "es": "Referencia de TSConfig"
+  },
+  {
+    "checksum": "",
+    "en": "Compiler Options in MSBuild",
+    "es": "Opciones del compilador en MSBuild"
+  },
+  {
+    "checksum": "",
+    "en": "What is a tsconfig.json",
+    "es": "¿Qué es un tsconfig.json?"
+  },
+  {
+    "checksum": "",
+    "en": "JavaScript",
+    "es": "JavaScript"
+  },
+  {
+    "checksum": "",
+    "en": "Creating .d.ts Files from .js files",
+    "es": "Crear archivos .d.ts a partir de archivos .js"
+  },
+  {
+    "checksum": "",
+    "en": "JSDoc Reference",
+    "es": "Referencia de JSDoc"
+  },
+  {
+    "checksum": "",
+    "en": "Type Checking JavaScript Files",
+    "es": "Comprobación de tipos de archivos JavaScript"
+  },
+  {
+    "checksum": "",
+    "en": "JS Projects Utilizing TypeScript",
+    "es": "Proyectos JS que utilizan TypeScript"
+  },
+  {
+    "checksum": "",
+    "en": "Declaration Files",
+    "es": "Archivos de Declaración"
+  },
+  {
+    "checksum": "",
+    "en": "Consumption",
+    "es": "Consumo"
+  },
+  {
+    "checksum": "",
+    "en": "Publishing",
+    "es": "Publicación"
+  },
+  {
+    "checksum": "",
+    "en": "Deep Dive",
+    "es": "Bucear profundo"
+  },
+  {
+    "checksum": "",
+    "en": "Do's and Don'ts",
+    "es": "Qué hacer y qué no hacer"
+  },
+  {
+    "checksum": "",
+    "en": ".d.ts Templates",
+    "es": "Plantillas .d.ts"
+  },
+  {
+    "checksum": "",
+    "en": "Global: Modifying Module",
+    "es": "Global: Modificación del módulo"
+  },
+  {
+    "checksum": "",
+    "en": "Global .d.ts",
+    "es": ".d.ts globales"
+  },
+  {
+    "checksum": "",
+    "en": "Module: Function",
+    "es": "Módulo: Función"
+  },
+  {
+    "checksum": "",
+    "en": "Module: Class",
+    "es": "Módulo: Clase"
+  },
+  {
+    "checksum": "",
+    "en": "Module: Plugin",
+    "es": "Módulo: Plugin"
+  },
+  {
+    "checksum": "",
+    "en": "Modules .d.ts",
+    "es": "Módulos .d.ts"
+  },
+  {
+    "checksum": "",
+    "en": "Library Structures",
+    "es": "Estructuras de biblioteca"
+  },
+  {
+    "checksum": "",
+    "en": "Declaration Reference",
+    "es": "Referencia de declaración"
+  },
+  {
+    "checksum": "",
+    "en": "Introduction",
+    "es": "Introducción"
+  },
+  {
+    "checksum": "",
+    "en": "What's New",
+    "es": "Qué hay de nuevo"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.1",
+    "es": "TypeScript 1.1"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.3",
+    "es": "TypeScript 1.3"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.4",
+    "es": "TypeScript 1.4"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.5",
+    "es": "TypeScript 1.5"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.6",
+    "es": "TypeScript 1.6"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.7",
+    "es": "TypeScript 1.7"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 1.8",
+    "es": "TypeScript 1.8"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.0",
+    "es": "TypeScript 2.0"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.1",
+    "es": "TypeScript 2.1"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.2",
+    "es": "TypeScript 2.2"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.3",
+    "es": "TypeScript 2.3"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.4",
+    "es": "TypeScript 2.4"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.5",
+    "es": "TypeScript 2.5"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.6",
+    "es": "TypeScript 2.6"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.7",
+    "es": "TypeScript 2.7"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.8",
+    "es": "TypeScript 2.8"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 2.9",
+    "es": "TypeScript 2.9"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.0",
+    "es": "TypeScript 3.0"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.1",
+    "es": "TypeScript 3.1"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.2",
+    "es": "TypeScript 3.2"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.3",
+    "es": "TypeScript 3.3"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.4",
+    "es": "TypeScript 3.4"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.5",
+    "es": "TypeScript 3.5"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.6",
+    "es": "TypeScript 3.6"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.7",
+    "es": "TypeScript 3.7"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.8",
+    "es": "TypeScript 3.8"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 3.9",
+    "es": "TypeScript 3.9"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.0",
+    "es": "TypeScript 4.0"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.1",
+    "es": "TypeScript 4.1"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.2",
+    "es": "TypeScript 4.2"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.3",
+    "es": "TypeScript 4.3"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.4",
+    "es": "TypeScript 4.4"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.5",
+    "es": "TypeScript 4.5"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.6",
+    "es": "TypeScript 4.6"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.7",
+    "es": "TypeScript 4.7"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.8",
+    "es": "TypeScript 4.8"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 4.9",
+    "es": "TypeScript 4.9"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 5.0",
+    "es": "TypeScript 5.0"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 5.1",
+    "es": "TypeScript 5.1"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 5.2",
+    "es": "TypeScript 5.2"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript 5.3",
+    "es": "TypeScript 5.3"
+  },
+  {
+    "checksum": "",
+    "en": "Tutorials",
+    "es": "Tutoriales"
+  },
+  {
+    "checksum": "",
+    "en": "Using Babel with TypeScript",
+    "es": "Usando Babel con TypeScript"
+  },
+  {
+    "checksum": "",
+    "en": "Migrating from JavaScript",
+    "es": "Migrar desde JavaScript"
+  },
+  {
+    "checksum": "",
+    "en": "DOM Manipulation",
+    "es": "Manipulación DOM"
+  },
+  {
+    "checksum": "",
+    "en": "Gulp",
+    "es": "Gulp"
+  },
+  {
+    "checksum": "",
+    "en": "ASP.NET Core",
+    "es": "ASP.NET Core"
+  },
+  {
+    "checksum": "",
+    "en": "Modules Reference",
+    "es": "Referencia de módulos"
+  },
+  {
+    "checksum": "",
+    "en": "Appendices",
+    "es": "Apéndices"
+  },
+  {
+    "checksum": "",
+    "en": "ESM/CJS Interoperability",
+    "es": "Interoperabilidad ESM/CJS"
+  },
+  {
+    "checksum": "",
+    "en": "Reference",
+    "es": "Referencia"
+  },
+  {
+    "checksum": "",
+    "en": "Guides",
+    "es": "Guías"
+  },
+  {
+    "checksum": "",
+    "en": "Choosing Compiler Options",
+    "es": "Elegir opciones del compilador"
+  },
+  {
+    "checksum": "",
+    "en": "Theory",
+    "es": "Teoría"
+  },
+  {
+    "checksum": "",
+    "en": "Introduction",
+    "es": "Introducción"
+  },
+  {
+    "checksum": "",
+    "en": "Reference",
+    "es": "Referencia"
+  },
+  {
+    "checksum": "",
+    "en": "Variable Declaration",
+    "es": "Declaración de variables"
+  },
+  {
+    "checksum": "",
+    "en": "Type Inference",
+    "es": "Inferencia de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Type Compatibility",
+    "es": "Compatibilidad de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Triple-Slash Directives",
+    "es": "Directivas de triple barra"
+  },
+  {
+    "checksum": "",
+    "en": "Symbols",
+    "es": "Símbolos"
+  },
+  {
+    "checksum": "",
+    "en": "Namespaces and Modules",
+    "es": "Espacios de nombres y módulos"
+  },
+  {
+    "checksum": "",
+    "en": "Namespaces",
+    "es": "Espacios de nombres"
+  },
+  {
+    "checksum": "",
+    "en": "Mixins",
+    "es": "Mixins"
+  },
+  {
+    "checksum": "",
+    "en": "JSX",
+    "es": "JSX"
+  },
+  {
+    "checksum": "",
+    "en": "Iterators and Generators",
+    "es": "Iteradores y generadores"
+  },
+  {
+    "checksum": "",
+    "en": "Enums",
+    "es": "Enums"
+  },
+  {
+    "checksum": "",
+    "en": "Declaration Merging",
+    "es": "Fusión de declaraciones"
+  },
+  {
+    "checksum": "",
+    "en": "Decorators",
+    "es": "Decoradores"
+  },
+  {
+    "checksum": "",
+    "en": "Cheat Sheets",
+    "es": "Hojas de trucos"
+  },
+  {
+    "checksum": "",
+    "en": "Utility Types",
+    "es": "Utilidades de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Handbook",
+    "es": "Handbook"
+  },
+  {
+    "checksum": "",
+    "en": "Modules",
+    "es": "Módulos"
+  },
+  {
+    "checksum": "",
+    "en": "Classes",
+    "es": "Clases"
+  },
+  {
+    "checksum": "",
+    "en": "Type Manipulation",
+    "es": "Manipulación de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Template Literal Types",
+    "es": "Plantillas de literales de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Mapped Types",
+    "es": "Tipos mapeados"
+  },
+  {
+    "checksum": "",
+    "en": "Conditional Types",
+    "es": "Tipos condicionales"
+  },
+  {
+    "checksum": "",
+    "en": "Indexed Access Types",
+    "es": "Tipos de acceso indexado"
+  },
+  {
+    "checksum": "",
+    "en": "Typeof Type Operator",
+    "es": "Operador de tipo typeof"
+  },
+  {
+    "checksum": "",
+    "en": "Keyof Type Operator",
+    "es": "Operador de tipo keyof"
+  },
+  {
+    "checksum": "",
+    "en": "Generics",
+    "es": "Genéricos"
+  },
+  {
+    "checksum": "",
+    "en": "Creating Types from Types",
+    "es": "Crear tipos a partir de tipos"
+  },
+  {
+    "checksum": "",
+    "en": "Object Types",
+    "es": "Tipos de objetos"
+  },
+  {
+    "checksum": "",
+    "en": "More on Functions",
+    "es": "Más sobre funciones"
+  },
+  {
+    "checksum": "",
+    "en": "Narrowing",
+    "es": "Estrechamiento"
+  },
+  {
+    "checksum": "",
+    "en": "Everyday Types",
+    "es": "Tipos cotidianos"
+  },
+  {
+    "checksum": "",
+    "en": "The Basics",
+    "es": "Lo basico"
+  },
+  {
+    "checksum": "",
+    "en": "The TypeScript Handbook",
+    "es": "El Handbook de TypeScript"
+  },
+  {
+    "checksum": "",
+    "en": "Get Started",
+    "es": "Comenzando"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript Tooling in 5 minutes",
+    "es": "Herramientas de TypeScript en 5 minutos"
+  },
+  {
+    "checksum": "",
+    "en": "TS for Functional Programmers",
+    "es": "TS para programadores funcionales"
+  },
+  {
+    "checksum": "",
+    "en": "TS for Java/C# Programmers",
+    "es": "TS para programadores Java/C#"
+  },
+  {
+    "checksum": "",
+    "en": "TypeScript for JS Programmers",
+    "es": "TypeScript para programadores JS"
+  },
+  {
+    "checksum": "",
+    "en": "TS for the New Programmer",
+    "es": "TS para el nuevo programador"
+  }
+]

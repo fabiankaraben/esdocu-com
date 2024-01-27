@@ -1,0 +1,176 @@
+---
+linkTitle: "Nuevos programadores"
+title: "TypeScript para el nuevo programador - TypeScript en Español"
+description: "Aprende TypeScript desde cero."
+weight: 1
+type: docs
+---
+
+# TypeScript para el nuevo programador
+
+Felicitaciones por elegir TypeScript como uno de tus primeros lenguajes: ¡ya estás tomando buenas decisiones!
+
+Probablemente ya hayas escuchado que TypeScript es un "sabor" o "variante" de JavaScript.
+La relación entre TypeScript (TS) y JavaScript (JS) es bastante única entre los lenguajes de programación modernos, por lo que aprender más sobre esta relación te ayudará a comprender cómo TypeScript se suma a JavaScript.
+
+## ¿Qué es JavaScript? Una breve historia {#what-is-javascript-a-brief-history}
+
+JavaScript (también conocido como ECMAScript) comenzó su vida como un lenguaje de programación simple para navegadores.
+En el momento en que se inventó, se esperaba que se usara para fragmentos cortos de código incrustados en una página web; escribir más de unas pocas docenas de líneas de código habría sido algo inusual.
+Debido a esto, los primeros navegadores web ejecutaban dicho código con bastante lentitud.
+Sin embargo, con el tiempo, JS se hizo cada vez más popular y los desarrolladores web comenzaron a utilizarlo para crear experiencias interactivas.
+
+Los desarrolladores de navegadores web respondieron a este mayor uso de JS optimizando sus motores de ejecución (compilación dinámica) y ampliando lo que se podía hacer con él (agregando API), lo que a su vez hizo que los desarrolladores web lo usaran aún más.
+En los sitios web modernos, tu navegador ejecuta con frecuencia aplicaciones que abarcan cientos de miles de líneas de código.
+Este es el crecimiento largo y gradual de “la web”, que comenzó como una simple red de páginas estáticas y evolucionó hasta convertirse en una plataforma para *aplicaciones* ricas de todo tipo.
+
+Más que esto, JS se ha vuelto lo suficientemente popular como para usarse fuera del contexto de los navegadores, como la implementación de servidores JS usando node.js.
+La naturaleza de "ejecutar en cualquier lugar" de JS lo convierte en una opción atractiva para el desarrollo multiplataforma.
+¡Hay muchos desarrolladores hoy en día que usan *solo* JavaScript para programar toda su pila!
+
+Para resumir, tenemos un lenguaje que fue diseñado para usos rápidos y luego creció hasta convertirse en una herramienta completa para escribir aplicaciones con millones de líneas.
+Cada lenguaje tiene sus propias *peculiaridades*: rarezas y sorpresas, y el humilde comienzo de JavaScript hace que tenga *muchas* de ellas. Algunos ejemplos:
+
+- El operador de igualdad de JavaScript (`==`) *coacciona* sus operandos, lo que lleva a un comportamiento inesperado:
+
+  ```js
+  if ("" == 0) {
+    // ¡Es verdadero! ¿Pero por qué?
+  }
+  if (1 < x < 3) {
+    // True para *cualquier* valor de x!
+  }
+  ```
+
+- JavaScript también permite acceder a propiedades que no están presentes:
+
+  ```js
+  const obj = { width: 10, height: 15 };
+  // ¿Por qué es esto NaN? ¡La sintaxis es difícil!
+  const area = obj.width * obj.heigth;
+  ```
+
+La mayoría de los lenguajes de programación arrojarían un error cuando ocurren este tipo de errores, algunos lo harían durante la compilación, antes de ejecutar cualquier código.
+Al escribir programas pequeños, estas peculiaridades son molestas pero manejables; Al escribir aplicaciones con cientos o miles de líneas de código, estas constantes sorpresas son un problema grave.
+
+## TypeScript: Un comprobador de tipado estático {#typescript-a-static-type-checker}
+
+Dijimos antes que algunos lenguajes no permitirían que esos programas con errores se ejecutaran en absoluto.
+La detección de errores en el código sin ejecutarlo se denomina *comprobación estática*.
+Determinar qué es un error y qué no en función de los tipos de valores que se operan se conoce como verificación de *tipo* estática.
+
+TypeScript verifica si un programa tiene errores antes de su ejecución, y lo hace en función de los *tipos de valores*, lo que lo convierte en un *verificador de tipado estático*.
+Por ejemplo, el último ejemplo anterior tiene un error debido al *tipo* de `obj`.
+Aquí está el error que encontró TypeScript:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwFYMEYBQBjOAO0QBdQ4AjAK1AF5QBvUAdwEsATUgC1WwAYANKG6Q2Ac26k+GUAF8A3AWJlQAQ2iQ19CjQB07Lt1AAqXdT2iJPBUA)
+
+```ts
+const obj = { width: 10, height: 15 };
+const area = obj.width * obj.heigth;
+```
+
+```text {filename="Error generado"}
+Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?
+```
+
+### Un superconjunto tipado de JavaScript {#a-typed-superset-of-javascript}
+
+¿Cómo se relaciona TypeScript con JavaScript?
+
+#### Sintaxis {#syntax}
+
+TypeScript es un lenguaje que es un *superconjunto* de JavaScript: la sintaxis JS es, por lo tanto, TS legal.
+La sintaxis se refiere a la forma en que escribimos texto para formar un programa.
+Por ejemplo, este código tiene un error de *sintaxis* porque le falta `)`:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygIwAYMFYBQAbSAF1AENQBeUACgBYg)
+
+```ts
+let a = (4
+```
+
+```text {filename="Error generado"}
+')' expected.
+```
+
+TypeScript no considera ningún código JavaScript como un error debido a su sintaxis.
+Esto significa que puedes tomar cualquier código JavaScript que funcione y colocarlo en un archivo TypeScript sin preocuparte por cómo está escrito exactamente.
+
+#### Tipos {#types}
+
+Sin embargo, TypeScript es un superconjunto *tipado*, lo que significa que agrega reglas sobre cómo se pueden usar diferentes tipos de valores.
+El error anterior sobre `obj.heigth` no fue un error de *sintaxis*: es un error de usar algún tipo de valor (un *tipado*) de manera incorrecta.
+
+Como otro ejemplo, este es un código JavaScript que puedes ejecutar en tu navegador y *imprimirá* un valor:
+
+```js
+console.log(4 / []);
+```
+
+Este programa sintácticamente legal registra `Infinity`.
+Sin embargo, TypeScript considera que la división de un número por un array es una operación sin sentido y generará un error:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYBsGBQBjOAO0TgBtIA6MuAcwAoAWUMAbQF0BKAbiA)
+
+```ts
+console.log(4 / []);
+```
+
+```text {filename="Error generado"}
+The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+```
+
+Es posible que realmente *tuviste* la intención de dividir un número por una array, tal vez solo para ver qué sucede, pero la mayoría de las veces, sin embargo, esto es un error de programación.
+El verificador de tipos de TypeScript está diseñado para permitir el paso de programas correctos y al mismo tiempo detectar tantos errores comunes como sea posible.
+(Más adelante, aprenderemos sobre las configuraciones que puedes usar para configurar cuán estrictamente TypeScript verifica tu código).
+
+Si mueves algún código de un archivo JavaScript a un archivo TypeScript, es posible que veas *errores de tipo* dependiendo de cómo esté escrito el código.
+Estos pueden ser problemas legítimos con el código o que TypeScript sea demasiado conservador.
+A lo largo de esta guía, demostraremos cómo agregar varias sintaxis de TypeScript para eliminar dichos errores.
+
+#### Comportamiento de tiempo de ejecución {#runtime-behavior}
+
+TypeScript también es un lenguaje de programación que preserva el *comportamiento de tiempo de ejecución* de JavaScript.
+Por ejemplo, dividir por cero en JavaScript produce `Infinity` en lugar de generar una excepción de tiempo de ejecución.
+Como principio, TypeScript **nunca** cambia el comportamiento de ejecución del código JavaScript.
+
+Esto significa que si mueves código de JavaScript a TypeScript, está **garantizado** que se ejecutará de la misma manera, incluso si TypeScript cree que el código tiene errores de tipo.
+
+Mantener el mismo comportamiento de tiempo de ejecución que JavaScript es una promesa fundamental de TypeScript porque significa que puedes realizar fácilmente la transición entre los dos lenguajes sin preocuparte por diferencias sutiles que podrían hacer que tu programa deje de funcionar.
+
+#### Tipos borrados {#erased-types}
+
+En términos generales, una vez que el compilador de TypeScript termina de verificar tu código, *borra* los tipos para producir el código "compilado" resultante.
+Esto significa que una vez compilado el código, el código JS simple resultante no tiene información de tipo.
+
+Esto también significa que TypeScript nunca cambia el *comportamiento* de tu programa en función de los tipos que infirió.
+La conclusión es que, si bien es posible que veas errores de tipografía durante la compilación, el sistema de tipos en sí no influye en cómo funciona tu programa cuando se ejecuta.
+
+Finalmente, TypeScript no proporciona bibliotecas de tiempo de ejecución adicionales.
+Tus programas utilizarán la misma biblioteca estándar (o bibliotecas externas) que los programas JavaScript, por lo que no es necesario aprender ningún framework específico adicional de TypeScript.
+
+## Aprendiendo JavaScript y TypeScript {#learning-javascript-and-typescript}
+
+Con frecuencia vemos la pregunta "¿Debería aprender JavaScript o TypeScript?".
+
+¡La respuesta es que no puedes aprender TypeScript sin aprender JavaScript!
+TypeScript comparte sintaxis y comportamiento de tiempo de ejecución con JavaScript, por lo que todo lo que aprendas sobre JavaScript te ayudará a aprender TypeScript al mismo tiempo.
+
+Hay muchos, muchos recursos disponibles para que los programadores aprendan JavaScript; *no* debes ignorar estos recursos si estás escribiendo TypeScript.
+Por ejemplo, hay aproximadamente 20 veces más preguntas de StackOverflow etiquetadas como "javascript" que "typescript", pero *todas* las preguntas de "javascript" también se aplican a TypeScript.
+
+Si buscas algo como "cómo ordenar una lista en TypeScript", recuerda: **TypeScript es el runtime de JavaScript con un verificador de tipos en tiempo de compilación**.
+La forma en que ordenas una lista en TypeScript es la misma en la que lo haces en JavaScript.
+Si encuentras un recurso que usa TypeScript directamente, también es fantástico, pero no te limites a pensar que necesitas respuestas específicas de TypeScript para las preguntas cotidianas sobre cómo realizar tareas en tiempo de ejecución.
+
+## Próximos pasos {#next-steps}
+
+Esta fue una breve descripción general de la sintaxis y las herramientas utilizadas en el TypeScript cotidiano. Desde aquí podrás:
+
+- Aprende algunos de los fundamentos de JavaScript, te recomendamos:
+   - [Recursos de JavaScript de Microsoft ↗](https://developer.microsoft.com/javascript/) o
+   - [Guía de JavaScript en Mozilla Web Docs ↗](https://developer.mozilla.org/docs/Web/JavaScript/Guide)
+- Continúa con [TypeScript para programadores de JavaScript](/typescript/comenzando/typescript-en-5-minutos)
+- Lee el manual completo [de principio a fin ↗](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
