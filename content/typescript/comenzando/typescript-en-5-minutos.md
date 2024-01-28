@@ -148,7 +148,7 @@ type MyBool = true | false;
 
 *Nota:* Si pasas el cursor sobre `MyBool` en un editor compatible, verás que está clasificado como `boolean`. Esa es una propiedad del Sistema de Tipo Estructural. Más sobre esto a continuación.
 
-Un caso de uso popular para los tipos de unión es describir el conjunto de `string` o `number` [literales ↗](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types) que se permite que un valor sea:
+Un caso de uso popular para los tipos de unión es describir el conjunto de `string` o `number` [literales](/typescript/handbook/tipos-comunes) que se permite que un valor sea:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBA6glgOwCYHsDuBlYBDYEDOUAvFAEQqQKlQA+ZAxgDYr4RLV2kC2icPAXm1IBuAFChIUADIp6Aayy4CxMs3lDaZAK4I1coWInQACizjA4ANwgB5JEgByWrgCMIAJ3wBVZB4AqEAgqAIyaAMyaAKyaAOyaAJzCQA)
 

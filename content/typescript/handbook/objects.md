@@ -62,7 +62,7 @@ We have cheat-sheets available for both [`type` and `interface`](https://www.typ
 
 Each property in an object type can specify a couple of things: the type, whether the property is optional, and whether the property can be written to.
 
-### Optional Properties {#optional-properties}
+### Propiedades opcionales {#optional-properties}
 
 Much of the time, we’ll find ourselves dealing with objects that *might* have a property set.
 In those cases, we can mark those properties as *optional* by adding a question mark (`?`) to the end of their names.
