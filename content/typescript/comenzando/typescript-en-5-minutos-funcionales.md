@@ -509,5 +509,5 @@ Sin embargo, ninguna de estas opciones es la predeterminada, por lo que no se us
 
 Este documento es una descripción general de alto nivel de la sintaxis y los tipos que usarías en el código cotidiano. Desde aquí deberías:
 
-- Lee el Manual completo [de principio a fin ↗](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)

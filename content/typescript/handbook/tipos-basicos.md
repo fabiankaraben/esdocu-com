@@ -1,0 +1,481 @@
+---
+linkTitle: "Conceptos básicos"
+title: "Conceptos básicos de TypeScript - TypeScript en Español"
+description: "Paso uno para aprender TypeScript · Los tipos básicos."
+weight: 2
+type: docs
+---
+
+# Los conceptos básico de TypeScript
+
+Todos y cada uno de los valores en JavaScript tienen un conjunto de comportamientos que puedes observar al ejecutar diferentes operaciones.
+Esto suena abstracto, pero como ejemplo rápido, considera algunas operaciones que podríamos ejecutar en una variable llamada `message`.
+
+```js
+// Accediendo a la propiedad 'toLowerCase' 
+// en 'message' y luego llamándola
+message.toLowerCase();
+
+// Llamando a 'message'
+message();
+```
+
+Si desglosamos esto, la primera línea de código ejecutable accede a una propiedad llamada `toLowerCase` y luego la llama.
+La segunda línea intenta llamar a `message` directamente.
+
+Pero asumiendo que no conocemos el valor de `message`, y eso es bastante común, no podemos decir de manera confiable qué resultados obtendremos al intentar ejecutar este código.
+El comportamiento de cada operación depende completamente del valor que teníamos en primer lugar.
+
+- ¿Se puede invocar `message`?
+- ¿Tiene una propiedad llamada `toLowerCase`?
+- Si es así, ¿se puede invocar `toLowerCase`?
+- Si ambos valores son invocables, ¿qué devuelven?
+
+Las respuestas a estas preguntas generalmente son cosas que tenemos en la cabeza cuando escribimos JavaScript, y esperamos haber obtenido todos los detalles correctamente.
+
+Digamos que `message` se definió de la siguiente manera.
+
+```js
+const message = "Hello World!";
+```
+
+Como probablemente puedas adivinar, si intentamos ejecutar `message.toLowerCase()`, obtendremos la misma cadena solo en minúsculas.
+
+¿Qué pasa con esa segunda línea de código?
+Si estás familiarizado con JavaScript, sabrás que esto falla con una excepción:
+
+```txt { filename="Error generado" }
+TypeError: message is not a function
+```
+
+Sería genial si pudiéramos evitar errores como este.
+
+Cuando ejecutamos nuestro código, la forma en que nuestro runtime de JavaScript elige qué hacer es averiguando el *tipo* del valor: qué tipo de comportamientos y capacidades tiene.
+Eso es parte de lo que alude `TypeError`, dice que la cadena `"Hello World!"` no se puede llamar como una función.
+
+Para algunos valores, como las primitivas `string` y `number`, podemos identificar su tipo en tiempo de ejecución usando el operador `typeof`.
+Pero para otras cosas, como funciones, no existe un mecanismo de tiempo de ejecución correspondiente para identificar sus tipos.
+Por ejemplo, considera esta función:
+
+```js
+function fn(x) {
+  return x.flip();
+}
+```
+
+Podemos *observar* leyendo el código que esta función solo funcionará si se le pasas un objeto con una propiedad `flip` invocable, pero JavaScript no muestra esta información de una manera que podamos verifique mientras se ejecuta el código.
+La única forma en JavaScript puro de saber qué hace `fn` con un valor particular es llamarlo y ver qué sucede.
+Este tipo de comportamiento hace que sea difícil predecir qué hará el código antes de ejecutarse, lo que significa que es más difícil saber qué hará el código mientras lo escribes.
+
+Visto de esta manera, un *tipo* es el concepto de describir qué valores se pueden pasar a `fn` y cuáles fallarán.
+JavaScript realmente solo proporciona escritura *dinámica*: ejecuta el código para ver qué sucede.
+
+La alternativa es usar un sistema de tipado *estático* para hacer predicciones sobre lo que se espera que haga el código *antes* de ejecutarse.
+
+## Comprobación de tipo estático {#static-type-checking}
+
+Piensa en ese `TypeError` que obtuvimos antes al intentar llamar a un `string` como una función.
+*A la mayoría de las personas* no les gusta recibir ningún tipo de error al ejecutar su código: ¡esos se consideran errores!
+Y cuando escribimos código nuevo, hacemos todo lo posible para evitar introducir nuevos errores.
+
+Si agregamos solo un poco de código, guardamos nuestro archivo, volvemos a ejecutar el código e inmediatamente vemos el error, es posible que podamos aislar el problema rápidamente; pero ese no es siempre el caso.
+Es posible que no hayamos probado la función lo suficientemente a fondo, por lo que es posible que nunca nos encontremos con un posible error que se produciría.
+O si tuviéramos la suerte de presenciar el error, podríamos haber terminado haciendo grandes refactorizaciones y agregando una gran cantidad de código diferente que nos veríamos obligados a explorar.
+
+Idealmente, podríamos tener una herramienta que nos ayude a encontrar estos errores *antes* de ejecutar nuestro código.
+Eso es lo que hace un verificador de tipos estático como TypeScript.
+Los *sistemas de tipos estáticos* describen las formas y comportamientos de cuáles serán nuestros valores cuando ejecutemos nuestros programas.
+Un verificador de tipos como TypeScript usa esa información y nos dice cuándo las cosas podrían estar descarrilándose.
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBOAUAMZwB2iALqALaSKICGA5pKALygBEAFpADY9wBCdgG48earUaQAFAEphQA)
+
+```ts
+const message = "hello!";
+ 
+message();
+```
+
+```text {filename="Error generado"}
+This expression is not callable.
+  Type 'String' has no call signatures.
+```
+
+Ejecutar la última muestra con TypeScript nos dará un mensaje de error antes de ejecutar el código en primer lugar.
+
+## Fallos sin excepción {#non-exception-failures}
+
+Hasta ahora hemos estado discutiendo ciertas cosas como errores de tiempo de ejecución: casos en los que el runtime de JavaScript nos dice que cree que algo no tiene sentido.
+Esos casos surgen porque [la especificación ECMAScript ↗](https://tc39.github.io/ecma262/) tiene instrucciones explícitas sobre cómo debe comportarse el lenguaje cuando se encuentra con algo inesperado.
+
+Por ejemplo, la especificación dice que intentar llamar a algo que no se puede llamar debería arrojar un error.
+Tal vez eso suene como un "comportamiento obvio", pero te podrías imaginar que acceder a una propiedad que no existe en un objeto también debería arrojar un error.
+En cambio, JavaScript nos da un comportamiento diferente y devuelve el valor `undefined`:
+
+```js
+const user = {
+  name: "Daniel",
+  age: 26,
+};
+
+user.location; // retorna undefined
+```
+
+En última instancia, un sistema de tipo estático tiene que decidir qué código debe marcarse como error en su sistema, incluso si es JavaScript "válido" que no arrojará un error de inmediato.
+En TypeScript, el siguiente código produce un error acerca de que `location` no está definida:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYME4BQBjOAO0QBdQBXRGUAXlAG9dRQiBDAW0lQCIARNkQCWkADY8ANM1BsA5t3QA2KQF8A3LlxUYAOlFx8bUkOJqgA)
+
+```ts
+const user = {
+  name: "Daniel",
+  age: 26,
+};
+ 
+user.location;
+```
+
+```text {filename="Error generado"}
+Property 'location' does not exist on type '{ name: string; age: number; }'.
+```
+
+Aunque a veces eso implica un compromiso en lo que puedes expresar, la intención es detectar errores legítimos en nuestros programas.
+Y TypeScript detecta *muchos* errores legítimos.
+
+Por ejemplo: errores tipográficos,
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAGNqRQF1AIaQwCukGApgLYWT4C8oARABIUA270oA6suwBMAhEwDcaNCFAtoAd1ABHEgEsMAa3YBPUBiKhN0EqBQAHaPlwALCqFyazKAPxoipctVq4AdLmgAZaF12CgDZCnhdFAoACgBKcVdDdxo6H39AgnZQ8IBhAii48UkwHhsTJAAjAgqtUBoiC25ZeGVcGytlFC9ul2IkyhTvXwCgkLlc-Jj4oA)
+
+```ts
+const announcement = "Hello World!";
+ 
+// ¿Qué tan rápido puedes detectar los errores tipográficos?
+announcement.toLocaleLowercase();
+announcement.toLocalLowerCase();
+ 
+// Probablemente quisimos escribir esto...
+announcement.toLocaleLowerCase();
+```
+
+funciones no llamadas,
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFVIK4GcCmATAMtAxgQwDZIBQIEKATudOUgFygBMAzAGwCsRAZgpNgC4BLaJFCd8AgA4BhaAMgAKAJSgA3kVChSAWRS5IfUH2igARilBbcfABYA6cnrTQAtkvWhyKPgnIjLN+0cXUAAeUAAGWzYAbiIAXyA)
+
+```ts
+function flipCoin() {
+  // Debería ser Math.random()
+  return Math.random < 0.5;
+}
+```
+
+```text {filename="Error generado"}
+Operator '<' cannot be applied to types '() => number' and 'number'.
+```
+
+o errores de lógica básica.
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYBsB2AUAMZwB2iALqAG4CGANgK6SgC8oAstWQBYB001xACZwAtgAoAlKAA8oAAw8ArKAD8oAETV1oVOoBG6gNx4AlgDNQYmgyYBCZq03qpAbzyhQIUDx94AvqCQtIhM5pbWjCwOGgau7p5gAPJwAA6IADSg9MTQkNQEXNR6tJD+QA)
+
+```ts
+const value = Math.random() < 0.5 ? "a" : "b";
+if (value !== "a") {
+  // ...
+} else if (value === "b") {
+  // Ups, inalcanzable
+}
+```
+
+```text {filename="Error generado"}
+This comparison appears to be unintentional because the types '"a"' and '"b"' have no overlap.
+```
+
+## Tipos para herramientas {#types-for-tooling}
+
+TypeScript puede detectar bugs cuando cometemos errores en nuestro código.
+Eso es genial, pero TypeScript *también* puede evitar que cometamos esos errores en primer lugar.
+
+El verificador de tipos tiene información para verificar cosas como si estamos accediendo a las propiedades correctas en variables y otras propiedades.
+Una vez que tenga esa información, también puede comenzar a *sugerir* qué propiedades quizás desees utilizar.
+
+Eso significa que TypeScript también se puede aprovechar para editar código, y el verificador de tipo del core puede proporcionar mensajes de error y completar el código a medida que escribes en el editor.
+Eso es parte de lo que la gente suele referirse cuando habla de herramientas en TypeScript.
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAggUxQWWgCYCuANlgJKQAuWSADmgJYC2dyVoWAHnfDiqABmSZqABE3XvzEBuNAGNokFBwCGdOqAC8nHnxQoAFAEo5adXQB0AcyxVDY4GIA0QopHlVGS0Ib4BHV31jUABvNFBQfUsULEgMMEik0AA9AB80AF9TNHMNSxJGFTjDAGYABkrTIA)
+
+```ts
+import express from "express";
+const app = express();
+ 
+app.get("/", function (req, res) {
+  res.sen
+//       ^|
+});
+ 
+app.listen(3000);
+```
+
+TypeScript toma en serio las herramientas y eso va más allá de las terminaciones y los errores mientras escribes.
+Un editor que admita TypeScript puede ofrecer "soluciones rápidas" para corregir errores automáticamente, refactorizaciones para reorganizar fácilmente el código y funciones de navegación útiles para saltar a las definiciones de una variable o encontrar todas las referencias a una variable determinada.
+Todo esto está construido sobre el verificador de tipos y es completamente multiplataforma, por lo que es probable que [tu editor favorito tenga soporte TypeScript disponible ↗](https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support).
+
+## `tsc`, el compilador de TypeScript {#tsc-the-typescript-compiler}
+
+Hemos estado hablando sobre la verificación de tipo, pero aún no hemos usado nuestro *verificador de tipo*.
+Conozcamos a nuestro nuevo amigo `tsc`, el compilador de TypeScript.
+Primero tendremos que obtenerlo a través de npm.
+
+```sh
+npm install -g typescript
+```
+
+> Esto instala el compilador TypeScript `tsc` globalmente.
+> Puedes usar `npx` o herramientas similares si prefieres ejecutar `tsc` desde un paquete local `node_modules`.
+>
+
+Ahora vayamos a una carpeta vacía e intentemos escribir nuestro primer programa TypeScript: `hello.ts`:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEHECcFNoFwM6jgC2qA7ge0gGwCYB0AUAMZYB2CWu0huWA5gBQBEAEtLg5jgQISsAlAG4gA)
+
+```ts
+// Saluda al mundo.
+console.log("Hello world!");
+```
+
+Fíjate que aquí no hay lujos; Este programa "hola mundo" parece idéntico a lo que escribirías para un programa "hola mundo" en JavaScript.
+Y ahora comprobemos el tipo ejecutando el comando `tsc` que nos instaló el paquete `typescript`.
+
+```sh
+tsc hello.ts
+```
+
+¡Tada!
+
+Espera, "tada" ¿*qué* exactamente?
+Ejecutamos `tsc` y ¡no pasó nada!
+Bueno, no hubo errores de tipo, por lo que no obtuvimos ningún resultado en nuestra consola ya que no había nada que informar.
+
+Pero compruébalo de nuevo: en su lugar, obtuvimos una salida de *archivo*.
+Si buscamos en nuestro directorio actual, veremos un archivo `hello.js` junto a `hello.ts`.
+Ese es el resultado de nuestro archivo `hello.ts` después de que `tsc` *compila* o se *transforma* en un archivo JavaScript simple.
+Y si revisamos el contenido, veremos lo que TypeScript genera después de procesar un archivo `.ts`:
+
+```js
+// Saluda al mundo.
+console.log("Hello world!");
+```
+
+En este caso, TypeScript tenía muy poco que transformar, por lo que parece idéntico a lo que escribimos.
+El compilador intenta emitir un código limpio y legible que parezca algo que escribiría una persona.
+Si bien eso no siempre es tan fácil, TypeScript aplica sangrías de manera consistente, es consciente de cuándo nuestro código abarca diferentes líneas de código e intenta mantener los comentarios.
+
+¿Qué pasa si *introducimos* un error de verificación de tipo?
+Reescribamos `hello.ts`:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAlAFQBYEsVQDQBDSIyAEwFcUAXePEgGwFoBzeEygU1HZ6QeXNgAdq8UdBR9OPHnWGgAZtUgBjOnmiQAXGlUatO-vHl0AFKOEodAGlCUSigJSgA3mlCh1O28x4AOmZodgsAAwAJHmYQ0AASd2tUHQBfBzpoJwBPIkJEp0VUgEJwlwBuNFS0NDkFCwAiACEzKjIGiqA)
+
+```ts
+// Esta es una función de bienvenida de uso general:
+function greet(person, date) {
+  console.log(`Hello ${person}, today is ${date}!`);
+}
+ 
+greet("Brendan");
+```
+
+Si ejecutamos `tsc hello.ts` nuevamente, ¡observa que obtenemos un error en la línea de comando!
+
+```txt {filename="Error generado"}
+Expected 2 arguments, but got 1.
+```
+
+TypeScript nos dice que olvidamos pasar un argumento a la función `greet`, y con razón.
+Hasta ahora solo hemos escrito JavaScript estándar y, sin embargo, la verificación de tipos aún pudo encontrar problemas con nuestro código.
+¡Gracias TypeScript!
+
+## Emitiendo con Errores {#emitting-with-errors}
+
+Una cosa que quizás no hayas notado en el último ejemplo fue que nuestro archivo `hello.js` cambió nuevamente.
+Si abrimos ese archivo, veremos que el contenido sigue siendo básicamente el mismo que nuestro archivo de entrada.
+Esto podría ser un poco sorprendente dado el hecho de que `tsc` informó un error sobre nuestro código, pero esto se basa en uno de los valores fundamentales de TypeScript: la mayor parte del tiempo, *tú* sabrás más que TypeScript.
+
+Para reiterar lo dicho anteriormente, el código de verificación de tipo limita el tipo de programas que puedes ejecutar, por lo que existe una compensación sobre qué tipo de cosas un verificador de tipo considera aceptable.
+La mayoría de las veces eso está bien, pero hay situaciones en las que esos controles se interponen en el camino.
+Por ejemplo, imagínate migrando código JavaScript a TypeScript e introduciendo errores de verificación de tipos.
+Con el tiempo, podrás limpiar las cosas para el verificador de tipos, ¡pero ese código JavaScript original ya estaba funcionando!
+¿Por qué convertirlo a TypeScript debería impedirle ejecutarlo?
+
+Para que TypeScript no se interponga en tu camino.
+Por supuesto, con el tiempo, es posible que desees estar un poco más a la defensiva contra los errores y hacer que TypeScript actúe de forma un poco más estricta.
+En ese caso, puede utilizar la opción del compilador [`noEmitOnError` ↗](https://www.typescriptlang.org/tsconfig#noEmitOnError).
+Intenta cambiar tu archivo `hello.ts` y ejecuta `tsc` con esa bandera:
+
+```sh
+tsc --noEmitOnError hello.ts
+```
+
+Notarás que `hello.js` nunca se actualiza.
+
+## Tipos explícitos {#explicit-types}
+
+Hasta ahora, no le hemos dicho a TypeScript qué son `person` o `date`.
+Editemos el código para decirle a TypeScript que `person` es un `string` y que `date` debe ser un objeto `Date`.
+También usaremos el método `toDateString()` en `date`.
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6gA)
+
+```ts
+function greet(person: string, date: Date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+```
+
+Lo que hicimos fue agregar *anotaciones de tipo* en `person` y `date` para describir con qué tipos de valores se puede llamar a `greet`.
+Puedes leer esa firma como "`greet` toma una `person` de tipo `string` y una `date` de tipo `Date`".
+
+Con esto, TypeScript puede informarnos sobre otros casos en los que `greet` podría haberse llamado incorrectamente.
+Por ejemplo…
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAGYCuAdgMYAuAlnCaAObSSQUAUADjIraohdFRL0ANKAAmAQwqRUAESmQAlKADeeUKDK1uAG0gA6HXHqsABgAlIOo6AAkKzkloBfURTiSAnqCqI7KyWl9d3lpAGV+QRNFZwBCU0UAbjxnPDxGZjYAIgBZCTExX1os0VDIVkUkoA)
+
+```ts
+function greet(person: string, date: Date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+ 
+greet("Maddison", Date());
+```
+
+```text {filename="Error generado"}
+Argument of type 'string' is not assignable to parameter of type 'Date'.
+```
+
+¿Eh?
+TypeScript informó un error en nuestro segundo argumento, pero ¿por qué?
+
+Quizás sea sorprendente que llamar a `Date()` en JavaScript devuelva un `string`.
+Por otro lado, construir una `Date` con `new Date()` en realidad nos da lo que esperábamos.
+
+De todos modos, podemos corregir rápidamente el error:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6BATRMHAAiAFkmBgYLBFD6MHQAd0QHdGxuXyA)
+
+```ts
+function greet(person: string, date: Date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+ 
+greet("Maddison", new Date());
+```
+
+Ten en cuenta que no siempre tenemos que escribir anotaciones de tipo explícitas.
+En muchos casos, TypeScript puede incluso simplemente *inferir* (o "descubrir") los tipos por nosotros incluso si los omitimos.
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAtgzg5hAvBARACxMYB7CYMBOIAhCgNwBQA9FRBAHoD8QA)
+
+```ts
+let msg = "hello there!";
+    
+let msg: string
+```
+
+Aunque no le dijimos a TypeScript que `msg` tenía el tipo `string`, pudimos descubrirlo.
+Esa es una característica, y es mejor no agregar anotaciones cuando el sistema de tipos terminaría infiriendo el mismo tipo de todos modos.
+
+> Nota: La burbuja de mensaje dentro del ejemplo de código anterior es lo que mostraría tu editor si hubieras colocado el cursor sobre la palabra.
+>
+
+## Tipos borrados {#erased-types}
+
+Echemos un vistazo a lo que sucede cuando compilamos la función anterior `greet` con `tsc` para generar JavaScript:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEGcAsHsHcCiBbAlgFwFAgughgE4DmApugFygmQCsmAZgK4B2AxuqrM6EQSWQAoADiQKQulSOgKpmRADSgAJnnQlKAEVUkAlKADemUKFZdxAGxIA6c7CICABgAkS526AAk+kWK4BfRXRYFQBPUFRIT30VNSsgrTUAZWlZex0-AEIHHQBuTD9MTF5+dAEAIgBZPCUlCK4yxWYSeFAEkgEdXKA)
+
+```ts
+"use strict";
+function greet(person, date) {
+    console.log("Hello ".concat(person, ", today is ").concat(date.toDateString(), "!"));
+}
+greet("Maddison", new Date());
+ 
+```
+
+Nota dos cosas aquí:
+
+1. Nuestros parámetros `person` y `date` ya no tienen anotaciones de tipo.
+2. Nuestro `template string`, esa cadena que usaba comillas invertidas (el carácter \`\`\`), se convirtió en cadenas simples con concatenaciones.
+
+Hablaremos más sobre ese segundo punto más adelante, pero centrémonos ahora en el primer punto.
+Las anotaciones de tipo no son parte de JavaScript (o ECMAScript para ser pedantes), por lo que realmente no existen navegadores u otros runtimes que puedan ejecutar TypeScript sin modificaciones.
+Es por eso que TypeScript necesita un compilador en primer lugar: necesita alguna forma de eliminar o transformar cualquier código específico de TypeScript para que puedas ejecutarlo.
+La mayor parte del código específico de TypeScript se borra y, de la misma manera, aquí nuestras anotaciones de tipo se borraron por completo.
+
+> **Recuerda**: las anotaciones de tipo nunca cambian el comportamiento de ejecución de tu programa.
+>
+
+## Downleveling {#downleveling}
+
+Otra diferencia con respecto a lo anterior fue que nuestra cadena de plantilla fue reescrita desde
+
+```js
+`Hello ${person}, today is ${date.toDateString()}!`;
+```
+
+a
+
+```js
+"Hello ".concat(person, ", today is ").concat(date.toDateString(), "!");
+```
+
+¿Por qué pasó esto?
+
+Las cadenas de plantilla son una característica de una versión de ECMAScript llamada ECMAScript 2015 (también conocida como ECMAScript 6, ES2015, ES6, etc. - *no preguntes*).
+TypeScript tiene la capacidad de reescribir código desde versiones más nuevas de ECMAScript a versiones más antiguas, como ECMAScript 3 o ECMAScript 5 (también conocidos como ES3 y ES5).
+Este proceso de pasar de una versión más nueva o "superior" de ECMAScript a una más antigua o "inferior" a veces se denomina *bajar de nivel* o *downleveling*.
+
+De forma predeterminada, TypeScript se dirige a ES3, una versión extremadamente antigua de ECMAScript.
+Podríamos haber elegido algo un poco más reciente usando la opción [`target` ↗](https://www.typescriptlang.org/tsconfig#target).
+La ejecución con `--target es2015` cambia TypeScript para apuntar a ECMAScript 2015, lo que significa que el código debería poder ejecutarse dondequiera que se admita ECMAScript 2015.
+Entonces, ejecutar `tsc --target es2015 hello.ts` nos da el siguiente resultado:
+
+```js
+function greet(person, date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+greet("Maddison", new Date());
+```
+
+> Si bien el objetivo predeterminado es ES3, la gran mayoría de los navegadores actuales son compatibles con ES2015.
+> Por lo tanto, la mayoría de los desarrolladores pueden especificar con seguridad ES2015 o superior como destino, a menos que la compatibilidad con ciertos navegadores antiguos sea importante.
+>
+
+## Strictness {#strictness}
+
+Diferentes usuarios llegan a TypeScript en busca de cosas diferentes en un verificador de tipo.
+Algunas personas buscan una experiencia más flexible que pueda ayudar a validar solo algunas partes de su programa y aún así tener herramientas decentes.
+Esta es la experiencia predeterminada con TypeScript, donde los tipos son opcionales, la inferencia toma los tipos más indulgentes y no hay verificación de valores potencialmente `null`/`undefined`.
+Al igual a como `tsc` emite errores, estos valores predeterminados se implementan para mantenerse fuera de tu camino.
+Si estás migrando JavaScript existente, ese podría ser un primer paso deseable.
+
+Por el contrario, muchos usuarios prefieren que TypeScript valide tanto como pueda de inmediato, y es por eso que el lenguaje también proporciona configuraciones estrictas.
+Estas configuraciones de rigor convierten la verificación de tipo estática desde un interruptor (ya sea que su código esté verificado o no) en algo más cercano a un dial.
+Cuanto más suba este dial, más comprobará TypeScript por ti.
+Esto puede requerir un poco de trabajo adicional, pero en general se amortiza a largo plazo y permite controles más exhaustivos y herramientas más precisas.
+Cuando sea posible, una nueva base de código siempre debes activar estas comprobaciones de rigor.
+
+TypeScript tiene varios indicadores de rigor de verificación de tipo que se pueden activar o desactivar, y todos nuestros ejemplos se escribirán con todos ellos habilitados a menos que se indique lo contrario.
+El indicador [`strict` ↗](https://www.typescriptlang.org/tsconfig#strict) en la CLI, o `"strict": true` en un [`tsconfig.json` ↗](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) los activa todos simultáneamente, pero podemos desactivarlos individualmente.
+Los dos más importantes que debes conocer son [`noImplicitAny` ↗](https://www.typescriptlang.org/tsconfig#noImplicitAny) y [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks).
+
+## `noImplicitAny` {#noimplicitany}
+
+Recuerda que en algunos lugares, TypeScript no intenta inferir tipos por nosotros y, en cambio, recurre al tipo más indulgente: `any`.
+Esto no es lo peor que puede pasar; después de todo, recurrir a `any` es simplemente la experiencia de JavaScript de todos modos.
+
+Sin embargo, usar `any` a menudo sobrescribe el propósito de usar TypeScript en primer lugar.
+Cuanto más tipado esté tu programa, más validación y herramientas obtendrás, lo que significa que encontrarás menos errores mientras codificas.
+Activar el indicador [`noImplicitAny` ↗](https://www.typescriptlang.org/tsconfig#noImplicitAny) generará un error en cualquier variable cuyo tipo se infiera implícitamente como `any`.
+
+## `strictNullChecks` {#strictnullchecks}
+
+De forma predeterminada, valores como `null` o `undefined` se pueden asignar a cualquier otro tipo.
+Esto puede facilitar la escritura de código, pero olvidarse de manejar `null` o `undefined` es la causa de innumerables errores en el mundo; algunos lo consideran un [error de miles de millones de dólares ↗](https://www.youtube.com/watch?v=ybrQvs4x0Ps)!
+El indicador [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) hace que el manejo de `null` y `undefined` sea más explícito, y *nos evita* preocuparnos por si *nos olvidamos* de manejar `null` o `undefined`.

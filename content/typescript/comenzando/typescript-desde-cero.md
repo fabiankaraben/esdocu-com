@@ -172,5 +172,5 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
    - [Recursos de JavaScript de Microsoft ↗](https://developer.microsoft.com/javascript/) o
    - [Guía de JavaScript en Mozilla Web Docs ↗](https://developer.mozilla.org/docs/Web/JavaScript/Guide)
 - Continúa con [TypeScript para programadores de JavaScript](/typescript/comenzando/typescript-en-5-minutos)
-- Lee el manual completo [de principio a fin ↗](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Lee el manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)

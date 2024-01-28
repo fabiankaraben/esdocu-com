@@ -196,5 +196,5 @@ Por ejemplo, `typeof (new Car())` será `"object"`, no `Car` o `"Car"`.
 
 Esta fue una breve descripción general de la sintaxis y las herramientas utilizadas en el TypeScript cotidiano. Desde aquí podrás:
 
-- Lee el Manual completo [de principio a fin ↗](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
