@@ -71,7 +71,7 @@ const pt = new Point();
 pt.x = "0";
 ```
 
-```text {filename="Generated error"}
+```text {filename="Error generado"}
 Type 'string' is not assignable to type 'number'.
 ```
 
@@ -256,7 +256,7 @@ class C {
 }
 ```
 
-```text {filename="Generated error"}
+```text {filename="Error generado"}
 Type 'string' is not assignable to type 'number'.
 ```
 
