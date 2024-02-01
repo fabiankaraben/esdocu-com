@@ -1,5 +1,6 @@
 ---
 title: Política de Privacidad
+weight: 1001
 noindex: true
 ---
 

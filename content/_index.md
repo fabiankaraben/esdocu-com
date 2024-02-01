@@ -1,5 +1,5 @@
 ---
-title: Documentaciones sobre Desarrollo de Software
+title: Manuales sobre Desarrollo de Software
 layout: home
 ---
 

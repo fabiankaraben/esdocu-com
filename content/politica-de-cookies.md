@@ -1,5 +1,6 @@
 ---
 title: Política de Cookies
+weight: 1000
 noindex: true
 ---
 

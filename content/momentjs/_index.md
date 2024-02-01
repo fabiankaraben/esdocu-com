@@ -1,5 +1,6 @@
 ---
-title: Moment.js
+title: Manual de Moment.js
+weight: 2
 cascade:
   type: docs
 noindex: true

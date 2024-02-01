@@ -1,5 +1,6 @@
 ---
 title: Aviso legal
+weight: 1002
 noindex: true
 ---
 
