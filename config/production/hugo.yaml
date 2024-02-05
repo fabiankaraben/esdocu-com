@@ -2,4 +2,4 @@ services:
   googleAnalytics:
     ID: G-P9N8MVS57V
 params:
-  showAds: true
+  showAds: false
