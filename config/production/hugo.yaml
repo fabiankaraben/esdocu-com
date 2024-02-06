@@ -6,7 +6,7 @@ params:
   # All formats: https://us.themoneytizer.com/ad-units
   showTMConsentBanner: true # CMP (head)
   showTMInText: false # head
-  showTMInterstitial: true # head
+  showTMInterstitial: false # head
   showTMPopUnder: false # head :: Intrusive. This format redirects the user directly to an advertiser's page.
   showTMFooterSlideIn: false # footer
   showTMTopBanner: false # content (body) :: BILLBOARD
