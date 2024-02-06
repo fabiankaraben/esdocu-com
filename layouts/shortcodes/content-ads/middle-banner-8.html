@@ -4,3 +4,19 @@
     
 </div>
 {{ end -}}
+
+{{- $showCustomMiddleBanner8 := .Site.Params.showCustomMiddleBanner8 | default true -}}
+{{- if eq $showCustomMiddleBanner8 true }}
+    <div class="my-5 p-1 rounded-md border border-indigo-300">
+        <a href="https://cafecito.app/esdocu" target="_blank">
+            <img class="rounded-md border-0 !m-0" src="/assets/banners/cafecito-ad-1.svg" alt="Donar a Esdocu.net" />
+        </a>
+        <div class="mx-1 mt-1 text-sm">
+            Podés aportar a través de 
+            <a href="https://link.mercadopago.com.ar/esdocu" target="_blank">Mercado Pago</a>, 
+            <a href="https://www.paypal.com/paypalme/esdocu" target="_blank">PayPal</a> o 
+            <a href="https://cafecito.app/esdocu" target="_blank">Cafecito</a>. 
+            ¡Muchas Gracias!
+        </div>
+    </div>
+{{ end -}}
