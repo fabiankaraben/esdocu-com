@@ -1,7 +1,6 @@
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5376430835440290" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-5376430835440290">
-
+  {{- $showTMConsentBanner := .Site.Params.showTMConsentBanner | default false -}}
+  {{- if eq $showTMConsentBanner true }}
   {{"<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->" | safeHTML }}
   <script type="text/javascript" async=true>
   (function() {
@@ -164,6 +163,13 @@
   })();
   </script>
   {{"<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->" | safeHTML }}
+  {{ end -}}
+
+  {{- $includeAdsenseScript := .Site.Params.includeAdsenseScript | default false -}}
+  {{- if eq $includeAdsenseScript true }}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5376430835440290" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-5376430835440290">
+  {{ end -}}
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -216,10 +222,21 @@
     }
   </script>
 
-  {{- $showAds := .Site.Params.showAds | default false -}}
-  {{- if eq $showAds true }}
+  {{- $showTMInText := .Site.Params.showTMInText | default false -}}
+  {{- if eq $showTMInText true }}
   <!-- TheMoneytizer: IN TEXT -->
   <div id="120346-11"><script src="//ads.themoneytizer.com/s/gen.js?type=11"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=120346&formatId=11"></script></div>
+  {{ end -}}
+
+  {{- $showTMInterstitial := .Site.Params.showTMInterstitial | default false -}}
+  {{- if eq $showTMInterstitial true }}
+  <!-- TheMoneytizer: INTERSTITIAL -->
+  <div id="120346-15"><script src="//ads.themoneytizer.com/s/gen.js?type=15"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=120346&formatId=15"></script></div>
+  {{ end -}}
+
+
+  {{- $showTMPopUnder := .Site.Params.showTMPopUnder | default false -}}
+  {{- if eq $showTMPopUnder true }}
   <!-- TheMoneytizer: POP UNDER -->
   <div id="120346-39"><script src="//ads.themoneytizer.com/s/gen.js?type=39"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=120346&formatId=39"></script></div>
   {{ end -}}

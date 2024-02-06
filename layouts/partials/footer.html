@@ -78,8 +78,8 @@
   </a>
 {{- end -}}
 
-{{- $showAds := .Site.Params.showAds | default false -}}
-{{- if eq $showAds true }}
+{{- $showTMFooterSlideIn := .Site.Params.showTMFooterSlideIn | default false -}}
+{{- if eq $showTMFooterSlideIn true }}
 <!-- TheMoneytizer: FOOTER O SLIDE-IN -->
 <div id="120346-6"><script src="//ads.themoneytizer.com/s/gen.js?type=6"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=120346&formatId=6"></script></div>
 {{ end -}}

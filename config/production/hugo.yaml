@@ -2,4 +2,21 @@ services:
   googleAnalytics:
     ID: G-P9N8MVS57V
 params:
-  showAds: false
+  # TheMoneytizer Ads.
+  showTMConsentBanner: true # CMP (head)
+  showTMInText: false # head
+  showTMPopUnder: false # head
+  showTMFooterSlideIn: false # footer
+  showTMTopBanner: false # content (body)
+  showTMMiddleBanner1: false # content (body)
+  showTMMiddleBanner2: false # content (body)
+  showTMMiddleBanner3: false # content (body)
+  showTMMiddleBanner4: false # content (body)
+  showTMMiddleBanner5: false # content (body)
+  showTMMiddleBanner6: false # content (body)
+  showTMMiddleBanner7: false # content (body)
+  showTMMiddleBanner8: false # content (body)
+  showTMMiddleBanner9: false # content (body)
+  showTMBottomBanner: false # content (body)
+  # Adsense.
+  includeAdsenseScript: false
