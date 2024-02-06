@@ -22,17 +22,17 @@ params:
   showTMBottomBanner: false # content (body) :: MEGABANNER INFERIOR
 
   # Custom banners.
-  showCustomTopBanner: false # Donate
-  showCustomMiddleBanner1: false # Donate
-  showCustomMiddleBanner2: false # Donate
-  showCustomMiddleBanner3: false # Donate
-  showCustomMiddleBanner4: false # Donate
-  showCustomMiddleBanner5: false # Donate
-  showCustomMiddleBanner6: false # Donate
-  showCustomMiddleBanner7: false # Donate
-  showCustomMiddleBanner8: false # Donate
-  showCustomMiddleBanner9: false # Donate
-  showCustomBottomBanner: false # Donate
+  showCustomTopBanner: true # Donate
+  showCustomMiddleBanner1: true # Donate
+  showCustomMiddleBanner2: true # Donate
+  showCustomMiddleBanner3: true # Donate
+  showCustomMiddleBanner4: true # Donate
+  showCustomMiddleBanner5: true # Donate
+  showCustomMiddleBanner6: true # Donate
+  showCustomMiddleBanner7: true # Donate
+  showCustomMiddleBanner8: true # Donate
+  showCustomMiddleBanner9: true # Donate
+  showCustomBottomBanner: true # Donate
 
   # Adsense.
   includeAdsenseScript: false
