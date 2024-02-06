@@ -3,20 +3,36 @@ services:
     ID: G-P9N8MVS57V
 params:
   # TheMoneytizer Ads.
+  # All formats: https://us.themoneytizer.com/ad-units
   showTMConsentBanner: true # CMP (head)
   showTMInText: false # head
-  showTMPopUnder: false # head
+  showTMInterstitial: true # head
+  showTMPopUnder: false # head :: Intrusive. This format redirects the user directly to an advertiser's page.
   showTMFooterSlideIn: false # footer
-  showTMTopBanner: false # content (body)
-  showTMMiddleBanner1: false # content (body)
-  showTMMiddleBanner2: false # content (body)
-  showTMMiddleBanner3: false # content (body)
-  showTMMiddleBanner4: false # content (body)
-  showTMMiddleBanner5: false # content (body)
-  showTMMiddleBanner6: false # content (body)
-  showTMMiddleBanner7: false # content (body)
-  showTMMiddleBanner8: false # content (body)
-  showTMMiddleBanner9: false # content (body)
-  showTMBottomBanner: false # content (body)
+  showTMTopBanner: false # content (body) :: BILLBOARD
+  showTMMiddleBanner1: false # content (body) :: MEGABANNER
+  showTMMiddleBanner2: false # content (body) :: ROBAPÁGINAS
+  showTMMiddleBanner3: false # content (body) :: ROBAPÁGINAS INFERIOR
+  showTMMiddleBanner4: false # content (body) :: CONTENIDO RECOMENDADO
+  showTMMiddleBanner5: false # content (body) :: SPLITSCREEN
+  showTMMiddleBanner6: false # content (body) :: -
+  showTMMiddleBanner7: false # content (body) :: -
+  showTMMiddleBanner8: false # content (body) :: -
+  showTMMiddleBanner9: false # content (body) :: -
+  showTMBottomBanner: false # content (body) :: MEGABANNER INFERIOR
+
+  # Custom banners.
+  showCustomTopBanner: false # Donate
+  showCustomMiddleBanner1: false # Donate
+  showCustomMiddleBanner2: false # Donate
+  showCustomMiddleBanner3: false # Donate
+  showCustomMiddleBanner4: false # Donate
+  showCustomMiddleBanner5: false # Donate
+  showCustomMiddleBanner6: false # Donate
+  showCustomMiddleBanner7: false # Donate
+  showCustomMiddleBanner8: false # Donate
+  showCustomMiddleBanner9: false # Donate
+  showCustomBottomBanner: false # Donate
+
   # Adsense.
   includeAdsenseScript: false
