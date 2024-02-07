@@ -8,7 +8,7 @@ params:
   showTMInText: false # head
   showTMInterstitial: false # head
   showTMPopUnder: false # head :: Intrusive. This format redirects the user directly to an advertiser's page.
-  showTMFooterSlideIn: false # footer
+  showTMFooterSlideIn: true # footer
   showTMTopBanner: false # content (body) :: BILLBOARD
   showTMMiddleBanner1: false # content (body) :: MEGABANNER
   showTMMiddleBanner2: false # content (body) :: ROBAPÁGINAS
