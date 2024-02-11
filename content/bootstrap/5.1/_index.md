@@ -38,6 +38,7 @@ cascade:
       popper_hash:      "sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn"    
   type: docs
 noindex: true
+redirect: /bootstrap/5.1/getting-started/introduction
 type: docs
 ---
 
