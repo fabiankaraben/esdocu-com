@@ -1,4 +1,6 @@
 <head>
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
   {{- $showTMConsentBanner := .Site.Params.showTMConsentBanner | default false -}}
   {{- if eq $showTMConsentBanner true }}
   {{"<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->" | safeHTML }}
