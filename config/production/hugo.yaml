@@ -4,22 +4,22 @@ services:
 params:
   # TheMoneytizer Ads.
   # All formats: https://us.themoneytizer.com/ad-units
-  showTMConsentBanner: true # CMP (head)
-  showTMInText: true # head
-  showTMInterstitial: true # head
+  showTMConsentBanner: false # CMP (head)
+  showTMInText: false # head
+  showTMInterstitial: false # head
   showTMPopUnder: false # head :: Intrusive. This format redirects the user directly to an advertiser's page.
-  showTMFooterSlideIn: true # footer
-  showTMTopBanner: true # content (body) :: BILLBOARD
-  showTMMiddleBanner1: true # content (body) :: MEGABANNER
-  showTMMiddleBanner2: true # content (body) :: ROBAPÁGINAS
-  showTMMiddleBanner3: true # content (body) :: ROBAPÁGINAS INFERIOR
-  showTMMiddleBanner4: true # content (body) :: CONTENIDO RECOMENDADO
-  showTMMiddleBanner5: true # content (body) :: SPLITSCREEN
-  showTMMiddleBanner6: true # content (body) :: -
-  showTMMiddleBanner7: true # content (body) :: -
-  showTMMiddleBanner8: true # content (body) :: -
-  showTMMiddleBanner9: true # content (body) :: -
-  showTMBottomBanner: true # content (body) :: MEGABANNER INFERIOR
+  showTMFooterSlideIn: false # footer
+  showTMTopBanner: false # content (body) :: BILLBOARD
+  showTMMiddleBanner1: false # content (body) :: MEGABANNER
+  showTMMiddleBanner2: false # content (body) :: ROBAPÁGINAS
+  showTMMiddleBanner3: false # content (body) :: ROBAPÁGINAS INFERIOR
+  showTMMiddleBanner4: false # content (body) :: CONTENIDO RECOMENDADO
+  showTMMiddleBanner5: false # content (body) :: SPLITSCREEN
+  showTMMiddleBanner6: false # content (body) :: -
+  showTMMiddleBanner7: false # content (body) :: -
+  showTMMiddleBanner8: false # content (body) :: -
+  showTMMiddleBanner9: false # content (body) :: -
+  showTMBottomBanner: false # content (body) :: MEGABANNER INFERIOR
 
   # Custom banners.
   showCustomTopBanner: false # Donate

@@ -7,6 +7,11 @@
     {{- if or (eq .Site.Params.footer.enable nil) (.Site.Params.footer.enable) }}
       {{ partial "footer.html" . }}
     {{ end }}
+    <script type="text/javascript">
+      aclib.runAutoTag({
+          zoneId: 'bzk0lyfwp4',
+      });
+    </script>
   </body>
   {{ partial "scripts.html" . }}
 </html>
