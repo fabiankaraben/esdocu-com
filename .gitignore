@@ -6,3 +6,4 @@ resources/
 .hugo_build.lock
 
 with-nextra/
+content(trying)/

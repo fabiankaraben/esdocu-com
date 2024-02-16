@@ -1,3 +1,5 @@
+{{- $showAdCashTopBanner := .Site.Params.showAdCashTopBanner | default false -}}
+{{- if eq $showAdCashTopBanner true }}
 <div class="my-5">
     <script type="text/javascript">
         aclib.runBanner({
@@ -5,6 +7,7 @@
         });
     </script>
 </div>
+{{ end -}}
 
 {{- $showTMTopBanner := .Site.Params.showTMTopBanner | default false -}}
 {{- if eq $showTMTopBanner true }}

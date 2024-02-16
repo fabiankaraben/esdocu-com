@@ -1,4 +1,7 @@
+{{- $showAdCashMiddleBanner2 := .Site.Params.showAdCashMiddleBanner2 | default false -}}
+{{- if eq $showAdCashMiddleBanner2 true }}
 <div id="awn-z8083874" class="my-5"></div>
+{{ end -}}
 
 {{- $showTMMiddleBanner2 := .Site.Params.showTMMiddleBanner2 | default false -}}
 {{- if eq $showTMMiddleBanner2 true }}

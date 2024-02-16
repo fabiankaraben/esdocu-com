@@ -7,11 +7,14 @@
     {{- if or (eq .Site.Params.footer.enable nil) (.Site.Params.footer.enable) }}
       {{ partial "footer.html" . }}
     {{ end }}
+    {{- $showAdCashAutotag := .Site.Params.showAdCashAutotag | default false -}}
+    {{- if eq $showAdCashAutotag true }}
     <script type="text/javascript">
       aclib.runAutoTag({
           zoneId: 'bzk0lyfwp4',
       });
     </script>
+    {{ end -}}
   </body>
   {{ partial "scripts.html" . }}
 </html>

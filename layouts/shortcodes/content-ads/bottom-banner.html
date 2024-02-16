@@ -1,3 +1,10 @@
+{{- $showAdCashBottomBanner := .Site.Params.showAdCashBottomBanner | default false -}}
+{{- if eq $showAdCashBottomBanner true }}
+<div class="my-5">
+    
+</div>
+{{ end -}}
+
 {{- $showTMBottomBanner := .Site.Params.showTMBottomBanner | default false -}}
 {{- if eq $showTMBottomBanner true }}
 <div class="my-5">

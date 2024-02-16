@@ -1,5 +1,8 @@
 <head>
+  {{- $loadAdCashGlobalScript := .Site.Params.loadAdCashGlobalScript | default false -}}
+  {{- if eq $loadAdCashGlobalScript true }}
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  {{ end -}}
 
   {{- $showTMConsentBanner := .Site.Params.showTMConsentBanner | default false -}}
   {{- if eq $showTMConsentBanner true }}

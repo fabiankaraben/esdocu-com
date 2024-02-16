@@ -1,3 +1,10 @@
+{{- $showAdCashMiddleBanner4 := .Site.Params.showAdCashMiddleBanner4 | default false -}}
+{{- if eq $showAdCashMiddleBanner4 true }}
+<div class="my-5">
+    
+</div>
+{{ end -}}
+
 {{- $showTMMiddleBanner4 := .Site.Params.showTMMiddleBanner4 | default false -}}
 {{- if eq $showTMMiddleBanner4 true }}
 <div class="my-5 bg-white rounded-md p-2">
