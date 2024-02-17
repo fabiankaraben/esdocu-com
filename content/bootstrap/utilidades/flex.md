@@ -1,0 +1,738 @@
+---
+weight: 6
+linkTitle: Utilidades Flex
+title: Uso de las utilidades Flex en Bootstrap · Bootstrap en Español v5.3
+description: Administra rápidamente el diseño, la alineación y el tamaño de las columnas de la cuadrícula, la navegación, los componentes y más con un conjunto completo de utilidades flex responsive. Para implementaciones más complejas, puede ser necesario CSS personalizado.
+---
+
+# Uso de las utilidades Flex en Bootstrap
+
+Administra rápidamente el diseño, la alineación y el tamaño de las columnas de la cuadrícula, la navegación, los componentes y más con un conjunto completo de utilidades flex responsive. Para implementaciones más complejas, puede ser necesario CSS personalizado.
+
+{{< content-ads/top-banner >}}
+
+## Habilitar comportamientos flex {#enable-flex-behaviors}
+
+Aplica las utilidades `display` para crear un contenedor flexbox y transformar **elementos secundarios directos** en elementos flex. Los contenedores y elementos flex se pueden modificar aún más con propiedades flex adicionales.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/enable-flex-behaviors-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex p-2">¡Soy un contenedor flexbox!</div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/enable-flex-behaviors-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-inline-flex p-2">¡Soy un contenedor flexbox en línea!</div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `.d-flex` y `.d-inline-flex`.
+
+* `.d-flex`
+* `.d-inline-flex`
+* `.d-sm-flex`
+* `.d-sm-inline-flex`
+* `.d-md-flex`
+* `.d-md-inline-flex`
+* `.d-lg-flex`
+* `.d-lg-inline-flex`
+* `.d-xl-flex`
+* `.d-xl-inline-flex`
+* `.d-xxl-flex`
+* `.d-xxl-inline-flex`
+
+## Dirección {#direction}
+
+Establece la dirección de los elementos flex en un contenedor flex con utilidades de dirección. En la mayoría de los casos, puedes omitir la clase horizontal aquí ya que el valor predeterminado del navegador es `row`. Sin embargo, puedes encontrar situaciones en las que necesites establecer explícitamente este valor (como diseños responsive).
+
+Usa `.flex-row` para establecer una dirección horizontal (la opción predeterminada del navegador), o `.flex-row-reverse` para que comience la dirección horizontal desde el lado opuesto.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/direction-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-row mb-3">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+Usa `.flex-column` para establecer una dirección vertical, o `.flex-column-reverse` para iniciar la dirección vertical desde el lado opuesto.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/direction-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-column mb-3">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    <div class="d-flex flex-column-reverse">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `flex-direction`.
+
+* `.flex-row`
+* `.flex-row-reverse`
+* `.flex-column`
+* `.flex-column-reverse`
+* `.flex-sm-row`
+* `.flex-sm-row-reverse`
+* `.flex-sm-column`
+* `.flex-sm-column-reverse`
+* `.flex-md-row`
+* `.flex-md-row-reverse`
+* `.flex-md-column`
+* `.flex-md-column-reverse`
+* `.flex-lg-row`
+* `.flex-lg-row-reverse`
+* `.flex-lg-column`
+* `.flex-lg-column-reverse`
+* `.flex-xl-row`
+* `.flex-xl-row-reverse`
+* `.flex-xl-column`
+* `.flex-xl-column-reverse`
+* `.flex-xxl-row`
+* `.flex-xxl-row-reverse`
+* `.flex-xxl-column`
+* `.flex-xxl-column-reverse`
+
+## Justificar contenido {#justify-content}
+
+Utiliza las utilidades `justify-content` en contenedores flexbox para cambiar la alineación de los elementos flexibles en el eje principal (el eje x para comenzar, el eje y si `flex-direction: column`). Elige entre `start` (predeterminado del navegador), `end`, `center`, `between`, `around`, o `evenly`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/justify-content.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex justify-content-start">...</div>
+    <div class="d-flex justify-content-end">...</div>
+    <div class="d-flex justify-content-center">...</div>
+    <div class="d-flex justify-content-between">...</div>
+    <div class="d-flex justify-content-around">...</div>
+    <div class="d-flex justify-content-evenly">...</div>
+```
+{{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-1 >}}
+
+{{< bootstrap/content-suggestion >}}
+
+También existen variaciones responsive para `justify-content`.
+
+* `.justify-content-start`
+* `.justify-content-end`
+* `.justify-content-center`
+* `.justify-content-between`
+* `.justify-content-around`
+* `.justify-content-evenly`
+* `.justify-content-sm-start`
+* `.justify-content-sm-end`
+* `.justify-content-sm-center`
+* `.justify-content-sm-between`
+* `.justify-content-sm-around`
+* `.justify-content-sm-evenly`
+* `.justify-content-md-start`
+* `.justify-content-md-end`
+* `.justify-content-md-center`
+* `.justify-content-md-between`
+* `.justify-content-md-around`
+* `.justify-content-md-evenly`
+* `.justify-content-lg-start`
+* `.justify-content-lg-end`
+* `.justify-content-lg-center`
+* `.justify-content-lg-between`
+* `.justify-content-lg-around`
+* `.justify-content-lg-evenly`
+* `.justify-content-xl-start`
+* `.justify-content-xl-end`
+* `.justify-content-xl-center`
+* `.justify-content-xl-between`
+* `.justify-content-xl-around`
+* `.justify-content-xl-evenly`
+* `.justify-content-xxl-start`
+* `.justify-content-xxl-end`
+* `.justify-content-xxl-center`
+* `.justify-content-xxl-between`
+* `.justify-content-xxl-around`
+* `.justify-content-xxl-evenly`
+
+## Alinear elementos {#align-items}
+
+Utiliza las utilidades `align-items` en contenedores flexbox para cambiar la alineación de los elementos flex en el eje transversal (el eje y para comenzar, el eje x si `flex-direction: column`). Elige entre `start`, `end`, `center`, `baseline` o `stretch` (valor predeterminado del navegador).
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-items.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-items-start">...</div>
+    <div class="d-flex align-items-end">...</div>
+    <div class="d-flex align-items-center">...</div>
+    <div class="d-flex align-items-baseline">...</div>
+    <div class="d-flex align-items-stretch">...</div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `align-items`.
+
+* `.align-items-start`
+* `.align-items-end`
+* `.align-items-center`
+* `.align-items-baseline`
+* `.align-items-stretch`
+* `.align-items-sm-start`
+* `.align-items-sm-end`
+* `.align-items-sm-center`
+* `.align-items-sm-baseline`
+* `.align-items-sm-stretch`
+* `.align-items-md-start`
+* `.align-items-md-end`
+* `.align-items-md-center`
+* `.align-items-md-baseline`
+* `.align-items-md-stretch`
+* `.align-items-lg-start`
+* `.align-items-lg-end`
+* `.align-items-lg-center`
+* `.align-items-lg-baseline`
+* `.align-items-lg-stretch`
+* `.align-items-xl-start`
+* `.align-items-xl-end`
+* `.align-items-xl-center`
+* `.align-items-xl-baseline`
+* `.align-items-xl-stretch`
+* `.align-items-xxl-start`
+* `.align-items-xxl-end`
+* `.align-items-xxl-center`
+* `.align-items-xxl-baseline`
+* `.align-items-xxl-stretch`
+
+## Alineamiento propio {#align-self}
+
+Utiliza las utilidades `align-self` en elementos de flexbox para cambiar individualmente su alineación en el eje transversal (el eje y para comenzar, el eje x si `flex-direction: column`). Elige entre las mismas opciones que `align-items`: `start`, `end`, `center`, `baseline`, o `stretch` (predeterminado del navegador).
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-self.html" >}}
+```html {filename="HTML"}
+    <div class="align-self-start">Aligned flex item</div>
+    <div class="align-self-end">Aligned flex item</div>
+    <div class="align-self-center">Aligned flex item</div>
+    <div class="align-self-baseline">Aligned flex item</div>
+    <div class="align-self-stretch">Aligned flex item</div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `align-self`.
+
+* `.align-self-start`
+* `.align-self-end`
+* `.align-self-center`
+* `.align-self-baseline`
+* `.align-self-stretch`
+* `.align-self-sm-start`
+* `.align-self-sm-end`
+* `.align-self-sm-center`
+* `.align-self-sm-baseline`
+* `.align-self-sm-stretch`
+* `.align-self-md-start`
+* `.align-self-md-end`
+* `.align-self-md-center`
+* `.align-self-md-baseline`
+* `.align-self-md-stretch`
+* `.align-self-lg-start`
+* `.align-self-lg-end`
+* `.align-self-lg-center`
+* `.align-self-lg-baseline`
+* `.align-self-lg-stretch`
+* `.align-self-xl-start`
+* `.align-self-xl-end`
+* `.align-self-xl-center`
+* `.align-self-xl-baseline`
+* `.align-self-xl-stretch`
+* `.align-self-xxl-start`
+* `.align-self-xxl-end`
+* `.align-self-xxl-center`
+* `.align-self-xxl-baseline`
+* `.align-self-xxl-stretch`
+
+## Rellenar {#fill}
+
+Usa la clase `.flex-fill` en una serie de elementos hermanos para forzarlos a tener anchos iguales a su contenido (o anchos iguales si su contenido no sobrepasan sus cuadros de borde) mientras ocupan todo el espacio horizontal disponible.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/fill.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex">
+        <div class="p-2 flex-fill">Elemento flex con mucho contenido</div>
+        <div class="p-2 flex-fill">Flex item</div>
+        <div class="p-2 flex-fill">Flex item</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `flex-fill`.
+
+{{< content-ads/middle-banner-2 >}}
+
+* `.flex-fill`
+* `.flex-sm-fill`
+* `.flex-md-fill`
+* `.flex-lg-fill`
+* `.flex-xl-fill`
+* `.flex-xxl-fill`
+
+## Crecer y encogerse. {#grow-and-shrink}
+
+Utiliza las utilidades `.flex-grow-*` para alternar la capacidad de un elemento flex de crecer para llenar el espacio disponible. En el siguiente ejemplo, los elementos `.flex-grow-1` utilizan todo el espacio disponible que pueden, al tiempo que permiten a los dos elementos flex restantes el espacio necesario.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/grow-and-shrink-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex">
+        <div class="p-2 flex-grow-1">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Tercer elemento flex</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< bootstrap/content-suggestion >}}
+
+Utiliza las utilidades `.flex-shrink-*` para alternar la capacidad de un elemento flex para reducirse si es necesario. En el siguiente ejemplo, el segundo elemento flex con `.flex-shrink-1` se ve obligado a ajustar su contenido a una nueva línea, "reduciéndolo" para permitir más espacio para el elemento flexible anterior con `.w-100`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/grow-and-shrink-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex">
+        <div class="p-2 w-100">Flex item</div>
+        <div class="p-2 flex-shrink-1">Flex item</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `flex-grow` y `flex-shrink`.
+
+* `.flex-{grow|shrink}-0`
+* `.flex-{grow|shrink}-1`
+* `.flex-sm-{grow|shrink}-0`
+* `.flex-sm-{grow|shrink}-1`
+* `.flex-md-{grow|shrink}-0`
+* `.flex-md-{grow|shrink}-1`
+* `.flex-lg-{grow|shrink}-0`
+* `.flex-lg-{grow|shrink}-1`
+* `.flex-xl-{grow|shrink}-0`
+* `.flex-xl-{grow|shrink}-1`
+* `.flex-xxl-{grow|shrink}-0`
+* `.flex-xxl-{grow|shrink}-1`
+
+## Márgenes automáticos {#auto-margins}
+
+Flexbox puede hacer cosas increíbles cuando combinas alineaciones flex con márgenes automáticos. A continuación se muestran tres ejemplos de control de elementos flex mediante márgenes automáticos: default (sin margen automático), empujando dos elementos hacia la derecha (`.me-auto`) y empujando dos elementos hacia la izquierda (`.ms-auto`).
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/auto-margins-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex mb-3">
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+    </div>
+
+    <div class="d-flex mb-3">
+        <div class="me-auto p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+    </div>
+
+    <div class="d-flex mb-3">
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="ms-auto p-2">Flex item</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Con align-items {#with-align-items}
+
+Mueve verticalmente un elemento flexible a la parte superior o inferior de un contenedor mezclando `align-items`, `flex-direction: column` y `margin-top: auto` o `margin-bottom: auto`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/auto-margins-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-items-start flex-column mb-3" style="height: 200px;">
+        <div class="mb-auto p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+    </div>
+
+    <div class="d-flex align-items-end flex-column mb-3" style="height: 200px;">
+        <div class="p-2">Flex item</div>
+        <div class="p-2">Flex item</div>
+        <div class="mt-auto p-2">Flex item</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Wrap {#wrap}
+
+Cambia cómo se envuelven los elementos flexibles en un contenedor flex. Elige entre no ajustar nada (el valor predeterminado del navegador) con `.flex-nowrap`, ajusta con `.flex-wrap` o ajusta al revés con `.flex-wrap-reverse`.
+
+{{< content-ads/middle-banner-3 >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/wrap-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-nowrap">
+        ...
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/wrap-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-wrap">
+        ...
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/wrap-3.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-wrap-reverse">
+        ...
+    </div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `flex-wrap`.
+
+* `.flex-nowrap`
+* `.flex-wrap`
+* `.flex-wrap-reverse`
+* `.flex-sm-nowrap`
+* `.flex-sm-wrap`
+* `.flex-sm-wrap-reverse`
+* `.flex-md-nowrap`
+* `.flex-md-wrap`
+* `.flex-md-wrap-reverse`
+* `.flex-lg-nowrap`
+* `.flex-lg-wrap`
+* `.flex-lg-wrap-reverse`
+* `.flex-xl-nowrap`
+* `.flex-xl-wrap`
+* `.flex-xl-wrap-reverse`
+* `.flex-xxl-nowrap`
+* `.flex-xxl-wrap`
+* `.flex-xxl-wrap-reverse`
+
+## Ordenar {#order}
+
+Cambia el orden _visual_ de elementos flex específicos con un puñado de utilidades `order`. Solo ofrecemos opciones para hacer que un elemento sea el primero o el último, así como un reinicio para usar el orden DOM. Como `order` toma cualquier valor entero de 0 a 5, agrega CSS personalizado para cualquier valor adicional necesario.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/order.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex flex-nowrap">
+        <div class="order-3 p-2">Primer elemento flex</div>
+        <div class="order-2 p-2">Segundo elemento flex</div>
+        <div class="order-1 p-2">Tercer elemento flex</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `order`.
+
+* `.order-0`
+* `.order-1`
+* `.order-2`
+* `.order-3`
+* `.order-4`
+* `.order-5`
+* `.order-sm-0`
+* `.order-sm-1`
+* `.order-sm-2`
+* `.order-sm-3`
+* `.order-sm-4`
+* `.order-sm-5`
+* `.order-md-0`
+* `.order-md-1`
+* `.order-md-2`
+* `.order-md-3`
+* `.order-md-4`
+* `.order-md-5`
+* `.order-lg-0`
+* `.order-lg-1`
+* `.order-lg-2`
+* `.order-lg-3`
+* `.order-lg-4`
+* `.order-lg-5`
+* `.order-xl-0`
+* `.order-xl-1`
+* `.order-xl-2`
+* `.order-xl-3`
+* `.order-xl-4`
+* `.order-xl-5`
+* `.order-xxl-0`
+* `.order-xxl-1`
+* `.order-xxl-2`
+* `.order-xxl-3`
+* `.order-xxl-4`
+* `.order-xxl-5`
+
+Además, también hay clases responsive `.order-first` y `.order-last` que cambian el `order` de un elemento aplicando `order: -1` y `order: 6`, respectivamente.
+
+* `.order-first`
+* `.order-last`
+* `.order-sm-first`
+* `.order-sm-last`
+* `.order-md-first`
+* `.order-md-last`
+* `.order-lg-first`
+* `.order-lg-last`
+* `.order-xl-first`
+* `.order-xl-last`
+* `.order-xxl-first`
+* `.order-xxl-last`
+
+## Alinear contenido {#align-content}
+
+Utiliza las utilidades `align-content` en contenedores flexbox para alinear elementos flex _juntos_ en el eje transversal. Elige entre `start` (predeterminado del navegador), `end`, `center`, `between`, `around` o `stretch`. Para demostrar estas utilidades, hemos aplicado `flex-wrap: wrap` y hemos aumentado la cantidad de elementos flex.
+
+{{< bootstrap/content-suggestion >}}
+
+**¡Atención!** Esta propiedad no tiene ningún efecto en filas individuales de elementos flex.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-start flex-wrap">
+        ...
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-4 >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-end flex-wrap">...</div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-3.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-center flex-wrap">...</div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-4.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-between flex-wrap">...</div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-5.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-around flex-wrap">...</div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-6.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-content-stretch flex-wrap">...</div>
+```
+{{< /demo-iframe >}}
+
+También existen variaciones responsive para `align-content`.
+
+* `.align-content-start`
+* `.align-content-end`
+* `.align-content-center`
+* `.align-content-between`
+* `.align-content-around`
+* `.align-content-stretch`
+* `.align-content-sm-start`
+* `.align-content-sm-end`
+* `.align-content-sm-center`
+* `.align-content-sm-between`
+* `.align-content-sm-around`
+* `.align-content-sm-stretch`
+* `.align-content-md-start`
+* `.align-content-md-end`
+* `.align-content-md-center`
+* `.align-content-md-between`
+* `.align-content-md-around`
+* `.align-content-md-stretch`
+* `.align-content-lg-start`
+* `.align-content-lg-end`
+* `.align-content-lg-center`
+* `.align-content-lg-between`
+* `.align-content-lg-around`
+* `.align-content-lg-stretch`
+* `.align-content-xl-start`
+* `.align-content-xl-end`
+* `.align-content-xl-center`
+* `.align-content-xl-between`
+* `.align-content-xl-around`
+* `.align-content-xl-stretch`
+* `.align-content-xxl-start`
+* `.align-content-xxl-end`
+* `.align-content-xxl-center`
+* `.align-content-xxl-between`
+* `.align-content-xxl-around`
+* `.align-content-xxl-stretch`
+
+## Objeto media {#media-object}
+
+Buscando replicar el [componente de objeto media ⬀](https://getbootstrap.com/docs/4.6/components/media-object "Página todavía no traducida") de Bootstrap 4? Recrealo en poco tiempo con algunas utilidades flex que permiten aún más flexibilidad y personalización que antes.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/media-object-1.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex">
+        <div class="flex-shrink-0">
+            <svg class="bd-placeholder-img" width="100" height="100" role="img"
+                aria-label="Marcador de posición: Imagen" focusable="false" preserveAspectRatio="xMidYMid slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Marcador de posición</title>
+                <rect width="100%" height="100%" fill="#e5e5e5"></rect><text x="50%" y="50%" fill="#999"
+                    dy=".3em">Imagen</text>
+            </svg>
+        </div>
+        <div class="flex-grow-1 ms-3">
+            Este es un contenido de un componente media. Puedes reemplazar esto con cualquier contenido y ajustarlo
+            según sea necesario.
+        </div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+Y decir que quieres centrar verticalmente el contenido al lado de la imagen:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/media-object-2.html" >}}
+```html {filename="HTML"}
+    <div class="d-flex align-items-center">
+        <div class="flex-shrink-0">
+            <svg class="bd-placeholder-img" width="100" height="100" role="img"
+                aria-label="Marcador de posición: Imagen" focusable="false" preserveAspectRatio="xMidYMid slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Marcador de posición</title>
+                <rect width="100%" height="100%" fill="#e5e5e5"></rect><text x="50%" y="50%" fill="#999"
+                    dy=".3em">Imagen</text>
+            </svg>
+        </div>
+        <div class="flex-grow-1 ms-3">
+            Este es un contenido de un componente media. Puedes reemplazar esto con cualquier contenido y ajustarlo
+            según sea necesario.
+        </div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Personalización del CSS {#css}
+
+{{< bootstrap/content-suggestion >}}
+
+### API de utilidades de Sass {#sass-utilities-api}
+
+Las utilidades de Flexbox se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
+
+[scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
+
+{{< content-ads/middle-banner-5 >}}
+
+```scss {filename="scss/_utilities.scss"}
+"flex": (
+    responsive: true,
+    property: flex,
+    values: (fill: 1 1 auto)
+),
+"flex-direction": (
+    responsive: true,
+    property: flex-direction,
+    class: flex,
+    values: row column row-reverse column-reverse
+),
+"flex-grow": (
+    responsive: true,
+    property: flex-grow,
+    class: flex,
+    values: (
+    grow-0: 0,
+    grow-1: 1,
+    )
+),
+"flex-shrink": (
+    responsive: true,
+    property: flex-shrink,
+    class: flex,
+    values: (
+    shrink-0: 0,
+    shrink-1: 1,
+    )
+),
+"flex-wrap": (
+    responsive: true,
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap wrap-reverse
+),
+"justify-content": (
+    responsive: true,
+    property: justify-content,
+    values: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly,
+    )
+),
+"align-items": (
+    responsive: true,
+    property: align-items,
+    values: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch,
+    )
+),
+"align-content": (
+    responsive: true,
+    property: align-content,
+    values: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    stretch: stretch,
+    )
+),
+"align-self": (
+    responsive: true,
+    property: align-self,
+    values: (
+    auto: auto,
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch,
+    )
+),
+"order": (
+    responsive: true,
+    property: order,
+    values: (
+    first: -1,
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    last: 6,
+    ),
+),
+```
+
+{{< content-ads/bottom-banner >}}

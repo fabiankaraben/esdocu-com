@@ -1,0 +1,240 @@
+/bootstrap/5.3/getting-started/introduction/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/download/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/contents/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/browsers-devices/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/javascript/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/webpack/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/parcel/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/vite/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/accessibility/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/rfs/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/rtl/ /bootstrap/comenzando/
+/bootstrap/5.3/getting-started/contribute/ /bootstrap/comenzando/
+
+/bootstrap/5.3/customize/overview/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/sass/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/options/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/color/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/color-modes/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/components/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/css-variables/ /bootstrap/personalizar/
+/bootstrap/5.3/customize/optimize/ /bootstrap/personalizar/
+
+/bootstrap/5.3/layout/breakpoints/ /bootstrap/layout/
+/bootstrap/5.3/layout/containers/ /bootstrap/layout/
+/bootstrap/5.3/layout/grid/ /bootstrap/grilla/
+/bootstrap/5.3/layout/columns/ /bootstrap/columnas/
+/bootstrap/5.3/layout/gutters/ /bootstrap/layout/
+/bootstrap/5.3/layout/utilities/ /bootstrap/layout/
+/bootstrap/5.3/layout/z-index/ /bootstrap/layout/
+/bootstrap/5.3/layout/css-grid/ /bootstrap/grilla-css/
+
+/bootstrap/5.3/content/reboot/ /bootstrap/reboot/
+/bootstrap/5.3/content/typography/ /bootstrap/tipografias-e-imagenes/
+/bootstrap/5.3/content/images/ /bootstrap/tipografias-e-imagenes/
+/bootstrap/5.3/content/tables/ /bootstrap/tablas/
+/bootstrap/5.3/content/figures/ /bootstrap/tipografias-e-imagenes/
+
+/bootstrap/5.3/forms/overview/ /bootstrap/formularios/
+/bootstrap/5.3/forms/form-control/ /bootstrap/formularios/
+/bootstrap/5.3/forms/select/ /bootstrap/formularios/
+/bootstrap/5.3/forms/checks-radios/ /bootstrap/formularios/
+/bootstrap/5.3/forms/range/ /bootstrap/formularios/
+/bootstrap/5.3/forms/input-group/ /bootstrap/formularios/
+/bootstrap/5.3/forms/floating-labels/ /bootstrap/formularios/
+/bootstrap/5.3/forms/layout/ /bootstrap/formularios/
+/bootstrap/5.3/forms/validation/ /bootstrap/formularios/
+
+/bootstrap/5.3/components/accordion/ /bootstrap/componentes/acordion/
+/bootstrap/5.3/components/alerts/ /bootstrap/componentes/alertas/
+/bootstrap/5.3/components/badge/ /bootstrap/componentes/insignias-y-breadcrumbs/
+/bootstrap/5.3/components/breadcrumb/ /bootstrap/componentes/insignias-y-breadcrumbs/
+/bootstrap/5.3/components/buttons/ /bootstrap/componentes/botones/
+/bootstrap/5.3/components/button-group/ /bootstrap/componentes/botones/
+/bootstrap/5.3/components/card/ /bootstrap/componentes/tarjetas/
+/bootstrap/5.3/components/carousel/ /bootstrap/componentes/carrusel/
+/bootstrap/5.3/components/close-button/ /bootstrap/componentes/botones/
+/bootstrap/5.3/components/collapse/ /bootstrap/componentes/collapse/
+/bootstrap/5.3/components/dropdowns/ /bootstrap/componentes/dropdowns/
+/bootstrap/5.3/components/list-group/ /bootstrap/componentes/grupo-de-lista/
+/bootstrap/5.3/components/modal/ /bootstrap/componentes/modal/
+/bootstrap/5.3/components/navbar/ /bootstrap/componentes/navbar/
+/bootstrap/5.3/components/navs-tabs/ /bootstrap/componentes/navs-tabs/
+/bootstrap/5.3/components/offcanvas/ /bootstrap/componentes/offcanvas/
+/bootstrap/5.3/components/pagination/ /bootstrap/componentes/placeholders-y-paginacion/
+/bootstrap/5.3/components/placeholders/ /bootstrap/componentes/placeholders-y-paginacion/
+/bootstrap/5.3/components/popovers/ /bootstrap/componentes/popovers/
+/bootstrap/5.3/components/progress/ /bootstrap/componentes/progreso/
+/bootstrap/5.3/components/scrollspy/ /bootstrap/componentes/scrollspy/
+/bootstrap/5.3/components/spinners/ /bootstrap/componentes/spinners/
+/bootstrap/5.3/components/toasts/ /bootstrap/componentes/toasts/
+/bootstrap/5.3/components/tooltips/ /bootstrap/componentes/tooltips/
+
+/bootstrap/5.3/helpers/clearfix/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/color-background/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/colored-links/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/focus-ring/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/icon-link/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/position/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/ratio/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/stacks/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/stretched-link/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/text-truncation/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/vertical-rule/ /bootstrap/helpers/
+/bootstrap/5.3/helpers/visually-hidden/ /bootstrap/helpers/
+
+/bootstrap/5.3/utilities/api/ /bootstrap/utilidades/api/
+/bootstrap/5.3/utilities/background/ /bootstrap/utilidades/background/
+/bootstrap/5.3/utilities/borders/ /bootstrap/utilidades/bordes/
+/bootstrap/5.3/utilities/colors/ /bootstrap/utilidades/colores/
+/bootstrap/5.3/utilities/display/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/flex/ /bootstrap/utilidades/flex/
+/bootstrap/5.3/utilities/float/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/interactions/ /bootstrap/utilidades/enlaces-e-interacciones/
+/bootstrap/5.3/utilities/link/ /bootstrap/utilidades/enlaces-e-interacciones/
+/bootstrap/5.3/utilities/object-fit/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/opacity/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/overflow/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/position/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/shadows/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/sizing/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/spacing/ /bootstrap/utilidades/espaciado/
+/bootstrap/5.3/utilities/text/ /bootstrap/utilidades/textos/
+/bootstrap/5.3/utilities/vertical-align/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/visibility/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.3/utilities/z-index/ /bootstrap/utilidades/otras-utilidades/
+
+/bootstrap/5.3/extend/approach/ /bootstrap/comenzando/
+/bootstrap/5.3/extend/icons/ /bootstrap/comenzando/
+
+/bootstrap/5.3/about/ /bootstrap/comenzando/
+
+
+/bootstrap/5.1/getting-started/introduction/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/download/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/contents/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/browsers-devices/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/javascript/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/webpack/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/parcel/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/accessibility/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/rfs/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/rtl/ /bootstrap/comenzando/
+/bootstrap/5.1/getting-started/contribute/ /bootstrap/comenzando/
+
+/bootstrap/5.1/customize/overview/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/sass/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/options/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/color/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/components/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/css-variables/ /bootstrap/personalizar/
+/bootstrap/5.1/customize/optimize/ /bootstrap/personalizar/
+
+/bootstrap/5.1/layout/breakpoints/ /bootstrap/layout/
+/bootstrap/5.1/layout/containers/ /bootstrap/layout/
+/bootstrap/5.1/layout/grid/ /bootstrap/grilla/
+/bootstrap/5.1/layout/columns/ /bootstrap/columnas/
+/bootstrap/5.1/layout/gutters/ /bootstrap/layout/
+/bootstrap/5.1/layout/utilities/ /bootstrap/layout/
+/bootstrap/5.1/layout/z-index/ /bootstrap/layout/
+/bootstrap/5.1/layout/css-grid/ /bootstrap/grilla-css/
+
+/bootstrap/5.1/content/reboot/ /bootstrap/reboot/
+/bootstrap/5.1/content/typography/ /bootstrap/tipografias-e-imagenes/
+/bootstrap/5.1/content/images/ /bootstrap/tipografias-e-imagenes/
+/bootstrap/5.1/content/tables/ /bootstrap/tablas/
+/bootstrap/5.1/content/figures/ /bootstrap/tipografias-e-imagenes/
+
+/bootstrap/5.1/forms/overview/ /bootstrap/formularios/
+/bootstrap/5.1/forms/form-control/ /bootstrap/formularios/
+/bootstrap/5.1/forms/select/ /bootstrap/formularios/
+/bootstrap/5.1/forms/checks-radios/ /bootstrap/formularios/
+/bootstrap/5.1/forms/range/ /bootstrap/formularios/
+/bootstrap/5.1/forms/input-group/ /bootstrap/formularios/
+/bootstrap/5.1/forms/floating-labels/ /bootstrap/formularios/
+/bootstrap/5.1/forms/layout/ /bootstrap/formularios/
+/bootstrap/5.1/forms/validation/ /bootstrap/formularios/
+
+/bootstrap/5.1/components/accordion/ /bootstrap/componentes/acordion/
+/bootstrap/5.1/components/alerts/ /bootstrap/componentes/alertas/
+/bootstrap/5.1/components/badge/ /bootstrap/componentes/insignias-y-breadcrumbs/
+/bootstrap/5.1/components/breadcrumb/ /bootstrap/componentes/insignias-y-breadcrumbs/
+/bootstrap/5.1/components/buttons/ /bootstrap/componentes/botones/
+/bootstrap/5.1/components/button-group/ /bootstrap/componentes/botones/
+/bootstrap/5.1/components/card/ /bootstrap/componentes/tarjetas/
+/bootstrap/5.1/components/carousel/ /bootstrap/componentes/carrusel/
+/bootstrap/5.1/components/close-button/ /bootstrap/componentes/botones/
+/bootstrap/5.1/components/collapse/ /bootstrap/componentes/collapse/
+/bootstrap/5.1/components/dropdowns/ /bootstrap/componentes/dropdowns/
+/bootstrap/5.1/components/list-group/ /bootstrap/componentes/grupo-de-lista/
+/bootstrap/5.1/components/modal/ /bootstrap/componentes/modal/
+/bootstrap/5.1/components/navs-tabs/ /bootstrap/componentes/navs-tabs/
+/bootstrap/5.1/components/navbar/ /bootstrap/componentes/navbar/
+/bootstrap/5.1/components/offcanvas/ /bootstrap/componentes/offcanvas/
+/bootstrap/5.1/components/pagination/ /bootstrap/componentes/placeholders-y-paginacion/
+/bootstrap/5.1/components/placeholders/ /bootstrap/componentes/placeholders-y-paginacion/
+/bootstrap/5.1/components/popovers/ /bootstrap/componentes/popovers/
+/bootstrap/5.1/components/progress/ /bootstrap/componentes/progreso/
+/bootstrap/5.1/components/scrollspy/ /bootstrap/componentes/scrollspy/
+/bootstrap/5.1/components/spinners/ /bootstrap/componentes/spinners/
+/bootstrap/5.1/components/toasts/ /bootstrap/componentes/toasts/
+/bootstrap/5.1/components/tooltips/ /bootstrap/componentes/tooltips/
+
+/bootstrap/5.1/helpers/clearfix/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/colored-links/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/ratio/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/position/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/stacks/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/visually-hidden/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/stretched-link/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/text-truncation/ /bootstrap/helpers/
+/bootstrap/5.1/helpers/vertical-rule/ /bootstrap/helpers/
+
+/bootstrap/5.1/utilities/api/  /bootstrap/utilidades/api/
+/bootstrap/5.1/utilities/background/ /bootstrap/utilidades/background/
+/bootstrap/5.1/utilities/borders/ /bootstrap/utilidades/bordes/
+/bootstrap/5.1/utilities/colors/ /bootstrap/utilidades/colores/
+/bootstrap/5.1/utilities/display/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/flex/ /bootstrap/utilidades/flex/
+/bootstrap/5.1/utilities/float/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/interactions/ /bootstrap/utilidades/enlaces-e-interacciones/
+/bootstrap/5.1/utilities/opacity/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/overflow/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/position/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/shadows/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/sizing/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/spacing/ /bootstrap/utilidades/espaciado/
+/bootstrap/5.1/utilities/text/ /bootstrap/utilidades/textos/
+/bootstrap/5.1/utilities/vertical-align/ /bootstrap/utilidades/otras-utilidades/
+/bootstrap/5.1/utilities/visibility/ /bootstrap/utilidades/otras-utilidades/
+
+/bootstrap/5.1/extend/approach/ /bootstrap/comenzando/
+/bootstrap/5.1/extend/icons/ /bootstrap/comenzando/
+
+/bootstrap/5.1/about/overview/ /bootstrap/comenzando/
+/bootstrap/5.1/about/team/ /bootstrap/comenzando/
+/bootstrap/5.1/about/brand/ /bootstrap/comenzando/
+/bootstrap/5.1/about/license/ /bootstrap/comenzando/
+/bootstrap/5.1/about/translations/ /bootstrap/comenzando/
+
+/bootstrap/5.1/migration/ /bootstrap/comenzando/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

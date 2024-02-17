@@ -1,0 +1,545 @@
+---
+weight: 3
+linkTitle: Utilidades de bordes
+title: Uso de las utilidades de Bordes en Bootstrap · Bootstrap en Español v5.3
+description: Usa utilidades de bordes para diseñar rápidamente el borde y el radio del borde de un elemento. Ideal para imágenes, botones o cualquier otro elemento.
+---
+
+# Uso de las utilidades de Bordes en Bootstrap
+
+Usa utilidades de bordes para diseñar rápidamente el borde y el radio del borde de un elemento. Ideal para imágenes, botones o cualquier otro elemento.
+
+{{< content-ads/top-banner >}}
+
+## Borde {#border}
+
+Usa utilidades de bordes para agregar o eliminar los bordes de un elemento. Elige entre todos los bordes o uno a la vez.
+
+### Aditivo {#additive}
+
+Agregar bordes a elementos personalizados:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/additive.html" >}}
+```html {filename="HTML"}
+    <span class="border"></span>
+    <span class="border-top"></span>
+    <span class="border-end"></span>
+    <span class="border-bottom"></span>
+    <span class="border-start"></span>
+```
+{{< /demo-iframe >}}
+
+### Sustractivo {#subtractive}
+
+O quitar bordes:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/subtractive.html" >}}
+```html {filename="HTML"}
+    <span class="border border-0"></span>
+    <span class="border border-top-0"></span>
+    <span class="border border-end-0"></span>
+    <span class="border border-bottom-0"></span>
+    <span class="border border-start-0"></span>
+```
+{{< /demo-iframe >}}
+
+## Color {#color}
+
+{{< callout type="info" emoji="" >}}
+Las utilidades de borde como `.border-*` que se generaron a partir de nuestro mapa original `$theme-colors` Sass aún no responden a los modos de color; sin embargo, cualquier `.border-*-subtle` lo hará. Esto se resolverá en v6.
+{{< /callout >}}
+
+Cambia el color del borde usando utilidades integradas en los colores de nuestro tema.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/color-1.html" >}}
+```html {filename="HTML"}
+    <span class="border border-primary"></span>
+    <span class="border border-primary-subtle"></span>
+    <span class="border border-secondary"></span>
+    <span class="border border-secondary-subtle"></span>
+    <span class="border border-success"></span>
+    <span class="border border-success-subtle"></span>
+    <span class="border border-danger"></span>
+    <span class="border border-danger-subtle"></span>
+    <span class="border border-warning"></span>
+    <span class="border border-warning-subtle"></span>
+    <span class="border border-info"></span>
+    <span class="border border-info-subtle"></span>
+    <span class="border border-light"></span>
+    <span class="border border-light-subtle"></span>
+    <span class="border border-dark"></span>
+    <span class="border border-dark-subtle"></span>
+    <span class="border border-black"></span>
+    <span class="border border-white"></span>
+```
+{{< /demo-iframe >}}
+
+O modificar el `border-color` predeterminado de un componente:
+
+{{< content-ads/middle-banner-1 >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/color-2.html" >}}
+```html {filename="HTML"}
+    <div class="mb-4">
+        <label for="exampleFormControlInput1" class="form-label">Dirección de correo electrónico</label>
+        <input type="email" class="form-control border-success" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+
+    <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
+        Título peligroso
+    </div>
+
+    <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+        Cambiar el color y el ancho del borde
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Opacidad {#opacity}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
+
+Las utilidades `border-{color}` de Bootstrap se generan con Sass usando variables CSS. Esto permite cambios de color en tiempo real sin compilación y cambios dinámicos de transparencia alfa.
+
+### Cómo funciona {#how-it-works}
+
+Considera nuestra utilidad `.border-success` predeterminada.
+
+```css {filename="CSS"}
+.border-success {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-success-rgb), var(--bs-border-opacity)) !important;
+}
+```
+
+Usamos una versión RGB de nuestra variable CSS `--bs-success` (con el valor de `25, 135, 84`) y se adjuntó una segunda variable CSS, `--bs-border-opacity`, para la transparencia alfa (con un valor predeterminado `1` gracias a una variable CSS local). Eso significa que cada vez que uses `.border-success` ahora, tu valor de `color` calculado es `rgba(25, 135, 84, 1)`. La variable CSS local dentro de cada clase `.border-*` evita problemas de herencia, por lo que las instancias anidadas de las utilidades no tienen automáticamente una transparencia alfa modificada.
+
+### Ejemplo {#example}
+
+Para cambiar esa opacidad, sobrescribe `--bs-border-opacity` mediante estilos personalizados o estilos en línea.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/example-1.html" >}}
+```html {filename="HTML"}
+    <div class="border border-success p-2 mb-2">Este es el borde de éxito predeterminado</div>
+    <div class="border border-success p-2" style="--bs-border-opacity: .5;">Este es un borde de éxito con una opacidad del 50%</div>
+```
+{{< /demo-iframe >}}
+
+O elige cualquiera de las utilidades `.border-opacity`:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/example-2.html" >}}
+```html {filename="HTML"}
+    <div class="border border-success p-2 mb-2">Este es el borde de éxito predeterminado</div>
+    <div class="border border-success p-2 mb-2 border-opacity-75">Este es un borde de éxito con una opacidad del 75%</div>
+    <div class="border border-success p-2 mb-2 border-opacity-50">Este es un borde de éxito con una opacidad del 50%</div>
+    <div class="border border-success p-2 mb-2 border-opacity-25">Este es un borde de éxito con una opacidad del 25%</div>
+    <div class="border border-success p-2 border-opacity-10">Este es un borde de éxito con una opacidad del 10%</div>
+```
+{{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-2 >}}
+
+## Ancho {#width}
+
+{{< bootstrap/content-suggestion >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/width.html" >}}
+```html {filename="HTML"}
+    <span class="border border-1"></span>
+    <span class="border border-2"></span>
+    <span class="border border-3"></span>
+    <span class="border border-4"></span>
+    <span class="border border-5"></span>
+```
+{{< /demo-iframe >}}
+
+## Radio {#radius}
+
+Agrega clases a un elemento para redondear fácilmente sus esquinas
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/radius.html" >}}
+```html {filename="HTML"}
+    <svg class="bd-placeholder-img rounded" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-top" width="75" height="75" role="img" aria-label="Ejemplo de imagen con redondeo superior: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen con redondeo superior</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-end" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada a la derecha: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada a la derecha</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-bottom" width="75" height="75" role="img" aria-label="Ejemplo de imagen inferiormente redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen inferiormente redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-start" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada a la izquierda: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada a la izquierda</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-circle" width="75" height="75" role="img" aria-label="Imagen completamente redonda: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Imagen completamente redonda</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-pill" width="150" height="75" role="img" aria-label="Imagen de pastilla redondeada: 150x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Imagen de pastilla redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">150x75</text></svg>
+```
+{{< /demo-iframe >}}
+
+### Tamaños {#sizes}
+
+Usa las clases de escala para esquinas redondeadas más grandes o más pequeñas. Los tamaños varían de `0` a `5` y se pueden configurar modificando la API de utilidades.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/sizes-1.html" >}}
+```html {filename="HTML"}
+    <svg class="bd-placeholder-img rounded-0" width="75" height="75" role="img" aria-label="Ejemplo de imagen no redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen no redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-1" width="75" height="75" role="img" aria-label="Ejemplo de imagen pequeña y redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen pequeña y redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-2" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada predeterminada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada predeterminada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-3" width="75" height="75" role="img" aria-label="Ejemplo de imagen grande y redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen grande y redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-4" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada más grande: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada más grande</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-5" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada extra grande: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen redondeada extra grande</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/sizes-2.html" >}}
+```html {filename="HTML"}
+    <svg class="bd-placeholder-img rounded-bottom-1" width="75" height="75" role="img" aria-label="Ejemplo de imagen pequeña y redondeada: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen pequeña y redondeada</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-start-2" width="75" height="75" role="img" aria-label="Ejemplo de imagen predeterminada redondeada a la izquierda: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen predeterminada redondeada a la izquierda</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-end-circle" width="75" height="75" role="img" aria-label="Ejemplo de imagen completamente redonda a la derecha: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen completamente redonda a la derecha</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-start-pill" width="75" height="75" role="img" aria-label="Ejemplo de imagen de pastilla redondeada a la izquierda: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen de pastilla redondeada a la izquierda</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+    <svg class="bd-placeholder-img rounded-5 rounded-top-0" width="75" height="75" role="img" aria-label="Ejemplo de imagen redondeada inferior extra grande: 75x75" focusable="false" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><title>Ejemplo de imagen extra grande con fondo redondeado</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">75x75</text></svg>
+```
+{{< /demo-iframe >}}
+
+## Personalización del CSS {#css}
+
+### Variables Sass del componente {#variables}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
+
+{{< content-ads/middle-banner-3 >}}
+
+[scss/_root.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_root.scss)
+
+```scss {filename="scss/_root.scss"}
+--#{$prefix}border-width: #{$border-width};
+--#{$prefix}border-style: #{$border-style};
+--#{$prefix}border-color: #{$border-color};
+--#{$prefix}border-color-translucent: #{$border-color-translucent};
+
+--#{$prefix}border-radius: #{$border-radius};
+--#{$prefix}border-radius-sm: #{$border-radius-sm};
+--#{$prefix}border-radius-lg: #{$border-radius-lg};
+--#{$prefix}border-radius-xl: #{$border-radius-xl};
+--#{$prefix}border-radius-xxl: #{$border-radius-xxl};
+--#{$prefix}border-radius-2xl: var(--#{$prefix}border-radius-xxl); // Deprecated in v5.3.0 for consistency
+--#{$prefix}border-radius-pill: #{$border-radius-pill};
+```
+
+### Variables Sass generales relacionadas {#sass-variables}
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$border-width:                1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+$border-style:                solid;
+$border-color:                $gray-300;
+$border-color-translucent:    rgba($black, .175);
+```
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$border-radius:               .375rem;
+$border-radius-sm:            .25rem;
+$border-radius-lg:            .5rem;
+$border-radius-xl:            1rem;
+$border-radius-xxl:           2rem;
+$border-radius-pill:          50rem;
+```
+
+Variables para configurar `border-color` en las utilidades `.border-*-subtle` en modo claro y oscuro:
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$primary-border-subtle:   tint-color($primary, 60%);
+$secondary-border-subtle: tint-color($secondary, 60%);
+$success-border-subtle:   tint-color($success, 60%);
+$info-border-subtle:      tint-color($info, 60%);
+$warning-border-subtle:   tint-color($warning, 60%);
+$danger-border-subtle:    tint-color($danger, 60%);
+$light-border-subtle:     $gray-200;
+$dark-border-subtle:      $gray-500;
+```
+
+[scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
+
+```scss {filename="scss/_variables-dark.scss"}
+$primary-border-subtle-dark:        shade-color($primary, 40%);
+$secondary-border-subtle-dark:      shade-color($secondary, 40%);
+$success-border-subtle-dark:        shade-color($success, 40%);
+$info-border-subtle-dark:           shade-color($info, 40%);
+$warning-border-subtle-dark:        shade-color($warning, 40%);
+$danger-border-subtle-dark:         shade-color($danger, 40%);
+$light-border-subtle-dark:          $gray-700;
+$dark-border-subtle-dark:           $gray-800;
+```
+
+### Mapas de Sass {#sass-maps}
+
+{{< content-ads/middle-banner-4 >}}
+
+Los colores de borde adaptativo del modo de color también están disponibles como mapa Sass:
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss {filename="scss/_maps.scss"}
+$theme-colors-border-subtle: (
+  "primary": $primary-border-subtle,
+  "secondary": $secondary-border-subtle,
+  "success": $success-border-subtle,
+  "info": $info-border-subtle,
+  "warning": $warning-border-subtle,
+  "danger": $danger-border-subtle,
+  "light": $light-border-subtle,
+  "dark": $dark-border-subtle,
+);
+```
+
+{{< bootstrap/content-suggestion >}}
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss {filename="scss/_maps.scss"}
+$theme-colors-border-subtle-dark: (
+  "primary": $primary-border-subtle-dark,
+  "secondary": $secondary-border-subtle-dark,
+  "success": $success-border-subtle-dark,
+  "info": $info-border-subtle-dark,
+  "warning": $warning-border-subtle-dark,
+  "danger": $danger-border-subtle-dark,
+  "light": $light-border-subtle-dark,
+  "dark": $dark-border-subtle-dark,
+);
+```
+
+### Sass mixins {#sass-mixins}
+
+[scss/mixins/_border-radius.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_border-radius.scss)
+
+```scss {filename="scss/mixins/_border-radius.scss"}
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+  @if $enable-rounded {
+    border-radius: valid-radius($radius);
+  }
+  @else if $fallback-border-radius != false {
+    border-radius: $fallback-border-radius;
+  }
+}
+
+@mixin border-top-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius($radius);
+    border-top-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-end-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius($radius);
+    border-bottom-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-bottom-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: valid-radius($radius);
+    border-bottom-left-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-start-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius($radius);
+    border-bottom-left-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-top-start-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-top-end-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-bottom-end-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-bottom-start-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-bottom-left-radius: valid-radius($radius);
+  }
+}
+```
+
+### API de utilidades de Sass {#sass-utilities-api}
+
+Las utilidades de borde se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
+
+[scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
+
+```scss {filename="scss/_utilities.scss"}
+"border": (
+  property: border,
+  values: (
+    null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+    0: 0,
+  )
+),
+"border-top": (
+  property: border-top,
+  values: (
+    null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+    0: 0,
+  )
+),
+"border-end": (
+  property: border-right,
+  class: border-end,
+  values: (
+    null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+    0: 0,
+  )
+),
+"border-bottom": (
+  property: border-bottom,
+  values: (
+    null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+    0: 0,
+  )
+),
+"border-start": (
+  property: border-left,
+  class: border-start,
+  values: (
+    null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+    0: 0,
+  )
+),
+"border-color": (
+  property: border-color,
+  class: border,
+  local-vars: (
+    "border-opacity": 1
+  ),
+  values: $utilities-border-colors
+),
+"subtle-border-color": (
+  property: border-color,
+  class: border,
+  values: $utilities-border-subtle
+),
+"border-width": (
+  property: border-width,
+  class: border,
+  values: $border-widths
+),
+"border-opacity": (
+  css-var: true,
+  class: border-opacity,
+  values: (
+    10: .1,
+    25: .25,
+    50: .5,
+    75: .75,
+    100: 1
+  )
+),
+```
+
+{{< content-ads/middle-banner-5 >}}
+
+{{< bootstrap/content-suggestion >}}
+
+[scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
+
+```scss {filename="scss/_utilities.scss"}
+"rounded": (
+  property: border-radius,
+  class: rounded,
+  values: (
+    null: var(--#{$prefix}border-radius),
+    0: 0,
+    1: var(--#{$prefix}border-radius-sm),
+    2: var(--#{$prefix}border-radius),
+    3: var(--#{$prefix}border-radius-lg),
+    4: var(--#{$prefix}border-radius-xl),
+    5: var(--#{$prefix}border-radius-xxl),
+    circle: 50%,
+    pill: var(--#{$prefix}border-radius-pill)
+  )
+),
+"rounded-top": (
+  property: border-top-left-radius border-top-right-radius,
+  class: rounded-top,
+  values: (
+    null: var(--#{$prefix}border-radius),
+    0: 0,
+    1: var(--#{$prefix}border-radius-sm),
+    2: var(--#{$prefix}border-radius),
+    3: var(--#{$prefix}border-radius-lg),
+    4: var(--#{$prefix}border-radius-xl),
+    5: var(--#{$prefix}border-radius-xxl),
+    circle: 50%,
+    pill: var(--#{$prefix}border-radius-pill)
+  )
+),
+"rounded-end": (
+  property: border-top-right-radius border-bottom-right-radius,
+  class: rounded-end,
+  values: (
+    null: var(--#{$prefix}border-radius),
+    0: 0,
+    1: var(--#{$prefix}border-radius-sm),
+    2: var(--#{$prefix}border-radius),
+    3: var(--#{$prefix}border-radius-lg),
+    4: var(--#{$prefix}border-radius-xl),
+    5: var(--#{$prefix}border-radius-xxl),
+    circle: 50%,
+    pill: var(--#{$prefix}border-radius-pill)
+  )
+),
+"rounded-bottom": (
+  property: border-bottom-right-radius border-bottom-left-radius,
+  class: rounded-bottom,
+  values: (
+    null: var(--#{$prefix}border-radius),
+    0: 0,
+    1: var(--#{$prefix}border-radius-sm),
+    2: var(--#{$prefix}border-radius),
+    3: var(--#{$prefix}border-radius-lg),
+    4: var(--#{$prefix}border-radius-xl),
+    5: var(--#{$prefix}border-radius-xxl),
+    circle: 50%,
+    pill: var(--#{$prefix}border-radius-pill)
+  )
+),
+"rounded-start": (
+  property: border-bottom-left-radius border-top-left-radius,
+  class: rounded-start,
+  values: (
+    null: var(--#{$prefix}border-radius),
+    0: 0,
+    1: var(--#{$prefix}border-radius-sm),
+    2: var(--#{$prefix}border-radius),
+    3: var(--#{$prefix}border-radius-lg),
+    4: var(--#{$prefix}border-radius-xl),
+    5: var(--#{$prefix}border-radius-xxl),
+    circle: 50%,
+    pill: var(--#{$prefix}border-radius-pill)
+  )
+),
+```
+
+{{< content-ads/bottom-banner >}}

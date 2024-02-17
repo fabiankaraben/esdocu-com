@@ -13,7 +13,7 @@
 </div>
 {{ end -}}
 
-{{- $showCustomBottomBanner := .Site.Params.showCustomBottomBanner | default true -}}
+{{- $showCustomBottomBanner := .Site.Params.showCustomBottomBanner | default false -}}
 {{- if eq $showCustomBottomBanner true }}
     <div class="my-5 p-1 rounded-md border border-indigo-300">
         <a href="https://cafecito.app/esdocu" target="_blank">

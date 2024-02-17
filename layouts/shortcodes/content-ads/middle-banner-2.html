@@ -11,7 +11,7 @@
 </div>
 {{ end -}}
 
-{{- $showCustomMiddleBanner2 := .Site.Params.showCustomMiddleBanner2 | default true -}}
+{{- $showCustomMiddleBanner2 := .Site.Params.showCustomMiddleBanner2 | default false -}}
 {{- if eq $showCustomMiddleBanner2 true }}
     <div class="my-5 p-1 rounded-md border border-indigo-300">
         <a href="https://cafecito.app/esdocu" target="_blank">

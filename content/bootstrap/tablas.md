@@ -1,0 +1,756 @@
+---
+weight: 9
+linkTitle: Tablas HTML con Bootstrap
+title: Uso de Tablas con Bootstrap · Bootstrap en Español v5.3
+description: Documentación y ejemplos para el diseño de tablas (dado su uso frecuente en complementos de JavaScript) con Bootstrap.
+---
+
+# Uso de Tablas con Bootstrap
+
+Documentación y ejemplos para el diseño de tablas (dado su uso frecuente en complementos de JavaScript) con Bootstrap.
+
+{{< content-ads/top-banner >}}
+
+## Descripción general {#overview}
+
+Debido al uso generalizado de elementos `<table>` en widgets de terceros como calendarios y selectores de fechas, las tablas de Bootstrap son **opt-in**. Agrega la clase base `.table` a cualquier `<table>` y luego extiéndela con nuestras clases modificadoras opcionales o estilos personalizados. No todos los estilos de tabla se heredan en Bootstrap, lo que significa que cualquier tabla anidada puede tener un estilo independiente del padre.
+
+Usando el marcado de tabla más básico, así es como se ven las tablas basadas en `.table` en Bootstrap.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/overview.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Primero</th>
+                <th scope="col">Último</th>
+                <th scope="col">Manejar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+## Variantes {#variants}
+
+Usa clases contextuales para colorear tablas, filas de tablas o celdas individuales.
+
+{{< callout type="info" emoji="" >}}
+**¡Atención!** Debido al CSS más complicado utilizado para generar nuestras variantes de tabla, lo más probable es que no vean el estilo adaptativo del modo de color hasta la versión 6.
+{{< /callout >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/variants.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Clase</th>
+                <th scope="col">Título</th>
+                <th scope="col">Título</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Predeterminado</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+
+            <tr class="table-primary">
+                <th scope="row">Primary</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-secondary">
+                <th scope="row">Secondary</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-warning">
+                <th scope="row">Warning</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-info">
+                <th scope="row">Info</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>Celda</td>
+                <td>Celda</td>
+            </tr>
+        </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< callout type="info" emoji="" >}}
+**Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
+{{< /callout >}}
+
+## Tablas acentuadas {#accented-tables}
+
+### Filas rayadas {#striped-rows}
+
+Usa `.table-striped` para agregar rayas de cebra a cualquier fila de la tabla dentro del `<tbody>`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-rows.html" >}}
+```html {filename="HTML"}
+    <table class="table table-striped">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Columnas rayadas {#striped-columns}
+
+Usa `.table-striped-columns` para agregar rayas de cebra a cualquier columna de la tabla.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-striped-columns">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+Estas clases también se pueden agregar a las variantes de la tabla:
+
+{{< bootstrap/content-suggestion >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark table-striped">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-3.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark table-striped-columns">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-1 >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-4.html" >}}
+```html {filename="HTML"}
+    <table class="table table-success table-striped">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-5.html" >}}
+```html {filename="HTML"}
+    <table class="table table-success table-striped-columns">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Filas flotantes {#hoverable-rows}
+
+Agrega `.table-hover` para habilitar un estado de desplazamiento en las filas de la tabla dentro de un `<tbody>`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/hoverable-rows-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-hover">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/hoverable-rows-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark table-hover">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+Estas filas flotantes también se pueden combinar con la variante de filas rayadas:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/hoverable-rows-3.html" >}}
+```html {filename="HTML"}
+    <table class="table table-striped table-hover">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Tablas activas {#active-tables}
+
+Resalta una fila o celda de una tabla agregando una clase `.table-active`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/active-tables-1.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          ...
+        </tr>
+        <tr>
+          ...
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2" class="table-active">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/active-tables-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark">
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          ...
+        </tr>
+        <tr>
+          ...
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2" class="table-active">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+## ¿Cómo funcionan las variantes y tablas acentuadas? {#how-do-the-variants-and-accented-tables-work}
+
+Para las tablas acentuadas ([filas rayadas](#striped-rows), [columnas rayadas](#striped-columns), [filas flotantes](#hoverable-rows) y [tablas activas](#active-tables)), utilizamos algunas técnicas para que estos efectos funcionen para todas nuestras [variantes de tabla](#variants):
+
+* Comenzamos configurando el fondo de una celda de la tabla con la propiedad personalizada `--bs-table-bg`. Luego, todas las variantes de la tabla establecen esa propiedad personalizada para colorear las celdas de la tabla. De esta forma, no nos meteremos en problemas si se utilizan colores semitransparentes como fondo de tabla.
+* Luego agregamos una sombra de cuadro insertado en las celdas de la tabla con `box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));` para colocarlo encima de cualquier `background-color` especificado. Utiliza una cascada personalizada para sobrescribir `box-shadow`, independientemente de la especificidad de CSS. Debido a que utilizamos una extensión enorme y sin desenfoque, el color será monótono. Dado que `--bs-table-accent-bg` está configurado en `transparent` de forma predeterminada, no tenemos una sombra de cuadro predeterminada.
+* Cuando se agregan las clases `.table-striped`, `.table-striped-columns`, `.table-hover` o `.table-active`, ya sea `--bs-table-bg-type` o `--bs-table-bg-state` (por defecto configurado en `initial`) están configurados en un color semitransparente (`--bs-table-striped-bg`, `--bs-table-active-bg` o `--bs-table-hover-bg`) para colorear el fondo y sobrescribir el `--bs-table-accent-bg` predeterminado.
+* Para cada variante de tabla, generamos un color `--bs-table-accent-bg` con el mayor contraste dependiendo de ese color. Por ejemplo, el color de acento de `.table-primary` es más oscuro, mientras que `.table-dark` tiene un color de acento más claro.
+* Los colores del texto y del borde se generan de la misma manera y sus colores se heredan de forma predeterminada.
+
+{{< bootstrap/content-suggestion >}}
+
+Detrás de escena se ve así:
+
+[scss/mixins/_table-variants.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_table-variants.scss)
+
+```scss {filename="scss/mixins/_table-variants.scss"}
+@mixin table-variant($state, $background) {
+  .table-#{$state} {
+    $color: color-contrast(opaque($body-bg, $background));
+    $hover-bg: mix($color, $background, percentage($table-hover-bg-factor));
+    $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
+    $active-bg: mix($color, $background, percentage($table-active-bg-factor));
+    $table-border-color: mix($color, $background, percentage($table-border-factor));
+
+    --#{$prefix}table-color: #{$color};
+    --#{$prefix}table-bg: #{$background};
+    --#{$prefix}table-border-color: #{$table-border-color};
+    --#{$prefix}table-striped-bg: #{$striped-bg};
+    --#{$prefix}table-striped-color: #{color-contrast($striped-bg)};
+    --#{$prefix}table-active-bg: #{$active-bg};
+    --#{$prefix}table-active-color: #{color-contrast($active-bg)};
+    --#{$prefix}table-hover-bg: #{$hover-bg};
+    --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
+
+    color: var(--#{$prefix}table-color);
+    border-color: var(--#{$prefix}table-border-color);
+  }
+}
+```
+
+## Bordes de tabla {#table-borders}
+
+{{< content-ads/middle-banner-2 >}}
+
+### Tablas con borde {#bordered-tables}
+
+Agrega `.table-bordered` para los bordes en todos los lados de la tabla y las celdas.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/bordered-tables-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-bordered">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+[Utilidades de color de borde](/bootstrap/utilidades/bordes/#border-color) pueden ser añadidas para cambiar colores:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/bordered-tables-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-bordered border-primary">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Tablas sin bordes {#tables-without-borders}
+
+Agrega `.table-borderless` para una tabla sin bordes.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/tables-without-borders-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-borderless">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/tables-without-borders-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark table-borderless">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+## Tablas pequeñas {#small-tables}
+
+Agrega `.table-sm` para hacer cualquier `.table` más compacta cortando todo el `padding` de la celda por la mitad.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/small-tables-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-sm">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/small-tables-2.html" >}}
+```html {filename="HTML"}
+    <table class="table table-dark table-sm">
+        ...
+    </table>
+```
+{{< /demo-iframe >}}
+
+## Divisores de grupos de tabla {#table-group-dividers}
+
+Agrega un borde más grueso y más oscuro entre los grupos de tablas—`<thead>`, `<tbody>` y `<tfoot>`— con `.table-group-divider`. Personaliza el color cambiando el `border-top-color` (para el cual actualmente no proporcionamos una clase de utilidad).
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/table-group-dividers.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Primero</th>
+                <th scope="col">Último</th>
+                <th scope="col">Manejar</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+## Alineación vertical {#vertical-alignment}
+
+Las celdas de la tabla de `<thead>` siempre están alineadas verticalmente hacia abajo. Las celdas de la tabla en `<tbody>` heredan su alineación de `<table>` y están alineadas en la parte superior de forma predeterminada. Utiliza las clases de [alineación vertical](/bootstrap/utilidades/otras-utilidades) para realinear donde sea necesario.
+
+{{< bootstrap/content-suggestion >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/vertical-alignment.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            ...
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            ...
+          </tr>
+          <tr class="align-bottom">
+            ...
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td class="align-top">This cell is aligned to the top.</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-3 >}}
+
+## Anidamiento {#nesting}
+
+Las tablas anidadas no heredan los estilos de borde, los estilos activos y las variantes de tabla.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/nesting.html" >}}
+```html {filename="HTML"}
+    <table class="table table-striped table-bordered">
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        ...
+        <tr>
+          <td colspan="4">
+            <table class="table mb-0">
+              ...
+            </table>
+          </td>
+        </tr>
+        ...
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+## Cómo funciona el anidamiento {#how-nesting-works}
+
+Para evitar que _cualquier_ estilo se filtre a tablas anidadas, usamos el selector del combinador secundario (`>`) en nuestro CSS. Dado que necesitamos apuntar a todos los `td`s y `th`s en `thead`, `tbody` y `tfoot`, nuestro selector parecería bastante largo sin él. Como tal, utilizamos el `.table > :not(caption) > * > *` selector para apuntar a todos los `td` y `th` de `.table`, pero a ninguna de las posibles tablas anidadas.
+
+Ten en cuenta que si agregas `<tr>`s como hijos directos de una tabla, esos `<tr>` serán envuelto en un `<tbody>` de forma predeterminada, lo que hace que nuestros selectores funcionen según lo previsto.
+
+## Anatomía {#anatomy}
+
+### Cabecera de tabla {#table-head}
+
+Similar a las tablas y las tablas oscuras, usa las clases modificadoras `.table-light` o `.table-dark` para hacer `<thead>` aparezcan en gris claro u oscuro.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/table-head-1.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+      <thead class="table-light">
+        ...
+      </thead>
+      <tbody>
+        ...
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/table-head-2.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+      <thead class="table-dark">
+        ...
+      </thead>
+      <tbody>
+        ...
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Pie de tabla {#table-foot}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/table-foot.html" >}}
+```html {filename="HTML"}
+    <table class="table">
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        ...
+      </tbody>
+      <tfoot>
+        ...
+      </tfoot>
+    </table>
+```
+{{< /demo-iframe >}}
+
+### Subtítulos {#captions}
+
+Un `<caption>` funciona como el encabezado de una tabla. Ayuda a los usuarios con lectores de pantalla a encontrar una tabla, comprender de qué se trata y decidir si quieren leerla.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/captions-1.html" >}}
+```html {filename="HTML"}
+    <table class="table table-sm">
+      <caption>List of users</caption>
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        ...
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+También puedes poner el `<caption>` en la parte superior de la tabla con `.caption-top`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/captions-2.html" >}}
+```html {filename="HTML"}
+    <table class="table caption-top">
+      <caption>List of users</caption>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+```
+{{< /demo-iframe >}}
+
+{{< bootstrap/content-suggestion >}}
+
+## Tablas responsive {#responsive-tables}
+
+{{< content-ads/middle-banner-4 >}}
+
+Las tablas responsive permiten desplazarse horizontalmente con facilidad. Haz que cualquier tabla responda en todas las viewports envolviendo un `.table` con `.table-responsive`. O elige un punto de interrupción máximo con el cual tener una tabla responsive usando `.table-responsive{-sm|-md|-lg|-xl|-xxl}`.
+
+{{< callout type="warning" emoji="" >}}
+**Recorte/truncamiento vertical**
+
+Las tablas responsive utilizan `overflow-y: hidden`, que recorta cualquier contenido que vaya más allá de los bordes superior e inferior de la tabla. En particular, esto puede recortar menús desplegables y otros widgets de terceros.
+{{< /callout >}}
+
+### Siempre responsive {#always-responsive}
+
+En cada punto de interrupción, usa `.table-responsive` para desplazarte horizontalmente por las tablas.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/always-responsive.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive">
+        <table class="table">
+            ...
+      </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Punto de interrupción específico {#breakpoint-specific}
+
+Usa `.table-responsive{-sm|-md|-lg|-xl|-xxl}` según sea necesario para crear tablas responsive hasta un determinado punto de interrupción. A partir de ese punto de interrupción, la tabla se comportará normalmente y no se desplazará horizontalmente.
+
+**Estas tablas pueden aparecer rotas hasta que sus estilos responsive se apliquen en anchos de ventana específicos.**
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-1.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-2.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive-sm">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-3.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive-md">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-4.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive-lg">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-5.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive-xl">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-6.html" >}}
+```html {filename="HTML"}
+    <div class="table-responsive-xxl">
+        <table class="table">
+            ...
+        </table>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Personalización del CSS {#css}
+
+### Variables Sass generales relacionadas {#sass-variables}
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$table-cell-padding-y:        .5rem;
+$table-cell-padding-x:        .5rem;
+$table-cell-padding-y-sm:     .25rem;
+$table-cell-padding-x-sm:     .25rem;
+
+$table-cell-vertical-align:   top;
+
+$table-color:                 var(--#{$prefix}emphasis-color);
+$table-bg:                    var(--#{$prefix}body-bg);
+$table-accent-bg:             transparent;
+
+$table-th-font-weight:        null;
+
+$table-striped-color:         $table-color;
+$table-striped-bg-factor:     .05;
+$table-striped-bg:            rgba(var(--#{$prefix}emphasis-color-rgb), $table-striped-bg-factor);
+
+$table-active-color:          $table-color;
+$table-active-bg-factor:      .1;
+$table-active-bg:             rgba(var(--#{$prefix}emphasis-color-rgb), $table-active-bg-factor);
+
+$table-hover-color:           $table-color;
+$table-hover-bg-factor:       .075;
+$table-hover-bg:              rgba(var(--#{$prefix}emphasis-color-rgb), $table-hover-bg-factor);
+
+$table-border-factor:         .2;
+$table-border-width:          var(--#{$prefix}border-width);
+$table-border-color:          var(--#{$prefix}border-color);
+
+$table-striped-order:         odd;
+$table-striped-columns-order: even;
+
+$table-group-separator-color: currentcolor;
+
+$table-caption-color:         var(--#{$prefix}secondary-color);
+
+$table-bg-scale:              -80%;
+```    
+
+### Sass loops {#sass-loops}
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-5 >}}
+
+```scss {filename="scss/_variables.scss"}
+$table-variants: (
+  "primary":    shift-color($primary, $table-bg-scale),
+  "secondary":  shift-color($secondary, $table-bg-scale),
+  "success":    shift-color($success, $table-bg-scale),
+  "info":       shift-color($info, $table-bg-scale),
+  "warning":    shift-color($warning, $table-bg-scale),
+  "danger":     shift-color($danger, $table-bg-scale),
+  "light":      $light,
+  "dark":       $dark,
+);
+```    
+
+{{< bootstrap/content-suggestion >}}
+
+### Personalización {#customizing}
+
+* Las variables de factor (`$table-striped-bg-factor`, `$table-active-bg-factor` y `$table-hover-bg-factor`) se utilizan para determinar el contraste en las variantes de la tabla.
+* Aparte de las variantes claro y oscuro de tabla, los colores del tema se aclaran con la variable `$table-bg-scale`.
+
+{{< content-ads/bottom-banner >}}

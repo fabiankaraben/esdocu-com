@@ -1,0 +1,2170 @@
+---
+weight: 2
+linkTitle: Personalizar Bootstrap
+title: Formas de personalizar tu compilación de Bootstrap · Bootstrap en Español v5.3
+description: Aprende a crear temas, personalizar y ampliar Bootstrap con Sass, una gran cantidad de opciones globales, un sistema de color expansivo y más.
+type: docs
+---
+
+# Formas de Personalizar tu compilación de Bootstrap
+
+Aprende a crear temas, personalizar y ampliar Bootstrap con Sass, una gran cantidad de opciones globales, un sistema de color expansivo y más.
+
+{{< content-ads/top-banner >}}
+
+| <span class="mx-14">Tópico</span>                   | Descripción                                                                                                      |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [**Sass**](/bootstrap/personalizar)                 | Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y funciones.                      |
+| [**Opciones**](/bootstrap/personalizar)             | Personaliza Bootstrap con variables integradas para alternar fácilmente las preferencias globales de CSS.        |
+| [**Color**](/bootstrap/personalizar)                | Aprende y personaliza los sistemas de color que respaldan todo el conjunto de herramientas.                      |
+| [**Modos de color**](/bootstrap/personalizar-modes) | Explora nuestro modo claro predeterminado y el nuevo modo oscuro, o crea tú mismo modos de color personalizados. |
+| [**Componentes**](/bootstrap/personalizar)          | Aprende cómo construimos casi todos nuestros componentes de manera responsive y con clases base y modificadoras. |
+| [**Variables CSS**](/bootstrap/personalizar)        | Usa las propiedades personalizadas CSS de Bootstrap para un diseño y desarrollo rápido y con visión de futuro.   |
+| [**Optimizar**](/bootstrap/personalizar)            | Mantén tus proyectos ágiles, responsive y mantenibles para que puedas ofrecer la mejor experiencia.              |
+
+### Descripción general {#overview}
+
+Hay varias formas de personalizar Bootstrap. Tu mejor camino puede depender de tu proyecto, la complejidad de tus herramientas de compilación, la versión de Bootstrap que estés utilizando, la compatibilidad del navegador y más.
+
+Nuestros dos métodos preferidos son:
+
+{{< content-ads/middle-banner-1 >}}
+
+1.  Usar Bootstrap [a través del administrador de paquetes](/bootstrap/comenzando/#package-managers) para que puedas usar y ampliar nuestro archivos fuente.
+2.  Usar los archivos de distribución compilados de Bootstrap o [jsDelivr](/bootstrap/comenzando/#cdn-via-jsdelivr) para que puedas agregar o sobrescribir los estilos de Bootstrap.
+
+Si bien no podemos entrar en detalles aquí sobre cómo usar cada administrador de paquetes, podemos brindarte algunas pautas sobre cómo [usar Bootstrap con tu propio compilador Sass](/bootstrap/personalizar).
+
+Para aquellos que quieran utilizar los archivos de distribución, revisa la [página de introducción](/bootstrap/comenzando) para conocer cómo incluir esos archivos y una página HTML de ejemplo. Desde allí, consulta la documentación para conocer el diseño, los componentes y los comportamientos que te gustaría utilizar.
+
+A medida que te familiarices con Bootstrap, continúa explorando esta sección para obtener más detalles sobre cómo utilizar nuestras opciones globales, cómo usar y cambiar nuestro sistema de color, cómo construimos nuestros componentes, cómo usar nuestro lista cada vez mayor de propiedades personalizadas de CSS y cómo optimizar tu código al compilar con Bootstrap.
+
+{{< content-ads/middle-banner-2 >}}
+
+{{< bootstrap/content-suggestion >}}
+
+### CSP y SVG integrados {#csps-and-embedded-svgs}
+
+Varios componentes de Bootstrap incluyen SVG integrados en nuestro CSS para diseñar componentes de manera consistente y sencilla en todos los navegadores y dispositivos. **Para organizaciones con configuraciones de CSP más estrictas**, hemos documentado todas las instancias de nuestros SVG integrados (todos los cuales se aplican a través de `background-image`) para que puedas revisar más a fondo tus opciones.
+
+* [Acordeón](/bootstrap/componentes/acordion)
+* [Controles de carrusel](/bootstrap/componentes/carrusel/#with-controls)
+* [Botón cerrar](/bootstrap/componentes/botones) (usado en alertas y modales)
+* [Casillas de verificación y botones radio de formulario](/bootstrap/formularios)
+* [Switches de formulario](/bootstrap/formularios/#switches)
+* [Íconos de validación de formularios](/bootstrap/formularios/#server-side)
+* [Botones de alternancia de la barra de navegación](/bootstrap/componentes/navbar/#responsive-behaviors)
+* [Menús de selección](/bootstrap/formularios)
+
+Basado en la [conversación comunitaria](https://github.com/twbs/bootstrap/issues/25394), algunas opciones para abordar esto en tu propia base de código incluye [reemplazar las URL con assets alojados localmente](/bootstrap/comenzando/#extracting-svg-files), eliminar las imágenes y usar imágenes en línea (no es posible en todos los componentes) y modificando tu CSP. Nuestra recomendación es revisar cuidadosamente tus propias políticas de seguridad y decidir cuál es el mejor camino a seguir, si es necesario.
+
+## Uso de Sass en Bootstrap
+
+Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y funciones que te ayudarán a construir más rápido y personalizar tu proyecto.
+
+{{< content-ads/top-banner >}}
+
+Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y más.
+
+### Estructura de archivos {#file-structure}
+
+Siempre que sea posible, evita modificar los archivos principales de Bootstrap. Para Sass, eso significa crear tu propia hoja de estilo que importe Bootstrap para que puedas modificarla y ampliarla. Suponiendo que estés utilizando un administrador de paquetes como npm, tendrás una estructura de archivos similar a esta:
+
+```
+your-project/
+├── scss/
+│   └── custom.scss
+└── node_modules/
+│   └── bootstrap/
+│       ├── js/
+│       └── scss/
+└── index.html
+```
+
+Si descargaste nuestros archivos fuente y no estás usando un administrador de paquetes, querrás crear manualmente algo similar a esa estructura, manteniendo los archivos fuente de Bootstrap separados de los tuyos.
+
+```
+your-project/
+├── scss/
+│   └── custom.scss
+├── bootstrap/
+│   ├── js/
+│   └── scss/
+└── index.html
+```
+
+### Importar {#importing}
+
+En tu `custom.scss`, importarás los archivos Sass fuente de Bootstrap. Tienes dos opciones: incluir todo Bootstrap o elegir las piezas que necesitas. Recomendamos esto último, aunque ten en cuenta que existen algunos requisitos y dependencias entre nuestros componentes. También deberás incluir algo de JavaScript para nuestros complementos.
+
+```scss {filename="SCSS"}
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+```
+
+```scss {filename="SCSS"}
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+```
+
+Con esa configuración implementada, puedes comenzar a modificar cualquiera de las variables y mapas de Sass en tu `custom.scss`. También puedes comenzar a agregar partes de Bootstrap en la sección `// Optional` según sea necesario. Te sugerimos utilizar la pila de importación completa de nuestro archivo `bootstrap.scss` como punto de partida.
+
+### Compilando {#compiling}
+
+Para poder usar tu código Sass personalizado como CSS en el navegador, necesitas un compilador Sass. Sass se envía como un paquete CLI, pero también puedes compilarlo con otras herramientas de compilación como [Gulp](https://gulpjs.com) o [Webpack](https://webpack.js.org), o con aplicaciones GUI. Algunos IDE también tienen compiladores Sass integrados o como extensiones descargables.
+
+Nos gusta usar la CLI para compilar nuestro Sass, pero puedes usar el método que prefieras. Desde la línea de comando, ejecuta lo siguiente:
+
+```shell {filename="Terminal"}
+# Install Sass globally
+npm install -g sass
+
+## Watch your custom Sass for changes and compile it to CSS
+sass --watch ./scss/custom.scss ./css/custom.css
+```
+
+Obtén más información sobre tus opciones en [sass-lang.com/install](https://sass-lang.com/install) y [compilando con VS Code](https://code.visualstudio.com/docs/languages/css#_transpiling-sass-and-less-into-css).
+
+{{< content-ads/middle-banner-1 >}}
+
+{{< callout type="info" emoji="" >}}
+**¿Utilizas Bootstrap con otra herramienta de compilación?** Considera leer nuestras guías para compilar con [Webpack](/bootstrap/comenzando), [Parcel](/bootstrap/comenzando) o [Vite](/bootstrap/comenzando). También tenemos demostraciones listas para producción en [nuestro repositorio de ejemplos en GitHub](https://github.com/twbs/examples).
+{{< /callout >}}
+
+{{< bootstrap/content-suggestion >}}
+
+### Incluyendo {#including}
+
+Una vez que tu CSS esté compilado, puedes incluirlo en tus archivos HTML. Dentro de tu `index.html` querrás incluir tu archivo CSS compilado. Asegúrate de actualizar la ruta a tu archivo CSS compilado si lo has cambiado.
+
+```html {filename="HTML"}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom Bootstrap</title>
+    <link href="/css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
+</html>
+```
+
+### Valores predeterminados de variables {#variable-defaults}
+
+Cada variable Sass en Bootstrap incluye el indicador `!default` que te permite sobrescribir el valor predeterminado de la variable en tu propio Sass sin modificar el código fuente de Bootstrap. Copia y pega las variables según sea necesario, modifica sus valores y elimina la marca `!default`. Si una variable ya ha sido asignada, no será reasignada por los valores predeterminados en Bootstrap.
+
+Encontrarás la lista completa de variables de Bootstrap en `scss/_variables.scss`. Algunas variables están configuradas en `null`, estas variables no generan la propiedad a menos que se sobrescriban en tu configuración.
+
+Las sobrescrituras de variables deben realizarse después de importar nuestras funciones, pero antes del resto de las importaciones.
+
+Aquí tienes un ejemplo que cambia el `background-color` y el `color` para el `<body>` al importar y compilar Bootstrap a través de npm:
+
+```scss {filename="SCSS"}
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$body-bg: #000;
+$body-color: #111;
+
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional Bootstrap components here
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
+```
+
+Repite según sea necesario para cualquier variable en Bootstrap, incluidas las opciones globales a continuación.
+
+{{< callout type="info" emoji="" >}}
+**¡Empieza a usar Bootstrap a través de npm con nuestro proyecto inicial!** Dirígete al repositorio de ejemplo de [Sass y JS](https://github.com/twbs/examples/tree/main/sass-js) para ver cómo crear y personalizar Bootstrap en tu propio proyecto npm. Incluye el compilador Sass, Autoprefixer, Stylelint, PurgeCSS y Bootstrap Icons.
+{{< /callout >}}
+
+### Mapas y bucles {#maps-and-loops}
+
+Bootstrap incluye un puñado de mapas Sass, pares clave-valor que facilitan la generación de familias de CSS relacionados. Usamos mapas de Sass para nuestros colores, puntos de interrupción de cuadrícula y más. Al igual que las variables de Sass, todos los mapas de Sass incluyen el indicador `!default` y se pueden sobrescribir y ampliar.
+
+Algunos de nuestros mapas Sass se fusionan en mapas vacíos de forma predeterminada. Esto se hace para permitir una fácil expansión de un mapa de Sass determinado, pero tiene el costo de hacer que _eliminar_ elementos de un mapa sea un poco más difícil.
+
+{{< content-ads/middle-banner-2 >}}
+
+#### Modificar mapa {#modify-map}
+
+Todas las variables en el mapa `$theme-colors` se definen como variables independientes. Para modificar un color existente en nuestro mapa `$theme-colors`, agrega lo siguiente a tu archivo Sass personalizado:
+
+```scss {filename="SCSS"}
+$primary: #0074d9;
+$danger: #ff4136;
+```
+
+Más adelante, estas variables se configuran en el mapa `$theme-colors` de Bootstrap:
+
+```scss {filename="SCSS"}
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);
+```
+
+#### Agregar al mapa {#add-to-map}
+
+Agrega nuevos colores a `$theme-colors`, o cualquier otro mapa, creando un nuevo mapa Sass con tus valores personalizados y fusionándolo con el mapa original. En este caso, crearemos un nuevo mapa `$custom-colors` y lo fusionaremos con `$theme-colors`.
+
+```scss {filename="SCSS"}
+// Create your own map
+$custom-colors: (
+  "custom-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+```
+
+#### Eliminar del mapa {#remove-from-map}
+
+Para eliminar colores de `$theme-colors`, o de cualquier otro mapa, usa `map-remove`. Ten en cuenta que debes insertar `$theme-colors` entre nuestros requisitos justo después de tu definición en `variables` y antes de su uso en `maps`:
+
+```scss {filename="SCSS"}
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
+```
+
+### Claves requeridas {#required-keys}
+
+Bootstrap asume la presencia de algunas claves específicas dentro de los mapas de Sass, ya que las usamos y ampliamos nosotros mismos. A medida que personalizas los mapas incluidos, puedes encontrar errores cuando se utiliza la clave de un mapa Sass específico.
+
+Por ejemplo, usamos las claves `primary`, `success` y `danger` de `$theme-colors` para enlaces, botones y estados de formulario. Reemplazar los valores de estas claves no debería presentar problemas, pero eliminarlas puede causar problemas de compilación de Sass. En estos casos, deberás modificar el código Sass que utiliza esos valores.
+
+### Funciones {#functions}
+
+{{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-3 >}}
+
+#### Colores {#colors}
+
+Junto a los [mapas Sass](/bootstrap/personalizar/#color-sass-maps) que tenemos, los colores del tema también pueden usarse como variables independientes, como `$primary`.
+
+```scss {filename="SCSS"}
+.custom-element {
+  color: $gray-100;
+  background-color: $dark;
+}
+```
+
+Puedes aclarar u oscurecer colores con las funciones `tint-color()` y `shade-color()` de Bootstrap. Estas funciones mezclarán colores con blanco o negro, a diferencia de las funciones nativas `lighten()` y `darken()` de Sass que cambiarán la luminosidad en una cantidad fija, lo que a menudo no conduce al efecto deseado.
+
+[scss/_functions.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_functions.scss)
+
+```scss {filename="SCSS"}
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+// Shade the color if the weight is positive, else tint it
+@function shift-color($color, $weight) {
+  @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
+}
+```
+
+En la práctica, llamarías a la función y pasarías los parámetros de color y peso.
+
+```scss {filename="SCSS"}
+.custom-element {
+  color: tint-color($primary, 10%);
+}
+
+.custom-element-2 {
+  color: shade-color($danger, 30%);
+}
+```
+
+#### Contraste de color {#color-contrast}
+
+Para cumplir con las [Pautas de Accesibilidad al Contenido Web (WCAG)](https://www.w3.org/TR/WCAG), los autores **deben** proporcionar un [contraste de color del texto mínimo de 4.5:1](https://www.w3.org/TR/WCAG/#contrast-minimum) y un [contraste de color sin texto mínimo de 3:1](https://www.w3.org/TR/WCAG/#non-text-contrast), con muy pocas excepciones.
+
+Para ayudar con esto, incluimos la función `color-contrast` en Bootstrap. Utiliza el [algoritmo de relación de contraste WCAG](https://www.w3.org/TR/WCAG/#dfn-contrast-ratio) para calcular umbrales de contraste basados en [luminancia relativa](https://www.w3.org/TR/WCAG/#dfn-relative-luminance) en un espacio de color `sRGB` para devolver automáticamente un color de contraste claro (`#fff`), oscuro (`#212529`) o negro (`#000`) según el color base especificado. Esta función es especialmente útil para mixins o bucles en los que generas varias clases.
+
+Por ejemplo, para generar muestras de color desde nuestro mapa `$theme-colors`:
+
+```scss {filename="SCSS"}
+@each $color, $value in $theme-colors {
+  .swatch-#{$color} {
+    color: color-contrast($value);
+  }
+}
+```
+
+También se puede utilizar para necesidades puntuales de contraste:
+
+```scss {filename="SCSS"}
+.custom-element {
+  color: color-contrast(#000); // returns `color: #fff`
+}
+```
+
+También puedes especificar un color base con nuestras funciones de mapa de colores:
+
+{{< content-ads/middle-banner-4 >}}
+
+```scss {filename="SCSS"}
+.custom-element {
+  color: color-contrast($dark); // returns `color: #fff`
+}
+```
+
+#### Escape SVG {#escape-svg}
+
+Usamos la función `escape-svg` para escapar de `<`, `>` y `#` caracteres para imágenes de fondo SVG. Cuando se utiliza la función `escape-svg`, se deben citar los URI de datos.
+
+#### Funciones de sumar y restar {#add-and-subtract-functions}
+
+Usamos las funciones `add` y `subtract` para envolver la función CSS `calc`. El objetivo principal de estas funciones es evitar errores cuando un valor `0` “sin unidades” se pasa a una expresión `calc`. Expresiones como `calc(10px - 0)` devolverán un error en todos los navegadores, a pesar de ser matemáticamente correctas.
+
+Ejemplo donde el cálculo es válido:
+
+```scss {filename="SCSS"}
+$border-radius: .25rem;
+$border-width: 1px;
+
+.element {
+  // Output calc(.25rem - 1px) is valid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output the same calc(.25rem - 1px) as above
+  border-radius: subtract($border-radius, $border-width);
+}
+```
+
+Ejemplo donde el cálculo no es válido:
+
+```scss {filename="SCSS"}
+$border-radius: .25rem;
+$border-width: 0;
+
+.element {
+  // Output calc(.25rem - 0) is invalid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output .25rem
+  border-radius: subtract($border-radius, $border-width);
+}
+```
+
+### Mixins {#mixins}
+
+Nuestro directorio `scss/mixins/` tiene un montón de mixins que potencian partes de Bootstrap y también se pueden usar en tu propio proyecto.
+
+{{< bootstrap/content-suggestion >}}
+
+#### Esquemas de colores {#color-schemes}
+
+Hay disponible una combinación abreviada para la media query `prefers-color-scheme` compatible con `light`, `dark` y esquemas de color personalizados. Consulta [la documentación de modos de color](/bootstrap/personalizar-modes) para obtener información sobre nuestra combinación de modos de color.
+
+[scss/mixins/_color-scheme.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_color-scheme.scss)
+
+{{< content-ads/middle-banner-5 >}}
+
+```scss {filename="SCSS"}
+@mixin color-scheme($name) {
+  @media (prefers-color-scheme: #{$name}) {
+    @content;
+  }
+}
+```
+
+```scss {filename="SCSS"}
+.custom-element {
+  @include color-scheme(dark) {
+    // Insert dark mode styles here
+  }
+
+  @include color-scheme(custom-named-scheme) {
+    // Insert custom color scheme styles here
+  }
+}
+```
+
+## Las Opciones de Bootstrap
+
+Personaliza rápidamente Bootstrap con variables integradas para alternar fácilmente las preferencias globales de CSS para controlar el estilo y el comportamiento.
+
+{{< content-ads/top-banner >}}
+
+Personaliza Bootstrap con nuestro archivo de variables personalizadas incorporado y alterna fácilmente las preferencias globales de CSS con las nuevas variables `$enable-*` Sass. Sobrescribe el valor de una variable y vuelve a compilar con `npm run test` según sea necesario.
+
+{{< bootstrap/content-suggestion >}}
+
+Puedes encontrar y personalizar estas variables para opciones globales clave en el archivo `scss/_variables.scss` de Bootstrap.
+
+| Variable                       | Valores                                        | Descripción                                                                                                                                                                                                          |
+| ------------------------------ | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$spacer`                      | `1rem` (predeterminado), o cualquier valor > 0 | Especifica el valor de espaciado predeterminado para generar mediante programación nuestras [utilidades de espaciado](/bootstrap/utilidades/espaciado).                                                              |
+| `$enable-dark-mode`            | `true` (predeterminado) o `false`              | Habilita el [soporte para el modo oscuro](/bootstrap/personalizar-modes/#dark-mode) integrado en todo el proyecto y sus componentes.                                                                                 |
+| `$enable-rounded`              | `true` (predeterminado) o `false`              | Permite estilos `border-radius` predefinidos en varios componentes.                                                                                                                                                  |
+| `$enable-shadows`              | `true` o `false` (predeterminado)              | Habilita estilos decorativos `box-shadow` predefinidos en varios componentes. No afecta los `box-shadow` utilizados para los estados de enfoque.                                                                     |
+| `$enable-gradients`            | `true` o `false` (predeterminado)              | Permite gradientes predefinidos a través de estilos `background-image` en varios componentes.                                                                                                                        |
+| `$enable-transitions`          | `true` (predeterminado) o `false`              | Permite `transition`s predefinidas en varios componentes.                                                                                                                                                            |
+| `$enable-reduced-motion`       | `true` (predeterminado) o `false`              | Habilita la [`prefers-reduced-motion` media query](/bootstrap/comenzando/#reduced-motion), que suprime ciertas animaciones/transiciones basadas en las preferencias del navegador/sistema operativo de los usuarios. |
+| `$enable-grid-classes`         | `true` (predeterminado) o `false`              | Permite la generación de clases CSS para el sistema grid (por ejemplo, `.row`, `.col-md-1`, etc. ).                                                                                                                  |
+| `$enable-container-classes`    | `true` (predeterminado) o `false`              | Habilita la generación de clases CSS para contenedores de layout. (Nuevo en v5.2.0)                                                                                                                                  |
+| `$enable-caret`                | `true` (predeterminado) o `false`              | Habilita el caret de pseudoelemento en `.dropdown-toggle`.                                                                                                                                                           |
+| `$enable-button-pointers`      | `true` (predeterminado) o `false`              | Agrega un cursor de “mano” a los elementos de botón no deshabilitados.                                                                                                                                               |
+| `$enable-rfs`                  | `true` (predeterminado) o `false`              | Habilita globalmente [RFS](/bootstrap/comenzando).                                                                                                                                                                   |
+| `$enable-validation-icons`     | `true` (predeterminado) o `false`              | Habilita íconos `background-image` dentro de entradas de texto y algunos formularios personalizados para estados de validación.                                                                                      |
+| `$enable-negative-margins`     | `true` o `false` (predeterminado)              | Permite la generación de [utilidades de margen negativo](/bootstrap/utilidades/espaciado/#negative-margin).                                                                                                          |
+| `$enable-deprecation-messages` | `true` (predeterminado) o `false`              | Establécelo en `false` para ocultar advertencias al usar cualquiera de los mixins y funciones obsoletos que se planea eliminar en `v6`.                                                                              |
+| `$enable-important-utilities`  | `true` (predeterminado) o `false`              | Habilita el sufijo `!important` en clases de utilidad.                                                                                                                                                               |
+| `$enable-smooth-scroll`        | `true` (predeterminado) o `false`              | Aplica `scroll-behavior: smooth` globalmente, excepto para los usuarios que solicitan movimiento reducido a través de [`prefers-reduced-motion` media query](/bootstrap/comenzando/#reduced-motion)                  |
+
+## Todos los colores de Bootstrap
+
+Bootstrap está respaldado por un extenso sistema de colores que tematiza nuestros estilos y componentes. Esto permite una personalización y extensión más completas para cualquier proyecto.
+
+{{< content-ads/top-banner >}}
+
+### Colores {#colors}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
+
+La paleta de colores de Bootstrap ha seguido expandiéndose y volviéndose más matizada en la versión 5.3.0. Hemos agregado nuevas variables para texto y colores de fondo `secondary` y `tertiary`, además de `{color}-bg-subtle`, `{color}-border-subtle` y `{color}-text-emphasis` para los colores de nuestro tema. Estos nuevos colores están disponibles a través de variables Sass y CSS (pero no nuestros mapas de colores o clases de utilidad) con el objetivo expreso de facilitar la personalización en múltiples modos de colores, como claro y oscuro. Estas nuevas variables se configuran globalmente en `:root` y se adaptan a nuestro nuevo modo de color oscuro, mientras que los colores de nuestro tema original permanecen sin cambios.
+
+Los colores que terminan en `-rgb` proporcionan los valores `red, green, blue` para ser usados en los modos de color `rgb()` y `rgba()`. Por ejemplo, `rgba(var(--bs-secondary-bg-rgb), .5)`.
+
+{{< callout type="warning" emoji="" >}}
+**¡Atención!** Existe cierta confusión potencial con nuestros nuevos colores secundarios y terciarios, y nuestro color de tema secundario existente, así como nuestros colores de tema claro y oscuro. Esperamos que esto se solucione en v6.
+{{< /callout >}}
+
+| Descripción                                                                                                                                                               | Swatch                                                                                                                  | <span class="mx-12 px-12">Variables</span>            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| **Body —** primer plano (color) y fondo predeterminados, incluidos los componentes.                                                                                       | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#dee2e6] dark:bg-[#dee2e6]">&nbsp;</div>     | `--bs-body-color`<br/>`--bs-body-color-rgb`           |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#212529] dark:bg-[#212529]">&nbsp;</div>     | `--bs-body-bg`<br/>`--bs-body-bg-rgb`                 |
+| **Secondary —** utiliza la opción `color` para texto más claro. Utiliza la opción `bg` para divisores y para indicar estados de componentes deshabilitados.               | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#212529bf] dark:bg-[#dee2e6bf]">&nbsp;</div> | `--bs-secondary-color`<br/>`--bs-secondary-color-rgb` |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#e9ecef] dark:bg-[#343a40]">&nbsp;</div>     | `--bs-secondary-bg`<br/>`--bs-secondary-bg-rgb`       |
+| **Tertiary —** utiliza la opción `color` para obtener un texto aún más claro. Utiliza la opción `bg` para dar estilos a fondos para estados hover, acentuados y hundidos. | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#21252980] dark:bg-[#dee2e680]">&nbsp;</div> | `--bs-tertiary-color`<br/>`--bs-tertiary-color-rgb`   |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#f8f9fa] dark:bg-[#2b3035]">&nbsp;</div>     | `--bs-tertiary-bg`<br/>`--bs-tertiary-bg-rgb`         |
+| **Emphasis —** para texto con mayor contraste. No aplicable para fondos.                                                                                                  | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#000] dark:bg-[#fff]">&nbsp;</div>           | `--bs-emphasis-color`<br/>`--bs-emphasis-color-rgb`   |
+| **Border —** para bordes, divisores y reglas de componentes. Utiliza `--bs-border-color-translucent` para mezclar con fondos con un valor `rgba()` .                      | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#dee2e6] dark:bg-[#495057]">&nbsp;</div>     | `--bs-border-color`<br/>`--bs-border-color-rgb`       |
+| **Primary —** color del tema principal, utilizado para hipervínculos, estilos de enfoque y estados activos de componentes y formularios.                                  | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#0d6efd] dark:bg-[#0d6efd]">&nbsp;</div>     | `--bs-primary`<br/>`--bs-primary-rgb`                 |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#cfe2ff] dark:bg-[#031633]">&nbsp;</div>     | `--bs-primary-bg-subtle`                              |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#9ec5fe] dark:border-[#084298]">&nbsp;</div>                                | `--bs-primary-border-subtle`                          |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#052c65] dark:color-[#6ea8fe]">Texto</div>                                        | `--bs-primary-text-emphasis`                          |
+| **Success —** color del tema utilizado para información y acciones positivas o exitosas.                                                                                  | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#198754] dark:bg-[#198754]">&nbsp;</div>     | `--bs-success`<br/>`--bs-success-rgb`                 |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#d1e7dd] dark:bg-[#051b11]">&nbsp;</div>     | `--bs-success-bg-subtle`                              |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#a3cfbb] dark:border-[#0f5132]">&nbsp;</div>                                | `--bs-success-border-subtle`                          |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#0a3622] dark:color-[#75b798]">Texto</div>                                        | `--bs-success-text-emphasis`                          |
+| **Danger —** color del tema utilizado para errores y acciones peligrosas.                                                                                                 | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#dc3545] dark:bg-[#dc3545]">&nbsp;</div>     | `--bs-danger`<br/>`--bs-danger-rgb`                   |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#f8d7da] dark:bg-[#2c0b0e]">&nbsp;</div>     | `--bs-danger-bg-subtle`                               |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#f1aeb5] dark:border-[#842029]">&nbsp;</div>                                | `--bs-danger-border-subtle`                           |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#58151c] dark:color-[#ea868f]">Texto</div>                                        | `--bs-danger-text-emphasis`                           |
+| **Warning —** color del tema utilizado para mensajes de advertencia no destructivos.                                                                                      | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#ffc107] dark:bg-[#ffc107]">&nbsp;</div>     | `--bs-warning`<br/>`--bs-warning-rgb`                 |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#fff3cd] dark:bg-[#332701]">&nbsp;</div>     | `--bs-warning-bg-subtle`                              |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#ffe69c] dark:border-[#997404]">&nbsp;</div>                                | `--bs-warning-border-subtle`                          |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#664d03] dark:color-[#ffda6a]">Texto</div>                                        | `--bs-warning-text-emphasis`                          |
+| **Info —** color del tema utilizado para contenido neutral e informativo.                                                                                                 | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#0dcaf0] dark:bg-[#0dcaf0]">&nbsp;</div>     | `--bs-info`<br/>`--bs-info-rgb`                       |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#cff4fc] dark:bg-[#032830]">&nbsp;</div>     | `--bs-info-bg-subtle`                                 |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#9eeaf9] dark:border-[#087990]">&nbsp;</div>                                | `--bs-info-border-subtle`                             |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#055160] dark:color-[#6edff6]">Texto</div>                                        | `--bs-info-text-emphasis`                             |
+| **Light —** Opción de tema adicional para colores menos contrastantes.                                                                                                    | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#f8f9fa] dark:bg-[#f8f9fa]">&nbsp;</div>     | `--bs-light`<br/>`--bs-light-rgb`                     |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#fcfcfd] dark:bg-[#343a40]">&nbsp;</div>     | `--bs-light-bg-subtle`                                |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#e9ecef] dark:border-[#495057]">&nbsp;</div>                                | `--bs-light-border-subtle`                            |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#495057] dark:color-[#f8f9fa]">Texto</div>                                        | `--bs-light-text-emphasis`                            |
+| **Dark —** opción de tema adicional para colores de mayor contraste.                                                                                                      | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#212529] dark:bg-[#212529]">&nbsp;</div>     | `--bs-dark`<br/>`--bs-dark-rgb`                       |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border border-gray-400 dark:border-gray-600 bg-[#ced4da] dark:bg-[#1a1d20]">&nbsp;</div>     | `--bs-dark-bg-subtle`                                 |
+|                                                                                                                                                                           | <div class="p-3 rounded-md border-4 border-[#adb5bd] dark:border-[#343a40]">&nbsp;</div>                                | `--bs-dark-border-subtle`                             |
+|                                                                                                                                                                           | <div class="p-3 font-extrabold color-[#495057] dark:color-[#dee2e6]">Texto</div>                                        | `--bs-dark-text-emphasis`                             |
+
+#### Usando los nuevos colores {#using-the-new-colors}
+
+Se puede acceder a estos nuevos colores a través de variables CSS y clases de utilidad, como `--bs-primary-bg-subtle` y `.bg-primary-subtle`: te permite componer tus propias reglas CSS con las variables o aplicar estilos rápidamente a través de clases. Las utilidades se crean con las variables CSS asociadas al color y, dado que personalizamos esas variables CSS para el modo oscuro, también se adaptan al modo de color de forma predeterminada.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/customize/color/using-the-new-colors.html" >}}
+```html {filename="HTML"}
+<div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+    Ejemplo de elemento con utilidades
+</div>
+```
+{{< /demo-iframe >}}
+
+#### Colores del tema {#theme-colors}
+
+Usamos un subconjunto de todos los colores para crear una paleta de colores más pequeña para generar esquemas de color, también disponible como variables Sass y un mapa Sass en el archivo `scss/_variables.scss`.
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#0d6efd] text-white">
+Primary
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#6c757d] text-white">
+Secondary
+</div>
+
+{{< content-ads/middle-banner-1 >}}
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#198754] text-white">
+Success
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#dc3545] text-white">
+Danger
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#ffc107] text-black">
+Warning
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#0dcaf0] text-black">
+Info
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#f8f9fa] text-black">
+Light
+</div>
+
+<div class="my-5 p-3 rounded-md font-bold bg-[#212529] text-white">
+Dark
+</div>
+
+Todos estos colores están disponibles como mapa Sass, `$theme-colors`.
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+```
+
+Consulta [nuestra documentación de mapas y bucles de Sass](/bootstrap/personalizar/#maps-and-loops) para saber cómo modificar estos colores.
+
+#### Todos los colores {#all-colors}
+
+Todos los colores de Bootstrap están disponibles como variables Sass y un mapa Sass en el archivo `scss/_variables.scss`. Para evitar un aumento en el tamaño de los archivos, no creamos clases de texto o color de fondo para cada una de estas variables. En su lugar, elegimos un subconjunto de estos colores para una [paleta de tema](#theme-colors).
+
+{{< content-ads/middle-banner-2 >}}
+
+{{< bootstrap/content-suggestion >}}
+
+Asegúrate de controlar las relaciones de contraste mientras personalizas los colores. Como se muestra a continuación, hemos agregado tres relaciones de contraste a cada uno de los colores principales: una para los colores actuales de la muestra, otra para el blanco y otra para el negro.
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#0d6efd] text-white">
+<strong>$blue</strong> #0d6efd
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#cfe2ff] text-black">
+$blue-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#9ec5fe] text-black">
+$blue-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#6ea8fe] text-black">
+$blue-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#3d8bfd] text-black">
+$blue-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0d6efd] text-white">
+$blue-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0a58ca] text-white">
+$blue-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#084298] text-white">
+$blue-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#052c65] text-white">
+$blue-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#031633] text-white">
+$blue-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#6610f2] text-white">
+<strong>indigo</strong> #6610f2
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#e0cffc] text-black">
+$indigo-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#c29ffa] text-black">
+$indigo-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#a370f7] text-black">
+$indigo-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#8540f5] text-black">
+$indigo-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#6610f2] text-white">
+$indigo-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#520dc2] text-white">
+$indigo-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#3d0a91] text-white">
+$indigo-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#290661] text-white">
+$indigo-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#140330] text-white">
+$indigo-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#6f42c1] text-white">
+<strong>purple</strong> #6f42c1
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#e2d9f3] text-black">
+$purple-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#c5b3e6] text-black">
+$purple-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#a98eda] text-black">
+$purple-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#8c68cd] text-black">
+$purple-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#6f42c1] text-white">
+$purple-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#59359a] text-white">
+$purple-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#432874] text-white">
+$purple-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#2c1a4d] text-white">
+$purple-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#160d27] text-white">
+$purple-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#d63384] text-white">
+<strong>pink</strong> #d63384
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#f7d6e6] text-black">
+$pink-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#efadce] text-black">
+$pink-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#e685b5] text-black">
+$pink-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#de5c9d] text-black">
+$pink-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#d63384] text-white">
+$pink-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ab296a] text-white">
+$pink-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#801f4f] text-white">
+$pink-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#561435] text-white">
+$pink-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#2b0a1a] text-white">
+$pink-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#dc3545] text-white">
+<strong>red</strong> #dc3545
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#f8d7da] text-black">
+$red-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#f1aeb5] text-black">
+$red-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ea868f] text-black">
+$red-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#e35d6a] text-black">
+$red-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#dc3545] text-white">
+$red-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#b02a37] text-white">
+$red-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#842029] text-white">
+$red-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#58151c] text-white">
+$red-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#2c0b0e] text-white">
+$red-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#fd7e14] text-black">
+<strong>orange</strong> #fd7e14
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ffe5d0] text-black">
+$orange-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#fecba1] text-black">
+$orange-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#feb272] text-black">
+$orange-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#fd9843] text-black">
+$orange-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#fd7e14] text-white">
+$orange-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ca6510] text-white">
+$orange-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#984c0c] text-white">
+$orange-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#653208] text-white">
+$orange-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#331904] text-white">
+$orange-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#ffc107] text-black">
+<strong>yellow</strong> #ffc107
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#fff3cd] text-black">
+$yellow-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ffe69c] text-black">
+$yellow-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ffda6a] text-black">
+$yellow-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ffda6a] text-black">
+$yellow-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ffc107] text-black">
+$yellow-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#cc9a06] text-black">
+$yellow-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#997404] text-black">
+$yellow-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#664d03] text-white">
+$yellow-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#332701] text-white">
+$yellow-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#198754] text-white">
+<strong>green</strong> #198754
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#d1e7dd] text-black">
+$green-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#a3cfbb] text-black">
+$green-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#75b798] text-black">
+$green-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#479f76] text-black">
+$green-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#198754] text-white">
+$green-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#146c43] text-white">
+$green-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0f5132] text-white">
+$green-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0a3622] text-white">
+$green-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#051b11] text-white">
+$green-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#20c997] text-black">
+<strong>teal</strong> #20c997
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#d2f4ea] text-black">
+$teal-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#a6e9d5] text-black">
+$teal-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#79dfc1] text-black">
+$teal-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#4dd4ac] text-black">
+$teal-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#20c997] text-black">
+$teal-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#1aa179] text-black">
+$teal-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#13795b] text-white">
+$teal-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0d503c] text-white">
+$teal-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#06281e] text-white">
+$teal-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#0dcaf0] text-black">
+<strong>cyan</strong> #0dcaf0
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#cff4fc] text-black">
+$cyan-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#9eeaf9] text-black">
+$cyan-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#6edff6] text-black">
+$cyan-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#3dd5f3] text-black">
+$cyan-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0dcaf0] text-black">
+$cyan-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#0aa2c0] text-black">
+$cyan-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#087990] text-white">
+$cyan-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#055160] text-white">
+$cyan-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#032830] text-white">
+$cyan-900
+</div>
+
+{{< content-ads/middle-banner-3 >}}
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#adb5bd] text-black">
+<strong>gray-500</strong> #adb5bd
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#f8f9fa] text-black">
+$gray-100
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#e9ecef] text-black">
+$gray-200
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#dee2e6] text-black">
+$gray-300
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#ced4da] text-black">
+$gray-400
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#adb5bd] text-black">
+$gray-500
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#6c757d] text-white">
+$gray-600
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#495057] text-white">
+$gray-700
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#343a40] text-white">
+$gray-800
+</div>
+<div class="p-3 my-1 rounded-md font-bold bg-[#212529] text-white">
+$gray-900
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#000] text-white">
+<strong>black</strong> #000
+</div>
+
+<div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#fff] text-black">
+<strong>white</strong> #fff
+</div>
+
+#### Notas sobre Sass {#notes-on-sass}
+
+Sass no puede generar variables mediante programación, por lo que nosotros mismos creamos variables manualmente para cada tinte y tono. Especificamos el valor del punto medio (por ejemplo, `$blue-500`) y utilizamos funciones de color personalizadas para teñir (aclarar) o sombrear (oscurecer) nuestros colores a través de la función de color `mix()` de Sass.
+
+Usar `mix()` no es lo mismo que `lighten()` y `darken()`— el primero combina el color especificado con blanco o negro, mientras que el segundo solo ajusta el valor de luminosidad de cada color. El resultado es un conjunto de colores mucho más completo, como [se muestra en esta demostración de CodePen](https://codepen.io/emdeoh/pen/zYOQOPB).
+
+Nuestras funciones `tint-color()` y `shade-color()` usan `mix()` junto con nuestra variable `$theme-color-interval`, que especifica un valor de porcentaje escalonado para cada color mezclado que producimos. Consulta los archivos `scss/_functions.scss` y `scss/_variables.scss` para obtener el código fuente completo.
+
+### Mapas de Color Sass {#color-sass-maps}
+
+Los archivos fuente Sass de Bootstrap incluyen tres mapas para ayudarte a recorrer rápida y fácilmente una lista de colores y sus valores hexadecimales.
+
+* `$colors` enumera todos nuestros colores base disponibles (`500`)
+* `$theme-colors` enumera todos los colores de tema con nombres semánticos (que se muestran a continuación)
+* `$grays` enumera todos los tintes y tonos de grises
+
+Dentro de `scss/_variables.scss`, encontrarás las variables de color de Bootstrap y el mapa Sass. Aquí hay un ejemplo del mapa `$colors` de Sass:
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-4 >}}
+
+```scss {filename="scss/_variables.scss"}
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+```
+
+Agrega, elimina o modifica valores dentro del mapa para actualizar cómo se usan en muchos otros componentes. Desafortunadamente, en este momento, no _todos_ los componentes utilizan este mapa Sass. Las actualizaciones futuras se esforzarán por mejorar esto. Hasta entonces, planea utilizar las variables `${color}` y este mapa de Sass.
+
+#### Ejemplo {#example}
+
+Así es como puedes usarlos en tu Sass:
+
+```scss {filename="SCSS"}
+.alpha { color: $purple; }
+.beta {
+  color: $yellow-300;
+  background-color: $indigo-900;
+}
+```
+
+[Color](/bootstrap/utilidades/colores) y [background](/bootstrap/utilidades/background) son clases de utilidad que también están disponibles para configurar `color` y `background-color` usando `500` los valores de color.
+
+### Generando utilidades {#generating-utilities}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.1.0</span>
+
+Bootstrap no incluye las utilidades `color` y `background-color` para cada variable de color, pero puedes generarlas tú mismo con nuestra [API de utilidad](/bootstrap/utilidades/api) y nuestros mapas Sass extendidos agregados en v5.1.0.
+
+1.  Para comenzar, asegúrate de haber importado nuestras funciones, variables, mixins y utilidades.
+2.  Utiliza nuestra función `map-merge-multiple()` para fusionar rápidamente varios mapas de Sass en un nuevo mapa.
+3.  Combina este nuevo mapa combinado para ampliar cualquier utilidad con un nombre de clase `{color}-{level}`.
+
+{{< bootstrap/content-suggestion >}}
+
+Aquí tienes un ejemplo que genera utilidades de color de texto (por ejemplo, `.text-purple-500`) siguiendo los pasos anteriores.
+
+```scss {filename="SCSS"}
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $all-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/utilities/api";
+```    
+
+Esto generará nuevas utilidades `.text-{color}-{level}` para cada color y nivel. También puedes hacer lo mismo con cualquier otro servicio público y propiedad.
+
+## Los Modos de color en Bootstrap
+
+Bootstrap ahora admite modos de color o temas a partir de la versión 5.3.0. Explora nuestro modo de color claro predeterminado y el nuevo modo oscuro, o crea el tuyo propio usando nuestros estilos como plantilla.
+
+{{< content-ads/top-banner >}}
+
+<br />
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
+
+{{< callout type="info" emoji="" >}}
+**¡Pruébalo tú mismo!** Descarga el código fuente y la demostración funcional para usar Bootstrap con Stylelint y los modos de color del repositorio [twbs/examples](https://github.com/twbs/examples/tree/main/color-modes). También puedes [abrir el ejemplo en StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/color-modes?file=index).
+{{< /callout >}}
+
+### Modo oscuro {#dark-mode}
+
+**Bootstrap ahora admite modos de color, ¡comenzando con el modo oscuro!** Con v5.3.0 puedes implementar tu propio alternador de modo de color (ver a continuación un ejemplo de la docs de Bootstrap) y aplica los diferentes modos de color como mejor te parezca. Admitimos un modo claro (predeterminado) y ahora un modo oscuro. Los modos de color se pueden alternar globalmente en el elemento `<html>`, o en componentes y elementos específicos, gracias al atributo `data-bs-theme`.
+
+Como alternativa, también puedes cambiar a una implementación de media queries gracias a nuestra combinación de modos de color, consulta [la sección de uso para obtener más detalles](#building-with-sass). Sin embargo, ten cuidado: esto elimina tu capacidad de cambiar temas por componente, como se muestra a continuación.
+
+### Ejemplo {#example}
+
+Por ejemplo, para cambiar el modo de color de un menú desplegable, agrega `data-bs-theme="light"` o `data-bs-theme="dark"` al padre `.dropdown`. Ahora, sin importar el modo de color global, estos menús desplegables se mostrarán con el valor del tema especificado.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/customize/color-modes/example.html" >}}
+```html {filename="HTML"}
+    <div class="dropdown" data-bs-theme="light">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Menú desplegable predeterminado
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight" style="">
+            <li><a class="dropdown-item active" href="#">Acción</a></li>
+            <li><a class="dropdown-item" href="#">Acción</a></li>
+            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+            <li><a class="dropdown-item" href="#">Algo más aquí.</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+        </ul>
+    </div>
+
+    <div class="dropdown" data-bs-theme="dark">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Menú desplegable oscuro
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+            <li><a class="dropdown-item active" href="#">Acción</a></li>
+            <li><a class="dropdown-item" href="#">Acción</a></li>
+            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+            <li><a class="dropdown-item" href="#">Algo más aquí.</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+        </ul>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Cómo funciona {#how-it-works}
+
+* Como se muestra arriba, los estilos de modo de color están controlados por el atributo `data-bs-theme`. Este atributo se puede aplicar al elemento `<html>`, o a cualquier otro elemento o componente Bootstrap. Si se aplica al elemento `<html>`, se aplicará a todo. Si se aplica a un componente o elemento, su ámbito será ese componente o elemento específico.
+    
+* Para cada modo de color que desees admitir, necesitarás agregar nuevas sobrescrituras para las variables CSS globales compartidas. Ya hacemos esto en nuestra hoja de estilo `_root.scss` para el modo oscuro, siendo el modo claro los valores predeterminados. Al escribir estilos específicos del modo de color, utiliza el mixin:
+
+  ```scss {filename="SCSS"}
+  // Color mode variables in _root.scss
+  @include color-mode(dark) {
+    // CSS variable overrides here...
+  }
+  ```
+    
+{{< content-ads/middle-banner-1 >}}
+
+* Utilizamos un `_variables-dark.scss` personalizado para potenciar esas sobrescrituras de variables CSS globales compartidas para el modo oscuro. Este archivo no es necesario para tus propios modos de color personalizados, pero sí para nuestro modo oscuro por dos razones. En primer lugar, es mejor tener un único lugar para restablecer los colores globales. En segundo lugar, algunas variables de Sass tuvieron que ser anuladas para imágenes de fondo incrustadas en nuestro CSS para acordeones, componentes de formulario y más.
+    
+
+### Uso {#usage}
+
+#### Activa el modo oscuro {#enable-dark-mode}
+
+Habilita el modo de color oscuro integrado en todo tu proyecto agregando el atributo `data-bs-theme="dark"` al elemento `<html>`. Esto aplicará el modo de color oscuro a todos los componentes y elementos, excepto aquellos con un atributo `data-bs-theme` específico aplicado. Aprovechando la [plantilla de inicio rápido](/bootstrap/comenzando/#quick-start):
+
+```html {filename="HTML"}
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+```
+
+Bootstrap aún no viene con un selector de modo de color incorporado, pero puedes usar el de nuestra propia documentación si lo deseas. [Obtén más información en la sección JavaScript.](#javascript)
+
+{{< bootstrap/content-suggestion >}}
+
+#### Construyendo con Sass {#building-with-sass}
+
+Nuestra nueva opción de modo oscuro está disponible para todos los usuarios de Bootstrap, pero se controla mediante atributos de datos en lugar de media queries y no alterna automáticamente el modo de color de tu proyecto. Puedes desactivar nuestro modo oscuro por completo a través de Sass cambiando `$enable-dark-mode` a `false`.
+
+Utilizamos un mixin Sass personalizado, `color-mode()`, para ayudarte a controlar _cómo_ se aplican los modos de color. De forma predeterminada, utilizamos un enfoque de atributo `data`, lo que te permite crear experiencias más fáciles de usar donde tus visitantes pueden elegir tener un modo oscuro automático o controlar sus preferencias (como en nuestra propia documentación aquí). Esta también es una forma fácil y escalable de agregar diferentes temas y más modos de color personalizados más allá de claro y oscuro.
+
+En caso de que quieras usar media queries y solo hacer que los modos de color sean automáticos, puedes cambiar el tipo predeterminado del mixin a través de la variable Sass. Considera el siguiente fragmento y su salida CSS compilada.
+
+{{< content-ads/middle-banner-2 >}}
+
+```scss {filename="SCSS"}
+$color-mode-type: data;
+
+@include color-mode(dark) {
+  .element {
+    color: var(--bs-primary-text-emphasis);
+    background-color: var(--bs-primary-bg-subtle);
+  }
+}
+```
+
+Salidas a:
+
+```css {filename="CSS"}
+[data-bs-theme=dark] .element {
+  color: var(--bs-primary-text-emphasis);
+  background-color: var(--bs-primary-bg-subtle);
+}
+```
+
+Y al configurar a `media-query`:
+
+```scss {filename="SCSS"}
+$color-mode-type: media-query;
+
+@include color-mode(dark) {
+  .element {
+    color: var(--bs-primary-text-emphasis);
+    background-color: var(--bs-primary-bg-subtle);
+  }
+}
+```
+
+Salidas a:
+
+```css {filename="CSS"}
+@media (prefers-color-scheme: dark) {
+  .element {
+    color: var(--bs-primary-text-emphasis);
+    background-color: var(--bs-primary-bg-subtle);
+  }
+}
+```
+    
+## Modos de color personalizados {#custom-color-modes}
+
+Si bien el caso de uso principal para los modos de color es el modo claro y oscuro, también son posibles los modos de color personalizados. Crea tu propio selector `data-bs-theme` con un valor personalizado como nombre de tu modo de color, luego modifica nuestras variables Sass y CSS según sea necesario. Optamos por crear una hoja de estilo `_variables-dark.scss` separada para albergar las variables Sass específicas del modo oscuro de Bootstrap, pero eso no es necesario para ti.
+
+Por ejemplo, puedes crear un “tema blue” con el selector `data-bs-theme="blue"`. En tu archivo Sass o CSS personalizado, agrega el nuevo selector y sobrescribe cualquier variable CSS global o componente según sea necesario. Si estás usando Sass, también puedes usar las funciones de Sass dentro de tus sobrescrituras de variables CSS.
+
+[site/assets/scss/_content.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/site/assets/scss/_content.scss)
+
+```scss {filename="site/assets/scss/_content.scss"}
+[data-bs-theme="blue"] {
+  --bs-body-color: var(--bs-white);
+  --bs-body-color-rgb: #{to-rgb($white)};
+  --bs-body-bg: var(--bs-blue);
+  --bs-body-bg-rgb: #{to-rgb($blue)};
+  --bs-tertiary-bg: #{$blue-600};
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+    --bs-dropdown-link-active-bg: #{$blue-700};
+  }
+
+  .btn-secondary {
+    --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
+    --bs-btn-border-color: #{rgba($white, .25)};
+    --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
+    --bs-btn-hover-border-color: #{rgba($white, .25)};
+    --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
+    --bs-btn-active-border-color: #{rgba($white, .5)};
+    --bs-btn-focus-border-color: #{rgba($white, .5)};
+    --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+  }
+}
+```
+
+{{< content-ads/middle-banner-3 >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/customize/color-modes/custom-color-modes.html" >}}
+```html {filename="HTML"}
+    <div data-bs-theme="blue">
+      ...
+    </div>
+```
+{{< /demo-iframe >}}    
+
+### JavaScript {#javascript}
+
+Para permitir a los visitantes o usuarios alternar modos de color, necesitarás crear un elemento de alternancia para controlar el atributo `data-bs-theme` en el elemento raíz, `<html>`. Hemos creado un conmutador en nuestra documentación que inicialmente se remite al modo de color actual del sistema del usuario, pero proporciona una opción para sobrescribirlo y elegir un modo de color específico.
+
+Aquí tienes un vistazo al JavaScript que lo impulsa. No dudes en inspeccionar nuestra propia barra de navegación de documentación para ver cómo se implementa utilizando HTML y CSS desde nuestros propios componentes. Se sugiere incluir JavaScript en la parte superior de su página para reducir el posible parpadeo de la pantalla durante la recarga de tu sitio. Ten en cuenta que si decides utilizar media queries para tus modos de color, es posible que debas modificar o eliminar tu JavaScript si prefiere un control implícito.
+
+```javascript {filename="JavaScript"}
+/*!
+  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com)
+  * Copyright 2011-2023 The Bootstrap Authors
+  * Licensed under the Creative Commons Attribution 3.0 Unported License.
+  */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => localStorage.getItem('theme')
+  const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+```
+
+### Agregar colores al tema {#adding-theme-colors}
+
+Agregar un nuevo color en `$theme-colors` no es suficiente para algunos de nuestros componentes como las [alertas](/bootstrap/componentes/alertas) y [grupo de listas](/bootstrap/componentes/grupo-de-lista). También se deben definir nuevos colores en `$theme-colors-text`, `$theme-colors-bg-subtle` y `$theme-colors-border-subtle` para el tema light (claro); pero también en `$theme-colors-text-dark`, `$theme-colors-bg-subtle-dark` y `$theme-colors-border-subtle-dark` para el tema dark (oscuro).
+
+{{< bootstrap/content-suggestion >}}
+
+Este es un proceso manual porque Sass no puede generar sus propias variables Sass a partir de una variable o mapa existente. En futuras versiones de Bootstrap, revisaremos esta configuración para reducir la duplicación.
+
+```javascript {filename="JavaScript"}
+// Required
+@import "functions";
+@import "variables";
+@import "variables-dark";
+
+// Add a custom color to $theme-colors
+$custom-colors: (
+  "custom-color": #712cf9
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Add a custom color to new theme maps
+
+// Light mode
+$custom-colors-text: ("custom-color": #712cf9);
+$custom-colors-bg-subtle: ("custom-color": #e1d2fe);
+$custom-colors-border-subtle: ("custom-color": #bfa1fc);
+
+$theme-colors-text: map-merge($theme-colors-text, $custom-colors-text);
+$theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $custom-colors-bg-subtle);
+$theme-colors-border-subtle: map-merge($theme-colors-border-subtle, $custom-colors-border-subtle);
+
+// Dark mode
+$custom-colors-text-dark: ("custom-color": #e1d2f2);
+$custom-colors-bg-subtle-dark: ("custom-color": #8951fa);
+$custom-colors-border-subtle-dark: ("custom-color": #e1d2f2);
+
+$theme-colors-text-dark: map-merge($theme-colors-text-dark, $custom-colors-text-dark);
+$theme-colors-bg-subtle-dark: map-merge($theme-colors-bg-subtle-dark, $custom-colors-bg-subtle-dark);
+$theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $custom-colors-border-subtle-dark);
+
+// Remainder of Bootstrap imports
+@import "root";
+@import "reboot";
+// etc
+```
+
+### Personalización del CSS {#css}
+
+#### Variables Sass del componente {#variables}
+
+{{< content-ads/middle-banner-4 >}}
+
+Docenas de variables CSS de nivel raíz se repiten como sobrescrituras para el modo oscuro. Estos tienen como ámbito el selector de modo de color, que por defecto es `data-bs-theme` pero [se puede configurar](#building-with-sass) para usar un `prefers-color-scheme` media query. Utiliza estas variables como guía para generar tus propios modos de color nuevos.
+
+[scss/_root.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_root.scss)
+
+```scss {filename="scss/_root.scss"}
+--#{$prefix}body-color: #{$body-color-dark};
+--#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
+--#{$prefix}body-bg: #{$body-bg-dark};
+--#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+
+--#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
+--#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
+
+--#{$prefix}secondary-color: #{$body-secondary-color-dark};
+--#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color-dark)};
+--#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
+--#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
+
+--#{$prefix}tertiary-color: #{$body-tertiary-color-dark};
+--#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color-dark)};
+--#{$prefix}tertiary-bg: #{$body-tertiary-bg-dark};
+--#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg-dark)};
+
+@each $color, $value in $theme-colors-text-dark {
+  --#{$prefix}#{$color}-text-emphasis: #{$value};
+}
+
+@each $color, $value in $theme-colors-bg-subtle-dark {
+  --#{$prefix}#{$color}-bg-subtle: #{$value};
+}
+
+@each $color, $value in $theme-colors-border-subtle-dark {
+  --#{$prefix}#{$color}-border-subtle: #{$value};
+}
+
+--#{$prefix}heading-color: #{$headings-color-dark};
+
+--#{$prefix}link-color: #{$link-color-dark};
+--#{$prefix}link-hover-color: #{$link-hover-color-dark};
+--#{$prefix}link-color-rgb: #{to-rgb($link-color-dark)};
+--#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color-dark)};
+
+--#{$prefix}code-color: #{$code-color-dark};
+--#{$prefix}highlight-color: #{$mark-color-dark};
+--#{$prefix}highlight-bg: #{$mark-bg-dark};
+
+--#{$prefix}border-color: #{$border-color-dark};
+--#{$prefix}border-color-translucent: #{$border-color-translucent-dark};
+
+--#{$prefix}form-valid-color: #{$form-valid-color-dark};
+--#{$prefix}form-valid-border-color: #{$form-valid-border-color-dark};
+--#{$prefix}form-invalid-color: #{$form-invalid-color-dark};
+--#{$prefix}form-invalid-border-color: #{$form-invalid-border-color-dark};
+```
+
+#### Variables Sass generales relacionadas {#sass-variables}
+
+Las variables CSS para nuestro modo de color oscuro se generan parcialmente a partir de variables Sass específicas del modo oscuro en `_variables-dark.scss`. Esto también incluye algunas sobrescrituras personalizadas para cambiar los colores de los SVG incrustados utilizados en todos nuestros componentes.
+
+[scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
+
+```scss {filename="scss/_variables-dark.scss"}
+$primary-text-emphasis-dark:        tint-color($primary, 40%);
+$secondary-text-emphasis-dark:      tint-color($secondary, 40%);
+$success-text-emphasis-dark:        tint-color($success, 40%);
+$info-text-emphasis-dark:           tint-color($info, 40%);
+$warning-text-emphasis-dark:        tint-color($warning, 40%);
+$danger-text-emphasis-dark:         tint-color($danger, 40%);
+$light-text-emphasis-dark:          $gray-100;
+$dark-text-emphasis-dark:           $gray-300;
+
+$primary-bg-subtle-dark:            shade-color($primary, 80%);
+$secondary-bg-subtle-dark:          shade-color($secondary, 80%);
+$success-bg-subtle-dark:            shade-color($success, 80%);
+$info-bg-subtle-dark:               shade-color($info, 80%);
+$warning-bg-subtle-dark:            shade-color($warning, 80%);
+$danger-bg-subtle-dark:             shade-color($danger, 80%);
+$light-bg-subtle-dark:              $gray-800;
+$dark-bg-subtle-dark:               mix($gray-800, $black);
+
+$primary-border-subtle-dark:        shade-color($primary, 40%);
+$secondary-border-subtle-dark:      shade-color($secondary, 40%);
+$success-border-subtle-dark:        shade-color($success, 40%);
+$info-border-subtle-dark:           shade-color($info, 40%);
+$warning-border-subtle-dark:        shade-color($warning, 40%);
+$danger-border-subtle-dark:         shade-color($danger, 40%);
+$light-border-subtle-dark:          $gray-700;
+$dark-border-subtle-dark:           $gray-800;
+
+$body-color-dark:                   $gray-300;
+$body-bg-dark:                      $gray-900;
+$body-secondary-color-dark:         rgba($body-color-dark, .75);
+$body-secondary-bg-dark:            $gray-800;
+$body-tertiary-color-dark:          rgba($body-color-dark, .5);
+$body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%);
+$body-emphasis-color-dark:          $white;
+$border-color-dark:                 $gray-700;
+$border-color-translucent-dark:     rgba($white, .15);
+$headings-color-dark:               inherit;
+$link-color-dark:                   tint-color($primary, 40%);
+$link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage);
+$code-color-dark:                   tint-color($code-color, 40%);
+$mark-color-dark:                   $body-color-dark;
+$mark-bg-dark:                      $yellow-800;
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-switch-color-dark:            rgba($white, .25);
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>");
+
+$form-valid-color-dark:             $green-300;
+$form-valid-border-color-dark:      $green-300;
+$form-invalid-color-dark:           $red-300;
+$form-invalid-border-color-dark:    $red-300;
+
+//
+// Accordion
+//
+
+$accordion-icon-color-dark:         $primary-text-emphasis-dark;
+$accordion-icon-active-color-dark:  $primary-text-emphasis-dark;
+
+$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+```
+
+{{< bootstrap/content-suggestion >}}    
+
+#### Sass mixins {#sass-mixins}
+
+Los estilos para el modo oscuro y cualquier modo de color personalizado que crees pueden tener un alcance apropiado para el selector de atributos `data-bs-theme` o la media query con el mixin personalizable `color-mode()`. Consulta la [sección de uso de Sass](#building-with-sass) para obtener más detalles.
+
+[scss/mixins/_color-mode.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_color-mode.scss)
+
+```scss {filename="scss/mixins/_color-mode.scss"}
+@mixin color-mode($mode: light, $root: false) {
+  @if $color-mode-type == "media-query" {
+    @if $root == true {
+      @media (prefers-color-scheme: $mode) {
+        :root {
+          @content;
+        }
+      }
+    } @else {
+      @media (prefers-color-scheme: $mode) {
+        @content;
+      }
+    }
+  } @else {
+    [data-bs-theme="#{$mode}"] {
+      @content;
+    }
+  }
+}
+```
+
+## Los Componentes de Bootstrap
+
+Aprende cómo y por qué construimos casi todos nuestros componentes de manera responsive y con clases base y modificadoras.
+
+{{< content-ads/top-banner >}}
+
+### Clases base {#base-classes}
+
+Los componentes de Bootstrap están construidos en gran medida con una nomenclatura de modificador de base. Agrupamos tantas propiedades compartidas como sea posible en una clase base, como `.btn`, y luego agrupamos estilos individuales para cada variante en clases modificadoras, como `.btn-primary` o `.btn-success`.
+
+Para construir nuestras clases modificadoras, usamos los bucles `@each` de Sass para iterar sobre un mapa de Sass. Esto es especialmente útil para generar variantes de un componente mediante nuestro `$theme-colors` y crear variantes responsive para cada punto de interrupción. A medida que personalices estos mapas de Sass y los vuelvas a compilar, verás automáticamente tus cambios reflejados en estos bucles.
+
+Consulta [nuestra documentación de mapas y bucles de Sass](/bootstrap/personalizar/#maps-and-loops) para saber cómo personalizar estos bucles y extender el enfoque de modificador de base de Bootstrap a tu propio código.
+
+### Modificadores {#modifiers}
+
+{{< content-ads/middle-banner-1 >}}
+
+Muchos de los componentes de Bootstrap están construidos con un enfoque de clase modificadora de base. Esto significa que la mayor parte del estilo está contenido en una clase base (por ejemplo, `.btn`), mientras que las variaciones de estilo se limitan a clases modificadoras (por ejemplo, `.btn-danger`). Estas clases modificadoras se crean a partir del mapa `$theme-colors` para personalizar el número y el nombre de nuestras clases modificadoras.
+
+Aquí hay dos ejemplos de cómo recorremos el mapa `$theme-colors` para generar modificadores para los componentes `.alert` y `.list-group`.
+
+[scss/_alert.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_alert.scss)
+
+```scss {filename="scss/_alert.scss"}
+// Generate contextual modifier classes for colorizing the alert
+@each $state in map-keys($theme-colors) {
+  .alert-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
+  }
+}
+```
+
+[scss/_list-group.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_list-group.scss)
+
+{{< content-ads/middle-banner-2 >}}
+
+```scss {filename="scss/_list-group.scss"}
+// List group contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@each $state in map-keys($theme-colors) {
+  .list-group-item-#{$state} {
+    --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-active-color: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+  }
+}
+```
+
+{{< bootstrap/content-suggestion >}}
+
+### Responsive {#responsive}
+
+Estos bucles de Sass tampoco se limitan a mapas de colores. También puedes generar variaciones responsive de tus componentes. Tomemos, por ejemplo, nuestra alineación responsive de los menús desplegables donde mezclamos un bucle `@each` para el mapa Sass `$grid-breakpoints` con una media query include.
+
+[scss/_dropdown.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_dropdown.scss)
+
+{{< content-ads/middle-banner-3 >}}
+
+```scss {filename="scss/_dropdown.scss"}
+// We deliberately hardcode the `bs-` prefix because we check
+// this custom property in JS to determine Popper's positioning
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-start {
+      --bs-position: start;
+
+      &[data-bs-popper] {
+        right: auto;
+        left: 0;
+      }
+    }
+
+    .dropdown-menu#{$infix}-end {
+      --bs-position: end;
+
+      &[data-bs-popper] {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
+```
+
+Si modificas tus `$grid-breakpoints`, tus cambios se aplicarán a todos los bucles que se iteren sobre ese mapa.
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+```
+
+Para obtener más información y ejemplos sobre cómo modificar nuestros mapas y variables de Sass, consulta [la sección CSS de la documentación de Grid](/bootstrap/grilla/#css).
+
+{{< content-ads/middle-banner-4 >}}
+
+### Crear el tuyo propio {#creating-your-own}
+
+Te animamos a que adoptes estas pautas cuando construyas con Bootstrap para crear tus propios componentes. Nosotros mismos hemos ampliado este enfoque a los componentes personalizados en nuestra documentación y ejemplos. Los componentes como nuestros callouts se construyen igual que los componentes proporcionados, con clases base y modificadoras.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/customize/components/creating-your-own-1.html" >}}
+```html {filename="HTML"}
+    <div class="bd-callout">
+        <strong>Esto es un aviso.</strong> Lo creamos personalizado para nuestros documentación para que nuestros
+        mensajes se destaquen. Tiene tres variantes mediante clases de modificadores.
+    </div>
+```
+{{< /demo-iframe >}}
+
+En tu CSS, tendrías algo como lo siguiente donde la mayor parte del estilo se realiza a través de `.callout`. Luego, los estilos únicos entre cada variante se controlan mediante una clase modificadora.
+
+```css {filename="CSS"}
+// Base class
+.callout {}
+
+// Modifier classes
+.callout-info {}
+.callout-warning {}
+.callout-danger {}
+```
+
+{{< content-ads/middle-banner-5 >}}
+
+Para las leyendas, ese estilo único es solo un `border-left-color`. Cuando combinas esa clase base con una de esas clases modificadoras, obtienes tu familia completa de componentes:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/customize/components/creating-your-own-2.html" >}}
+```html {filename="HTML"}
+    <div class="bd-callout bd-callout-info">
+        <strong>Esta es una leyenda informativa.</strong> Texto de ejemplo para mostrarlo en acción.
+    </div>
+    <div class="bd-callout bd-callout-warning">
+        <strong>Esta es una leyenda de advertencia.</strong> Texto de ejemplo para mostrarlo en acción.
+    </div>
+    <div class="bd-callout bd-callout-danger">
+        <strong>Esta es una advertencia de peligro.</strong> Texto de ejemplo para mostrarlo en acción.
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Las Variables CSS de Bootstrap
+
+Usa las propiedades personalizadas de CSS de Bootstrap para un diseño y desarrollo rápidos y con visión de futuro.
+
+{{< content-ads/top-banner >}}
+
+Bootstrap incluye muchas [propiedades personalizadas de CSS (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) en su CSS compilado para personalización en tiempo real sin necesidad de recompilar Sass. Estos proporcionan un fácil acceso a los valores de uso común, como los colores de nuestro tema, los puntos de interrupción y las pilas de fuentes principales cuando se trabaja en el inspector de tu navegador, una zona de pruebas de código o la creación de prototipos en general.
+
+**Todas nuestras propiedades personalizadas tienen el prefijo `bs-`** para evitar conflictos con CSS de terceros.
+
+### Variables root {#root-variables}
+
+Aquí están las variables que incluimos (ten en cuenta que `:root` es obligatorio) a las que se puede acceder desde cualquier lugar donde esté cargado el CSS de Bootstrap. Están ubicados en nuestro archivo `_root.scss` y se incluyen en nuestros archivos dist compilados.
+
+#### Predeterminado {#default}
+
+Estas variables CSS están disponibles en todas partes, independientemente del modo de color.
+
+{{< content-ads/middle-banner-1 >}}
+
+```scss {filename="SCSS"}
+:root,
+[data-bs-theme=light] {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-danger-rgb: 220, 53, 69;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-primary-text-emphasis: #052c65;
+  --bs-secondary-text-emphasis: #2b2f32;
+  --bs-success-text-emphasis: #0a3622;
+  --bs-info-text-emphasis: #055160;
+  --bs-warning-text-emphasis: #664d03;
+  --bs-danger-text-emphasis: #58151c;
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+  --bs-primary-bg-subtle: #cfe2ff;
+  --bs-secondary-bg-subtle: #e2e3e5;
+  --bs-success-bg-subtle: #d1e7dd;
+  --bs-info-bg-subtle: #cff4fc;
+  --bs-warning-bg-subtle: #fff3cd;
+  --bs-danger-bg-subtle: #f8d7da;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+  --bs-primary-border-subtle: #9ec5fe;
+  --bs-secondary-border-subtle: #c4c8cb;
+  --bs-success-border-subtle: #a3cfbb;
+  --bs-info-border-subtle: #9eeaf9;
+  --bs-warning-border-subtle: #ffe69c;
+  --bs-danger-border-subtle: #f1aeb5;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #212529;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: #000;
+  --bs-emphasis-color-rgb: 0, 0, 0;
+  --bs-secondary-color: rgba(33, 37, 41, 0.75);
+  --bs-secondary-color-rgb: 33, 37, 41;
+  --bs-secondary-bg: #e9ecef;
+  --bs-secondary-bg-rgb: 233, 236, 239;
+  --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+  --bs-tertiary-color-rgb: 33, 37, 41;
+  --bs-tertiary-bg: #f8f9fa;
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+  --bs-heading-color: inherit;
+  --bs-link-color: #0d6efd;
+  --bs-link-color-rgb: 13, 110, 253;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #0a58ca;
+  --bs-link-hover-color-rgb: 10, 88, 202;
+  --bs-code-color: #d63384;
+  --bs-highlight-color: #212529;
+  --bs-highlight-bg: #fff3cd;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-xxl: 2rem;
+  --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+  --bs-border-radius-pill: 50rem;
+  --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+  --bs-form-valid-color: #198754;
+  --bs-form-valid-border-color: #198754;
+  --bs-form-invalid-color: #dc3545;
+  --bs-form-invalid-border-color: #dc3545;
+}
+```
+
+#### Modo oscuro {#dark-mode}
+
+Estas variables tienen como alcance nuestro modo oscuro incorporado.
+
+```scss {filename="SCSS"}
+[data-bs-theme=dark] {
+  color-scheme: dark;
+  --bs-body-color: #dee2e6;
+  --bs-body-color-rgb: 222, 226, 230;
+  --bs-body-bg: #212529;
+  --bs-body-bg-rgb: 33, 37, 41;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: rgba(222, 226, 230, 0.75);
+  --bs-secondary-color-rgb: 222, 226, 230;
+  --bs-secondary-bg: #343a40;
+  --bs-secondary-bg-rgb: 52, 58, 64;
+  --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+  --bs-tertiary-color-rgb: 222, 226, 230;
+  --bs-tertiary-bg: #2b3035;
+  --bs-tertiary-bg-rgb: 43, 48, 53;
+  --bs-primary-text-emphasis: #6ea8fe;
+  --bs-secondary-text-emphasis: #a7acb1;
+  --bs-success-text-emphasis: #75b798;
+  --bs-info-text-emphasis: #6edff6;
+  --bs-warning-text-emphasis: #ffda6a;
+  --bs-danger-text-emphasis: #ea868f;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #dee2e6;
+  --bs-primary-bg-subtle: #031633;
+  --bs-secondary-bg-subtle: #161719;
+  --bs-success-bg-subtle: #051b11;
+  --bs-info-bg-subtle: #032830;
+  --bs-warning-bg-subtle: #332701;
+  --bs-danger-bg-subtle: #2c0b0e;
+  --bs-light-bg-subtle: #343a40;
+  --bs-dark-bg-subtle: #1a1d20;
+  --bs-primary-border-subtle: #084298;
+  --bs-secondary-border-subtle: #41464b;
+  --bs-success-border-subtle: #0f5132;
+  --bs-info-border-subtle: #087990;
+  --bs-warning-border-subtle: #997404;
+  --bs-danger-border-subtle: #842029;
+  --bs-light-border-subtle: #495057;
+  --bs-dark-border-subtle: #343a40;
+  --bs-heading-color: inherit;
+  --bs-link-color: #6ea8fe;
+  --bs-link-hover-color: #8bb9fe;
+  --bs-link-color-rgb: 110, 168, 254;
+  --bs-link-hover-color-rgb: 139, 185, 254;
+  --bs-code-color: #e685b5;
+  --bs-highlight-color: #dee2e6;
+  --bs-highlight-bg: #664d03;
+  --bs-border-color: #495057;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+  --bs-form-valid-color: #75b798;
+  --bs-form-valid-border-color: #75b798;
+  --bs-form-invalid-color: #ea868f;
+  --bs-form-invalid-border-color: #ea868f;
+}
+```
+
+### Variables de componentes {#component-variables}
+
+Bootstrap 5 utiliza cada vez más propiedades personalizadas como variables locales para varios componentes. De esta manera reducimos nuestro CSS compilado, garantizamos que los estilos no se hereden en lugares como tablas anidadas y permitimos algunos cambios básicos de estilo y extensión de los componentes Bootstrap después de la compilación de Sass.
+
+{{< content-ads/middle-banner-2 >}}
+
+Echa un vistazo a nuestra documentación de tablas para ver la [visión de cómo utilizamos las variables CSS](/bootstrap/tablas/#how-do-the-variants-and-accented-tables-work). Nuestras [barras de navegación también utilizan variables CSS](/bootstrap/componentes/navbar/#css) a partir de v5.2.0. También estamos usando variables CSS en nuestras cuadrículas, principalmente para los gutters, la [nueva cuadrícula CSS opcional](/bootstrap/grilla-css), con un mayor uso de componentes en camino.
+
+{{< bootstrap/content-suggestion >}}
+
+Siempre que sea posible, asignaremos variables CSS en el nivel del componente base (por ejemplo, `.navbar` para la barra de navegación y sus subcomponentes). Esto reduce las conjeturas sobre dónde y cómo personalizar, y permite que nuestro equipo realice modificaciones sencillas en futuras actualizaciones.
+
+### Prefijo {#prefix}
+
+La mayoría de las variables CSS usan un prefijo para evitar colisiones con tu propio código base. Este prefijo se suma al `--` que se requiere en cada variable CSS.
+
+Personaliza el prefijo mediante la variable Sass `$prefix`. De forma predeterminada, está configurado en `bs-` (ten en cuenta el guión final).
+
+{{< content-ads/middle-banner-3 >}}
+
+### Ejemplos {#examples}
+
+Las variables CSS ofrecen una flexibilidad similar a las variables de Sass, pero sin la necesidad de compilarlas antes de enviarlas al navegador. Por ejemplo, aquí estamos restableciendo la fuente de nuestra página y los estilos de enlace con variables CSS.
+
+```css {filename="CSS"}
+body {
+  font: 1rem/1.5 var(--bs-font-sans-serif);
+}
+a {
+  color: var(--bs-blue);
+}
+```
+
+### Variables de enfoque {#focus-variables}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
+
+Bootstrap proporciona estilos `:focus` personalizados usando una combinación de variables Sass y CSS que se pueden agregar opcionalmente a componentes y elementos específicos. Todavía no sobrescribimos globalmente todos los estilos `:focus`.
+
+En nuestro Sass, configuramos valores predeterminados que se pueden personalizar antes de compilar.
+
+{{< content-ads/middle-banner-4 >}}
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss {filename="scss/_variables.scss"}
+$focus-ring-width:      .25rem;
+$focus-ring-opacity:    .25;
+$focus-ring-color:      rgba($primary, $focus-ring-opacity);
+$focus-ring-blur:       0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+```
+
+Esas variables luego se reasignan a variables CSS de nivel `:root` que se pueden personalizar en tiempo real, incluidas opciones para `x` e `y` offsets (que por defecto tienen su valor alternativo de `0`).
+
+[scss/_root.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_root.scss)
+
+```scss {filename="scss/_root.scss"}
+--#{$prefix}focus-ring-width: #{$focus-ring-width};
+--#{$prefix}focus-ring-opacity: #{$focus-ring-opacity};
+--#{$prefix}focus-ring-color: #{$focus-ring-color};
+```
+
+### Puntos de interrupción de la cuadrícula {#grid-breakpoints}
+
+Aunque incluimos nuestros puntos de interrupción de cuadrícula como variables CSS (excepto `xs`), ten en cuenta que las **variables CSS no funcionan en media queries**. Esto está diseñado en la especificación CSS para variables, pero puede cambiar en los próximos años con soporte para variables `env()`. Consulta [esta respuesta de Stack Overflow](https://stackoverflow.com/a/47212942) para obtener algunos enlaces útiles. Mientras tanto, puedes utilizar estas variables en otras situaciones de CSS, así como en tu JavaScript.
+
+## Formas de Optimizar la utilización de Bootstrap
+
+Mantén tus proyectos ágiles, responsive y mantenibles para que puedas ofrecer la mejor experiencia y concentrarte en trabajos más importantes.
+
+{{< content-ads/top-banner >}}
+
+### Importaciones Sass optimizadas {#lean-sass-imports}
+
+Cuando utilices Sass en tu canalización de assets, asegúrate de optimizar Bootstrap `@import`ando solo los componentes que necesitas. Es probable que tus mayores optimizaciones provengan de la sección `Layout & Components` de nuestro `bootstrap.scss`.
+
+[scss/bootstrap.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/bootstrap.scss)
+
+```scss {filename="scss/bootstrap.scss"}
+// Configuration
+@import "functions";
+@import "variables";
+@import "variables-dark";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "placeholders";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+```
+
+Si no estás usando un componente, coméntalo o elimínalo por completo. Por ejemplo, si no estás usando el carrusel, elimina esa importación para ahorrar algo de tamaño de archivo en tu CSS compilado. Ten en cuenta que existen algunas dependencias entre las importaciones de Sass que pueden dificultar la omisión de un archivo.
+
+### JavaScript optimizado {#lean-javascript}
+
+{{< content-ads/middle-banner-1 >}}
+
+El JavaScript de Bootstrap incluye todos los componentes de nuestros archivos dist primarios (`bootstrap.js` y `bootstrap.min.js`), e incluso nuestra dependencia principal (Popper) con nuestros archivos de paquete (`bootstrap.bundle.js` y `bootstrap.bundle.min.js`). Mientras personalizas a través de Sass, asegúrate de eliminar el JavaScript relacionado.
+
+Por ejemplo, suponiendo que estás usando tu propio paquete de JavaScript como Webpack, Parcel o Vite, solo importarás el JavaScript que planeas usar. En el siguiente ejemplo, mostramos cómo incluir simplemente nuestro JavaScript modal:
+
+```javascript {filename="JavaScript"}
+// Import just what we need
+
+// import 'bootstrap/js/dist/alert';
+// import 'bootstrap/js/dist/button';
+// import 'bootstrap/js/dist/carousel';
+// import 'bootstrap/js/dist/collapse';
+// import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/modal';
+// import 'bootstrap/js/dist/offcanvas';
+// import 'bootstrap/js/dist/popover';
+// import 'bootstrap/js/dist/scrollspy';
+// import 'bootstrap/js/dist/tab';
+// import 'bootstrap/js/dist/toast';
+// import 'bootstrap/js/dist/tooltip';
+```
+
+De esta manera, no incluirás ningún JavaScript que no pretendas utilizar para componentes como botones, carruseles e tooltips. Si estás importando menús desplegables, tooltips o ventanas emergentes, asegúrate de incluir la dependencia de Popper en tu archivo `package.json`.
+
+{{< callout type="info" emoji="" >}}
+**¡Atención!** Los archivos en `bootstrap/js/dist` usan la **exportación predeterminada**. Para usarlos, haz lo siguiente:
+
+```javascript
+import Modal from 'bootstrap/js/dist/modal'
+const modal = new Modal(document.getElementById('myModal'))
+```
+{{< /callout >}}
+
+### Autoprefixer .browserslistrc {#autoprefixer-browserslistrc}
+
+{{< content-ads/middle-banner-2 >}}
+
+Bootstrap depende de Autoprefixer para agregar automáticamente prefijos del navegador a ciertas propiedades CSS. Los prefijos los dicta nuestro archivo `.browserslistrc`, que se encuentra en la raíz del repositorio de Bootstrap. Al personalizar esta lista de navegadores y volver a compilar Sass, se eliminará automáticamente parte del CSS del CSS compilado, si hay prefijos de proveedor exclusivos para ese navegador o versión.
+
+### CSS no utilizado {#unused-css}
+
+_Se necesita ayuda con esta sección, considera abrir un PR. ¡Gracias!_
+
+Si bien no tenemos un ejemplo prediseñado para usar [PurgeCSS](https://github.com/FullHuman/purgecss) con Bootstrap, hay algunos artículos y tutoriales útiles que la comunidad ha escrito. Aquí tienes algunas opciones:
+
+* [https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772](https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772)
+* [https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks/](https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks)
+
+Por último, este [artículo de CSS Tricks sobre CSS no utilizado](https://css-tricks.com/how-do-you-remove-unused-css-from-a-site) muestra cómo utilizar PurgeCSS y otras herramientas similares.
+
+{{< content-ads/middle-banner-3 >}}
+
+### Minify y gzip {#minify-and-gzip}
+
+Siempre que sea posible, asegúrate de comprimir todo el código que entregas a tus visitantes. Si estás utilizando archivos dist Bootstrap, intenta utilizar las versiones minimizadas (indicadas por las extensiones `.min.css` y `.min.js`). Si estás compilando Bootstrap desde el código fuente con tu propio sistema de compilación, asegúrate de implementar tus propios minificadores para HTML, CSS y JS.
+
+{{< bootstrap/content-suggestion >}}
+
+### Archivos sin bloqueo {#non-blocking-files}
+
+Si bien minimizar y usar compresión puede parecer suficiente, hacer que tus archivos no bloqueen también es un gran paso para que tu sitio esté bien optimizado y sea lo suficientemente rápido.
+
+Si estás utilizando un complemento [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) en Google Chrome, es posible que hayas tropezado con FCP. La métrica [First Contentful Paint](https://web.dev/fcp) mide el tiempo desde que la página comienza a cargarse hasta que cualquier parte del contenido de la página se muestra en la pantalla.
+
+{{< content-ads/middle-banner-4 >}}
+
+Puedes mejorar FCP posponiendo JavaScript o CSS no críticos. ¿Qué significa eso? Simplemente, JavaScript u hojas de estilo que no necesitan estar presentes en la primera pintura de tu página deben marcarse con los atributos `async` o `defer`.
+
+Esto asegura que los recursos menos importantes se carguen más tarde y no bloqueen la primera pintura. Por otro lado, los recursos críticos se pueden incluir como scripts o estilos en línea.
+
+Si quieres aprender más sobre esto, ya hay muchos artículos excelentes al respecto:
+
+* [https://web.dev/render-blocking-resources/](https://web.dev/render-blocking-resources)
+* [https://web.dev/defer-non-critical-css/](https://web.dev/defer-non-critical-css)
+
+### Usa siempre HTTPS {#always-use-https}
+
+Tu sitio web solo debe estar disponible a través de conexiones HTTPS en producción. HTTPS mejora la seguridad, la privacidad y la disponibilidad de todos los sitios, y [no existe el tráfico web no confidencial](https://https.cio.gov/everything). Los pasos para configurar tu sitio web para que funcione exclusivamente a través de HTTPS varían ampliamente dependiendo de su arquitectura y proveedor de alojamiento web y, por lo tanto, están fuera del alcance de esta documentación.
+
+Los sitios servidos a través de HTTPS también deben acceder a todas las hojas de estilo, scripts y otros activos a través de conexiones HTTPS. De lo contrario, enviarás a los usuarios [contenido activo mixto](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content), lo que generará vulnerabilidades potenciales en las que un sitio puede verse comprometido al alterar una dependencia. Esto puede provocar problemas de seguridad y mostrar advertencias en el navegador a los usuarios. Ya sea que obtengas Bootstrap desde una CDN o lo proporciones tú mismo, asegúrate de acceder solo a través de conexiones HTTPS.
