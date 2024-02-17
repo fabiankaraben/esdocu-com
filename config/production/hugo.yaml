@@ -24,17 +24,17 @@ params:
   # AdCash Ads.
   loadAdCashGlobalScript: true # head
   showAdCashAutotag: true # head
-  showAdCashTopBanner: true # content (body) :: -
-  showAdCashMiddleBanner1: true # content (body) :: -
-  showAdCashMiddleBanner2: true # content (body) :: -
-  showAdCashMiddleBanner3: true # content (body) :: -
-  showAdCashMiddleBanner4: true # content (body) :: -
-  showAdCashMiddleBanner5: true # content (body) :: -
-  showAdCashMiddleBanner6: true # content (body) :: -
-  showAdCashMiddleBanner7: true # content (body) :: -
-  showAdCashMiddleBanner8: true # content (body) :: -
-  showAdCashMiddleBanner9: true # content (body) :: -
-  showAdCashBottomBanner: true # content (body) :: -
+  showAdCashTopBanner: false # content (body) :: -
+  showAdCashMiddleBanner1: false # content (body) :: -
+  showAdCashMiddleBanner2: false # content (body) :: -
+  showAdCashMiddleBanner3: false # content (body) :: -
+  showAdCashMiddleBanner4: false # content (body) :: -
+  showAdCashMiddleBanner5: false # content (body) :: -
+  showAdCashMiddleBanner6: false # content (body) :: -
+  showAdCashMiddleBanner7: false # content (body) :: -
+  showAdCashMiddleBanner8: false # content (body) :: -
+  showAdCashMiddleBanner9: false # content (body) :: -
+  showAdCashBottomBanner: false # content (body) :: -
 
   # Custom banners.
   showCustomTopBanner: false # Donate
