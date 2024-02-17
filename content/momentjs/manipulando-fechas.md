@@ -19,7 +19,7 @@ moment().add(7, 'days').subtract(1, 'months').year(2009).hours(0).minutes(0).sec
 
 **Nota:** Cabe señalar que los moments son mutables. Llamar a cualquiera de los métodos de manipulación cambiará el moment original.
 
-Si deseas crear una copia y manipularla, debes usar `moment#clone` antes de manipular el moment. [Más información sobre la clonación.](/momentjs/parsing#moment-clone)
+Si deseas crear una copia y manipularla, debes usar `moment#clone` antes de manipular el moment. [Más información sobre la clonación.](/momentjs/analisis#moment-clone)
 
 ## El método `add` {#add}
 
@@ -106,7 +106,7 @@ m.hours(); // 5
 m.add(24, 'hours').hours(); // 6 (pero es posible que primero tengas que configurar la zona horaria)
 ```
 
-Alternativamente, puedes usar [duraciones](/momentjs/durations) para agregar a moments.
+Alternativamente, puedes usar [duraciones](/momentjs/duraciones) para agregar a moments.
 
 ```javascript {filename="JavaScript"}
 var duration = moment.duration({'days' : 1});

@@ -68,7 +68,7 @@ var day = moment("1995-12-25");
 **Note:** This has been the source of a lot of confusion, because moments created via `Date` constructor don't support `isValid` and also work unreliably. So it would be soon deprecated. From version 2.6.0 there is a way to prevent Date constructor usage - just set `moment.createFromInputFallback` to an empty function.
 -->
 
-Para obtener resultados consistentes al analizar cualquier cosa que no sean cadenas ISO 8601, debes usar [Cadena + Formato](/momentjs/parsing#string-format).
+Para obtener resultados consistentes al analizar cualquier cosa que no sean cadenas ISO 8601, debes usar [Cadena + Formato](/momentjs/analisis#string-format).
 
 ### Cadenas ISO 8601 compatibles
 
@@ -389,7 +389,7 @@ moment(String, String[], String, Boolean);
 
 Si no conoces el formato exacto de una cadena de entrada, pero sabes que podría ser una entre muchas, puedes utilizar una variedad de formatos.
 
-Esto es lo mismo que [Cadena + Formato](/momentjs/parsing#string-format), solo que intentará hacer coincidir la entrada con múltiples formatos.
+Esto es lo mismo que [Cadena + Formato](/momentjs/analisis#string-format), solo que intentará hacer coincidir la entrada con múltiples formatos.
 
 ```javascript {filename="JavaScript"}
 moment("12-25-1995", ["MM-DD-YYYY", "YYYY-MM-DD"]);
@@ -397,7 +397,7 @@ moment("12-25-1995", ["MM-DD-YYYY", "YYYY-MM-DD"]);
 
 A partir de la versión **2.3.0**, Moment utiliza algunas heurísticas simples para determinar qué formato usar. En orden:
 
-  * Prefiere los formatos que den como resultado fechas [válidas](/momentjs/parsing#is-valid) a las no válidas.
+  * Prefiere los formatos que den como resultado fechas [válidas](/momentjs/analisis#is-valid) a las no válidas.
   * Prefiere formatos que analicen más cadena que menos y usen más formato que menos, es decir, prefiere un análisis más estricto.
   * Prefiere formatos anteriores en el array que posteriores.
 
@@ -659,7 +659,7 @@ b.valueOf(); // 1360002924000
 
 Cualquier moment creado con `moment.utc()` estará en modo UTC, y cualquier moment creado con `moment()` no.
 
-Para cambiar de UTC a la hora local, puede utilizar [moment#utc](/momentjs/manipulating#utc) o [moment#local](/momentjs/manipulating#local).
+Para cambiar de UTC a la hora local, puede utilizar [moment#utc](/momentjs/manipulando-fechas#utc) o [moment#local](/momentjs/manipulando-fechas#local).
 
 ```javascript {filename="JavaScript"}
 var a = moment.utc([2011, 0, 1, 8]);

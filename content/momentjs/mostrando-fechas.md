@@ -185,7 +185,7 @@ moment([2007, 0, 29]).fromNow(true); // 4 years
 
 {{< content-ads/middle-banner-3 >}}
 
-Las cadenas base están [personalizadas según la configuración regional actual](/momentjs/customization#relative-time). El tiempo se redondea al segundo más cercano.
+Las cadenas base están [personalizadas según la configuración regional actual](/momentjs/personalizacion#relative-time). El tiempo se redondea al segundo más cercano.
 
 El desglose de qué cadena se muestra para cada período de tiempo se describe en la siguiente tabla.
 
@@ -256,9 +256,9 @@ moment().toNow(Boolean);
 
 Una forma común de mostrar el tiempo es manejada por `moment#toNow`. A esto a veces se le llama tiempo atrás o tiempo relativo.
 
-Esto es similar a [`moment.fromNow`](/momentjs/displaying#fromnow), pero proporciona el intervalo opuesto: `a.fromNow() = - a.toNow()`.
+Esto es similar a [`moment.fromNow`](/momentjs/mostrando-fechas#fromnow), pero proporciona el intervalo opuesto: `a.fromNow() = - a.toNow()`.
 
-Esto es similar a [`moment.to`](/momentjs/displaying#to), pero está en mayúsculas y minúsculas especiales para el moment actual. Utiliza `moment.to`, si deseas controlar los dos puntos finales del intervalo.
+Esto es similar a [`moment.to`](/momentjs/mostrando-fechas#to), pero está en mayúsculas y minúsculas especiales para el moment actual. Utiliza `moment.to`, si deseas controlar los dos puntos finales del intervalo.
 
 ```javascript {filename="JavaScript"}
 moment([2007, 0, 29]).toNow(); // in 4 years
@@ -271,7 +271,7 @@ moment([2007, 0, 29]).toNow();     // in 4 years
 moment([2007, 0, 29]).toNow(true); // 4 years
 ```
 
-Las cadenas base están [personalizadas según la configuración regional actual](/momentjs/customization#relative-time).
+Las cadenas base están [personalizadas según la configuración regional actual](/momentjs/personalizacion#relative-time).
 
 El desglose de qué cadena se muestra para cada período de tiempo se describe en la siguiente tabla.
 

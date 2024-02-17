@@ -1,0 +1,681 @@
+---
+noindex: true
+draft: true
+---
+
+## Weekday Abbreviations
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    weekdaysShort : String[]
+});
+moment.updateLocale('en', {
+    weekdaysShort : Function
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    weekdaysShort : String[]
+});
+moment.locale('en', {
+    weekdaysShort : Function
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    weekdaysShort : String[]
+});
+moment.lang('en', {
+    weekdaysShort : Function
+});
+```
+
+`Locale#weekdaysShort` should be an array of the weekdays abbreviations.
+
+```javascript
+moment.updateLocale('en', {
+    weekdaysShort : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+});
+```
+
+`Locale#weekdaysShort` can be a callback function as well.
+
+```javascript
+moment.updateLocale('en', {
+    weekdaysShort : function (momentToFormat, format) {
+        return weekdaysShort[momentToFormat.day()];
+    }
+});
+```
+
+## Minimal Weekday Abbreviations
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    weekdaysMin : String[]
+});
+moment.updateLocale('en', {
+    weekdaysMin : Function
+});
+
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    weekdaysMin : String[]
+});
+moment.locale('en', {
+    weekdaysMin : Function
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    weekdaysMin : String[]
+});
+moment.lang('en', {
+    weekdaysMin : Function
+});
+```
+
+`Locale#weekdaysMin` should be an array of two letter weekday abbreviations. The purpose of these is for things like calendar pickers, thus they should be as small as possible.
+
+```javascript
+moment.updateLocale('en', {
+    weekdaysMin : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+});
+```
+
+`Locale#weekdaysMin` can be a callback function as well.
+
+```javascript
+moment.updateLocale('en', {
+    weekdaysMin : function (momentToFormat, format) {
+        return weekdaysMin[momentToFormat.day()];
+    }
+});
+```
+
+## Long Date Formats
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    weekdaysMin : String[]
+});
+moment.updateLocale('en', {
+    weekdaysMin : Function
+});
+
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    longDateFormat : Object
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    longDateFormat : Object
+});
+```
+
+`Locale#longDateFormat` should be an object containing a key/value pair for each long date format `L LL LLL LLLL LT LTS`. `LT` should be the time format, and is also used for `moment#calendar`.
+
+```javascript
+moment.updateLocale('en', {
+    longDateFormat : {
+        LT: "h:mm A",
+        LTS: "h:mm:ss A",
+        L: "MM/DD/YYYY",
+        l: "M/D/YYYY",
+        LL: "MMMM Do YYYY",
+        ll: "MMM D YYYY",
+        LLL: "MMMM Do YYYY LT",
+        lll: "MMM D YYYY LT",
+        LLLL: "dddd, MMMM Do YYYY LT",
+        llll: "ddd, MMM D YYYY LT"
+    }
+});
+```
+
+You can eliminate the lowercase `l` tokens and they will be created automatically by replacing long tokens with the short token variants.
+
+```javascript
+moment.updateLocale('en', {
+    longDateFormat : {
+        LT: "h:mm A",
+        LTS: "h:mm:ss A",
+        L: "MM/DD/YYYY",
+        LL: "MMMM Do YYYY",
+        LLL: "MMMM Do YYYY LT",
+        LLLL: "dddd, MMMM Do YYYY LT"
+    }
+});
+```
+
+## Relative Time
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    relativeTime : Object
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    relativeTime : Object
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    relativeTime : Object
+});
+```
+
+`Locale#relativeTime` should be an object of the replacement strings for `moment#from`.
+
+```javascript
+moment.updateLocale('en', {
+    relativeTime : {
+        future: "in %s",
+        past:   "%s ago",
+        s  : 'a few seconds',
+        ss : '%d seconds',
+        m:  "a minute",
+        mm: "%d minutes",
+        h:  "an hour",
+        hh: "%d hours",
+        d:  "a day",
+        dd: "%d days",
+        w:  "a week",
+        ww: "%d weeks",
+        M:  "a month",
+        MM: "%d months",
+        y:  "a year",
+        yy: "%d years"
+    }
+});
+```
+
+`Locale#relativeTime.future` refers to the prefix/suffix for future dates, and `Locale#relativeTime.past` refers to the prefix/suffix for past dates. For all others, a single character refers to the singular, and a double character refers to the plural.
+
+If a locale requires additional processing for a token, it can set the token as a function with the following signature.
+The function should return a string.
+
+
+```javascript
+function (number, withoutSuffix, key, isFuture) {
+    return string;
+}
+```
+
+The `key` argument refers to the replacement key in the `Locale#relativeTime ` object. (eg. `s m mm h`, etc.)
+
+The `number` argument refers to the number of units for that key. For `m`, the number is the number of minutes, etc.
+
+The `withoutSuffix` argument will be true if the token will be displayed without a suffix, and false if it will be displayed with a suffix. (The reason for the inverted logic is because the default behavior is to display with the suffix.)
+
+The `isFuture` argument will be true if it is going to use the future suffix/prefix and false if it is going to use the past prefix/suffix.
+
+**Note**: Handling for `w` and `ww` was added in **2.25.0**.
+
+## AM/PM
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    meridiem : Function
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    meridiem : Function
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    meridiem : Function
+});
+```
+
+If your locale uses 'am/pm', `Locale#meridiem` can be omitted, as those values are the defaults.
+
+If your locale needs any different computation for am/pm, `Locale#meridiem` should be a callback function that returns the correct string based on hour, minute, and upper/lowercase.
+
+```javascript
+moment.updateLocale('zh-cn', {
+    meridiem : function (hour, minute, isLowercase) {
+        if (hour < 9) {
+            return "早上";
+        } else if (hour < 11 && minute < 30) {
+            return "上午";
+        } else if (hour < 13 && minute < 30) {
+            return "中午";
+        } else if (hour < 18) {
+            return "下午";
+        } else {
+            return "晚上";
+        }
+    }
+});
+```
+
+## AM/PM Parsing
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    meridiemParse : RegExp
+    isPM : Function
+});
+
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    meridiemParse : RegExp
+    isPM : Function
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    meridiemParse : RegExp
+    isPM : Function
+});
+```
+
+`Locale#isPM` should return true if the input string is past 12 noon. This is used in parsing the `a A` tokens.
+
+```javascript
+moment.updateLocale('en', {
+    isPM : function (input) {
+        return ((input + '').toLowerCase()[0] === 'p');
+    }
+});
+```
+
+To configure what strings should be parsed as input, set the `meridiemParse` property.
+
+```javascript
+moment.updateLocale('en', {
+    meridiemParse : /[ap]\.?m?\.?/i
+});
+```
+
+## Calendar
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    calendar : Object
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    calendar : Object
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    calendar : Object
+});
+```
+
+`Locale#calendar` should have the following formatting strings.
+
+```javascript
+moment.locale('en', {
+    calendar : {
+        lastDay : '[Yesterday at] LT',
+        sameDay : '[Today at] LT',
+        nextDay : '[Tomorrow at] LT',
+        lastWeek : '[last] dddd [at] LT',
+        nextWeek : 'dddd [at] LT',
+        sameElse : 'L'
+    }
+});
+```
+
+Each of the `Locale#calendar` keys can also be a callback function with the
+scope of the current moment and first argument a moment that depicts now. It
+should return a formatting string.
+
+```javascript
+function callback (now) {
+    return '[hoy a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+}
+```
+
+## Calendar Format
+
+```javascript filename="Firma del método"
+moment.calendarFormat = Function
+```
+
+This lets you modify the tokens used by [calendar](#/customization/calendar/).
+
+```javascript
+moment.calendarFormat = function (myMoment, now) {
+	var diff = myMoment.diff(now, 'days', true);
+	var nextMonth = now.clone().add(1, 'month');
+
+	var retVal =  diff < -6 ? 'sameElse' :
+		diff < -1 ? 'lastWeek' :
+		diff < 0 ? 'lastDay' :
+		diff < 1 ? 'sameDay' :
+		diff < 2 ? 'nextDay' :
+		diff < 7 ? 'nextWeek' :
+		// introduce thisMonth and nextMonth
+		(myMoment.month() === now.month() && myMoment.year() === now.year()) ? 'thisMonth' :
+		(nextMonth.month() === myMoment.month() && nextMonth.year() === myMoment.year()) ? 'nextMonth' : 'sameElse';
+	return retVal;
+};
+```
+
+## Ordinal
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    ordinal : Function
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    ordinal : Function
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    ordinal : Function
+});
+```
+
+`Locale#ordinal` should be a function that returns the ordinal for a given number.
+
+```javascript
+moment.updateLocale('en', {
+    ordinal : function (number, token) {
+        var b = number % 10;
+        var output = (~~ (number % 100 / 10) === 1) ? 'th' :
+            (b === 1) ? 'st' :
+            (b === 2) ? 'nd' :
+            (b === 3) ? 'rd' : 'th';
+        return number + output;
+    }
+});
+```
+
+As of **2.0.0**, the ordinal function should return both the number and the ordinal. Previously, only the ordinal was returned.
+
+As of **2.1.0**, the token parameter was added. It is a string of the token that is being ordinalized, for example: `M` or `d`.
+
+For more information on ordinal numbers, see [Wikipedia](https://en.wikipedia.org/wiki/Ordinal_number_%28linguistics%29).
+
+## Relative Time Thresholds
+
+```javascript filename="Firma del método"
+moment.relativeTimeThreshold(unit);  // getter
+moment.relativeTimeThreshold(unit, limit);  // setter
+```
+
+`duration.humanize` has thresholds which define when a unit is considered a minute, an hour and so on. For example, by default more than 45 seconds is considered a minute, more than 22 hours is considered a day and so on. To change those cutoffs use `moment.relativeTimeThreshold(unit, limit)` where unit is one of `ss`, `s`, `m`, `h`, `d`, `w`, `M`.
+
+```
+<table>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>meaning</th>
+      <th>usage</th>
+    </tr>
+    <tr>
+      <td>ss</td>
+      <td>a few seconds</td>
+      <td>least number of seconds to be counted in seconds, minus 1. Must be set after setting the `s` unit or without setting the `s` unit.</td>
+    </tr>
+    <tr>
+      <td>s</td>
+      <td>seconds</td>
+      <td>least number of seconds to be considered a minute.</td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>minutes</td>
+      <td>least number of minutes to be considered an hour.</td>
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>hours</td>
+      <td>least number of hours to be considered a day.</td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>days</td>
+      <td>least number of days to be considered a week.</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>weeks</td>
+      <td>least number of weeks to be considered a month. Not used by default.</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>months</td>
+      <td>least number of months to be considered a year.</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```javascript
+  // Retrieve existing thresholds
+  moment.relativeTimeThreshold('ss'); // 44
+  moment.relativeTimeThreshold('s');  // 45
+  moment.relativeTimeThreshold('m');  // 45
+  moment.relativeTimeThreshold('h');  // 22
+  moment.relativeTimeThreshold('d');  // 26
+  moment.relativeTimeThreshold('w');  // null (disabled)
+  moment.relativeTimeThreshold('M');  // 11
+
+  // Set new thresholds
+  moment.relativeTimeThreshold('s', 40);
+  moment.relativeTimeThreshold('ss', 3);
+  moment.relativeTimeThreshold('m', 40);
+  moment.relativeTimeThreshold('h', 20);
+  moment.relativeTimeThreshold('d', 25);
+  moment.relativeTimeThreshold('w', 4);  // enables weeks
+  moment.relativeTimeThreshold('M', 10);
+```
+
+**Note:** Week unit was added in **2.25.0**. By default it is not used (set to
+null), but you can set it to non-null value, and also (optionally) set `d`
+lower, so it transitions from days to weeks earlier.
+
+**Note:** Retrieving thresholds was added in **2.8.1**.
+
+**Note:** Retrieving and setting `ss` threshold was added in **2.18.0**.
+
+## Relative Time Rounding
+
+```javascript filename="Firma del método"
+moment.relativeTimeRounding();  // getter
+moment.relativeTimeRounding(fn);  // setter
+```
+
+`duration.humanize` rounds a possibly double value before supplying it to the relativeTime format string specified in the locale. To control the rounding you can use `moment.relativeTimeRounding`.
+
+```javascript
+var roundingDefault = moment.relativeTimeRounding();
+
+// Round relative time evaluation down
+moment.relativeTimeRounding(Math.floor);
+
+moment.relativeTimeThreshold('s', 60);
+moment.relativeTimeThreshold('m', 60);
+moment.relativeTimeThreshold('h', 24);
+moment.relativeTimeThreshold('d', 7);
+moment.relativeTimeThreshold('w', 4);
+moment.relativeTimeThreshold('M', 12);
+
+var a = moment();
+a.subtract({hours: 23, minutes: 59, seconds: 59});
+a.toNow();  // == 'in 23 hours'  'Round down towards the nearest hour'
+
+// back to default
+moment.relativeTimeRounding(roundingDefault);
+```
+
+You can even choose to do no rounding at all:
+
+```javascript
+var retainValue = function (value) {
+    return value;
+};
+moment.relativeTimeRounding(retainValue);
+
+var a = moment();
+a.subtract({hours: 39});
+a.toNow(); // == 'in 1.625 days', 'Round down towards the nearest year'
+```
+
+## Changing Time Source
+
+```javascript filename="Firma del método"
+moment.now = function () { return +new Date(); }
+```
+
+If you want to change the time that Moment sees, you can specify a method that
+returns the number of milliseconds since the Unix epoch (January 1, 1970).
+
+The default is:
+
+```javascript
+moment.now = function () {
+    return +new Date();
+}
+```
+
+This will be used when calling `moment()`, and the current date used when tokens are omitted from
+`format()`. In general, any method that needs the current time uses this under the hood.
+
+## First Day of Week and First Week of Year
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    week : {
+        dow : Int,
+        doy : Int
+    }
+});
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    week : {
+        dow : Int,
+        doy : Int
+    }
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    week : {
+        dow : Int,
+        doy : Int
+    }
+});
+```
+
+`Locale#week.dow` should be an integer representing the first day of the week, 0 is Sunday, 1 is Monday, ..., 6 is Saturday.
+
+`Locale#week.doy` should be an integer. `doy` is used together with `dow` to determine the first week of the year. `doy` is calculated as `7 + dow - janX`, where `janX` is the first day of January that must belong to the first week of the year.
+
+```javascript
+// ISO-8601, Europe
+moment.updateLocale("en", { week: {
+  dow: 1, // First day of week is Monday
+  doy: 4  // First week of year must contain 4 January (7 + 1 - 4)
+}});
+
+// US, Canada
+moment.updateLocale("en", { week: {
+  dow: 0, // First day of week is Sunday
+  doy: 6  // First week of year must contain 1 January (7 + 0 - 1)
+}});
+
+// Many Arab countries
+moment.updateLocale("en", { week: {
+  dow: 6, // First day of week is Saturday
+  doy: 12 // First week of year must contain 1 January (7 + 6 - 1)
+}});
+
+// Also common
+moment.updateLocale("en", { week: {
+  dow: 1, // First day of week is Monday
+  doy: 7  // First week of year must contain 1 January (7 + 1 - 1)
+}});
+```
+
+## Eras
+
+```javascript filename="Firma del método"
+moment.updateLocale('en', {
+    eras: [{
+        since:  '0001-01-01',
+        until:  +Infinity,
+        offset: 1,
+        name:   'Anno Domini',
+        narrow: 'AD',
+        abbr:   'AD'
+    }, {
+        until:   -Infinity,
+        since:  '0000-12-31',
+        offset: 1,
+        name:   'Before Christ',
+        narrow: 'BC',
+        abbr:   'BC'
+    }],
+});
+```
+
+Specify Eras for a particular locale. An era is a time interval with name and
+year numbering. Absolute year number (like 2020) can also be specified as 2020
+AD: the 2020th year of the era AD. Similarly the absolute year number -0500 can
+be described as 501 BC, the 501st year from the BC era.
+
+```javascript
+eras: [{
+    since:  '0001-01-01', // the start of the era
+    until:  +Infinity,    // the end of the era, can be +/-Infinity
+    offset: 1,            // added to year to (mostly) avoid 0 era years
+    name:   'Anno Domini',// full name of era
+    narrow: 'AD',         // narrow name of era
+    abbr:   'AD'          // abbreviated name of era
+}]
+```
+
+`since` and `until` govern the direction of the era. As in the case of `BC` it
+grows toward `-Infinity`, thus `since` > `until`. For eras that
+increment toward +Infinity `since` < `until`.
+
+Parsing/formatting of eras is accomplished with `yo`, `y*` and `N*` tokens.
+
+**Note**: The era-related APIs are subject to change.
+
+## Invalid Date
+
+```javascript filename="Firma del método"
+// From 2.12.0 onward
+moment.updateLocale('en', {
+    invalidDate : String
+});
+
+// From 2.8.1 to 2.11.2
+moment.locale('en', {
+    invalidDate : String
+});
+
+// Deprecated in 2.8.1
+moment.lang('en', {
+    invalidDate : String
+});
+```
+
+`Locale#invalidDate` should be a string.
+
+```javascript
+moment.updateLocale("es", {
+  invalidDate: "Fecha invalida"
+});
+```

@@ -20,7 +20,7 @@ moment().seconds(30).valueOf() === new Date().setSeconds(30);
 moment().seconds() === new Date().getSeconds();
 ```
 
-Si estás en [modo UTC](/momentjs/manipulating#utc), se asignarán al equivalente UTC.
+Si estás en [modo UTC](/momentjs/manipulando-fechas#utc), se asignarán al equivalente UTC.
 
 ```javascript {filename="JavaScript"}
 moment.utc().seconds(30).valueOf() === new Date().setUTCSeconds(30);
@@ -222,7 +222,7 @@ Por ejemplo, en Estados Unidos, el domingo es el primer día de la semana. La se
 
 En Francia, el lunes es el primer día de la semana y la semana del 4 de enero es la primera semana del año.
 
-La salida de `moment#week` dependerá del [locale](/momentjs/i18n) para ese moment.
+La salida de `moment#week` dependerá del [locale](/momentjs/internacionalizacion) para ese moment.
 
 Al configurar la semana del año se mantiene el día de la semana.
 

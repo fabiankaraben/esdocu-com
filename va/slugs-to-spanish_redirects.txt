@@ -219,8 +219,18 @@
 
 /bootstrap/5.1/migration/ /bootstrap/comenzando/
 
-
-
+/momentjs/use-it/ /momentjs/comenzando/
+/momentjs/parsing/ /momentjs/analisis/
+/momentjs/get-set/ /momentjs/get-y-set/
+/momentjs/manipulating/ /momentjs/manipulando-fechas/
+/momentjs/displaying/ /momentjs/mostrando-fechas/
+/momentjs/query/ /momentjs/consultas/
+/momentjs/i18n/ /momentjs/internacionalizacion/
+/momentjs/customization/ /momentjs/personalizacion/
+/momentjs/durations/ /momentjs/duraciones/
+/momentjs/utilities/ /momentjs/utilidades/
+/momentjs/plugins/ /momentjs/complementos/
+/momentjs/project-status/ /momentjs/estado-del-proyecto/
 
 
 

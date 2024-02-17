@@ -1,0 +1,274 @@
+---
+noindex: true
+draft: true
+---
+
+## Loading locales in NodeJS
+
+```javascript filename="Firma del método"
+moment.locale(String);
+```
+
+Loading locales in NodeJS is super easy. If there is a locale file in `moment/locale/` named after that key, import it first, then call `moment.locale` to load it.
+
+{/* <!-- skip-example --> */}
+
+```javascript
+var moment = require('moment');
+//or
+// import moment from 'moment';
+
+// import locale file(s)
+import 'moment/locale/fr';
+
+moment.locale('fr');
+moment(1316116057189).fromNow(); // il y a 6 ans
+```
+
+To save the step of loading individual locales (i.e. just load them all), import the `moment/min/moment-with-locales` module instead.
+
+{/* <!-- skip-example --> */}
+
+```javascript
+import moment from 'moment/min/moment-with-locales';
+
+moment.locale('de');
+moment(1316116057189).fromNow(); // vor 6 Jahren
+```
+
+If you want your locale supported, create a pull request to the `develop` branch with the [required locale and unit test files](#/i18n/adding-locale/).
+
+## Loading locales in the browser
+
+```javascript filename="Firma del método"
+// From 2.8.1 onward
+moment.locale(String, Object);
+
+// Deprecated in 2.8.1
+moment.lang(String, Object);
+```
+
+Loading locales in the browser just requires you to include the locale files. Be sure to specify the charset to prevent encoding issues.
+
+```html
+<script src="moment.js"></script>
+<script src="locale/fr.js" charset="UTF-8"></script>
+<script src="locale/pt.js" charset="UTF-8"></script>
+<script>
+  moment.locale('fr');  // Set the default/global locale
+  // ...
+</script>
+```
+
+There are minified versions of all locales together:
+
+```html
+<script src="moment.js"></script>
+<script src="min/locales.js" charset="UTF-8"></script>
+```
+
+To minimize HTTP requests, use our Grunt task to compile [Moment](https://github.com/moment/moment) with a custom list of locales:
+
+```bash
+grunt transpile:fr,it
+```
+
+```html
+<script src="min/moment-with-locales.custom.js" charset="UTF-8"></script>
+```
+
+If you are using JSPM as plugin manager, you should add the locale in your lib.
+
+```
+import * as moment from 'moment';
+import 'moment/locale/fr';
+```
+
+**Note:** Locale files are defined in [UMD](https://github.com/umdjs/umd) style, so they should work seamlessly in all environments.
+
+## Adding your locale to Moment.js
+
+To add your locale to Moment.js, submit a pull request with both a locale file and a test file. You can find examples in `moment/src/locale/fr.js` and `moment/src/test/locale/fr.js`.
+
+To run the tests in Node.js, do `npm install`, then `grunt`.
+
+If all the tests pass, submit a pull request, and thank you for contributing!
+
+## Checking the current Moment.js locale
+
+```javascript filename="Firma del método"
+// From version 2.8.1 onward
+moment.locale();
+
+// Deprecated in version 2.8.1
+moment.lang();
+```
+
+If you are changing locales frequently, you may want to know what locale is currently being used. This is as simple as calling `moment.locale` without any parameters.
+
+```javascript
+moment.locale('en'); // set to english
+moment.locale(); // returns 'en'
+moment.locale('fr'); // set to french
+moment.locale(); // returns 'fr'
+```
+
+As of version **2.12.0** it is possible to list all locales that have been loaded and are available to use:
+
+```javascript
+moment.locales()
+```
+
+## Listing the months and weekdays of the current Moment.js locale
+
+```javascript filename="Firma del método"
+moment.months()
+moment.monthsShort()
+moment.weekdays()
+moment.weekdaysShort()
+moment.weekdaysMin()
+```
+
+It is sometimes useful to get the list of months or weekdays in a locale, for example when populating a dropdown menu.
+
+```javascript
+moment.months();
+```
+
+Returns the list of months in the current locale.
+
+```javascript
+[ 'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December' ]
+```
+
+Similarly, `moment.monthsShort` returns abbreviated month names, and `moment.weekdays`, `moment.weekdaysShort`, `moment.weekdaysMin` return lists of weekdays.
+
+You can pass an integer into each of those functions to get a specific month or weekday.
+
+```javascript
+moment.weekdays(3); // 'Wednesday'
+```
+
+As of **2.13.0** you can pass a bool as the first parameter of the weekday functions. If true, the weekdays will be returned in locale specific order.
+For instance, in the Arabic locale, Saturday is the first day of the week, thus:
+
+```javascript
+moment.locale('ar');
+moment.weekdays(true); // lists weekdays Saturday-Friday in Arabic
+moment.weekdays(true, 2); //will result in Monday in Arabic
+```
+
+**Note:** Absent the locale specific parameter, weekdays always have Sunday as index 0, regardless of the local first day of the week.
+
+Some locales make special considerations into account when formatting month names. For example, Dutch formats month abbreviations without a trailing period, but only if it's formatting the month between dashes. The `months` method supports passing a format in so that the months will be listed in the proper context.
+
+```javascript
+moment.locale('nl');
+moment.monthsShort(); // ['jan.', 'feb.', 'mrt.', ...]
+moment.monthsShort('-MMM-'); // [ 'jan', 'feb', 'mrt', ...]
+```
+
+And finally, you can combine both the format option and the integer option.
+
+```javascript
+moment.monthsShort('-MMM-', 3); // 'apr'
+```
+
+## Accessing locale specific functionality
+
+```javascript filename="Firma del método"
+localeData = moment.localeData()
+localeData.months(Moment)
+localeData.months()
+localeData.monthsShort(Moment)
+localeData.monthsShort()
+localeData.monthsParse(String)
+localeData.weekdays(Moment)
+localeData.weekdays()
+localeData.weekdays(Boolean)      ## Added 2.24.0, sorts weekdays by locale
+localeData.weekdaysShort(Moment)
+localeData.weekdaysShort()
+localeData.weekdaysShort(Boolean) ## Added 2.24.0, sorts weekdays by locale
+localeData.weekdaysMin(Moment)
+localeData.weekdaysMin()
+localeData.weekdaysMin(Boolean)   ## Added 2.24.0, sorts weekdays by locale
+localeData.weekdaysParse(String)
+localeData.longDateFormat(String)
+localeData.isPM(String)
+localeData.meridiem(Number, Number, Boolean)
+localeData.calendar(String, Moment)
+localeData.relativeTime(Number, Boolean, String, Boolean)
+localeData.pastFuture(Number, String)
+localeData.ordinal(Number)
+localeData.preparse(String)
+localeData.postformat(String)
+localeData.week(Moment)
+localeData.invalidDate()
+localeData.firstDayOfWeek()
+localeData.firstDayOfYear()
+```
+
+You can access the properties of the currently loaded locale through the
+`moment.localeData(key)` function. It returns the current locale or a locale
+with the given key:
+
+```javascript
+// get current locale
+var currentLocaleData = moment.localeData();
+var frLocaleData = moment.localeData('fr');
+```
+
+The returned object has the following methods:
+
+```javascript
+localeData.months(aMoment);  // full month name of aMoment
+localeData.monthsShort(aMoment);  // short month name of aMoment
+localeData.monthsParse(longOrShortMonthString);  // returns month id (0 to 11) of input
+localeData.weekdays(aMoment);  // full weekday name of aMoment
+localeData.weekdaysShort(aMoment);  // short weekday name of aMoment
+localeData.weekdaysMin(aMoment);  // min weekday name of aMoment
+localeData.weekdaysParse(minShortOrLongWeekdayString);  // returns weekday id (0 to 6) of input
+localeData.longDateFormat(dateFormat);  // returns the full format of abbreviated date-time formats LT, L, LL and so on
+localeData.isPM(amPmString);  // returns true iff amPmString represents PM
+localeData.meridiem(hours, minutes, isLower);  // returns am/pm string for particular time-of-day in upper/lower case
+localeData.calendar(key, aMoment);  // returns a format that would be used for calendar representation. Key is one of 'sameDay', 'nextDay', 'lastDay', 'nextWeek', 'prevWeek', 'sameElse'
+localeData.relativeTime(number, withoutSuffix, key, isFuture);  // returns relative time string, key is on of 's', 'm', 'mm', 'h', 'hh', 'd', 'dd', 'M', 'MM', 'y', 'yy'. Single letter when number is 1.
+localeData.pastFuture(diff, relTime);  // convert relTime string to past or future string depending on diff
+localeData.ordinal(number);  // convert number to ordinal string 1 -> 1st
+localeData.preparse(str);  // called before parsing on every input string
+localeData.postformat(str);  // called after formatting on every string
+localeData.week(aMoment);  // returns week-of-year of aMoment
+localeData.invalidDate();  // returns a translation of 'Invalid date'
+localeData.firstDayOfWeek();  // 0-6 (Sunday to Saturday)
+localeData.firstDayOfYear();  // 0-15 Used to determine first week of the year.
+```
+
+Details about `firstDayOfYear` can be found in the [customization](#/customization/dow-doy/) section.
+
+## Pseudo Locale
+
+```javascript filename="Firma del método"
+moment.locale('x-pseudo')
+```
+
+As of version **2.13.0** moment optionally includes a pseudo locale. This locale will populate the dates with very obviously changed data.
+Pseudo locales can be useful when testing, as they make obvious what data has and has not been localized. Just include the pseudo-locale, and set moment's locale to x-pseudo.
+Text from Moment will be very easy to spot.
+
+```javascript
+moment.locale('x-pseudo');
+moment().format('LLL'); //14 F~ébrú~árý 2010 15:25
+moment().fromNow(); //'á ~féw ~sécó~ñds á~gó'
+moment().calendar(); //'T~ódá~ý át 02:00'
+```

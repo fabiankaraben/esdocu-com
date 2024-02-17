@@ -33,7 +33,7 @@ De forma predeterminada, Moment.js viene con cadenas de configuración regional 
 
 Para cargar una configuración regional, pasa la clave y los valores de cadena a `moment.locale`.
 
-Se pueden encontrar más detalles sobre cada una de las partes del paquete local en la sección [personalización](/momentjs/customization).
+Se pueden encontrar más detalles sobre cada una de las partes del paquete local en la sección [personalización](/momentjs/personalizacion).
 
 {{< content-ads/middle-banner-1 >}}
 
@@ -100,7 +100,7 @@ moment.locale('fr', {
 });
 ```
 
-Los detalles sobre `week.dow` y `week.doy` se pueden encontrar en la sección [personalización](/momentjs/customization#dow-doy).
+Los detalles sobre `week.dow` y `week.doy` se pueden encontrar en la sección [personalización](/momentjs/personalizacion#dow-doy).
 
 Una vez que cargues una configuración regional, se convierte en la configuración regional activa. Para cambiar las configuraciones regionales activas, simplemente llama a `moment.locale` con la clave de una configuración regional cargada.
 
@@ -215,6 +215,6 @@ fr.localeData().months(moment([2012, 0])) // "January"
 
 Si necesitas acceder a los datos locales por un moment, esta es la forma preferida de hacerlo.
 
-A partir de **2.3.0**, también puedes especificar una serie de identificadores locales. Funciona de la misma manera que en la [configuración regional global](/momentjs/i18n#changing-locale).
+A partir de **2.3.0**, también puedes especificar una serie de identificadores locales. Funciona de la misma manera que en la [configuración regional global](/momentjs/internacionalizacion#changing-locale).
 
 {{< content-ads/bottom-banner >}}
