@@ -1,0 +1,308 @@
+---
+linkTitle: Duraciones
+weight: 9
+title: Operaciones con duraciones · Moment.js en Español
+description: Moment.js también tiene objetos de duración. Una duración se define como un período de tiempo sin contexto.
+---
+
+# Operaciones con duraciones en Moment.js
+
+Moment.js también tiene objetos de duración. Mientras que un moment se define como un único punto en el tiempo, una duración se define como un período de tiempo.
+
+{{< content-ads/top-banner >}}
+
+Las duraciones no tienen fecha de inicio y fin definida. No tienen contexto.
+
+Una duración es conceptualmente más similar a "2 horas" que a "entre las 2 y las 4 de la tarde de hoy". Como tales, no son una buena solución para convertir entre unidades que dependen del contexto.
+
+Por ejemplo, un año se puede definir como 366 días, 365 días, 365,25 días, 12 meses o 52 semanas. Intentar convertir años en días no tiene sentido sin contexto. Es mucho mejor usar `moment#diff` para calcular días o años entre dos momentos que usar `Duration`.
+
+Como [se analiza aquí](https://github.com/moment/moment/issues/4815), el formato de duración de Moment.js difiere muy ligeramente de las especificaciones de duración nominal ISO 8601 y duración RFC 5545.
+
+## Creación de duraciones {#creating}
+
+```javascript {filename="Firma del método"}
+moment.duration(Number, String);
+moment.duration(Number);
+moment.duration(Object);
+moment.duration(String);
+moment.duration(String, String); // 2.25.0
+```
+
+Para crear una duración, llama a `moment.duration()` con la duración en milisegundos.
+
+```javascript {filename="JavaScript"}
+moment.duration(100); // 100 milisegundos
+```
+
+Si deseas crear un moment con una unidad de medida distinta de milisegundos, también puedes pasar la unidad de medida.
+
+```javascript {filename="JavaScript"}
+moment.duration(2, 'seconds');
+moment.duration(2, 'minutes');
+moment.duration(2, 'hours');
+moment.duration(2, 'days');
+moment.duration(2, 'weeks');
+moment.duration(2, 'months');
+moment.duration(2, 'years');
+moment.duration('2', 'years'); // desde 2.25.0
+```
+
+La misma abreviatura para `moment#add` y `moment#subtract` también funciona aquí.
+
+| Clave        | Abreviatura |
+| ------------ | ----------- |
+| years        | y           |
+| months       | M           |
+| weeks        | w           |
+| days         | d           |
+| hours        | h           |
+| minutes      | m           |
+| seconds      | s           |
+| milliseconds | ms          |
+
+Al igual que `moment#add`, puedes pasar un objeto de valores si necesitas varias unidades de medida diferentes.
+
+```javascript {filename="JavaScript"}
+moment.duration({
+    seconds: 2,
+    minutes: 2,
+    hours: 2,
+    days: 2,
+    weeks: 2,
+    months: '2',
+    years: '2'
+});
+```
+
+A partir de **2.1.0**, moment admite el análisis de períodos de tiempo de estilo ASP.NET. Se admiten los siguientes formatos.
+
+El formato es una cadena de hora, minuto y segundo separada por dos puntos, como `23:59:59`. El número de días puede ir precedido de un separador de puntos como `7.23:59:59`. También se admiten segundos parciales `23:59:59.999`.
+
+{{< content-ads/middle-banner-1 >}}
+
+```javascript {filename="JavaScript"}
+moment.duration('23:59:59');
+moment.duration('23:59:59.999');
+moment.duration('7.23:59:59.999');
+moment.duration('23:59'); // añadido en 2.3.0
+```
+
+A partir de **2.3.0**, moment también admite el análisis (parsing) de duraciones [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals).
+
+```javascript {filename="JavaScript"}
+moment.duration('P1Y2M3DT4H5M6S');
+moment.duration('P1M');
+```
+
+A partir de **2.11.0**, se admiten cadenas de formato de duración con un espacio entre días y lo demás.
+
+```javascript {filename="JavaScript"}
+moment.duration('7 23:59:59.999');
+```
+
+A partir de **2.13.0**, se admiten signos mixtos negativos y positivos al analizar duraciones.
+
+```javascript {filename="JavaScript"}
+moment.duration('PT-6H3M')
+```
+
+A partir de **2.18.0**, se admiten duraciones no válidas, al igual que moments no válidos. Para crear una duración no válida, puede pasar `NaN` como valor de una unidad.
+
+En las próximas versiones, se espera que las duraciones no válidas cubran más casos (como valores `null` para unidades).
+
+```javascript {filename="JavaScript"}
+moment.duration(NaN);
+moment.duration(NaN, 'days');
+moment.duration.invalid();
+```
+
+## Clonar duraciones {#clone}
+
+```javascript {filename="Firma del método"}
+moment.duration().clone();
+```
+
+Crea un clon de una duración. Las duraciones son mutables, al igual que los objetos moment, por lo que esto te permite obtener una instantánea en un punto en el tiempo.
+
+```javascript {filename="JavaScript"}
+var d1 = moment.duration();
+var d2 = d1.clone();
+d1.add(1, 'second');
+d1.asMilliseconds() !== d2.asMilliseconds();
+```
+
+## Humanizar duraciones {#humanize}
+
+```javascript {filename="Firma del método"}
+moment.duration().humanize();
+moment.duration().humanize(withSuffix);
+moment.duration().humanize(withSuffix, thresholds); // from 2.25.0
+moment.duration().humanize(thresholds);             // from 2.25.0
+```
+
+{{< content-ads/middle-banner-2 >}}
+
+Algunas veces querrás todas las bondades de `moment#from`, pero sin tener que crear dos moments, solo querrás mostrar un período de tiempo.
+
+Ingresa `moment.duration().humanize()`.
+
+```javascript {filename="JavaScript"}
+moment.duration(1, "minutes").humanize(); // a minute
+moment.duration(2, "minutes").humanize(); // 2 minutes
+moment.duration(24, "hours").humanize();  // a day
+```
+
+De forma predeterminada, la cadena de retorno describe una duración `a month` (sin sufijo).
+Si deseas una duración orientada `in a month`, `a month ago` (con sufijo), pasa `true` como se ve a continuación.
+
+```javascript {filename="JavaScript"}
+moment.duration(1, "minutes").humanize(true); // in a minute
+```
+
+Para los sufijos anteriores a ahora, pasa un número negativo.
+
+```javascript {filename="JavaScript"}
+moment.duration(-1, "minutes").humanize(true); // a minute ago
+```
+
+Las duraciones no válidas se humanizan en la versión localizada de `Invalid Date`.
+
+```javascript {filename="JavaScript"}
+moment.duration.invalid().humanize(); // Invalid Date
+```
+
+La salida humanizada se puede configurar con umbrales de tiempo relativos. Para especificar umbrales para una invocación particular de humanizar, pásalos como argumento único o después del sufijo arg:
+
+```javascript {filename="JavaScript"}
+moment.duration(-1, 'week').humanize(true, {d: 7, w: 4}); // a week ago
+moment.duration(-1, 'week').humanize({d: 7, w: 4}); // a week
+```
+
+**Nota**: Pasar los umbrales en humanizar se agregó en **2.25.0**.
+
+## Milisegundos en una duración {#milliseconds}
+
+```javascript {filename="Firma del método"}
+moment.duration().milliseconds();
+moment.duration().asMilliseconds();
+```
+
+Para obtener la cantidad de milisegundos en una duración, usa `moment.duration().milliseconds()`.
+
+Devolverá un número entre `0` y `999`.
+
+{{< content-ads/middle-banner-3 >}}
+
+```javascript {filename="JavaScript"}
+moment.duration(500).milliseconds(); // 500
+moment.duration(1500).milliseconds(); // 500
+moment.duration(15000).milliseconds(); // 0
+```
+
+Si deseas que la duración esté en milisegundos, utiliza `moment.duration().asMilliseconds()` en su lugar.
+
+```javascript {filename="JavaScript"}
+moment.duration(500).asMilliseconds(); // 500
+moment.duration(1500).asMilliseconds(); // 1500
+moment.duration(15000).asMilliseconds(); // 15000
+```
+
+## Segundos en una duración {#seconds}
+
+```javascript {filename="Firma del método"}
+moment.duration().seconds();
+moment.duration().asSeconds();
+```
+
+Para obtener la cantidad de segundos en una duración, usa `moment.duration().seconds()`.
+
+Devolverá un número entre `0` y `59`.
+
+```javascript {filename="JavaScript"}
+moment.duration(500).seconds(); // 0
+moment.duration(1500).seconds(); // 1
+moment.duration(15000).seconds(); // 15
+```
+
+Si deseas la duración en segundos, utiliza `moment.duration().asSeconds()` en su lugar.
+
+```javascript {filename="JavaScript"}
+moment.duration(500).asSeconds(); // 0.5
+moment.duration(1500).asSeconds(); // 1.5
+moment.duration(15000).asSeconds(); // 15
+```
+
+## Minutos en una duración {#minutes}
+
+```javascript {filename="Firma del método"}
+moment.duration().minutes();
+moment.duration().asMinutes();
+```
+
+Al igual que con los otros getters de duraciones, `moment.duration().minutes()` obtiene los minutos (`0` - `59`).
+
+`moment.duration().asMinutes()` obtiene la duración en minutos.
+
+## Horas en una duración {#hours}
+
+```javascript {filename="Firma del método"}
+moment.duration().hours();
+moment.duration().asHours();
+```
+
+{{< content-ads/middle-banner-4 >}}
+
+Al igual que con los otros getters de duraciones, `moment.duration().hours()` obtiene las horas (`0` - `23`).
+
+`moment.duration().asHours()` obtiene la duración en horas.
+
+## Días en una duración {#days}
+
+```javascript {filename="Firma del método"}
+moment.duration().days();
+moment.duration().asDays();
+```
+
+Al igual que con los otros getters de duraciones, `moment.duration().days()` obtiene los días (`0` - `30`).
+
+`moment.duration().asDays()` obtiene la duración en días.
+
+## Semanas en una duración {#weeks}
+
+```javascript {filename="Firma del método"}
+moment.duration().weeks();
+moment.duration().asWeeks();
+```
+
+Al igual que con los otros getters de duraciones, `moment.duration().weeks()` obtiene las semanas (`0` - `4`).
+
+`moment.duration().asWeeks()` obtiene la duración en semanas.
+
+Presta atención a que, a diferencia de otros getters de duración, las semanas se cuentan como un subconjunto de los días y no se eliminan del recuento de días.
+
+**Nota:** La longitud de una duración en semanas se define como 7 días.
+
+## Meses en una duración {#months}
+
+```javascript {filename="Firma del método"}
+moment.duration().months();
+moment.duration().asMonths();
+```
+
+Al igual que con los otros getters de duraciones, `moment.duration().months()` obtiene los meses (`0` - `11`).
+
+`moment.duration().asMonths()` obtiene la duración en meses.
+
+## Años en una duración {#years}
+
+```javascript {filename="Firma del método"}
+moment.duration().years();
+moment.duration().asYears();
+```
+
+Al igual que con los otros getters de duraciones, `moment.duration().years()` obtiene los años.
+
+`moment.duration().asYears()` obtiene la duración en años.
+
+{{< content-ads/bottom-banner >}}
