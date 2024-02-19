@@ -50,4 +50,4 @@ params:
   showCustomBottomBanner: false # Donate
 
   # Adsense.
-  includeAdsenseScript: false
+  includeAdsenseScript: true
