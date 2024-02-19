@@ -36,7 +36,7 @@ Para especificar el tipo de un array como `[1, 2, 3]`, puedes usar la sintaxis `
 También puedes ver esto escrito como `Array<number>`, que significa lo mismo.
 Aprenderemos más sobre la sintaxis `T<U>` cuando cubramos *generics*.
 
-> Ten en cuenta que `[number]` es una cosa diferente; consulta la sección sobre [Tuplas](/typescript/handbook/objectos#tuple-types).
+> Ten en cuenta que `[number]` es una cosa diferente; consulta la sección sobre [Tuplas](/typescript/handbook/objetos#tuple-types).
 >
 
 ## El tipo especial `any` {#any}

@@ -317,7 +317,7 @@ class Thing {
 
 ### Firmas de índices {#index-signatures}
 
-Classes can declare index signatures; these work the same as [Index Signatures for other object types](/typescript/handbook/objectos#index-signatures):
+Classes can declare index signatures; these work the same as [Index Signatures for other object types](/typescript/handbook/objetos#index-signatures):
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAECyCeBhcVoG8CwAoa0DaEAXNBAC4BOAlgHYDmAusQEYD2LIApmNdAD7QAKAURIUatAJTQAvAD5ordl2oSA3Nmy5gACw7AA1sOJkqdKZhy5o5DqQCu5HqW2UIBetEgK2nbussAvtgBQA)
 
