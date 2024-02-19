@@ -1,10 +1,10 @@
 ---
 linkTitle: "Modules"
-title: "TypeScript · Documentation - Modules - TypeScript en Español"
+title: "TypeScript: Documentation - Modules - TypeScript en Español"
 description: "How JavaScript handles communicating across file boundaries."
 weight: 9
 type: docs
-next: /typescript/referencia/utility-types
+next: /typescript/reference/utility-types
 draft: true
 ---
 
@@ -15,7 +15,7 @@ Having been around since 2012, TypeScript has implemented support for a lot of t
 
 ES Modules was added to the JavaScript spec in 2015, and by 2020 had broad support in most web browsers and JavaScript runtimes.
 
-For focus, the handbook will cover both ES Modules and its popular pre-cursor CommonJS `module.exports =` syntax, and you can find information about the other module patterns in the reference section under [Modules](/docs/handbook/modules.html).
+For focus, the handbook will cover both ES Modules and its popular pre-cursor CommonJS `module.exports =` syntax, and you can find information about the other module patterns in the reference section under [Modules ↗](https://www.typescriptlang.org/docs/handbook/modules.html).
 
 ## How JavaScript Modules are Defined {#how-javascript-modules-are-defined}
 
@@ -32,11 +32,11 @@ Conversely, to consume a variable, function, class, interface, etc. exported fro
 Before we start, it’s important to understand what TypeScript considers a module.
 The JavaScript specification declares that any JavaScript files without an `import` declaration, `export`, or top-level `await` should be considered a script and not a module.
 
-Inside a script file variables and types are declared to be in the shared global scope, and it’s assumed that you’ll either use the [`outFile`](/tsconfig#outFile) compiler option to join multiple input files into one output file, or use multiple `<script>` tags in your HTML to load these files (in the correct order!).
+Inside a script file variables and types are declared to be in the shared global scope, and it’s assumed that you’ll either use the [`outFile` ↗](https://www.typescriptlang.org/tsconfig#outFile) compiler option to join multiple input files into one output file, or use multiple `<script>` tags in your HTML to load these files (in the correct order!).
 
 If you have a file that doesn’t currently have any `import`s or `export`s, but you want to be treated as a module, add the line:
 
-[Try this code](https://www.typescriptlang.org/play/#code/KYDwDg9gTgLgBAbwL4G4g)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/KYDwDg9gTgLgBAbwL4G4g)
 
 ```ts
 export {};
@@ -46,7 +46,7 @@ which will change the file to be a module exporting nothing. This syntax works r
 
 ## Modules in TypeScript {#modules-in-typescript}
 
-> Additional Reading:[Impatient JS (Modules)](https://exploringjs.com/impatient-js/ch_modules.html#overview-syntax-of-ecmascript-modules)[MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+> Additional Reading:[Impatient JS (Modules) ↗](https://exploringjs.com/impatient-js/ch_modules.html#overview-syntax-of-ecmascript-modules)[MDN: JavaScript Modules ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 > 
 
 There are three main things to consider when writing module-based code in TypeScript:
@@ -59,7 +59,7 @@ There are three main things to consider when writing module-based code in TypeSc
 
 A file can declare a main export via `export default`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvkA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvkA)
 
 ```ts
 // @filename: hello.ts
@@ -70,7 +70,7 @@ export default function helloWorld() {
 
 This is then imported via:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvtRAQYCFOhY0IgctKSUVD4AtDFC3CQxUdTQqIwskvgEskzyoJBMBKigJkTAuJlEAFZkJu5U5TIOyq5AA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvtRAQYCFOhY0IgctKSUVD4AtDFC3CQxUdTQqIwskvgEskzyoJBMBKigJkTAuJlEAFZkJu5U5TIOyq5AA)
 
 ```ts
 import helloWorld from "./hello.js";
@@ -79,7 +79,7 @@ helloWorld();
 
 In addition to the default export, you can have more than one export of variables and functions via the `export` by omitting `default`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsxqtLNyLsZIUKgAJWREABMGVAA5FVQAI3gmAHEkeLxmUABvAF93U1lWSBVEC1xoa1BkGMIGWBVceAAKRGisJtj4gEoMqlBQaEhQRujQAB5QAAZOpnhcFSZEUFbQACpQAFo3Sh6pmbmF6JNMoA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsxqtLNyLsZIUKgAJWREABMGVAA5FVQAI3gmAHEkeLxmUABvAF93U1lWSBVEC1xoa1BkGMIGWBVceAAKRGisJtj4gEoMqlBQaEhQRujQAB5QAAZOpnhcFSZEUFbQACpQAFo3Sh6pmbmF6JNMoA)
 
 ```ts
 // @filename: maths.ts
@@ -97,7 +97,7 @@ export function absolute(num: number) {
 
 These can be used in another file via the `import` syntax:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsx6WbkXYyQoVAAlZEQAEwZUADkVVAAjeCYAcSQ4vGZQAG8AX3dZVkgVRAtcaGtQZGjCBlgVXHgACkQorAaYuIBKdKpQUGhIUHqo0AAeUAAGdqZ4XBUmRFBm0AAqUABaN0ouiamZuaiTLMoQCBgEFHQsZDo6UgoDsGX7i2r75apoVBz07mgAGm4HX7KFSqNVAGVAkCYYVAACJiMAcAQSAArQjQkxUKw2SrwYiwBgAc1qPFaJkxtlK5QACg49IDKtU6vZoCSqIcuqAAHoAfiAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsx6WbkXYyQoVAAlZEQAEwZUADkVVAAjeCYAcSQ4vGZQAG8AX3dZVkgVRAtcaGtQZGjCBlgVXHgACkQorAaYuIBKdKpQUGhIUHqo0AAeUAAGdqZ4XBUmRFBm0AAqUABaN0ouiamZuaiTLMoQCBgEFHQsZDo6UgoDsGX7i2r75apoVBz07mgAGm4HX7KFSqNVAGVAkCYYVAACJiMAcAQSAArQjQkxUKw2SrwYiwBgAc1qPFaJkxtlK5QACg49IDKtU6vZoCSqIcuqAAHoAfiAA)
 
 ```ts
 import { pi, phi, absolute } from "./maths.js";
@@ -112,7 +112,7 @@ const absPhi: number
 
 An import can be renamed using a format like `import {old as new}`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qICDAQp0WZHTqkKlGQFptAYwCuubZqrRUjFqADe3XskKhAA8CgAvqEhMGqUACJiwHAQkAFaE3lKUVDoMiIQMCMSwDADmABQOAJThMqA5ubkAegD8QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qICDAQp0WZHTqkKlGQFptAYwCuubZqrRUjFqADe3XskKhAA8CgAvqEhMGqUACJiwHAQkAFaE3lKUVDoMiIQMCMSwDADmABQOAJThMqA5ubkAegD8QA)
 
 ```ts
 import { pi as π } from "./maths.js";
@@ -125,7 +125,7 @@ import π
 
 You can mix and match the above syntax into a single `import`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQBjBxQ1u6UAXlABmYgEYALAG4qtRi1AATeJGQBXWKzaxkhQqABKyRAoaoAcqtQAjeEwDiSW3magA3gF8qVEBBgIU6FjIdHSkFJTQqHKshsamFta2DohOuMwANG6gvKA6oIADwKDuoJBMpqAARMTAOAQkAFaEFdKUVLEm5pY29o5MzkwtPgB6APxelBxcDAjEsAwA5gAU+QCUg2Cgm1tbo0A)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQBjBxQ1u6UAXlABmYgEYALAG4qtRi1AATeJGQBXWKzaxkhQqABKyRAoaoAcqtQAjeEwDiSW3magA3gF8qVEBBgIU6FjIdHSkFJTQqHKshsamFta2DohOuMwANG6gvKA6oIADwKDuoJBMpqAARMTAOAQkAFaEFdKUVLEm5pY29o5MzkwtPgB6APxelBxcDAjEsAwA5gAU+QCUg2Cgm1tbo0A)
 
 ```ts
 // @filename: maths.ts
@@ -148,7 +148,7 @@ import π
 
 You can take all of the exported objects and put them into a single namespace using `* as name`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsxqtLNzIKxBdzRrUGQAI0IGWBVceAAKRBVULDjUYPgmAEpQAG8qUFBoSFBY+NAAHlAABgymeFwVJkRQJNAAKlAAWjdKXOra+sb4kwBfKhB2traLSPG2kbAoOCQ0TCC6OlIKSmhUWVZW5EJsPHxQSCYGVFAAImJgHAISACtCS5MqKxtw+GJYBgBzaLu+GIPDSJnetm4DEI0H8bHgAAUHHpAcQQmEIlEAUdgQ5QbNcrkAHoAfiAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qtRi1AJWhAI4BXTvAAqAdwb9QI4mJFTq9ZqwDGDRIVZ18vAQYBsxqtLNzIKxBdzRrUGQAI0IGWBVceAAKRBVULDjUYPgmAEpQAG8qUFBoSFBY+NAAHlAABgymeFwVJkRQJNAAKlAAWjdKXOra+sb4kwBfKhB2traLSPG2kbAoOCQ0TCC6OlIKSmhUWVZW5EJsPHxQSCYGVFAAImJgHAISACtCS5MqKxtw+GJYBgBzaLu+GIPDSJnetm4DEI0H8bHgAAUHHpAcQQmEIlEAUdgQ5QbNcrkAHoAfiAA)
 
 ```ts
 // @filename: app.ts
@@ -162,7 +162,7 @@ const positivePhi: number
 
 You can import a file and *not* include any variables into your current module via `import "./file"`:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qIUAFp5AYwCuuebOlgocJGkyhkdOqQqVoqRi1AAiYsBwESAK0JWplKgoaJCDBMVgMAOYAFFbC4lYAlBJAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qIUAFp5AYwCuuebOlgocJGkyhkdOqQqVoqRi1AAiYsBwESAK0JWplKgoaJCDBMVgMAOYAFFbC4lYAlBJAA)
 
 ```ts
 // @filename: app.ts
@@ -177,7 +177,7 @@ In this case, the `import` does nothing. However, all of the code in `maths.ts` 
 
 Types can be exported and imported using the same syntax as JavaScript values:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVKrUYtQS4jcjIAxtwAiDMoiVKDikjKkcgpKygDaALqOlGGa2nqGJmaW1kzJdk6UIBAwCCjoWMh0dCQUlHiurKJ8xAA0oIHBdqCQTAyooABEhMA4eASEAFakg8kcXKAAgrj4sKSgQi2gAD4dQapAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVKrUYtQS4jcjIAxtwAiDMoiVKDikjKkcgpKygDaALqOlGGa2nqGJmaW1kzJdk6UIBAwCCjoWMh0dCQUlHiurKJ8xAA0oIHBdqCQTAyooABEhMA4eASEAFakg8kcXKAAgrj4sKSgQi2gAD4dQapAA)
 
 ```ts
 // @filename: animal.ts
@@ -199,7 +199,7 @@ TypeScript has extended the `import` syntax with two concepts for declaring an i
 
 Which is an import statement which can *only* import types:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVWoxZtO3ACINloIaIlS0qRyCkrKANoAuuqa2nqGJmaW1rYOTvTMrADGDIjyoFmS-PB8xAByaNxCABQAlL4AfKAARJCw5pCQ7M2OlFQgEDAIKOhYAG4E0NIkFJR4LqwcXCK8-AA0oF4+dqCQTAyoLYTAOHgEhABWpD3pC27LAIK4+LCkvqusAD6b3r39YFA4EhKlhkHQ6DN-hAbPsmMFQABGADMADYEVR5pl7txRIUtMQSvwKuh7Lt9odmsdTi9Ltdejk8qwRlUCkUCaVifA6qogA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVWoxZtO3ACINloIaIlS0qRyCkrKANoAuuqa2nqGJmaW1rYOTvTMrADGDIjyoFmS-PB8xAByaNxCABQAlL4AfKAARJCw5pCQ7M2OlFQgEDAIKOhYAG4E0NIkFJR4LqwcXCK8-AA0oF4+dqCQTAyoLYTAOHgEhABWpD3pC27LAIK4+LCkvqusAD6b3r39YFA4EhKlhkHQ6DN-hAbPsmMFQABGADMADYEVR5pl7txRIUtMQSvwKuh7Lt9odmsdTi9Ltdejk8qwRlUCkUCaVifA6qogA)
 
 ```ts
 // @filename: animal.ts
@@ -224,7 +224,7 @@ const name = createCatName();
 
 TypeScript 4.5 also allows for individual imports to be prefixed with `type` to indicate that the imported reference is a type:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVWoxZtO3ACINloIaIlS0qRyCkrKANoAuuqa2nqGJmaW1rYOTvTMrADGDIjyoFmS-PB8xAByaNxCABQAlL4AfKAARJCw5pCQ7M2OlCCgALRDWebEQwNU-VBwSJVYyHR0JBSUeC6sooVaxCX8FegANG5cvPxHHCdePnagkEwMqC2EwDh4BIQAVqQ9VOnrx9wAIK4fCwUi+U6sAA+oCuvRyeVYKHQEK2xVK+3gdVUQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKZjqubAHQAuAzgLABQ8AHgA4D2ATsaMQJ53ygDCyrAXlABvUACMm8eABMspYk2iIA5gG5Q7eMiYB5SACFoLABZZEAV1Rj4TUAF9VVWoxZtO3ACINloIaIlS0qRyCkrKANoAuuqa2nqGJmaW1rYOTvTMrADGDIjyoFmS-PB8xAByaNxCABQAlL4AfKAARJCw5pCQ7M2OlCCgALRDWebEQwNU-VBwSJVYyHR0JBSUeC6sooVaxCX8FegANG5cvPxHHCdePnagkEwMqC2EwDh4BIQAVqQ9VOnrx9wAIK4fCwUi+U6sAA+oCuvRyeVYKHQEK2xVK+3gdVUQA)
 
 ```ts
 // @filename: app.ts
@@ -240,14 +240,14 @@ Together these allow a non-TypeScript transpiler like Babel, swc or esbuild to k
 
 TypeScript has ES Module syntax which *directly* correlates to a CommonJS and AMD `require`. Imports using ES Module are *for most cases* the same as the `require` from those environments, but this syntax ensures you have a 1 to 1 match in your TypeScript file with the CommonJS output:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PQgEB4CcFMDNpgOwMbVAFwJ4AdoGcBeAIkQHsATaI0YAPgFgAoMAAQFsKBXAG2gC5QyUmw6IAVniZgAtLOSd0s6UwCWbbKUjpQsPKAKgYAR04qYACiK6iASgDcTIYjzahlfTrwA6GAENyAGIqvADKmCiWABbQ3NykXuh4RAA0oEQKsAActnZAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PQgEB4CcFMDNpgOwMbVAFwJ4AdoGcBeAIkQHsATaI0YAPgFgAoMAAQFsKBXAG2gC5QyUmw6IAVniZgAtLOSd0s6UwCWbbKUjpQsPKAKgYAR04qYACiK6iASgDcTIYjzahlfTrwA6GAENyAGIqvADKmCiWABbQ3NykXuh4RAA0oEQKsAActnZAA)
 
 ```ts
 import fs = require("fs");
 const code = fs.readFileSync("hello.ts", "utf8");
 ```
 
-You can learn more about this syntax in the [modules reference page](/docs/handbook/modules.html#export--and-import--require).
+You can learn more about this syntax in the [modules reference page ↗](https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require).
 
 ## CommonJS Syntax {#commonjs-syntax}
 
@@ -257,7 +257,7 @@ CommonJS is the format which most modules on npm are delivered in. Even if you a
 
 Identifiers are exported via setting the `exports` property on a global called `module`.
 
-[Try this code](https://www.typescriptlang.org/play/#code/PQgEB4CcFMDNpgOwMbVAFwJ4AdoGcBeAIkQHsATaI0YAPgFgAoMAWjeQFd02WnYOU6AJalEoAIYAjPKQA2XaAApEHALYAuUCtWSEASlABvJqFBDYoZWoigADAZjoOkMdtAAqUCwCMAbhOgjs6uav6MAL5MTKoUHLLQAHTQAB7YpJDoeKAERgHYQpoAzAneACwANAF4AI4c4jAAKgDupJreCaXelYym2AAWBaDtAGxdAVIy8ujQ3eG+QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PQgEB4CcFMDNpgOwMbVAFwJ4AdoGcBeAIkQHsATaI0YAPgFgAoMAWjeQFd02WnYOU6AJalEoAIYAjPKQA2XaAApEHALYAuUCtWSEASlABvJqFBDYoZWoigADAZjoOkMdtAAqUCwCMAbhOgjs6uav6MAL5MTKoUHLLQAHTQAB7YpJDoeKAERgHYQpoAzAneACwANAF4AI4c4jAAKgDupJreCaXelYym2AAWBaDtAGxdAVIy8ujQ3eG+QA)
 
 ```ts
 function absolute(num: number) {
@@ -275,7 +275,7 @@ module.exports = {
 
 Then these files can be imported via a `require` statement:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgsdhcdqFZCTaiiJxqbjAVicQhqHxleFcbjdS5gYKgAB6AH4gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgsdhcdqFZCTaiiJxqbjAVicQhqHxleFcbjdS5gYKgAB6AH4gA)
 
 ```ts
 const maths = require("./maths");
@@ -286,7 +286,7 @@ any
 
 Or you can simplify a bit using the destructuring feature in JavaScript:
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgBUATKazBagcrtQrISbUURONTcYCsTiENQ+Mog6bIebQS5gAB6AH4gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgBUATKazBagcrtQrISbUURONTcYCsTiENQ+Mog6bIebQS5gAB6AH4gA)
 
 ```ts
 const { squareTwo } = require("./maths");
@@ -297,34 +297,34 @@ const squareTwo: any
 
 ### CommonJS and ES Modules interop {#commonjs-and-es-modules-interop}
 
-There is a mis-match in features between CommonJS and ES Modules regarding the distinction between a default import and a module namespace object import. TypeScript has a compiler flag to reduce the friction between the two different sets of constraints with [`esModuleInterop`](/tsconfig#esModuleInterop).
+There is a mis-match in features between CommonJS and ES Modules regarding the distinction between a default import and a module namespace object import. TypeScript has a compiler flag to reduce the friction between the two different sets of constraints with [`esModuleInterop` ↗](https://www.typescriptlang.org/tsconfig#esModuleInterop).
 
 ## TypeScript’s Module Resolution Options {#typescripts-module-resolution-options}
 
 Module resolution is the process of taking a string from the `import` or `require` statement, and determining what file that string refers to.
 
-TypeScript includes two resolution strategies: Classic and Node. Classic, the default when the compiler option [`module`](/tsconfig#module) is not `commonjs`, is included for backwards compatibility.
+TypeScript includes two resolution strategies: Classic and Node. Classic, the default when the compiler option [`module` ↗](https://www.typescriptlang.org/tsconfig#module) is not `commonjs`, is included for backwards compatibility.
 The Node strategy replicates how Node.js works in CommonJS mode, with additional checks for `.ts` and `.d.ts`.
 
-There are many TSConfig flags which influence the module strategy within TypeScript: [`moduleResolution`](/tsconfig#moduleResolution), [`baseUrl`](/tsconfig#baseUrl), [`paths`](/tsconfig#paths), [`rootDirs`](/tsconfig#rootDirs).
+There are many TSConfig flags which influence the module strategy within TypeScript: [`moduleResolution` ↗](https://www.typescriptlang.org/tsconfig#moduleResolution), [`baseUrl` ↗](https://www.typescriptlang.org/tsconfig#baseUrl), [`paths` ↗](https://www.typescriptlang.org/tsconfig#paths), [`rootDirs` ↗](https://www.typescriptlang.org/tsconfig#rootDirs).
 
-For the full details on how these strategies work, you can consult the [Module Resolution](/docs/handbook/modules/reference.html#the-moduleresolution-compiler-option) reference page.
+For the full details on how these strategies work, you can consult the [Module Resolution ↗](https://www.typescriptlang.org/docs/handbook/modules/reference.html#the-moduleresolution-compiler-option) reference page.
 
 ## TypeScript’s Module Output Options {#typescripts-module-output-options}
 
 There are two options which affect the emitted JavaScript output:
 
-- [`target`](/tsconfig#target) which determines which JS features are downleveled (converted to run in older JavaScript runtimes) and which are left intact
-- [`module`](/tsconfig#module) which determines what code is used for modules to interact with each other
+- [`target` ↗](https://www.typescriptlang.org/tsconfig#target) which determines which JS features are downleveled (converted to run in older JavaScript runtimes) and which are left intact
+- [`module` ↗](https://www.typescriptlang.org/tsconfig#module) which determines what code is used for modules to interact with each other
 
-Which [`target`](/tsconfig#target) you use is determined by the features available in the JavaScript runtime you expect to run the TypeScript code in. That could be: the oldest web browser you support, the lowest version of Node.js you expect to run on or could come from unique constraints from your runtime - like Electron for example.
+Which [`target` ↗](https://www.typescriptlang.org/tsconfig#target) you use is determined by the features available in the JavaScript runtime you expect to run the TypeScript code in. That could be: the oldest web browser you support, the lowest version of Node.js you expect to run on or could come from unique constraints from your runtime - like Electron for example.
 
-All communication between modules happens via a module loader, the compiler option [`module`](/tsconfig#module) determines which one is used.
+All communication between modules happens via a module loader, the compiler option [`module` ↗](https://www.typescriptlang.org/tsconfig#module) determines which one is used.
 At runtime the module loader is responsible for locating and executing all dependencies of a module before executing it.
 
-For example, here is a TypeScript file using ES Modules syntax, showcasing a few different options for [`module`](/tsconfig#module):
+For example, here is a TypeScript file using ES Modules syntax, showcasing a few different options for [`module` ↗](https://www.typescriptlang.org/tsconfig#module):
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEDMEsBsFMB2BDAtvAXKAxge0QM4AuyiRBAdOQLABQ8AHgA64BORO+xoAbsrAFd4AeUgAFaKAC8oAMwUAjABYATAG46ICDAQp0WaIgAmjKgU1gAtNewCi1y3WioW7UAG9e-IaImgAvqCQrLiooABEFMB4hCRklABWBOEatHSMrhwx3EQA7rh+MnyCIuKSAFSg6kA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAxge0QM4AuyiRBAdOQLABQ8AHgA64BORO+xoAbsrAFd4AeUgAFaKAC8oAMwUAjABYATAG46ICDAQp0WaIgAmjKgU1gAtNewCi1y3WioW7UAG9e-IaImgAvqCQrLiooABEFMB4hCRklABWBOEatHSMrhwx3EQA7rh+MnyCIuKSAFSg6kA)
 
 ```ts
 import { valueOfPi } from "./constants.js";
@@ -334,7 +334,7 @@ export const twoPi = valueOfPi * 2;
 
 #### `ES2020` {#es2020}
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBco5kATAAyM57gB2siATl7F5DlTIADn3SgA3qABuAQ1LFyAeQBmABVSgAvqBW9koAEQA6YAGNYbSOllt0kYwCtIhgNw4c5AB6iu4i1bi6PCwGqAAvDLyiqphAFSgdK5AA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBco5kATAAyM57gB2siATl7F5DlTIADn3SgA3qABuAQ1LFyAeQBmABVSgAvqBW9koAEQA6YAGNYbSOllt0kYwCtIhgNw4c5AB6iu4i1bi6PCwGqAAvDLyiqphAFSgdK5AA)
 
 ```ts
 import { valueOfPi } from "./constants.js";
@@ -344,7 +344,7 @@ export const twoPi = valueOfPi * 2;
 
 #### `CommonJS` {#commonjs}
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBcoAxrMgQHYBWkOe4jsiATj7DzbZUyAA4D0oAN6gAbgENSxcgHkAZgAVUoAL6g1-ZKABEAOmB1GkdPMbpIp1sYDcOHOQAe4npMvXQ6PCwWqAAvHKKyuohAFSgAEzOQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBcoAxrMgQHYBWkOe4jsiATj7DzbZUyAA4D0oAN6gAbgENSxcgHkAZgAVUoAL6g1-ZKABEAOmB1GkdPMbpIp1sYDcOHOQAe4npMvXQ6PCwWqAAvHKKyuohAFSgAEzOQA)
 
 ```ts
 "use strict";
@@ -357,7 +357,7 @@ exports.twoPi = constants_js_1.valueOfPi * 2;
 
 #### `UMD` {#umd}
 
-[Try this code](https://www.typescriptlang.org/play/#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBcoxyhOe4AdrIgE5uxuQ6rIAOXdKADeoAG4BDUsXIB5AGYAFVKAC+oBZ2SgARADpgAY1hNI6SU3SR9AK0i6A3DhzkAHoLbCTZ4eniwKqAAvBLSsopBAFSgAEyOQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcAsHsHcCiBbAlgFwLACgQWbACYCuANgKYBcoxyhOe4AdrIgE5uxuQ6rIAOXdKADeoAG4BDUsXIB5AGYAFVKAC+oBZ2SgARADpgAY1hNI6SU3SR9AK0i6A3DhzkAHoLbCTZ4eniwKqAAvBLSsopBAFSgAEyOQA)
 
 ```ts
 (function (factory) {
@@ -381,8 +381,8 @@ exports.twoPi = constants_js_1.valueOfPi * 2;
 > Note that ES2020 is effectively the same as the original `index.ts`.
 > 
 
-You can see all of the available options and what their emitted JavaScript code looks like in the [TSConfig Reference for `module`](/tsconfig#module).
+You can see all of the available options and what their emitted JavaScript code looks like in the [TSConfig Reference for `module` ↗](https://www.typescriptlang.org/tsconfig#module).
 
 ## TypeScript namespaces {#typescript-namespaces}
 
-TypeScript has its own module format called `namespaces` which pre-dates the ES Modules standard. This syntax has a lot of useful features for creating complex definition files, and still sees active use [in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped). While not deprecated, the majority of the features in namespaces exist in ES Modules and we recommend you use that to align with JavaScript’s direction. You can learn more about namespaces in [the namespaces reference page](/docs/handbook/namespaces.html).
+TypeScript has its own module format called `namespaces` which pre-dates the ES Modules standard. This syntax has a lot of useful features for creating complex definition files, and still sees active use [in DefinitelyTyped ↗](https://github.com/DefinitelyTyped/DefinitelyTyped). While not deprecated, the majority of the features in namespaces exist in ES Modules and we recommend you use that to align with JavaScript’s direction. You can learn more about namespaces in [the namespaces reference page ↗](https://www.typescriptlang.org/docs/handbook/namespaces.html).

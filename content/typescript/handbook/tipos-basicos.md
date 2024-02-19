@@ -87,7 +87,7 @@ Eso es lo que hace un verificador de tipos estático como TypeScript.
 Los *sistemas de tipos estáticos* describen las formas y comportamientos de cuáles serán nuestros valores cuando ejecutemos nuestros programas.
 Un verificador de tipos como TypeScript usa esa información y nos dice cuándo las cosas podrían estar descarrilándose.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBOAUAMZwB2iALqALaSKICGA5pKALygBEAFpADY9wBCdgG48earUaQAFAEphQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBOAUAMZwB2iALqALaSKICGA5pKALygBEAFpADY9wBCdgG48earUaQAFAEphQA)
 
 ```ts
 const message = "hello!";
@@ -123,7 +123,7 @@ user.location; // retorna undefined
 En última instancia, un sistema de tipo estático tiene que decidir qué código debe marcarse como error en su sistema, incluso si es JavaScript "válido" que no arrojará un error de inmediato.
 En TypeScript, el siguiente código produce un error acerca de que `location` no está definida:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYME4BQBjOAO0QBdQBXRGUAXlAG9dRQiBDAW0lQCIARNkQCWkADY8ANM1BsA5t3QA2KQF8A3LlxUYAOlFx8bUkOJqgA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQBjOAO0QBdQBXRGUAXlAG9dRQiBDAW0lQCIARNkQCWkADY8ANM1BsA5t3QA2KQF8A3LlxUYAOlFx8bUkOJqgA)
 
 ```ts
 const user = {
@@ -143,7 +143,7 @@ Y TypeScript detecta *muchos* errores legítimos.
 
 Por ejemplo: errores tipográficos,
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAGNqRQF1AIaQwCukGApgLYWT4C8oARABIUA270oA6suwBMAhEwDcaNCFAtoAd1ABHEgEsMAa3YBPUBiKhN0EqBQAHaPlwALCqFyazKAPxoipctVq4AdLmgAZaF12CgDZCnhdFAoACgBKcVdDdxo6H39AgnZQ8IBhAii48UkwHhsTJAAjAgqtUBoiC25ZeGVcGytlFC9ul2IkyhTvXwCgkLlc-Jj4oA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAGNqRQF1AIaQwCukGApgLYWT4C8oARABIUA270oA6suwBMAhEwDcaNCFAtoAd1ABHEgEsMAa3YBPUBiKhN0EqBQAHaPlwALCqFyazKAPxoipctVq4AdLmgAZaF12CgDZCnhdFAoACgBKcVdDdxo6H39AgnZQ8IBhAii48UkwHhsTJAAjAgqtUBoiC25ZeGVcGytlFC9ul2IkyhTvXwCgkLlc-Jj4oA)
 
 ```ts
 const announcement = "Hello World!";
@@ -158,7 +158,7 @@ announcement.toLocaleLowerCase();
 
 funciones no llamadas,
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFVIK4GcCmATAMtAxgQwDZIBQIEKATudOUgFygBMAzAGwCsRAZgpNgC4BLaJFCd8AgA4BhaAMgAKAJSgA3kVChSAWRS5IfUH2igARilBbcfABYA6cnrTQAtkvWhyKPgnIjLN+0cXUAAeUAAGWzYAbiIAXyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFVIK4GcCmATAMtAxgQwDZIBQIEKATudOUgFygBMAzAGwCsRAZgpNgC4BLaJFCd8AgA4BhaAMgAKAJSgA3kVChSAWRS5IfUH2igARilBbcfABYA6cnrTQAtkvWhyKPgnIjLN+0cXUAAeUAAGWzYAbiIAXyA)
 
 ```ts
 function flipCoin() {
@@ -173,7 +173,7 @@ Operator '<' cannot be applied to types '() => number' and 'number'.
 
 o errores de lógica básica.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYBsB2AUAMZwB2iALqAG4CGANgK6SgC8oAstWQBYB001xACZwAtgAoAlKAA8oAAw8ArKAD8oAETV1oVOoBG6gNx4AlgDNQYmgyYBCZq03qpAbzyhQIUDx94AvqCQtIhM5pbWjCwOGgau7p5gAPJwAA6IADSg9MTQkNQEXNR6tJD+QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYBsB2AUAMZwB2iALqAG4CGANgK6SgC8oAstWQBYB001xACZwAtgAoAlKAA8oAAw8ArKAD8oAETV1oVOoBG6gNx4AlgDNQYmgyYBCZq03qpAbzyhQIUDx94AvqCQtIhM5pbWjCwOGgau7p5gAPJwAA6IADSg9MTQkNQEXNR6tJD+QA)
 
 ```ts
 const value = Math.random() < 0.5 ? "a" : "b";
@@ -199,7 +199,7 @@ Una vez que tenga esa información, también puede comenzar a *sugerir* qué pro
 Eso significa que TypeScript también se puede aprovechar para editar código, y el verificador de tipo del core puede proporcionar mensajes de error y completar el código a medida que escribes en el editor.
 Eso es parte de lo que la gente suele referirse cuando habla de herramientas en TypeScript.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAggUxQWWgCYCuANlgJKQAuWSADmgJYC2dyVoWAHnfDiqABmSZqABE3XvzEBuNAGNokFBwCGdOqAC8nHnxQoAFAEo5adXQB0AcyxVDY4GIA0QopHlVGS0Ib4BHV31jUABvNFBQfUsULEgMMEik0AA9AB80AF9TNHMNSxJGFTjDAGYABkrTIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAggUxQWWgCYCuANlgJKQAuWSADmgJYC2dyVoWAHnfDiqABmSZqABE3XvzEBuNAGNokFBwCGdOqAC8nHnxQoAFAEo5adXQB0AcyxVDY4GIA0QopHlVGS0Ib4BHV31jUABvNFBQfUsULEgMMEik0AA9AB80AF9TNHMNSxJGFTjDAGYABkrTIA)
 
 ```ts
 import express from "express";
@@ -233,7 +233,7 @@ npm install -g typescript
 
 Ahora vayamos a una carpeta vacía e intentemos escribir nuestro primer programa TypeScript: `hello.ts`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEHECcFNoFwM6jgC2qA7ge0gGwCYB0AUAMZYB2CWu0huWA5gBQBEAEtLg5jgQISsAlAG4gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEHECcFNoFwM6jgC2qA7ge0gGwCYB0AUAMZYB2CWu0huWA5gBQBEAEtLg5jgQISsAlAG4gA)
 
 ```ts
 // Saluda al mundo.
@@ -270,7 +270,7 @@ Si bien eso no siempre es tan fácil, TypeScript aplica sangrías de manera cons
 ¿Qué pasa si *introducimos* un error de verificación de tipo?
 Reescribamos `hello.ts`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAlAFQBYEsVQDQBDSIyAEwFcUAXePEgGwFoBzeEygU1HZ6QeXNgAdq8UdBR9OPHnWGgAZtUgBjOnmiQAXGlUatO-vHl0AFKOEodAGlCUSigJSgA3mlCh1O28x4AOmZodgsAAwAJHmYQ0AASd2tUHQBfBzpoJwBPIkJEp0VUgEJwlwBuNFS0NDkFCwAiACEzKjIGiqA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAlAFQBYEsVQDQBDSIyAEwFcUAXePEgGwFoBzeEygU1HZ6QeXNgAdq8UdBR9OPHnWGgAZtUgBjOnmiQAXGlUatO-vHl0AFKOEodAGlCUSigJSgA3mlCh1O28x4AOmZodgsAAwAJHmYQ0AASd2tUHQBfBzpoJwBPIkJEp0VUgEJwlwBuNFS0NDkFCwAiACEzKjIGiqA)
 
 ```ts
 // Esta es una función de bienvenida de uso general:
@@ -305,7 +305,7 @@ Con el tiempo, podrás limpiar las cosas para el verificador de tipos, ¡pero es
 
 Para que TypeScript no se interponga en tu camino.
 Por supuesto, con el tiempo, es posible que desees estar un poco más a la defensiva contra los errores y hacer que TypeScript actúe de forma un poco más estricta.
-En ese caso, puede utilizar la opción del compilador [`noEmitOnError` ↗](https://www.typescriptlang.org/tsconfig#noEmitOnError).
+En ese caso, puedes utilizar la opción del compilador [`noEmitOnError` ↗](https://www.typescriptlang.org/tsconfig#noEmitOnError).
 Intenta cambiar tu archivo `hello.ts` y ejecuta `tsc` con esa bandera:
 
 ```sh
@@ -320,7 +320,7 @@ Hasta ahora, no le hemos dicho a TypeScript qué son `person` o `date`.
 Editemos el código para decirle a TypeScript que `person` es un `string` y que `date` debe ser un objeto `Date`.
 También usaremos el método `toDateString()` en `date`.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6gA)
 
 ```ts
 function greet(person: string, date: Date) {
@@ -334,7 +334,7 @@ Puedes leer esa firma como "`greet` toma una `person` de tipo `string` y una `da
 Con esto, TypeScript puede informarnos sobre otros casos en los que `greet` podría haberse llamado incorrectamente.
 Por ejemplo…
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAGYCuAdgMYAuAlnCaAObSSQUAUADjIraohdFRL0ANKAAmAQwqRUAESmQAlKADeeUKDK1uAG0gA6HXHqsABgAlIOo6AAkKzkloBfURTiSAnqCqI7KyWl9d3lpAGV+QRNFZwBCU0UAbjxnPDxGZjYAIgBZCTExX1os0VDIVkUkoA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAGYCuAdgMYAuAlnCaAObSSQUAUADjIraohdFRL0ANKAAmAQwqRUAESmQAlKADeeUKDK1uAG0gA6HXHqsABgAlIOo6AAkKzkloBfURTiSAnqCqI7KyWl9d3lpAGV+QRNFZwBCU0UAbjxnPDxGZjYAIgBZCTExX1os0VDIVkUkoA)
 
 ```ts
 function greet(person: string, date: Date) {
@@ -356,7 +356,7 @@ Por otro lado, construir una `Date` con `new Date()` en realidad nos da lo que e
 
 De todos modos, podemos corregir rápidamente el error:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6BATRMHAAiAFkmBgYLBFD6MHQAd0QHdGxuXyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6BATRMHAAiAFkmBgYLBFD6MHQAd0QHdGxuXyA)
 
 ```ts
 function greet(person: string, date: Date) {
@@ -369,7 +369,7 @@ greet("Maddison", new Date());
 Ten en cuenta que no siempre tenemos que escribir anotaciones de tipo explícitas.
 En muchos casos, TypeScript puede incluso simplemente *inferir* (o "descubrir") los tipos por nosotros incluso si los omitimos.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAtgzg5hAvBARACxMYB7CYMBOIAhCgNwBQA9FRBAHoD8QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAtgzg5hAvBARACxMYB7CYMBOIAhCgNwBQA9FRBAHoD8QA)
 
 ```ts
 let msg = "hello there!";
@@ -387,7 +387,7 @@ Esa es una característica, y es mejor no agregar anotaciones cuando el sistema 
 
 Echemos un vistazo a lo que sucede cuando compilamos la función anterior `greet` con `tsc` para generar JavaScript:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEGcAsHsHcCiBbAlgFwFAgughgE4DmApugFygmQCsmAZgK4B2AxuqrM6EQSWQAoADiQKQulSOgKpmRADSgAJnnQlKAEVUkAlKADemUKFZdxAGxIA6c7CICABgAkS526AAk+kWK4BfRXRYFQBPUFRIT30VNSsgrTUAZWlZex0-AEIHHQBuTD9MTF5+dAEAIgBZPCUlCK4yxWYSeFAEkgEdXKA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcAsHsHcCiBbAlgFwFAgughgE4DmApugFygmQCsmAZgK4B2AxuqrM6EQSWQAoADiQKQulSOgKpmRADSgAJnnQlKAEVUkAlKADemUKFZdxAGxIA6c7CICABgAkS526AAk+kWK4BfRXRYFQBPUFRIT30VNSsgrTUAZWlZex0-AEIHHQBuTD9MTF5+dAEAIgBZPCUlCK4yxWYSeFAEkgEdXKA)
 
 ```ts
 "use strict";
@@ -476,6 +476,6 @@ Activar el indicador [`noImplicitAny` ↗](https://www.typescriptlang.org/tsconf
 
 ## `strictNullChecks` {#strictnullchecks}
 
-De forma predeterminada, valores como `null` o `undefined` se pueden asignar a cualquier otro tipo.
-Esto puede facilitar la escritura de código, pero olvidarse de manejar `null` o `undefined` es la causa de innumerables errores en el mundo; algunos lo consideran un [error de miles de millones de dólares ↗](https://www.youtube.com/watch?v=ybrQvs4x0Ps)!
-El indicador [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) hace que el manejo de `null` y `undefined` sea más explícito, y *nos evita* preocuparnos por si *nos olvidamos* de manejar `null` o `undefined`.
+De forma predeterminada, valores como `null` y `undefined` se pueden asignar a cualquier otro tipo.
+Esto puede facilitar la escritura de código, pero olvidarse de manejar `null` y `undefined` es la causa de innumerables errores en el mundo; algunos lo consideran un [error de miles de millones de dólares ↗](https://www.youtube.com/watch)!
+El indicador [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) hace que el manejo de `null` y `undefined` sea más explícito, y nos *evita* preocuparnos por si *nos olvidamos* de manejar `null` y `undefined`.

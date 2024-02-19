@@ -22,7 +22,7 @@ En esta introducción, asumo que sabes lo siguiente:
 - Escribir sintaxis de un lenguaje descendiente de C.
 
 Si necesitas aprender las partes buenas de JavaScript, lee [JavaScript: The Good Parts ↗](https://shop.oreilly.com/product/9780596517748.do).
-Es posible que puedas saltarte el libro si sabes cómo escribir programas en un lenguaje de alcance léxico de llamada por valor con mucha mutabilidad y no mucho más.
+Es posible que puedas omitir el libro si sabes cómo escribir programas en un lenguaje de alcance léxico de llamada por valor con mucha mutabilidad y no mucho más.
 [Esquema RRS ↗](https://people.csail.mit.edu/jaffer/r4rs.pdf) es un buen ejemplo.
 
 [El lenguaje de programación C++ ↗](http://www.stroustrup.com/4th.html) es un buen lugar para aprender sobre la sintaxis de tipos de estilo C. A diferencia de C++, TypeScript usa tipos postfix, como este: `x: string` en lugar de `string x`.
@@ -105,7 +105,7 @@ Ten en cuenta que llamar a un método en un literal numérico requiere que esté
 
 TypeScript usa el tipo `any` siempre que no puede decir cuál debería ser el tipo de una expresión. En comparación con `Dynamic`, llamar tipo `any` es una exageración. Simplemente apaga el verificador de tipos dondequiera que aparezca. Por ejemplo, puedes insertar cualquier valor en array `any[]` sin marcar el valor de ninguna manera:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEHcEsBcAtQEQDsD2BJAtgBwDaQMYwCCSAnggFygBmAhjgM4CmokSo0D+KS1kA5gDoAVgx4AaULTIMq00gG0AugChuSBtCkzQAXlDKA3CvkNBWAK4NYACgCMASmOnzV2whTxUCJyZmvrGwBvbVI4Nn4qBH4UJgYEUABfJyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEHcEsBcAtQEQDsD2BJAtgBwDaQMYwCCSAnggFygBmAhjgM4CmokSo0D+KS1kA5gDoAVgx4AaULTIMq00gG0AugChuSBtCkzQAXlDKA3CvkNBWAK4NYACgCMASmOnzV2whTxUCJyZmvrGwBvbVI4Nn4qBH4UJgYEUABfJyA)
 
 ```ts
 // con "noImplicitAny": false en tsconfig.json, anys: any[]
@@ -143,7 +143,7 @@ Aquí, el objeto literal `{ x: "hi", extra: 1 }` tiene un tipo literal coinciden
 
 Los tipos con nombre simplemente le dan un nombre a un tipo; para fines de asignabilidad, no hay diferencia entre el alias de tipo `One` y el tipo de interfaz `Two` a continuación. Ambos tienen una propiedad `p:string`. (Sin embargo, los alias de tipo se comportan de manera diferente a las interfaces con respecto a las definiciones recursivas y los parámetros de tipo).
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGY1oFABcBPAB0lAHkA7UgXlAG9QjVE9oBLCgc1AF8BuHBzwwAZgEMAxqQAqAdzj0coRs1YdOAnjgkAbMYkShpAC2iRSdJY1C0ARAAlIOnXFuacOHZDygAHqkoaehVQW2M2W14BLx88eVQ5BVpfATik0CpZI1NzAAoASj4gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGY1oFABcBPAB0lAHkA7UgXlAG9QjVE9oBLCgc1AF8BuHBzwwAZgEMAxqQAqAdzj0coRs1YdOAnjgkAbMYkShpAC2iRSdJY1C0ARAAlIOnXFuacOHZDygAHqkoaehVQW2M2W14BLx88eVQ5BVpfATik0CpZI1NzAAoASj4gA)
 
 ```ts
 type One = { p: string };
@@ -163,7 +163,7 @@ two = new Three();
 
 En TypeScript, los tipos de unión no están etiquetados. En otras palabras, no son uniones discriminadas como los de `data` en Haskell. Sin embargo, a menudo es posible discriminar tipos en una unión mediante etiquetas integradas u otras propiedades.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAZygQwE5QBQChGKYDmAXClBjGEYgD7mXUDaAunYttgJSIC8AfAypEe9AN4oyqRjQC+uLlIrDEY-IgD0GxFAAWMZIgMoQABwCmGRBDgBbWwiNIAUmgBuaAMoRKpqOphgDigATws4IOI+Xl5EACJpYTieNQICDHMoEAwkG3sEAGE0ZHNsYi4AbnVZRHMAGxKjIOwAQQwMNBCAOgM2jpCyjBEU9XTM7KRiLts0U2w8hzAikq4ugCs4Kmw4gBpkqoIa+sbA4LDzCMIh6Ni40EhYBGTVUcQMrJzrO0Xl0uJuSrVWoNcwvNJvcafBaFYp-IZdZCAw64dT3aDwXLfGElbDIJQyRRCahgtJaRDAKhoOp1EI7RBrECoL5gNyWKCEIk0KBwQhgOB6Syc17vCYoA6IeSyIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAZygQwE5QBQChGKYDmAXClBjGEYgD7mXUDaAunYttgJSIC8AfAypEe9AN4oyqRjQC+uLlIrDEY-IgD0GxFAAWMZIgMoQABwCmGRBDgBbWwiNIAUmgBuaAMoRKpqOphgDigATws4IOI+Xl5EACJpYTieNQICDHMoEAwkG3sEAGE0ZHNsYi4AbnVZRHMAGxKjIOwAQQwMNBCAOgM2jpCyjBEU9XTM7KRiLts0U2w8hzAikq4ugCs4Kmw4gBpkqoIa+sbA4LDzCMIh6Ni40EhYBGTVUcQMrJzrO0Xl0uJuSrVWoNcwvNJvcafBaFYp-IZdZCAw64dT3aDwXLfGElbDIJQyRRCahgtJaRDAKhoOp1EI7RBrECoL5gNyWKCEIk0KBwQhgOB6Syc17vCYoA6IeSyIA)
 
 ```ts
 function start(
@@ -210,7 +210,7 @@ Ten en cuenta que las funciones y los arreglos son objetos en tiempo de ejecuci�
 
 Además de uniones, TypeScript también tiene intersecciones:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAwg9gWwEYEsB2EAmUC8UDeUAhgFxRoCuyEATlAL5QBkBUSZAzsDegOYMBuAFChIsOGgBmAGxQBjYH1ytS5KkloNmKztyX0BQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAwg9gWwEYEsB2EAmUC8UDeUAhgFxRoCuyEATlAL5QBkBUSZAzsDegOYMBuAFChIsOGgBmAGxQBjYH1ytS5KkloNmKztyX0BQA)
 
 ```ts
 type Combined = { a: number } & { b: string };
@@ -223,7 +223,7 @@ type Conflicting = { a: number } & { a: string };
 
 Los tipos de unidades son subtipos de tipos primitivos que contienen exactamente un valor primitivo. Por ejemplo, la cadena `"foo"` tiene el tipo `"foo"`. Dado que JavaScript no tiene enumeraciones integradas, es común utilizar en su lugar un conjunto de cadenas conocidas. Las uniones de tipos literales de cadena permiten a TypeScript escribir este patrón:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFBFS4lVnEsAjAAYWk6Rt1A)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFBFS4lVnEsAjAAYWk6Rt1A)
 
 ```ts
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
@@ -232,7 +232,7 @@ pad("hi", 10, "left");
 
 Cuando es necesario, el compilador *amplia* - convierte a un supertipo - el tipo de unidad al tipo primitivo, como `"foo"` a `string`. Esto sucede cuando se utiliza la mutabilidad, lo que puede dificultar algunos usos de variables mutables:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUACaQDGANgIbSSgBmArgHbEAuAlnA6AA7kEAUKUImbRWDAOYAaUA1QM6AWwBGMaQVZUW7WaABEpSDWa7QAHz2jxAC2MBKVMNESA3HhCgAtF+J1mXj3gGzEKgALwWrNbGrjz8ulasutIAjAAM0oi2zqDuMPDQqADkjmLihaCsiDJwweSIiJEM5EoGoMxwoIX6hsZmEVG6hUA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUACaQDGANgIbSSgBmArgHbEAuAlnA6AA7kEAUKUImbRWDAOYAaUA1QM6AWwBGMaQVZUW7WaABEpSDWa7QAHz2jxAC2MBKVMNESA3HhCgAtF+J1mXj3gGzEKgALwWrNbGrjz8ulasutIAjAAM0oi2zqDuMPDQqADkjmLihaCsiDJwweSIiJEM5EoGoMxwoIX6hsZmEVG6hUA)
 
 ```ts
 let s = "right";
@@ -251,7 +251,7 @@ Así es como ocurre el error:
 
 Puedes solucionar esto con una anotación de tipo para `s`, pero eso a su vez evita asignaciones a `s` de variables que no son de tipo `"left" | "right"`.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFAB6Q-AC05sMgznT+qRmpVJ02QqVZVrgLzvP4g0Sk4ipY4iwAjAAMLGTqukA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFAB6Q-AC05sMgznT+qRmpVJ02QqVZVrgLzvP4g0Sk4ipY4iwAjAAMLGTqukA)
 
 ```ts
 let s: "left" | "right" = "right";
@@ -264,7 +264,7 @@ pad("hi", 10, s);
 
 TypeScript tiene algunos lugares obvios donde puede inferir tipos, como declaraciones de variables:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAzhC8ECICSByAthAhtMAnAlgHYDmAhAgNxA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAzhC8ECICSByAthAhtMAnAlgHYDmAhAgNxA)
 
 ```ts
 let s = "¡Soy un string!";
@@ -272,7 +272,7 @@ let s = "¡Soy un string!";
 
 Pero también infiere tipos en algunos otros lugares que quizás no esperes si has trabajado con otros lenguajes de sintaxis C:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwFsoAHAHgBUAaeAVQD4AKRALngY1fIEp4BeO2tQwBnTgG0Aul1Y1JAbgBQEEBnjDUwvoRIMGqHv3ioAdBhwBlDDCyoA5gy7UxARmoAmagGYpcoA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwFsoAHAHgBUAaeAVQD4AKRALngY1fIEp4BeO2tQwBnTgG0Aul1Y1JAbgBQEEBnjDUwvoRIMGqHv3ioAdBhwBlDDCyoA5gy7UxARmoAmagGYpcoA)
 
 ```ts
 declare function map<T, U>(f: (t: T) => U, ts: T[]): U[];
@@ -283,7 +283,7 @@ Aquí, también en este ejemplo es `n: number`, a pesar de que `T` y `U` no se h
 
 Ten en cuenta que la inferencia funcionará en cualquier orden, pero intellisense solo funcionará de izquierda a derecha, por lo que TypeScript prefiere declarar `map` con el array primero:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwFsoAHAHgBUAaeAVQD4AKDAZwC55yBtAXWsXabtyASngBeOrWHsaPANxA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwFsoAHAHgBUAaeAVQD4AKDAZwC55yBtAXWsXabtyASngBeOrWHsaPANxA)
 
 ```ts
 declare function map<T, U>(ts: T[], f: (t: T) => U): U[];
@@ -291,7 +291,7 @@ declare function map<T, U>(ts: T[], f: (t: T) => U): U[];
 
 El tipado contextual también funciona de forma recursiva a través de objetos literales y en tipos de unidades que de otro modo se inferirían como `string` o `number`. Y puede inferir tipos de retorno a partir del contexto:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXxjQB4AVAPgAoMALNAawC54qmSBKeAXjPgDccswNqwDcAKAggM8LEwDeM1IhBx0IJgGcMMLKgDm8AL5cCaChRwdu8OWPjwcAOl3LVYBJ3gAiAJIA5AGUAUQAlEngAkgBBEiD4AAlQoK9xQzYRIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXxjQB4AVAPgAoMALNAawC54qmSBKeAXjPgDccswNqwDcAKAggM8LEwDeM1IhBx0IJgGcMMLKgDm8AL5cCaChRwdu8OWPjwcAOl3LVYBJ3gAiAJIA5AGUAUQAlEngAkgBBEiD4AAlQoK9xQzYRIA)
 
 ```ts
 declare function run<T>(thunk: (t: T) => void): T;
@@ -313,7 +313,7 @@ En conjunto, esta característica puede hacer que la inferencia de TypeScript se
 
 Los alias de tipos son meros alias, como `type` en Haskell. El compilador intentará utilizar el nombre de alias siempre que se haya utilizado en el código fuente, pero no siempre lo consigue.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAyglgL2gXigbQHYFcC2AjCAJwBopt8iBdAbgCgAbCYKADwC5ZEV0BGABh4A6HqQCc4waJpA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAyglgL2gXigbQHYFcC2AjCAJwBopt8iBdAbgCgAbCYKADwC5ZEV0BGABh4A6HqQCc4waJpA)
 
 ```ts
 type Size = [number, number];
@@ -341,7 +341,7 @@ type Shape =
 
 A diferencia de Haskell, la etiqueta, o discriminante, es solo una propiedad en cada tipo de objeto. Cada variante tiene una propiedad idéntica con un tipo de unidad diferente. Este sigue siendo un tipo de unión normal; el `|` inicial es una parte opcional de la sintaxis del tipo de unión. Puedes discriminar a los miembros de la unión usando código JavaScript normal:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAygFgQ0lAvAKClAPlA3lAawEsA7AEwC4oAiAYyICdaAbCagbigYTKIFcAzlRJ8AtgCMIDKAF8M2PIVKUaAgI58EDNpwAewsZOlzMOfMXJVqwBkQQkA5qw5R9UERKmcQBz8fZoaABmfCS0wEQA9iRQWhAIABRCsIiQAJR48kRBUEkAdBZkqCgoNPRMzhm48pjawHwMMQCyCMBweQAKAJJQAFRQAnncvIJ9A0M8-AIBmDJQEMwC0Nm5g4XFpdTqmtrUVTVcEPWN47pjg7ozsvOL0NWYtUcNMfln-YMgGQD0UABMV3IZEA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAygFgQ0lAvAKClAPlA3lAawEsA7AEwC4oAiAYyICdaAbCagbigYTKIFcAzlRJ8AtgCMIDKAF8M2PIVKUaAgI58EDNpwAewsZOlzMOfMXJVqwBkQQkA5qw5R9UERKmcQBz8fZoaABmfCS0wEQA9iRQWhAIABRCsIiQAJR48kRBUEkAdBZkqCgoNPRMzhm48pjawHwMMQCyCMBweQAKAJJQAFRQAnncvIJ9A0M8-AIBmDJQEMwC0Nm5g4XFpdTqmtrUVTVcEPWN47pjg7ozsvOL0NWYtUcNMfln-YMgGQD0UABMV3IZEA)
 
 ```ts
 type Shape =
@@ -364,7 +364,7 @@ Ten en cuenta que se infiere que el tipo de retorno de `area` es `number` porque
 
 Además, a diferencia de Haskell, las propiedades comunes aparecen en cualquier unión, por lo que puedes discriminar de manera útil a varios miembros de la unión:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAygFgQ0lAvAKClAPlA3lAawEsA7AEwC4oAiAYyICdaAbCagbigYTKIFcAzlRJ8AtgCMIDKAF8M2PIVKUaAgI58EDNpwAewsZOlzMOfMXJVqwBkQQkA5qw5R9UERKmcQBz8fZoAPSBUAC04bR8wOGhaABmfCS0wEQA9iRQcBBEDnDAABRCsIiQAJR48kRxUIUAdBZkqCgoNPRMzuW48pjawHwMGQBMUABUUAK13LyCAZgyUBDMAtBdmJjB4-XKVuqa2tQK1rb2TmzdXBB9A5u6s7JoMkA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAygFgQ0lAvAKClAPlA3lAawEsA7AEwC4oAiAYyICdaAbCagbigYTKIFcAzlRJ8AtgCMIDKAF8M2PIVKUaAgI58EDNpwAewsZOlzMOfMXJVqwBkQQkA5qw5R9UERKmcQBz8fZoAPSBUAC04bR8wOGhaABmfCS0wEQA9iRQcBBEDnDAABRCsIiQAJR48kRxUIUAdBZkqCgoNPRMzuW48pjawHwMGQBMUABUUAK13LyCAZgyUBDMAtBdmJjB4-XKVuqa2tQK1rb2TmzdXBB9A5u6s7JoMkA)
 
 ```ts
 function height(s: Shape) {

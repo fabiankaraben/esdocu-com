@@ -19,7 +19,7 @@ Estos formarán más adelante los componentes básicos de tipos más complejos.
 
 ## Los tipos primitivos: `string`, `number` y `boolean` {#the-primitives-string-number-and-boolean}
 
-JavaScript tiene tres tipos [primitivos ↗](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) de uso muy común: `string`, `number` y `boolean`.
+JavaScript tiene tres [primitivas ↗](https://developer.mozilla.org/en-US/docs/Glossary/Primitive): `string`, `number` y `boolean`.
 Cada uno tiene un tipo correspondiente en TypeScript.
 Como es de esperar, estos son los mismos nombres que verías si usaras el operador `typeof` de JavaScript en un valor de esos tipos:
 
@@ -36,7 +36,7 @@ Para especificar el tipo de un array como `[1, 2, 3]`, puedes usar la sintaxis `
 También puedes ver esto escrito como `Array<number>`, que significa lo mismo.
 Aprenderemos más sobre la sintaxis `T<U>` cuando cubramos *generics*.
 
-> Ten en cuenta que `[number]` es una cosa diferente; consulta la sección sobre [Tuples ↗](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types).
+> Ten en cuenta que `[number]` es una cosa diferente; consulta la sección sobre [Tuplas](/typescript/handbook/objectos#tuple-types).
 >
 
 ## El tipo especial `any` {#any}
@@ -45,7 +45,7 @@ TypeScript también tiene un tipo especial, `any`, que puedes usar siempre que n
 
 Cuando un valor es de tipo `any`, puedes acceder a cualquier propiedad del mismo (que a su vez será de tipo `any`), llamarlo como una función, asignarlo a (o desde) un valor de cualquier tipo, o prácticamente cualquier otra cosa que sea sintácticamente legal:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBA9gRgVgLggQwHYE8IF4IG8IAeSADBAL4DcAsAFAD0dEAclKiNAGYRgAW7HUYMCgB3AJaoA5hGASQAZ04QAxlAAm7cUO48ATqJVQAtgAcxoXRBC79u+QDpaDCAFV5E6QAM06TxDVi8sgwoIrI2hwArrq81tzoJuzKfMoA1h4ANCioahBikIEo8vKRRiBqTozoUJEQqagGsVaoAG5i+qhlqJAw4GBxvGgQACoJIADKyrpiJmCONLBw9gJQABQAlNQL8Btbi-YwyJY4AIzExHvw2BAARHxCUDdbqqjykKhIqKW9x9DwFEA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBA9gRgVgLggQwHYE8IF4IG8IAeSADBAL4DcAsAFAD0dEAclKiNAGYRgAW7HUYMCgB3AJaoA5hGASQAZ04QAxlAAm7cUO48ATqJVQAtgAcxoXRBC79u+QDpaDCAFV5E6QAM06TxDVi8sgwoIrI2hwArrq81tzoJuzKfMoA1h4ANCioahBikIEo8vKRRiBqTozoUJEQqagGsVaoAG5i+qhlqJAw4GBxvGgQACoJIADKyrpiJmCONLBw9gJQABQAlNQL8Btbi-YwyJY4AIzExHvw2BAARHxCUDdbqqjykKhIqKW9x9DwFEA)
 
 ```ts
 let obj: any = { x: 0 };
@@ -65,14 +65,14 @@ El tipo `any` es útil cuando no quieres escribir un tipo largo solo para conven
 
 Cuando no especificas un tipo y TypeScript no puede inferirlo del contexto, el compilador generalmente usará de manera predeterminada `any`.
 
-Normalmente querrás evitar esto porque `any` no es un tipo comprobado.
+Normalmente querrás evitar esto porque `any` no está tipado.
 Utiliza el indicador del compilador [`noImplicitAny` ↗](https://www.typescriptlang.org/tsconfig#noImplicitAny) para marcar cualquier `any` implícito como un error.
 
 ## Anotaciones de tipado en variables {#type-annotations-on-variables}
 
 Cuando declaras una variable usando `const`, `var` o `let`, opcionalmente puedes agregar una anotación de tipo para especificar explícitamente el tipo de la variable:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAtgngcgQyiAXBAzmATgSwHYDmEAvBAEQCCwOAxiGQNwCwAUAPRsRfdcB6-A-hAAqMAA4gICPHgD2YBGByy8QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAtgngcgQyiAXBAzmATgSwHYDmEAvBAEQCCwOAxiGQNwCwAUAPRsRfdcB6-A-hAAqMAA4gICPHgD2YBGByy8QA)
 
 ```ts
 let myName: string = "Alice";
@@ -86,7 +86,7 @@ En la mayoría de los casos, sin embargo, esto no es necesario.
 Siempre que es posible, TypeScript intenta *inferir* automáticamente los tipos en tu código.
 Por ejemplo, el tipo de una variable se infiere en función del tipo de su inicializador:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEDkHtQFwTwA4FNQEMB27I1TAlpOqOkkgCbmgC0VoA5ALZzioNJ2h7oBmSATn0qoAzrEQo6wmHy4BzOgFgAUABskMUExZtQAXlAAiAIIq8AYyQGA3EA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEDkHtQFwTwA4FNQEMB27I1TAlpOqOkkgCbmgC0VoA5ALZzioNJ2h7oBmSATn0qoAzrEQo6wmHy4BzOgFgAUABskMUExZtQAXlAAiAIIq8AYyQGA3EA)
 
 ```ts
 // No se necesita anotación de tipo: 'myName' se infiere de tipo 'string'
@@ -106,7 +106,7 @@ TypeScript te permite especificar los tipos de valores de entrada y salida de fu
 Cuando declaras una función, puedes agregar anotaciones de tipo después de cada parámetro para declarar qué tipos de parámetros acepta la función.
 Las anotaciones de tipo de parámetro van después del nombre del parámetro:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAUEMCdIWwKYBcHVEgngBwaSA7fAeyUiQEsj8BYAKADMBXfAYwqtAHNoFkAKfPAQAuUAGck0cvk4BKUAG86oUCBXqNm9QD1de3ctAsqYogBsEAOjNFOfAEQAJBGZsAaUPdABqUIMSWSEQAqlg40ADCkGIIfPK+9gCEifayANx0AL5AA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAUEMCdIWwKYBcHVEgngBwaSA7fAeyUiQEsj8BYAKADMBXfAYwqtAHNoFkAKfPAQAuUAGck0cvk4BKUAG86oUCBXqNm9QD1de3ctAsqYogBsEAOjNFOfAEQAJBGZsAaUPdABqUIMSWSEQAqlg40ADCkGIIfPK+9gCEifayANx0AL5AA)
 
 ```ts
 // Anotación de tipo de parámetro
@@ -117,7 +117,7 @@ function greet(name: string) {
 
 Cuando un parámetro tiene una anotación de tipo, se verificarán los argumentos de esa función:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgDmNkrABRNKAW0ipEraOyY8AlKgBucdkQDchEKAC0e0g1Z6dWsAHU4DckVAAjWpVDRmHcaBjxoodnXcAPMkNIIgBCQj5IAUEsNHl1IA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgDmNkrABRNKAW0ipEraOyY8AlKgBucdkQDchEKAC0e0g1Z6dWsAHU4DckVAAjWpVDRmHcaBjxoodnXcAPMkNIIgBCQj5IAUEsNHl1IA)
 
 ```ts
 // ¡Sería un error de ejecución si se ejecutara!
@@ -136,7 +136,7 @@ Argument of type 'number' is not assignable to parameter of type 'string'.
 También puedes agregar anotaciones de tipo de retorno.
 Las anotaciones de tipo de retorno aparecen después de la lista de parámetros:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwKZQGIEMBucBOMUqAciALYBGq+AFAJQBciYF1+iA3gLABQiiAPSCBoseIliAejNky+A-OhD4kAJgBsAbj4BfIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQGIEMBucBOMUqAciALYBGq+AFAJQBciYF1+iA3gLABQiiAPSCBoseIliAejNky+A-OhD4kAJgBsAbj4BfIA)
 
 ```ts
 function getFavoriteNumber(): number {
@@ -152,7 +152,7 @@ Algunas bases de código especificarán explícitamente un tipo de devolución c
 
 Si quieres anotar el tipo de retorno de una función que devuelve una promesa, debes usar el tipo `Promise`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/IYZwngdgxgBAZgV2gFwJYHsIwOYFNkBiwAbugE6rK4ByCAtgEa5kAUAlAFwwAKZ6dqELgA8EekzIA+GAG8AsACgYMMvgRksAJgBsAbkUBfIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/IYZwngdgxgBAZgV2gFwJYHsIwOYFNkBiwAbugE6rK4ByCAtgEa5kAUAlAFwwAKZ6dqELgA8EekzIA+GAG8AsACgYMMvgRksAJgBsAbkUBfIA)
 
 ```ts
 async function getFavoriteNumber(): Promise<number> {
@@ -167,7 +167,7 @@ Cuando una función aparece en un lugar donde TypeScript puede determinar cómo 
 
 Aquí tienes un ejemplo:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwFYMEYCwAoAYzgDtEAXUEgQwFtJFQBeUAbQCIBBAGwEtDI7ADSh2AITgAjYaICiAN0EBdANwECIUAGFS5SAA9yAV2rdQ5AJ4AHXiQDmoAGYInRkoXK9SoALSgr1NB0kHrQoIy2jjDQkAAm5nCgABbUiubWkOHk0LZ2BDT0iAB0ztCy1IRJABSObh5eJKBViACUoADeBKCgxGRw3JBF3HB2zUXkcACqVlYwWtSIkFUtLWr4AL6r6viaOiR6hiZmljb2oKaIidQzfAwJ57BwAO6u7p6kiPnBxaXllVXNNpMAB8HS6PQ+-UGw1GxQm01m0Hmi2WWw2qyAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYMEYCwAoAYzgDtEAXUEgQwFtJFQBeUAbQCIBBAGwEtDI7ADSh2AITgAjYaICiAN0EBdANwECIUAGFS5SAA9yAV2rdQ5AJ4AHXiQDmoAGYInRkoXK9SoALSgr1NB0kHrQoIy2jjDQkAAm5nCgABbUiubWkOHk0LZ2BDT0iAB0ztCy1IRJABSObh5eJKBViACUoADeBKCgxGRw3JBF3HB2zUXkcACqVlYwWtSIkFUtLWr4AL6r6viaOiR6hiZmljb2oKaIidQzfAwJ57BwAO6u7p6kiPnBxaXllVXNNpMAB8HS6PQ+-UGw1GxQm01m0Hmi2WWw2qyAA)
 
 ```ts
 const names = ["Alice", "Bob", "Eve"];
@@ -198,7 +198,7 @@ Para definir un tipo de objeto, simplemente enumeramos sus propiedades y sus tip
 
 Por ejemplo, aquí tienes una función que toma un objeto puntual:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEBUAsFNQBwIYCcEFtoBdpIOQGdQMBPOWBAO3IHsMEMBLK80egi0KgIwCtoBjDIRLQAsACgAZgFdyAxszhJ65DAGEqVJABMAFHAwAuUAG9QADyPkpqTtgDcoIpeu2koAL4BKE+NCgQfoFBwSF+AHoRkVHRMZG+oHxMeFQANtAAdClUAOY6AERQsImaWsp00PjmoABuCClSsKygeaAA1PAY6WaedvGJ5MlpmTn5hQka2mVYlUQ1dQ0sBC3t+ulEPeLu4orKahO6phagAMwANI5GAOwePUA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEBUAsFNQBwIYCcEFtoBdpIOQGdQMBPOWBAO3IHsMEMBLK80egi0KgIwCtoBjDIRLQAsACgAZgFdyAxszhJ65DAGEqVJABMAFHAwAuUAG9QADyPkpqTtgDcoIpeu2koAL4BKE+NCgQfoFBwSF+AHoRkVHRMZG+oHxMeFQANtAAdClUAOY6AERQsImaWsp00PjmoABuCClSsKygeaAA1PAY6WaedvGJ5MlpmTn5hQka2mVYlUQ1dQ0sBC3t+ulEPeLu4orKahO6phagAMwANI5GAOwePUA)
 
 ```ts
 // La anotación de tipo del parámetro es un tipo de objeto.
@@ -220,7 +220,7 @@ Si no especificas un tipo, se asumirá que es `any`.
 Los tipos de objetos también pueden especificar que algunas o todas sus propiedades sean *opcionales*.
 Para hacer esto, agrega un `?` después del nombre de la propiedad:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABABwE4zFAcgQwLYCmAFHAEYBWAXIgN6LAyoDOU1L6YA5gNyIA2OFgH42UDp0QBfAJS0AsAChEiAPQrEAOi2LJitYgBCcKAAtEAeQDSitBmz5idBs1aIAREdJup07jY72hEROjCzUbgCCfDAQBG4ANPyCrpHRTEwI3jLcQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABABwE4zFAcgQwLYCmAFHAEYBWAXIgN6LAyoDOU1L6YA5gNyIA2OFgH42UDp0QBfAJS0AsAChEiAPQrEAOi2LJitYgBCcKAAtEAeQDSitBmz5idBs1aIAREdJup07jY72hEROjCzUbgCCfDAQBG4ANPyCrpHRTEwI3jLcQA)
 
 ```ts
 function printName(obj: { first: string; last?: string }) {
@@ -234,7 +234,7 @@ printName({ first: "Alice", last: "Alisson" });
 En JavaScript, si accedes a una propiedad que no existe, obtendrás el valor `undefined` en lugar de un error de tiempo de ejecución.
 Debido a esto, cuando *leas* una propiedad opcional, tendrás que verificar si es `undefined` antes de usarla.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygIwA4AMAWDBYAKADMBXAOwGMAXASznNAAdpbzqA5AQwFtIAKOACMAVqgDeoYrSTVUiaq3IBzANygANlwUB+eYrbLQAXwCUocUVCgQoAKKwEoALSgetZQAtqoStG2eoLTEoADkwiIAdFoKoaAA7trkoT4scAButAAmkFkAhFa+DIhwGpDRcMqCotHa1JHUcACqTEwwAMLaAqamqoXBoNVRMT55ALxjoBQ50uS55paE1ta2APIA0oXWlMWl5RqVQ7UKDc2tHV38PX1LJkSFtgCCoIhcxJCgXBrUMORcdOkPqREIY3HActBGAApLjpLgAZT8tCYPkQAE92FwAB7IQo7cglMoVKoRY7UHSnFptaCdRDdXpEYxAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygIwA4AMAWDBYAKADMBXAOwGMAXASznNAAdpbzqA5AQwFtIAKOACMAVqgDeoYrSTVUiaq3IBzANygANlwUB+eYrbLQAXwCUocUVCgQoAKKwEoALSgetZQAtqoStG2eoLTEoADkwiIAdFoKoaAA7trkoT4scAButAAmkFkAhFa+DIhwGpDRcMqCotHa1JHUcACqTEwwAMLaAqamqoXBoNVRMT55ALxjoBQ50uS55paE1ta2APIA0oXWlMWl5RqVQ7UKDc2tHV38PX1LJkSFtgCCoIhcxJCgXBrUMORcdOkPqREIY3HActBGAApLjpLgAZT8tCYPkQAE92FwAB7IQo7cglMoVKoRY7UHSnFptaCdRDdXpEYxAA)
 
 ```ts
 function printName(obj: { first: string; last?: string }) {
@@ -267,7 +267,7 @@ Nos referimos a cada uno de estos tipos como los *miembros* de la unión.
 
 Escribamos una función que pueda operar con cadenas o números:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAkgCYAUNnqZEgFsARjFAAfUIiosyAcwCUoAN6FQoCvURwANpAB0uuPO4AiAJpwS0UOwAioGilBnQAaiedFAbkIBfQhBQAHkAaUJmVg4eAEYABljfILBwyLkY8zR4tDNkgmCAUVgEdOiubhVQIQBPB1Q0TCw0UH9fIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAkgCYAUNnqZEgFsARjFAAfUIiosyAcwCUoAN6FQoCvURwANpAB0uuPO4AiAJpwS0UOwAioGilBnQAaiedFAbkIBfQhBQAHkAaUJmVg4eAEYABljfILBwyLkY8zR4tDNkgmCAUVgEdOiubhVQIQBPB1Q0TCw0UH9fIA)
 
 ```ts
 function printId(id: number | string) {
@@ -293,7 +293,7 @@ Si *tienes* un valor de tipo unión, ¿cómo trabajas con él?
 TypeScript solo permitirá una operación si es válida para *todos* los miembros de la unión.
 Por ejemplo, si tienes la unión `string | number`, no puedes usar métodos que solo están disponibles en `string`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYME4CwAoAMwFcA7AYwBcBLOU0AB2mtMoEkATACmo9VOIBbAEYxQAH1CJKzUgHMAlKADeBUKHJ1EcADaQAdDrhyeHfZTgBVBgxgBhAIaJIXBQoDcBAL5A)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4CwAoAMwFcA7AYwBcBLOU0AB2mtMoEkATACmo9VOIBbAEYxQAH1CJKzUgHMAlKADeBUKHJ1EcADaQAdDrhyeHfZTgBVBgxgBhAIaJIXBQoDcBAL5A)
 
 ```ts
 function printId(id: number | string) {
@@ -311,7 +311,7 @@ El *estrechamiento* ocurre cuando TypeScript puede deducir un tipo más específ
 
 Por ejemplo, TypeScript sabe que solo un valor `string` tendrá un valor `typeof` igual a `"string"`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABABwE4zFAkgEwBQw4BciYIAtgEYCmqiAPogM5TpgDmAlIgN4CwAKESIYwRHigBPZNThjCiALzLEAIhZt2q7vyHDEAegOIsSKAAsYTRJVQBDSOYA0InCOtzEUmYgDkGjHZfQX1ECAQmOAAbagA6KLh2AhxYqDgAVWQZVABhOyZqPE5OAG4QxABfRGoogt5y4SNEAAlaahcFK0RPb2o-MipaYL1hcLBImPjE5NLyisEKoA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABABwE4zFAkgEwBQw4BciYIAtgEYCmqiAPogM5TpgDmAlIgN4CwAKESIYwRHigBPZNThjCiALzLEAIhZt2q7vyHDEAegOIsSKAAsYTRJVQBDSOYA0InCOtzEUmYgDkGjHZfQX1ECAQmOAAbagA6KLh2AhxYqDgAVWQZVABhOyZqPE5OAG4QxABfRGoogt5y4SNEAAlaahcFK0RPb2o-MipaYL1hcLBImPjE5NLyisEKoA)
 
 ```ts
 function printId(id: number | string) {
@@ -327,7 +327,7 @@ function printId(id: number | string) {
 
 Otro ejemplo es usar una función como `Array.isArray`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAdwKYBsJwLaoAqpwAO6qAFAB4BciAzlAE4xgDmA2gLqIA+djzLAJSIA3gFgAUIkQxgiMgEEGDAIYBPAHQxaS1WsqDh4qdMQB6M4gASqBqhoByCg5m1ED+k1acHk04iwwWjhSDXQ4FjIAIht0cIAaRCjEAGpECg0AKzhmaMQVMAATJMMAbj9EAF9EDFpUUQrpC2tbe3dnV3dPAV8TaUDg0PDIqIB1DCxcRHCwesYVADcMWyTU9MFyk0rJSqA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAdwKYBsJwLaoAqpwAO6qAFAB4BciAzlAE4xgDmA2gLqIA+djzLAJSIA3gFgAUIkQxgiMgEEGDAIYBPAHQxaS1WsqDh4qdMQB6M4gASqBqhoByCg5m1ED+k1acHk04iwwWjhSDXQ4FjIAIht0cIAaRCjEAGpECg0AKzhmaMQVMAATJMMAbj9EAF9EDFpUUQrpC2tbe3dnV3dPAV8TaUDg0PDIqIB1DCxcRHCwesYVADcMWyTU9MFyk0rJSqA)
 
 ```ts
 function welcomePeople(x: string[] | string) {
@@ -347,7 +347,7 @@ A veces tendrás una unión donde todos los miembros tienen algo en común.
 Por ejemplo, tanto los arrays como las cadenas tienen un método `slice`.
 Si cada miembro de una unión tiene una propiedad en común, puedes usar esa propiedad sin estrechar:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAECUFMBcFcCcB2poE8AOlQEsDOPEAzSeeSAE1AEN9FYBbAIxIG0BdUAH1F2nm0QBzALAAoQrEQBjaNgD2yQTABi2eLwAqACzKQAFAA8AXKDpNWHbr35CAlKADeY0KDJwkoAwDpcAG2xS+gAMADSgAMy2ANxiAL5AA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMBcFcCcB2poE8AOlQEsDOPEAzSeeSAE1AEN9FYBbAIxIG0BdUAH1F2nm0QBzALAAoQrEQBjaNgD2yQTABi2eLwAqACzKQAFAA8AXKDpNWHbr35CAlKADeY0KDJwkoAwDpcAG2xS+gAMADSgAMy2ANxiAL5AA)
 
 ```ts
 // Return type is inferred as number[] | string
@@ -372,7 +372,7 @@ Esto es conveniente, pero es común querer usar el mismo tipo más de una vez y 
 Un *alias de tipo* es exactamente eso: un *nombre* para cualquier *tipo*.
 La sintaxis para un alias de tipo es:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBACg9gSwHbCgXigbwLACgpQAeAXFEgK4C2ARhAE4DceBIpFN9TuAvl3gPT8oAUUIBDAMbAANiCjAAFtADOYytDHL5SqBDF1pCervGUw0iHgBm5JFIRwkUMHWTAAwnDh0AJgAowYFJ4NwBKLGYoCUdlOAsAOmk4AHM-ACIAFR1o7x9kMWAIAHItQigANzFpcmgELTSoAGpnYHjCUK4CaKRYhKTUzOyvX3zCkqg5Sura+qaW+JAOvG48PBc3T1y-TCJSAEYABgOAGgn9o6huDqA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACg9gSwHbCgXigbwLACgpQAeAXFEgK4C2ARhAE4DceBIpFN9TuAvl3gPT8oAUUIBDAMbAANiCjAAFtADOYytDHL5SqBDF1pCervGUw0iHgBm5JFIRwkUMHWTAAwnDh0AJgAowYFJ4NwBKLGYoCUdlOAsAOmk4AHM-ACIAFR1o7x9kMWAIAHItQigANzFpcmgELTSoAGpnYHjCUK4CaKRYhKTUzOyvX3zCkqg5Sura+qaW+JAOvG48PBc3T1y-TCJSAEYABgOAGgn9o6huDqA)
 
 ```ts
 type Point = {
@@ -392,7 +392,7 @@ printCoord({ x: 100, y: 100 });
 Puedes usar un alias de tipo para darle un nombre a cualquier tipo, no solo a un tipo de objeto.
 Por ejemplo, un alias de tipo puede nombrar un tipo de unión:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAkgIlAvFAdgVwLYCMICcoA+UAzsLgJYoDmA3EA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAkgIlAvFAdgVwLYCMICcoA+UAzsLgJYoDmA3EA)
 
 ```ts
 type ID = number | string;
@@ -402,7 +402,7 @@ Ten en cuenta que los alias son *solo* alias: no puedes usar alias de tipo para 
 Cuando usas el alias, es exactamente como si hubiera escrito el tipo que representa el alias.
 En otras palabras, este código puede *parecer* ilegal, pero está bien según TypeScript porque ambos tipos son alias para el mismo tipo:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBJVAB2QwAoBKALngGcMYtUCBuAWAChRIsBCnTY8zKKizYAXiGosYjRewINmrVT14B6HfAC0RsFSMG+GAJ7kEAVSYgYZShgDKk6VjnBXmjvABeDTYObT4RTFx8Jg9ZEGcqBVZlPzVGe0cEt1ivEB9U+ABvPnh4OAxkGGicuSSYWm0AXz4+PXgAYTgoDAQoCSk44Hh2Fz4IYnhkBycKKkD+zzks6iJSWZpaBpbdfXbJDSwICHgAIwQ4AygmJiwCVDz4AHdpAAt4PpV-DBecZAIXvhTTLreYAInuj2G61BnCAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBJVAB2QwAoBKALngGcMYtUCBuAWAChRIsBCnTY8zKKizYAXiGosYjRewINmrVT14B6HfAC0RsFSMG+GAJ7kEAVSYgYZShgDKk6VjnBXmjvABeDTYObT4RTFx8Jg9ZEGcqBVZlPzVGe0cEt1ivEB9U+ABvPnh4OAxkGGicuSSYWm0AXz4+PXgAYTgoDAQoCSk44Hh2Fz4IYnhkBycKKkD+zzks6iJSWZpaBpbdfXbJDSwICHgAIwQ4AygmJiwCVDz4AHdpAAt4PpV-DBecZAIXvhTTLreYAInuj2G61BnCAA)
 
 ```ts
 type UserInputSanitizedString = string;
@@ -422,7 +422,7 @@ userInput = "new input";
 
 Una *declaración de interfaz* es otra forma de nombrar un tipo de objeto:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwLABQyyAHgFzIgCuAtgEbQDchxAnhdfU4QL6GEwqIBGGDoQyAA5QsAYXTooAEwAUksBQxYAlLhbIE4gM7oANhAB0p9AHMVAIgAqACxSHFS0HEgByI6WQANzhTKhRgf3tkAGopMAsSbWYiA2MzS2s7J1dUjy9ff1YgkLDkCOQo2PULViTefgJpOQVlFRxSCgBGAAZugBpkdmQe7uQeJKA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwLABQyyAHgFzIgCuAtgEbQDchxAnhdfU4QL6GEwqIBGGDoQyAA5QsAYXTooAEwAUksBQxYAlLhbIE4gM7oANhAB0p9AHMVAIgAqACxSHFS0HEgByI6WQANzhTKhRgf3tkAGopMAsSbWYiA2MzS2s7J1dUjy9ff1YgkLDkCOQo2PULViTefgJpOQVlFRxSCgBGAAZugBpkdmQe7uQeJKA)
 
 ```ts
 interface Point {
@@ -454,10 +454,10 @@ Casi todas las características de una `interface` están disponibles en `type`,
 
 Aprenderás más sobre estos conceptos en capítulos posteriores, así que no te preocupes si no los entiendes todos de inmediato.
 
-- Antes de la versión 4.2 de TypeScript, los nombres de alias de tipos [*podían* aparecer en mensajes de error ↗](https://www.typescriptlang.org/play?#code/PTAEGEHsFsAcEsA2BTATqNrLusgzngIYDm+oA7koqIYuYQJ56gCueyoAUCKAC4AWHAHaFcoSADMaQ0PCG80EwgGNkALk6c5C1EtWgAsqOi1QAb06groEbjWg8vVHOKcAvpokshy3vEgyyMr8kEbQJogAFND2YREAlOaW1soBeJAoAHSIkMTRmbbI8e6aPMiZxJmgACqCGKhY6ABGyDnkFFQ0dIzMbBwCwqIccabcYLyQoKjIEmh8kwN8DLAc5PzwwbLMyAAeK77IACYaQSEjUWZWhfYAjABMAMwALA+gbsVjoADqgjKESytQPxCHghAByXigYgBfr8LAsYj8aQMUASbDQcRSExCeCwFiIQh+AKfAYyBiQFgOPyIaikSGLQo0Zj-aazaY+dSaXjLDgAGXgAC9CKhDqAALxJaw2Ib2RzOISuDycLw+ImBYKQflCkWRRD2LXCw6JCxS1JCdJZHJ5RAFIbFJU8ADKC3WzEcnVZaGYE1ABpFnFOmsFhsil2uoHuzwArO9SmAAEIsSFrZB-GgAjjA5gtVN8VCEc1o1C4Q4AGlR2AwO1EsBQoAAbvB-gJ4HhPgB5aDwem-Ph1TCV3AEEirTp4ELtRbTPD4vwKjOfAuioSQHuDXBcnmgACC+eCONFEs73YAPGGZVT5cRyyhiHh7AAON7lsG3vBggB8XGV3l8-nVISOgghxoLq9i7io-AHsayRWGaFrlFauq2rg9qaIGQHwCBqChtKdgRo8TxRjeyB3o+7xAA), a veces en lugar del tipo anónimo equivalente (que puede ser deseable o no). Las interfaces siempre se nombrarán en los mensajes de error.
-- Los alias de tipo no pueden participar [en la fusión de declaraciones, pero las interfaces sí ↗](https://www.typescriptlang.org/play?#code/PTAEEEDtQS0gXApgJwGYEMDGjSfdAIx2UQFoB7AB0UkQBMAoEUfO0Wgd1ADd0AbAK6IAzizp16ALgYM4SNFhwBZdAFtV-UAG8GoPaADmNAcMmhh8ZHAMMAvjLkoM2UCvWad+0ARL0A-GYWVpA29gyY5JAWLJAwGnxmbvGgALzauvpGkCZmAEQAjABMAMwALLkANBl6zABi6DB8okR4Jjg+iPSgABboovDk3jjo5pbW1d6+dGb5djLwAJ7UoABKiJTwjThpnpnGpqPBoTLMAJrkArj4kOTwYmycPOhW6AR8IrDQ8N04wmo4HHQCwYi2Waw2W1S6S8HX8gTGITsQA).
-- Las interfaces solo pueden usarse para [declarar las formas de los objetos, no cambiar el nombre de las primitivas ↗](https://www.typescriptlang.org/play?#code/PTAEAkFMCdIcgM6gC4HcD2pIA8CGBbABwBtIl0AzUAKBFAFcEBLAOwHMUBPQs0XFgCahWyGBVwBjMrTDJMAshOhMARpD4tQ6FQCtIE5DWoixk9QEEWAeV37kARlABvaqDegAbrmL1IALlAEZGV2agBfampkbgtrWwMAJlAAXmdXdy8ff0Dg1jZwyLoAVWZ2Lh5QVHUJflAlSFxROsY5fFAWAmk6CnRoLGwmILzQQmV8JmQmDzI-SOiKgGV+CaYAL0gBBdyy1KCQ-Pn1AFFplgA5enw1PtSWS+vCsAAVAAtB4QQWOEMKBuYVUiVCYvYQsUTQcRSBDGMGmKSgAAa-VEgiQe2GLgKQA).
-- Los nombres de las interfaces [*siempre* aparecerán en su forma original ↗](https://www.typescriptlang.org/play?#code/PTAEGEHsFsAcEsA2BTATqNrLusgzngIYDm+oA7koqIYuYQJ56gCueyoAUCKAC4AWHAHaFcoSADMaQ0PCG80EwgGNkALk6c5C1EtWgAsqOi1QAb06groEbjWg8vVHOKcAvpokshy3vEgyyMr8kEbQJogAFND2YREAlOaW1soBeJAoAHSIkMTRmbbI8e6aPMiZxJmgACqCGKhY6ABGyDnkFFQ0dIzMbBwCwqIccabcYLyQoKjIEmh8kwN8DLAc5PzwwbLMyAAeK77IACYaQSEjUWY2Q-YAjABMAMwALA+gbsVjNXW8yxySoAADaAA0CCaZbPh1XYqXgOIY0ZgmcK0AA0nyaLFhhGY8F4AHJmEJILCWsgZId4NNfIgGFdcIcUTVfgBlZTOWC8T7kAJ42G4eT+GS42QyRaYbCgXAEEguTzeXyCjDBSAAQSE8Ai0Xsl0K9kcziExDeiQs1lAqSE6SyOTy0AKQ2KHk4p1V6s1OuuoHuzwArMagA) en mensajes de error, pero *solo* cuando se usan por nombre.
+- Antes de la versión 4.2 de TypeScript, al escribir nombres de alias [*pueden* aparecer mensajes de error ↗](https://www.typescriptlang.org/play#code/PTAEGEHsFsAcEsA2BTATqNrLusgzngIYDm+oA7koqIYuYQJ56gCueyoAUCKAC4AWHAHaFcoSADMaQ0PCG80EwgGNkALk6c5C1EtWgAsqOi1QAb06groEbjWg8vVHOKcAvpokshy3vEgyyMr8kEbQJogAFND2YREAlOaW1soBeJAoAHSIkMTRmbbI8e6aPMiZxJmgACqCGKhY6ABGyDnkFFQ0dIzMbBwCwqIccabcYLyQoKjIEmh8kwN8DLAc5PzwwbLMyAAeK77IACYaQSEjUWZWhfYAjABMAMwALA+gbsVjoADqgjKESytQPxCHghAByXigYgBfr8LAsYj8aQMUASbDQcRSExCeCwFiIQh+AKfAYyBiQFgOPyIaikSGLQo0Zj-aazaY+dSaXjLDgAGXgAC9CKhDqAALxJaw2Ib2RzOISuDycLw+ImBYKQflCkWRRD2LXCw6JCxS1JCdJZHJ5RAFIbFJU8ADKC3WzEcnVZaGYE1ABpFnFOmsFhsil2uoHuzwArO9SmAAEIsSFrZB-GgAjjA5gtVN8VCEc1o1C4Q4AGlR2AwO1EsBQoAAbvB-gJ4HhPgB5aDwem-Ph1TCV3AEEirTp4ELtRbTPD4vwKjOfAuioSQHuDXBcnmgACC+eCONFEs73YAPGGZVT5cRyyhiHh7AAON7lsG3vBggB8XGV3l8-nVISOgghxoLq9i7io-AHsayRWGaFrlFauq2rg9qaIGQHwCBqChtKdgRo8TxRjeyB3o+7xAA), a veces en lugar del tipo anónimo equivalente (que puede ser deseable o no). Las interfaces siempre se nombrarán en los mensajes de error.
+- Los alias de tipo no pueden participar [en la fusión de declaraciones, pero las interfaces sí ↗](https://www.typescriptlang.org/play#code/PTAEEEDtQS0gXApgJwGYEMDGjSfdAIx2UQFoB7AB0UkQBMAoEUfO0Wgd1ADd0AbAK6IAzizp16ALgYM4SNFhwBZdAFtV-UAG8GoPaADmNAcMmhh8ZHAMMAvjLkoM2UCvWad+0ARL0A-GYWVpA29gyY5JAWLJAwGnxmbvGgALzauvpGkCZmAEQAjABMAMwALLkANBl6zABi6DB8okR4Jjg+iPSgABboovDk3jjo5pbW1d6+dGb5djLwAJ7UoABKiJTwjThpnpnGpqPBoTLMAJrkArj4kOTwYmycPOhW6AR8IrDQ8N04wmo4HHQCwYi2Waw2W1S6S8HX8gTGITsQA).
+- Las interfaces solo pueden usarse para [declarar las formas de los objetos, no cambiar el nombre de las primitivas ↗](https://www.typescriptlang.org/play#code/PTAEAkFMCdIcgM6gC4HcD2pIA8CGBbABwBtIl0AzUAKBFAFcEBLAOwHMUBPQs0XFgCahWyGBVwBjMrTDJMAshOhMARpD4tQ6FQCtIE5DWoixk9QEEWAeV37kARlABvaqDegAbrmL1IALlAEZGV2agBfampkbgtrWwMAJlAAXmdXdy8ff0Dg1jZwyLoAVWZ2Lh5QVHUJflAlSFxROsY5fFAWAmk6CnRoLGwmILzQQmV8JmQmDzI-SOiKgGV+CaYAL0gBBdyy1KCQ-Pn1AFFplgA5enw1PtSWS+vCsAAVAAtB4QQWOEMKBuYVUiVCYvYQsUTQcRSBDGMGmKSgAAa-VEgiQe2GLgKQA).
+- Los nombres de las interfaces [*siempre* aparecerán en su forma original ↗](https://www.typescriptlang.org/play#code/PTAEGEHsFsAcEsA2BTATqNrLusgzngIYDm+oA7koqIYuYQJ56gCueyoAUCKAC4AWHAHaFcoSADMaQ0PCG80EwgGNkALk6c5C1EtWgAsqOi1QAb06groEbjWg8vVHOKcAvpokshy3vEgyyMr8kEbQJogAFND2YREAlOaW1soBeJAoAHSIkMTRmbbI8e6aPMiZxJmgACqCGKhY6ABGyDnkFFQ0dIzMbBwCwqIccabcYLyQoKjIEmh8kwN8DLAc5PzwwbLMyAAeK77IACYaQSEjUWY2Q-YAjABMAMwALA+gbsVjNXW8yxySoAADaAA0CCaZbPh1XYqXgOIY0ZgmcK0AA0nyaLFhhGY8F4AHJmEJILCWsgZId4NNfIgGFdcIcUTVfgBlZTOWC8T7kAJ42G4eT+GS42QyRaYbCgXAEEguTzeXyCjDBSAAQSE8Ai0Xsl0K9kcziExDeiQs1lAqSE6SyOTy0AKQ2KHk4p1V6s1OuuoHuzwArMagA) en mensajes de error, pero *sólo* cuando se utilizan por nombre.
 
 En su mayor parte, puedes elegir según tus preferencias personales, y TypeScript te dirá si necesita algo para ser el otro tipo de declaración. Si deseas una heurística, usa `interface` hasta que necesites usar características de `type`.
 
@@ -469,7 +469,7 @@ Por ejemplo, si estás usando `document.getElementById`, TypeScript solo sabe qu
 
 En esta situación, puedes usar una *aserción de tipo* para especificar un tipo más específico:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/MYewdgzgLgBAtgTwMIEMwDcURgXhgExGAFc4BTMKAOgHMyoBRAGzPMoCEEBJfACgCI4KAJZgA+sDSYI-AJQwsMABIAVALIAZVBizNWFKAG4gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/MYewdgzgLgBAtgTwMIEMwDcURgXhgExGAFc4BTMKAOgHMyoBRAGzPMoCEEBJfACgCI4KAJZgA+sDSYI-AJQwsMABIAVALIAZVBizNWFKAG4gA)
 
 ```ts
 const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
@@ -479,7 +479,7 @@ Al igual que una anotación de tipo, el compilador elimina las aserciones de tip
 
 También puedes usar la sintaxis de corchetes angulares (excepto si el código está en un archivo `.tsx`), que es equivalente:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/MYewdgzgLgBAtgTwMIEMwDcURgXhgHgAkAVAWQBlUMsBRAGwFM4GwoA+AExGAFdnWAdAHMGUekxZQAQggCSHABQAiOCgCWYAPrA0mCEoCUAbiA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/MYewdgzgLgBAtgTwMIEMwDcURgXhgHgAkAVAWQBlUMsBRAGwFM4GwoA+AExGAFdnWAdAHMGUekxZQAQggCSHABQAiOCgCWYAPrA0mCEoCUAbiA)
 
 ```ts
 const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
@@ -492,7 +492,7 @@ const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 TypeScript solo permite afirmaciones de tipo que se convierten a una versión *más específica* o *menos específica* de un tipo.
 Esta regla previene coacciones "imposibles" como:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYCsaCwAoAYzgDtEAXUAD1AF5QAiAC0gBtW4HQBDRUEgK4BbAEYwA3EA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYCsaCwAoAYzgDtEAXUAD1AF5QAiAC0gBtW4HQBDRUEgK4BbAEYwA3EA)
 
 ```ts
 const x = "hello" as number;
@@ -505,7 +505,7 @@ Conversion of type 'string' to type 'number' may be a mistake because neither ty
 A veces esta regla puede ser demasiado conservadora y no permitirá coacciones más complejas que podrían ser válidas.
 Si esto sucede, puedes usar dos aserciones, primero para `any` (o `unknow`, que presentaremos más adelante), luego para el tipo deseado:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEYD2A7AzgF3iAHgBxgC54oUBPAbgFgAoDMvBAFXgF54BvE4gRgvgBGxAEz8wxAMzwAvtRoB6efAC0qsAFcMq5bWTosUNtnwwSaEuTPwmFIA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3iAHgBxgC54oUBPAbgFgAoDMvBAFXgF54BvE4gRgvgBGxAEz8wxAMzwAvtRoB6efAC0qsAFcMq5bWTosUNtnwwSaEuTPwmFIA)
 
 ```ts
 const a = expr as any as T;
@@ -517,7 +517,7 @@ Además de los tipos generales `string` y `number`, podemos referirnos a cadenas
 
 Una forma de pensar en esto es considerar cómo JavaScript viene con diferentes formas de declarar una variable. Tanto `var` como `let` permiten cambiar lo que se contiene dentro de la variable, y `const` no. Esto se refleja en cómo TypeScript crea tipos para literales.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAxgFghgOwOYEtkGUwCc1IgXggCIAJEYYAewgHVKtgATIgbgFgAoWRVDbXAsQDywAIcQAsgFcEjSq04B6RRABCIKHCkBnEBAAG3ZLkw5k+6IghYQABxu6EkRAE8Itytu0oARqAja-MgANBBg8GBKKijaEDCUAO4QACoutiDoUDi2kIwg2lm++RAokGhhMHpgaXraLoEgALacRrxIprjsHMoQAHoA-JwtlAiB0COBiGAdyIKk5FS09EwK3Srqmjp6hhNgUzNIFpoIECPAbjb2+SBOEACM7p7efrVBSKGlUXFwsXAQwKUQFg4MAwjVrHYHDc9mAUCNhqM9k4Dl0egMgA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAxgFghgOwOYEtkGUwCc1IgXggCIAJEYYAewgHVKtgATIgbgFgAoWRVDbXAsQDywAIcQAsgFcEjSq04B6RRABCIKHCkBnEBAAG3ZLkw5k+6IghYQABxu6EkRAE8Itytu0oARqAja-MgANBBg8GBKKijaEDCUAO4QACoutiDoUDi2kIwg2lm++RAokGhhMHpgaXraLoEgALacRrxIprjsHMoQAHoA-JwtlAiB0COBiGAdyIKk5FS09EwK3Srqmjp6hhNgUzNIFpoIECPAbjb2+SBOEACM7p7efrVBSKGlUXFwsXAQwKUQFg4MAwjVrHYHDc9mAUCNhqM9k4Dl0egMgA)
 
 ```ts
 let changingString = "Hello World";
@@ -537,7 +537,7 @@ const constantString: "Hello World"
 
 Por sí solos, los tipos literales no son muy valiosos:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGY1oLACgAbSAF1AA9UAiAC0gILktAF5Qa6HKBufEUAeQDS+Miza16jHnj4A6eSLE04AdwAmAT25A)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGY1oLACgAbSAF1AA9UAiAC0gILktAF5Qa6HKBufEUAeQDS+Miza16jHnj4A6eSLE04AdwAmAT25A)
 
 ```ts
 let x: "hello" = "hello";
@@ -555,7 +555,7 @@ Type '"howdy"' is not assignable to type '"hello"'.
 
 Pero al *combinar* literales en uniones, puedes expresar un concepto mucho más útil - por ejemplo, funciones que solo aceptan un cierto conjunto de valores conocidos:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAKpAB5UAUKoRFRZkA5gBpQAQwA2NUWQC2kNqgBEMyESprQAH1BqWogBY79hiiqow1ASlABvQqFAhQAOi+EAvoWasHNx8agASkDIycJIA7ggyACZqkhpaOnYA3P4iQTy8agDiAOQJUgCekopSNsmW1tCQ9hlAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAKpAB5UAUKoRFRZkA5gBpQAQwA2NUWQC2kNqgBEMyESprQAH1BqWogBY79hiiqow1ASlABvQqFAhQAOi+EAvoWasHNx8agASkDIycJIA7ggyACZqkhpaOnYA3P4iQTy8agDiAOQJUgCekopSNsmW1tCQ9hlAA)
 
 ```ts
 function printText(s: string, alignment: "left" | "right" | "center") {
@@ -571,7 +571,7 @@ Argument of type '"centre"' is not assignable to parameter of type '"left" | "ri
 
 Los tipos literales numéricos funcionan de la misma manera:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABBOBbADgQwE4FMAUmAXIgM5TYxgDmANIgEYnmU0CUJAtAIyIA+iAAz9EvAN4BYAFCJEeKCGxJMiALzrGiAPxDEJFQD5NO3l24BuaQF8gA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABBOBbADgQwE4FMAUmAXIgM5TYxgDmANIgEYnmU0CUJAtAIyIA+iAAz9EvAN4BYAFCJEeKCGxJMiALzrGiAPxDEJFQD5NO3l24BuaQF8gA)
 
 ```ts
 function compare(a: string, b: string): -1 | 0 | 1 {
@@ -581,7 +581,7 @@ function compare(a: string, b: string): -1 | 0 | 1 {
 
 Por supuesto, puedes combinarlos con tipos no literales:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFACWAdgC4wBmAhgMaSgDyADmUXCYqAN6GigB3IgBMyAC1QkArgFsARjADchAL6FKUkrTYdQtDpSIBzKdEgAKAB6oWOzqAA+oAETUpZOM4CUPPqBCgAHTBqoT6JIYmZubcgiLiqACMAAzJoCpeygThkaYWru6emWEGxnnmBR4y1Gy03opAA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFACWAdgC4wBmAhgMaSgDyADmUXCYqAN6GigB3IgBMyAC1QkArgFsARjADchAL6FKUkrTYdQtDpSIBzKdEgAKAB6oWOzqAA+oAETUpZOM4CUPPqBCgAHTBqoT6JIYmZubcgiLiqACMAAzJoCpeygThkaYWru6emWEGxnnmBR4y1Gy03opAA)
 
 ```ts
 interface Options {
@@ -608,7 +608,7 @@ El tipo `boolean` en sí mismo es en realidad solo un alias para la unión `true
 Cuando inicializas una variable con un objeto, TypeScript asume que las propiedades de ese objeto podrían cambiar los valores más adelante.
 Por ejemplo, si escribiste un código como este:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEYD2A7AzgF3mpBbEAwqsAJYYmoBc8ARkkhCFCgNwCwAUAPRfwC0AsAFcMAvp2TosSGgCt4AXngBvREiEoMIGNQAM8AL7sOJAGbwAFDnxEUpcqgCUKzvHgzZAOmQatMRfAAjMYGQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3mpBbEAwqsAJYYmoBc8ARkkhCFCgNwCwAUAPRfwC0AsAFcMAvp2TosSGgCt4AXngBvREiEoMIGNQAM8AL7sOJAGbwAFDnxEUpcqgCUKzvHgzZAOmQatMRfAAjMYGQA)
 
 ```ts
 const obj = { counter: 0 };
@@ -622,7 +622,7 @@ Otra forma de decir esto es que `obj.counter` debe tener el tipo `number`, no `0
 
 Lo mismo se aplica a las cadenas:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgAWlTRcpABKkAI4NIiVgAoG0cqmnR2TAOYAaUAFtIrHnCKoARAHEAogBVjoAD6hjABQDyAZWsBKVADc47IgDchISkXNKgNGKgALygAN6g8ooOPKysAA4oIJAAHpTa6UIAdKHaxlq6+oYmFtagAL5BBHwCQqISUrKRRUla3ZUGRB4BQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgAWlTRcpABKkAI4NIiVgAoG0cqmnR2TAOYAaUAFtIrHnCKoARAHEAogBVjoAD6hjABQDyAZWsBKVADc47IgDchISkXNKgNGKgALygAN6g8ooOPKysAA4oIJAAHpTa6UIAdKHaxlq6+oYmFtagAL5BBHwCQqISUrKRRUla3ZUGRB4BQA)
 
 ```ts
 declare function handleRequest(url: string, method: "GET" | "POST"): void;
@@ -640,7 +640,7 @@ En el ejemplo anterior, se infiere que `req.method` es `string`, no `"GET"`. Deb
 Hay dos formas de solucionar este problema.
 
 1. Puedes cambiar la inferencia agregando una aserción de tipo en cualquier ubicación:
-   [Prueba este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAspVgIQAlEAR2RAGcMAKZGCALngZi1QHMAaeAFsQGAjmAcARAHEAogBUp8AD7wpABQDyAZSUBKDgDccWYAG4AsACgA9LfgBaZ2GQZnjm-fgBhInwQARjYbMDwGeDgqeABeeABveBZ2dQIMDAAHOjZ7EAAPKCEMsgA6MKEpQRExCWl5JXgoOnV65QBfKzsHP2JeBAAmG39SCmpaBkYokuTBKerxYEbm2UUpfXMgA)
+   [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAspVgIQAlEAR2RAGcMAKZGCALngZi1QHMAaeAFsQGAjmAcARAHEAogBUp8AD7wpABQDyAZSUBKDgDccWYAG4AsACgA9LfgBaZ2GQZnjm-fgBhInwQARjYbMDwGeDgqeABeeABveBZ2dQIMDAAHOjZ7EAAPKCEMsgA6MKEpQRExCWl5JXgoOnV65QBfKzsHP2JeBAAmG39SCmpaBkYokuTBKerxYEbm2UUpfXMgA)
 
   ```ts
   // Cambio 1:
@@ -652,7 +652,7 @@ Hay dos formas de solucionar este problema.
    El cambio 2 significa "Sé por otras razones que `req.method` tiene el valor `"GET"`".
 
 2. Puedes usar `as const` para convertir todo el objeto en literales de tipo:
-   [Pruebe este código ↗](https://www.typescriptlang.org/play/#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAspVgIQAlEAR2RAGcMAKZGCALngZi1QHMAaeAFsQGAjmAcARAHEAogBUp8AD7wpABQDyAZSUBKDgDccWYAG4AsACgA9LfgBaZ2GQZnjm2DwN4cKvAAvPAA3vAs7OoEGBgADnRs9iAAHlBCsWQAdN5CUoIiYhLS8krwAL7wUHTw3qgMVtZEJGSUNPRM-pkRgp0F4sD65kA)
+   [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAspVgIQAlEAR2RAGcMAKZGCALngZi1QHMAaeAFsQGAjmAcARAHEAogBUp8AD7wpABQDyAZSUBKDgDccWYAG4AsACgA9LfgBaZ2GQZnjm2DwN4cKvAAvPAA3vAs7OoEGBgADnRs9iAAHlBCsWQAdN5CUoIiYhLS8krwAL7wUHTw3qgMVtZEJGSUNPRM-pkRgp0F4sD65kA)
 
   ```ts
   const req = { url: "https://example.com", method: "GET" } as const;
@@ -669,16 +669,16 @@ TypeScript tiene dos *tipos* correspondientes con los mismos nombres. El comport
 
 ### Con la opción `strictNullChecks` en `off` {#strictnullchecks-off}
 
-Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en *off*, aún se puede acceder a los valores que pueden ser `null` o `undefined` normalmente, y a los valores `null` y `undefined` se puede asignar a una propiedad de cualquier tipo.
+Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en *off*, los valores que podrían ser `null` o `undefined` aún pueden se puede acceder normalmente, y los valores `null` y `undefined` se pueden asignar a una propiedad de cualquier tipo.
 Esto es similar a cómo se comportan los lenguajes sin comprobaciones de nulos (por ejemplo, C#, Java).
 La falta de verificación de estos valores tiende a ser una fuente importante de errores; Siempre recomendamos que las personas activen [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) si es práctico hacerlo en tu código base.
 
 ### Con la opción `strictNullChecks` en `on` {#strictnullchecks-on}
 
-Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en `on`, cuando un valor es `null` o `undefined`, necesitarás probar esos valores antes de usar métodos o propiedades sobre ese valor.
-Al igual que verificar `undefined` antes de usar una propiedad opcional, podemos usar *estrechamiento* para verificar valores que podrían ser `null`:
+Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en *on*, cuando un valor es `null` o `undefined`, tendrás que probar esos valores antes de usar métodos o propiedades en ese valor.
+Al igual que verificar por `undefined` antes de usar una propiedad opcional, podemos usar *estrechamiento* para verificar valores que podrían ser `null`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAEzgZTgWwKZQBYxgDmAFAB4BciAzlAE6FGIA+iYIANhwJSIDeAWABQiRDGCJyiALyy2nHv2GjRAelUo4bOPkbLEAX0TYO1bEpEqICanA7YAdBzikARAAkTzgDSJXiAGpEMgcoOABVAAdI7DoAYQBDMxJubgBufQNhAyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAEzgZTgWwKZQBYxgDmAFAB4BciAzlAE6FGIA+iYIANhwJSIDeAWABQiRDGCJyiALyy2nHv2GjRAelUo4bOPkbLEAX0TYO1bEpEqICanA7YAdBzikARAAkTzgDSJXiAGpEMgcoOABVAAdI7DoAYQBDMxJubgBufQNhAyA)
 
 ```ts
 function doSomething(x: string | null) {
@@ -695,7 +695,7 @@ function doSomething(x: string | null) {
 TypeScript también tiene una sintaxis especial para eliminar `null` y `undefined` de un tipo sin realizar ninguna verificación explícita.
 Escribir `!` después de cualquier expresión es efectivamente una afirmación de tipo de que el valor no es `null` o `undefined`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAGxgNwKYBECGYDmGATnCAM7ICeAFAB4D8AXImCALYBGxiAPiyMmQBKRAG8AsAChEiAPSzEAOTiJiJIlJkQEZOMgwA6ZHHx0AhAahwAYjFoYAJtSFCA3FIC+QA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAGxgNwKYBECGYDmGATnCAM7ICeAFAB4D8AXImCALYBGxiAPiyMmQBKRAG8AsAChEiAPSzEAOTiJiJIlJkQEZOMgwA6ZHHx0AhAahwAYjFoYAJtSFCA3FIC+QA)
 
 ```ts
 function liveDangerously(x?: number | null) {
@@ -719,7 +719,7 @@ Aunque aquí no entraremos en profundidad.
 
 Desde ES2020 en adelante, hay una primitiva en JavaScript que se usa para enteros muy grandes, `BigInt`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEBcEMCcHMCmkBcpEGcBMAGXBYAKCJFAGFZFpIBLAO3lGlACMb57JQA3G5yABaJQAIXYBJOlwBmAVzoBjWgHs6RBaoxdViABLyAJpQNo2HKaAC8oiVIAUARhw4AlAG4iJMBSq0GTG3hJLl5+IVAAGxpIRFhoCNAMAE8paAAPdU0uaDplQVj9OiNEE1Z2TitQJxw6NyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEBcEMCcHMCmkBcpEGcBMAGXBYAKCJFAGFZFpIBLAO3lGlACMb57JQA3G5yABaJQAIXYBJOlwBmAVzoBjWgHs6RBaoxdViABLyAJpQNo2HKaAC8oiVIAUARhw4AlAG4iJMBSq0GTG3hJLl5+IVAAGxpIRFhoCNAMAE8paAAPdU0uaDplQVj9OiNEE1Z2TitQJxw6NyA)
 
 ```ts
 // Crea un bigint mediante la función BigInt
@@ -735,7 +735,7 @@ Puedes obtener más información sobre BigInt en [las notas de la versión de Ty
 
 Hay una primitiva en JavaScript que se usa para crear una referencia global única a través de la función `Symbol()`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYBsB2AsAFADGcAdogC6gBmAlkhQHICGAtpKALygDKAnqwBGcADYAKAESk2kCQEoA3IRLkqiSCoAmLdl14Dh4qTPlKChWtVBi6DHR06PQ6rfbmgA3oVCgQoAMLMpADkVJAAbjCgABbMAA5xkKSEAL5AA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYBsB2AsAFADGcAdogC6gBmAlkhQHICGAtpKALygDKAnqwBGcADYAKAESk2kCQEoA3IRLkqiSCoAmLdl14Dh4qTPlKChWtVBi6DHR06PQ6rfbmgA3oVCgQoAMLMpADkVJAAbjCgABbMAA5xkKSEAL5AA)
 
 ```ts
 const firstName = Symbol("name");

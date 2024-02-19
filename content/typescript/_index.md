@@ -1,7 +1,6 @@
 ---
-title: Manual de TypeScript
-weight: 3
+title: "TypeScript"
 type: docs
-redirect: /typescript/handbook/intro
+redirect: /typescript/comenzando/typescript-desde-cero
 noindex: true
 ---

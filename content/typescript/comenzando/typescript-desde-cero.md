@@ -63,7 +63,7 @@ TypeScript verifica si un programa tiene errores antes de su ejecución, y lo ha
 Por ejemplo, el último ejemplo anterior tiene un error debido al *tipo* de `obj`.
 Aquí está el error que encontró TypeScript:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwFYMEYBQBjOAO0QBdQ4AjAK1AF5QBvUAdwEsATUgC1WwAYANKG6Q2Ac26k+GUAF8A3AWJlQAQ2iQ19CjQB07Lt1AAqXdT2iJPBUA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYMEYBQBjOAO0QBdQ4AjAK1AF5QBvUAdwEsATUgC1WwAYANKG6Q2Ac26k+GUAF8A3AWJlQAQ2iQ19CjQB07Lt1AAqXdT2iJPBUA)
 
 ```ts
 const obj = { width: 10, height: 15 };
@@ -84,7 +84,7 @@ TypeScript es un lenguaje que es un *superconjunto* de JavaScript: la sintaxis J
 La sintaxis se refiere a la forma en que escribimos texto para formar un programa.
 Por ejemplo, este código tiene un error de *sintaxis* porque le falta `)`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygIwAYMFYBQAbSAF1AENQBeUACgBYg)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygIwAYMFYBQAbSAF1AENQBeUACgBYg)
 
 ```ts
 let a = (4
@@ -111,7 +111,7 @@ console.log(4 / []);
 Este programa sintácticamente legal registra `Infinity`.
 Sin embargo, TypeScript considera que la división de un número por un array es una operación sin sentido y generará un error:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYBsGBQBjOAO0TgBtIA6MuAcwAoAWUMAbQF0BKAbiA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYBsGBQBjOAO0TgBtIA6MuAcwAoAWUMAbQF0BKAbiA)
 
 ```ts
 console.log(4 / []);

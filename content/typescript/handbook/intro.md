@@ -4,8 +4,8 @@ title: "El Handbook de TypeScript - TypeScript en Español"
 description: "Tu primer paso para aprender TypeScript."
 weight: 1
 type: docs
+prev: /typescript/get-started/typescript-tooling-in-5-minutes
 noindex: true
-prev: /typescript/comenzando/herramientas-typescript-en-5-minutos
 ---
 
 # El manual de TypeScript

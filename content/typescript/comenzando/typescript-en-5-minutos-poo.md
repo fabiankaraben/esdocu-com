@@ -84,7 +84,7 @@ TypeScript proporciona una serie de mecanismos para trabajar con tipos en una fo
 En TypeScript, los objetos *no* son de un solo tipo exacto.
 Por ejemplo, si construimos un objeto que satisface una interfaz, podemos usar ese objeto donde se espera esa interfaz aunque no haya una relación declarativa entre los dos.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgAoHtRgDbANYoDeAUMsgB4BcyIArgLYBG0A3KcgJ7V1OvEC+xLNHhJkAOTj0IAE2QkyIKRGoBnMFFABzNoOIxaIBGGDoQybOi0YsACgAOmcNRvhcBAJTz2CM6vTYEAB0llq2AETkyAC8yOHIANTIjlhBUUnhADScMXGJyU5gQRweusT6hsam5qGS0rZUEsoyXgrIviD+gSFWEQASENiW2fFJ5EFK0qUC5R3qyOiMAFa5bY0ADJnsXMib7JMqcQDymlqgWQJsxKGuYLaLS9O1yvfLpUA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgAoHtRgDbANYoDeAUMsgB4BcyIArgLYBG0A3KcgJ7V1OvEC+xLNHhJkAOTj0IAE2QkyIKRGoBnMFFABzNoOIxaIBGGDoQybOi0YsACgAOmcNRvhcBAJTz2CM6vTYEAB0llq2AETkyAC8yOHIANTIjlhBUUnhADScMXGJyU5gQRweusT6hsam5qGS0rZUEsoyXgrIviD+gSFWEQASENiW2fFJ5EFK0qUC5R3qyOiMAFa5bY0ADJnsXMib7JMqcQDymlqgWQJsxKGuYLaLS9O1yvfLpUA)
 
 ```ts
 interface Pointlike {
@@ -129,7 +129,7 @@ Los programadores de programación orientada a objetos a menudo se sorprenden co
 
 La primera es que el *tipo vacío* parece desafiar las expectativas:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/MYGwhgzhAECiC2AHALgT2gbwL4CgcDMBXAO2GQEsB7Y6fYgCjACcBzALjiTQEpMdpoAekHQAJpWgRK8AKbIAFuWIsA-Dlw5h0AHISZTJpSYAaaACNCyaAvIxbxAORWwNBwhSoH0NXXoZoANYcAIwADNBY3ADcQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAECiC2AHALgT2gbwL4CgcDMBXAO2GQEsB7Y6fYgCjACcBzALjiTQEpMdpoAekHQAJpWgRK8AKbIAFuWIsA-Dlw5h0AHISZTJpSYAaaACNCyaAvIxbxAORWwNBwhSoH0NXXoZoANYcAIwADNBY3ADcQA)
 
 ```ts
 class Empty {}

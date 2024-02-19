@@ -21,7 +21,7 @@ Este tutorial proporciona una breve descripción general de TypeScript, centrán
 TypeScript conoce el lenguaje JavaScript y generará tipos por ti en muchos casos.
 Por ejemplo, al crear una variable y asignarla a un valor particular, TypeScript usará el valor como su tipo.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/DYUwLgBAFizA9gdXgJ2AEwgXggIgBKwITJrq4DcAUAPQ0QQB6A-EA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAFizA9gdXgJ2AEwgXggIgBKwITJrq4DcAUAPQ0QQB6A-EA)
 
 ```ts
 let helloWorld = "Hello World";
@@ -39,7 +39,7 @@ Puedes usar una amplia variedad de patrones de diseño en JavaScript. Sin embarg
 
 Por ejemplo, para crear un objeto con un tipo inferido que incluye `name: string` y `id: number`, puedes escribir:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/MYewdgzgLgBArhApgJxgXhgbwFAxmAQwFtEAuGAIgAkCBPRCCgGlxgEsATcgBhYF8A3EA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/MYewdgzgLgBArhApgJxgXhgbwFAxmAQwFtEAuGAIgAkCBPRCCgGlxgEsATcgBhYF8A3EA)
 
 ```ts
 const user = {
@@ -50,7 +50,7 @@ const user = {
 
 Puedes describir explícitamente la forma de este objeto usando una declaración de `interface`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvkA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvkA)
 
 ```ts
 interface User {
@@ -61,7 +61,7 @@ interface User {
 
 Luego puedes declarar que un objeto JavaScript se ajusta a la forma de tu nueva `interface` usando una sintaxis como `: TypeName` después de una declaración de variable:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvrgD0Q5AFoJCDmAljcCAPYgqyDpigUMWALw4mRUhQBEACTgBPCOiMAaJqwoAGO-3pA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvrgD0Q5AFoJCDmAljcCAPYgqyDpigUMWALw4mRUhQBEACTgBPCOiMAaJqwoAGO-3pA)
 
 ```ts
 const user: User = {
@@ -72,7 +72,7 @@ const user: User = {
 
 Si proporcionas un objeto que no coincide con la interfaz que proporcionaste, TypeScript te advertirá:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGY1oFAEsA7AFxgDMBDAY0lAFVEZQBvHUUA8gW0lUSOkIBzANytQeACaoCAV04AjGKIC+OHJTgE+oGQ2ip6jALzMxumB26oARAAlyAT0iJrAGjGTUABnfLhQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGY1oFAEsA7AFxgDMBDAY0lAFVEZQBvHUUA8gW0lUSOkIBzANytQeACaoCAV04AjGKIC+OHJTgE+oGQ2ip6jALzMxumB26oARAAlyAT0iJrAGjGTUABnfLhQA)
 
 ```ts
 interface User {
@@ -93,7 +93,7 @@ Type '{ username: string; id: number; }' is not assignable to type 'User'.
 
 Dado que JavaScript admite clases y programación orientada a objetos, TypeScript también lo hace. Puedes utilizar una declaración de interfaz con clases:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvrlwIANnHTo0mKAEEECAPYdwOJkVIUqNEAyat2XXlEZNFILRwRgFUABTrylanQA0zNoUPQAlKoIEwAAtgdAA6B2QAXkISCEZ-ZCCQ0NYo93jkQUFhBXMwZA5pCgwsaJAIAHcpaDlFZTBbACIAWQ4oAAdAgE9GtwBGb3ogA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvrlwIANnHTo0mKAEEECAPYdwOJkVIUqNEAyat2XXlEZNFILRwRgFUABTrylanQA0zNoUPQAlKoIEwAAtgdAA6B2QAXkISCEZ-ZCCQ0NYo93jkQUFhBXMwZA5pCgwsaJAIAHcpaDlFZTBbACIAWQ4oAAdAgE9GtwBGb3ogA)
 
 ```ts
 interface User {
@@ -116,7 +116,7 @@ const user: User = new UserAccount("Murphy", 1);
 
 Puedes usar interfaces para anotar parámetros y devolver valores a funciones:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEDsHsFECd7XgZwFAEtIBcCm8AzAQwGNdQBVFfUAbzVFEiIFtcAuUFbeLAcwDcDUBgAmnSAFcWAI3xCAvmhCgAtOpKTs61WgKTIJbBmiRQo3ABtceKvgAUk6vE534ASjrCVAOj9olPQMjEzM+GwBBURYsN3t3V2cvRhA-HwCgA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAEtIBcCm8AzAQwGNdQBVFfUAbzVFEiIFtcAuUFbeLAcwDcDUBgAmnSAFcWAI3xCAvmhCgAtOpKTs61WgKTIJbBmiRQo3ABtceKvgAUk6vE534ASjrCVAOj9olPQMjEzM+GwBBURYsN3t3V2cvRhA-HwCgA)
 
 ```ts
 function deleteUser(user: User) {
@@ -128,9 +128,9 @@ function getAdminUser(): User {
 }
 ```
 
-Ya existe un pequeño conjunto de tipos primitivos disponibles en JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol` y `undefined` , que puedes usar en una interfaz. TypeScript amplía esta lista con algunos más, como `any` (permitir cualquier cosa), [`unknown` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (asegúrate de que alguien que usa este tipo declare cuál es el tipo), [`never` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (no es posible que suceda este tipo) y `void` (una función que devuelve `undefined` o no tiene valor de retorno).
+Ya existe un pequeño conjunto de tipos primitivos disponibles en JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol` y `undefined`, que puedes usar en una interfaz. TypeScript amplía esta lista con algunos más, como `any` (permitir cualquier cosa), [`unknown` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (asegúrate de que alguien que use este tipo declare cuál es el tipo), [`never` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (no es posible que este tipo pueda suceder), y `void ` (una función que devuelve `undefined` o no tiene valor de retorno).
 
-Verás que hay dos sintaxis para construir tipos: [Interfaces y tipos ↗](https://www.typescriptlang.org/play/?e=83#example/types-vs-interfaces). Deberías preferir `interface`. Utiliza `type` cuando necesites funciones específicas.
+Verás que hay dos sintaxis para construir tipos: [Interfaces y tipos ↗](https://www.typescriptlang.org/play#example/types-vs-interfaces). Deberías preferir `interface`. Utiliza `type` cuando necesites funciones específicas.
 
 ## Componiendo tipos {#composing-types}
 
@@ -140,7 +140,7 @@ Con TypeScript, puedes crear tipos complejos combinando tipos simples. Hay dos f
 
 Con una unión, puedes declarar que un tipo podría ser de uno de muchos tipos. Por ejemplo, puedes describir un tipo `boolean` como `true` o `false`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBAsiBCB7RAbKBeKwBOBXaAPlAGYCGKAzhANxA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAsiBCB7RAbKBeKwBOBXaAPlAGYCGKAzhANxA)
 
 ```ts
 type MyBool = true | false;
@@ -148,9 +148,9 @@ type MyBool = true | false;
 
 *Nota:* Si pasas el cursor sobre `MyBool` en un editor compatible, verás que está clasificado como `boolean`. Esa es una propiedad del Sistema de Tipo Estructural. Más sobre esto a continuación.
 
-Un caso de uso popular para los tipos de unión es describir el conjunto de `string` o `number` [literales](/typescript/handbook/tipos-comunes) que se permite que un valor sea:
+Un caso de uso popular para los tipos de unión es describir el conjunto de `string` o `number` [literales](/typescript/handbook/tipos-comunes#literal-types) que un valor se permite tener:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/C4TwDgpgBA6glgOwCYHsDuBlYBDYEDOUAvFAEQqQKlQA+ZAxgDYr4RLV2kC2icPAXm1IBuAFChIUADIp6Aayy4CxMs3lDaZAK4I1coWInQACizjA4ANwgB5JEgByWrgCMIAJ3wBVZB4AqEAgqAIyaAMyaAKyaAOyaAJzCQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA6glgOwCYHsDuBlYBDYEDOUAvFAEQqQKlQA+ZAxgDYr4RLV2kC2icPAXm1IBuAFChIUADIp6Aayy4CxMs3lDaZAK4I1coWInQACizjA4ANwgB5JEgByWrgCMIAJ3wBVZB4AqEAgqAIyaAMyaAKyaAOyaAJzCQA)
 
 ```ts
 type WindowStates = "open" | "closed" | "minimized";
@@ -160,7 +160,7 @@ type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 
 Las uniones también brindan una manera de manejar diferentes tipos. Por ejemplo, puedes tener una función que tome un `array` o un `string`:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAcwKZQDKrMqALACjgCMArALkQGcoAnGHRAH2roeQG0BdASkQG8AUIkS10IWkhKkAdABtsuPAG5BAXyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQDKrMqALACjgCMArALkQGcoAnGHRAH2roeQG0BdASkQG8AUIkS10IWkhKkAdABtsuPAG5BAXyA)
 
 ```ts
 function getLength(obj: string | string[]) {
@@ -181,7 +181,7 @@ Para conocer el tipo de una variable, puedes usar `typeof`:
 
 Por ejemplo, puedes hacer que una función devuelva diferentes valores dependiendo de si se le pasa una cadena o un array:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/GYVwdgxgLglg9mABAdwE4EMAOBJMBBVDATwAo4AjAKwC5EBnKVGMAc0QB97HmWBtAXQCUiAN4AoRIhjBEJKEUwBTODIqVEAXi2IARAyasdw8ZMmpFUEKiS81-ANxiA9E9NvTAPQD8ExAF9fc0trRDVHPyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAdwE4EMAOBJMBBVDATwAo4AjAKwC5EBnKVGMAc0QB97HmWBtAXQCUiAN4AoRIhjBEJKEUwBTODIqVEAXi2IARAyasdw8ZMmpFUEKiS81-ANxiA9E9NvTAPQD8ExAF9fc0trRDVHPyA)
 
 ```ts
 function wrapInArray(obj: string | string[]) {
@@ -206,7 +206,7 @@ type ObjectWithNameArray = Array<{ name: string }>;
 
 Puedes declarar tus propios tipos que usan generics:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAEI0DWADswDwAqAni5AHygA3nlChKAEwmoAFHABGAK1Q8+ASlABeQQDc4BCQG5RoAOaQSsjdtCrIxgL548IWwAsCiUABtidT+KgiG4IJNQAriSgJHDRkN7etryQAMrU0AQsUSRuMP5elC5g1HBEiCSUpKDUlAmQEqAABvLMbNRMjQA04kQNMaBEcFEA7gjQ3OLycJGgw7nQ-lE1ALZ05PDLAHR4EpDU3pQL1aXloC3tbUyojBcc5RlEpvzGRaAKintRAZRBJA+m3Xke0o4UQdGGdF2+0O9VABCilCmOjolC8OToOkOBER3jobGgUTg5AYrWY2xKZUJSk+WjOpPam3MJBkaherhSxFo0VydNu7VAmIyOPygXuxABoG402qlQA5FE2IgCgNwssgdBorF0eIpKByOEiNQSARSttzqwyZIJDJMKygA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAEI0DWADswDwAqAni5AHygA3nlChKAEwmoAFHABGAK1Q8+ASlABeQQDc4BCQG5RoAOaQSsjdtCrIxgL548IWwAsCiUABtidT+KgiG4IJNQAriSgJHDRkN7etryQAMrU0AQsUSRuMP5elC5g1HBEiCSUpKDUlAmQEqAABvLMbNRMjQA04kQNMaBEcFEA7gjQ3OLycJGgw7nQ-lE1ALZ05PDLAHR4EpDU3pQL1aXloC3tbUyojBcc5RlEpvzGRaAKintRAZRBJA+m3Xke0o4UQdGGdF2+0O9VABCilCmOjolC8OToOkOBER3jobGgUTg5AYrWY2xKZUJSk+WjOpPam3MJBkaherhSxFo0VydNu7VAmIyOPygXuxABoG402qlQA5FE2IgCgNwssgdBorF0eIpKByOEiNQSARSttzqwyZIJDJMKygA)
 
 ```ts
 interface Backpack<Type> {
@@ -235,7 +235,7 @@ Uno de los principios básicos de TypeScript es que la verificación de tipos se
 
 En un sistema de tipo estructural, si dos objetos tienen la misma forma, se consideran del mismo tipo.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwFDLIAeAXMiAK4C2ARtANwHICeZltDeAvnnjBSARhg6EMgA26AOYYsACgAOZWeACUuJglEBndOIgA6SVLkADACQ4FBolwA0yS9eZdTqxjzwB6LxOnbkACIARgAmB1CANkC8LRBtbAVMcGQAXlxiMjCHVmQo5C5GYxUwRWSwdyA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwFDLIAeAXMiAK4C2ARtANwHICeZltDeAvnnjBSARhg6EMgA26AOYYsACgAOZWeACUuJglEBndOIgA6SVLkADACQ4FBolwA0yS9eZdTqxjzwB6LxOnbkACIARgAmB1CANkC8LRBtbAVMcGQAXlxiMjCHVmQo5C5GYxUwRWSwdyA)
 
 ```ts
 interface Point {
@@ -256,7 +256,7 @@ La variable `point` nunca se declara como del tipo `Point`. Sin embargo, TypeScr
 
 La coincidencia de formas solo requiere que un subconjunto de los campos del objeto coincida.
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAApzEmgDeeooAHqkQK4BbAEYwA3B1ABPXoJHRxAXzx5yfItRIE4RUABs4Ac0bMAFAAdUx0gEo2E6tsRxdkAHT6DJgAYASVmdcuBQAaUD8AyQUva0U8EFAAWiTqPhIkhLwHIkQWMyZSDFAAXjZuVABGNFDpdAA2UIAvVAAOAE5QBXEPKxJzfJIMGNB4j0RQACJK0LRa8eUsnNBoSA1i0p5QDAxq1G3QAHcCABMSAAtdgAZQ08gCA1OSFouOrsMek2WNIZHDMfGt0IYOaZRwsBz6aBrVigG4bcYAYnKzQA7ABBABCADFxi88N1+iZwQgYkA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAApzEmgDeeooAHqkQK4BbAEYwA3B1ABPXoJHRxAXzx5yfItRIE4RUABs4Ac0bMAFAAdUx0gEo2E6tsRxdkAHT6DJgAYASVmdcuBQAaUD8AyQUva0U8EFAAWiTqPhIkhLwHIkQWMyZSDFAAXjZuVABGNFDpdAA2UIAvVAAOAE5QBXEPKxJzfJIMGNB4j0RQACJK0LRa8eUsnNBoSA1i0p5QDAxq1G3QAHcCABMSAAtdgAZQ08gCA1OSFouOrsMek2WNIZHDMfGt0IYOaZRwsBz6aBrVigG4bcYAYnKzQA7ABBABCADFxi88N1+iZwQgYkA)
 
 ```ts
 const point3 = { x: 12, y: 26, z: 89 };
@@ -276,7 +276,7 @@ Argument of type '{ hex: string; }' is not assignable to parameter of type 'Poin
 
 No hay diferencia entre cómo las clases y los objetos se ajustan a las formas:
 
-[Prueba este código ↗](https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAApzEmgDeeooAHqkQK4BbAEYwA3B1ABPXoJHRxAXzx5yfItRIE4RUABs4Ac0bMAFAAdUx0gEo2E6tsRxdkAHT6DJgAYASVmdcuBQAaUD8AyQUva0U8EFAAWiTqPhIkhLxqXUpERFAANQJoEj5KXSsWdk4eUH5hMQlpWtkG+0cSaD4NBBMaurlQpv6YWyrOUBIACwJEQNAAXm5xcYnp2ckFqWXQJSVM9trIAHd8is2iY4KikrKKkwBGDFCcADYYvA87i5OKmNB4jx5ABEj2eLyBQA)
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAJYB2ALjAGYCGAxpKAApzEmgDeeooAHqkQK4BbAEYwA3B1ABPXoJHRxAXzx5yfItRIE4RUABs4Ac0bMAFAAdUx0gEo2E6tsRxdkAHT6DJgAYASVmdcuBQAaUD8AyQUva0U8EFAAWiTqPhIkhLxqXUpERFAANQJoEj5KXSsWdk4eUH5hMQlpWtkG+0cSaD4NBBMaurlQpv6YWyrOUBIACwJEQNAAXm5xcYnp2ckFqWXQJSVM9trIAHd8is2iY4KikrKKkwBGDFCcADYYvA87i5OKmNB4jx5ABEj2eLyBQA)
 
 ```ts
 class VirtualPoint {
