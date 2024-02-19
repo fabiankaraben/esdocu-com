@@ -83,7 +83,7 @@
         {{- else -}}
           {{- $active := eq $pageURL .RelPermalink -}}
           {{- $shouldOpen := or (.Params.sidebar.open) (.IsAncestor $page) $active | default true }}
-          <li class="{{ if $shouldOpen }}open{{ end }}">
+          <li class="open {{ if $shouldOpen }}open{{ end }}">
             {{- template "sidebar-item-link" dict "context" . "active" $active "title" .LinkTitle "link" .RelPermalink -}}
             {{- if and $toc $active -}}
               {{- template "sidebar-toc" dict "page" . -}}
