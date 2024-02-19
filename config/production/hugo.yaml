@@ -22,8 +22,8 @@ params:
   showTMBottomBanner: false # content (body) :: MEGABANNER INFERIOR
 
   # AdCash Ads.
-  loadAdCashGlobalScript: true # head
-  showAdCashAutotag: true # head
+  loadAdCashGlobalScript: false # head
+  showAdCashAutotag: false # head
   showAdCashTopBanner: false # content (body) :: -
   showAdCashMiddleBanner1: false # content (body) :: -
   showAdCashMiddleBanner2: false # content (body) :: -
