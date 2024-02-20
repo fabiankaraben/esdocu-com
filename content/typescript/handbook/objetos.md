@@ -246,7 +246,7 @@ writablePerson.age++;
 console.log(readonlyPerson.age); // prints '43'
 ```
 
-Usando [modificadores de mapeo ↗](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers), puedes eliminar atributos `readonly`.
+Usando [modificadores de mapeo](/typescript/handbook/manipulacion-tipos/tipos-mapeados#mapping-modifiers), puedes eliminar atributos `readonly`.
 
 ### Firmas de índices {#index-signatures}
 

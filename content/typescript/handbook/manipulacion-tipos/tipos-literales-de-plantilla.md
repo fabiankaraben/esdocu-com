@@ -99,7 +99,7 @@ person.on("firstNameChanged", (newValue) => {
 });
 ```
 
-Observa que `on` escucha el evento `"firstNameChanged"`, no solo `"firstName"`. Nuestra ingenua especificación de `on()` podría hacerse más sólida si nos aseguráramos de que el conjunto de nombres de eventos elegibles estuviera restringido por la unión de nombres de atributos en el objeto observado con "Changed" agregado al final. Si bien nos sentimos cómodos haciendo este tipo de cálculo en JavaScript, es decir, `Object.keys(passedObject).map(x => \`${x}Changed\`)`, los literales de plantilla *dentro del sistema de tipos* proporcionan un enfoque similar para la manipulación de cadenas:
+Observa que `on` escucha el evento `"firstNameChanged"`, no solo `"firstName"`. Nuestra ingenua especificación de `on()` podría hacerse más sólida si nos aseguráramos de que el conjunto de nombres de eventos elegibles estuviera restringido por la unión de nombres de atributos en el objeto observado con "Changed" agregado al final. Si bien nos sentimos cómodos haciendo este tipo de cálculo en JavaScript, es decir, ```Object.keys(passedObject).map(x => `${x}Changed`)```, los literales de plantilla *dentro del sistema de tipos* proporcionan un enfoque similar para la manipulación de cadenas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACgTgezAUQG4QHbAMoIK5wDGEAPACrgQB8UAvFAN4BQUrUCGAFBOlgHIBDALYQAXFAAGAEgYBnYHACWGAOZQAZFADWEEAgBmUCpAC+AYQAWA1RAAmEgDRRCAgDauARgMJbxnDBAA7gBqbnhiUNYgAJR0NKgIirbR4glJANxMJplMAPT5UGZwEALA0AJQAESBpYQWduweAFYQhMCVUIGKwBaRGJIcElAiPQi2eQWyCFA9pVB6eM7WnbW9+ghwzlY2sjPTYIiQcMCKELIAdEy2ra4CxVD6eBhtihzDAjoA6qt2APLNrWA5EoVE4CGa4mMEBSRkoGlghzQmBw+CIpChVHSQA)
 
