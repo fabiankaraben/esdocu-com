@@ -40,11 +40,11 @@ params:
   showAdsterraPopunder: true # end head
   showAdsterraSocialBar: true # end body
   showAdsterraTopBanner: true # content (body) :: -
-  showAdsterraMiddleBanner1: false # content (body) :: -
-  showAdsterraMiddleBanner2: false # content (body) :: -
-  showAdsterraMiddleBanner3: false # content (body) :: -
-  showAdsterraMiddleBanner4: false # content (body) :: -
-  showAdsterraMiddleBanner5: false # content (body) :: -
+  showAdsterraMiddleBanner1: true # content (body) :: -
+  showAdsterraMiddleBanner2: true # content (body) :: -
+  showAdsterraMiddleBanner3: true # content (body) :: -
+  showAdsterraMiddleBanner4: true # content (body) :: -
+  showAdsterraMiddleBanner5: true # content (body) :: -
   showAdsterraMiddleBanner6: false # content (body) :: -
   showAdsterraMiddleBanner7: false # content (body) :: -
   showAdsterraMiddleBanner8: false # content (body) :: -
