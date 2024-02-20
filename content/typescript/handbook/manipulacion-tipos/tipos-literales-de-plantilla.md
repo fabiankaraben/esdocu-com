@@ -1,21 +1,20 @@
 ---
-linkTitle: "Template Literal Types"
-title: "TypeScript: Documentation - Template Literal Types - TypeScript en Español"
-description: "Generating mapping types which change properties via template literal strings."
+linkTitle: "Tipos literales de plantilla"
+title: "Tipos literales de plantilla - TypeScript en Español"
+description: "Genera tipos de mapeo que cambian propiedades a través de cadenas literales de plantilla."
 weight: 8
 type: docs
 next: /typescript/handbook/classes
-draft: true
 ---
 
-# Template Literal Types
+# Tipos literales de plantilla
 
-Template literal types build on [string literal types](/typescript/handbook/tipos-comunes#literal-types), and have the ability to expand into many strings via unions.
+Los tipos literales de plantilla se basan en [tipos literales de cadena](/typescript/handbook/tipos-comunes#literal-types) y tienen la capacidad de expandirse a muchas cadenas a través de uniones.
 
 {{< content-ads/top-banner >}}
 
-They have the same syntax as [template literal strings in JavaScript ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals), but are used in type positions.
-When used with concrete literal types, a template literal produces a new string literal type by concatenating the contents.
+Tienen la misma sintaxis que [cadenas literales de plantilla en JavaScript ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals), pero se utilizan en posiciones de tipo.
+Cuando se utiliza con tipos literales concretos, un literal de plantilla produce un nuevo tipo literal de cadena al concatenar el contenido.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA6g9gJwDYBMoF4oCIDujVYDcAUMaJFAOIIQTACWAdgOYZQAGAFhEknFABIA3vGQoAvuxIB6aVHkA9APxA)
 
@@ -27,7 +26,7 @@ type Greeting = `hello ${World}`;
 type Greeting = "hello world"
 ```
 
-When a union is used in the interpolated position, the type is the set of every possible string literal that could be represented by each union member:
+Cuando se usa una unión en la posición interpolada, el tipo es el conjunto de cada cadena literal posible que podría ser representada por cada miembro de la unión:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAogtgQwJYBsAyB7AxglECSAIgM5QC8UARAO4QpYZwQD6EiqlUAPlW8iswAWEBABMkAOwDmlANwAoUJCgAxDBmAQATphx4ipCpQBm6zVubAkwPJx4mz25sQgTRGY8bnzF4aAEEUdGxcAhJyKAADABIAb3h+XVCDblVHHRD9EgBfZiRRSIUAeiKoMoA9AH4gA)
 
@@ -40,7 +39,7 @@ type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`;
 type AllLocaleIDs = "welcome_email_id" | "email_heading_id" | "footer_title_id" | "footer_sendoff_id"
 ```
 
-For each interpolated position in the template literal, the unions are cross multiplied:
+Para cada posición interpolada en el literal de la plantilla, las uniones se multiplican de forma cruzada:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAogtgQwJYBsAyB7AxglECSAIgM5QC8UARAO4QpYZwQD6EiqlUAPlW8iswAWEBABMkAOwDmlANwAoUJCgAxDBmAQATphx4ipCpQBm6zVubAkwPJx4mz25sQgTRGY8bnyA9D6gAtEFYAK7AQQGK4NAAgijo2LgEJORQAAYAJADe8Py6SQbcqo46ifokAL7MSKJpCkrQaAjSqZSudlQAVggdlGDA3lHK+XgAshDExAhSyYbp2U3SVdlxCXqzFXW+-lBQAHoA-EA)
 
@@ -53,18 +52,15 @@ type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`;
 type LocaleMessageIDs = "en_welcome_email_id" | "en_email_heading_id" | "en_footer_title_id" | "en_footer_sendoff_id" | "ja_welcome_email_id" | "ja_email_heading_id" | "ja_footer_title_id" | "ja_footer_sendoff_id" | "pt_welcome_email_id" | "pt_email_heading_id" | "pt_footer_title_id" | "pt_footer_sendoff_id"
 ```
 
-We generally recommend that people use ahead-of-time generation for large string unions, but this is useful in smaller cases.
+Generalmente recomendamos que las personas usen la generación anticipada (ahead-of-time) para uniones de cadenas grandes, pero esto es útil en casos más pequeños.
 
-### String Unions in Types {#string-unions-in-types}
+### Uniones de cadenas en tipos {#string-unions-in-types}
 
-The power in template literals comes when defining a new string based on information inside a type.
+El poder de los literales de plantilla surge cuando se define una nueva cadena basada en información dentro de un tipo.
 
 {{< content-ads/middle-banner-1 >}}
 
-Consider the case where a function (`makeWatchedObject`) adds a new function
-called `on()` to a passed object.  In JavaScript, its call might look like:
-`makeWatchedObject(baseObject)`. We can imagine the base object as looking
-like:
+Considera el caso en el que una función (`makeWatchedObject`) agrega una nueva función llamada `on()` a un objeto pasado. En JavaScript, su llamada podría verse así: `makeWatchedObject(baseObject)`. Podemos imaginar que el objeto base se parece a:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAGNqRQF1AA4CGKKApgCYDyARgFZkb4C8oA3mqKAGYCWquAHJEAtmQBcoAEQBlItH7kpAGk6gANiSGiJ0gErYikFWqIBzXQCYAbKoC+AbiA)
 
@@ -76,16 +72,16 @@ const passedObject = {
 };
 ```
 
-The `on` function that will be added to the base object expects two arguments, an `eventName` (a `string`) and a `callback` (a `function`).
+La función `on` que se agregará al objeto base espera dos argumentos, un `eventName` (un `string`) y un `callback` (una `function`).
 
-The `eventName` should be of the form `attributeInThePassedObject + "Changed"`; thus, `firstNameChanged` as derived from the attribute `firstName` in the base object.
+El `eventName` debe tener la forma `attributeInThePassedObject + "Changed"`; por lo tanto, `firstNameChanged` se deriva del atributo `firstName` en el objeto base.
 
-The `callback` function, when called:
+La función `callback`, cuando se llama:
 
-- Should be passed a value of the type associated with the name `attributeInThePassedObject`; thus, since `firstName` is typed as `string`, the callback for the `firstNameChanged` event expects a `string` to be passed to it at call time. Similarly events associated with `age` should expect to be called with a `number` argument
-- Should have `void` return type (for simplicity of demonstration)
+- Se debe pasar un valor del tipo asociado con el nombre `attributeInThePassedObject`; por lo tanto, dado que `firstName` se escribe como `string`, la devolución de llamada para el evento `firstNameChanged` espera que se le pase un `string` en el momento de la llamada. De manera similar, los eventos asociados con `age` deberían ser llamados con un argumento `number`.
+- Debe tener un tipo de devolución `voidv (para simplificar la demostración)
 
-The naive function signature of `on()` might thus be: `on(eventName: string, callback: (newValue: any) => void)`. However, in the preceding description, we identified important type constraints that we’d like to document in our code. Template Literal types let us bring these constraints into our code.
+La firma de la función ingenua de `on()` podría ser: `on(eventName: string, callback: (newValue: any) => void)`. Sin embargo, en la descripción anterior, identificamos restricciones de tipo importantes que nos gustaría documentar en nuestro código. Los tipos de literales de plantilla nos permiten incorporar estas restricciones a nuestro código.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFABMCmBjANgIbxagBmArpDgC4CW0koAtgQNZYDqB1OAFlhgDyAIwBWuagApoYgFygCkAJ4BKeYqUBuNCFABaAznLUDetDgYpqoAA5ZUDUAF5mbTtz4CR4mpIDeaKBktKjUAHIETFjyAEQAygTQIShYMQA0gaCEVhFRsQBKDIrpmQQA5tGgAEwAbBkAviraOmAs7Fw8-EJiEqC8BCgKGNgYoAAGDGOg1NDT-AowykzQ5IPeEmhodg6QAHQMkjGkyeGRWADC-ZAVGOmgkpBYAO4AagR45FgqzgB8oAFBCyQFDQPBYXZ4aBlSRjY6hXIkJ4DUB8RQ3aazAAkfker3en3qAEIxk00I1NEA)
 
@@ -96,14 +92,14 @@ const person = makeWatchedObject({
   age: 26,
 });
  
-// makeWatchedObject has added `on` to the anonymous Object
- 
+// makeWatchedObject ha agregado `on` al Object anónimo
+
 person.on("firstNameChanged", (newValue) => {
   console.log(`firstName was changed to ${newValue}!`);
 });
 ```
 
-Notice that `on` listens on the event `"firstNameChanged"`, not just `"firstName"`. Our naive specification of `on()` could be made more robust if we were to ensure that the set of eligible event names was constrained by the union of attribute names in the watched object with “Changed” added at the end. While we are comfortable with doing such a calculation in JavaScript i.e. `Object.keys(passedObject).map(x => `${x}Changed`)`, template literals *inside the type system* provide a similar approach to string manipulation:
+Observa que `on` escucha el evento `"firstNameChanged"`, no solo `"firstName"`. Nuestra ingenua especificación de `on()` podría hacerse más sólida si nos aseguráramos de que el conjunto de nombres de eventos elegibles estuviera restringido por la unión de nombres de atributos en el objeto observado con "Changed" agregado al final. Si bien nos sentimos cómodos haciendo este tipo de cálculo en JavaScript, es decir, `Object.keys(passedObject).map(x => \`${x}Changed\`)`, los literales de plantilla *dentro del sistema de tipos* proporcionan un enfoque similar para la manipulación de cadenas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACgTgezAUQG4QHbAMoIK5wDGEAPACrgQB8UAvFAN4BQUrUCGAFBOlgHIBDALYQAXFAAGAEgYBnYHACWGAOZQAZFADWEEAgBmUCpAC+AYQAWA1RAAmEgDRRCAgDauARgMJbxnDBAA7gBqbnhiUNYgAJR0NKgIirbR4glJANxMJplMAPT5UGZwEALA0AJQAESBpYQWduweAFYQhMCVUIGKwBaRGJIcElAiPQi2eQWyCFA9pVB6eM7WnbW9+ghwzlY2sjPTYIiQcMCKELIAdEy2ra4CxVD6eBhtihzDAjoA6qt2APLNrWA5EoVE4CGa4mMEBSRkoGlghzQmBw+CIpChVHSQA)
 
@@ -114,12 +110,12 @@ type PropEventSource<Type> = {
     on(eventName: `${string & keyof Type}Changed`, callback: (newValue: any) => void): void;
 };
  
-/// Create a "watched object" with an `on` method
-/// so that you can watch for changes to properties.
+/// Crea un "watched object" con un método `on` para que 
+/// puedas observar los cambios en las propiedades.
 declare function makeWatchedObject<Type>(obj: Type): Type & PropEventSource<Type>;
 ```
 
-With this, we can build something that errors when given the wrong property:
+Con esto, podemos construir algo que genere errores cuando se le dé la propiedad incorrecta:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUAC4CeADpKAArwkCiAbpAHYEDKcArtAMaQA8AKqUgA+UAF5QAbzyhZoOIwAUkBswByAQwC2kVAAMAJJMQFoAS0YBzUADJQAa0hE4AM1CCyAXwDCACw1WkAAmegA0oFwaADZRAEYaXPaoioyQAO4AatHsuqABRACU4qJ0cGZBBail5QDceJ51eEGQXFEa0OQu7IxcBGYKoFoajgDqGgRcvsEA8rEAVi0EAsKKcPOo-JXutpTU9EysHNx8-MJ1IKAAtNdc7ATXl3hcCiagZEgDEkOj45Mz84tFNJZC4zEgCJodKgAEQsDRlJCQaGhGSgNomSG5aEAJQUAWRqI0llyaAAbPUCo13ogFAA6BSKaGg8GYvwBYlBZGgRRFMSiSSeSl4PAXKgqA6gSAaRBEUC+dhDRiS2AIbnsRAWawEKYOJygCwmKVBeRubXkcXMUCMbSQAp4al0hlMsEYm1cnnFKSCxoXACSBAA5IhQMQSHBLh0NSYAgR7TAaYx6UomSybWzApzwh6+V7KUA)
 
@@ -132,29 +128,28 @@ const person = makeWatchedObject({
  
 person.on("firstNameChanged", () => {});
  
-// Prevent easy human error (using the key instead of the event name)
+// Evita errores humanos fáciles (usando la clave en lugar del nombre del evento)
 person.on("firstName", () => {});
  
-// It's typo-resistant
+// Es resistente a errores tipográficos
 person.on("frstNameChanged", () => {});
 Argument of type '"frstNameChanged"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.2345Argument of type '"frstNameChanged"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
 ```
 
-```text {filename="Generated error"}
+```text {filename="Error generado"}
 Argument of type '"firstName"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
 ```
 
-### Inference with Template Literals {#inference-with-template-literals}
+### Inferencia con literales de plantilla {#inference-with-template-literals}
 
-Notice that we did not benefit from all the information provided in the original passed object. Given change of a `firstName` (i.e. a `firstNameChanged` event),  we should expect that the callback will receive an argument of type `string`. Similarly, the callback for a change to `age` should receive a `number` argument. We’re naively using `any` to type the `callback`’s argument. Again, template literal types make it possible to ensure an attribute’s data type will be the same type as that attribute’s callback’s first argument.
+Observa que no nos beneficiamos de toda la información proporcionada en el objeto pasado original. Dado el cambio de un `firstName` (es decir, un evento `firstNameChanged`), deberíamos esperar que la devolución de llamada reciba un argumento de tipo `string`. De manera similar, la devolución de llamada para un cambio en `age` debe recibir un argumento `number`. Estamos usando ingenuamente `any` para tipar el argumento de la "devolución de llamada" (`callback`). Nuevamente, los tipos literales de plantilla permiten garantizar que el tipo de datos de un atributo sea el mismo tipo que el primer argumento de la devolución de llamada de ese atributo.
 
-The key insight that makes this possible is this: we can use a function with a generic such that:
+La idea clave que hace esto posible es la siguiente: podemos usar una función con un genérico tal que:
 
-1. The literal used in the first argument is captured as a literal type
-2. That literal type can be validated as being in the union of valid attributes in the generic
-3. The type of the validated attribute can be looked up in the generic’s structure using Indexed Access
-4. This typing information can *then* be applied to ensure the argument to the
-  callback function is of the same type
+1. El literal usado en el primer argumento se captura como un tipo literal.
+2. Ese tipo literal se puede validar como si estuviera en la unión de atributos válidos en el genérico.
+3. El tipo de atributo validado se puede buscar en la estructura del genérico utilizando Acceso Indexado.
+4. Esta información de escritura se puede *luego* aplicar para garantizar que el argumento de la función de devolución de llamada es del mismo tipo
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACgTgezAUQG4QHbAMoIK5wDGEAPACrgQB8UAvFAN4BQUrUCGJA0hCFBAA9gmACYBnKGOBwAlhgDmUAGRQA1rwQAzKBUhUWbQwAoI6LADkAhgFsIALigADACQMeIAL4BhABaWFECKOADRQhJYANhEARpaEqg5GGBAA7gBqkXj2OpQA2u4AugCUdDSoCDIiRQ7llQDcTB4NTCIQhBGWcNCaeBiEwDIcUNaW6gDqlsCEPoEA8tEAVm3A5JRURgiLDroQ1TmQyrCIKGY4+ESkO1TNhBxSUJBwYkP0I+OT03OLy0bMrJoyJ7AKy2BwAImwlgqTwgYOCBg6UhB2TBACUOP44QZLPJsgAmABsjSKzUezwwADoOEYwQCgcjfP5cSI4VBkilkaVGAZWAB6XmGQVC4WsAB6AH4eWE7ggIhAKREEPIjI52WybNAZBJXOzkRTgAgAKpgR5eSxiCBGIoeRwk4mkiBPDhUjA0nEQRkBFmhdkAQVxXL+bH5ItDUAlUpk2iSqX90BIUAADCUg0LbhhnnKKSlOq6wTm4Bg5PIAIRsiDySYydBQd1gu2GDzEoA)
 
@@ -187,26 +182,26 @@ person.on("ageChanged", newAge => {
 })
 ```
 
-Here we made `on` into a generic method.
+Aquí convertimos `on` en un método genérico.
 
 {{< content-ads/middle-banner-3 >}}
 
-When a user calls with the string `"firstNameChanged"`, TypeScript will try to infer the right type for `Key`.
-To do that, it will match `Key` against the content before `"Changed"` and infer the string `"firstName"`.
-Once TypeScript figures that out, the `on` method can fetch the type of `firstName` on the original object, which is `string` in this case.
-Similarly, when called with `"ageChanged"`, TypeScript finds the type for the property `age` which is `number`.
+Cuando un usuario llama con la cadena `"firstNameChanged"`, TypeScript intentará inferir el tipo correcto para `Key`.
+Para hacer eso, comparará `Key` con el contenido antes de `"Changed"` e inferirá la cadena `"firstName"`.
+Una vez que TypeScript se da cuenta de eso, el método `on` puede recuperar el tipo de `firstName` en el objeto original, que es `string` en este caso.
+De manera similar, cuando se llama con `"ageChanged"`, TypeScript encuentra el tipo de la propiedad `age` que es `number`.
 
-Inference can be combined in different ways, often to deconstruct strings, and reconstruct them in different ways.
+La inferencia se puede combinar de diferentes maneras, a menudo para deconstruir cadenas y reconstruirlas de diferentes maneras.
 
-## Intrinsic String Manipulation Types {#intrinsic-string-manipulation-types}
+## Tipos de manipulación de cadenas intrínsecas {#intrinsic-string-manipulation-types}
 
-To help with string manipulation, TypeScript includes a set of types which can be used in string manipulation. These types come built-in to the compiler for performance and can’t be found in the `.d.ts` files included with TypeScript.
+Para ayudar con la manipulación de cadenas, TypeScript incluye un conjunto de tipos que se pueden usar en la manipulación de cadenas. Estos tipos vienen integrados en el compilador para mejorar el rendimiento y no se pueden encontrar en los archivos `.d.ts` incluidos con TypeScript.
 
 ### `Uppercase<StringType>` {#uppercasestringtype}
 
-Converts each character in the string to the uppercase version.
+Convierte cada carácter de la cadena a la versión en mayúsculas.
 
-##### Example {#example}
+##### Ejemplo {#example}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA4gThCwCWA7A5lAvFARACQgBsiB7AGigHdS4iATXAKFEigGUALUgV1HkQoM2KAFUwkOAGMAhgGcIAHgFI06AHxMA9Fqh6AegH4mLcNACC7AMIBJG1ZlTOEANIQQi9sDhQIAD2AIVHo5KDlvNXURAAMbABEAWgASAG9xSVkFT291AF9o0zYAWRk0eJFLW3tHZzcPXABbEAB9GQlcTR09KCMgA)
 
@@ -224,9 +219,9 @@ type MainID = "ID-MY_APP"
 
 ### `Lowercase<StringType>` {#lowercasestringtype}
 
-Converts each character in the string to the lowercase equivalent.
+Convierte cada carácter de la cadena al equivalente en minúsculas.
 
-##### Example {#example-1}
+##### Ejemplo {#example-1}
 
 {{< content-ads/middle-banner-4 >}}
 
@@ -246,9 +241,9 @@ type MainID = "id-my_app"
 
 ### `Capitalize<StringType>` {#capitalizestringtype}
 
-Converts the first character in the string to an uppercase equivalent.
+Convierte el primer carácter de la cadena en un equivalente en mayúscula.
 
-##### Example {#example-2}
+##### Ejemplo {#example-2}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAMg9gdwgJwMYEMDOEDiyITACWAdgOZQC8UARABYQA2jcANFAnMowCY0DcAKFCQoeAsXJUoAYXRgiwdIyIAvCAB54SNFlz5CpMgD4hAejNQrAPQD8QA)
 
@@ -261,9 +256,9 @@ type Greeting = "Hello, world"
 
 ### `Uncapitalize<StringType>` {#uncapitalizestringtype}
 
-Converts the first character in the string to a lowercase equivalent.
+Convierte el primer carácter de la cadena a un equivalente en minúscula.
 
-##### Example {#example-3}
+##### Ejemplo {#example-3}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAqmkCcDGBDAzhA4giFgEsA7AcygF4oAiACQFEAZegeSgHUmAlegEUoG4AUKEixCSAPYBbAGbiEwFACMANlhx4ipCjDEow+BcvwAvCAB44iVBmy4CJAHyCA9M6juAegH4gA)
 

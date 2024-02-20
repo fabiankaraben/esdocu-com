@@ -122,7 +122,7 @@ type MappedTypeWithNewProperties<Type> = {
 }
 ```
 
-You can leverage features like [template literal types ↗](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) to create new property names from prior ones:
+You can leverage features like [template literal types](/typescript/handbook/manipulacion-tipos/tipos-literales-de-plantilla) to create new property names from prior ones:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA4hzAgJwM4B4Aq4ID4oF4oBvAKCnKgG0AFJAe0iVCgEsA7KAawhDoDMoWSFACGKKAAMA5vAAkRAMIiwLYCIA2LAF4Q0KYEnZSoAMii0GyUDgC+EgLoAuKAAoAlATxCINeo1D2JDYA3CQk7IhIfCIAxtDUyCh0HKQUUGwiALYQzvqGbFKhaSIyzmwArpkARshFFOp0MSLALMm5BkahNmGgwgAyIlogCajJBLDwkegjSWw4oQD0CxQAegD8QA)
 
