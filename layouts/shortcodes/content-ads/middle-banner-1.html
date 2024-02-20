@@ -1,3 +1,21 @@
+{{- $showAdsterraMiddleBanner1 := .Site.Params.showAdsterraMiddleBanner1 | default false -}}
+{{- if eq $showAdsterraMiddleBanner1 true }}
+<div class="my-5">
+    <center>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '9bc1f8e9785ff6e0fe2bedf5f10796da',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/9bc1f8e9785ff6e0fe2bedf5f10796da/invoke.js"></scr' + 'ipt>');
+        </script>
+    </center>
+</div>
+{{ end -}}
+
 {{- $showAdCashMiddleBanner1 := .Site.Params.showAdCashMiddleBanner1 | default false -}}
 {{- if eq $showAdCashMiddleBanner1 true }}
 <div class="my-5">
