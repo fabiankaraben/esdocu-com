@@ -99,7 +99,7 @@
             {{- $active := eq $pageURL .RelPermalink -}}
             {{- $shouldOpen := or (.Params.sidebar.open) (.IsAncestor $page) $active | default true }}
             {{- $title := .LinkTitle | default .File.BaseFileName -}}
-            <li class="flex flex-col {{ if $shouldOpen }}open{{ end }}">
+            <li class="flex flex-col open {{ if $shouldOpen }}open{{ end }}">
               {{- template "sidebar-item-link" dict "context" . "active" $active "title" $title "link" .RelPermalink -}}
               {{- if and $toc $active -}}
                 {{ template "sidebar-toc" dict "page" . }}
