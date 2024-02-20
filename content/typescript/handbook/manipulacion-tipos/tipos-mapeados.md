@@ -27,7 +27,7 @@ const conforms: OnlyBoolsAndHorses = {
 };
 ```
 
-Un tipo mapeado es un tipo genérico que usa una unión de `PropertyKey`s (creadas con frecuencia [mediante un `keyof` ↗](https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html)) para iterar a través de claves para crear un tipo:
+Un tipo mapeado es un tipo genérico que usa una unión de `PropertyKey`s (creadas con frecuencia [mediante un `keyof`](/typescript/handbook/manipulacion-tipos/tipos-de-acceso-indexado)) para iterar a través de claves para crear un tipo:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA8mwEsD2A7AzgMQDYEMDmaAPACrgQB8UAvFAN4BQUUA2gAoBOSk7oUCKUANYQQSAGZRSkALoAuKACMkSLBBwoA3PQC+GoA)
 

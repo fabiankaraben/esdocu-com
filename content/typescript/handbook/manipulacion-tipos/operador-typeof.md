@@ -4,7 +4,6 @@ title: "El operador de tipo typeof - TypeScript en Español"
 description: "Usando el operador typeof en contextos de tipo."
 weight: 4
 type: docs
-noindex: true
 ---
 
 # El operador de tipo `typeof`

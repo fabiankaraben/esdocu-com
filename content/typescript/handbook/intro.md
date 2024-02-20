@@ -5,7 +5,6 @@ description: "Tu primer paso para aprender TypeScript."
 weight: 1
 type: docs
 prev: /typescript/get-started/typescript-tooling-in-5-minutes
-noindex: true
 ---
 
 # El manual de TypeScript
