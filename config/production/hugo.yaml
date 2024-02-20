@@ -37,9 +37,9 @@ params:
   showAdCashBottomBanner: false # content (body) :: -
 
   # Adsterra Ads.
-  showAdsterraPopunder: false # end head
-  showAdsterraSocialBar: false # end body
-  showAdsterraTopBanner: false # content (body) :: -
+  showAdsterraPopunder: true # end head
+  showAdsterraSocialBar: true # end body
+  showAdsterraTopBanner: true # content (body) :: -
   showAdsterraMiddleBanner1: false # content (body) :: -
   showAdsterraMiddleBanner2: false # content (body) :: -
   showAdsterraMiddleBanner3: false # content (body) :: -
