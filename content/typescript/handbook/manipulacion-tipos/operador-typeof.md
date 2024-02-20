@@ -5,6 +5,7 @@ description: "Usando el operador typeof en contextos de tipo."
 weight: 4
 type: docs
 noindex: true
+draft: true
 ---
 
 # El operador de tipo `typeof`

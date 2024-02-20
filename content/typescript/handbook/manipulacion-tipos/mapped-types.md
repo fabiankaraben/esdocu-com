@@ -192,7 +192,7 @@ type Config = {
 
 ### Further Exploration {#further-exploration}
 
-Mapped types work well with other features in this type manipulation section, for example here is [a mapped type using a conditional type ↗](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) which returns either a `true` or `false` depending on whether an object has the property `pii` set to the literal `true`:
+Mapped types work well with other features in this type manipulation section, for example here is [a mapped type using a conditional type](/typescript/handbook/manipulacion-tipos/tipos-condicionales) which returns either a `true` or `false` depending on whether an object has the property `pii` set to the literal `true`:
 
 {{< content-ads/middle-banner-5 >}}
 
