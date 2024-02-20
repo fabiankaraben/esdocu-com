@@ -6,6 +6,7 @@ weight: 1
 type: docs
 prev: /typescript/handbook/objects
 noindex: true
+draft: true
 ---
 
 # Creando tipos a partir de tipos
