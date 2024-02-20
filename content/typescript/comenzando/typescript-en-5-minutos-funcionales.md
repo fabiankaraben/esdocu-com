@@ -10,6 +10,8 @@ type: docs
 
 TypeScript comenzó su vida como un intento de llevar los tipos tradicionales orientados a objetos a JavaScript para que los programadores de Microsoft pudieran llevar los programas tradicionales orientados a objetos a la web. A medida que se desarrolló, el sistema de tipos de TypeScript evolucionó para modelar el código escrito por usuarios nativos de JavaScript. El sistema resultante es poderoso, interesante y complejo.
 
+{{< content-ads/top-banner >}}
+
 Esta introducción está diseñada para programadores que trabajan en Haskell o ML y desean aprender TypeScript. Describe en qué se diferencia el sistema de tipos de TypeScript del sistema de tipos de Haskell. También describe características únicas del sistema de tipos de TypeScript que surgen de su modelado del código JavaScript.
 
 Esta introducción no cubre la programación orientada a objetos. En la práctica, los programas orientados a objetos en TypeScript son similares a los de otros lenguajes populares con características OO.
@@ -104,6 +106,8 @@ Ten en cuenta que llamar a un método en un literal numérico requiere que esté
 ### Tipado gradual {#gradual-typing}
 
 TypeScript usa el tipo `any` siempre que no puede decir cuál debería ser el tipo de una expresión. En comparación con `Dynamic`, llamar tipo `any` es una exageración. Simplemente apaga el verificador de tipos dondequiera que aparezca. Por ejemplo, puedes insertar cualquier valor en array `any[]` sin marcar el valor de ninguna manera:
+
+{{< content-ads/middle-banner-1 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEHcEsBcAtQEQDsD2BJAtgBwDaQMYwCCSAnggFygBmAhjgM4CmokSo0D+KS1kA5gDoAVgx4AaULTIMq00gG0AugChuSBtCkzQAXlDKA3CvkNBWAK4NYACgCMASmOnzV2whTxUCJyZmvrGwBvbVI4Nn4qBH4UJgYEUABfJyA)
 
@@ -221,6 +225,8 @@ type Conflicting = { a: number } & { a: string };
 
 ### Tipos de unidades {#unit-types}
 
+{{< content-ads/middle-banner-2 >}}
+
 Los tipos de unidades son subtipos de tipos primitivos que contienen exactamente un valor primitivo. Por ejemplo, la cadena `"foo"` tiene el tipo `"foo"`. Dado que JavaScript no tiene enumeraciones integradas, es común utilizar en su lugar un conjunto de cadenas conocidas. Las uniones de tipos literales de cadena permiten a TypeScript escribir este patrón:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFBFS4lVnEsAjAAYWk6Rt1A)
@@ -301,6 +307,8 @@ let i: { inference: string } = run((o) => {
 ```
 
 Se determina que el tipo de `o` es `{ inference: string }` porque
+
+{{< content-ads/middle-banner-3 >}}
 
 1. Los inicializadores de declaración están tipados contextualmente según el tipo de declaración: `{ inference: string }`.
 2. El tipo de retorno de una llamada utiliza el tipo contextual para las inferencias, por lo que el compilador infiere que `T={ inference: string }`.
@@ -407,6 +415,8 @@ function length(t: ArrayLike<unknown>): number {}
 
 En el primer `length`, `T` no es necesaria; observa que solo se hace referencia a ella una vez, por lo que no se usa para restringir el tipo de valor de retorno u otros parámetros.
 
+{{< content-ads/middle-banner-4 >}}
+
 #### Tipos de tipo superior {#higher-kinded-types}
 
 TypeScript no tiene tipos de tipo superior, por lo que lo siguiente no es legal:
@@ -511,3 +521,5 @@ Este documento es una descripción general de alto nivel de la sintaxis y los ti
 
 - Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
+
+{{< content-ads/bottom-banner >}}

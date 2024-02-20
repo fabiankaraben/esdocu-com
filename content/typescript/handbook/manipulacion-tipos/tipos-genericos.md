@@ -11,6 +11,8 @@ type: docs
 Una parte importante de la ingeniería de software es crear componentes que no solo tengan API consistentes y bien definidas, sino que también sean reutilizables.
 Los componentes que son capaces de trabajar con los datos de hoy y con los datos del mañana te brindarán las capacidades más flexibles para construir grandes sistemas de software.
 
+{{< content-ads/top-banner >}}
+
 En lenguajes como C# y Java, una de las principales herramientas en la caja de herramientas para crear componentes reutilizables son los *generics*, es decir, poder crear un componente que pueda funcionar en una variedad de tipos en lugar de uno solo.
 Esto permite a los usuarios consumir estos componentes y utilizar sus propios tipos.
 
@@ -78,6 +80,8 @@ Aquí establecemos explícitamente `Type` como `string` como uno de los argument
 La segunda forma también es quizás la más común. Aquí usamos *inferencia de argumento de tipo*, es decir, queremos que el compilador establezca el valor de `Type` automáticamente según el tipo de argumento que le pasamos:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABDAJgUzLKBPAPAFWwAc0A+ACgEMAnAcwC5FCSBKR5tRAbwChFFqaKCGpIatANw8AvjwD0cxAFoVEEFBVKeAGyGI46ousQBeZOkwwc5AEQBbbAGUo1GGFo2WUhf1-8AegD8QA)
+
+{{< content-ads/middle-banner-1 >}}
 
 ```ts
 let output = identity("myString");
@@ -153,6 +157,8 @@ Es posible que ya estés familiarizado con este estilo de tipado en otros lengua
 En la siguiente sección, cubriremos cómo puedes crear tus propios tipos generics como `Array<Type>`.
 
 ## Tipos generics {#generic-types}
+
+{{< content-ads/middle-banner-2 >}}
 
 En secciones anteriores, creamos funciones de identidad genéricas que funcionaban con una variedad de tipos.
 En esta sección, exploraremos el tipo de funciones en sí y cómo crear interfaces genéricas.
@@ -243,6 +249,8 @@ Las clases genéricas tienen una lista de parámetros de tipo genérico entre co
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcBcCcEsDG0BcoBmBDANpApgFCLaaSSgDieAdngogHICuAtgEZ0A8zLAKgJ4AHPAD5QAbwKhQALzoB7AGo4meNDwHCA3FNCYAJvrQAKAB7rWmvABpQ-C3yF4AlKAC8YjU50BfAgWw8aFAWfipaeh4OWHdQWgB3Sho6JCiualZokWNnHVDwlMZMugA6OVglFTxYgAY8sOTI4tgSg31Y9CZqZHh5alAzW35XSWlYIKZYftNQAGo7Xy0gA)
 
+{{< content-ads/middle-banner-3 >}}
+
 ```ts
 class GenericNumber<NumType> {
   zeroValue: NumType;
@@ -329,6 +337,8 @@ Argument of type 'number' is not assignable to parameter of type 'Lengthwise'.
 En lugar de eso, debemos pasar valores cuyo tipo tenga todas las propiedades requeridas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgDIRAczACwO7ADOKA3gFDLIA2G2OAXMiAK4C2ARtANxkC+ZZGMxAIwwAPYhq4zJlCYAkgBMMYsAE8APABV1ABxQQAHpBBLCaWrgLEAfAAo4UTI10GAlK-2kKyBJMJxGgA6KhlHZ1CrHHceSigIMGYoKSdMHn4AekzkAFp8hGYwfNyyMNl5ZVVgDXsSamjGAEYABgAaZAA3OCpmCEYAZmReWKA)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```ts
 loggingIdentity({ length: 10, value: 3 });
@@ -448,3 +458,5 @@ Un parámetro genérico predeterminado sigue las siguientes reglas:
 - Si se especifica un tipo predeterminado y la inferencia no puede elegir un candidato, se infiere el tipo predeterminado.
 - Una declaración de clase o interfaz que se fusiona con una declaración de clase o interfaz existente puede introducir un valor predeterminado para un parámetro de tipo existente.
 - Una declaración de clase o interfaz que se fusiona con una declaración de clase o interfaz existente puede introducir un nuevo parámetro de tipo siempre que especifique un valor predeterminado.
+
+{{< content-ads/bottom-banner >}}

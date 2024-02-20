@@ -6,3 +6,5 @@ cascade:
 redirect: //bootstrap/comenzando
 noindex: true
 ---
+
+{{< content-ads/bottom-banner >}}

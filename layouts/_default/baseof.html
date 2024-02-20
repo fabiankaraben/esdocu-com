@@ -15,7 +15,11 @@
       });
     </script>
     {{ end -}}
+
+    {{- $showAdsterraSocialBar := .Site.Params.showAdsterraSocialBar | default false -}}
+    {{- if eq $showAdsterraSocialBar true }}
     <script type='text/javascript' src='//pl22561290.profitablegatecpm.com/4f/61/0d/4f610dae2e6aca43c3cd6f58f544d85c.js'></script>
+    {{ end -}}
   </body>
   {{ partial "scripts.html" . }}
 </html>

@@ -28,8 +28,6 @@ Hay varias formas de personalizar Bootstrap. Tu mejor camino puede depender de t
 
 Nuestros dos métodos preferidos son:
 
-{{< content-ads/middle-banner-1 >}}
-
 1.  Usar Bootstrap [a través del administrador de paquetes](/bootstrap/comenzando/#package-managers) para que puedas usar y ampliar nuestro archivos fuente.
 2.  Usar los archivos de distribución compilados de Bootstrap o [jsDelivr](/bootstrap/comenzando/#cdn-via-jsdelivr) para que puedas agregar o sobrescribir los estilos de Bootstrap.
 
@@ -38,8 +36,6 @@ Si bien no podemos entrar en detalles aquí sobre cómo usar cada administrador 
 Para aquellos que quieran utilizar los archivos de distribución, revisa la [página de introducción](/bootstrap/comenzando) para conocer cómo incluir esos archivos y una página HTML de ejemplo. Desde allí, consulta la documentación para conocer el diseño, los componentes y los comportamientos que te gustaría utilizar.
 
 A medida que te familiarices con Bootstrap, continúa explorando esta sección para obtener más detalles sobre cómo utilizar nuestras opciones globales, cómo usar y cambiar nuestro sistema de color, cómo construimos nuestros componentes, cómo usar nuestro lista cada vez mayor de propiedades personalizadas de CSS y cómo optimizar tu código al compilar con Bootstrap.
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -61,8 +57,6 @@ Basado en la [conversación comunitaria](https://github.com/twbs/bootstrap/issue
 ## Uso de Sass en Bootstrap
 
 Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y funciones que te ayudarán a construir más rápido y personalizar tu proyecto.
-
-{{< content-ads/top-banner >}}
 
 Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y más.
 
@@ -161,8 +155,6 @@ sass --watch ./scss/custom.scss ./css/custom.css
 
 Obtén más información sobre tus opciones en [sass-lang.com/install](https://sass-lang.com/install) y [compilando con VS Code](https://code.visualstudio.com/docs/languages/css#_transpiling-sass-and-less-into-css).
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="info" emoji="" >}}
 **¿Utilizas Bootstrap con otra herramienta de compilación?** Considera leer nuestras guías para compilar con [Webpack](/bootstrap/comenzando), [Parcel](/bootstrap/comenzando) o [Vite](/bootstrap/comenzando). También tenemos demostraciones listas para producción en [nuestro repositorio de ejemplos en GitHub](https://github.com/twbs/examples).
 {{< /callout >}}
@@ -231,8 +223,6 @@ Bootstrap incluye un puñado de mapas Sass, pares clave-valor que facilitan la g
 
 Algunos de nuestros mapas Sass se fusionan en mapas vacíos de forma predeterminada. Esto se hace para permitir una fácil expansión de un mapa de Sass determinado, pero tiene el costo de hacer que _eliminar_ elementos de un mapa sea un poco más difícil.
 
-{{< content-ads/middle-banner-2 >}}
-
 #### Modificar mapa {#modify-map}
 
 Todas las variables en el mapa `$theme-colors` se definen como variables independientes. Para modificar un color existente en nuestro mapa `$theme-colors`, agrega lo siguiente a tu archivo Sass personalizado:
@@ -297,11 +287,11 @@ Por ejemplo, usamos las claves `primary`, `success` y `danger` de `$theme-colors
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 #### Colores {#colors}
 
 Junto a los [mapas Sass](/bootstrap/personalizar/#color-sass-maps) que tenemos, los colores del tema también pueden usarse como variables independientes, como `$primary`.
+
+{{< content-ads/middle-banner-1 >}}
 
 ```scss {filename="SCSS"}
 .custom-element {
@@ -369,8 +359,6 @@ También se puede utilizar para necesidades puntuales de contraste:
 
 También puedes especificar un color base con nuestras funciones de mapa de colores:
 
-{{< content-ads/middle-banner-4 >}}
-
 ```scss {filename="SCSS"}
 .custom-element {
   color: color-contrast($dark); // returns `color: #fff`
@@ -431,8 +419,6 @@ Hay disponible una combinación abreviada para la media query `prefers-color-sch
 
 [scss/mixins/_color-scheme.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_color-scheme.scss)
 
-{{< content-ads/middle-banner-5 >}}
-
 ```scss {filename="SCSS"}
 @mixin color-scheme($name) {
   @media (prefers-color-scheme: #{$name}) {
@@ -456,8 +442,6 @@ Hay disponible una combinación abreviada para la media query `prefers-color-sch
 ## Las Opciones de Bootstrap
 
 Personaliza rápidamente Bootstrap con variables integradas para alternar fácilmente las preferencias globales de CSS para controlar el estilo y el comportamiento.
-
-{{< content-ads/top-banner >}}
 
 Personaliza Bootstrap con nuestro archivo de variables personalizadas incorporado y alterna fácilmente las preferencias globales de CSS con las nuevas variables `$enable-*` Sass. Sobrescribe el valor de una variable y vuelve a compilar con `npm run test` según sea necesario.
 
@@ -488,8 +472,6 @@ Puedes encontrar y personalizar estas variables para opciones globales clave en 
 ## Todos los colores de Bootstrap
 
 Bootstrap está respaldado por un extenso sistema de colores que tematiza nuestros estilos y componentes. Esto permite una personalización y extensión más completas para cualquier proyecto.
-
-{{< content-ads/top-banner >}}
 
 ### Colores {#colors}
 
@@ -567,8 +549,6 @@ Primary
 Secondary
 </div>
 
-{{< content-ads/middle-banner-1 >}}
-
 <div class="my-5 p-3 rounded-md font-bold bg-[#198754] text-white">
 Success
 </div>
@@ -616,9 +596,9 @@ Consulta [nuestra documentación de mapas y bucles de Sass](/bootstrap/personali
 
 Todos los colores de Bootstrap están disponibles como variables Sass y un mapa Sass en el archivo `scss/_variables.scss`. Para evitar un aumento en el tamaño de los archivos, no creamos clases de texto o color de fondo para cada una de estas variables. En su lugar, elegimos un subconjunto de estos colores para una [paleta de tema](#theme-colors).
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 Asegúrate de controlar las relaciones de contraste mientras personalizas los colores. Como se muestra a continuación, hemos agregado tres relaciones de contraste a cada uno de los colores principales: una para los colores actuales de la muestra, otra para el blanco y otra para el negro.
 
@@ -932,8 +912,6 @@ $cyan-800
 $cyan-900
 </div>
 
-{{< content-ads/middle-banner-3 >}}
-
 <div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#adb5bd] text-black">
 <strong>gray-500</strong> #adb5bd
 </div>
@@ -992,8 +970,6 @@ Los archivos fuente Sass de Bootstrap incluyen tres mapas para ayudarte a recorr
 Dentro de `scss/_variables.scss`, encontrarás las variables de color de Bootstrap y el mapa Sass. Aquí hay un ejemplo del mapa `$colors` de Sass:
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
-
-{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $colors: (
@@ -1081,8 +1057,6 @@ Esto generará nuevas utilidades `.text-{color}-{level}` para cada color y nivel
 
 Bootstrap ahora admite modos de color o temas a partir de la versión 5.3.0. Explora nuestro modo de color claro predeterminado y el nuevo modo oscuro, o crea el tuyo propio usando nuestros estilos como plantilla.
 
-{{< content-ads/top-banner >}}
-
 <br />
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
 
@@ -1151,8 +1125,6 @@ Por ejemplo, para cambiar el modo de color de un menú desplegable, agrega `data
   }
   ```
     
-{{< content-ads/middle-banner-1 >}}
-
 * Utilizamos un `_variables-dark.scss` personalizado para potenciar esas sobrescrituras de variables CSS globales compartidas para el modo oscuro. Este archivo no es necesario para tus propios modos de color personalizados, pero sí para nuestro modo oscuro por dos razones. En primer lugar, es mejor tener un único lugar para restablecer los colores globales. En segundo lugar, algunas variables de Sass tuvieron que ser anuladas para imágenes de fondo incrustadas en nuestro CSS para acordeones, componentes de formulario y más.
     
 
@@ -1190,8 +1162,6 @@ Utilizamos un mixin Sass personalizado, `color-mode()`, para ayudarte a controla
 
 En caso de que quieras usar media queries y solo hacer que los modos de color sean automáticos, puedes cambiar el tipo predeterminado del mixin a través de la variable Sass. Considera el siguiente fragmento y su salida CSS compilada.
 
-{{< content-ads/middle-banner-2 >}}
-
 ```scss {filename="SCSS"}
 $color-mode-type: data;
 
@@ -1204,6 +1174,8 @@ $color-mode-type: data;
 ```
 
 Salidas a:
+
+{{< content-ads/middle-banner-3 >}}
 
 ```css {filename="CSS"}
 [data-bs-theme=dark] .element {
@@ -1269,8 +1241,6 @@ Por ejemplo, puedes crear un “tema blue” con el selector `data-bs-theme="blu
   }
 }
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/customize/color-modes/custom-color-modes.html" >}}
 ```html {filename="HTML"}
@@ -1422,8 +1392,6 @@ $theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $c
 ### Personalización del CSS {#css}
 
 #### Variables Sass del componente {#variables}
-
-{{< content-ads/middle-banner-4 >}}
 
 Docenas de variables CSS de nivel raíz se repiten como sobrescrituras para el modo oscuro. Estos tienen como ámbito el selector de modo de color, que por defecto es `data-bs-theme` pero [se puede configurar](#building-with-sass) para usar un `prefers-color-scheme` media query. Utiliza estas variables como guía para generar tus propios modos de color nuevos.
 
@@ -1590,8 +1558,6 @@ Los estilos para el modo oscuro y cualquier modo de color personalizado que cree
 
 Aprende cómo y por qué construimos casi todos nuestros componentes de manera responsive y con clases base y modificadoras.
 
-{{< content-ads/top-banner >}}
-
 ### Clases base {#base-classes}
 
 Los componentes de Bootstrap están construidos en gran medida con una nomenclatura de modificador de base. Agrupamos tantas propiedades compartidas como sea posible en una clase base, como `.btn`, y luego agrupamos estilos individuales para cada variante en clases modificadoras, como `.btn-primary` o `.btn-success`.
@@ -1601,8 +1567,6 @@ Para construir nuestras clases modificadoras, usamos los bucles `@each` de Sass 
 Consulta [nuestra documentación de mapas y bucles de Sass](/bootstrap/personalizar/#maps-and-loops) para saber cómo personalizar estos bucles y extender el enfoque de modificador de base de Bootstrap a tu propio código.
 
 ### Modificadores {#modifiers}
-
-{{< content-ads/middle-banner-1 >}}
 
 Muchos de los componentes de Bootstrap están construidos con un enfoque de clase modificadora de base. Esto significa que la mayor parte del estilo está contenido en una clase base (por ejemplo, `.btn`), mientras que las variaciones de estilo se limitan a clases modificadoras (por ejemplo, `.btn-danger`). Estas clases modificadoras se crean a partir del mapa `$theme-colors` para personalizar el número y el nombre de nuestras clases modificadoras.
 
@@ -1623,8 +1587,6 @@ Aquí hay dos ejemplos de cómo recorremos el mapa `$theme-colors` para generar 
 ```
 
 [scss/_list-group.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_list-group.scss)
-
-{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="scss/_list-group.scss"}
 // List group contextual variants
@@ -1655,8 +1617,6 @@ Aquí hay dos ejemplos de cómo recorremos el mapa `$theme-colors` para generar 
 Estos bucles de Sass tampoco se limitan a mapas de colores. También puedes generar variaciones responsive de tus componentes. Tomemos, por ejemplo, nuestra alineación responsive de los menús desplegables donde mezclamos un bucle `@each` para el mapa Sass `$grid-breakpoints` con una media query include.
 
 [scss/_dropdown.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_dropdown.scss)
-
-{{< content-ads/middle-banner-3 >}}
 
 ```scss {filename="scss/_dropdown.scss"}
 // We deliberately hardcode the `bs-` prefix because we check
@@ -1704,8 +1664,6 @@ $grid-breakpoints: (
 
 Para obtener más información y ejemplos sobre cómo modificar nuestros mapas y variables de Sass, consulta [la sección CSS de la documentación de Grid](/bootstrap/grilla/#css).
 
-{{< content-ads/middle-banner-4 >}}
-
 ### Crear el tuyo propio {#creating-your-own}
 
 Te animamos a que adoptes estas pautas cuando construyas con Bootstrap para crear tus propios componentes. Nosotros mismos hemos ampliado este enfoque a los componentes personalizados en nuestra documentación y ejemplos. Los componentes como nuestros callouts se construyen igual que los componentes proporcionados, con clases base y modificadoras.
@@ -1731,8 +1689,6 @@ En tu CSS, tendrías algo como lo siguiente donde la mayor parte del estilo se r
 .callout-danger {}
 ```
 
-{{< content-ads/middle-banner-5 >}}
-
 Para las leyendas, ese estilo único es solo un `border-left-color`. Cuando combinas esa clase base con una de esas clases modificadoras, obtienes tu familia completa de componentes:
 
 {{< demo-iframe path="/demos/bootstrap/5.3/customize/components/creating-your-own-2.html" >}}
@@ -1753,7 +1709,7 @@ Para las leyendas, ese estilo único es solo un `border-left-color`. Cuando comb
 
 Usa las propiedades personalizadas de CSS de Bootstrap para un diseño y desarrollo rápidos y con visión de futuro.
 
-{{< content-ads/top-banner >}}
+{{< content-ads/middle-banner-4 >}}
 
 Bootstrap incluye muchas [propiedades personalizadas de CSS (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) en su CSS compilado para personalización en tiempo real sin necesidad de recompilar Sass. Estos proporcionan un fácil acceso a los valores de uso común, como los colores de nuestro tema, los puntos de interrupción y las pilas de fuentes principales cuando se trabaja en el inspector de tu navegador, una zona de pruebas de código o la creación de prototipos en general.
 
@@ -1766,8 +1722,6 @@ Aquí están las variables que incluimos (ten en cuenta que `:root` es obligator
 #### Predeterminado {#default}
 
 Estas variables CSS están disponibles en todas partes, independientemente del modo de color.
-
-{{< content-ads/middle-banner-1 >}}
 
 ```scss {filename="SCSS"}
 :root,
@@ -1958,8 +1912,6 @@ Estas variables tienen como alcance nuestro modo oscuro incorporado.
 
 Bootstrap 5 utiliza cada vez más propiedades personalizadas como variables locales para varios componentes. De esta manera reducimos nuestro CSS compilado, garantizamos que los estilos no se hereden en lugares como tablas anidadas y permitimos algunos cambios básicos de estilo y extensión de los componentes Bootstrap después de la compilación de Sass.
 
-{{< content-ads/middle-banner-2 >}}
-
 Echa un vistazo a nuestra documentación de tablas para ver la [visión de cómo utilizamos las variables CSS](/bootstrap/tablas/#how-do-the-variants-and-accented-tables-work). Nuestras [barras de navegación también utilizan variables CSS](/bootstrap/componentes/navbar/#css) a partir de v5.2.0. También estamos usando variables CSS en nuestras cuadrículas, principalmente para los gutters, la [nueva cuadrícula CSS opcional](/bootstrap/grilla-css), con un mayor uso de componentes en camino.
 
 {{< bootstrap/content-suggestion >}}
@@ -1971,8 +1923,6 @@ Siempre que sea posible, asignaremos variables CSS en el nivel del componente ba
 La mayoría de las variables CSS usan un prefijo para evitar colisiones con tu propio código base. Este prefijo se suma al `--` que se requiere en cada variable CSS.
 
 Personaliza el prefijo mediante la variable Sass `$prefix`. De forma predeterminada, está configurado en `bs-` (ten en cuenta el guión final).
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Ejemplos {#examples}
 
@@ -1995,8 +1945,6 @@ a {
 Bootstrap proporciona estilos `:focus` personalizados usando una combinación de variables Sass y CSS que se pueden agregar opcionalmente a componentes y elementos específicos. Todavía no sobrescribimos globalmente todos los estilos `:focus`.
 
 En nuestro Sass, configuramos valores predeterminados que se pueden personalizar antes de compilar.
-
-{{< content-ads/middle-banner-4 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -2025,8 +1973,6 @@ Aunque incluimos nuestros puntos de interrupción de cuadrícula como variables 
 ## Formas de Optimizar la utilización de Bootstrap
 
 Mantén tus proyectos ágiles, responsive y mantenibles para que puedas ofrecer la mejor experiencia y concentrarte en trabajos más importantes.
-
-{{< content-ads/top-banner >}}
 
 ### Importaciones Sass optimizadas {#lean-sass-imports}
 
@@ -2087,8 +2033,6 @@ Si no estás usando un componente, coméntalo o elimínalo por completo. Por eje
 
 ### JavaScript optimizado {#lean-javascript}
 
-{{< content-ads/middle-banner-1 >}}
-
 El JavaScript de Bootstrap incluye todos los componentes de nuestros archivos dist primarios (`bootstrap.js` y `bootstrap.min.js`), e incluso nuestra dependencia principal (Popper) con nuestros archivos de paquete (`bootstrap.bundle.js` y `bootstrap.bundle.min.js`). Mientras personalizas a través de Sass, asegúrate de eliminar el JavaScript relacionado.
 
 Por ejemplo, suponiendo que estás usando tu propio paquete de JavaScript como Webpack, Parcel o Vite, solo importarás el JavaScript que planeas usar. En el siguiente ejemplo, mostramos cómo incluir simplemente nuestro JavaScript modal:
@@ -2123,8 +2067,6 @@ const modal = new Modal(document.getElementById('myModal'))
 
 ### Autoprefixer .browserslistrc {#autoprefixer-browserslistrc}
 
-{{< content-ads/middle-banner-2 >}}
-
 Bootstrap depende de Autoprefixer para agregar automáticamente prefijos del navegador a ciertas propiedades CSS. Los prefijos los dicta nuestro archivo `.browserslistrc`, que se encuentra en la raíz del repositorio de Bootstrap. Al personalizar esta lista de navegadores y volver a compilar Sass, se eliminará automáticamente parte del CSS del CSS compilado, si hay prefijos de proveedor exclusivos para ese navegador o versión.
 
 ### CSS no utilizado {#unused-css}
@@ -2138,8 +2080,6 @@ Si bien no tenemos un ejemplo prediseñado para usar [PurgeCSS](https://github.c
 
 Por último, este [artículo de CSS Tricks sobre CSS no utilizado](https://css-tricks.com/how-do-you-remove-unused-css-from-a-site) muestra cómo utilizar PurgeCSS y otras herramientas similares.
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Minify y gzip {#minify-and-gzip}
 
 Siempre que sea posible, asegúrate de comprimir todo el código que entregas a tus visitantes. Si estás utilizando archivos dist Bootstrap, intenta utilizar las versiones minimizadas (indicadas por las extensiones `.min.css` y `.min.js`). Si estás compilando Bootstrap desde el código fuente con tu propio sistema de compilación, asegúrate de implementar tus propios minificadores para HTML, CSS y JS.
@@ -2151,8 +2091,6 @@ Siempre que sea posible, asegúrate de comprimir todo el código que entregas a 
 Si bien minimizar y usar compresión puede parecer suficiente, hacer que tus archivos no bloqueen también es un gran paso para que tu sitio esté bien optimizado y sea lo suficientemente rápido.
 
 Si estás utilizando un complemento [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) en Google Chrome, es posible que hayas tropezado con FCP. La métrica [First Contentful Paint](https://web.dev/fcp) mide el tiempo desde que la página comienza a cargarse hasta que cualquier parte del contenido de la página se muestra en la pantalla.
-
-{{< content-ads/middle-banner-4 >}}
 
 Puedes mejorar FCP posponiendo JavaScript o CSS no críticos. ¿Qué significa eso? Simplemente, JavaScript u hojas de estilo que no necesitan estar presentes en la primera pintura de tu página deben marcarse con los atributos `async` o `defer`.
 
@@ -2168,3 +2106,5 @@ Si quieres aprender más sobre esto, ya hay muchos artículos excelentes al resp
 Tu sitio web solo debe estar disponible a través de conexiones HTTPS en producción. HTTPS mejora la seguridad, la privacidad y la disponibilidad de todos los sitios, y [no existe el tráfico web no confidencial](https://https.cio.gov/everything). Los pasos para configurar tu sitio web para que funcione exclusivamente a través de HTTPS varían ampliamente dependiendo de su arquitectura y proveedor de alojamiento web y, por lo tanto, están fuera del alcance de esta documentación.
 
 Los sitios servidos a través de HTTPS también deben acceder a todas las hojas de estilo, scripts y otros activos a través de conexiones HTTPS. De lo contrario, enviarás a los usuarios [contenido activo mixto](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content), lo que generará vulnerabilidades potenciales en las que un sitio puede verse comprometido al alterar una dependencia. Esto puede provocar problemas de seguridad y mostrar advertencias en el navegador a los usuarios. Ya sea que obtengas Bootstrap desde una CDN o lo proporciones tú mismo, asegúrate de acceder solo a través de conexiones HTTPS.
+
+{{< content-ads/bottom-banner >}}

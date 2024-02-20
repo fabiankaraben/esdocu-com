@@ -13,6 +13,8 @@ draft: true
 JavaScript has a long history of different ways to handle modularizing code.
 Having been around since 2012, TypeScript has implemented support for a lot of these formats, but over time the community and the JavaScript specification has converged on a format called ES Modules (or ES6 modules). You might know it as the `import`/`export` syntax.
 
+{{< content-ads/top-banner >}}
+
 ES Modules was added to the JavaScript spec in 2015, and by 2020 had broad support in most web browsers and JavaScript runtimes.
 
 For focus, the handbook will cover both ES Modules and its popular pre-cursor CommonJS `module.exports =` syntax, and you can find information about the other module patterns in the reference section under [Modules ↗](https://www.typescriptlang.org/docs/handbook/modules.html).
@@ -60,6 +62,8 @@ There are three main things to consider when writing module-based code in TypeSc
 A file can declare a main export via `export default`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvkA)
+
+{{< content-ads/middle-banner-1 >}}
 
 ```ts
 // @filename: hello.ts
@@ -160,6 +164,8 @@ const positivePhi = math.absolute(math.phi);
 const positivePhi: number
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 You can import a file and *not* include any variables into your current module via `import "./file"`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qIUAFp5AYwCuuebOlgocJGkyhkdOqQqVoqRi1AAiYsBwESAK0JWplKgoaJCDBMVgMAOYAFFbC4lYAlBJAA)
@@ -238,6 +244,8 @@ Together these allow a non-TypeScript transpiler like Babel, swc or esbuild to k
 
 #### ES Module Syntax with CommonJS Behavior {#es-module-syntax-with-commonjs-behavior}
 
+{{< content-ads/middle-banner-3 >}}
+
 TypeScript has ES Module syntax which *directly* correlates to a CommonJS and AMD `require`. Imports using ES Module are *for most cases* the same as the `require` from those environments, but this syntax ensures you have a 1 to 1 match in your TypeScript file with the CommonJS output:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PQgEB4CcFMDNpgOwMbVAFwJ4AdoGcBeAIkQHsATaI0YAPgFgAoMAAQFsKBXAG2gC5QyUmw6IAVniZgAtLOSd0s6UwCWbbKUjpQsPKAKgYAR04qYACiK6iASgDcTIYjzahlfTrwA6GAENyAGIqvADKmCiWABbQ3NykXuh4RAA0oEQKsAActnZAA)
@@ -302,6 +310,8 @@ There is a mis-match in features between CommonJS and ES Modules regarding the d
 ## TypeScript’s Module Resolution Options {#typescripts-module-resolution-options}
 
 Module resolution is the process of taking a string from the `import` or `require` statement, and determining what file that string refers to.
+
+{{< content-ads/middle-banner-4 >}}
 
 TypeScript includes two resolution strategies: Classic and Node. Classic, the default when the compiler option [`module` ↗](https://www.typescriptlang.org/tsconfig#module) is not `commonjs`, is included for backwards compatibility.
 The Node strategy replicates how Node.js works in CommonJS mode, with additional checks for `.ts` and `.d.ts`.
@@ -386,3 +396,5 @@ You can see all of the available options and what their emitted JavaScript code 
 ## TypeScript namespaces {#typescript-namespaces}
 
 TypeScript has its own module format called `namespaces` which pre-dates the ES Modules standard. This syntax has a lot of useful features for creating complex definition files, and still sees active use [in DefinitelyTyped ↗](https://github.com/DefinitelyTyped/DefinitelyTyped). While not deprecated, the majority of the features in namespaces exist in ES Modules and we recommend you use that to align with JavaScript’s direction. You can learn more about namespaces in [the namespaces reference page ↗](https://www.typescriptlang.org/docs/handbook/namespaces.html).
+
+{{< content-ads/bottom-banner >}}

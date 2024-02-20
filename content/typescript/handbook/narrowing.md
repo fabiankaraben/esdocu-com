@@ -10,6 +10,8 @@ type: docs
 
 Imagina que tenemos una función llamada `padLeft`.
 
+{{< content-ads/top-banner >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABABwIYBMAyBTYUAUa66MYA5gFyJggC2ARtgE6IA+iAzlE6WQDSJSyEFCpce5AJRjuvRAG8AUIkRQAFkzgB3ath0BRJpqb4ARADk4UQbWQAbbLWxgo2dIgCe2KAEJTkgG5FAF8gA)
 
 ```ts
@@ -219,6 +221,8 @@ Envolvimos todo el cuerpo de la función en una verificación veraz, pero esto t
 TypeScript no nos hace ningún daño aquí, pero vale la pena señalar este comportamiento si estás menos familiarizado con JavaScript.
 TypeScript a menudo puede ayudarle a detectar errores desde el principio, pero si eliges no hacer *nada* con un valor, hay mucho que puedes hacer sin ser demasiado prescriptivo.
 Si lo deseas, puedes asegurarte de manejar situaciones como estas con un linter.
+
+{{< content-ads/middle-banner-1 >}}
 
 Una última palabra sobre el estrechamiento por veracidad es que las negaciones booleanas con `!` se filtran de las ramas negadas.
 
@@ -480,6 +484,8 @@ Hemos trabajado con construcciones de JavaScript existentes para manejar el estr
 
 Para definir una protección de tipo definida por el usuario, simplemente necesitamos definir una función cuyo tipo de retorno sea un *predicado de tipo*:
 
+{{< content-ads/middle-banner-2 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAYglgZwBZQLxQN5QQdzgWwC4oAKASjQD4oA3AezgBMoBfAbgChRIoAhOAE7N0WAGYAbEMXJVaDZuw6MIAY3EBDAdFEBXAHYrgcOnqgBzCMADK+dePEAFS+WLxkUAD59BjTgHo-KABaEJUdYBCgjl0DIxMoRDckEkhgV0QUL34hMmJUhIRYDMwOKCgtYB0BUxTLKHVCpLIAOlwCKABCVHR9ZVE4PQhfDhYgA)
 
 ```ts
@@ -676,6 +682,8 @@ function getArea(shape: Shape) {
 }
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 ¡Eso eliminó el error!
 Cuando cada tipo en una unión contiene una propiedad común con tipos literales, TypeScript considera que se trata de una *unión discriminada* y puede estrechar los miembros de la unión.
 
@@ -770,3 +778,5 @@ function getArea(shape: Shape) {
 ```text {filename="Error generado"}
 Type 'Triangle' is not assignable to type 'never'.
 ```
+
+{{< content-ads/bottom-banner >}}

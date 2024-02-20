@@ -7,11 +7,11 @@ description: Documentación y ejemplos para insignias, nuestro componente de eti
 
 # Componentes Badge y Breadcrumbs en Bootstrap
 
+{{< content-ads/top-banner >}}
+
 ## El componente de Insignia de Bootstrap
 
 Documentación y ejemplos para insignias, nuestro componente de etiquetado y recuento.
-
-{{< content-ads/top-banner >}}
 
 ### Ejemplos del componente Insignia {#examples}
 
@@ -34,8 +34,6 @@ Las insignias se escalan para que coincidan con el tamaño del elemento padre in
 
 Las insignias se pueden usar como parte de enlaces o botones para proporcionar un contador.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/buttons.html" >}}
 ```html {filename="HTML"}
     <button type="button" class="btn btn-primary">
@@ -50,6 +48,8 @@ A menos que el contexto sea claro (como en el ejemplo de “Notificaciones”, d
 
 #### Posicionado {#positioned}
 
+{{< content-ads/middle-banner-1 >}}
+
 Usa utilidades para modificar un `.badge` y posicionarlo en la esquina de un enlace o botón.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/positioned-1.html" >}}
@@ -63,8 +63,6 @@ Usa utilidades para modificar un `.badge` y posicionarlo en la esquina de un enl
     </button>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 También puedes reemplazar la clase `.badge` con algunas utilidades más sin contar para un indicador más genérico.
 
@@ -89,8 +87,6 @@ Establece un `background-color` con un `color` de primer plano contrastante con 
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/background-colors.html" >}}
 ```html {filename="HTML"}
     <span class="badge text-bg-primary">Primary</span>
@@ -112,6 +108,8 @@ Establece un `background-color` con un `color` de primer plano contrastante con 
 
 Utiliza la clase de utilidad `.rounded-pill` para hacer insignias más redondeadas con un `border-radius` más grande.
 
+{{< content-ads/middle-banner-2 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/pill-badges.html" >}}
 ```html {filename="HTML"}
     <span class="badge rounded-pill text-bg-primary">Primary</span>
@@ -126,8 +124,6 @@ Utiliza la clase de utilidad `.rounded-pill` para hacer insignias más redondead
 {{< /demo-iframe >}}
 
 ### Personalización del CSS del componente {#css}
-
-{{< content-ads/middle-banner-4 >}}
 
 #### Variables Sass del componente {#variables}
 
@@ -149,8 +145,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las insignia
 
 #### Variables Sass generales relacionadas {#sass-variables}
 
-{{< content-ads/middle-banner-5 >}}
-
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
 ```scss {filename="scss/_variables.scss"}
@@ -166,7 +160,7 @@ $badge-border-radius:               var(--#{$prefix}border-radius);
 
 Indica la ubicación de la página actual dentro de una jerarquía de navegación que agrega automáticamente separadores mediante CSS.
 
-{{< content-ads/top-banner >}}
+{{< content-ads/middle-banner-3 >}}
 
 ### Ejemplo del componente Breadcrumb {#example}
 
@@ -201,8 +195,6 @@ Usa una lista ordenada o desordenada con elementos de lista vinculados para crea
 
 Los divisores se agregan automáticamente en CSS a través de [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) y [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). Se pueden cambiar modificando una propiedad personalizada CSS local `--bs-breadcrumb-divider`, o mediante la variable Sass `$breadcrumb-divider` y `$breadcrumb-divider-flipped` para su contraparte RTL, si es necesario. Utilizamos de forma predeterminada nuestra variable Sass, que se establece como alternativa a la propiedad personalizada. De esta manera, obtienes un divisor global que puedes sobrescribir sin tener que volver a compilar CSS en ningún momento.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/breadcrumb/dividers-1.html" >}}
 ```html {filename="HTML"}
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -226,8 +218,6 @@ También es posible usar un **icono SVG incrustado**. Aplícalo a través de nue
 **El SVG incorporado requiere caracteres con escape adecuado.** Algunos caracteres reservados, como `<`, `>` y `#`, deben estar codificado en URL o con formato de escape. Hacemos esto con la variable `$breadcrumb-divider` usando nuestro [`escape-svg()` (función Sass)](/bootstrap/personalizar/#escape-svg). Al personalizar la variable CSS, debes manejarlo tú mismo. Lee las [explicaciones de Kevin Weber sobre CodePen](https://codepen.io/kevinweber/pen/dXWoRw) para obtener más información.
 {{< /callout >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/breadcrumb/dividers-2.html" >}}
 ```html {filename="HTML"}
     <nav style="--bs-breadcrumb-divider: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&quot;);" aria-label="breadcrumb">
@@ -242,6 +232,8 @@ También es posible usar un **icono SVG incrustado**. Aplícalo a través de nue
 ```scss {filename="SCSS"}
 $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 También puedes eliminar la configuración del divisor `--bs-breadcrumb-divider: '';` (las cadenas vacías en las propiedades personalizadas de CSS cuentan como un valor), o estableciendo la variable Sass en `$breadcrumb-divider: none;`.
 
@@ -260,8 +252,6 @@ También puedes eliminar la configuración del divisor `--bs-breadcrumb-divider:
 $breadcrumb-divider: none;
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Accesibilidad del componente Breadcrumb {#accessibility}
 
 Dado que las breadcrumbs proporcionan navegación, es una buena idea agregar una etiqueta significativa como `aria-label="breadcrumb"` para describir el tipo de navegación proporcionada en el elemento `<nav>`, además de aplicar un `aria-current="page"` al último elemento del conjunto para indicar que representa la página actual.
@@ -272,8 +262,6 @@ Para obtener más información, consulta la [Guía de prácticas de creación de
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-4 >}}
-
 #### Variables Sass del componente {#variables}
 
 <br/>
@@ -282,6 +270,8 @@ Para obtener más información, consulta la [Guía de prácticas de creación de
 Como parte del enfoque de variables CSS en evolución de Bootstrap, las rutas de navegación ahora usan variables CSS locales en `.breadcrumb` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
 [scss/_breadcrumb.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_breadcrumb.scss)
+
+{{< content-ads/middle-banner-5 >}}
 
 ```scss {filename="scss/_breadcrumb.scss"}
 --#{$prefix}breadcrumb-padding-x: #{$breadcrumb-padding-x};
@@ -294,8 +284,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las rutas de
 --#{$prefix}breadcrumb-item-padding-x: #{$breadcrumb-item-padding-x};
 --#{$prefix}breadcrumb-item-active-color: #{$breadcrumb-active-color};
 ```
-
-{{< content-ads/middle-banner-5 >}}
 
 #### Variables Sass generales relacionadas {#sass-variables}
 

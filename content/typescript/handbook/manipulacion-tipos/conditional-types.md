@@ -13,6 +13,8 @@ At the heart of most useful programs, we have to make decisions based on input.
 JavaScript programs are no different, but given the fact that values can be easily introspected, those decisions are also based on the types of the inputs.
 *Conditional types* help describe the relation between the types of inputs and outputs.
 
+{{< content-ads/top-banner >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgIImAWzgG2QbwChlkdgA3CACgEoAuZcge2ABMBuQgX0NElkQoAIkwDmyCAA9IIVgGc0GbHiIkA7kyYxaDZm049CYAJ4AHFAFFJcTKZwQAjMgC8yEeKkz5irLmQB+ZBAAV0wAI2hkBjkwKFBRTgB6RJJkAD1-QiMzS2tbewAmF2QAJQhRK1MJaQhZBXRfPECQ8Mjo2PiklJIMoA)
 
 ```ts
@@ -72,6 +74,8 @@ These overloads for createLabel describe a single JavaScript function that makes
 
 Instead, we can encode that logic in a conditional type:
 
+{{< content-ads/middle-banner-1 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgJIBMAycBGEA2yA3gFDLLDoBcyIArgLZ5TID0AVMgM4D2DKMYAXRdk7VgG4SAXxKhIsRCgBycftjyFS5EGog0uYKKADmbTjzAALaMkHDR4qbNatkAWk8I6YT+5JgAJ4ADip6APJQGAA8ACrIEAAekCAitIzMyAA+3EamAHzIALzI8UkpafRM0GTIAPxoWLgEtTSq6s34EkA)
 
 ```ts
@@ -123,6 +127,8 @@ In this example, TypeScript errors because `T` isn’t known to have a property 
 We could constrain `T`, and TypeScript would no longer complain:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAshDO8CGBzCB5AZgHgCpQgA9gIA7AE3igG8oBbBZNALigFdSBrUgewHdSUAL4A+KAF4ouANoAiBolQRZAXQDcAKA0BLUiQBOmJAGNoAUTpJtAGxoao9Rktbxg+3Sk1CtoSFAtW1nCKaADCPHpkwFSSwUwYOAE2IpoA9KkOUAB6APxAA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 type MessageOf<T extends { message: unknown }> = T["message"];
@@ -194,6 +200,8 @@ For example, we could have inferred the element type in `Flatten` instead of fet
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAYgNgQ2MCA7APAFXBAfFAXim0iggA8VUATAZygEEAnJhEdAS1QDMImoAkigC2+APyCRUAFzEcAbiA)
 
+{{< content-ads/middle-banner-3 >}}
+
 ```ts
 type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
 ```
@@ -251,6 +259,8 @@ type ToArray<Type> = Type extends any ? Type[] : never;
 
 If we plug a union type into `ToArray`, then the conditional type will be applied to each member of that union.
 
+{{< content-ads/middle-banner-4 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAKg9gQQE5IIYgDw3BAfFAXlhyggA9gIA7AEwGcpUqQoB+YyAbQF0oAuKFQgA3CEgDcAKEmhIUAMrAkyJAHkkAOQCuAWxWFYiFOgx0lASyoBzKAB9BugEZjcUgPRuoXgHqsgA)
 
 ```ts
@@ -298,3 +308,5 @@ type ArrOfStrOrNum = ToArrayNonDist<string | number>;
           
 type ArrOfStrOrNum = (string | number)[]
 ```
+
+{{< content-ads/bottom-banner >}}

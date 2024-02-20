@@ -11,6 +11,8 @@ draft: true
 
 When you don’t want to repeat yourself, sometimes a type needs to be based on another type.
 
+{{< content-ads/top-banner >}}
+
 Mapped types build on the syntax for index signatures, which are used to declare the types of properties which have not been declared ahead of time:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAEg9gJwM7QLxQN4F8DcAoAegKgFoyBjAV2DJL1EigHkA7AGxACE442kBBFgBN4yCEijoMeKFADaAawggAXFCTAEASxYBzALpqARjzYQAhiygAfWIhT5cePOTgsNUVywBmiALZIaqwc3LwCwqIoElIyUEIQbGqalBAANLEIcEIsymre5nxpeLhAA)
@@ -36,6 +38,8 @@ type OptionsFlags<Type> = {
 };
 ```
 
+{{< content-ads/middle-banner-1 >}}
+
 In this example, `OptionsFlags` will take all the properties from the type `Type` and change their values to be a boolean.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA8mwEsD2A7AzgMQDYEMDmaAPACrgQB8UAvFAN4BQUUA2gAoBOSk7oUCKUANYQQSAGZRSkALoAuKACMkSLBBwoA3PQC+WgPR6oAWhMBjAK7ATR+qEhQMa4OfYQ01OoygATHO0EAskjeEPIAFACU1JQAbkgI3lpMKBAA7gCqaBDsHOIIquFRVLHxiTpatmQOTi4QcIio7jT1yOjY+ESOOM6uaOT6hkwAegD8QA)
@@ -59,6 +63,8 @@ type FeatureOptions = {
 There are two additional modifiers which can be applied during mapping: `readonly` and `?` which affect mutability and optionality respectively.
 
 You can remove or add these modifiers by prefixing with `-` or `+`. If you don’t add a prefix, then `+` is assumed.
+
+{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMFsHsDdIGdQHIBOkCGATWA7AGwE9VQsAXC9ASwCMBXC5UAM3VmnNAuIAdIqFHw4D0FGsgBQvAaADCmSpACyTLHUKQAPABV+kAHygAvKADeU0KAC0SvEWKgA2gAVRkcU5r5QAa0hiWFZQfQEAXQAuUIM3Dy9wgG4pAF9kmQNQABlYAGMAnABBXNzYBnwKUwsrUHsCElAaHGikah8Ac2TrOsdQfCxoSBa2-E7U9NlIUABVIjyC4tLyyrNFbGY1Cg0tbRz8yCKSsorDZJBrUAA9AH4gA)
 
@@ -108,6 +114,8 @@ type User = {
 
 In TypeScript 4.1 and onwards, you can re-map keys in mapped types with an `as` clause in a mapped type:
 
+{{< content-ads/middle-banner-3 >}}
+
 ```ts
 type MappedTypeWithNewProperties<Type> = {
     [Properties in keyof Type as NewKeyType]: Type[Properties]
@@ -141,6 +149,8 @@ type LazyPerson = {
 You can filter out keys by producing `never` via a conditional type:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMFsHsDdKgC4AskHIDWBLAdgCYagAOATrCZGcgJ4BQdVEMCkA0vgQGI6QA2BADwAVWlQB8oALygA3vVBLQAbQAKFKjVqh8oLJFqwAZqDHMAhgGdQAUQAeAY34BXApCEbK1OgBpQAES4hAESALoAXGbikOqaPrRh9AC+ANz09PjI1MYWjkgAwjhkzkgKyvpcUQGOxaUB6RVkFgQ4LlZReC7QAEbU6ckZTEichPyQVlZFJeMyLHCIozx8gkLTpRLpIMoAegD8QA)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```ts
 // Remove the 'kind' property
@@ -184,6 +194,8 @@ type Config = {
 
 Mapped types work well with other features in this type manipulation section, for example here is [a mapped type using a conditional type ↗](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) which returns either a `true` or `false` depending on whether an object has the property `pii` set to the literal `true`:
 
+{{< content-ads/middle-banner-5 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAogHsATgQwMbAAoEksB4Aq4EAfFALxQDeAUFFANoaID2kioUAlgHZQDWEEMwBmUQpAC6ALjFFGLNqAlQICCNwAmAZypQwnTjKQBXaAF8oAfignoM4cgA2WiAG5qZ99VCQoAEQAhADFOCEdtcipaLg0ZSihhZkQAW2RgGQAiHlRECGT1YB4AcwyoT2juZHy4myIZLSRi1z0DI0RTMvdy7yIoAHkAIwArCHQtADkICA1igHE-DAAlPzCIQuZeCngkNEwcXECQsO1idwB6M7ooAD1LIA)
 
 ```ts
@@ -203,3 +215,5 @@ type ObjectsNeedingGDPRDeletion = {
     name: true;
 }
 ```
+
+{{< content-ads/bottom-banner >}}

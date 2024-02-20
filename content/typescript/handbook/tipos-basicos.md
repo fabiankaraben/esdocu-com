@@ -11,6 +11,8 @@ type: docs
 Todos y cada uno de los valores en JavaScript tienen un conjunto de comportamientos que puedes observar al ejecutar diferentes operaciones.
 Esto suena abstracto, pero como ejemplo rápido, considera algunas operaciones que podríamos ejecutar en una variable llamada `message`.
 
+{{< content-ads/top-banner >}}
+
 ```js
 // Accediendo a la propiedad 'toLowerCase' 
 // en 'message' y luego llamándola
@@ -99,6 +101,8 @@ message();
 This expression is not callable.
   Type 'String' has no call signatures.
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 Ejecutar la última muestra con TypeScript nos dará un mensaje de error antes de ejecutar el código en primer lugar.
 
@@ -196,6 +200,8 @@ Eso es genial, pero TypeScript *también* puede evitar que cometamos esos errore
 El verificador de tipos tiene información para verificar cosas como si estamos accediendo a las propiedades correctas en variables y otras propiedades.
 Una vez que tenga esa información, también puede comenzar a *sugerir* qué propiedades quizás desees utilizar.
 
+{{< content-ads/middle-banner-2 >}}
+
 Eso significa que TypeScript también se puede aprovechar para editar código, y el verificador de tipo del core puede proporcionar mensajes de error y completar el código a medida que escribes en el editor.
 Eso es parte de lo que la gente suele referirse cuando habla de herramientas en TypeScript.
 
@@ -291,6 +297,8 @@ TypeScript nos dice que olvidamos pasar un argumento a la función `greet`, y co
 Hasta ahora solo hemos escrito JavaScript estándar y, sin embargo, la verificación de tipos aún pudo encontrar problemas con nuestro código.
 ¡Gracias TypeScript!
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Emitiendo con Errores {#emitting-with-errors}
 
 Una cosa que quizás no hayas notado en el último ejemplo fue que nuestro archivo `hello.js` cambió nuevamente.
@@ -379,6 +387,8 @@ let msg: string
 
 Aunque no le dijimos a TypeScript que `msg` tenía el tipo `string`, pudimos descubrirlo.
 Esa es una característica, y es mejor no agregar anotaciones cuando el sistema de tipos terminaría infiriendo el mismo tipo de todos modos.
+
+{{< content-ads/middle-banner-4 >}}
 
 > Nota: La burbuja de mensaje dentro del ejemplo de código anterior es lo que mostraría tu editor si hubieras colocado el cursor sobre la palabra.
 >
@@ -479,3 +489,5 @@ Activar el indicador [`noImplicitAny` ↗](https://www.typescriptlang.org/tsconf
 De forma predeterminada, valores como `null` y `undefined` se pueden asignar a cualquier otro tipo.
 Esto puede facilitar la escritura de código, pero olvidarse de manejar `null` y `undefined` es la causa de innumerables errores en el mundo; algunos lo consideran un [error de miles de millones de dólares ↗](https://www.youtube.com/watch)!
 El indicador [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) hace que el manejo de `null` y `undefined` sea más explícito, y nos *evita* preocuparnos por si *nos olvidamos* de manejar `null` y `undefined`.
+
+{{< content-ads/bottom-banner >}}

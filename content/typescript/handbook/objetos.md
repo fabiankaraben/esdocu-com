@@ -11,6 +11,8 @@ type: docs
 En JavaScript, la forma fundamental en que agrupamos y pasamos datos es a través de objetos.
 En TypeScript, los representamos a través de *tipos de objetos*.
 
+{{< content-ads/top-banner >}}
+
 Como hemos visto, pueden ser anónimos:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIgN6JgCGAtumYVKjGMgNyLXINUi0AjAogC+ASgoAoRIgD0smYqXLlAPXUbNW7TtXTEGKCFRIARAAl0AGytxEpxAGpE+IggB0Neu0kigA)
@@ -252,6 +254,8 @@ A veces no conoces todos los nombres de las propiedades de un tipo de antemano, 
 
 En esos casos puedes usar una firma de índice para describir los tipos de valores posibles, por ejemplo:
 
+{{< content-ads/middle-banner-1 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBlDGLVAgQRhigE8AKASgC54yKrb6GBuAFAB6YfAC0ksMgyTxgyhhAxEUMAi6UadRvADeg+PADalUAA8OqZAFsARsoC6HAM7ktQgL6DBYPG-gbBl5GDk0eHQZ4AF5CYnDtPlYhP1QAl3A8YABJJRsYwODI4wBGRyFRIyqAPQB+IA)
 
 ```ts
@@ -428,6 +432,8 @@ Es bastante común tener tipos que podrían ser versiones más específicas de o
 Por ejemplo, podríamos tener un tipo `BasicAddress` que describa los campos necesarios para enviar cartas y paquetes en los EE. UU.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgEJwM7AQQQCZ5QQYbIDeAUMsiHALYQD8AXMhmFKAOYDcVbHCBDCt2nEL34JgYAJ6iO3PtQQB7AK7go8geMnUADqvZwANgGFVeCAr18AvkA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 interface BasicAddress {
@@ -661,6 +667,8 @@ boxB.contents;
 (property) StringBox.contents: string
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 `Box` es reutilizable en el sentido de que `Type` se puede sustituir por cualquier cosa. Eso significa que cuando necesitamos un `Box` para un nuevo tipo, no necesitamos declarar un nuevo tipo `Box` en absoluto (aunque ciertamente podríamos hacerlo si quisiéramos).
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgEIHsAeAeAKgTwAcIA+ZAbwChlkF1wJwBnALmQOIG5KBfSy0JFiIUAQUKEANiio0A9HOQA6FUt78FyAMpwAtijhNkAcnK16kZm3FSUPY2rBExE6RkzIAvGizYb0kk4gA)
@@ -856,6 +864,8 @@ y = x;
 ```text {filename="Error generado"}
 The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 ### Tipos de tuplas {#tuple-types}
 
@@ -1059,3 +1069,5 @@ Argument of type 'readonly [3, 4]' is not assignable to parameter of type '[numb
 
 Aquí, `distanceFromOrigin` nunca modifica sus elementos, pero espera una tupla mutable.
 Dado que el tipo de `point` se dedujo como `readonly [3, 4]`, no será compatible con `[number, number]`, ya que ese tipo no puede garantizar que los elementos de `point` no sean mutados.
+
+{{< content-ads/bottom-banner >}}

@@ -9,11 +9,11 @@ next: /bootstrap/utilidades/api
 
 # Utilidades helpers en Bootstrap
 
+{{< content-ads/top-banner >}}
+
 ## Uso del ayudante Clearfix en Bootstrap
 
 Borra rápida y fácilmente el contenido flotante dentro de un contenedor agregando una utilidad clearfix.
-
-{{< content-ads/top-banner >}}
 
 Borra fácilmente los `float` agregando `.clearfix` **al elemento padre**. También se puede utilizar como mixin.
 
@@ -24,8 +24,6 @@ Usar en HTML:
 ```
 
 El código fuente del mixin:
-
-{{< content-ads/middle-banner-1 >}}
 
 [scss/mixins/_clearfix.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_clearfix.scss)
 
@@ -42,8 +40,6 @@ El código fuente del mixin:
 {{< bootstrap/content-suggestion >}}
 
 Usa el mixin en SCSS:
-
-{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="SCSS"}
 .element {
@@ -68,8 +64,6 @@ El siguiente ejemplo muestra cómo se puede usar clearfix. Sin clearfix, el div 
 
 Establece un color de fondo con un color de primer plano que contraste.
 
-{{< content-ads/top-banner >}}
-
 ### Descripción general {#overview}
 
 Los ayudantes de color y fondo combinan el poder de nuestras [`.text-*` (utilidades)](/bootstrap/utilidades/colores) y [`.bg-*` (utilidades)](/bootstrap/utilidades/background) en una clase. Usando nuestra función Sass `color-contrast()`, determinamos automáticamente un `color` de contraste para un `background-color` particular.
@@ -91,8 +85,6 @@ Los ayudantes de color y fondo combinan el poder de nuestras [`.text-*` (utilida
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="info" emoji="" >}}
 **Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
 {{< /callout >}}
@@ -107,8 +99,6 @@ Los ayudantes de color y fondo combinan el poder de nuestras [`.text-*` (utilida
     <span class="badge text-bg-info">Info</span>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -137,8 +127,6 @@ O en [tarjetas](/bootstrap/componentes/tarjetas/#background-and-color):
 
 Enlaces de colores con estados de desplazamiento.
 
-{{< content-ads/top-banner >}}
-
 ### Colores de enlace {#link-colors}
 
 Puedes usar las clases `.link-*` para colorear enlaces. A diferencia de las [`.text-*` (clases)](/bootstrap/utilidades/colores), estas clases tienen un estado `:hover` y `:focus`. Algunos de los estilos de enlace utilizan un color de primer plano relativamente claro y solo deben usarse sobre un fondo oscuro para tener suficiente contraste.
@@ -161,8 +149,6 @@ Puedes usar las clases `.link-*` para colorear enlaces. A diferencia de las [`.t
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="info" emoji="" >}}
 **Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
 {{< /callout >}}
@@ -173,8 +159,6 @@ Puedes usar las clases `.link-*` para colorear enlaces. A diferencia de las [`.t
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
 
 Los enlaces de colores también pueden modificarse mediante nuestras [utilidades de enlaces](/bootstrap/utilidades/enlaces-e-interacciones).
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -196,9 +180,9 @@ Los enlaces de colores también pueden modificarse mediante nuestras [utilidades
 
 Clases de utilidad que te permiten agregar y modificar estilos de anillos de enfoque personalizados a elementos y componentes.
 
-{{< content-ads/top-banner >}}
-
 El asistente `.focus-ring` elimina el `outline` predeterminado en `:focus`, reemplazándolo con un `box-shadow` que se puede personalizar de forma más amplia. La nueva sombra se compone de una serie de variables CSS, heredadas del nivel `:root`, que se pueden modificar para cualquier elemento o componente.
+
+{{< content-ads/middle-banner-1 >}}
 
 ### Ejemplo {#example}
 
@@ -213,8 +197,6 @@ Haz clic directamente en el siguiente enlace para ver el anillo de enfoque en ac
 {{< /demo-iframe >}}
 
 ### Personalizar {#customize}
-
-{{< content-ads/middle-banner-1 >}}
 
 Modifica el estilo de un anillo de enfoque con nuestras variables CSS, variables Sass, utilidades o estilos personalizados.
 
@@ -231,8 +213,6 @@ Modifica las variables CSS `--bs-focus-ring-*` según sea necesario para cambiar
 {{< /demo-iframe >}}
 
 `.focus-ring` establece estilos a través de variables CSS globales que se pueden sobrescribir en cualquier elemento principal, como se muestra arriba. Estas variables se generan a partir de sus contrapartes variables de Sass.
-
-{{< content-ads/middle-banner-2 >}}
 
 [scss/_root.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_root.scss)
 
@@ -254,8 +234,6 @@ Por defecto, no hay `--bs-focus-ring-x`, `--bs-focus-ring-y`, o `--bs-focus-ring
 
 #### Variables Sass generales relacionadas {#sass-variables}
 
-{{< content-ads/middle-banner-3 >}}
-
 Personaliza las variables Sass del anillo de enfoque para modificar todo el uso de los estilos del anillo de enfoque en tu proyecto impulsado por Bootstrap.
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -271,8 +249,6 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
 #### API de utilidades de Sass {#sass-utilities-api}
 
 Además de `.focus-ring`, tenemos varias utilidades `.focus-ring-*` para modificar los valores predeterminados de la clase auxiliar. Modifica el color con cualquiera de nuestros [colores de tema](/bootstrap/personalizar/#theme-colors). Ten en cuenta que es posible que las variantes clara y oscura no sean visibles en todos los colores de fondo debido a la compatibilidad con el modo de color actual.
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/focus-ring/sass-utilities-api.html" >}}
 ```html {filename="HTML"}
@@ -306,8 +282,6 @@ Las utilidades de Focus Ring se declaran en nuestra API de utilidades en `scss/_
 
 Crea rápidamente hipervínculos estilizados con íconos Bootstrap u otros íconos.
 
-{{< content-ads/top-banner >}}
-
 El componente auxiliar de vínculo de ícono modifica nuestros estilos de vínculo predeterminados para mejorar su apariencia y alinear rápidamente cualquier combinación de ícono y texto. La alineación se establece mediante el estilo Flexbox en línea y un valor de `gap` predeterminado. Estilizamos el subrayado con un desplazamiento y color personalizados. Los iconos se ajustan automáticamente a `1em` para que coincidan mejor con el `font-size` del texto asociado.
 
 Los enlaces de iconos suponen que se están utilizando [iconos de Bootstrap](https://icons.getbootstrap.com) , pero puedes usar cualquier icono o imagen que desees.
@@ -319,8 +293,6 @@ Cuando los íconos son puramente decorativos, deben ocultarse de las tecnología
 ### Ejemplo {#example}
 
 Toma un elemento `<a>` normal, agrega `.icon-link` e inserta un ícono a la izquierda o a la derecha del texto del enlace. El icono cambia de tamaño, ubicación y color automáticamente.
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/icon-link/example-1.html" >}}
 ```html {filename="HTML"}
@@ -359,8 +331,6 @@ Agrega `.icon-link-hover` para mover el ícono hacia la derecha al pasar el mous
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Personalizar {#customize}
 
 Modifica el estilo de un enlace de icono con nuestras variables CSS de enlace, variables Sass, utilidades o estilos personalizados.
@@ -371,7 +341,7 @@ Modifica las variables CSS `--bs-link-*` y `--bs-icon-link-*` según sea necesar
 
 Personaliza la `transform` al pasar el mouse sobrescribendo la variable CSS `--bs-icon-link-transform`:
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/icon-link/css-variables-1.html" >}}
 ```html {filename="HTML"}
@@ -401,8 +371,6 @@ Personaliza el color sobrescribendo la variable CSS `--bs-link-*`:
 
 #### Variables Sass generales relacionadas {#sass-variables}
 
-{{< content-ads/middle-banner-4 >}}
-
 Personaliza las variables Sass del enlace de íconos para modificar todos los estilos de enlaces de íconos en tu proyecto impulsado por Bootstrap.
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -419,8 +387,6 @@ $icon-link-icon-transform:    translate3d(.25em, 0, 0);
 
 Modifica los enlaces de los íconos con cualquiera de [nuestras utilidades de enlaces](/bootstrap/utilidades/enlaces-e-interacciones) para modificar el color del subrayado y el desplazamiento.
 
-{{< content-ads/middle-banner-5 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/icon-link/sass-utilities-api.html" >}}
 ```html {filename="HTML"}
     <a class="icon-link icon-link-hover link-success link-underline-success link-underline-opacity-25" href="#">
@@ -436,8 +402,6 @@ Modifica los enlaces de los íconos con cualquiera de [nuestras utilidades de en
 
 Usa estos ayudantes para configurar rápidamente la posición de un elemento.
 
-{{< content-ads/top-banner >}}
-
 ### Fijo parte superior {#fixed-top}
 
 Coloca un elemento en la parte superior del viewport, de borde a borde. Asegúrate de comprender las ramificaciones de la posición fija en tu proyecto; es posible que necesites agregar CSS adicional.
@@ -448,8 +412,6 @@ Coloca un elemento en la parte superior del viewport, de borde a borde. Asegúra
 
 ### Fijo parte inferior {#fixed-bottom}
 
-{{< content-ads/middle-banner-1 >}}
-
 Coloca un elemento en la parte inferior del viewport, de borde a borde. Asegúrate de comprender las ramificaciones de la posición fija en tu proyecto; es posible que necesites agregar CSS adicional.
 
 ```html {filename="HTML"}
@@ -459,8 +421,6 @@ Coloca un elemento en la parte inferior del viewport, de borde a borde. Asegúra
 ### Pegajoso parte superior {#sticky-top}
 
 Coloca un elemento en la parte superior del viewport, de borde a borde, pero solo después de pasarlo.
-
-{{< content-ads/middle-banner-2 >}}
 
 ```html {filename="HTML"}
 <div class="sticky-top">...</div>
@@ -478,8 +438,6 @@ También existen variaciones responsive para la utilidad `.sticky-top`.
 <div class="sticky-xxl-top">Stick to the top on viewports sized XXL (extra-extra-large) or wider</div>
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Pegajoso parte inferior {#sticky-bottom}
 
 Coloca un elemento en la parte inferior del viewport, de borde a borde, pero solo después de pasarlo.
@@ -489,8 +447,6 @@ Coloca un elemento en la parte inferior del viewport, de borde a borde, pero sol
 ```
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Pegajoso responsive inferior {#responsive-sticky-bottom}
 
@@ -508,8 +464,6 @@ También existen variaciones responsive para la utilidad `.sticky-bottom`.
 
 Usa pseudoelementos generados para hacer que un elemento mantenga la relación de aspecto que elijas. Perfecto para manejar de manera responsive incrustaciones de videos o presentaciones de diapositivas según el ancho del elemento principal.
 
-{{< content-ads/top-banner >}}
-
 ### Acerca de {#about}
 
 Utiliza el asistente de proporciones para administrar las proporciones de contenido externo como `<iframe>`s, `<embed>`s, `<video>`s y `<object>`s. Estos ayudantes también se pueden utilizar en cualquier elemento secundario HTML estándar (por ejemplo, un `<div>` o `<img>`). Los estilos se aplican desde la clase padre `.ratio` directamente al hijo.
@@ -519,8 +473,6 @@ Las relaciones de aspecto se declaran en un mapa Sass y se incluyen en cada clas
 {{< callout type="info" emoji="" >}}
 **¡Consejo profesional!** No necesitas `frameborder="0"` en tus `<iframe>`s, ya que lo sobrescribimos en [Reboot](/bootstrap/reboot).
 {{< /callout >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 ### Ejemplo {#example}
 
@@ -535,9 +487,9 @@ Envuelve cualquier incrustación, como un `<iframe>`, en un elemento padre con `
 ```
 {{< /demo-iframe >}}
 
-### Relaciones de aspecto {#aspect-ratios}
+{{< content-ads/middle-banner-3 >}}
 
-{{< content-ads/middle-banner-2 >}}
+### Relaciones de aspecto {#aspect-ratios}
 
 Las relaciones de aspecto se pueden personalizar con clases de modificadores. De forma predeterminada, se proporcionan las siguientes clases de relación:
 
@@ -562,8 +514,6 @@ Las relaciones de aspecto se pueden personalizar con clases de modificadores. De
 
 Cada clase `.ratio-*` incluye una propiedad personalizada CSS (o variable CSS) en el selector. Puedes sobrescribir esta variable CSS para crear relaciones de aspecto personalizadas sobre la marcha con algunos cálculos rápidos de tu parte.
 
-{{< content-ads/middle-banner-3 >}}
-
 Por ejemplo, para crear una relación de aspecto de 2x1, establece `--bs-aspect-ratio: 50%` en `.ratio`.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/ratio/custom-ratios-1.html" >}}
@@ -584,8 +534,6 @@ Esta variable CSS facilita la modificación de la relación de aspecto entre pun
 }
 ```
 
-{{< content-ads/middle-banner-4 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/ratio/custom-ratios-2.html" >}}
 ```html {filename="HTML"}
     <div class="ratio ratio-4x3">
@@ -599,8 +547,6 @@ Esta variable CSS facilita la modificación de la relación de aspecto entre pun
 {{< bootstrap/content-suggestion >}}
 
 Dentro de `_variables.scss`, puedes cambiar las relaciones de aspecto que deseas usar. Aquí está nuestro mapa `$ratio-aspect-ratios` predeterminado. Modifica el mapa como quieras y vuelve a compilar tu Sass para usarlo.
-
-{{< content-ads/middle-banner-5 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -617,8 +563,6 @@ $aspect-ratios: (
 
 Ayudantes que se basan en nuestras utilidades flexbox para hacer que el diseño de componentes sea más rápido y más fácil que nunca.
 
-{{< content-ads/top-banner >}}
-
 Las pilas ofrecen un atajo para aplicar una serie de propiedades de flexbox para crear diseños rápida y fácilmente en Bootstrap. Todo el crédito por el concepto y la implementación es para el [proyecto Pylon](https://almonk.github.io/pylon) de código abierto.
 
 {{< callout type="warning" emoji="" >}}
@@ -628,8 +572,6 @@ Las pilas ofrecen un atajo para aplicar una serie de propiedades de flexbox para
 ### Vertical {#vertical}
 
 Usa `.vstack` para crear diseños verticales. Los elementos apilados tienen el ancho completo de forma predeterminada. Utiliza las utilidades `.gap-*` para agregar espacio entre elementos.
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/stacks/vertical.html" >}}
 ```html {filename="HTML"}
@@ -654,8 +596,6 @@ Usa `.hstack` para diseños horizontales. Los elementos apilados están centrado
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 Usar utilidades de margen horizontal como `.ms-auto` como espaciadores:
 
@@ -682,8 +622,6 @@ Y con [reglas verticales](/bootstrap/helpers):
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Ejemplos {#examples}
 
 Usa `.vstack` para apilar botones y otros elementos:
@@ -698,8 +636,6 @@ Usa `.vstack` para apilar botones y otros elementos:
 {{< /demo-iframe >}}
 
 Crea un formulario en línea con `.hstack`:
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/stacks/examples-2.html" >}}
 ```html {filename="HTML"}
@@ -718,8 +654,6 @@ Crea un formulario en línea con `.hstack`:
 {{< bootstrap/content-suggestion >}}
 
 [scss/helpers/_stacks.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/helpers/_stacks.scss)
-
-{{< content-ads/middle-banner-5 >}}
 
 ```scss {filename="scss/helpers/_stacks.scss"}
 .hstack {
@@ -741,9 +675,9 @@ Crea un formulario en línea con `.hstack`:
 
 Haz que se pueda hacer clic en cualquier elemento HTML o componente Bootstrap "estirando" un enlace anidado a través de CSS.
 
-{{< content-ads/top-banner >}}
-
 Agrega `.stretched-link` a un enlace para que sea [bloque contenedor](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) en el que se puede hacer clic mediante un pseudoelemento `::after`. En la mayoría de los casos, esto significa que se puede hacer clic en un elemento con `position: relative;` que contiene un enlace con la clase `.stretched-link`. Ten en cuenta [cómo funciona `position` (CSS)](https://www.w3.org/TR/CSS21/visuren.html#propdef-position), `.stretched-link` no se puede mezclar con la mayoría de los elementos de la tabla.
+
+{{< content-ads/middle-banner-4 >}}
 
 Las tarjetas tienen `position: relative` de forma predeterminada en Bootstrap, por lo que en este caso puedes agregar de forma segura la clase `.stretched-link` a un enlace en la tarjeta sin ningún otro cambio de HTML.
 
@@ -767,8 +701,6 @@ No se recomiendan múltiples enlaces y objetivos táctiles con enlaces extendido
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 La mayoría de los componentes personalizados no tienen `position: relative` de forma predeterminada, por lo que debemos agregar `.position-relative` aquí para evitar que el enlace se extienda fuera del elemento padre.
 
@@ -816,8 +748,6 @@ La mayoría de los componentes personalizados no tienen `position: relative` de 
 
 ### Identificar el bloque contenedor {#identifying-the-containing-block}
 
-{{< content-ads/middle-banner-2 >}}
-
 Si el enlace extendido no parece funcionar, el [bloque contenedor](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block) probablemente será la causa. Las siguientes propiedades CSS convertirán a un elemento en el bloque contenedor:
 
 {{< bootstrap/content-suggestion >}}
@@ -857,8 +787,6 @@ Si el enlace extendido no parece funcionar, el [bloque contenedor](https://devel
 
 Truncar largas cadenas de texto con puntos suspensivos.
 
-{{< content-ads/top-banner >}}
-
 Para contenido más extenso, puedes agregar una clase `.text-truncate` para truncar el texto con puntos suspensivos. **Requiere `display: inline-block` o `display: block`.**
 
 {{< bootstrap/content-suggestion >}}
@@ -883,8 +811,6 @@ Para contenido más extenso, puedes agregar una clase `.text-truncate` para trun
 
 Utiliza el asistente de regla vertical personalizado para crear divisores verticales como el elemento `<hr>`.
 
-{{< content-ads/top-banner >}}
-
 ### Cómo funciona {#how-it-works}
 
 Las reglas verticales están inspiradas en el elemento `<hr>` , lo que te permite crear divisores verticales en diseños comunes. Tienen el mismo estilo que los elementos `<hr>`:
@@ -894,8 +820,6 @@ Las reglas verticales están inspiradas en el elemento `<hr>` , lo que te permit
 * Su color se establece mediante `currentColor` y `opacity`
 
 Personalízalos con estilos adicionales según sea necesario.
-
-{{< content-ads/middle-banner-1 >}}
 
 ### Ejemplo {#example}
 
@@ -915,8 +839,6 @@ Las reglas verticales escalan su altura en diseños flex:
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Con pilas {#with-stacks}
 
 También se pueden usar en [pilas](/bootstrap/helpers):
@@ -934,8 +856,6 @@ También se pueden usar en [pilas](/bootstrap/helpers):
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Personalización del CSS {#css}
 
 #### Variables Sass generales relacionadas {#sass-variables}
@@ -944,8 +864,6 @@ Personaliza la variable Sass de regla vertical para cambiar su ancho.
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
-{{< content-ads/middle-banner-4 >}}
-
 ```scss {filename="scss/_variables.scss"}
 $vr-border-width:             var(--#{$prefix}border-width);
 ```
@@ -953,8 +871,6 @@ $vr-border-width:             var(--#{$prefix}border-width);
 ## Uso del ayudante para contenido visualmente oculto en Bootstrap
 
 Usa estos ayudantes para ocultar elementos visualmente pero mantenlos accesibles para las tecnologías de asistencia.
-
-{{< content-ads/top-banner >}}
 
 Oculta visualmente un elemento y al mismo tiempo permite que esté expuesto a tecnologías de asistencia (como lectores de pantalla) con `.visually-hidden`. Utiliza `.visually-hidden-focusable` para ocultar visualmente un elemento de forma predeterminada, pero para mostrarlo cuando está enfocado (por ejemplo, por un usuario que solo usa el teclado). `.visually-hidden-focusable` también se puede aplicar a un contenedor; gracias a `:focus-within`, el contenedor se mostrará cuando cualquier elemento hijo del contenedor reciba el foco.
 
@@ -970,8 +886,6 @@ Oculta visualmente un elemento y al mismo tiempo permite que esté expuesto a te
 
 Tanto `visually-hidden` como `visually-hidden-focusable` también se pueden usar como mixins.
 
-{{< content-ads/middle-banner-1 >}}
-
 ```scss {filename="SCSS"}
 // Usage as a mixin
 
@@ -983,3 +897,5 @@ Tanto `visually-hidden` como `visually-hidden-focusable` también se pueden usar
   @include visually-hidden-focusable;
 }
 ```
+
+{{< content-ads/bottom-banner >}}

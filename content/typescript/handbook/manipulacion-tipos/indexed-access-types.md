@@ -12,6 +12,8 @@ draft: true
 
 We can use an *indexed access type* to look up a specific property on another type:
 
+{{< content-ads/top-banner >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAChBOBnA9gOygXigbygQwHMIAuKVAVwFsAjBAbjL0pKkWHgEtUCG8AbDgDcW1ZMj4Q86AL50AUKEhQAgkUywEKVAG0ARIQi6AuvID0pqJYB6AfiA)
 
 ```ts
@@ -24,6 +26,8 @@ type Age = number
 The indexing type is itself a type, so we can use unions, `keyof`, or other types entirely:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAChBOBnA9gOygXigbygQwHMIAuKVAVwFsAjBAbjL0pKkWHgEtUCG8AbDgDcW1ZMj4Q86AL50AUAHoFUALRqAxuWBqVc0JCgBJAIyZYCFKgDaAIkIQbUAD5QbqJg4C68pVD8A9AH45PXBoQwAmMzgkNCsAawgQZAAzc1jUb0VlAODQgwBBAWEAeXgAOQ8zO2KHZ1d3Zht5fXCAZmiLOKKhCDLK5izfXKA)
+
+{{< content-ads/middle-banner-1 >}}
 
 ```ts
 type I1 = Person["age" | "name"];
@@ -47,6 +51,8 @@ You’ll even see an error if you try to index a property that doesn’t exist:
 ```ts
 type I1 = Person["alve"];
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 ```text {filename="Generated error"}
 Property 'alve' does not exist on type 'Person'.
@@ -79,6 +85,8 @@ type Age2 = Person["age"];
 type Age2 = number
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 You can only use types when indexing, meaning you can’t use a `const` to make a variable reference:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYDMAOdB2AFgE4AoAFwE8AHSUABRkTgDtQBeUAb1AEMBzSKhYBXALYAjGAG5QLXmKGhE5aAEsW-WbwA2agG5KJcODsi82AX2mkQoALSOAxiPKP7pJ6xWgA1pEoOUAAiAUhgmypaUABBQSDGJFYAbX9KAF1pIA)
@@ -92,6 +100,8 @@ type Age = Person[key];
 Type 'key' cannot be used as an index type.'key' refers to a value, but is being used as a type here. Did you mean 'typeof key'?
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 However, you can use a type alias for a similar style of refactor:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAChBOBnA9gOygXigbygQwHMIAuKVAVwFsAjBAbjL0pKkWHgEtUCG8AbDgDcW1ZMj4Q86AL50AUAHoFUALRqAxuWBqVc0JCgBrCCExQARIQjn5+6AEEiZuEjQBtYyAC6dIA)
@@ -100,3 +110,5 @@ However, you can use a type alias for a similar style of refactor:
 type key = "age";
 type Age = Person[key];
 ```
+
+{{< content-ads/bottom-banner >}}

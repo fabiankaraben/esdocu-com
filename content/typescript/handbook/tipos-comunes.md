@@ -11,6 +11,8 @@ type: docs
 En este capítulo, cubriremos algunos de los tipos de valores más comunes que encontrarás en el código JavaScript y explicaremos las formas correspondientes de describir esos tipos en TypeScript.
 Esta no es una lista exhaustiva y los capítulos futuros describirán más formas de nombrar y utilizar otros tipos.
 
+{{< content-ads/top-banner >}}
+
 Los tipos también pueden aparecer en muchos más *lugares* que solo anotaciones de tipo.
 A medida que aprendamos sobre los tipos en sí, también aprenderemos sobre los lugares donde podemos referirnos a estos tipos para formar nuevas construcciones.
 
@@ -135,6 +137,8 @@ Argument of type 'number' is not assignable to parameter of type 'string'.
 
 También puedes agregar anotaciones de tipo de retorno.
 Las anotaciones de tipo de retorno aparecen después de la lista de parámetros:
+
+{{< content-ads/middle-banner-1 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQGIEMBucBOMUqAciALYBGq+AFAJQBciYF1+iA3gLABQiiAPSCBoseIliAejNky+A-OhD4kAJgBsAbj4BfIA)
 
@@ -289,6 +293,8 @@ Argument of type '{ myID: number; }' is not assignable to parameter of type 'str
 
 Es fácil *proporcionar* un valor que coincida con un tipo de unión; simplemente proporciona un tipo que coincida con cualquiera de los miembros de la unión.
 Si *tienes* un valor de tipo unión, ¿cómo trabajas con él?
+
+{{< content-ads/middle-banner-2 >}}
 
 TypeScript solo permitirá una operación si es válida para *todos* los miembros de la unión.
 Por ejemplo, si tienes la unión `string | number`, no puedes usar métodos que solo están disponibles en `string`:
@@ -465,6 +471,8 @@ En su mayor parte, puedes elegir según tus preferencias personales, y TypeScrip
 
 A veces tendrás información sobre el tipo de valor que TypeScript no puede conocer.
 
+{{< content-ads/middle-banner-3 >}}
+
 Por ejemplo, si estás usando `document.getElementById`, TypeScript solo sabe que esto devolverá *algún* tipo de `HTMLElement`, pero es posible que sepas que tu página siempre tendrá un `HTMLCanvasElement` con un ID determinado.
 
 En esta situación, puedes usar una *aserción de tipo* para especificar un tipo más específico:
@@ -607,6 +615,8 @@ El tipo `boolean` en sí mismo es en realidad solo un alias para la unión `true
 
 Cuando inicializas una variable con un objeto, TypeScript asume que las propiedades de ese objeto podrían cambiar los valores más adelante.
 Por ejemplo, si escribiste un código como este:
+
+{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3mpBbEAwqsAJYYmoBc8ARkkhCFCgNwCwAUAPRfwC0AsAFcMAvp2TosSGgCt4AXngBvREiEoMIGNQAM8AL7sOJAGbwAFDnxEUpcqgCUKzvHgzZAOmQatMRfAAjMYGQA)
 
@@ -751,3 +761,5 @@ This comparison appears to be unintentional because the types 'typeof firstName'
 ```
 
 Puedes obtener más información sobre ellos en la [Página de referencia de símbolos ↗](https://www.typescriptlang.org/docs/handbook/symbols.html).
+
+{{< content-ads/bottom-banner >}}

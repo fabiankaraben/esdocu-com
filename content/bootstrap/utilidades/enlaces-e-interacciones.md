@@ -7,11 +7,11 @@ description: Las utilidades de enlace se utilizan para estilizar tus anchors y a
 
 # Enlaces e interacciones en Bootstrap
 
+{{< content-ads/top-banner >}}
+
 ## Uso de las utilidades de Enlaces en Bootstrap
 
 Las utilidades de enlace se utilizan para estilizar tus anchors y ajustar su color, opacidad, desplazamiento de subrayado, color de subrayado y más.
-
-{{< content-ads/top-banner >}}
 
 ### Opacidad del enlace {#link-opacity}
 
@@ -39,11 +39,11 @@ Incluso puedes cambiar el nivel de opacidad al pasar el mouse.
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 ### Enlace subrayado {#link-underlines}
 
 #### Color de subrayado {#underline-color}
+
+{{< content-ads/middle-banner-1 >}}
 
 Cambia el color del subrayado independientemente del color del texto del enlace.
 
@@ -61,8 +61,6 @@ Cambia el color del subrayado independientemente del color del texto del enlace.
 {{< /demo-iframe >}}
 
 #### Desplazamiento del subrayado {#underline-offset}
-
-{{< content-ads/middle-banner-2 >}}
 
 Cambia la distancia del subrayado de tu texto. El desplazamiento se establece en unidades `em` para escalar automáticamente con el `font-size` actual del elemento.
 
@@ -90,9 +88,9 @@ Cambiar la opacidad del subrayado. Requiere agregar `.link-underline` para estab
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 #### Variantes hover {#hover-variants}
+
+{{< content-ads/middle-banner-2 >}}
 
 Al igual que las utilidades `.link-opacity-*-hover`, `.link-offset` y `.link-underline-opacity` incluyen variantes `:hover` de forma predeterminada. Mezcla y combina para crear estilos de enlaces únicos.
 
@@ -107,8 +105,6 @@ Al igual que las utilidades `.link-opacity-*-hover`, `.link-offset` y `.link-und
 ### Enlaces de colores {#colored-links}
 
 [Los ayudantes de enlaces de colores](/bootstrap/helpers) se han actualizado para combinarlos con nuestras utilidades de enlaces. Utiliza las nuevas utilidades para modificar la opacidad del enlace, la opacidad del subrayado y el desplazamiento del subrayado.
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/link/colored-links.html" >}}
 ```html {filename="HTML"}
@@ -134,7 +130,7 @@ Al igual que las utilidades `.link-opacity-*-hover`, `.link-offset` y `.link-und
 
 Además de las siguientes funciones de Sass, considera leer sobre nuestras [propiedades personalizadas de CSS](/bootstrap/personalizar) incluidas (también conocidas como variables CSS) para colores y más.
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-3 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
@@ -197,8 +193,6 @@ Las utilidades de enlace se declaran en nuestra API de utilidades en `scss/_util
 
 Clases de utilidad que cambian la forma en que los usuarios interactúan con los contenidos de un sitio web.
 
-{{< content-ads/top-banner >}}
-
 ### Selección de texto {#text-selection}
 
 Cambiar la forma en la que se selecciona el contenido cuando el usuario interactúa con él.
@@ -211,9 +205,9 @@ Cambiar la forma en la que se selecciona el contenido cuando el usuario interact
 ```
 {{< /demo-iframe >}}
 
-### Eventos de puntero {#pointer-events}
+{{< content-ads/middle-banner-4 >}}
 
-{{< content-ads/middle-banner-1 >}}
+### Eventos de puntero {#pointer-events}
 
 Bootstrap proporciona las clases `.pe-none` y `.pe-auto` para evitar o agregar interacciones de elementos.
 
@@ -229,8 +223,6 @@ La clase `.pe-none` (y la propiedad CSS `pointer-events` que establece) solo pre
 
 Si es posible, la solución más sencilla es:
 
-{{< content-ads/middle-banner-2 >}}
-
 * Para controles de formulario, agrega el atributo HTML `disabled`.
 * Para enlaces, elimina el atributo `href`, convirtiéndolo en un enlace ancla o marcador de posición no interactivo.
 
@@ -240,7 +232,7 @@ Si es posible, la solución más sencilla es:
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-5 >}}
 
 Las utilidades de interacción se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 

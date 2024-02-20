@@ -7,11 +7,11 @@ description: Usa marcadores de posición de carga para tus componentes o página
 
 # Marcadores de posición y paginación
 
+{{< content-ads/top-banner >}}
+
 ## Componentes Marcadores de posición de Bootstrap
 
 Usa marcadores de posición de carga para tus componentes o páginas para indicar que es posible que aún se esté cargando algo.
-
-{{< content-ads/top-banner >}}
 
 Los marcadores de posición se pueden utilizar para mejorar la experiencia de tu aplicación. Están creados únicamente con HTML y CSS, lo que significa que no necesitas JavaScript para crearlos. Sin embargo, necesitarás algo de JavaScript personalizado para alternar su visibilidad. Su apariencia, color y tamaño se pueden personalizar fácilmente con nuestras clases de utilidades.
 
@@ -61,8 +61,6 @@ En el siguiente ejemplo, tomamos un componente de tarjeta típico y lo recreamos
 
 ### Cómo funciona el componente Marcador de posición {#how-it-works}
 
-{{< content-ads/middle-banner-1 >}}
-
 Crea marcadores de posición con la clase `.placeholder` y una clase de columna de cuadrícula (por ejemplo, `.col-6`) para establecer el `width`. Pueden reemplazar el texto dentro de un elemento o agregarse como una clase modificadora a un componente existente.
 
 Aplicamos estilos adicionales a los `.btn` mediante `::before` para garantizar que la `height` sea respetado. Puedes ampliar este patrón para otras situaciones según sea necesario, o agregar un `&nbsp;` dentro del elemento para reflejar la altura cuando el texto real se representa en su lugar.
@@ -83,9 +81,9 @@ El uso de `aria-hidden="true"` solo indica que el elemento debe estar oculto par
 
 #### Ancho {#width}
 
-{{< content-ads/middle-banner-2 >}}
-
 Puedes cambiar el `width` mediante clases de columnas de cuadrícula, utilidades de ancho o estilos en línea.
+
+{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/placeholders/width.html" >}}
 ```html {filename="HTML"}
@@ -100,8 +98,6 @@ Puedes cambiar el `width` mediante clases de columnas de cuadrícula, utilidades
 #### Color {#color}
 
 De forma predeterminada, el `placeholder` usa `currentColor`. Esto se puede sobrescribir con un color personalizado o una clase de utilidad.
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/placeholders/color.html" >}}
 ```html {filename="HTML"}
@@ -132,8 +128,6 @@ El tamaño de los `.placeholder`se basa en el estilo tipográfico del elemento p
 
 #### Animación {#animation}
 
-{{< content-ads/middle-banner-4 >}}
-
 Anima marcadores de posición con `.placeholder-glow` o `.placeholder-wave` para transmitir mejor la percepción de que algo está _activamente_ cargado.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/placeholders/animation.html" >}}
@@ -152,9 +146,9 @@ Anima marcadores de posición con `.placeholder-glow` o `.placeholder-wave` para
 
 {{< bootstrap/content-suggestion >}}
 
-#### Variables Sass generales relacionadas {#sass-variables}
+{{< content-ads/middle-banner-2 >}}
 
-{{< content-ads/middle-banner-5 >}}
+#### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -166,8 +160,6 @@ $placeholder-opacity-min:           .2;
 ## El componente de Paginación de Bootstrap
 
 Documentación y ejemplos para mostrar la paginación para indicar que existe una serie de contenido relacionado en varias páginas.
-
-{{< content-ads/top-banner >}}
 
 Utilizamos un gran bloque de enlaces conectados para nuestra paginación, lo que hace que los enlaces sean difíciles de pasar por alto y fácilmente escalables, y al mismo tiempo proporcionamos grandes áreas de impacto. La paginación se construye con elementos HTML de lista para que los lectores de pantalla puedan anunciar la cantidad de enlaces disponibles. Utiliza un elemento envolvente `<nav>` para identificarlo como una sección de navegación para lectores de pantalla y otras tecnologías de asistencia.
 
@@ -215,9 +207,9 @@ Además, como las páginas probablemente tengan más de una sección de navegaci
 
 ### Estados deshabilitados y activos {#disabled-and-active-states}
 
-{{< content-ads/middle-banner-1 >}}
-
 Los enlaces de paginación se pueden personalizar para diferentes circunstancias. Utiliza `.disabled` para enlaces en los que no se puedes hacer clic y `.active` para indicar la página actual.
+
+{{< content-ads/middle-banner-3 >}}
 
 Mientras que la clase `.disabled` usa `pointer-events: none` para _intentar_ deshabilitar el enlace funcionalidad de `<a>`s, esa propiedad CSS aún no está estandarizada y no tiene en cuenta la navegación con el teclado. Como tal, siempre debes agregar `tabindex="-1"` en los enlaces deshabilitados y usar JavaScript personalizado para deshabilitar completamente su funcionalidad.
 
@@ -266,8 +258,6 @@ Opcionalmente, puedes cambiar los anclajes activos o deshabilitados por `<span>`
 {{< bootstrap/content-suggestion >}}
 
 ### Tamaños del componente de Paginación {#sizing}
-
-{{< content-ads/middle-banner-2 >}}
 
 ¿Te apetece una paginación más grande o más pequeña? Agrega `.pagination-lg` o `.pagination-sm` para tamaños adicionales.
 
@@ -323,7 +313,7 @@ Cambiar la alineación de los componentes de paginación con [utilidades flexbox
 
 O con `.justify-content-end`:
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/pagination/alignment-2.html" >}}
 ```html {filename="HTML"}
@@ -376,8 +366,6 @@ Como parte del enfoque en evolución de variables CSS de Bootstrap, la paginaci�
 --#{$prefix}pagination-disabled-bg: #{$pagination-disabled-bg};
 --#{$prefix}pagination-disabled-border-color: #{$pagination-disabled-border-color};
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 #### Variables Sass generales relacionadas {#sass-variables}
 

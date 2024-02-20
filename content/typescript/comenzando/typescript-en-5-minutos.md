@@ -10,6 +10,8 @@ type: docs
 
 TypeScript tiene una relación inusual con JavaScript. TypeScript ofrece todas las funciones de JavaScript y una capa adicional además de ellas: el sistema de tipos de TypeScript.
 
+{{< content-ads/top-banner >}}
+
 Por ejemplo, JavaScript proporciona primitivos de lenguaje como `string` y `number`, pero no verifica que los hayas asignado de manera consistente. TypeScript lo hace.
 
 Esto significa que tu código JavaScript en funcionamiento existente también es código TypeScript. El principal beneficio de TypeScript es que puede resaltar comportamientos inesperados en tu código, lo que reduce la posibilidad de errores.
@@ -47,6 +49,8 @@ const user = {
   id: 0,
 };
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 Puedes describir explícitamente la forma de este objeto usando una declaración de `interface`:
 
@@ -116,6 +120,8 @@ const user: User = new UserAccount("Murphy", 1);
 
 Puedes usar interfaces para anotar parámetros y devolver valores a funciones:
 
+{{< content-ads/middle-banner-2 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAEtIBcCm8AzAQwGNdQBVFfUAbzVFEiIFtcAuUFbeLAcwDcDUBgAmnSAFcWAI3xCAvmhCgAtOpKTs61WgKTIJbBmiRQo3ABtceKvgAUk6vE534ASjrCVAOj9olPQMjEzM+GwBBURYsN3t3V2cvRhA-HwCgA)
 
 ```ts
@@ -157,6 +163,8 @@ type WindowStates = "open" | "closed" | "minimized";
 type LockStates = "locked" | "unlocked";
 type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 ```
+
+{{< content-ads/middle-banner-3 >}}
 
 Las uniones también brindan una manera de manejar diferentes tipos. Por ejemplo, puedes tener una función que tome un `array` o un `string`:
 
@@ -224,6 +232,8 @@ const object = backpack.get();
 // Dado que la variable de backpack es una cadena, no puedes pasar un número a la función agregar.
 backpack.add(23);
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 ```text {filename="Error generado"}
 Argument of type 'number' is not assignable to parameter of type 'string'.
@@ -301,3 +311,5 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
 
 - Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
+
+{{< content-ads/bottom-banner >}}

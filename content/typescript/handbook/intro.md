@@ -10,6 +10,8 @@ noindex: true
 
 # El manual de TypeScript
 
+{{< content-ads/top-banner >}}
+
 ## Acerca de este manual {#about-this-handbook}
 
 Más de 20 años después de su introducción en la comunidad de programación, JavaScript es ahora uno de los lenguajes multiplataforma más extendidos jamás creados. Comenzando como un pequeño lenguaje de scripting para agregar interactividad trivial a las páginas web, JavaScript ha crecido hasta convertirse en un lenguaje de elección para aplicaciones frontend y backend de todos los tamaños. Si bien el tamaño, el alcance y la complejidad de los programas escritos en JavaScript han crecido exponencialmente, la capacidad del lenguaje JavaScript para expresar las relaciones entre diferentes unidades de código no lo ha hecho. Combinado con la semántica de tiempo de ejecución bastante peculiar de JavaScript, este desajuste entre el lenguaje y la complejidad del programa ha hecho que el desarrollo de JavaScript sea una tarea difícil de gestionar a escala.
@@ -18,6 +20,8 @@ Los tipos más comunes de errores que escriben los programadores se pueden descr
 
 Si llegas a TypeScript sin experiencia en JavaScript, con la intención de que TypeScript sea tu primer lenguaje, te recomendamos que primero comiences a leer la documentación en el [Tutorial de aprendizaje de JavaScript de Microsoft ↗](https://developer.microsoft.com/javascript/) o leas [JavaScript en Mozilla Web Docs ↗](https://developer.mozilla.org/docs/Web/JavaScript/Guide).
 Si tienes experiencia en otros lenguajes, deberías poder aprender la sintaxis de JavaScript con bastante rapidez leyendo el manual.
+
+{{< content-ads/middle-banner-1 >}}
 
 ## ¿Cómo está estructurado este manual? {#how-is-this-handbook-structured}
 
@@ -36,6 +40,8 @@ El manual está dividido en dos secciones:
 
 ### Lo que no es {#non-goals}
 
+{{< content-ads/middle-banner-2 >}}
+
 El Manual también pretende ser un documento conciso que pueda leerse cómodamente en unas pocas horas. Ciertos temas no se cubrirán para ser breves.
 
 Específicamente, el manual no presenta completamente los conceptos básicos de JavaScript como funciones, clases y closures. Cuando corresponda, incluiremos enlaces a lecturas previas que puedes utilizar para profundizar en esos conceptos.
@@ -43,6 +49,8 @@ Específicamente, el manual no presenta completamente los conceptos básicos de 
 El Manual tampoco pretende reemplazar una especificación de lenguaje. En algunos casos, se omitirán los casos extremos o las descripciones formales de comportamiento en favor de explicaciones de alto nivel y más fáciles de entender. En cambio, hay páginas de referencia separadas que describen de manera más precisa y formal muchos aspectos del comportamiento de TypeScript. Las páginas de referencia no están destinadas a lectores que no estén familiarizados con TypeScript, por lo que pueden utilizar terminología avanzada o temas de referencia sobre los que aún no has leído.
 
 Finalmente, el manual no cubrirá cómo interactúa TypeScript con otras herramientas, excepto cuando sea necesario. Temas como cómo configurar TypeScript con webpack, rollup, parcel, react, babel, closure, lerna, rush, bazel, preact, vue, angular, svelte, jquery, yarn o npm están fuera del alcance; puedes encontrar estos recursos en otros lugares en la red.
+
+{{< content-ads/middle-banner-3 >}}
 
 ## Comenzando {#get-started}
 
@@ -54,3 +62,5 @@ Antes de comenzar con [Conceptos básicos](/typescript/handbook/tipos-basicos), 
 - [TypeScript para programadores funcionales](/typescript/comenzando/typescript-en-5-minutos-funcionales)
 
 De lo contrario, salta a [Conceptos básicos](/typescript/handbook/tipos-basicos).
+
+{{< content-ads/bottom-banner >}}

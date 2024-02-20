@@ -12,6 +12,8 @@ Las funciones son el componente básico de cualquier aplicación, ya sean funcio
 También son valores y, al igual que otros valores, TypeScript tiene muchas formas de describir cómo se pueden llamar funciones.
 Aprendamos a escribir tipos que describan funciones.
 
+{{< content-ads/top-banner >}}
+
 ## Expresiones de tipo de función {#function-type-expressions}
 
 La forma más sencilla de describir una función es con una *expresión de tipo de función*.
@@ -216,6 +218,8 @@ Finalmente, tal como nos gustaría, la llamada a `longest(10, 100)` se rechaza p
 
 Aquí hay un error común cuando se trabaja con restricciones genéricas:
 
+{{< content-ads/middle-banner-1 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGY1oLACgAzAVwDsBjAFwEs4TQBbKkq+o+gGUhIHMKALADwAVAJ4AHSKEgAPClwAmiUAG9QAGy68+qEmwBGMUAF8AfAAp8oUHD0ArVKIkAaSwyYs2O-THwBKB+KSyq5UBKBmNrYAdBo8-KAmALxuzKz0viquVtCQFETQdJEA3K5GUmqIQVmgOXkFKuqa-KiMqWzGJXhWRvhGQA)
 
 ```ts
@@ -403,6 +407,8 @@ Aunque el parámetro se especifica como tipo `number`, el parámetro `x` en real
 También puedes proporcionar un parámetro *predeterminado*:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABMAFAD0QXkQRgAwCUiA3gLABQiiA9NYgHSMUC+QA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 function f(x = 10) {
@@ -603,6 +609,8 @@ len([0]); // OK
 len(Math.random() > 0.5 ? "hello" : [0]);
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 ```text {filename="Error generado"}
 No overload matches this call.
   Overload 1 of 2, '(s: string): number', gave the following error.
@@ -795,6 +803,8 @@ function doSomething(f: Function) {
 }
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 Esta es una *llamada a función sin tipo* y generalmente es mejor evitarla debido al tipo de retorno inseguro `any`.
 
 Si necesitas aceptar una función arbitraria pero no tienes intención de llamarla, el tipo `() => void` es generalmente más seguro.
@@ -970,3 +980,5 @@ Para obtener más información sobre `void`, consulta estas otras entradas de do
 
 - [manual v2](/typescript/handbook/funciones#void)
 - [Preguntas frecuentes: "¿Por qué las funciones que devuelven un valor no nulo se pueden asignar a funciones que devuelven un valor nulo?" ↗](https://github.com/Microsoft/TypeScript/wiki/FAQ#why-are-functions-returning-non-void-assignable-to-function-returning-void)
+
+{{< content-ads/bottom-banner >}}

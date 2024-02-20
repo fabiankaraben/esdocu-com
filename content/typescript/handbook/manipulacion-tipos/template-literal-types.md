@@ -12,6 +12,8 @@ draft: true
 
 Template literal types build on [string literal types](/typescript/handbook/tipos-comunes#literal-types), and have the ability to expand into many strings via unions.
 
+{{< content-ads/top-banner >}}
+
 They have the same syntax as [template literal strings in JavaScript ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals), but are used in type positions.
 When used with concrete literal types, a template literal produces a new string literal type by concatenating the contents.
 
@@ -56,6 +58,8 @@ We generally recommend that people use ahead-of-time generation for large string
 ### String Unions in Types {#string-unions-in-types}
 
 The power in template literals comes when defining a new string based on information inside a type.
+
+{{< content-ads/middle-banner-1 >}}
 
 Consider the case where a function (`makeWatchedObject`) adds a new function
 called `on()` to a passed object.  In JavaScript, its call might look like:
@@ -102,6 +106,8 @@ person.on("firstNameChanged", (newValue) => {
 Notice that `on` listens on the event `"firstNameChanged"`, not just `"firstName"`. Our naive specification of `on()` could be made more robust if we were to ensure that the set of eligible event names was constrained by the union of attribute names in the watched object with “Changed” added at the end. While we are comfortable with doing such a calculation in JavaScript i.e. `Object.keys(passedObject).map(x => `${x}Changed`)`, template literals *inside the type system* provide a similar approach to string manipulation:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACgTgezAUQG4QHbAMoIK5wDGEAPACrgQB8UAvFAN4BQUrUCGAFBOlgHIBDALYQAXFAAGAEgYBnYHACWGAOZQAZFADWEEAgBmUCpAC+AYQAWA1RAAmEgDRRCAgDauARgMJbxnDBAA7gBqbnhiUNYgAJR0NKgIirbR4glJANxMJplMAPT5UGZwEALA0AJQAESBpYQWduweAFYQhMCVUIGKwBaRGJIcElAiPQi2eQWyCFA9pVB6eM7WnbW9+ghwzlY2sjPTYIiQcMCKELIAdEy2ra4CxVD6eBhtihzDAjoA6qt2APLNrWA5EoVE4CGa4mMEBSRkoGlghzQmBw+CIpChVHSQA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 type PropEventSource<Type> = {
@@ -183,6 +189,8 @@ person.on("ageChanged", newAge => {
 
 Here we made `on` into a generic method.
 
+{{< content-ads/middle-banner-3 >}}
+
 When a user calls with the string `"firstNameChanged"`, TypeScript will try to infer the right type for `Key`.
 To do that, it will match `Key` against the content before `"Changed"` and infer the string `"firstName"`.
 Once TypeScript figures that out, the `on` method can fetch the type of `firstName` on the original object, which is `string` in this case.
@@ -219,6 +227,8 @@ type MainID = "ID-MY_APP"
 Converts each character in the string to the lowercase equivalent.
 
 ##### Example {#example-1}
+
+{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA4gThCwCWA7A5lAvFARACQgBsiB7AGigHdS4iATXAKFEigEUBXZJeRFDNigAZUlQhwAxgEMAzhAA8fJGnQA+JgHpNUXQD0A-ExbhoAQQDKAYQCSNq9MkALCAGkIIBReBwoEAB7AEKj0slCyPqpqQgAGyPQAtAAkAN6i4lJyit5wagC+MSZsALLSaDYAIkKWtvaOLu6euMUAmgD6ZgAKnbga2rpQhkA)
 
@@ -263,3 +273,5 @@ type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>;
               
 type UncomfortableGreeting = "hELLO WORLD"
 ```
+
+{{< content-ads/bottom-banner >}}

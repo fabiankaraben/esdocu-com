@@ -7,11 +7,11 @@ description: "Alterna la flotación de cualquier elemento, su opacidad, desborda
 
 # Otras utilidades interesantes de Bootstrap
 
+{{< content-ads/top-banner >}}
+
 ## Uso de las utilidades de Propiedad display en Bootstrap
 
 Alterna de manera rápida y responsive el valor de visualización de los componentes y más con nuestras utilidades de visualización. Incluye soporte para algunos de los valores más comunes, así como algunos extras para controlar la visualización al imprimir.
-
-{{< content-ads/top-banner >}}
 
 ### Cómo funciona {#how-it-works}
 
@@ -25,8 +25,6 @@ Como tal, las clases se nombran usando el formato:
 
 * `.d-{value}` para `xs`
 * `.d-{breakpoint}-{value}` para `sm`, `md`, `lg`, `xl` y `xxl`.
-
-{{< content-ads/middle-banner-1 >}}
 
 Donde _valor_ es uno de:
 
@@ -55,8 +53,6 @@ Las media queries afectan los anchos de pantalla con el punto de interrupción d
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/display/examples-2.html" >}}
 ```html {filename="HTML"}
     <span class="d-block p-2 text-bg-primary">d-block</span>
@@ -73,8 +69,6 @@ Para ocultar elementos simplemente usa la clase `.d-none` o una de las clases `.
 {{< bootstrap/content-suggestion >}}
 
 Para mostrar un elemento solo en un intervalo determinado de tamaños de pantalla, puedes combinar una clase `.d-*-none` con una clase clase `.d-*-*`, por ejemplo `.d-none .d-md-block .d-xl-none .d-xxl-none` ocultará el elemento para todos los tamaños de pantalla excepto en dispositivos medianos y grandes.
-
-{{< content-ads/middle-banner-3 >}}
 
 | Tamaño de pantalla  | Clase                             |
 | ------------------- | --------------------------------- |
@@ -118,8 +112,6 @@ Cambia el valor `display` de los elementos al imprimir con nuestras clases de ut
 
 Las clases print y display se pueden combinar.
 
-{{< content-ads/middle-banner-4 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/display/display-in-print.html" >}}
 ```html {filename="HTML"}
     <div class="d-print-none">Solo pantalla (Ocultar solo en impresión)</div>
@@ -150,8 +142,6 @@ Las utilidades de visualización se declaran en nuestra API de utilidades en `sc
 
 Alterna la flotación de cualquier elemento, a través de cualquier punto de interrupción, usando nuestras utilidades flotantes responsive.
 
-{{< content-ads/top-banner >}}
-
 ### Descripción general {#overview}
 
 Estas clases de utilidad hacen flotar un elemento hacia la izquierda o hacia la derecha, o deshabilitan la flotación, según el tamaño actual del viewport usando [propiedad CSS `float`.](https://developer.mozilla.org/en-US/docs/Web/CSS/float) Se incluye `!important` para evitar problemas de especificidad. Estos utilizan los mismos puntos de interrupción del viewport que nuestro sistema de cuadrícula. Ten en cuenta que las utilidades flotantes no tienen ningún efecto sobre los elementos flexibles.
@@ -165,8 +155,6 @@ Estas clases de utilidad hacen flotar un elemento hacia la izquierda o hacia la 
 {{< /demo-iframe >}}
 
 Utiliza el [ayudante clearfix](/bootstrap/helpers) en un elemento principal para borrar los elementos flotantes.
-
-{{< content-ads/middle-banner-1 >}}
 
 ### Responsive {#responsive}
 
@@ -183,8 +171,6 @@ También existen variaciones responsive para cada valor `float`.
 {{< /demo-iframe >}}
 
 Aquí están todas las clases de apoyo:
-
-{{< content-ads/middle-banner-2 >}}
 
 * `.float-start`
 * `.float-end`
@@ -205,13 +191,13 @@ Aquí están todas las clases de apoyo:
 * `.float-xxl-end`
 * `.float-xxl-none`
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
-
-{{< content-ads/middle-banner-3 >}}
 
 Las utilidades flotantes se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -233,8 +219,6 @@ Las utilidades flotantes se declaran en nuestra API de utilidades en `scss/_util
 
 Utiliza las utilidades de ajuste de objetos para modificar el contenido de un [elemento reemplazado](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), como un `<img>` o `<video>`, debe cambiarse de tamaño para que se ajuste a su contenedor.
 
-{{< content-ads/top-banner >}}
-
 ### Cómo funciona {#how-it-works}
 
 Cambiar el valor de [`object-fit` (propiedad)](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) con nuestras clases de utilidad responsive `object-fit`. Esta propiedad le indica al contenido que llene el contenedor padre de varias maneras, como preservando la relación de aspecto o estirándolo para ocupar tanto espacio como sea posible.
@@ -246,8 +230,6 @@ Las clases para el valor de `object-fit` se nombran usando el formato `.object-f
 * `fill`
 * `scale` (para reducir la escala)
 * `none`
-
-{{< content-ads/middle-banner-1 >}}
 
 ### Ejemplos {#examples}
 
@@ -265,8 +247,6 @@ Agrega la clase `object-fit-{value}` al [elemento reemplazado](https://developer
 
 ### Responsive {#responsive}
 
-{{< content-ads/middle-banner-2 >}}
-
 También existen variaciones responsive para cada valor de `object-fit` usando el formato `.object-fit-{breakpoint}-{value}`, para las siguientes abreviaturas de puntos de interrupción: `sm`, `md`, `lg`, `xl` y `xxl`. Las clases se pueden combinar para obtener varios efectos según sea necesario.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/object-fit/responsive.html" >}}
@@ -283,8 +263,6 @@ También existen variaciones responsive para cada valor de `object-fit` usando e
 
 Las utilidades `.object-fit-{value}` y responsive `.object-fit-{breakpoint}-{value}` también funciona con elementos `<video>`.
 
-{{< content-ads/middle-banner-3 >}}
-
     ```html {filename="HTML"}
     <video src="..." class="object-fit-contain" autoplay></video>
     <video src="..." class="object-fit-cover" autoplay></video>
@@ -298,8 +276,6 @@ Las utilidades `.object-fit-{value}` y responsive `.object-fit-{breakpoint}-{val
 {{< bootstrap/content-suggestion >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
-
-{{< content-ads/middle-banner-4 >}}
 
 Las utilidades de ajuste de objetos se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -323,8 +299,6 @@ Las utilidades de ajuste de objetos se declaran en nuestra API de utilidades en 
 
 Controla la opacidad de los elementos.
 
-{{< content-ads/top-banner >}}
-
 La propiedad `opacity` establece el nivel de opacidad de un elemento. El nivel de opacidad describe el nivel de transparencia, donde `1` no es transparente en absoluto, `.5` es 50% visible y `0` es completamente transparente.
 
 Establece la `opacity` de un elemento usando las utilidades `.opacity-{value}`.
@@ -341,8 +315,6 @@ Establece la `opacity` de un elemento usando las utilidades `.opacity-{value}`.
 
 ### Personalización del CSS {#css}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< bootstrap/content-suggestion >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
@@ -350,8 +322,6 @@ Establece la `opacity` de un elemento usando las utilidades `.opacity-{value}`.
 Las utilidades de opacidad se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
-
-{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="scss/_utilities.scss"}
 "opacity": (
@@ -370,8 +340,6 @@ Las utilidades de opacidad se declaran en nuestra API de utilidades en `scss/_ut
 
 Usa estas utilidades abreviadas para configurar rápidamente cómo el contenido desborda un elemento.
 
-{{< content-ads/top-banner >}}
-
 ### Overflow {#overflow}
 
 Ajusta la propiedad `overflow` sobre la marcha con cuatro valores y clases predeterminados. Estas clases no son responsive de forma predeterminada.
@@ -385,9 +353,9 @@ Ajusta la propiedad `overflow` sobre la marcha con cuatro valores y clases prede
 ```
 {{< /demo-iframe >}}    
 
-#### `overflow-x` {#overflow-x}
+{{< content-ads/middle-banner-2 >}}
 
-{{< content-ads/middle-banner-1 >}}
+#### `overflow-x` {#overflow-x}
 
 Ajusta la propiedad `overflow-x` para afectar el desbordamiento del contenido horizontalmente.
 
@@ -404,8 +372,6 @@ Ajusta la propiedad `overflow-x` para afectar el desbordamiento del contenido ho
 
 Ajusta la propiedad `overflow-y` para afectar el desbordamiento del contenido verticalmente.
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/overflow/overflow-y.html" >}}
 ```html {filename="HTML"}
     <div class="overflow-y-auto">...</div>
@@ -420,8 +386,6 @@ Usando variables Sass, puedes personalizar las utilidades de desbordamiento camb
 ### Personalización del CSS {#css}
 
 #### API de utilidades de Sass {#sass-utilities-api}
-
-{{< content-ads/middle-banner-3 >}}
 
 Las utilidades de desbordamiento se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -448,8 +412,6 @@ Las utilidades de desbordamiento se declaran en nuestra API de utilidades en `sc
 
 Usa estas utilidades abreviadas para configurar rápidamente la posición de un elemento.
 
-{{< content-ads/top-banner >}}
-
 ### Valores de posición {#position-values}
 
 Hay clases de posicionamiento rápido disponibles, aunque no responsive.
@@ -467,8 +429,6 @@ Hay clases de posicionamiento rápido disponibles, aunque no responsive.
 Organiza elementos fácilmente con las utilidades de posicionamiento de bordes. El formato es `{property}-{position}`.
 
 Donde _property_ es una de:
-
-{{< content-ads/middle-banner-1 >}}
 
 * `top` \- para la posición vertical `top`.
 * `start` \- para la posición horizontal `left` (en LTR).
@@ -497,8 +457,6 @@ Donde _posición_ es una de:
 {{< /demo-iframe >}}
 
 ### Centrar elementos {#center-elements}
-
-{{< content-ads/middle-banner-2 >}}
 
 Además, también puedes centrar los elementos con la clase de utilidad de transformación `.translate-middle`.
 
@@ -539,8 +497,6 @@ Al agregar las clases `.translate-middle-x` o `.translate-middle-y`, los element
 {{< /demo-iframe >}}
 
 ### Ejemplos {#examples}
-
-{{< content-ads/middle-banner-3 >}}
 
 Aquí tienes algunos ejemplos de la vida real de estas clases:
 
@@ -594,8 +550,6 @@ Puedes usar estas clases con componentes existentes para crear otros nuevos. Rec
 
 ### Personalización del CSS {#css}
 
-{{< content-ads/middle-banner-4 >}}
-
 #### Mapas de Sass {#sass-maps}
 
 Los valores de utilidad de posición predeterminados se declaran en un mapa Sass y luego se usan para generar nuestras utilidades.
@@ -610,11 +564,11 @@ $position-values: (
 );
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 #### API de utilidades de Sass {#sass-utilities-api}
 
 Las utilidades de posición se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
-
-{{< content-ads/middle-banner-5 >}}
 
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
 
@@ -656,8 +610,6 @@ Las utilidades de posición se declaran en nuestra API de utilidades en `scss/_u
 
 Agrega o elimina sombras a elementos con utilidades de sombra box-shadow.
 
-{{< content-ads/top-banner >}}
-
 ### Ejemplos {#examples}
 
 Si bien las sombras en los componentes están deshabilitadas de forma predeterminada en Bootstrap y se pueden habilitar a través de `$enable-shadows`, también puedes agregar o eliminar rápidamente una sombra con nuestras clases de utilidad `box-shadow`. Incluye soporte para `.shadow-none` y tres tamaños predeterminados (que tienen variables asociadas para coincidir).
@@ -673,8 +625,6 @@ Si bien las sombras en los componentes están deshabilitadas de forma predetermi
 
 ### Personalización del CSS {#css}
 
-{{< content-ads/middle-banner-1 >}}
-
 #### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -687,8 +637,6 @@ $box-shadow-inset:            inset 0 1px 2px rgba($black, .075);
 ```
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
@@ -712,8 +660,6 @@ Las utilidades Shadow se declaran en nuestra API de utilidades en `scss/_utiliti
 ## Uso de las utilidades de Tamaños en Bootstrap
 
 Haz fácilmente un elemento tan ancho o tan alto con nuestras utilidades de ancho y alto.
-
-{{< content-ads/top-banner >}}
 
 ### Relativo al padre {#relative-to-the-parent}
 
@@ -741,8 +687,6 @@ Las utilidades de ancho y alto se generan desde la API de utilidades en `_utilit
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 También puedes usar las utilidades `max-width: 100%;` y `max-height: 100%;` según sea necesario.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/sizing/relative-to-the-parent-3.html" >}}
@@ -763,8 +707,6 @@ También puedes usar las utilidades `max-width: 100%;` y `max-height: 100%;` seg
 
 ### Relativo al viewport {#relative-to-the-viewport}
 
-{{< content-ads/middle-banner-2 >}}
-
 También puedes usar utilidades para establecer el ancho y el alto en relación con el viewport.
 
 ```html {filename="HTML"}
@@ -777,8 +719,6 @@ También puedes usar utilidades para establecer el ancho y el alto en relación 
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-3 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
@@ -845,8 +785,6 @@ Las utilidades de tamaño se declaran en nuestra API de utilidades en `scss/_uti
 
 Cambia fácilmente la alineación vertical de los elementos en línea, bloque en línea, tabla en línea y celda de tabla.
 
-{{< content-ads/top-banner >}}
-
 Cambiar la alineación de elementos con utilidades de [`vertical-alignment`](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align). Ten en cuenta que la alineación vertical solo afecta a los elementos en línea, en bloque en línea, en tabla en línea y en celdas de tabla.
 
 Elige entre `.align-baseline`, `.align-top`, `.align-middle`, `.align-bottom`, `.align-text-bottom` y `.align-text-top` según sea necesario.
@@ -854,8 +792,6 @@ Elige entre `.align-baseline`, `.align-top`, `.align-middle`, `.align-bottom`, `
 Para centrar verticalmente contenido no en línea (como `<div>`s y más), usa nuestras [utilidades de flexbox](/bootstrap/utilidades/flex/#align-items).
 
 Con elementos en línea:
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/vertical-align/index-1.html" >}}
 ```html {filename="HTML"}
@@ -867,6 +803,8 @@ Con elementos en línea:
     <span class="align-text-bottom">texto-abajo</span>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-4 >}}
 
 Con celdas de tabla:
 
@@ -889,8 +827,6 @@ Con celdas de tabla:
 
 ### Personalización del CSS {#css}
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< bootstrap/content-suggestion >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
@@ -898,8 +834,6 @@ Con celdas de tabla:
 Las utilidades de alineación vertical se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
-
-{{< content-ads/middle-banner-3 >}}
 
 ```scss {filename="scss/_utilities.scss"}
 "align": (
@@ -913,8 +847,6 @@ Las utilidades de alineación vertical se declaran en nuestra API de utilidades 
 
 Controla la visibilidad de los elementos, sin modificar su visualización, con utilidades de visibilidad.
 
-{{< content-ads/top-banner >}}
-
 Establece la `visibility` de los elementos con nuestras utilidades de visibilidad. Estas clases de utilidad no modifican el valor `display` en absoluto y no afectan el diseño: los elementos `.invisible` aún ocupan espacio en la página.
 
 {{< callout type="warning" emoji="" >}}
@@ -927,8 +859,6 @@ Aplica `.visible` o `.invisible` según sea necesario.
 <div class="visible">...</div>
 <div class="invisible">...</div>
 ```
-
-{{< content-ads/middle-banner-1 >}}
 
 ```css {filename="CSS"}
 // Class
@@ -945,8 +875,6 @@ Aplica `.visible` o `.invisible` según sea necesario.
 {{< bootstrap/content-suggestion >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
-
-{{< content-ads/middle-banner-2 >}}
 
 Las utilidades de visibilidad se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -967,8 +895,6 @@ Las utilidades de visibilidad se declaran en nuestra API de utilidades en `scss/
 
 Utiliza nuestras utilidades z-index de bajo nivel para cambiar rápidamente el nivel de pila de un elemento o componente.
 
-{{< content-ads/top-banner >}}
-
 ### Ejemplo {#example}
 
 Utiliza las utilidades `z-index` para apilar elementos uno encima del otro. Requiere un valor de `position` distinto de `static`, que se puede configurar con estilos personalizados o usando nuestras [utilidades de posición](/bootstrap/utilidades/otras-utilidades).
@@ -987,8 +913,6 @@ A estas las llamamos utilidades `z-index` de “bajo nivel” debido a sus valor
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 ### Superposiciones {#overlays}
 
 Los componentes de superposición de Bootstrap (desplegable, modal, offcanvas, popover, toast y tooltips) tienen sus propios valores `z-index` para garantizar una experiencia utilizable con “capas” competitivas de una interfaz.
@@ -997,8 +921,6 @@ Lee sobre ellos en la página de [`z-index` (sección layout)](/bootstrap/layout
 
 ### Enfoque de componentes {#component-approach}
 
-{{< content-ads/middle-banner-2 >}}
-
 En algunos componentes, usamos nuestros valores `z-index` de bajo nivel para administrar elementos repetidos que se superponen entre sí (como botones en un grupo de botones o elementos en un grupo de lista).
 
 Más información sobre nuestro enfoque [`z-index`.](/bootstrap/comenzando/#z-index-scales).
@@ -1006,8 +928,6 @@ Más información sobre nuestro enfoque [`z-index`.](/bootstrap/comenzando/#z-in
 ### Personalización del CSS {#css}
 
 #### Mapas de Sass {#sass-maps}
-
-{{< content-ads/middle-banner-3 >}}
 
 Personaliza este mapa de Sass para cambiar los valores disponibles y las utilidades generadas.
 
@@ -1024,8 +944,6 @@ $zindex-levels: (
 ```
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 

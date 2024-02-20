@@ -10,6 +10,8 @@ draft: true
 
 # Keyof Type Operator
 
+{{< content-ads/top-banner >}}
+
 ## The `keyof` type operator {#the-keyof-type-operator}
 
 The `keyof` operator takes an object type and produces a string or numeric literal union of its keys.
@@ -23,6 +25,8 @@ type P = keyof Point;
     
 type P = keyof Point
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 If the type has a `string` or `number` index signature, `keyof` will return those types instead:
 
@@ -43,3 +47,5 @@ type M = string | number
 Note that in this example, `M` is `string | number` — this is because JavaScript object keys are always coerced to a string, so `obj[0]` is always the same as `obj["0"]`.
 
 `keyof` types become especially useful when combined with mapped types, which we’ll learn more about later.
+
+{{< content-ads/bottom-banner >}}

@@ -12,8 +12,6 @@ type: docs
 
 Bootstrap es un conjunto de herramientas de interfaz potente y repleto de funciones. Construye cualquier cosa, desde el prototipo hasta la producción, en minutos.
 
-{{< content-ads/top-banner >}}
-
 ### Inicio rápido {#quick-start}
 
 Comienza incluyendo CSS y JavaScript listos para producción de Bootstrap a través de CDN sin necesidad de realizar ningún paso de compilación. Velo en la práctica con esta [demo de Bootstrap CodePen](https://codepen.io/team/bootstrap/pen/qBamdLj).
@@ -59,8 +57,6 @@ Comienza incluyendo CSS y JavaScript listos para producción de Bootstrap a trav
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     ```
 
-{{< content-ads/middle-banner-1 >}}
-
 3. **¡Hola mundo!** Abre la página en el navegador de tu elección para ver tu página Bootstrapped. Ahora puedes empezar a construir con Bootstrap creando tu propio [layout](/bootstrap/grilla), agregando docenas de [componentes](/bootstrap/componentes/botones) y utilizando [nuestros ejemplos oficiales](/bootstrap/comenzando/#:~:text=nuestros%20ejemplos%20oficiales).
 
 {{< bootstrap/content-suggestion >}}
@@ -82,8 +78,6 @@ También puedes usar la CDN para obtener cualquiera de nuestras [compilaciones a
 - Lee sobre lo que se incluye en Bootstrap en nuestra [sección de contenidos](/bootstrap/comenzando) y la lista de [componentes que requieren JavaScript](/bootstrap/comenzando/#js-components) a continuación.
 - ¿Necesitas un poco más de potencia? Considera compilar con Bootstrap [incluidos los archivos fuente a través del administrador de paquetes](/bootstrap/comenzando/#package-managers).
 - ¿Quieres usar Bootstrap como módulo con `<script type="module">`? Consulta nuestra sección [uso de Bootstrap como módulo](/bootstrap/comenzando/#using-bootstrap-as-a-module).
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Componentes JS {#js-components}
 
@@ -112,8 +106,6 @@ Bootstrap emplea un puñado de estilos y configuraciones globales importantes, t
 
 Bootstrap requiere el uso de HTML5 doctype. Sin él, verás un estilo original e incompleto.
 
-{{< content-ads/middle-banner-3 >}}
-
 ```html {filename="HTML"}
 <!doctype html>
 <html lang="en">
@@ -137,8 +129,6 @@ Para un dimensionado más sencillo en CSS, cambiamos el valor global `box-sizing
 
 En las raras ocasiones en que necesites sobrescribirlo, usa algo como lo siguiente:
 
-{{< content-ads/middle-banner-4 >}}
-
 ```css {filename="CSS"}
 .selector-for-some-widget {
   box-sizing: content-box;
@@ -159,8 +149,6 @@ Para mejorar el renderizado entre navegadores, utilizamos [Reboot](/bootstrap/re
 
 Mantente actualizado sobre el desarrollo de Bootstrap y comunícate con la comunidad con estos útiles recursos.
 
-{{< content-ads/middle-banner-5 >}}
-
 - Lee y suscríbete a [El blog oficial de Bootstrap](https://blog.getbootstrap.com).
 - Haz preguntas y explora [nuestras discusiones de GitHub](https://github.com/twbs/bootstrap/discussions).
 - Discute, haz preguntas y más en [la comunidad Discord](https://discord.gg/bZUvakRU3M) o el [subreddit de Bootstrap](https://reddit.com/r/bootstrap).
@@ -173,8 +161,6 @@ También puedes seguir a [@getbootstrap en Twitter](https://twitter.com/getboots
 ## Diferentes formas de descargar Bootstrap
 
 Descarga Bootstrap para obtener el CSS y JavaScript compilados, el código fuente, o inclúyelo con tus administradores de paquetes favoritos como npm, RubyGems y más.
-
-{{< content-ads/top-banner >}}
 
 ### CSS y JS compilados. {#compiled-css-and-js}
 
@@ -197,8 +183,6 @@ Compila Bootstrap con tu propia canalización de assets descargando nuestros arc
 Si necesitas nuestro conjunto completo de [herramientas de compilación](/bootstrap/comenzando/#tooling-setup), son incluidas para desarrollar Bootstrap y su documentación, pero probablemente no sean adecuados para tus propios fines.
 
 [Descargar fuente](https://github.com/twbs/bootstrap/archive/v5.3.2.zip)
-
-{{< content-ads/middle-banner-1 >}}
 
 ### Ejemplos {#examples}
 
@@ -226,8 +210,6 @@ Si estás usando nuestro JavaScript compilado y prefieres incluir Popper por sep
 
 Recomendamos [jsDelivr](https://www.jsdelivr.com) y lo usamos nosotros mismos en nuestra documentación. Sin embargo, en algunos casos, como en algunos países o entornos específicos, es posible que necesites utilizar otros proveedores de CDN como [cdnjs](https://cdnjs.com) o [unpkg](https://unpkg.com).
 
-{{< content-ads/middle-banner-2 >}}
-
 Encontrarás los mismos archivos en estos proveedores de CDN, aunque con diferentes URL. Con cdnjs, puedes [usar este enlace directo al paquete Bootstrap](https://cdnjs.com/libraries/bootstrap) para copiar y pegar fragmentos HTML listos para usar para cada archivo dist desde cualquier versión de Bootstrap.
 
 {{< callout type="warning" emoji="" >}}
@@ -253,8 +235,6 @@ Instala Bootstrap en tus aplicaciones con tecnología Node.js con el [paquete np
 ```shell {filename="Terminal"}
 npm install bootstrap@5.3.2
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 `const bootstrap = require('bootstrap')` o `import bootstrap from 'bootstrap'` cargará todos los complementos de Bootstrap en un objeto `bootstrap`. El módulo `bootstrap` exporta todos nuestros complementos. Puedes cargar manualmente los complementos de Bootstrap individualmente cargando los archivos `/js/dist/*.js` en el directorio de nivel superior del paquete.
 
@@ -282,8 +262,6 @@ Instala Bootstrap en tus aplicaciones Ruby usando [Bundler](https://bundler.io) 
 ```ruby {filename="Ruby"}
 gem 'bootstrap', '~> 5.3.2'
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Alternativamente, si no estás usando Bundler, puedes instalar la gema ejecutando este comando:
 
@@ -316,8 +294,6 @@ Install-Package bootstrap.sass
 ## Sección de Contenidos de Bootstrap
 
 Descubre lo que se incluye en Bootstrap, incluidas nuestras versiones de código fuente y compilado.
-
-{{< content-ads/top-banner >}}
 
 ### Bootstrap compilado {#compiled-bootstrap}
 
@@ -375,8 +351,6 @@ bootstrap/
 
 Esta es la forma más básica de Bootstrap: archivos compilados para un uso rápido en casi cualquier proyecto web. Proporcionamos CSS y JS compilados (`bootstrap.*`), así como CSS y JS compilados y minificados (`bootstrap.min.*`). [Mapas de fuente](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`bootstrap.*.map`) están disponibles para su uso con las herramientas de desarrollo de ciertos navegadores. Los archivos JS incluidos (`bootstrap.bundle.js` y `bootstrap.bundle.min.js` minificados) incluyen [Popper](https://popper.js.org).
 
-{{< content-ads/middle-banner-1 >}}
-
 #### Archivos CSS {#css-files}
 
 Bootstrap incluye un puñado de opciones para incluir parte o la totalidad de nuestro CSS compilado.
@@ -390,8 +364,6 @@ Bootstrap incluye un puñado de opciones para incluir parte o la totalidad de nu
 
 #### Archivos JS {#js-files}
 
-{{< content-ads/middle-banner-2 >}}
-
 De manera similar, tenemos opciones para incluir parte o la totalidad de nuestro JavaScript compilado.
 
 | Archivos JS                                         | Popper   |
@@ -402,8 +374,6 @@ De manera similar, tenemos opciones para incluir parte o la totalidad de nuestro
 {{< bootstrap/content-suggestion >}}
 
 ### Código fuente de Bootstrap {#bootstrap-source-code}
-
-{{< content-ads/middle-banner-3 >}}
 
 La descarga del código fuente de Bootstrap incluye los assets CSS y JavaScript compilados, junto con el código fuente Sass, JavaScript y documentación. Más específicamente, incluye lo siguiente y más:
 
@@ -429,8 +399,6 @@ Más allá de eso, cualquier otro archivo incluido brinda soporte para paquetes,
 
 Aprende sobre los navegadores y dispositivos, desde los modernos hasta los antiguos, que son compatibles con Bootstrap, incluidas las peculiaridades y errores conocidos de cada uno.
 
-{{< content-ads/top-banner >}}
-
 ### Navegadores compatibles {#supported-browsers}
 
 Bootstrap admite las **versiones estables más recientes** de todos los principales navegadores y plataformas.
@@ -453,13 +421,13 @@ Safari >= 12
 not Explorer <= 11
 ```    
 
+{{< content-ads/top-banner >}}
+
 Usamos [Autoprefixer](https://github.com/postcss/autoprefixer) para manejar la compatibilidad del navegador mediante prefijos CSS, que usa [Browserslist](https://github.com/browserslist/browserslist) para administrar estas versiones del navegador. Consulta su documentación para saber cómo integrar estas herramientas en tus proyectos.
 
 #### Dispositivos móviles {#mobile-devices}
 
 En términos generales, Bootstrap admite las últimas versiones de los navegadores predeterminados de cada plataforma principal. Ten en cuenta que los navegadores proxy (como Opera Mini, el modo Turbo de Opera Mobile, UC Browser Mini, Amazon Silk) no son compatibles.
-
-{{< content-ads/middle-banner-1 >}}
 
 |             | Chrome     | Firefox    | Safari     | Navegador Android y WebView |
 | ----------- | ---------- | ---------- | ---------- | --------------------------- |
@@ -483,8 +451,6 @@ Extraoficialmente, Bootstrap debería verse y comportarse bastante bien en Chrom
 
 Internet Explorer no es compatible. **Si necesitas compatibilidad con Internet Explorer, utiliza Bootstrap v4.**
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Modales y desplegables en el móvil {#modals-and-dropdowns-on-mobile}
 
 #### Desbordamiento y desplazamiento {#overflow-and-scrolling}
@@ -501,8 +467,6 @@ El elemento `.dropdown-backdrop` no se usa en iOS en la navegación debido a la 
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Zoom del navegador {#browser-zooming}
 
 El zoom de página presenta inevitablemente artefactos de renderizado en algunos componentes, tanto en Bootstrap como en el resto de la web. Dependiendo del problema, es posible que podamos solucionarlo (busca primero y luego abre un issue si es necesario). Sin embargo, tendemos a ignorarlos, ya que a menudo no tienen una solución directa más que soluciones rebuscadas.
@@ -518,8 +482,6 @@ Nuestros documentos HTML también tienen algunas advertencias de validación de 
 ## Utilización de JavaScript en Bootstrap
 
 Dale vida a Bootstrap con nuestros complementos de JavaScript opcionales. Obtén más información sobre cada complemento, nuestras opciones de API programática y de datos, y más.
-
-{{< content-ads/top-banner >}}
 
 ### Individual o compilado {#individual-or-compiled}
 
@@ -571,8 +533,6 @@ Uncaught TypeError: Failed to resolve module specifier "@popperjs/core". Relativ
 ```    
 
 Para solucionar este problema, puedes usar un `importmap` para resolver los nombres arbitrarios de los módulos para completar las rutas. Si tus [navegadores específicos](https://caniuse.com/?search=importmap) no admiten `importmap`, deberás utilizar el proyecto [es-module-shims](https://github.com/guybedford/es-module-shims). Así es como funciona para Bootstrap y Popper:
-
-{{< content-ads/middle-banner-1 >}}
 
 ```html {filename="HTML"}
 <!doctype html>
@@ -641,8 +601,6 @@ myModal.addEventListener('show.bs.modal', event => {
 })
 ```    
 
-{{< content-ads/middle-banner-2 >}}
-
 ### API programática {#programmatic-api}
 
 Todos los constructores aceptan un objeto de opciones opcional o nada (lo que inicia un complemento con su comportamiento predeterminado):
@@ -695,8 +653,6 @@ myCollapseEl.addEventListener('shown.bs.collapse', event => {
 ```    
 
 Además, una llamada a un método en un **componente en transición será ignorada**.
-
-{{< content-ads/middle-banner-3 >}}
 
 ```javascript {filename="JavaScript"}
 const myCarouselEl = document.querySelector('#myCarousel')
@@ -756,8 +712,6 @@ La información sobre herramientas y las ventanas emergentes utilizan nuestro sa
 El valor predeterminado de `allowList` es el siguiente:
 
 [js/src/util/sanitizer.js](https://github.com/twbs/bootstrap/blob/v5.3.2/js/src/util/sanitizer.js)
-
-{{< content-ads/middle-banner-4 >}}
 
 ```javascript {filename="js/src/util/sanitizer.js"}
 const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
@@ -843,6 +797,8 @@ $('[data-bs-toggle="tooltip"]').tooltip({
 $('#myTooltip').tooltip('show')
 ```
 
+{{< content-ads/middle-banner-1 >}}
+
 Lo mismo ocurre con nuestros otros componentes.
 
 #### No conflict {#no-conflict}
@@ -875,8 +831,6 @@ Los complementos de Bootstrap no tienen un respaldo especial cuando JavaScript e
 ## Instalación de Bootstrap usando Webpack
 
 La guía oficial sobre cómo incluir y agrupar CSS y JavaScript de Bootstrap en tu proyecto usando Webpack.
-
-{{< content-ads/top-banner >}}
 
 ![Bootstrap y Webpack](/assets/bootstrap/5.3/assets/img/guides/bootstrap-webpack.png)
 
@@ -916,8 +870,6 @@ Ya creamos la carpeta `my-project` e inicializamos npm. Ahora también crearemos
 mkdir {src,src/js,src/scss}
 touch src/index.html src/js/main.js src/scss/styles.scss webpack.config.js
 ```    
-
-{{< content-ads/middle-banner-1 >}}
 
 Cuando hayas terminado, tu proyecto completo debería verse así:
 
@@ -1003,8 +955,6 @@ Con las dependencias instaladas y nuestra carpeta de proyecto lista para que com
     ![Webpack dev server running](/assets/bootstrap/5.3/assets/img/guides/webpack-dev-server.png)
 
 En la siguiente y última sección de esta guía, configuraremos los cargadores de paquetes web e importaremos todo el CSS y JavaScript de Bootstrap.
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Importar Bootstrap {#import-bootstrap}
 
@@ -1103,8 +1053,6 @@ Importar Bootstrap a Webpack requiere los cargadores que instalamos en la primer
 
 Dependiendo de tu configuración, es posible que desees implementar algunas optimizaciones adicionales de seguridad y velocidad útiles para ejecutar el proyecto en producción. Ten en cuenta que estas optimizaciones no se aplican en [el proyecto de ejemplo de Webpack](https://github.com/twbs/examples/tree/main/webpack) y su implementación depende de ti.
 
-{{< content-ads/middle-banner-3 >}}
-
 #### Extrayendo CSS {#extracting-css}
 
 El `style-loader` que configuramos anteriormente emite CSS convenientemente en el paquete bundle para que cargar manualmente un archivo CSS en `dist/index.html` no sea necesario. Sin embargo, es posible que este enfoque no funcione con una política de seguridad de contenido estricta y puede convertirse en un cuello de botella en tu aplicación debido al gran tamaño del paquete.
@@ -1155,8 +1103,6 @@ Luego crea una instancia y usa el complemento en la configuración de Webpack:
 ```
 
 Después de ejecutar `npm run build` nuevamente, habrá un nuevo archivo `dist/main.css`, que contendrá todo el CSS importado por `src/js/main.js`. Si ves `dist/index.html` en tu navegador ahora, faltará el estilo, ya que ahora está en `dist/main.css`. Puedes incluir el CSS generado en `dist/index.html` así:
-
-{{< content-ads/middle-banner-4 >}}
 
 ```diff {filename="Diff"}
 --- a/dist/index.html
@@ -1209,8 +1155,6 @@ _¿Ves algo incorrecto o desactualizado aquí? [abre un issue en GitHub](https:/
 
 La guía oficial sobre cómo incluir y agrupar CSS y JavaScript de Bootstrap en tu proyecto usando Parcel.
 
-{{< content-ads/top-banner >}}
-
 ![](/assets/bootstrap/5.3/assets/img/guides/bootstrap-parcel.png)
 
 {{< callout type="info" emoji="" >}}
@@ -1239,8 +1183,6 @@ Ahora que tenemos todas las dependencias necesarias instaladas, podemos comenzar
 
 ### Estructura del proyecto. {#project-structure}
 
-{{< content-ads/middle-banner-1 >}}
-
 Ya creamos la carpeta `my-project` e inicializamos npm. Ahora también crearemos nuestra carpeta `src`, hoja de estilo y archivo JavaScript para completar la estructura del proyecto. Ejecuta lo siguiente desde `my-project` o crea manualmente la carpeta y la estructura de archivos que se muestran a continuación.
 
 ```shell {filename="Terminal"}
@@ -1267,8 +1209,6 @@ En este punto, todo está en el lugar correcto, pero Parcel necesita una página
 ### Configurar Parcel {#configure-parcel}
 
 Con las dependencias instaladas y nuestra carpeta de proyecto lista para que comencemos a codificar, ahora podemos configurar Parcel y ejecutar nuestro proyecto localmente. Parcel en sí no requiere ningún archivo de configuración por diseño, pero sí necesitamos un script npm y un archivo HTML para iniciar nuestro servidor.
-
-{{< content-ads/middle-banner-2 >}}
 
 1.  **Rellena el archivo `src/index.html`.** Parcel necesita una página para renderizar, así que usamos nuestro `index.html` para configurar HTML básico, incluidos nuestros archivos CSS y JavaScript.
     ```html {filename="HTML"}
@@ -1316,8 +1256,6 @@ En la siguiente y última sección de esta guía, importaremos todo el CSS y Jav
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Importar Bootstrap {#import-bootstrap}
 
 Importar Bootstrap a Parcel requiere dos importaciones, una a nuestro `styles.scss` y otra a nuestro `main.js`.
@@ -1351,8 +1289,6 @@ Importar Bootstrap a Parcel requiere dos importaciones, una a nuestro `styles.sc
     
     ![Parcel dev server running with Bootstrap](/assets/bootstrap/5.3/assets/img/guides/parcel-dev-server-bootstrap.png)
     
-{{< content-ads/middle-banner-4 >}}
-
 Ahora puedes comenzar a agregar cualquier componente Bootstrap que quieras usar. Asegúrate de [consultar el proyecto de ejemplo de Parcel completo](https://github.com/twbs/examples/tree/main/parcel) para saber cómo incluir Sass personalizado adicional y optimizar tu compilación importando solo las partes de CSS y JS de Bootstrap que necesites.
     
 
@@ -1364,13 +1300,13 @@ _¿Ves algo incorrecto o desactualizado aquí? [abre un issue en GitHub](https:/
 
 La guía oficial sobre cómo incluir y agrupar CSS y JavaScript de Bootstrap en tu proyecto usando Vite.
 
-{{< content-ads/top-banner >}}
-
 ![Bootstrap y Vite](/assets/bootstrap/5.3/assets/img/guides/bootstrap-vite.png)
 
 {{< callout type="info" emoji="" >}}
 **¿Quieres ir hasta el final?** Descarga el código fuente y la demostración funcional de esta guía desde el repositorio [twbs/examples](https://github.com/twbs/examples/tree/main/vite). También puedes [abrir el ejemplo en StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/vite?file=index) para editarlo en vivo.
 {{< /callout >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 ### Configuración {#setup}
 
@@ -1392,8 +1328,6 @@ Estamos creando un proyecto Vite con Bootstrap desde cero, por lo que existen al
     npm i --save bootstrap @popperjs/core
     ```
     
-{{< content-ads/middle-banner-1 >}}
-
 4.  **Instala una dependencia adicional.** Además de Vite y Bootstrap, necesitamos otra dependencia (Sass) para importar y agrupar correctamente el CSS de Bootstrap.
     ```shell {filename="Terminal"}
     npm i --save-dev sass
@@ -1424,8 +1358,6 @@ my-project/
 ├── package.json
 └── vite.config.js
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 En este punto, todo está en el lugar correcto, pero Vite no funcionará porque aún no hemos completado nuestro `vite.config.js`.
 
@@ -1481,8 +1413,6 @@ Con las dependencias instaladas y nuestra carpeta de proyecto lista para que com
     }
     ```
     
-{{< content-ads/middle-banner-3 >}}
-
 4.  **Y finalmente, podemos iniciar Vite.** Desde la carpeta `my-project` en tu terminal, ejecuta el script npm recién agregado:
     ```shell {filename="Terminal"}
     npm start
@@ -1504,8 +1434,6 @@ En la siguiente y última sección de esta guía, importaremos todo el CSS y Jav
     
     _También puedes importar nuestras hojas de estilo individualmente si lo deseas. [Lee nuestra documentación de importación de Sass](/bootstrap/personalizar/#importing) para obtener más detalles._
     
-{{< content-ads/middle-banner-4 >}}
-
 2.  **A continuación cargamos el CSS e importamos el JavaScript de Bootstrap.** Agrega lo siguiente a `src/js/main.js` para cargar el CSS e importa todo el JS de Bootstrap. Popper se importará automáticamente a través de Bootstrap.
     ```javascript {filename="JavaScript"}
     // Import our custom CSS
@@ -1540,8 +1468,6 @@ _¿Ves algo incorrecto o desactualizado aquí? [abre un issue en GitHub](https:/
 
 Una breve descripción de las características y limitaciones de Bootstrap para la creación de contenido accesible.
 
-{{< content-ads/top-banner >}}
-
 Bootstrap proporciona un sencillo marco de estilos listos para usar, herramientas de layout y componentes interactivos, lo que permite a los desarrolladores crear sitios web y aplicaciones que son visualmente atractivos, funcionalmente ricos y accesibles por defecto.
 
 ### Descripción general y limitaciones {#overview-and-limitations}
@@ -1549,8 +1475,6 @@ Bootstrap proporciona un sencillo marco de estilos listos para usar, herramienta
 La accesibilidad general de cualquier proyecto creado con Bootstrap depende en gran parte del marcado del autor, el estilo adicional y las secuencias de comandos que hayan incluido. Sin embargo, siempre que se hayan implementado correctamente, debería ser perfectamente posible crear sitios web y aplicaciones con Bootstrap que cumplan [WCAG 2.1](https://www.w3.org/TR/WCAG) (A/AA/AAA), [Sección 508](https://www.section508.gov) y similares estándares y requisitos de accesibilidad.
 
 #### Marcado estructural {#structural-markup}
-
-{{< content-ads/middle-banner-1 >}}
 
 El estilo y el diseño de Bootstrap se pueden aplicar a una amplia gama de estructuras de marcado. Esta documentación tiene como objetivo proporcionar a los desarrolladores ejemplos de mejores prácticas para demostrar el uso de Bootstrap en sí e ilustrar el marcado semántico apropiado, incluidas las formas en que se pueden abordar posibles problemas de accesibilidad.
 
@@ -1560,8 +1484,6 @@ Los componentes interactivos de Bootstrap, como cuadros de diálogo modales, men
 
 Debido a que los componentes de Bootstrap están diseñados específicamente para ser bastante genéricos, es posible que los autores necesiten incluir funciones y atributos ARIA adicionales, así como el comportamiento de JavaScript, para transmitir con mayor precisión la naturaleza y funcionalidad precisas de su componente. Esto suele estar indicado en la documentación.
 
-{{< content-ads/middle-banner-2 >}}
-
 #### Contraste de color {#color-contrast}
 
 Algunas combinaciones de colores que actualmente componen la paleta predeterminada de Bootstrap (utilizadas en todo el framework para cosas como variaciones de botones, variaciones de alertas, indicadores de validación de formularios) pueden llevar a _insuficiente_ contraste de color (por debajo de la [relación de contraste de color de texto WCAG 2.1 recomendada de 4.5:1](https://www.w3.org/TR/WCAG/#contrast-minimum) y la [relación de contraste de color sin texto WCAG 2.1 de 3:1](https://www.w3.org/TR/WCAG/#non-text-contrast)), particularmente cuando se usa contra un fondo claro. Se anima a los autores a probar sus usos específicos del color y, cuando sea necesario, modificar/ampliar manualmente estos colores predeterminados para garantizar relaciones de contraste de color adecuadas.
@@ -1569,8 +1491,6 @@ Algunas combinaciones de colores que actualmente componen la paleta predetermina
 #### Contenido visualmente oculto {#visually-hidden-content}
 
 El contenido que debe estar oculto visualmente, pero que debe permanecer accesible para tecnologías de asistencia como lectores de pantalla, se puede diseñar usando la clase `.visually-hidden`. Esto puede resultar útil en situaciones en las que también es necesario transmitir información visual adicional o señales (como el significado denotado mediante el uso de colores) a usuarios no visuales.
-
-{{< content-ads/middle-banner-3 >}}
 
 ```html {filename="HTML"}
 <p class="text-danger">
@@ -1587,8 +1507,6 @@ Para controles interactivos visualmente ocultos, como los tradicionales enlaces 
 
 #### Movimiento reducido {#reduced-motion}
 
-{{< content-ads/middle-banner-4 >}}
-
 Bootstrap incluye soporte para las preferencias [`prefers-reduced-motion`.](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion) En navegadores/entornos que permiten al usuario especificar su preferencia por el movimiento reducido, la mayoría de los efectos de transición CSS en Bootstrap (por ejemplo, cuando se abre o cierra un cuadro de diálogo modal, o la animación deslizante en carruseles) se desactivarán y las animaciones significativas (como los spinners) se ralentizarán.
 
 En navegadores que admiten `prefers-reduced-motion`, y donde el usuario _no_ ha indicado explícitamente que preferiría movimiento reducido (es decir, donde `prefers-reduced-motion: no-preference`), Bootstrap activa un desplazamiento suave usando la propiedad `scroll-behavior` .
@@ -1596,8 +1514,6 @@ En navegadores que admiten `prefers-reduced-motion`, y donde el usuario _no_ ha 
 {{< bootstrap/content-suggestion >}}
 
 ### Recursos adicionales {#additional-resources}
-
-{{< content-ads/middle-banner-5 >}}
 
 * [Pautas de accesibilidad al contenido web (WCAG) 2.1](https://www.w3.org/TR/WCAG)
 * [El Proyecto A11Y](https://www.a11yproject.com)
@@ -1613,8 +1529,6 @@ En navegadores que admiten `prefers-reduced-motion`, y donde el usuario _no_ ha 
 
 El motor de cambio de tamaño de Bootstrap escala de manera responsive las propiedades CSS comunes para utilizar mejor el espacio disponible en las ventanas gráficas y los dispositivos.
 
-{{< content-ads/top-banner >}}
-
 ### ¿Qué es RFS? {#what-is-rfs}
 
 El proyecto paralelo de Bootstrap [RFS](https://github.com/twbs/rfs/tree/v10.0.0) es un motor de cambio de tamaño de unidades que se desarrolló inicialmente para cambiar el tamaño de las fuentes (de ahí su abreviatura de Responsive Font Sizes). Hoy en día, RFS es capaz de reescalar la mayoría de las propiedades CSS con valores unitarios como `margin`, `padding`, `border-radius` o incluso `box-shadow`.
@@ -1622,8 +1536,6 @@ El proyecto paralelo de Bootstrap [RFS](https://github.com/twbs/rfs/tree/v10.0.0
 El mecanismo calcula automáticamente los valores apropiados en función de las dimensiones de la ventana gráfica del navegador. Se compilará en funciones `calc()` con una combinación de `rem` y unidades de viewport para permitir el comportamiento de escalado responsive.
 
 ### Usando RFS {#using-rfs}
-
-{{< content-ads/middle-banner-1 >}}
 
 Los mixins están incluidos en Bootstrap y están disponibles una vez que incluyes el `scss`de Bootstrap. RFS también se puede [instalar de forma independiente](https://github.com/twbs/rfs/tree/v10.0.0#installation) si es necesario.
 
@@ -1636,8 +1548,6 @@ El mixin `rfs()` tiene abreviaturas para `font-size`, `margin`, `margin-top`, `m
   @include font-size(4rem);
 }
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 ```css {filename="CSS"}
 .title {
@@ -1661,8 +1571,6 @@ Cualquier otra propiedad se puede pasar al mixin `rfs()` así:
 
 `!important` también se puede agregar al valor que quieras:
 
-{{< content-ads/middle-banner-3 >}}
-
 ```css {filename="CSS"}
 .selector {
   @include padding(2.5rem !important);
@@ -1675,8 +1583,6 @@ Cuando no quieras usar los includes, también hay dos funciones:
 
 * `rfs-value()` convierte a un valor `rem` si un valor en `px` es pasado, en otros casos devuelve el mismo resultado.
 * `rfs-fluid-value()` devuelve la versión fluida de un valor si es necesario cambiar la escala de la propiedad.
-
-{{< content-ads/middle-banner-4 >}}
 
 En este ejemplo, utilizamos uno de los [mixins de puntos de interrupción responsive](/bootstrap/layout) integrados en Bootstrap para aplicar solo estilo debajo del punto de interrupción `lg`.
 
@@ -1700,8 +1606,6 @@ En este ejemplo, utilizamos uno de los [mixins de puntos de interrupción respon
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-5 >}}
-
 ### Documentación extendida {#extended-documentation}
 
 RFS es un proyecto separado bajo la organización Bootstrap. Puedes encontrar más información sobre RFS y su configuración en su [repositorio de GitHub](https://github.com/twbs/rfs/tree/v10.0.0).
@@ -1709,8 +1613,6 @@ RFS es un proyecto separado bajo la organización Bootstrap. Puedes encontrar m�
 ## Uso de contenido RTL en Bootstrap
 
 Aprende cómo habilitar la compatibilidad con texto de derecha a izquierda en Bootstrap en nuestro layout, componentes y utilidades.
-
-{{< content-ads/top-banner >}}
 
 ### Familiarízate {#get-familiar}
 
@@ -1730,8 +1632,6 @@ Existen dos requisitos estrictos para habilitar RTL en páginas impulsadas por B
 2.  Agrega un atributo `lang` apropiado, como `lang="ar"`, en el elemento `<html>`.
 
 A partir de ahí, deberás incluir una versión RTL de nuestro CSS. Por ejemplo, aquí está la hoja de estilo de nuestro CSS compilado y minimizado con RTL habilitado:
-
-{{< content-ads/middle-banner-1 >}}
 
 ```html {filename="HTML"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
@@ -1777,9 +1677,9 @@ Empieza con uno de nuestros varios [ejemplos RTL](https://getbootstrap.com/docs/
 
 ### Acercarse {#approach}
 
-Nuestro enfoque para crear soporte RTL en Bootstrap viene con dos decisiones importantes que afectan la forma en que escribimos y usamos nuestro CSS:
+{{< content-ads/middle-banner-3 >}}
 
-{{< content-ads/middle-banner-2 >}}
+Nuestro enfoque para crear soporte RTL en Bootstrap viene con dos decisiones importantes que afectan la forma en que escribimos y usamos nuestro CSS:
 
 1.  **Primero, decidimos construirlo con el proyecto [RTLCSS](https://rtlcss.com).** Esto nos brinda algunas características poderosas para administrar cambios y sobrescrituras al pasar de LTR a RTL. También nos permite crear dos versiones de Bootstrap a partir de una base de código.
     
@@ -1795,8 +1695,6 @@ Trabajar con RTL, a través de nuestro Sass fuente o CSS compilado, no debería 
 Cuando se trata de [personalización](/bootstrap/personalizar), la forma preferida es aprovechar variables, mapas, y mixins. Este enfoque funciona igual para RTL, incluso si se procesa posteriormente a partir de los archivos compilados, gracias a [cómo funciona RTLCSS](https://rtlcss.com/learn/getting-started/why-rtlcss).
 
 #### Valores RTL personalizados {#custom-rtl-values}
-
-{{< content-ads/middle-banner-3 >}}
 
 Usando la [directivas de valor RTLCSS](https://rtlcss.com/learn/usage-guide/value-directives), puedes hacer que una variable genere un valor diferente para RTL. Por ejemplo, para disminuir el peso de `$font-weight-bold` en todo el código base, puedes usar la sintaxis `/*rtl: {value}*/`:
 
@@ -1825,8 +1723,6 @@ dt {
 En el caso de que estés usando una fuente personalizada, ten en cuenta que no todas las fuentes admiten el alfabeto no latino. Para cambiar de la familia paneuropea a la árabe, es posible que necesites usar `/*rtl:insert: {value}*/` en tu pila de fuentes para modificar los nombres de las familias de fuentes.
 
 Por ejemplo, para cambiar de la fuente `Helvetica Neue` para LTR a `Helvetica Neue Arabic` para RTL, tu código Sass podría verse así:
-
-{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="SCSS"}
 $font-family-sans-serif:
@@ -1900,8 +1796,6 @@ El [separador de breadcrumb](/bootstrap/componentes/insignias-y-breadcrumbs/ "P�
 
 Ayuda a desarrollar Bootstrap con nuestra documentación, scripts y tests.
 
-{{< content-ads/top-banner >}}
-
 ### Configuración de herramientas {#tooling-setup}
 
 Bootstrap usa [scripts npm](https://docs.npmjs.com/misc/scripts) para crear la documentación y compilar los archivos fuente. Nuestro [package.json](https://github.com/twbs/bootstrap/blob/v5.3.2/package.json) alberga estos scripts para compilar código, ejecutar pruebas y más. Estos no están pensados para su uso fuera de nuestro repositorio y documentación.
@@ -1911,8 +1805,6 @@ Para usar nuestro sistema de compilación y ejecutar nuestra documentación loca
 1.  [Descarga e instala Node.js](https://nodejs.org/en/download), que usamos para administrar nuestras dependencias.
 2.  Descarga las [fuentes de Bootstrap](https://github.com/twbs/bootstrap/archive/v5.3.2.zip) o bifurca y clona el [repositorio de Bootstrap](https://github.com/twbs/bootstrap).
 3.  Navega al directorio raíz `/bootstrap` y ejecuta `npm install` para instalar nuestras dependencias locales enumeradas en [package.json](https://github.com/twbs/bootstrap/blob/v5.3.2/package.json).
-
-{{< content-ads/middle-banner-1 >}}
 
 Cuando esté completo, podrás ejecutar los distintos comandos proporcionados desde la línea de comandos.
 
@@ -1927,8 +1819,6 @@ Nuestro [package.json](https://github.com/twbs/bootstrap/blob/v5.3.2/package.jso
 | `npm test`           | Ejecuta tests localmente después de ejecutar `npm run dist`                                                                                                                                      |
 | `npm run docs-serve` | Compila y ejecuta la documentación localmente.                                                                                                                                                   |
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< callout type="info" emoji="" >}}
 **¡Empieza a usar Bootstrap a través de npm con nuestro proyecto inicial!** Dirígete al repositorio de ejemplo de [Sass y JS](https://github.com/twbs/examples/tree/main/sass-js) para ver cómo crear y personalizar Bootstrap en tu propio proyecto npm. Incluye el compilador Sass, Autoprefixer, Stylelint, PurgeCSS y Bootstrap Icons.
 {{< /callout >}}
@@ -1939,8 +1829,6 @@ Bootstrap usa [Dart Sass](https://sass-lang.com/dart-sass) para compilar nuestro
 
 Dart Sass utiliza una precisión de redondeo de 10 y por razones de eficiencia no permite ajustar este valor. No reducimos esta precisión durante el procesamiento posterior de nuestro CSS generado, como durante la minificación, pero si decides hacerlo, te recomendamos mantener una precisión de al menos 6 para evitar problemas con el redondeo del navegador.
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Autoprefixer {#autoprefixer}
 
 Bootstrap usa [Autoprefixer](https://github.com/postcss/autoprefixer) (incluido en nuestro proceso de compilación) para agregar automáticamente prefijos de proveedores a algunas propiedades CSS en el momento de la compilación. Hacerlo nos ahorra tiempo y código al permitirnos escribir partes clave de nuestro CSS una sola vez y al mismo tiempo eliminar la necesidad de mixins de proveedores como los que se encuentran en la versión 3.
@@ -1949,8 +1837,6 @@ Mantenemos la lista de navegadores compatibles con Autoprefixer en un archivo se
 
 ### RTLCSS {#rtlcss}
 
-{{< content-ads/middle-banner-4 >}}
-
 Bootstrap usa [RTLCSS](https://rtlcss.com) para procesar CSS compilado y convertirlos a RTL, básicamente reemplazando las propiedades que reconocen la dirección horizontal (por ejemplo `padding-left`) con su opuesto. Nos permite escribir nuestro CSS solo una vez y realizar ajustes menores usando las directivas de RTLCSS [control](https://rtlcss.com/learn/usage-guide/control-directives) y [value](https://rtlcss.com/learn/usage-guide/value-directives).
 
 {{< bootstrap/content-suggestion >}}
@@ -1958,8 +1844,6 @@ Bootstrap usa [RTLCSS](https://rtlcss.com) para procesar CSS compilado y convert
 ### Documentación local {#local-documentation}
 
 La ejecución de nuestra documentación localmente requiere el uso de Hugo, que se instala a través del paquete npm [hugo-bin](https://www.npmjs.com/package/hugo-bin). Hugo es un generador de sitios estáticos increíblemente rápido y bastante extensible que nos proporciona: inclusiones básicas, archivos basados en Markdown, plantillas y más. A continuación te indicamos cómo empezar:
-
-{{< content-ads/middle-banner-5 >}}
 
 1.  Ejecuta la [configuración de herramientas](#tooling-setup) anterior para instalar todas las dependencias.
 2.  Desde el directorio raíz `/bootstrap` ejecuta `npm run docs-serve` en la línea de comando.
@@ -1970,3 +1854,5 @@ Aprende más sobre el uso de Hugo leyendo su [documentación](https://gohugo.io/
 ### Solución de problemas {#troubleshooting}
 
 Si tienes problemas con la instalación de dependencias, desinstala todas las versiones de dependencias anteriores (globales y locales). Luego, vuelve a ejecutar `npm install`.
+
+{{< content-ads/bottom-banner >}}

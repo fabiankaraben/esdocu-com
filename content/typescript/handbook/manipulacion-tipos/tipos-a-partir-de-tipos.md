@@ -12,6 +12,8 @@ noindex: true
 
 El sistema de tipos de TypeScript es muy poderoso porque permite expresar tipos *en términos de otros tipos*.
 
+{{< content-ads/top-banner >}}
+
 La forma más simple de esta idea son los generics. Además, tenemos una amplia variedad de *operadores de tipo* disponibles para usar.
 También es posible expresar tipos en términos de *valores* que ya tenemos.
 
@@ -25,3 +27,5 @@ En esta sección cubriremos formas de expresar un nuevo tipo en términos de un 
 - [Tipos condicionales ↗](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) - Tipos que actúan como declaraciones if en el sistema de tipos
 - [Tipos asignados ↗](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html) - Creación de tipos asignando cada propiedad en un tipo existente
 - [Tipos literales de plantilla ↗](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) - Tipos asignados que cambian propiedades a través de cadenas literales de plantilla
+
+{{< content-ads/bottom-banner >}}

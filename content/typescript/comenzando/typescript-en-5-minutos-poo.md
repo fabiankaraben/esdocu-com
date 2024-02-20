@@ -10,6 +10,8 @@ type: docs
 
 TypeScript es una opción popular para programadores acostumbrados a otros lenguajes con tipado estático, como C# y Java.
 
+{{< content-ads/top-banner >}}
+
 El sistema de tipos de TypeScript ofrece muchos de los mismos beneficios, como una mejor completado del código, detección más temprana de errores y una comunicación más clara entre las partes de tu programa.
 Si bien TypeScript proporciona muchas características familiares para estos desarrolladores, vale la pena retroceder para ver en qué se diferencia JavaScript (y por lo tanto TypeScript) de los lenguajes OOP tradicionales.
 Comprender estas diferencias te ayudará a escribir mejor código JavaScript y a evitar errores comunes en los que pueden caer los programadores que pasan directamente de C#/Java a TypeScript.
@@ -39,6 +41,8 @@ Las funciones "libres" (aquellas no asociadas con una clase) que trabajan con da
 
 ### Clases estáticas {#static-classes}
 
+{{< content-ads/middle-banner-1 >}}
+
 Además, ciertas construcciones de C# y Java, como singletons y clases estáticas, son innecesarias en TypeScript.
 
 ## POO en TypeScript {#oop-in-typescript}
@@ -64,6 +68,8 @@ Estos aspectos describen un sistema de tipo *reificado, nominal*.
 Los tipos que escribimos en el código están presentes en tiempo de ejecución y los tipos están relacionados a través de sus declaraciones, no de sus estructuras.
 
 ### Tipos como Conjuntos {#types-as-sets}
+
+{{< content-ads/middle-banner-2 >}}
 
 En C# o Java, tiene sentido pensar en una correspondencia uno a uno entre los tipos de tiempo de ejecución y sus declaraciones en tiempo de compilación.
 
@@ -116,6 +122,8 @@ logName(obj);
 El sistema de tipos de TypeScript es *estructural*, no nominal: podemos usar `obj` como `Pointlike` porque tiene propiedades `x` e `y` que son ambas números.
 Las relaciones entre tipos están determinadas por las propiedades que contienen, no por si fueron declarados con alguna relación particular.
 
+{{< content-ads/middle-banner-3 >}}
+
 El sistema de tipos de TypeScript también *no está cosificado*: no hay nada en tiempo de ejecución que nos diga que `obj` es `Pointlike`.
 De hecho, el tipo `Pointlike` no está presente *de ninguna forma* en tiempo de ejecución.
 
@@ -150,6 +158,8 @@ Por lo tanto, ¡este es un llamado válido!
 Esto puede parecer sorprendente, pero en última instancia es una relación muy similar a la que se aplica en los lenguajes de programación orientada a objetos nominales.
 Una subclase no puede *eliminar* una propiedad de su clase base, porque hacerlo destruiría la relación de subtipo natural entre la clase derivada y su base.
 Los sistemas de tipos estructurales simplemente identifican esta relación implícitamente describiendo los subtipos en términos de tener propiedades de tipos compatibles.
+
+{{< content-ads/middle-banner-4 >}}
 
 #### Tipos Idénticos {#identical-types}
 
@@ -198,3 +208,5 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
 
 - Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
+
+{{< content-ads/bottom-banner >}}

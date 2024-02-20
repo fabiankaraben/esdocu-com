@@ -184,9 +184,9 @@ Los enlaces de marcador de posición (aquellos sin un `href`) están orientados 
 
 ## Reglas horizontales {#horizontal-rules}
 
-{{< content-ads/middle-banner-2 >}}
-
 El elemento `<hr>` ha sido simplificado. De manera similar a los valores predeterminados del navegador, los `<hr>` tienen estilo mediante `border-top`, tienen una `opacity: .25` y heredan automáticamente su `border-color` a través de `color`, incluso cuando `color` se establece a través del padre. Se pueden modificar con utilidades de texto, bordes y opacidad.
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/horizontal-rules.html" >}}
 ```html {filename="HTML"}
@@ -279,8 +279,6 @@ Para indicar variables usa la etiqueta `<var>`.
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 Utiliza `<kbd>` para indicar la entrada que normalmente se ingresa mediante el teclado.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/user-input.html" >}}
@@ -289,6 +287,8 @@ Utiliza `<kbd>` para indicar la entrada que normalmente se ingresa mediante el t
     Para editar la configuración, presione <kbd><kbd>Ctrl</kbd> + <kbd>,</kbd></kbd>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 ## Salida de muestra {#sample-output}
 
@@ -374,8 +374,6 @@ Reboot incluye una mejora para que `role="button"` cambie el cursor predetermina
 
 ## Elementos varios {#misc-elements}
 
-{{< content-ads/middle-banner-4 >}}
-
 ### Dirección {#address}
 
 El elemento `<address>` se actualiza para restablecer el `font-style` predeterminado del navegador de `italic` a `normal`. Ahora también se hereda `line-height` y se ha agregado `margin-bottom: 1rem`. Los `<address>` sirven para presentar información de contacto del antepasado más cercano (o de todo un trabajo). Conserva el formato terminando las líneas con `<br>`.
@@ -394,6 +392,8 @@ El elemento `<address>` se actualiza para restablecer el `font-style` predetermi
 </address>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-4 >}}
 
 ### Blockquote {#blockquote}
 

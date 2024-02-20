@@ -5,3 +5,5 @@ type: docs
 redirect: /typescript/handbook/intro
 noindex: true
 ---
+
+{{< content-ads/bottom-banner >}}

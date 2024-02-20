@@ -11,6 +11,8 @@ next: /typescript/handbook/intro
 
 Comencemos creando una aplicación web simple con TypeScript.
 
+{{< content-ads/top-banner >}}
+
 ## Instalando TypeScript {#installing-typescript}
 
 Hay dos formas principales de agregar TypeScript a tu proyecto:
@@ -32,6 +34,8 @@ Para usuarios de npm:
 En tu editor, escribe el siguiente código JavaScript en `greeter.ts`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsEkFsAOAbAlgY1QFwIKQJ4BcoAZgIbIDOApgFAkCuk6Wq0koA5gE7XVbVuACkSDK7AJSgA3rVCheWBtw4AiABLVkyaABpQq0AGpQo7uMgBuWgF9atZP1AMa3UAF4DAKTKRqoAFVXVWtaABNodAZ4akgsADoAI2gw-HiBAA8sAGF2ATiPLl5+QSEXQQlLIA)
+
+{{< content-ads/middle-banner-1 >}}
 
 ```ts
 function greeter(person) {
@@ -72,6 +76,8 @@ let user = "Jane User";
 document.body.textContent = greeter(user);
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 ## Escribe anotaciones {#type-annotations}
 
 Las anotaciones de tipo en TypeScript son formas ligeras de registrar el contrato previsto de la función o variable.
@@ -107,6 +113,8 @@ En ambos casos, TypeScript puede ofrecer análisis estático basado tanto en la 
 Observa que aunque hubo errores, el archivo `greeter.js` aún se crea.
 Puedes utilizar TypeScript incluso si hay errores en tu código. Pero en este caso, TypeScript advierte que tu código probablemente no se ejecutará como se esperaba.
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Interfaces {#interfaces}
 
 Desarrollemos más nuestra muestra. Aquí utilizamos una interfaz que describe objetos que tienen campos `firstName` y `lastName`.
@@ -141,6 +149,8 @@ Observa que las clases y las interfaces funcionan bien juntas, lo que permite al
 También cabe destacar que el uso de `public` en los argumentos del constructor es una abreviatura que nos permite crear automáticamente propiedades con ese nombre.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEDKAuBXAJgUwHb2gbwFDWgDNEQQA5MAW1QC5oJ4AnAS3QHMBufaYAe3QaNEweL0YAKbgQAOiAEYhmwIs0YMK1OoNZsANFOiyFS6JWbJkIVAEl0zeMzAgtTHfoIz5i5eHVVa9K7s3ACUOAbwABbMEAB0xKQaqNAAvCpq8EnQANTQAET5OabmljZ2Dk5FBQW5vpn+XAQAvrgtuKzwqIyEYMDJAApdEPzhBISqfpqBLOyN0HVJLjOcrbi4xOgizCNsjKionRLSQ-x0g2r8YXgEe0iM6PkAEqikvLqFuccX6PET9dRVD6GE4-BYNVa4KxYRAQLqpaDoVAAdzgSDQmHEeQAUmBEXl3nkALKxfH5ACqsMYeRCXFwyF4wEQ1EwsTkvGQAE9Yp0AB7wADC-E6mHhu32h3EMK6NKAA)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```ts
 class Student {
@@ -200,3 +210,5 @@ La información de tipo proporcionada funciona junto con las herramientas para t
 Para obtener más ejemplos de lo que es posible en TypeScript, consulta la sección Ejemplos del sitio web.
 
 ![Imagen de Visual Studio](/assets/typescript/images/docs/greet_person.png)
+
+{{< content-ads/bottom-banner >}}

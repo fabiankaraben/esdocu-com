@@ -12,6 +12,8 @@ draft: true
 > Background Reading:[Classes (MDN) ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 > 
 
+{{< content-ads/top-banner >}}
+
 TypeScript offers full support for the `class` keyword introduced in ES2015.
 
 As with other JavaScript language features, TypeScript adds type annotations and other syntax to allow you to express relationships between classes and other types.
@@ -289,6 +291,8 @@ TypeScript has some special inference rules for accessors:
 - Getters and setters must have the same [Member Visibility ↗](https://www.typescriptlang.org/docs/handbook/2/classes.html#member-visibility)
 
 Since [TypeScript 4.3 ↗](https://devblogs.microsoft.com/typescript/announcing-typescript-4-3/), it is possible to have accessors with different types for getting and setting.
+
+{{< content-ads/middle-banner-1 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEAqAWBLAdgc2gbwLAChrQH0JEAvAU2gF5oAGAbl131TIBdpjyAKASgC5oyAK4BbAEZkATpib5oktkMnJorJBAB0RUmQZ5oAX0b6IbDjq4A3MCCFkBEVpJToAPoNETp7sQHtfIGRgyDwy+viB7MIiVNAAcp5SVjZ2PHqy+AD0mdAAIr7IAOTsNiC+AO7xYHEANNAAksgAZiiIrACedWzAxnLQiE3QXACECeJSGogQAGKtrGRc0Tyh2OFyalNanBTU9BlyCqxKyHp9Rjj7G5ra5LHRp4a4BkA)
 
@@ -634,6 +638,8 @@ you may find that:
 - methods may be `undefined` on objects returned by constructing these subclasses, so calling `sayHello` will result in an error.
 - `instanceof` will be broken between instances of the subclass and their instances, so `(new MsgError()) instanceof MsgError` will return `false`.
 
+{{< content-ads/middle-banner-2 >}}
+
 As a recommendation, you can manually adjust the prototype immediately after any `super(...)` calls.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAECyEHMCiAnFB7F0CmAPALtgHYAmMqGWA3gLABQ00w6RE+KArsPpgBQC2ALmhsUASyIIAlNFoNGIjgAdsKAVIDc9egugB6PdADK2fNHwALbNCUYe+AJ4qcuJSDHAx+EA4B0OhQB5ACMAK2xuXwhTAAU7dEcVQIAzXksxCAAaOEQKTF9bBISnbE0AgF9teQgwBwAJbBAQdF4ZOV0UUw4UImgAIism9H7oAGpzCwzffmwoMARsLXlKunKgA)
@@ -934,6 +940,8 @@ If you need to protect values in your class from malicious actors, you should us
 > Background Reading:[Static Members (MDN) ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
 > 
 
+{{< content-ads/middle-banner-3 >}}
+
 Classes may have `static` members.
 These members aren’t associated with a particular instance of the class.
 They can be accessed through the class constructor object itself:
@@ -1229,6 +1237,8 @@ Here, TypeScript inferred the return type of `set` to be `this`, rather than `Bo
 Now let’s make a subclass of `Box`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEBCD2APaBvAsAKGtY8B2ALgKaEQBc0EBATgJZ4Dm0AvNAERsDcm2ERBACgBuYEAFciFKnUYBKVD2zQCAC1oQAdLkIkCMViPFFuWJdX5jqeZWognsAX0xOMAelfQAtN+BiC3z0xQSBgAYRAiMGowACMIhGQiRGI8ABMYBIVTUEjqAXl0U2xVdS18FL0Wdi5FFxcg-CpoMCq8IgB3aHDc2PikfJNtJpiqsA0+QTYVIhAQeDZZE3claAA9AH4gA)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```ts
 class ClearableBox extends Box {
@@ -1613,3 +1623,5 @@ fn(window);
 fn({});
 fn(fn);
 ```
+
+{{< content-ads/bottom-banner >}}

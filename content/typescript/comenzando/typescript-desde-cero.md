@@ -10,6 +10,8 @@ type: docs
 
 Felicitaciones por elegir TypeScript como uno de tus primeros lenguajes: ¡ya estás tomando buenas decisiones!
 
+{{< content-ads/top-banner >}}
+
 Probablemente ya hayas escuchado que TypeScript es un "sabor" o "variante" de JavaScript.
 La relación entre TypeScript (TS) y JavaScript (JS) es bastante única entre los lenguajes de programación modernos, por lo que aprender más sobre esta relación te ayudará a comprender cómo TypeScript se suma a JavaScript.
 
@@ -50,6 +52,8 @@ Cada lenguaje tiene sus propias *peculiaridades*: rarezas y sorpresas, y el humi
   const area = obj.width * obj.heigth;
   ```
 
+{{< content-ads/middle-banner-1 >}}
+
 La mayoría de los lenguajes de programación arrojarían un error cuando ocurren este tipo de errores, algunos lo harían durante la compilación, antes de ejecutar cualquier código.
 Al escribir programas pequeños, estas peculiaridades son molestas pero manejables; Al escribir aplicaciones con cientos o miles de líneas de código, estas constantes sorpresas son un problema grave.
 
@@ -79,6 +83,8 @@ Property 'heigth' does not exist on type '{ width: number; height: number; }'. D
 ¿Cómo se relaciona TypeScript con JavaScript?
 
 #### Sintaxis {#syntax}
+
+{{< content-ads/middle-banner-2 >}}
 
 TypeScript es un lenguaje que es un *superconjunto* de JavaScript: la sintaxis JS es, por lo tanto, TS legal.
 La sintaxis se refiere a la forma en que escribimos texto para formar un programa.
@@ -111,6 +117,8 @@ console.log(4 / []);
 Este programa sintácticamente legal registra `Infinity`.
 Sin embargo, TypeScript considera que la división de un número por un array es una operación sin sentido y generará un error:
 
+{{< content-ads/middle-banner-3 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYBsGBQBjOAO0TgBtIA6MuAcwAoAWUMAbQF0BKAbiA)
 
 ```ts
@@ -140,6 +148,8 @@ Esto significa que si mueves código de JavaScript a TypeScript, está **garanti
 Mantener el mismo comportamiento de tiempo de ejecución que JavaScript es una promesa fundamental de TypeScript porque significa que puedes realizar fácilmente la transición entre los dos lenguajes sin preocuparte por diferencias sutiles que podrían hacer que tu programa deje de funcionar.
 
 #### Tipos borrados {#erased-types}
+
+{{< content-ads/middle-banner-4 >}}
 
 En términos generales, una vez que el compilador de TypeScript termina de verificar tu código, *borra* los tipos para producir el código "compilado" resultante.
 Esto significa que una vez compilado el código, el código JS simple resultante no tiene información de tipo.
@@ -174,3 +184,5 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
 - Continúa con [TypeScript para programadores de JavaScript](/typescript/comenzando/typescript-en-5-minutos)
 - Lee el manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
+
+{{< content-ads/bottom-banner >}}
