@@ -18,6 +18,8 @@
 /bootstrap/5.3/customize/components/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/css-variables/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/optimize/ /bootstrap/personalizar/ 301
+/bootstrap/personalizar-modes/ /bootstrap/personalizar/ 301
+/bootstrap/5.3/layout/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/breakpoints/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/containers/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/grid/ /bootstrap/grilla/ 301
@@ -110,6 +112,7 @@
 /bootstrap/5.1/getting-started/rfs/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/rtl/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/contribute/ /bootstrap/comenzando/ 301
+/docs/5.1/getting-started/javascript/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/customize/overview/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/sass/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/options/ /bootstrap/personalizar/ 301
@@ -125,6 +128,7 @@
 /bootstrap/5.1/layout/utilities/ /bootstrap/layout/ 301
 /bootstrap/5.1/layout/z-index/ /bootstrap/layout/ 301
 /bootstrap/5.1/layout/css-grid/ /bootstrap/grilla-css/ 301
+/bootstrap/5.1/content/ /bootstrap/reboot/ 301
 /bootstrap/5.1/content/reboot/ /bootstrap/reboot/ 301
 /bootstrap/5.1/content/typography/ /bootstrap/tipografias-e-imagenes/ 301
 /bootstrap/5.1/content/images/ /bootstrap/tipografias-e-imagenes/ 301
