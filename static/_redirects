@@ -1,3 +1,4 @@
+/bootstrap/5.3/getting-started/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/getting-started/introduction/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/getting-started/download/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/getting-started/contents/ /bootstrap/comenzando/ 301
@@ -10,6 +11,7 @@
 /bootstrap/5.3/getting-started/rfs/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/getting-started/rtl/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/getting-started/contribute/ /bootstrap/comenzando/ 301
+/bootstrap/5.3/customize/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/overview/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/sass/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/options/ /bootstrap/personalizar/ 301
@@ -28,11 +30,13 @@
 /bootstrap/5.3/layout/utilities/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/z-index/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/css-grid/ /bootstrap/grilla-css/ 301
+/bootstrap/5.3/content/ /bootstrap/reboot/ 301
 /bootstrap/5.3/content/reboot/ /bootstrap/reboot/ 301
 /bootstrap/5.3/content/typography/ /bootstrap/tipografias-e-imagenes/ 301
 /bootstrap/5.3/content/images/ /bootstrap/tipografias-e-imagenes/ 301
 /bootstrap/5.3/content/tables/ /bootstrap/tablas/ 301
 /bootstrap/5.3/content/figures/ /bootstrap/tipografias-e-imagenes/ 301
+/bootstrap/5.3/forms/ /bootstrap/formularios/ 301
 /bootstrap/5.3/forms/overview/ /bootstrap/formularios/ 301
 /bootstrap/5.3/forms/form-control/ /bootstrap/formularios/ 301
 /bootstrap/5.3/forms/select/ /bootstrap/formularios/ 301
@@ -42,6 +46,7 @@
 /bootstrap/5.3/forms/floating-labels/ /bootstrap/formularios/ 301
 /bootstrap/5.3/forms/layout/ /bootstrap/formularios/ 301
 /bootstrap/5.3/forms/validation/ /bootstrap/formularios/ 301
+/bootstrap/5.3/components/ /bootstrap/componentes/acordion/ 301
 /bootstrap/5.3/components/accordion/ /bootstrap/componentes/acordion/ 301
 /bootstrap/5.3/components/alerts/ /bootstrap/componentes/alertas/ 301
 /bootstrap/5.3/components/badge/ /bootstrap/componentes/insignias-y-breadcrumbs/ 301
@@ -66,6 +71,7 @@
 /bootstrap/5.3/components/spinners/ /bootstrap/componentes/spinners/ 301
 /bootstrap/5.3/components/toasts/ /bootstrap/componentes/toasts/ 301
 /bootstrap/5.3/components/tooltips/ /bootstrap/componentes/tooltips/ 301
+/bootstrap/5.3/helpers/ /bootstrap/helpers/ 301
 /bootstrap/5.3/helpers/clearfix/ /bootstrap/helpers/ 301
 /bootstrap/5.3/helpers/color-background/ /bootstrap/helpers/ 301
 /bootstrap/5.3/helpers/colored-links/ /bootstrap/helpers/ 301
@@ -78,6 +84,7 @@
 /bootstrap/5.3/helpers/text-truncation/ /bootstrap/helpers/ 301
 /bootstrap/5.3/helpers/vertical-rule/ /bootstrap/helpers/ 301
 /bootstrap/5.3/helpers/visually-hidden/ /bootstrap/helpers/ 301
+/bootstrap/5.3/utilities/ /bootstrap/utilidades/api/ 301
 /bootstrap/5.3/utilities/api/ /bootstrap/utilidades/api/ 301
 /bootstrap/5.3/utilities/background/ /bootstrap/utilidades/background/ 301
 /bootstrap/5.3/utilities/borders/ /bootstrap/utilidades/bordes/ 301
@@ -98,9 +105,11 @@
 /bootstrap/5.3/utilities/vertical-align/ /bootstrap/utilidades/otras-utilidades/ 301
 /bootstrap/5.3/utilities/visibility/ /bootstrap/utilidades/otras-utilidades/ 301
 /bootstrap/5.3/utilities/z-index/ /bootstrap/utilidades/otras-utilidades/ 301
+/bootstrap/5.3/extend/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/extend/approach/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/extend/icons/ /bootstrap/comenzando/ 301
 /bootstrap/5.3/about/ /bootstrap/comenzando/ 301
+/bootstrap/5.1/getting-started/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/introduction/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/download/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/contents/ /bootstrap/comenzando/ 301
@@ -112,7 +121,10 @@
 /bootstrap/5.1/getting-started/rfs/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/rtl/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/getting-started/contribute/ /bootstrap/comenzando/ 301
+/docs/5.1/getting-started/accessibility/ /bootstrap/comenzando/ 301
 /docs/5.1/getting-started/javascript/ /bootstrap/comenzando/ 301
+/docs/5.1/getting-started/javascript/ /bootstrap/comenzando/ 301
+/bootstrap/5.1/customize/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/overview/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/sass/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/options/ /bootstrap/personalizar/ 301
@@ -120,6 +132,7 @@
 /bootstrap/5.1/customize/components/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/css-variables/ /bootstrap/personalizar/ 301
 /bootstrap/5.1/customize/optimize/ /bootstrap/personalizar/ 301
+/bootstrap/5.1/layout/ /bootstrap/layout/ 301
 /bootstrap/5.1/layout/breakpoints/ /bootstrap/layout/ 301
 /bootstrap/5.1/layout/containers/ /bootstrap/layout/ 301
 /bootstrap/5.1/layout/grid/ /bootstrap/grilla/ 301
@@ -134,6 +147,7 @@
 /bootstrap/5.1/content/images/ /bootstrap/tipografias-e-imagenes/ 301
 /bootstrap/5.1/content/tables/ /bootstrap/tablas/ 301
 /bootstrap/5.1/content/figures/ /bootstrap/tipografias-e-imagenes/ 301
+/bootstrap/5.1/forms/ /bootstrap/formularios/ 301
 /bootstrap/5.1/forms/overview/ /bootstrap/formularios/ 301
 /bootstrap/5.1/forms/form-control/ /bootstrap/formularios/ 301
 /bootstrap/5.1/forms/select/ /bootstrap/formularios/ 301
@@ -143,6 +157,7 @@
 /bootstrap/5.1/forms/floating-labels/ /bootstrap/formularios/ 301
 /bootstrap/5.1/forms/layout/ /bootstrap/formularios/ 301
 /bootstrap/5.1/forms/validation/ /bootstrap/formularios/ 301
+/bootstrap/5.1/components/ /bootstrap/componentes/acordion/ 301
 /bootstrap/5.1/components/accordion/ /bootstrap/componentes/acordion/ 301
 /bootstrap/5.1/components/alerts/ /bootstrap/componentes/alertas/ 301
 /bootstrap/5.1/components/badge/ /bootstrap/componentes/insignias-y-breadcrumbs/ 301
@@ -167,6 +182,7 @@
 /bootstrap/5.1/components/spinners/ /bootstrap/componentes/spinners/ 301
 /bootstrap/5.1/components/toasts/ /bootstrap/componentes/toasts/ 301
 /bootstrap/5.1/components/tooltips/ /bootstrap/componentes/tooltips/ 301
+/bootstrap/5.1/helpers/ /bootstrap/helpers/ 301
 /bootstrap/5.1/helpers/clearfix/ /bootstrap/helpers/ 301
 /bootstrap/5.1/helpers/colored-links/ /bootstrap/helpers/ 301
 /bootstrap/5.1/helpers/ratio/ /bootstrap/helpers/ 301
@@ -176,6 +192,7 @@
 /bootstrap/5.1/helpers/stretched-link/ /bootstrap/helpers/ 301
 /bootstrap/5.1/helpers/text-truncation/ /bootstrap/helpers/ 301
 /bootstrap/5.1/helpers/vertical-rule/ /bootstrap/helpers/ 301
+/bootstrap/5.1/utilities/  /bootstrap/utilidades/api/ 301
 /bootstrap/5.1/utilities/api/  /bootstrap/utilidades/api/ 301
 /bootstrap/5.1/utilities/background/ /bootstrap/utilidades/background/ 301
 /bootstrap/5.1/utilities/borders/ /bootstrap/utilidades/bordes/ 301
@@ -193,8 +210,10 @@
 /bootstrap/5.1/utilities/text/ /bootstrap/utilidades/textos/ 301
 /bootstrap/5.1/utilities/vertical-align/ /bootstrap/utilidades/otras-utilidades/ 301
 /bootstrap/5.1/utilities/visibility/ /bootstrap/utilidades/otras-utilidades/ 301
+/bootstrap/5.1/extend/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/extend/approach/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/extend/icons/ /bootstrap/comenzando/ 301
+/bootstrap/5.1/about/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/about/overview/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/about/team/ /bootstrap/comenzando/ 301
 /bootstrap/5.1/about/brand/ /bootstrap/comenzando/ 301
@@ -214,3 +233,4 @@
 /momentjs/plugins/ /momentjs/complementos/ 301
 /momentjs/project-status/ /momentjs/estado-del-proyecto/ 301
 /typescript/handbook/objectos/ /typescript/handbook/objetos/ 301
+/choice/ / 301
