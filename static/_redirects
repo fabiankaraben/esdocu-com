@@ -18,7 +18,7 @@
 /bootstrap/5.3/customize/components/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/css-variables/ /bootstrap/personalizar/ 301
 /bootstrap/5.3/customize/optimize/ /bootstrap/personalizar/ 301
-/bootstrap/personalizar-modes/ /bootstrap/personalizar/ 301
+/bootstrap/personalizar-modes /bootstrap/personalizar/ 301
 /bootstrap/5.3/layout/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/breakpoints/ /bootstrap/layout/ 301
 /bootstrap/5.3/layout/containers/ /bootstrap/layout/ 301
@@ -213,3 +213,4 @@
 /momentjs/utilities/ /momentjs/utilidades/ 301
 /momentjs/plugins/ /momentjs/complementos/ 301
 /momentjs/project-status/ /momentjs/estado-del-proyecto/ 301
+/typescript/handbook/objectos/ /typescript/handbook/objetos/ 301
