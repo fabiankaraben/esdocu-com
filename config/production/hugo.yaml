@@ -2,6 +2,19 @@ services:
   googleAnalytics:
     ID: G-P9N8MVS57V
 params:
+  # Hostinger banners.
+  showHostingerTopBanner: false # Donate
+  showHostingerMiddleBanner1: true # Donate
+  showHostingerMiddleBanner2: false # Donate
+  showHostingerMiddleBanner3: false # Donate
+  showHostingerMiddleBanner4: false # Donate
+  showHostingerMiddleBanner5: false # Donate
+  showHostingerMiddleBanner6: false # Donate
+  showHostingerMiddleBanner7: false # Donate
+  showHostingerMiddleBanner8: false # Donate
+  showHostingerMiddleBanner9: false # Donate
+  showHostingerBottomBanner: false # Donate
+
   # TheMoneytizer Ads.
   # All formats: https://us.themoneytizer.com/ad-units
   showTMConsentBanner: false # CMP (head)
