@@ -281,7 +281,7 @@ console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
 
 Al igual que con la interfaz, poner el parámetro de tipo en la clase misma nos permite asegurarnos de que todas las propiedades de la clase funcionen con el mismo tipo.
 
-Como cubrimos en [nuestra sección sobre clases ↗](https://www.typescriptlang.org/docs/handbook/2/classes.html), una clase tiene dos lados de su tipo: el lado estático y el lado de instancia.
+Como cubrimos en [nuestra sección sobre clases](/typescript/handbook/clases), una clase tiene dos lados de su tipo: el lado estático y el lado de instancia.
 Las clases genéricas solo son genéricas en su lado de instancia en lugar de en su lado estático, por lo que cuando se trabaja con clases, los miembros estáticos no pueden usar el parámetro de tipo de la clase.
 
 ## Restricciones de genéricos {#generic-constraints}

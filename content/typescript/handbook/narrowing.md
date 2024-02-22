@@ -532,7 +532,7 @@ const underWater3: Fish[] = zoo.filter((pet): pet is Fish => {
 });
 ```
 
-Además, las clases pueden [usar `this is Type` ↗](https://www.typescriptlang.org/docs/handbook/2/classes.html#this-based-type-guards) para limitar su tipo.
+Además, las clases pueden [usar `this is Type`](/typescript/handbook/clases#this-based-type-guards) para limitar su tipo.
 
 ## Funciones de aserción {#assertion-functions}
 
