@@ -73,6 +73,8 @@ Usa las clases de utilidad incluidas para recrear el pequeño texto del encabeza
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Mostrar encabezados {#display-headings}
 
 Los elementos de encabezado tradicionales están diseñados para funcionar mejor en el contenido principal de tu página. Cuando necesites que un título destaque, considera la posibilidad de utilizar un **título de visualización**: un estilo de título más grande y un poco más obstinado.
@@ -93,8 +95,6 @@ Los encabezados de visualización se configuran mediante el mapa Sass `$display-
 Los encabezados de visualización se pueden personalizar mediante dos variables, `$display-font-family` y `$display-font-style`.
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
-
-{{< content-ads/middle-banner-1 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $display-font-sizes: (
@@ -145,6 +145,8 @@ Estilo para elementos HTML5 en línea comunes.
 
 Ten en cuenta que esas etiquetas deben usarse con fines semánticos:
 
+{{< content-ads/middle-banner-2 >}}
+
 * `<mark>` representa texto que está marcado o resaltado con fines de referencia o notación.
 * `<small>` representa comentarios secundarios y letra pequeña, como derechos de autor y texto legal.
 * `<s>` representa elementos que ya no son relevantes o que ya no son precisos.
@@ -180,8 +182,6 @@ Agrega `.initialism` a una abreviatura para un tamaño de fuente ligeramente má
 
 Para citar bloques de contenido de otra fuente dentro de tu documento. Envuelve `<blockquote class="blockquote">` alrededor de cualquier HTML como cita.
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/content/typography/blockquotes.html" >}}
 ```html {filename="HTML"}
     <blockquote class="blockquote">
@@ -193,6 +193,8 @@ Para citar bloques de contenido de otra fuente dentro de tu documento. Envuelve 
 #### Nombrar una fuente {#naming-a-source}
 
 La especificación HTML requiere que la atribución de cita en bloque se coloque fuera del `<blockquote>`. Al proporcionar atribución, incluye tu `<blockquote>` en un `<figure>` y usa un `<figcaption>` o un elemento de nivel de bloque (por ejemplo, `<p>`) con la clase `.blockquote-footer`. Asegúrate de incluir también el nombre del trabajo fuente en `<cite>`.
+
+{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/typography/naming-a-source.html" >}}
 ```html {filename="HTML"}
@@ -279,6 +281,8 @@ Elimina las viñetas de una lista y aplica un poco de `margin` con una combinaci
 
 Alinear términos y descripciones horizontalmente usando las clases predefinidas de nuestro sistema de cuadrícula (o mixins semánticos). Para plazos más largos, puedes agregar opcionalmente una clase `.text-truncate` para truncar el texto con puntos suspensivos.
 
+{{< content-ads/middle-banner-4 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/content/typography/description-list-alignment.html" >}}
 ```html {filename="HTML"}
     <dl class="row">
@@ -314,8 +318,6 @@ Alinear términos y descripciones horizontalmente usando las clases predefinidas
 ### Tamaños de fuente responsive {#responsive-font-sizes}
 
 En Bootstrap 5, hemos habilitado tamaños de fuente responsive de forma predeterminada, lo que permite que el texto se escale de manera más natural en todos los tamaños de dispositivos y viewports. Echa un vistazo a la [página RFS](/bootstrap/comenzando) para descubrir cómo funciona.
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Personalización del CSS {#css}
 
@@ -392,6 +394,8 @@ No hay mixins dedicados para tipografía, pero Bootstrap usa [Tamaño de fuente 
 
 ## Uso de Imágenes con Bootstrap
 
+{{< content-ads/middle-banner-5 >}}
+
 Documentación y ejemplos para optar por imágenes para que tengan un comportamiento responsive (para que nunca sean más anchas que sus padres) y agregarles estilos livianos, todo a través de clases.
 
 ### Imágenes responsive {#responsive-images}
@@ -417,8 +421,6 @@ Una imagen genérica de marcador de posición cuadrado con un borde blanco alred
 {{< /demo-iframe >}}
 
 ### Alinear imágenes {#aligning-images}
-
-{{< content-ads/middle-banner-4 >}}
 
 Alinear imágenes con las [clases flotantes auxiliares](/bootstrap/utilidades/otras-utilidades) o [clases de alineación de texto](/bootstrap/utilidades/textos/#text-alignment). Las imágenes a nivel de `block` se pueden centrar usando [utilidad de margen `.mx-auto` (clase)](/bootstrap/utilidades/espaciado/#horizontal-centering) .
 
@@ -446,6 +448,8 @@ Alinear imágenes con las [clases flotantes auxiliares](/bootstrap/utilidades/ot
 ### Picture {#picture}
 
 Si estás usando el elemento `<picture>` para especificar múltiples elementos `<source>` para un `<img>`, asegúrate de agregar las clases `.img-*` al `<img>` y no al `<picture>`.
+
+{{< content-ads/middle-banner-6 >}}
 
 ```html {filename="HTML"}
 <picture>

@@ -43,8 +43,6 @@ Incluso puedes cambiar el nivel de opacidad al pasar el mouse.
 
 #### Color de subrayado {#underline-color}
 
-{{< content-ads/middle-banner-1 >}}
-
 Cambia el color del subrayado independientemente del color del texto del enlace.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/link/underline-color.html" >}}
@@ -75,6 +73,8 @@ Cambia la distancia del subrayado de tu texto. El desplazamiento se establece en
 
 #### Opacidad del subrayado {#underline-opacity}
 
+{{< content-ads/middle-banner-1 >}}
+
 Cambiar la opacidad del subrayado. Requiere agregar `.link-underline` para establecer primero un color `rgba()` que usamos para luego modificar la opacidad alfa.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/link/underline-opacity.html" >}}
@@ -89,8 +89,6 @@ Cambiar la opacidad del subrayado. Requiere agregar `.link-underline` para estab
 {{< /demo-iframe >}}
 
 #### Variantes hover {#hover-variants}
-
-{{< content-ads/middle-banner-2 >}}
 
 Al igual que las utilidades `.link-opacity-*-hover`, `.link-offset` y `.link-underline-opacity` incluyen variantes `:hover` de forma predeterminada. Mezcla y combina para crear estilos de enlaces únicos.
 
@@ -130,13 +128,13 @@ Al igual que las utilidades `.link-opacity-*-hover`, `.link-offset` y `.link-und
 
 Además de las siguientes funciones de Sass, considera leer sobre nuestras [propiedades personalizadas de CSS](/bootstrap/personalizar) incluidas (también conocidas como variables CSS) para colores y más.
 
-{{< content-ads/middle-banner-3 >}}
-
 #### API de utilidades de Sass {#sass-utilities-api}
 
 Las utilidades de enlace se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="scss/_utilities.scss"}
 "link-opacity": (
@@ -205,8 +203,6 @@ Cambiar la forma en la que se selecciona el contenido cuando el usuario interact
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-4 >}}
-
 ### Eventos de puntero {#pointer-events}
 
 Bootstrap proporciona las clases `.pe-none` y `.pe-auto` para evitar o agregar interacciones de elementos.
@@ -232,7 +228,7 @@ Si es posible, la solución más sencilla es:
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-3 >}}
 
 Las utilidades de interacción se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 

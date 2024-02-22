@@ -57,6 +57,8 @@ moment().seconds(); // Number
 
 Obtiene o establece los segundos.
 
+{{< content-ads/middle-banner-1 >}}
+
 Acepta números del `0` al `59`. Si se excede el rango aumentará los minutos.
 
 ## Obtener o configurar los minutos {#minute}
@@ -96,13 +98,13 @@ moment().dates(); // Number
 
 Obtiene o establece el día del mes.
 
-{{< content-ads/middle-banner-1 >}}
-
 Acepta números del `1` al `31`. Si se excede el rango aumentará los meses.
 
 **Nota:** `Moment#date` es para la fecha del mes y `Moment#day` es para el día de la semana.
 
 **Nota:** si encadenas múltiples acciones para construir una fecha, debes comenzar desde un año, luego un mes, luego un día, etc. De lo contrario, puedes obtener resultados inesperados, como cuando `day=31` y el mes actual solo tiene 30 días (lo mismo se aplica a la manipulación nativa de la `Date` de JavaScript), la fecha devuelta será el día 30 del mes actual (consulta [mes](http://momentjs.com/docs/#/get-set/month) para más detalles).
+
+{{< content-ads/middle-banner-2 >}}
 
 Malo: `moment().date(day).month(month).year(year)`
 
@@ -151,6 +153,8 @@ moment().weekday(Number);
 moment().weekday(); // Number
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 Obtiene o establece el día de la semana según la configuración regional.
 
 Si la configuración regional asigna el lunes como el primer día de la semana, `moment().weekday(0)` será el lunes.
@@ -183,8 +187,6 @@ moment().isoWeekday(1); // Monday
 moment().isoWeekday(7); // Sunday
 ```
 
-{{< content-ads/middle-banner-2 >}}
-
 También se admite un nombre de día. Esto se analiza en el locale actual del moment.
 
 ```javascript {filename="JavaScript"}
@@ -202,6 +204,8 @@ moment().dayOfYear(); // Number
 Obtiene o establece el día del año.
 
 Acepta números del `1` al `366`. Si se excede el rango, aumentará al siguiente año.
+
+{{< content-ads/middle-banner-4 >}}
 
 ## Obtener o configurar la semana del año {#week}
 
@@ -248,6 +252,8 @@ moment().months(Number|String);
 moment().months(); // Number
 ```
 
+{{< content-ads/middle-banner-5 >}}
+
 Obtiene o establece el mes.
 
 Acepta números del `0` al `11`. Si se excede el rango, aumentará el año.
@@ -262,8 +268,6 @@ moment().month("Feb");
 ```
 
 Antes de la versión **2.1.0**, si en un moment cambiaban los meses y el nuevo mes no tenía suficientes días para mantener el día actual del mes, se desbordaba al mes siguiente.
-
-{{< content-ads/middle-banner-3 >}}
 
 A partir de la versión **2.1.0**, esto se modificó para limitarse al final del mes objetivo.
 
@@ -304,6 +308,8 @@ Establece el cuarto (1 a 4).
 moment('2013-01-01T00:00:00.000').quarter(2) // '2013-04-01T00:00:00.000'
 moment('2013-02-05T05:06:07.000').quarter(2).format() // '2013-05-05T05:06:07-07:00'
 ```
+
+{{< content-ads/middle-banner-6 >}}
 
 ## Obtener o configurar el año {#year}
 
@@ -348,6 +354,8 @@ Obtiene o establece el [ISO semana del año](https://en.wikipedia.org/wiki/ISO_w
 moment().weeksInYear();
 ```
 
+{{< content-ads/middle-banner-7 >}}
+
 Obtiene el número de semanas según la ubicación (locale) en el año actual.
 
 ## Obtener las semanas en el año (ISO) {#iso-weeks-in-year}
@@ -355,8 +363,6 @@ Obtiene el número de semanas según la ubicación (locale) en el año actual.
 ```javascript {filename="Firma del método"}
 moment().isoWeeksInYear();
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Obtiene el número de semanas del año actual, según [semanas ISO](https://en.wikipedia.org/wiki/ISO_week_date).
 
@@ -404,6 +410,8 @@ moment().set({'year': 2013, 'month': 3});
 Las unidades no distinguen entre mayúsculas y minúsculas y admiten formas plurales y cortas: año (years, y), mes (months, M), fecha (dates, D), hora (hours, h), minuto (minutes, m), segundo (seconds, s), milisegundo (milliseconds, ms).
 
 El análisis de objetos se agregó en **2.9.0**
+
+{{< content-ads/middle-banner-8 >}}
 
 ## Máximo {#max}
 

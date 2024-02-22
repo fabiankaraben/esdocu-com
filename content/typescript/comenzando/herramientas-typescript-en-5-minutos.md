@@ -35,8 +35,6 @@ En tu editor, escribe el siguiente código JavaScript en `greeter.ts`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsEkFsAOAbAlgY1QFwIKQJ4BcoAZgIbIDOApgFAkCuk6Wq0koA5gE7XVbVuACkSDK7AJSgA3rVCheWBtw4AiABLVkyaABpQq0AGpQo7uMgBuWgF9atZP1AMa3UAF4DAKTKRqoAFVXVWtaABNodAZ4akgsADoAI2gw-HiBAA8sAGF2ATiPLl5+QSEXQQlLIA)
 
-{{< content-ads/middle-banner-1 >}}
-
 ```ts
 function greeter(person) {
   return "Hello, " + person;
@@ -61,6 +59,8 @@ tsc greeter.ts
 El resultado será un archivo `greeter.js` que contiene el mismo JavaScript que ingresaste.
 ¡Estamos activamente usando TypeScript en nuestra aplicación JavaScript!
 
+{{< content-ads/middle-banner-1 >}}
+
 Ahora podemos comenzar a aprovechar algunas de las nuevas herramientas que ofrece TypeScript.
 Agrega una anotación de tipo `: string` al argumento de la función `person` como se muestra aquí:
 
@@ -75,8 +75,6 @@ let user = "Jane User";
  
 document.body.textContent = greeter(user);
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 ## Escribe anotaciones {#type-annotations}
 
@@ -113,8 +111,6 @@ En ambos casos, TypeScript puede ofrecer análisis estático basado tanto en la 
 Observa que aunque hubo errores, el archivo `greeter.js` aún se crea.
 Puedes utilizar TypeScript incluso si hay errores en tu código. Pero en este caso, TypeScript advierte que tu código probablemente no se ejecutará como se esperaba.
 
-{{< content-ads/middle-banner-3 >}}
-
 ## Interfaces {#interfaces}
 
 Desarrollemos más nuestra muestra. Aquí utilizamos una interfaz que describe objetos que tienen campos `firstName` y `lastName`.
@@ -122,6 +118,8 @@ En TypeScript, dos tipos son compatibles si su estructura interna es compatible.
 Esto nos permite implementar una interfaz simplemente teniendo la forma que requiere, sin una cláusula explícita `implements`.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgArQM4HsTIN4BQyyMwUGYAcnALYQBcyFUoA5gNxHIA2cF1dRszacAvgQIwAriARhgOZKygQIkKAAoADphyN05HAEp8XFWClRcAIgASEbtywAaZNeQBqZDsMgAdKTkVLQoXu7uXj7Y-rz8IWIS3GrIUhjQyAC8+CRkcYJuAFJwIBDWrrHB+dYAqmlQ7qKcBAAmWAhSdOB+AEZYzQCefpAAHmAAwjiQ4JlKKmrQGqnQRuxAA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 interface Person {
@@ -149,8 +147,6 @@ Observa que las clases y las interfaces funcionan bien juntas, lo que permite al
 También cabe destacar que el uso de `public` en los argumentos del constructor es una abreviatura que nos permite crear automáticamente propiedades con ese nombre.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEDKAuBXAJgUwHb2gbwFDWgDNEQQA5MAW1QC5oJ4AnAS3QHMBufaYAe3QaNEweL0YAKbgQAOiAEYhmwIs0YMK1OoNZsANFOiyFS6JWbJkIVAEl0zeMzAgtTHfoIz5i5eHVVa9K7s3ACUOAbwABbMEAB0xKQaqNAAvCpq8EnQANTQAET5OabmljZ2Dk5FBQW5vpn+XAQAvrgtuKzwqIyEYMDJAApdEPzhBISqfpqBLOyN0HVJLjOcrbi4xOgizCNsjKionRLSQ-x0g2r8YXgEe0iM6PkAEqikvLqFuccX6PET9dRVD6GE4-BYNVa4KxYRAQLqpaDoVAAdzgSDQmHEeQAUmBEXl3nkALKxfH5ACqsMYeRCXFwyF4wEQ1EwsTkvGQAE9Yp0AB7wADC-E6mHhu32h3EMK6NKAA)
-
-{{< content-ads/middle-banner-4 >}}
 
 ```ts
 class Student {

@@ -56,6 +56,8 @@ Comprueba si un moment es igual a otro moment. El primer argumento se analizará
 moment('2010-10-20').isSame('2010-10-20'); // true
 ```
 
+{{< content-ads/middle-banner-1 >}}
+
 Si deseas limitar la granularidad a una unidad que no sea milisegundos, pásala como segundo parámetro.
 
 ```javascript {filename="JavaScript"}
@@ -71,8 +73,6 @@ Al incluir un segundo parámetro, coincidirá con todas las unidades iguales o m
 moment('2010-01-01').isSame('2011-01-01', 'month'); // false, año diferente
 moment('2010-01-01').isSame('2010-02-01', 'day');   // false, mes diferente
 ```
-
-{{< content-ads/middle-banner-1 >}}
 
 Al igual que `moment#isAfter` y `moment#isBefore`, cualquiera de las unidades de tiempo admitidas para `moment#startOf` también lo son para `moment#isSame`.
 
@@ -107,6 +107,8 @@ Si deseas limitar la granularidad a una unidad que no sea milisegundos, pase las
 
 Como el segundo parámetro determina la precisión, y no solo un valor a verificar, el uso de `day` verificará el año, el mes y el día.
 
+{{< content-ads/middle-banner-2 >}}
+
 ```javascript {filename="JavaScript"}
 moment('2010-10-20').isAfter('2010-01-01', 'year'); // false
 moment('2010-10-20').isAfter('2009-12-31', 'year'); // true
@@ -133,8 +135,6 @@ moment().isSameOrBefore(Moment|String|Number|Date|Array, String);
 
 Comprueba si un moment es anterior o igual a otro moment. El primer argumento se analizará como un moment, si no lo es ya.
 
-{{< content-ads/middle-banner-2 >}}
-
 ```javascript {filename="JavaScript"}
 moment('2010-10-20').isSameOrBefore('2010-10-21');  // true
 moment('2010-10-20').isSameOrBefore('2010-10-20');  // true
@@ -158,6 +158,8 @@ year month week isoWeek day hour minute second
 ```
 
 ## El método `isSameOrAfter` {#is-same-or-after}
+
+{{< content-ads/middle-banner-3 >}}
 
 ```javascript {filename="Firma del método"}
 moment().isSameOrAfter(Moment|String|Number|Date|Array);
@@ -210,8 +212,6 @@ moment('2010-10-20').isBetween('2010-10-19', '2010-10-25'); // true
 moment('2010-10-20').isBetween('2010-10-19', undefined); // true, since moment(undefined) evaluates as moment()
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 Ten en cuenta que el orden de los dos argumentos es importante: la fecha "más pequeña" debe estar en el primer argumento.
 
 ```javascript {filename="JavaScript"}
@@ -220,6 +220,8 @@ moment('2010-10-20').isBetween('2010-10-25', '2010-10-19'); // false
 ```
 
 Si deseas limitar la granularidad a una unidad que no sea milisegundos, pasa las unidades como tercer parámetro.
+
+{{< content-ads/middle-banner-4 >}}
 
 ```javascript {filename="JavaScript"}
 moment('2010-10-20').isBetween('2010-01-01', '2012-01-01', 'year'); // false
@@ -269,11 +271,11 @@ moment([2011, 2, 14]).isDST(); // true, March 14 2011 is DST
 
 ## El método `isDSTShifted` {#is-dst-shifted}
 
+{{< content-ads/middle-banner-5 >}}
+
 ```javascript {filename="Firma del método"}
 moment('2013-03-10 2:30', 'YYYY-MM-DD HH:mm').isDSTShifted()
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 **Nota:** A partir de la versión **2.14.0**, esta función está **obsoleta**. No da la respuesta correcta después de modificar el objeto de moment. Para obtener más información, consulta [moment/3160](https://github.com/moment/moment/pull/3160)
 
@@ -316,6 +318,8 @@ moment.isMoment(moment()) // true
 ```
 
 Desde la versión **2.11.0**, también puedes probar un objeto Moment mediante el operador `instanceof`:
+
+{{< content-ads/middle-banner-6 >}}
 
 ```javascript {filename="JavaScript"}
 moment() instanceof moment // true

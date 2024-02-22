@@ -50,9 +50,9 @@ const user = {
 };
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 Puedes describir explícitamente la forma de este objeto usando una declaración de `interface`:
+
+{{< content-ads/middle-banner-1 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvkA)
 
@@ -120,8 +120,6 @@ const user: User = new UserAccount("Murphy", 1);
 
 Puedes usar interfaces para anotar parámetros y devolver valores a funciones:
 
-{{< content-ads/middle-banner-2 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAEtIBcCm8AzAQwGNdQBVFfUAbzVFEiIFtcAuUFbeLAcwDcDUBgAmnSAFcWAI3xCAvmhCgAtOpKTs61WgKTIJbBmiRQo3ABtceKvgAUk6vE534ASjrCVAOj9olPQMjEzM+GwBBURYsN3t3V2cvRhA-HwCgA)
 
 ```ts
@@ -133,6 +131,8 @@ function getAdminUser(): User {
   //...
 }
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 Ya existe un pequeño conjunto de tipos primitivos disponibles en JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol` y `undefined`, que puedes usar en una interfaz. TypeScript amplía esta lista con algunos más, como `any` (permitir cualquier cosa), [`unknown` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (asegúrate de que alguien que use este tipo declare cuál es el tipo), [`never` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (no es posible que este tipo pueda suceder), y `void ` (una función que devuelve `undefined` o no tiene valor de retorno).
 
@@ -164,8 +164,6 @@ type LockStates = "locked" | "unlocked";
 type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 Las uniones también brindan una manera de manejar diferentes tipos. Por ejemplo, puedes tener una función que tome un `array` o un `string`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQDKrMqALACjgCMArALkQGcoAnGHRAH2roeQG0BdASkQG8AUIkS10IWkhKkAdABtsuPAG5BAXyA)
@@ -175,6 +173,8 @@ function getLength(obj: string | string[]) {
   return obj.length;
 }
 ```
+
+{{< content-ads/middle-banner-3 >}}
 
 Para conocer el tipo de una variable, puedes usar `typeof`:
 
@@ -233,8 +233,6 @@ const object = backpack.get();
 backpack.add(23);
 ```
 
-{{< content-ads/middle-banner-4 >}}
-
 ```text {filename="Error generado"}
 Argument of type 'number' is not assignable to parameter of type 'string'.
 ```
@@ -244,6 +242,8 @@ Argument of type 'number' is not assignable to parameter of type 'string'.
 Uno de los principios básicos de TypeScript es que la verificación de tipos se centra en la *forma* que tienen los valores. A esto a veces se le llama "tipificación pato" o "tipificación estructural".
 
 En un sistema de tipo estructural, si dos objetos tienen la misma forma, se consideran del mismo tipo.
+
+{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwFDLIAeAXMiAK4C2ARtANwHICeZltDeAvnnjBSARhg6EMgA26AOYYsACgAOZWeACUuJglEBndOIgA6SVLkADACQ4FBolwA0yS9eZdTqxjzwB6LxOnbkACIARgAmB1CANkC8LRBtbAVMcGQAXlxiMjCHVmQo5C5GYxUwRWSwdyA)
 

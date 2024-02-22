@@ -81,6 +81,8 @@ function padLeft(padding: number | string, input: string): string {
 
 Hay un par de construcciones diferentes que TypeScript entiende para estrechar.
 
+{{< content-ads/middle-banner-1 >}}
+
 ## El operador type guard `typeof` {#typeof-type-guards}
 
 Como hemos visto, JavaScript admite un operador `typeof` que puede brindar información muy básica sobre el tipo de valores que tenemos en tiempo de ejecución.
@@ -138,6 +140,8 @@ En JavaScript, podemos usar cualquier expresión en condicionales, `&&`, `||`, d
 Por ejemplo, las declaraciones `if` no esperan que su condición siempre tenga el tipo `boolean`.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQKoGdUCcsDyYANjGKgLKpZYCGaAFGCALbZ6ElmoBcizLAEZ4AlIgDeAKESIYwRE1bt8RUuTFSZM3OhC4kAAwAqACzypEtHYgAk4gcs5rUAX0QJn-OAHcAhAYBuaUQXYJ0oPSQAIgA5OEE4ABMATwByLEQzHQA6RB4GKKCXIA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 function getUsersOnlineMessage(numUsersOnline: number) {
@@ -218,11 +222,11 @@ function printAll(strs: string | string[] | null) {
 
 Envolvimos todo el cuerpo de la función en una verificación veraz, pero esto tiene una desventaja sutil: es posible que ya no estemos manejando correctamente la cadena vacía.
 
+{{< content-ads/middle-banner-3 >}}
+
 TypeScript no nos hace ningún daño aquí, pero vale la pena señalar este comportamiento si estás menos familiarizado con JavaScript.
 TypeScript a menudo puede ayudarle a detectar errores desde el principio, pero si eliges no hacer *nada* con un valor, hay mucho que puedes hacer sin ser demasiado prescriptivo.
 Si lo deseas, puedes asegurarte de manejar situaciones como estas con un linter.
-
-{{< content-ads/middle-banner-1 >}}
 
 Una última palabra sobre el estrechamiento por veracidad es que las negaciones booleanas con `!` se filtran de las ramas negadas.
 
@@ -313,6 +317,8 @@ function multiplyValue(container: Container, factor: number) {
 }
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 ## El operador de estrechamiento `in` {#the-in-operator-narrowing}
 
 JavaScript tiene un operador para determinar si un objeto o su cadena prototipo tiene una propiedad con un nombre: el operador `in`.
@@ -382,6 +388,8 @@ function logValue(x: Date | string) {
 Como mencionamos anteriormente, cuando asignamos cualquier variable, TypeScript mira el lado derecho de la asignación y estrecha el lado izquierdo de manera apropiada.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAHhC8EFkCGYAWA6ATkgdgEwHsBbACgEoIAeCABnQFYIB+CARhogC4IAiVEYMAIQA7gUzA8AQh4BuAFAB6RRAgA9JvJjxWC+QGMCOAM4FQ6IQHMSUMguWrHT9Zu29LBAngBGATxAyeoYmZiAWBNa29irOThpAA)
+
+{{< content-ads/middle-banner-5 >}}
 
 ```ts
 let x = Math.random() < 0.5 ? 10 : "hello world!";
@@ -480,11 +488,11 @@ function example() {
 
 ## Usando predicados de tipo {#using-type-predicates}
 
+{{< content-ads/middle-banner-6 >}}
+
 Hemos trabajado con construcciones de JavaScript existentes para manejar el estrechamiento hasta ahora, sin embargo, a veces desearás un control más directo sobre cómo cambian los tipos a lo largo de tu código.
 
 Para definir una protección de tipo definida por el usuario, simplemente necesitamos definir una función cuyo tipo de retorno sea un *predicado de tipo*:
-
-{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAYglgZwBZQLxQN5QQdzgWwC4oAKASjQD4oA3AezgBMoBfAbgChRIoAhOAE7N0WAGYAbEMXJVaDZuw6MIAY3EBDAdFEBXAHYrgcOnqgBzCMADK+dePEAFS+WLxkUAD59BjTgHo-KABaEJUdYBCgjl0DIxMoRDckEkhgV0QUL34hMmJUhIRYDMwOKCgtYB0BUxTLKHVCpLIAOlwCKABCVHR9ZVE4PQhfDhYgA)
 
@@ -537,6 +545,8 @@ Además, las clases pueden [usar `this is Type`](/typescript/handbook/clases#thi
 ## Funciones de aserción {#assertion-functions}
 
 Los tipos también se pueden limitar usando [Funciones de aserción ↗](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions).
+
+{{< content-ads/middle-banner-7 >}}
 
 # Uniones discriminadas {#discriminated-unions}
 
@@ -595,6 +605,8 @@ En [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullCh
 Pero ¿qué pasa si realizamos las comprobaciones apropiadas en la propiedad `kind`?
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYDMbQEYAOABgBYCAoASwDsAXGAMwEMBjSUAZQAsmAHdgN7lQoANY0AJqgBELStBYAbSNNAAfUNMQBHAK5NoKgNzDQ0JhMq7EAflTVdAWwBGMEyMSUJkADKRqAOa0XHagDi5u5AC+5OQgoAC0SSy6tEkJ5Ay61Cy0lHDUoAGQtACChkwAFIg8-KjcfJAAlKBCIpQMoNW1kAB04tQSoAC8o5pyCsrSLW0iZiW60IUAskzBvQAKAJKgAFSgNY295pbWe-to7qAxUUA)
+
+{{< content-ads/middle-banner-8 >}}
 
 ```ts
 function getArea(shape: Shape) {
@@ -669,6 +681,8 @@ Cuando `radius` era opcional, obtuvimos un error (con [`strictNullChecks` ↗](h
 Ahora que `Shape` es una unión, TypeScript nos dice que `shape` podría ser un `Square`, ¡y los `Square` no tienen un `radius` definido!
 Ambas interpretaciones son correctas, pero solo la codificación de unión de `Shape` causará un error independientemente de cómo esté configurado [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks).
 
+{{< content-ads/middle-banner-9 >}}
+
 ¿Pero qué pasaría si intentáramos verificar la propiedad `kind` nuevamente?
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgMLCggNig3gKGWQGtQATALmQCIENsJqBuQ5KOM4AVwGcqQuAWwBG0FgF98+UJFiIUAZQCOXOFDytSISjR4q1jFkR7AyEADIQQAczAALfkNFQJUsAE8ADortxvyAF40ehxkAB9kZVV1FnwAejjkAFoUhC4wFKT8GC4QBDBgAHsQZGsIMABBdTgACh5fbyoFBogASmQCImAYZDqWgDotMkCAoNoQxnbOojZyrigSgFk4e36ABQBJZAAqZHq-CH72Tl4d3YAmIxmEmdu7mYA9AH5WSXEgA)
@@ -681,8 +695,6 @@ function getArea(shape: Shape) {
   }
 }
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 ¡Eso eliminó el error!
 Cuando cada tipo en una unión contiene una propiedad común con tipos literales, TypeScript considera que se trata de una *unión discriminada* y puede estrechar los miembros de la unión.
@@ -729,6 +741,8 @@ En esos casos, TypeScript usará un tipo `never` para representar un estado que 
 # Comprobación de exhaustividad {#exhaustiveness-checking}
 
 El tipo `never` se puede asignar a todos los tipos; sin embargo, ningún tipo se puede asignar a `never` (excepto el propio `never`). Esto significa que puedes utilizar el estrechamiento y confiar en que `never` aparezca para realizar una verificación exhaustiva en una declaración `switch`.
+
+{{< content-ads/middle-banner-1 >}}
 
 Por ejemplo, agregar un valor `default` a nuestra función `getArea` que intenta asignar `never` a `shape` no generará un error cuando se hayan manejado todos los casos posibles.
 

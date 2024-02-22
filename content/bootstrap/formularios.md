@@ -99,6 +99,8 @@ Asegúrate de que todos los controles de formulario tengan un nombre accesible a
 
 Para situaciones en las que no es posible incluir un `<label>` visible o contenido de texto apropiado, existen formas alternativas de proporcionar un nombre accesible, como como:
 
+{{< content-ads/middle-banner-1 >}}
+
 * `<label>` elementos ocultos usando `.visually-hidden` (clase)
 * Apuntar a un elemento existente que puede actuar como etiqueta usando `aria-labelledby`
 * Proporcionar un `title` (atributo)
@@ -164,6 +166,8 @@ Los controles de formulario están diseñados con una combinación de variables 
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 ### Tamaños {#sizing}
 
@@ -234,6 +238,8 @@ Agrega el atributo booleano `disabled` en una entrada para darle una apariencia 
 ### Solo lectura {#readonly}
 
 Agrega el atributo booleano `readonly` en una entrada para evitar la modificación del valor de la entrada. Las entradas `readonly` aún se pueden enfocar y seleccionar, mientras que las entradas `disabled` no.
+
+{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/form-control/readonly.html" >}}
 ```html {filename="HTML"}
@@ -345,6 +351,8 @@ Obtén más información sobre [soporte para elementos de lista de datos](https:
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-4 >}}
+
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
@@ -421,8 +429,6 @@ $form-label-font-weight:                null;
 $form-label-color:                      null;
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< bootstrap/content-suggestion >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -444,6 +450,8 @@ $form-file-button-color:          $input-color;
 $form-file-button-bg:             var(--#{$prefix}tertiary-bg);
 $form-file-button-hover-bg:       var(--#{$prefix}secondary-bg);
 ```
+
+{{< content-ads/middle-banner-5 >}}
 
 ## Uso de elementos Select en Bootstrap
 
@@ -526,6 +534,8 @@ Agrega el atributo booleano `disabled` en una selección para darle una aparienc
     </select>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-6 >}}
 
 ### Personalización del CSS {#css}
 
@@ -622,6 +632,8 @@ Las casillas de verificación pueden utilizar la pseudoclase `:indeterminate` cu
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-7 >}}
 
 #### Deshabilitado {#disabled}
 
@@ -740,6 +752,8 @@ De forma predeterminada, cualquier número de casillas de verificación y radios
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-8 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/checks-radios/default-stacked-2.html" >}}
 ```html {filename="HTML"}
     <div class="form-check">
@@ -854,6 +868,8 @@ Crea casillas de verificación y botones de opción similares a botones usando e
 
 #### Botones de alternancia de casilla de verificación {#checkbox-toggle-buttons}
 
+{{< content-ads/middle-banner-9 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/checks-radios/toggle-buttons-1.html" >}}
 ```html {filename="HTML"}
     <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
@@ -883,8 +899,6 @@ Crea casillas de verificación y botones de opción similares a botones usando e
 {{< callout type="info" emoji="" >}}
 Visualmente, estos botones de alternancia de casillas de verificación son idénticos a los [botones de alternancia del complemento de botones](/bootstrap/componentes/botones/#button-plugin). Sin embargo, las tecnologías de asistencia los transmiten de manera diferente: los lectores de pantalla anunciarán las casillas de verificación como "marcadas"/"no marcadas" (ya que, a pesar de su apariencia, siguen siendo fundamentalmente casillas de verificación), mientras que los botones de alternancia del complemento de botones serán anunciado como “botón”/“botón presionado”. La elección entre estos dos enfoques dependerá del tipo de alternancia que estés creando y de si la alternancia tendrá sentido para los usuarios cuando se anuncie como una casilla de verificación o como un botón real.
 {{< /callout >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 #### Botones de alternancia de radio {#radio-toggle-buttons}
 
@@ -987,6 +1001,8 @@ $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
 $form-check-inline-margin-end:    1rem;
 ```
 
+{{< content-ads/middle-banner-1 >}}
+
 Variables para interruptores:
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -1045,6 +1061,8 @@ Las entradas de rango tienen valores implícitos para `min` y `max`—`0` y `100
 {{< /demo-iframe >}}
 
 ### Pasos {#steps}
+
+{{< content-ads/middle-banner-2 >}}
 
 De forma predeterminada, las entradas de rango se “ajustan” a valores enteros. Para cambiar esto, puedes especificar un valor de `step`. En el siguiente ejemplo, duplicamos el número de pasos usando `step="0.5"`.
 
@@ -1145,6 +1163,8 @@ Los grupos de entradas se ajustan de forma predeterminada mediante `flex-wrap: w
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-3 >}}
+
 ### Tamaños {#sizing}
 
 Agrega las clases de tamaño de formulario relativo al `.input-group` y el contenido dentro cambiará de tamaño automáticamente; no es necesario repetir las clases de tamaño de control de formulario en cada elemento.
@@ -1229,6 +1249,8 @@ Se admiten múltiples complementos y se pueden combinar con versiones de casilla
 {{< /demo-iframe >}}
 
 ### Complementos de botones {#button-addons}
+
+{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/input-group/button-addons.html" >}}
 ```html {filename="HTML"}
@@ -1432,13 +1454,13 @@ Los grupos de entradas incluyen soporte para selects personalizados y entradas d
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
 
 #### Variables Sass generales relacionadas {#sass-variables}
+
+{{< content-ads/middle-banner-5 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -1508,6 +1530,8 @@ Por defecto, `<textarea>`s con `.form-control` tendrán la misma altura que `<in
 {{< /demo-iframe >}}
 
 Para establecer una altura personalizada en tu `<textarea>`, no uses el atributo `rows`. En su lugar, establece una `height` explícita (ya sea en línea o mediante CSS personalizado).
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/floating-labels/textareas-2.html" >}}
 ```html {filename="HTML"}
@@ -1603,6 +1627,8 @@ Las etiquetas flotantes también admiten `.input-group`.
 
 Cuando usas `.input-group` y `.form-floating` junto con la validación del formulario, el `-feedback` debe colocarse fuera de `.form-floating`, pero dentro de `.input-group`. Esto significa que los comentarios deberán mostrarse mediante javascript.
 
+{{< content-ads/middle-banner-7 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/floating-labels/input-groups-2.html" >}}
 ```html {filename="HTML"}
     <div class="input-group has-validation">
@@ -1680,6 +1706,8 @@ Cada grupo de campos de formulario debe residir en un elemento `<form>`. Bootstr
 * `<button>`s dentro de un `<form>` por defecto es `type="submit"`, así que esfuézate por ser específico e incluye siempre un `type`.
 
 Dado que Bootstrap aplica `display: block` y `width: 100%` a casi todos nuestros controles de formulario, los formularios se apilarán verticalmente de forma predeterminada. Se pueden utilizar clases adicionales para variar este diseño según el rendimiento.
+
+{{< content-ads/middle-banner-8 >}}
 
 ### Utilidades {#utilities}
 
@@ -1791,6 +1819,8 @@ Crea formularios horizontales con el grid agregando la clase `.row` para formar 
 
 {{< bootstrap/content-suggestion >}}
 
+{{< content-ads/middle-banner-9 >}}
+
 A veces, tal vez necesites usar utilidades de margen o relleno para crear la alineación perfecta que necesitas. Por ejemplo, hemos eliminado el `padding-top` de nuestra etiqueta de entradas de radio apiladas para alinear mejor la línea base del texto.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/layout/horizontal-form.html" >}}
@@ -1876,8 +1906,6 @@ Asegúrate de usar `.col-form-label-sm` o `.col-form-label-lg` en tu `<label>`s 
 {{< /demo-iframe >}}
 
 ### Tamaño de columna {#column-sizing}
-
-{{< content-ads/middle-banner-4 >}}
 
 Como se muestra en los ejemplos anteriores, nuestro sistema de cuadrícula te permite colocar cualquier número de `.col` dentro de un `.row`. Dividirán el ancho disponible en partes iguales entre ellos. También puedes elegir un subconjunto de tus columnas para que ocupe más o menos espacio, mientras que los `.col` restantes dividen equitativamente el resto, con clases de columnas específicas como `.col-sm-7`.
 
@@ -1982,6 +2010,8 @@ Luego puedes remezclarlo una vez más con clases de columna de tamaño específi
 {{< /demo-iframe >}}
 
 ### Formularios en línea {#inline-forms}
+
+{{< content-ads/middle-banner-1 >}}
 
 Usa las clases `.row-cols-*` para crear diseños horizontales responsive. Al agregar [clases modificadoras de gutters](/bootstrap/layout), tendremos gutters en direcciones horizontales y verticales. En viewports móviles estrechos, `.col-12` ayuda a apilar los controles del formulario y más. `.align-items-center` alinea los elementos del formulario en el medio, haciendo que `.form-check` se alinee correctamente.
 
@@ -2144,6 +2174,8 @@ Los estilos de comentarios personalizados aplican colores, bordes, estilos de en
 ```
 
 ### Valores predeterminados del navegador {#browser-defaults}
+
+{{< content-ads/middle-banner-2 >}}
 
 ¿No te interesan los mensajes de validación personalizados o escribir JavaScript para cambiar el comportamiento de los formularios? Todo bien, puedes usar los valores predeterminados del navegador. Intenta enviar el formulario a continuación. Dependiendo de gu navegador y sistema operativo, verás un estilo de comentarios ligeramente diferente.
 
@@ -2344,6 +2376,8 @@ Los estilos de validación están disponibles para los siguientes controles y co
 
 Si el diseño de tu formulario lo permite, puedes intercambiar las clases `.{valid|invalid}-feedback` por `.{valid|invalid}-tooltip` para mostrar comentarios de validación en un tooltips con estilo. Asegúrate de tener un elemento padre con `position: relative` para el posicionamiento del tooltips. En el siguiente ejemplo, nuestras clases de columnas ya tienen esto, pero es posible que tu proyecto requiera una configuración alternativa.
 
+{{< content-ads/middle-banner-3 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/forms/validation/tooltips.html" >}}
@@ -2452,6 +2486,8 @@ $form-invalid-border-color:         $form-feedback-invalid-color;
 ```
 
 [scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="scss/_variables-dark.scss"}
 $form-valid-color-dark:             $green-300;

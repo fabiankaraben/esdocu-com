@@ -104,8 +104,6 @@ moment('gibberish').format('YYYY MM DD');         // "Invalid date"
 
 Debido a que el formato preferido difiere según la ubicación, existen algunos tokens que se pueden usar para formatear un moment según su ubicación.
 
-{{< content-ads/middle-banner-1 >}}
-
 Hay variaciones de mayúsculas y minúsculas en los mismos formatos. La versión en minúscula pretende ser la versión abreviada de su contraparte en mayúscula.
 
 | Descripción                                              | Formato | Salida                              |
@@ -122,6 +120,8 @@ Hay variaciones de mayúsculas y minúsculas en los mismos formatos. La versión
 |                                                          | llll    | Thu, Sep 4, 1986 8:30 PM            |
 
 `l ll lll llll` están disponibles en **2.0.0**.
+
+{{< content-ads/middle-banner-1 >}}
 
 `LTS` se agregó en **2.8.4**.
 
@@ -143,8 +143,6 @@ Para obtener un desglose de algunos tokens de formato de fecha diferentes en dif
 
 Si te sientes más cómodo trabajando con strftime en lugar de tokens de análisis similares a LDML, puedes utilizar el complemento de Ben Oakes. [benjaminoakes/moment-strftime](https://github.com/benjaminoakes/moment-strftime).
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Formato predeterminado
 
 Al llamar a `moment#format` sin un formato, el valor predeterminado será `moment.defaultFormat`. Fuera de la caja, `moment.defaultFormat` es el formato ISO8601 `YYYY-MM-DDTHH:mm:ssZ`.
@@ -162,6 +160,8 @@ moment('20.07.2018 09:19').toDate() // Invalid date
 // formatea la cadena de fecha con el nuevo defaultFormat y luego analiza (parse)
 moment('20.07.2018 09:19', moment.defaultFormat).toDate() // Fri Jul 20 2018 09:19:00 GMT+0300
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 ## Tiempo desde ahora {#fromnow}
 
@@ -182,8 +182,6 @@ Si pasas `true`, puedes obtener el valor sin el sufijo.
 moment([2007, 0, 29]).fromNow();     // 4 years ago
 moment([2007, 0, 29]).fromNow(true); // 4 years
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 Las cadenas base están [personalizadas según la configuración regional actual](/momentjs/personalizacion#relative-time). El tiempo se redondea al segundo más cercano.
 
@@ -223,6 +221,8 @@ var b = moment([2007, 0, 29]);
 a.from(b) // "a day ago"
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 El primer parámetro es cualquier cosa que puedas pasar a `moment()` o a un `Moment` existente.
 
 ```javascript {filename="JavaScript"}
@@ -235,8 +235,6 @@ a.from("2007-01-29");          // "a day ago"
 ```
 
 Al igual que `moment#fromNow`, pasar `true` como segundo parámetro devuelve un valor sin el sufijo. Esto es útil siempre que necesites tener un período de tiempo legible por humanos.
-
-{{< content-ads/middle-banner-4 >}}
 
 ```javascript {filename="JavaScript"}
 var start = moment([2007, 0, 5]);
@@ -275,7 +273,7 @@ Las cadenas base están [personalizadas según la configuración regional actual
 
 El desglose de qué cadena se muestra para cada período de tiempo se describe en la siguiente tabla.
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-4 >}}
 
 | Rango                     | Clave | Salida de muestra              |
 | ------------------------- | ----- | ------------------------------ |

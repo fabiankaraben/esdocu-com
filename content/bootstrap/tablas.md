@@ -143,6 +143,8 @@ Usa `.table-striped` para agregar rayas de cebra a cualquier fila de la tabla de
 
 Usa `.table-striped-columns` para agregar rayas de cebra a cualquier columna de la tabla.
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-1.html" >}}
 ```html {filename="HTML"}
     <table class="table table-striped-columns">
@@ -170,8 +172,6 @@ Estas clases también se pueden agregar a las variantes de la tabla:
     </table>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/tables/striped-columns-4.html" >}}
 ```html {filename="HTML"}
@@ -222,6 +222,8 @@ Estas filas flotantes también se pueden combinar con la variante de filas rayad
 ### Tablas activas {#active-tables}
 
 Resalta una fila o celda de una tabla agregando una clase `.table-active`.
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/tables/active-tables-1.html" >}}
 ```html {filename="HTML"}
@@ -312,8 +314,6 @@ Detrás de escena se ve así:
 
 ## Bordes de tabla {#table-borders}
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Tablas con borde {#bordered-tables}
 
 Agrega `.table-bordered` para los bordes en todos los lados de la tabla y las celdas.
@@ -335,6 +335,8 @@ Agrega `.table-bordered` para los bordes en todos los lados de la tabla y las ce
     </table>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 ### Tablas sin bordes {#tables-without-borders}
 
@@ -448,7 +450,7 @@ Las celdas de la tabla de `<thead>` siempre están alineadas verticalmente hacia
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-4 >}}
 
 ## Anidamiento {#nesting}
 
@@ -535,6 +537,8 @@ Similar a las tablas y las tablas oscuras, usa las clases modificadoras `.table-
 
 Un `<caption>` funciona como el encabezado de una tabla. Ayuda a los usuarios con lectores de pantalla a encontrar una tabla, comprender de qué se trata y decidir si quieren leerla.
 
+{{< content-ads/middle-banner-5 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/content/tables/captions-1.html" >}}
 ```html {filename="HTML"}
     <table class="table table-sm">
@@ -591,8 +595,6 @@ También puedes poner el `<caption>` en la parte superior de la tabla con `.capt
 
 ## Tablas responsive {#responsive-tables}
 
-{{< content-ads/middle-banner-4 >}}
-
 Las tablas responsive permiten desplazarse horizontalmente con facilidad. Haz que cualquier tabla responda en todas las viewports envolviendo un `.table` con `.table-responsive`. O elige un punto de interrupción máximo con el cual tener una tabla responsive usando `.table-responsive{-sm|-md|-lg|-xl|-xxl}`.
 
 {{< callout type="warning" emoji="" >}}
@@ -640,6 +642,8 @@ Usa `.table-responsive{-sm|-md|-lg|-xl|-xxl}` según sea necesario para crear ta
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-3.html" >}}
 ```html {filename="HTML"}
@@ -730,8 +734,6 @@ $table-bg-scale:              -80%;
 ### Sass loops {#sass-loops}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
-
-{{< content-ads/middle-banner-5 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $table-variants: (

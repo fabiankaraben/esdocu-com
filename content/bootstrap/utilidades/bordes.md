@@ -76,8 +76,6 @@ Cambia el color del borde usando utilidades integradas en los colores de nuestro
 
 O modificar el `border-color` predeterminado de un componente:
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/borders/color-2.html" >}}
 ```html {filename="HTML"}
     <div class="mb-4">
@@ -96,6 +94,8 @@ O modificar el `border-color` predeterminado de un componente:
 {{< /demo-iframe >}}
 
 ## Opacidad {#opacity}
+
+{{< content-ads/middle-banner-1 >}}
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
@@ -138,8 +138,6 @@ O elige cualquiera de las utilidades `.border-opacity`:
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 ## Ancho {#width}
 
 {{< bootstrap/content-suggestion >}}
@@ -155,6 +153,8 @@ O elige cualquiera de las utilidades `.border-opacity`:
 {{< /demo-iframe >}}
 
 ## Radio {#radius}
+
+{{< content-ads/middle-banner-2 >}}
 
 Agrega clases a un elemento para redondear fácilmente sus esquinas
 
@@ -202,8 +202,6 @@ Usa las clases de escala para esquinas redondeadas más grandes o más pequeñas
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
 
-{{< content-ads/middle-banner-3 >}}
-
 [scss/_root.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_root.scss)
 
 ```scss {filename="scss/_root.scss"}
@@ -240,6 +238,8 @@ $border-color-translucent:    rgba($black, .175);
 ```
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-3 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $border-radius:               .375rem;
@@ -280,8 +280,6 @@ $dark-border-subtle-dark:           $gray-800;
 
 ### Mapas de Sass {#sass-maps}
 
-{{< content-ads/middle-banner-4 >}}
-
 Los colores de borde adaptativo del modo de color también están disponibles como mapa Sass:
 
 [scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
@@ -319,6 +317,8 @@ $theme-colors-border-subtle-dark: (
 ### Sass mixins {#sass-mixins}
 
 [scss/mixins/_border-radius.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_border-radius.scss)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="scss/mixins/_border-radius.scss"}
 @mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
@@ -457,8 +457,6 @@ Las utilidades de borde se declaran en nuestra API de utilidades en `scss/_utili
   )
 ),
 ```
-
-{{< content-ads/middle-banner-5 >}}
 
 {{< bootstrap/content-suggestion >}}
 

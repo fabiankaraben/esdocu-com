@@ -77,9 +77,9 @@ moment.duration({
 
 A partir de **2.1.0**, moment admite el análisis de períodos de tiempo de estilo ASP.NET. Se admiten los siguientes formatos.
 
-El formato es una cadena de hora, minuto y segundo separada por dos puntos, como `23:59:59`. El número de días puede ir precedido de un separador de puntos como `7.23:59:59`. También se admiten segundos parciales `23:59:59.999`.
-
 {{< content-ads/middle-banner-1 >}}
+
+El formato es una cadena de hora, minuto y segundo separada por dos puntos, como `23:59:59`. El número de días puede ir precedido de un separador de puntos como `7.23:59:59`. También se admiten segundos parciales `23:59:59.999`.
 
 ```javascript {filename="JavaScript"}
 moment.duration('23:59:59');
@@ -132,6 +132,8 @@ d1.add(1, 'second');
 d1.asMilliseconds() !== d2.asMilliseconds();
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 ## Humanizar duraciones {#humanize}
 
 ```javascript {filename="Firma del método"}
@@ -140,8 +142,6 @@ moment.duration().humanize(withSuffix);
 moment.duration().humanize(withSuffix, thresholds); // from 2.25.0
 moment.duration().humanize(thresholds);             // from 2.25.0
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 Algunas veces querrás todas las bondades de `moment#from`, pero sin tener que crear dos moments, solo querrás mostrar un período de tiempo.
 
@@ -183,6 +183,8 @@ moment.duration(-1, 'week').humanize({d: 7, w: 4}); // a week
 
 ## Milisegundos en una duración {#milliseconds}
 
+{{< content-ads/middle-banner-3 >}}
+
 ```javascript {filename="Firma del método"}
 moment.duration().milliseconds();
 moment.duration().asMilliseconds();
@@ -191,8 +193,6 @@ moment.duration().asMilliseconds();
 Para obtener la cantidad de milisegundos en una duración, usa `moment.duration().milliseconds()`.
 
 Devolverá un número entre `0` y `999`.
-
-{{< content-ads/middle-banner-3 >}}
 
 ```javascript {filename="JavaScript"}
 moment.duration(500).milliseconds(); // 500
@@ -240,6 +240,8 @@ moment.duration().minutes();
 moment.duration().asMinutes();
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 Al igual que con los otros getters de duraciones, `moment.duration().minutes()` obtiene los minutos (`0` - `59`).
 
 `moment.duration().asMinutes()` obtiene la duración en minutos.
@@ -250,8 +252,6 @@ Al igual que con los otros getters de duraciones, `moment.duration().minutes()` 
 moment.duration().hours();
 moment.duration().asHours();
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Al igual que con los otros getters de duraciones, `moment.duration().hours()` obtiene las horas (`0` - `23`).
 
@@ -280,6 +280,8 @@ Al igual que con los otros getters de duraciones, `moment.duration().weeks()` ob
 `moment.duration().asWeeks()` obtiene la duración en semanas.
 
 Presta atención a que, a diferencia de otros getters de duración, las semanas se cuentan como un subconjunto de los días y no se eliminan del recuento de días.
+
+{{< content-ads/middle-banner-5 >}}
 
 **Nota:** La longitud de una duración en semanas se define como 7 días.
 

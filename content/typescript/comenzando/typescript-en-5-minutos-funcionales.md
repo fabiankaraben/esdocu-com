@@ -61,6 +61,8 @@ TypeScript tiene tipos primitivos correspondientes para los tipos integrados:
 
 #### Otros tipos importantes de TypeScript {#other-important-typescript-types}
 
+{{< content-ads/middle-banner-1 >}}
+
 |Tipo|Explicación|
 |---|---|
 |`unknown`|el tipo superior.|
@@ -107,8 +109,6 @@ Ten en cuenta que llamar a un método en un literal numérico requiere que esté
 
 TypeScript usa el tipo `any` siempre que no puede decir cuál debería ser el tipo de una expresión. En comparación con `Dynamic`, llamar tipo `any` es una exageración. Simplemente apaga el verificador de tipos dondequiera que aparezca. Por ejemplo, puedes insertar cualquier valor en array `any[]` sin marcar el valor de ninguna manera:
 
-{{< content-ads/middle-banner-1 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEHcEsBcAtQEQDsD2BJAtgBwDaQMYwCCSAnggFygBmAhjgM4CmokSo0D+KS1kA5gDoAVgx4AaULTIMq00gG0AugChuSBtCkzQAXlDKA3CvkNBWAK4NYACgCMASmOnzV2whTxUCJyZmvrGwBvbVI4Nn4qBH4UJgYEUABfJyA)
 
 ```ts
@@ -118,6 +118,8 @@ anys.push(1);
 anys.push("oh no");
 anys.push({ anything: "goes" });
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 Y puedes usar una expresión de tipo `any` en cualquier lugar:
 
@@ -168,6 +170,8 @@ two = new Three();
 En TypeScript, los tipos de unión no están etiquetados. En otras palabras, no son uniones discriminadas como los de `data` en Haskell. Sin embargo, a menudo es posible discriminar tipos en una unión mediante etiquetas integradas u otras propiedades.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAZygQwE5QBQChGKYDmAXClBjGEYgD7mXUDaAunYttgJSIC8AfAypEe9AN4oyqRjQC+uLlIrDEY-IgD0GxFAAWMZIgMoQABwCmGRBDgBbWwiNIAUmgBuaAMoRKpqOphgDigATws4IOI+Xl5EACJpYTieNQICDHMoEAwkG3sEAGE0ZHNsYi4AbnVZRHMAGxKjIOwAQQwMNBCAOgM2jpCyjBEU9XTM7KRiLts0U2w8hzAikq4ugCs4Kmw4gBpkqoIa+sbA4LDzCMIh6Ni40EhYBGTVUcQMrJzrO0Xl0uJuSrVWoNcwvNJvcafBaFYp-IZdZCAw64dT3aDwXLfGElbDIJQyRRCahgtJaRDAKhoOp1EI7RBrECoL5gNyWKCEIk0KBwQhgOB6Syc17vCYoA6IeSyIA)
+
+{{< content-ads/middle-banner-3 >}}
 
 ```ts
 function start(
@@ -225,8 +229,6 @@ type Conflicting = { a: number } & { a: string };
 
 ### Tipos de unidades {#unit-types}
 
-{{< content-ads/middle-banner-2 >}}
-
 Los tipos de unidades son subtipos de tipos primitivos que contienen exactamente un valor primitivo. Por ejemplo, la cadena `"foo"` tiene el tipo `"foo"`. Dado que JavaScript no tiene enumeraciones integradas, es común utilizar en su lugar un conjunto de cadenas conocidas. Las uniones de tipos literales de cadena permiten a TypeScript escribir este patrón:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwAcpgAKAZwC54yMYtUBzAGnlStWQFsAjEGF4FjiZcbeACIIIRBnHwAPhLoMAFrICUVGnUYBuAFBFS4lVnEsAjAAYWk6Rt1A)
@@ -237,6 +239,8 @@ pad("hi", 10, "left");
 ```
 
 Cuando es necesario, el compilador *amplia* - convierte a un supertipo - el tipo de unidad al tipo primitivo, como `"foo"` a `string`. Esto sucede cuando se utiliza la mutabilidad, lo que puede dificultar algunos usos de variables mutables:
+
+{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAUACaQDGANgIbSSgBmArgHbEAuAlnA6AA7kEAUKUImbRWDAOYAaUA1QM6AWwBGMaQVZUW7WaABEpSDWa7QAHz2jxAC2MBKVMNESA3HhCgAtF+J1mXj3gGzEKgALwWrNbGrjz8ulasutIAjAAM0oi2zqDuMPDQqADkjmLihaCsiDJwweSIiJEM5EoGoMxwoIX6hsZmEVG6hUA)
 
@@ -280,6 +284,8 @@ Pero también infiere tipos en algunos otros lugares que quizás no esperes si h
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwFsoAHAHgBUAaeAVQD4AKRALngY1fIEp4BeO2tQwBnTgG0Aul1Y1JAbgBQEEBnjDUwvoRIMGqHv3ioAdBhwBlDDCyoA5gy7UxARmoAmagGYpcoA)
 
+{{< content-ads/middle-banner-5 >}}
+
 ```ts
 declare function map<T, U>(f: (t: T) => U, ts: T[]): U[];
 let sns = map((n) => n.toString(), [1, 2, 3]);
@@ -308,8 +314,6 @@ let i: { inference: string } = run((o) => {
 
 Se determina que el tipo de `o` es `{ inference: string }` porque
 
-{{< content-ads/middle-banner-3 >}}
-
 1. Los inicializadores de declaración están tipados contextualmente según el tipo de declaración: `{ inference: string }`.
 2. El tipo de retorno de una llamada utiliza el tipo contextual para las inferencias, por lo que el compilador infiere que `T={ inference: string }`.
 3. Las funciones de flecha usan el tipo contextual para asignar tipos a sus parámetros, por lo que el compilador proporciona `o: {inference: string}`.
@@ -327,6 +331,8 @@ Los alias de tipos son meros alias, como `type` en Haskell. El compilador intent
 type Size = [number, number];
 let x: Size = [101.1, 999.9];
 ```
+
+{{< content-ads/middle-banner-6 >}}
 
 El equivalente más cercano a `newtype` es una *intersección etiquetada*:
 
@@ -389,6 +395,8 @@ function height(s: Shape) {
 
 Como la mayoría de los lenguajes descendientes de C, TypeScript requiere una declaración de parámetros de tipo:
 
+{{< content-ads/middle-banner-7 >}}
+
 ```ts
 function liftArray<T>(t: T): Array<T> {
   return [t];
@@ -415,8 +423,6 @@ function length(t: ArrayLike<unknown>): number {}
 
 En el primer `length`, `T` no es necesaria; observa que solo se hace referencia a ella una vez, por lo que no se usa para restringir el tipo de valor de retorno u otros parámetros.
 
-{{< content-ads/middle-banner-4 >}}
-
 #### Tipos de tipo superior {#higher-kinded-types}
 
 TypeScript no tiene tipos de tipo superior, por lo que lo siguiente no es legal:
@@ -439,6 +445,8 @@ import { value, Type } from "npm-package";
 import { other, Types } from "./local-package";
 import * as prefix from "../lib/third-package";
 ```
+
+{{< content-ads/middle-banner-8 >}}
 
 También puedes importar módulos commonjs, módulos escritos utilizando el sistema de módulos de node.js:
 
@@ -497,6 +505,8 @@ rx.x = 12; // error
 ```
 
 Y tiene un tipo `ReadonlyArray<T>` específico que elimina los métodos que afectan lateralmente y evita la escritura en índices del array, así como una sintaxis especial para este tipo:
+
+{{< content-ads/middle-banner-9 >}}
 
 ```ts
 let a: ReadonlyArray<number> = [1, 2, 3];

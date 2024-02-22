@@ -101,6 +101,8 @@ Alterna una demostración modal funcional haciendo clic en el botón a continuac
 
 {{< bootstrap/content-suggestion >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Fondo estático {#static-backdrop}
 
 Cuando el fondo está configurado como estático, el modal no se cerrará al hacer clic fuera de él. Haz clic en el botón de abajo para probarlo.
@@ -140,8 +142,6 @@ Cuando los modales se vuelven demasiado largos para la viewport o el dispositivo
 {{< /demo-iframe >}}
 
 También puedes crear un modal desplazable que permita desplazar el cuerpo del modal agregando `.modal-dialog-scrollable` a `.modal-dialog`.
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/modal/scrolling-long-content-2.html" >}}
 ```html {filename="HTML"}
@@ -187,6 +187,8 @@ Agrega `.modal-dialog-centered` a `.modal-dialog` para centrar verticalmente el 
 {{< /demo-iframe >}}
 
 ### Usando la grilla {#using-the-grid}
+
+{{< content-ads/middle-banner-2 >}}
 
 Utiliza el sistema de cuadrícula Bootstrap dentro de un modal anidando `.container-fluid` dentro de `.modal-body`. Luego, utiliza las clases normales del sistema grid como lo harías en cualquier otro lugar.
 
@@ -335,9 +337,9 @@ Alterna entre múltiples modales con una ubicación inteligente de los atributos
 
 La variable `$modal-fade-transform` determina el estado de transformación de `.modal-dialog` antes de la animación de aparición gradual modal, la variable `$modal-show-transform` determina la transformación de `.modal-dialog` al final de la animación de aparición gradual del modal.
 
-{{< content-ads/middle-banner-2 >}}
-
 Si quieres, por ejemplo, una animación con zoom, puedes configurar `$modal-fade-transform: scale(.8)`.
+
+{{< content-ads/middle-banner-3 >}}
 
 ### Quitar animación {#remove-animation}
 
@@ -384,6 +386,8 @@ Nuestro modal predeterminado sin clase modificadora constituye el modal de tama�
 
 ## Modal de pantalla completa {#fullscreen-modal}
 
+{{< content-ads/middle-banner-4 >}}
+
 Otra sobrescritura es la opción de mostrar un modal que cubra el viewport del usuario, disponible a través de clases modificadoras que se colocan en un `.modal-dialog`.
 
 | Clase                        | Disponibilidad |
@@ -409,8 +413,6 @@ Pantalla completa Pantalla completa debajo de sm Pantalla completa debajo de md 
 ## Personalización del CSS del componente {#css}
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Variables Sass del componente {#variables}
 
@@ -456,6 +458,8 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los modales 
 ### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-5 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $modal-inner-padding:               $spacer;
@@ -555,13 +559,13 @@ Activar un modal sin escribir JavaScript. Establece `data-bs-toggle="modal"` en 
 
 #### Descartar {#dismiss}
 
-{{< content-ads/middle-banner-4 >}}
-
 El despido se puede lograr con el atributo `data-bs-dismiss` en un botón **dentro del modal** como se muestra a continuación:
 
 ```html {filename="HTML"}
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 ```
+
+{{< content-ads/middle-banner-6 >}}
 
 o en un botón **fuera del modal** usando el `data-bs-target` adicional como se muestra a continuación:
 
@@ -606,6 +610,8 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 #### Opciones de paso {#passing-options}
 
 Activa tu contenido como modal. Acepta opciones opcionales `object`.
+
+{{< content-ads/middle-banner-7 >}}
 
 ```javascript {filename="JavaScript"}
 const myModal = new bootstrap.Modal('#myModal', {

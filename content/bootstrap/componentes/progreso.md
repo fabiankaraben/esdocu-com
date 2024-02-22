@@ -61,8 +61,6 @@ Bootstrap proporciona un puñado de [utilidades para configurar el ancho](/boots
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 ### Altura {#height}
 
 Solo estableces un valor de `height` en el contenedor `.progress`, por lo que si cambias ese valor, el `.progress-bar` cambiará automáticamente de tamaño en consecuencia.
@@ -81,6 +79,8 @@ Solo estableces un valor de `height` en el contenedor `.progress`, por lo que si
 {{< bootstrap/content-suggestion >}}
 
 ## Etiquetas en el componente Progress {#labels}
+
+{{< content-ads/middle-banner-1 >}}
 
 Agrega etiquetas a tus barras de progreso colocando texto dentro de la `.progress-bar`.
 
@@ -105,8 +105,6 @@ Ten en cuenta que, de forma predeterminada, el contenido dentro de `.progress-ba
 {{< /demo-iframe >}}
 
 ## Personalizar el fondo del componente Progress {#backgrounds}
-
-{{< content-ads/middle-banner-2 >}}
 
 Usa clases de utilidades en segundo plano para cambiar la apariencia de las barras de progreso individuales.
 
@@ -180,7 +178,7 @@ Puedes incluir múltiples componentes de progreso dentro de un contenedor con `.
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -227,8 +225,6 @@ El degradado rayado también se puede animar. Añade `.progress-bar-animated` a 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
 
-{{< content-ads/middle-banner-4 >}}
-
 Como parte del enfoque de variables CSS en evolución de Bootstrap, las barras de progreso ahora usan variables CSS locales en `.progress` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
 [scss/_progress.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_progress.scss)
@@ -247,6 +243,8 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las barras d
 ### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-3 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $progress-height:                   1rem;

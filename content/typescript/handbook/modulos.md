@@ -50,6 +50,8 @@ lo que cambiará el archivo para que sea un módulo que no exporta nada. Esta si
 > Lectura adicional: [Impatient JS (Modules) ↗](https://exploringjs.com/impatient-js/ch_modules.html#overview-syntax-of-ecmascript-modules) y [MDN : Módulos de JavaScript ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 >
 
+{{< content-ads/middle-banner-1 >}}
+
 Hay tres cosas principales a considerar al escribir código basado en módulos en TypeScript:
 
 - **Sintaxis**: ¿Qué sintaxis quiero usar para importar y exportar cosas?
@@ -61,8 +63,6 @@ Hay tres cosas principales a considerar al escribir código basado en módulos e
 Un archivo puede declarar una exportación principal a través de `export default`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAFvWsB7AOgBcBnAWACh4APABwICcTQATeSZAV1lcm6IAxiWgFEOPIQDqzWGwAUASlABvaqFBDxZAgiKEA5goBEACSkEANKADuctgEITSgNzUAvkA)
-
-{{< content-ads/middle-banner-1 >}}
 
 ```ts
 // @filename: hello.ts
@@ -110,6 +110,8 @@ const absPhi = absolute(phi);
         
 const absPhi: number
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 ### Sintaxis de importación adicional {#additional-import-syntax}
 
@@ -163,8 +165,6 @@ const positivePhi = math.absolute(math.phi);
 const positivePhi: number
 ```
 
-{{< content-ads/middle-banner-2 >}}
-
 Puedes importar un archivo y *no* incluir ninguna variable en tu módulo actual a través de `import "./file"`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKVyAuALAZwDpdCBYAKHgA8AHAewCddQA3ZJ0O6UAXlABmYgEYALAG4qIUAFp5AYwCuuebOlgocJGkyhkdOqQqVoqRi1AAiYsBwESAK0JWplKgoaJCDBMVgMAOYAFFbC4lYAlBJAA)
@@ -179,6 +179,8 @@ console.log("3.14");
 En este caso, el `import` no hace nada. Sin embargo, se evaluó todo el código en `maths.ts`, lo que podría provocar efectos secundarios que afecten a otros objetos.
 
 #### Sintaxis específica de ES Module de TypeScript {#typescript-specific-es-module-syntax}
+
+{{< content-ads/middle-banner-3 >}}
 
 Los tipos se pueden exportar e importar usando la misma sintaxis que los valores de JavaScript:
 
@@ -243,7 +245,7 @@ Juntos permiten que un transpilador que no sea TypeScript como Babel, swc o esbu
 
 #### Sintaxis de ES Module con comportamiento CommonJS {#es-module-syntax-with-commonjs-behavior}
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-4 >}}
 
 TypeScript tiene una sintaxis de ES Module que *directamente* se correlaciona con un `require` de CommonJS y AMD. Las importaciones usando ES Module son *en la mayoría de los casos* iguales que el `require` de esos entornos, pero esta sintaxis garantiza que tengas una coincidencia 1 a 1 en tu archivo TypeScript con la salida de CommonJS:
 
@@ -295,6 +297,8 @@ O puedes simplificar un poco usando la función de desestructuración en JavaScr
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgBUATKazBagcrtQrISbUURONTcYCsTiENQ+Mog6bIebQS5gAB6AH4gA)
 
+{{< content-ads/middle-banner-5 >}}
+
 ```ts
 const { squareTwo } = require("./maths");
 squareTwo;
@@ -309,8 +313,6 @@ Existe una falta de coincidencia en las características entre CommonJS y ES Mod
 ## Opciones de resolución de módulo de TypeScript {#typescripts-module-resolution-options}
 
 La resolución de módulo es el proceso de tomar una cadena de la declaración `import` o `require` y determinar a qué archivo se refiere esa cadena.
-
-{{< content-ads/middle-banner-4 >}}
 
 TypeScript incluye dos estrategias de resolución: Classic y Node. Classic, el valor predeterminado cuando la opción del compilador [`module` ↗](https://www.typescriptlang.org/tsconfig#module) no es `commonjs`, se incluye para compatibilidad con versiones anteriores.
 La estrategia Node replica cómo funciona Node.js en modo CommonJS, con comprobaciones adicionales para `.ts` y `.d.ts`.
@@ -334,6 +336,8 @@ En tiempo de ejecución, el cargador de módulos es responsable de localizar y e
 Por ejemplo, aquí hay un archivo TypeScript que usa la sintaxis de ES Module, que muestra algunas opciones diferentes para [`module` ↗](https://www.typescriptlang.org/tsconfig#module):
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAxge0QM4AuyiRBAdOQLABQ8AHgA64BORO+xoAbsrAFd4AeUgAFaKAC8oAMwUAjABYATAG46ICDAQp0WaIgAmjKgU1gAtNewCi1y3WioW7UAG9e-IaImgAvqCQrLiooABEFMB4hCRklABWBOEatHSMrhwx3EQA7rh+MnyCIuKSAFSg6kA)
+
+{{< content-ads/middle-banner-6 >}}
 
 ```ts
 import { valueOfPi } from "./constants.js";

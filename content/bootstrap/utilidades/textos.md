@@ -57,8 +57,6 @@ Evita que el texto se ajuste con una clase `.text-nowrap`.
 
 ## Salto de palabra {#word-break}
 
-{{< content-ads/middle-banner-1 >}}
-
 Evita que largas cadenas de texto rompan el diseño de tus componentes usando `.text-break` para configurar `word-wrap: break-word` y `word-break: break-word`. Usamos `word-wrap` en lugar del más común `overflow-wrap` para una mayor compatibilidad con el navegador, y agregamos el obsoleto `word-break: break-word` para evitar problemas con los contenedores flex.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/text/word-break.html" >}}
@@ -76,6 +74,8 @@ Ten en cuenta que [no es posible dividir palabras en árabe](https://rtlstyling.
 ## Transformación de texto {#text-transform}
 
 Transforma texto en componentes con clases de capitalización de texto.
+
+{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/text/text-transform.html" >}}
 ```html {filename="HTML"}
@@ -101,8 +101,6 @@ Cambia rápidamente el `font-size` del texto. Mientras que nuestras clases de en
     <p class="fs-6">texto .fs-6</p>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -143,7 +141,7 @@ Cambia la altura de la línea con las utilidades `.lh-*`.
 
 Cambiar una selección a nuestra pila de fuentes monoespaciadas con `.font-monospace`.
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/text/monospace.html" >}}
 ```html {filename="HTML"}
@@ -180,8 +178,6 @@ Decora texto en componentes con clases de decoración de texto.
 ### Variables Sass generales relacionadas {#sass-variables}
 
 Tipo predeterminado y variables Sass relacionadas con la fuente:
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -228,6 +224,8 @@ $h6-font-size:                $font-size-base;
 
 Las utilidades de tamaño de fuente se generan a partir de este mapa, en combinación con nuestra API de utilidades.
 
+{{< content-ads/middle-banner-3 >}}
+
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
 ```scss {filename="scss/_variables.scss"}
@@ -257,8 +255,6 @@ $theme-colors-text: (
 ```
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-5 >}}
 
 ### API de utilidades de Sass {#sass-utilities-api}
 

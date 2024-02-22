@@ -20,8 +20,6 @@ Los tipos más comunes de errores que escriben los programadores se pueden descr
 Si llegas a TypeScript sin experiencia en JavaScript, con la intención de que TypeScript sea tu primer lenguaje, te recomendamos que primero comiences a leer la documentación en el [Tutorial de aprendizaje de JavaScript de Microsoft ↗](https://developer.microsoft.com/javascript/) o leas [JavaScript en Mozilla Web Docs ↗](https://developer.mozilla.org/docs/Web/JavaScript/Guide).
 Si tienes experiencia en otros lenguajes, deberías poder aprender la sintaxis de JavaScript con bastante rapidez leyendo el manual.
 
-{{< content-ads/middle-banner-1 >}}
-
 ## ¿Cómo está estructurado este manual? {#how-is-this-handbook-structured}
 
 El manual está dividido en dos secciones:
@@ -39,8 +37,6 @@ El manual está dividido en dos secciones:
 
 ### Lo que no es {#non-goals}
 
-{{< content-ads/middle-banner-2 >}}
-
 El Manual también pretende ser un documento conciso que pueda leerse cómodamente en unas pocas horas. Ciertos temas no se cubrirán para ser breves.
 
 Específicamente, el manual no presenta completamente los conceptos básicos de JavaScript como funciones, clases y closures. Cuando corresponda, incluiremos enlaces a lecturas previas que puedes utilizar para profundizar en esos conceptos.
@@ -48,8 +44,6 @@ Específicamente, el manual no presenta completamente los conceptos básicos de 
 El Manual tampoco pretende reemplazar una especificación de lenguaje. En algunos casos, se omitirán los casos extremos o las descripciones formales de comportamiento en favor de explicaciones de alto nivel y más fáciles de entender. En cambio, hay páginas de referencia separadas que describen de manera más precisa y formal muchos aspectos del comportamiento de TypeScript. Las páginas de referencia no están destinadas a lectores que no estén familiarizados con TypeScript, por lo que pueden utilizar terminología avanzada o temas de referencia sobre los que aún no has leído.
 
 Finalmente, el manual no cubrirá cómo interactúa TypeScript con otras herramientas, excepto cuando sea necesario. Temas como cómo configurar TypeScript con webpack, rollup, parcel, react, babel, closure, lerna, rush, bazel, preact, vue, angular, svelte, jquery, yarn o npm están fuera del alcance; puedes encontrar estos recursos en otros lugares en la red.
-
-{{< content-ads/middle-banner-3 >}}
 
 ## Comenzando {#get-started}
 

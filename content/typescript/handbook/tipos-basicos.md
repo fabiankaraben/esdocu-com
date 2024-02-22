@@ -69,6 +69,8 @@ Podemos *observar* leyendo el código que esta función solo funcionará si se l
 La única forma en JavaScript puro de saber qué hace `fn` con un valor particular es llamarlo y ver qué sucede.
 Este tipo de comportamiento hace que sea difícil predecir qué hará el código antes de ejecutarse, lo que significa que es más difícil saber qué hará el código mientras lo escribes.
 
+{{< content-ads/middle-banner-1 >}}
+
 Visto de esta manera, un *tipo* es el concepto de describir qué valores se pueden pasar a `fn` y cuáles fallarán.
 JavaScript realmente solo proporciona escritura *dinámica*: ejecuta el código para ver qué sucede.
 
@@ -102,8 +104,6 @@ This expression is not callable.
   Type 'String' has no call signatures.
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 Ejecutar la última muestra con TypeScript nos dará un mensaje de error antes de ejecutar el código en primer lugar.
 
 ## Fallos sin excepción {#non-exception-failures}
@@ -126,6 +126,8 @@ user.location; // retorna undefined
 
 En última instancia, un sistema de tipo estático tiene que decidir qué código debe marcarse como error en su sistema, incluso si es JavaScript "válido" que no arrojará un error de inmediato.
 En TypeScript, el siguiente código produce un error acerca de que `location` no está definida:
+
+{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQBjOAO0QBdQBXRGUAXlAG9dRQiBDAW0lQCIARNkQCWkADY8ANM1BsA5t3QA2KQF8A3LlxUYAOlFx8bUkOJqgA)
 
@@ -192,6 +194,8 @@ if (value !== "a") {
 This comparison appears to be unintentional because the types '"a"' and '"b"' have no overlap.
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Tipos para herramientas {#types-for-tooling}
 
 TypeScript puede detectar bugs cuando cometemos errores en nuestro código.
@@ -199,8 +203,6 @@ Eso es genial, pero TypeScript *también* puede evitar que cometamos esos errore
 
 El verificador de tipos tiene información para verificar cosas como si estamos accediendo a las propiedades correctas en variables y otras propiedades.
 Una vez que tenga esa información, también puede comenzar a *sugerir* qué propiedades quizás desees utilizar.
-
-{{< content-ads/middle-banner-2 >}}
 
 Eso significa que TypeScript también se puede aprovechar para editar código, y el verificador de tipo del core puede proporcionar mensajes de error y completar el código a medida que escribes en el editor.
 Eso es parte de lo que la gente suele referirse cuando habla de herramientas en TypeScript.
@@ -248,6 +250,8 @@ console.log("Hello world!");
 
 Fíjate que aquí no hay lujos; Este programa "hola mundo" parece idéntico a lo que escribirías para un programa "hola mundo" en JavaScript.
 Y ahora comprobemos el tipo ejecutando el comando `tsc` que nos instaló el paquete `typescript`.
+
+{{< content-ads/middle-banner-4 >}}
 
 ```sh
 tsc hello.ts
@@ -297,8 +301,6 @@ TypeScript nos dice que olvidamos pasar un argumento a la función `greet`, y co
 Hasta ahora solo hemos escrito JavaScript estándar y, sin embargo, la verificación de tipos aún pudo encontrar problemas con nuestro código.
 ¡Gracias TypeScript!
 
-{{< content-ads/middle-banner-3 >}}
-
 ## Emitiendo con Errores {#emitting-with-errors}
 
 Una cosa que quizás no hayas notado en el último ejemplo fue que nuestro archivo `hello.js` cambió nuevamente.
@@ -310,6 +312,8 @@ La mayoría de las veces eso está bien, pero hay situaciones en las que esos co
 Por ejemplo, imagínate migrando código JavaScript a TypeScript e introduciendo errores de verificación de tipos.
 Con el tiempo, podrás limpiar las cosas para el verificador de tipos, ¡pero ese código JavaScript original ya estaba funcionando!
 ¿Por qué convertirlo a TypeScript debería impedirle ejecutarlo?
+
+{{< content-ads/middle-banner-5 >}}
 
 Para que TypeScript no se interponga en tu camino.
 Por supuesto, con el tiempo, es posible que desees estar un poco más a la defensiva contra los errores y hacer que TypeScript actúe de forma un poco más estricta.
@@ -364,6 +368,8 @@ Por otro lado, construir una `Date` con `new Date()` en realidad nos da lo que e
 
 De todos modos, podemos corregir rápidamente el error:
 
+{{< content-ads/middle-banner-6 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwE4FN1QBQAd2oDOCAXIoVKjGMgDSIAmAhlOmQCIvoCUiA3gChEiCAmIAbdADpxcZNgAGACXTjZiACR98RBAF96UOMwCeiGIU19mrKUc6sAypWrzuegIQLuAbgF6BATRMHAAiAFkmBgYLBFD6MHQAd0QHdGxuXyA)
 
 ```ts
@@ -387,8 +393,6 @@ let msg: string
 
 Aunque no le dijimos a TypeScript que `msg` tenía el tipo `string`, pudimos descubrirlo.
 Esa es una característica, y es mejor no agregar anotaciones cuando el sistema de tipos terminaría infiriendo el mismo tipo de todos modos.
-
-{{< content-ads/middle-banner-4 >}}
 
 > Nota: La burbuja de mensaje dentro del ejemplo de código anterior es lo que mostraría tu editor si hubieras colocado el cursor sobre la palabra.
 >
@@ -420,6 +424,8 @@ La mayor parte del código específico de TypeScript se borra y, de la misma man
 
 > **Recuerda**: las anotaciones de tipo nunca cambian el comportamiento de ejecución de tu programa.
 >
+
+{{< content-ads/middle-banner-7 >}}
 
 ## Downleveling {#downleveling}
 

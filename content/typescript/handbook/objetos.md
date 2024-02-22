@@ -65,6 +65,8 @@ Cada propiedad en un tipo de objeto puede especificar un par de cosas: el tipo, 
 
 ### Propiedades opcionales {#optional-properties}
 
+{{< content-ads/middle-banner-1 >}}
+
 La mayor parte del tiempo, nos encontraremos tratando con objetos que *podrían* tener una propiedad establecida.
 En esos casos, podemos marcar esas propiedades como *opcionales* agregando un signo de interrogación (`?`) al final de sus nombres.
 
@@ -162,6 +164,8 @@ Ahora, `xPos` y `yPos` están definitivamente presentes dentro del cuerpo de `pa
 > Del mismo modo `xPos: number` crea una variable llamada `number` cuyo valor se basa en el parámetro `xPos`.
 >
 
+{{< content-ads/middle-banner-2 >}}
+
 ### Propiedades `readonly` {#readonly-properties}
 
 Las propiedades también se pueden marcar como `readonly` para TypeScript.
@@ -252,9 +256,9 @@ Usando [modificadores de mapeo](/typescript/handbook/manipulacion-tipos/tipos-ma
 
 A veces no conoces todos los nombres de las propiedades de un tipo de antemano, pero sí conoces la forma de los valores.
 
-En esos casos puedes usar una firma de índice para describir los tipos de valores posibles, por ejemplo:
+{{< content-ads/middle-banner-3 >}}
 
-{{< content-ads/middle-banner-1 >}}
+En esos casos puedes usar una firma de índice para describir los tipos de valores posibles, por ejemplo:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBlDGLVAgQRhigE8AKASgC54yKrb6GBuAFAB6YfAC0ksMgyTxgyhhAxEUMAi6UadRvADeg+PADalUAA8OqZAFsARsoC6HAM7ktQgL6DBYPG-gbBl5GDk0eHQZ4AF5CYnDtPlYhP1QAl3A8YABJJRsYwODI4wBGRyFRIyqAPQB+IA)
 
@@ -318,6 +322,8 @@ let myArray: ReadonlyStringArray = getReadOnlyStringArray();
 myArray[2] = "Mallory";
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 ```text {filename="Error generado"}
 Index signature in type 'ReadonlyStringArray' only permits reading.
 ```
@@ -377,6 +383,8 @@ El método más sencillo es simplemente utilizar una aserción de tipo:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWdB2DATgCgBLAOwBcYAzAQwGNJQBlARwFd7pIBhOBVpkA5qADeJUKEZwANggD8qRFWiURAbimgA7mQAmVABbLQFTgFsARjG0BfEiVqcKjKmUEze9Gh268ABSyQqKo-jz8gsIiAJSo4jLyCCpqGpqgkfSoFjYwoPYSOrxUnNAURdLSsgrQqCExAHQ1CKAAPm2gAES8Bl0ANDrSWfXRoo36RsagikmhIhOGJqAAVHNNk8uoaAAMg9L2DiQgoAC054ycVOenJHKQVKCWAJ4RvKAAvN6QvpBvkIFEptjKgAIw7PagOAAByYZCoz1QO0aeEK9EQbC4kQE81imiAA)
 
+{{< content-ads/middle-banner-5 >}}
+
 ```ts
 let mySquare = createSquare({ width: 100, opacity: 0.5 } as SquareConfig);
 ```
@@ -428,12 +436,12 @@ En este caso, si está bien pasar un objeto con una propiedad `color` o `colour`
 
 ## Tipos extendidos {#extending-types}
 
+{{< content-ads/middle-banner-6 >}}
+
 Es bastante común tener tipos que podrían ser versiones más específicas de otros tipos.
 Por ejemplo, podríamos tener un tipo `BasicAddress` que describa los campos necesarios para enviar cartas y paquetes en los EE. UU.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgEJwM7AQQQCZ5QQYbIDeAUMsiHALYQD8AXMhmFKAOYDcVbHCBDCt2nEL34JgYAJ6iO3PtQQB7AK7go8geMnUADqvZwANgGFVeCAr18AvkA)
-
-{{< content-ads/middle-banner-2 >}}
 
 ```ts
 interface BasicAddress {
@@ -510,6 +518,8 @@ const cc: ColorfulCircle = {
 La `interface` nos permitió crear nuevos tipos a partir de otros tipos extendiéndolos.
 TypeScript proporciona otra construcción llamada *tipos de intersección* que se utiliza principalmente para combinar tipos de objetos existentes.
 
+{{< content-ads/middle-banner-7 >}}
+
 Un tipo de intersección se define usando el operador `&`.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgMIHsA27YFdPIDeAUMsgljgFzIDOYUoA5gNzEC+xoksiKqwKAkwoSZKHAAmwXLRohcAWwBG0Np2JgAngAd+lPJgFCRyALxoDMfMgBkaQcIgsgA)
@@ -568,6 +578,8 @@ interface Box {
 En este momento, la propiedad `content` está tipada como `any`, lo cual funciona, pero puede provocar accidentes en el futuro.
 
 En su lugar podríamos usar `unknown`, pero eso significaría que en los casos en los que ya conocemos el tipo de `contents`, necesitaríamos realizar comprobaciones de precaución o usar aserciones de tipo propensas a errores.
+
+{{< content-ads/middle-banner-8 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeAoZZBdcCcAZwC5kBXEAaxHQHcQBuPAXzzwBsIwyTNQzYAvLgJESkCtQBEACwi9e6ZM3RReAE3kAaLhzwB6ExpTEauosoT1kAckwA6YqQqO8wGMgAUYACeAA4Q6L6u7rJg5Mhi8cjy5GBQoADm8gCUkoTu5Oj8LmppfpEyZDEuYOgAMizQAMJw5BB+mZkc3KbmWhbS1jq0LchwyEGhI+QtUGDAJHh5BRBF6CWlbuUUk8jJqSBpmVW19VBNLW0dQA)
 
@@ -642,6 +654,8 @@ Más adelante, cuando nos referimos a `Box`, tenemos que dar un *argumento de ti
 let box: Box<string>;
 ```
 
+{{< content-ads/middle-banner-9 >}}
+
 Piensa en `Box` como una plantilla para un tipo real, donde `Type` es un marcador de posición que será reemplazado por algún otro tipo.
 Cuando TypeScript ve `Box<string>`, reemplazará cada instancia de `Type` en `Box<Type>` con `string` y terminará trabajando con algo como `{ content: string }`.
 En otras palabras, `Box<string>` y nuestro `StringBox` anterior funcionan de manera idéntica.
@@ -666,8 +680,6 @@ boxB.contents;
         
 (property) StringBox.contents: string
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 `Box` es reutilizable en el sentido de que `Type` se puede sustituir por cualquier cosa. Eso significa que cuando necesitamos un `Box` para un nuevo tipo, no necesitamos declarar un nuevo tipo `Box` en absoluto (aunque ciertamente podríamos hacerlo si quisiéramos).
 
@@ -715,6 +727,8 @@ type Box<Type> = {
   contents: Type;
 };
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 Dado que los alias de tipos, a diferencia de las interfaces, pueden describir más que solo tipos de objetos, también podemos usarlos para escribir otros tipos de tipos auxiliares genéricos.
 
@@ -790,6 +804,8 @@ Todo lo que esto realmente significa es que debido a cómo se comportan `Map`, `
 
 `ReadonlyArray` es un tipo especial que describe arrays que no deben cambiarse.
 
+{{< content-ads/middle-banner-2 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQAzAVwDsBjAFwEs5jQATOAZXMP3wAoA3AQwBtDIKUACVI3BsV4BPAIKxuUgDyJy0SsQDmAPgCUoAN65QoEKADqkUKW61oYuqHzwAtqADkPfoLcA6P0asaFUCABylQAF5QTwFEH0ReSlJIdh0AbgDSILheSB9eOA12AAMAFQALS3xKJHJovgFQSkRQABJ9GMEAbQAGAF0AX2L03ADTPx8AI0I6gHdLa2I3OucZ7nJLDwbvHwDOuJDCRHL2ACJK3gKAQlORgaA)
 
 ```ts
@@ -849,6 +865,8 @@ function doStuff(values: readonly string[]) {
 Property 'push' does not exist on type 'readonly string[]'.
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 Una última cosa a tener en cuenta es que, a diferencia del modificador de propiedad `readonly`, la asignabilidad no es bidireccional entre `Array`s y `ReadonlyArray`s normales.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygCwEYAMaBQAbSAF1AA9VpIBDAEzgDt8BPURI6AS3oHMBtAXVABeUAIDcBYqCao2nHgOGj+E3KSVMJLEaTFA)
@@ -864,8 +882,6 @@ y = x;
 ```text {filename="Error generado"}
 The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Tipos de tuplas {#tuple-types}
 
@@ -912,6 +928,8 @@ function doSomething(pair: [string, number]) {
 ```text {filename="Error generado"}
 Tuple type '[string, number]' of length '2' has no element at index '2'.
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 También podemos [deestructurar tuplas ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring) usando la desestructuración de arrays de JavaScript.
 
@@ -988,6 +1006,8 @@ type BooleansStringNumber = [...boolean[], string, number];
 
 Una tupla con un elemento rest no tiene un `length` establecido; solo tiene un conjunto de elementos conocidos en diferentes posiciones.
 
+{{< content-ads/middle-banner-5 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAysBOBLAdgcwHIFcC2AjC8AQgPbEA2EAhsgM5QC8UA2jQiqgDRTI77xcA6IblIVqTALoSA3ACgA9PKgBaVQGNMwVctlritYFEoAuWGzRY8BEuSq0GzAEQALCGTLFHXAIwzd+1ihcUzgkC15rUTs6RiZHfEpNRAAzTDIvKAAmLgRMCD89Ayg1EPMMCKIo6hinAHdieDIAEwyAZhz4PK5kyjIaCA6uqB6+gahc-OkgA)
 
 ```ts
@@ -1036,6 +1056,8 @@ function doSomething(pair: readonly [string, number]) {
 Como es de esperar, escribir en cualquier propiedad de una tupla `readonly` no está permitido en TypeScript.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYAsAGAUAGYCuAdgMYAuAlnCaACZwDKcAtpBQBZUkDmAFAAcAhlWipokYYxIAbAJ6gA2ogrQevADSgSRVgCMYAXQCUoAN55QoEWKU4joALygARJ0izZcAISuA3HgAvkA)
+
+{{< content-ads/middle-banner-6 >}}
 
 ```ts
 function doSomething(pair: readonly [string, number]) {

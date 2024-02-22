@@ -91,6 +91,8 @@ Lo cual te permite realizar personalizaciones en tiempo real como quieras:
 
 ## Valores predeterminados de página {#page-defaults}
 
+{{< content-ads/middle-banner-1 >}}
+
 Los elementos `<html>` y `<body>` se actualizan para proporcionar mejores valores predeterminados en toda la página. Más específicamente:
 
 * El `box-sizing` se establece globalmente en cada elemento, incluidos `*::before` y `*::after`, a `border-box`. Esto garantiza que nunca se exceda el ancho declarado del elemento debido al relleno o al borde.
@@ -101,8 +103,6 @@ Los elementos `<html>` y `<body>` se actualizan para proporcionar mejores valore
 ## Pila de fuentes nativas {#native-font-stack}
 
 Bootstrap utiliza una “pila de fuentes nativa” o una “pila de fuentes del sistema” para una representación óptima del texto en cada dispositivo y sistema operativo. Estas fuentes del sistema se han diseñado específicamente teniendo en cuenta los dispositivos actuales, con representación mejorada en las pantallas, compatibilidad con fuentes variables y más. Lee más sobre [pilas de fuentes nativas en esta _Smashing Magazine_ (artículo)](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide).
-
-{{< content-ads/middle-banner-1 >}}
 
 ```css {filename="SCSS"}
 $font-family-sans-serif:
@@ -158,6 +158,8 @@ Todos los elementos `<p>` tienen su `margin-top` eliminado y `margin-bottom: 1re
 
 ## Enlaces {#links}
 
+{{< content-ads/middle-banner-2 >}}
+
 Los enlaces tienen un `color` predeterminado y se aplica un subrayado. Si bien los enlaces cambian al `:hover`, no cambian en función de si alguien `:visited` el enlace. Tampoco reciben estilos `:focus` especiales.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/links-1.html" >}}
@@ -185,8 +187,6 @@ Los enlaces de marcador de posición (aquellos sin un `href`) están orientados 
 ## Reglas horizontales {#horizontal-rules}
 
 El elemento `<hr>` ha sido simplificado. De manera similar a los valores predeterminados del navegador, los `<hr>` tienen estilo mediante `border-top`, tienen una `opacity: .25` y heredan automáticamente su `border-color` a través de `color`, incluso cuando `color` se establece a través del padre. Se pueden modificar con utilidades de texto, bordes y opacidad.
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/horizontal-rules.html" >}}
 ```html {filename="HTML"}
@@ -245,6 +245,8 @@ Para un estilo más simple, una jerarquía clara y un mejor espaciado, las lista
 
 ## Código en línea {#inline-code}
 
+{{< content-ads/middle-banner-3 >}}
+
 Ajusta fragmentos de código en línea con `<code>`. Asegúrate de evitar los corchetes angulares HTML.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/inline-code.html" >}}
@@ -288,8 +290,6 @@ Utiliza `<kbd>` para indicar la entrada que normalmente se ingresa mediante el t
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 ## Salida de muestra {#sample-output}
 
 Para indicar resultados de muestra de un programa usa la etiqueta `<samp>`.
@@ -299,6 +299,8 @@ Para indicar resultados de muestra de un programa usa la etiqueta `<samp>`.
     <samp>Este texto debe ser tratado como un resultado de muestra de un programa de computadora.</samp>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-4 >}}
 
 ## Tablas {#tables}
 
@@ -378,6 +380,8 @@ Reboot incluye una mejora para que `role="button"` cambie el cursor predetermina
 
 El elemento `<address>` se actualiza para restablecer el `font-style` predeterminado del navegador de `italic` a `normal`. Ahora también se hereda `line-height` y se ha agregado `margin-bottom: 1rem`. Los `<address>` sirven para presentar información de contacto del antepasado más cercano (o de todo un trabajo). Conserva el formato terminando las líneas con `<br>`.
 
+{{< content-ads/middle-banner-5 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/content/reboot/misc-elements.html" >}}
 ```html {filename="HTML"}
 <address>
@@ -392,8 +396,6 @@ El elemento `<address>` se actualiza para restablecer el `font-style` predetermi
 </address>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Blockquote {#blockquote}
 

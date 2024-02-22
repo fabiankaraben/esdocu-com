@@ -55,6 +55,8 @@ $grid-breakpoints: (
 
 Para obtener más información y ejemplos sobre cómo modificar nuestros mapas y variables de Sass, consulta [la sección CSS de la documentación de Grid](/bootstrap/grilla/#css).
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Media queries {#media-queries}
 
 Dado que Bootstrap está desarrollado para ser mobile-first, usamos un puñado de [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) para crear puntos de interrupción sensibles para nuestros diseños e interfaces. Estos puntos de interrupción se basan principalmente en anchos mínimos del viewport y nos permiten ampliar los elementos a medida que cambia el viewport.
@@ -110,8 +112,6 @@ Estos mixins de Sass se traducen en nuestro CSS compilado usando los valores dec
 @media (min-width: 1400px) { ... }
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 #### Max-width {#max-width}
 
 Ocasionalmente usamos media queries que van en la otra dirección (el tamaño de pantalla dado _o menor_):
@@ -160,6 +160,8 @@ Estos mixins toman esos puntos de interrupción declarados, les restan `.02px` y
 
 #### Punto de interrupción único {#single-breakpoint}
 
+{{< content-ads/middle-banner-2 >}}
+
 También existen media queries y mixins para apuntar a un solo segmento de tamaños de pantalla utilizando los anchos de punto de interrupción mínimo y máximo.
 
 ```scss {filename="SCSS"}
@@ -205,11 +207,11 @@ Los contenedores son el elemento de diseño más básico en Bootstrap y son **re
 
 Bootstrap viene con tres contenedores diferentes:
 
+{{< content-ads/middle-banner-3 >}}
+
 * `.container`, que establece un `max-width` en cada punto de interrupción responsive
 * `.container-{breakpoint}`, que es `width: 100%` hasta el punto de interrupción especificado
 * `.container-fluid`, que es `width: 100%` en todos los puntos de interrupción
-
-{{< content-ads/middle-banner-2 >}}
 
 La siguiente tabla ilustra cómo se compara el `max-width` de cada contenedor con el `.container` y el `.container-fluid` original en cada punto de interrupción.
 
@@ -261,6 +263,8 @@ Usa `.container-fluid` para un contenedor de ancho completo, que abarque todo el
 
 #### Variables Sass generales relacionadas {#sass-variables}
 
+{{< content-ads/middle-banner-4 >}}
+
 Como se muestra arriba, Bootstrap genera una serie de clases contenedoras predefinidas para ayudarte a crear los diseños que deseas. Puedes personalizar estas clases de contenedores predefinidas modificando el mapa Sass (que se encuentra en `_variables.scss`) que las impulsa:
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -301,8 +305,6 @@ Además de personalizar el Sass, también puedes crear tus propios contenedores 
 
 ## Uso de Gutters en Bootstrap
 
-{{< content-ads/middle-banner-3 >}}
-
 Los gutteres son el relleno entre tus columnas, que se utilizan para espaciar y alinear de manera responsive el contenido en el sistema de cuadrícula de Bootstrap.
 
 ### Cómo funcionan {#how-they-work}
@@ -314,6 +316,8 @@ Los gutteres son el relleno entre tus columnas, que se utilizan para espaciar y 
 * **Los gutters se pueden ajustar de forma responsive.** Utiliza clases de gutters específicas de puntos de interrupción para modificar gutters horizontales, verticales y todos los gutters.
     
 ## Gutters horizontales {#horizontal-gutters}
+
+{{< content-ads/middle-banner-5 >}}
 
 `.gx-*` (clases) se pueden usar para controlar el ancho del gutter horizontal. Es posible que sea necesario ajustar el padre `.container` o `.container-fluid` si también se utilizan gutters más grandes para evitar desbordamientos no deseados, utilizando una utilidad de relleno coincidente. Por ejemplo, en el siguiente ejemplo hemos aumentado el relleno con `.px-4`:
 
@@ -447,11 +451,11 @@ Las clases de canal también se pueden agregar a [columnas de fila](/bootstrap/g
 
 Los márgenes entre columnas en nuestras clases de cuadrícula predefinidas se pueden eliminar con `.g-0`. Esto elimina los `margin` negativos de `.row` y el `padding` horizontal de todas las columnas secundarias inmediatas.
 
+{{< content-ads/middle-banner-6 >}}
+
 **¿Necesitas un diseño de borde a borde?** Suelta el `.container` o `.container-fluid` principal y agrega `.mx-0` al `.row` para evitar el desbordamiento.
 
 En la práctica, así es como se ve. Ten en cuenta que puedes continuar usando esto con todas las demás clases de cuadrícula predefinidas (incluidos anchos de columna, niveles responsive, reordenamientos y más).
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/gutters/no-gutters.html" >}}
 ```html {filename="HTML"}
@@ -495,6 +499,8 @@ Bootstrap está construido con flexbox, pero no se ha cambiado el `display` de c
 Si necesitas agregar `display: flex` a un elemento, hazlo con `.d-flex` o uno de las variantes responsive (por ejemplo `.d-sm-flex`). Necesitarás esta clase o valor `display` para permitir el uso de nuestras [utilidades flexbox](/bootstrap/utilidades/flex) adicionales para dimensionar, alinear, espaciar y más.
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-7 >}}
 
 ### Margen y relleno {#margin-and-padding}
 

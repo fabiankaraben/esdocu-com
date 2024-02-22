@@ -50,6 +50,8 @@ Si también deseas incluir *Moment Timezone*, consulta la [documentación separa
 
 Si tu preferencia es utilizar Moment.js directamente en el navegador web, puedes hacerlo añadiendo el paquete `moment.js` previamente descargado o bien utilizando uno de los CDNs disponibles:
 
+{{< content-ads/middle-banner-1 >}}
+
 ```html {filename="HTML"}
 <script src="moment.js"></script>
 <script>
@@ -58,8 +60,6 @@ Si tu preferencia es utilizar Moment.js directamente en el navegador web, puedes
 ```
 
 *Moment.js* está disponible en [cdnjs.com](https://cdnjs.com/libraries/moment.js) y en [jsDelivr](https://www.jsdelivr.com/package/npm/moment).
-
-{{< content-ads/middle-banner-1 >}}
 
 ## Instalar Moment con Bower {#bower}
 
@@ -138,6 +138,8 @@ require.config({
 });
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 Si no especificas `noGlobal`, el `moment` exportado globalmente imprimirá una advertencia de obsolescencia. A partir de la próxima versión importante, tendrás que exportarlo tú mismo si deseas ese comportamiento.
 
 Para la versión **2.5.x**, en caso de que utilices otros complementos que dependan de Moment pero que no sean compatibles con AMD, es posible que debas agregar [`wrapShim: true`](https://github.com/jrburke/r.js/blob/b8a6982d2923ae8389355edaa50d2b7f8065a01a/build/example.build.js#L68-L78) a tu configuración `r.js`.
@@ -145,8 +147,6 @@ Para la versión **2.5.x**, en caso de que utilices otros complementos que depen
 __Nota:__ Para permitir que los complementos `moment.js` se carguen en entornos requirejs, moment se crea como un módulo con nombre. Debido a esto, moment __debe__ cargarse exactamente como `"moment"`, usando `paths` para determinar el directorio. Al solicitar un momento con una ruta como `"vendor\moment"`, se devolverá `undefined`.
 
 __Nota:__ A partir de la versión **2.9.0**, moment se exporta como un módulo anónimo, por lo que si usas solo el núcleo (sin configuraciones regionales ni complementos), no necesitas configuración si lo colocas en una ubicación no estándar.
-
-{{< content-ads/middle-banner-2 >}}
 
 ## Instalar Moment con NuGet {#nuget}
 
@@ -179,6 +179,8 @@ var moment = require('moment');
 moment().format();
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 **Nota:** Hay un error que impide que se cargue `moment.locale`.
 
 ```javascript {filename="JavaScript"}
@@ -203,8 +205,6 @@ require("moment/min/locales.min");
 moment.locale('cs');
 console.log(moment.locale()); // cs
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 ## Usar Moment con Webpack {#webpack}
 
@@ -245,6 +245,8 @@ Existen otros recursos para optimizar Moment.js con webpack, [por ejemplo este](
 
 ## Usar Moment en TypeScript {#typescript}
 
+{{< content-ads/middle-banner-4 >}}
+
 A partir de la versión **2.13.0**, Moment incluye un archivo de definición para TypeScript.
 
 Instalar a través de NPM:
@@ -266,8 +268,6 @@ let now = moment().format('LLLL');
 Para _TypeScript 2.x_ intenta agregar `"moduleResolution": "node"` en `compilerOptions` en tu archivo `tsconfig.json`
 
 Para _TypeScript 1.x_ intenta agregar `"allowSyntheticDefaultImports": true` en `compilerOptions` en tu archivo `tsconfig.json` y luego usa la sintaxis:
-
-{{< content-ads/middle-banner-4 >}}
 
 ```typescript {filename="TypeScript"}
 import moment from 'moment';
@@ -303,6 +303,8 @@ Luego impórtalo a tu página.
   System.import('moment.js');
  </script>
 ```
+
+{{< content-ads/middle-banner-5 >}}
 
 Si necesitas que moment se cargue como global, puedes hacerlo con la configuración en `meta`:
 

@@ -105,6 +105,8 @@ Alineado a la derecha con `.justify-content-end`:
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 ### Vertical {#vertical}
@@ -144,8 +146,6 @@ Como siempre, la navegación vertical también es posible sin `<ul>`s.
 {{< /demo-iframe >}}
 
 ### Pestañas {#tabs}
-
-{{< content-ads/middle-banner-1 >}}
 
 Toma la navegación básica de arriba y agrega la clase `.nav-tabs` para generar una interfaz con pestañas. Utilízalos para crear regiones con pestañas con nuestro [complemento JavaScript para pestañas](#javascript-behavior).
 
@@ -196,6 +196,8 @@ Toma el mismo HTML, pero usa `.nav-pills` en su lugar:
 ### Subrayado {#underline}
 
 Toma el mismo HTML, pero usa `.nav-underline` en su lugar:
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/navs-tabs/underline.html" >}}
 ```html {filename="HTML"}
@@ -303,9 +305,9 @@ Si necesitas variaciones de nav responsive, considera usar una serie de [utilida
 
 ## Respecto a la accesibilidad {#regarding-accessibility}
 
-{{< content-ads/middle-banner-2 >}}
-
 Si estás usando navs para proporcionar una barra de navegación, asegúrate de agregar un `role="navigation"` al contenedor padre más lógico del `<ul>`, o envuelve un elemento `<nav>` alrededor de toda la navegación. No agregues el rol al `<ul>` en sí, ya que esto evitaría que las tecnologías de asistencia lo anuncien como una lista real.
+
+{{< content-ads/middle-banner-3 >}}
 
 Ten en cuenta que las barras de navegación, incluso si están diseñadas visualmente como pestañas con la clase `.nav-tabs`, **no** deben darse `role="tablist"`, `role="tab"` o `role="tabpanel"`. Estos solo son apropiados para interfaces dinámicas con pestañas, como se describe en el [patrón de pestañas de la Guía de prácticas de creación de ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel). Consulta [comportamiento de JavaScript](#javascript-behavior) para interfaces dinámicas con pestañas en esta sección para ver un ejemplo. El atributo `aria-current` no es necesario en interfaces dinámicas con pestañas ya que nuestro JavaScript maneja el estado seleccionado agregando `aria-selected="true"` en la pestaña activa.
 
@@ -400,6 +402,8 @@ En la clase base `.nav`:
 --#{$prefix}nav-link-disabled-color: #{$nav-link-disabled-color};
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 En la clase modificadora `.nav-tabs`:
 
 [scss/_nav.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_nav.scss)
@@ -423,8 +427,6 @@ En la clase modificadora `.nav-pills`:
 --#{$prefix}nav-pills-link-active-color: #{$nav-pills-link-active-color};
 --#{$prefix}nav-pills-link-active-bg: #{$nav-pills-link-active-bg};
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
@@ -474,6 +476,8 @@ $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
 ## Comportamiento JavaScript del componente {#javascript-behavior}
 
 Utiliza el complemento JavaScript de pestañas (inclúyelo individualmente o mediante el archivo `bootstrap.js` compilado) para ampliar nuestras pestañas y píldoras de navegación para crear paneles con pestañas de paneles con contenido local.
+
+{{< content-ads/middle-banner-5 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -587,11 +591,11 @@ En general, para facilitar la navegación con el teclado, se recomienda hacer qu
 El complemento JavaScript con pestañas **no** admite interfaces con pestañas que contengan menús desplegables, ya que causan problemas de usabilidad y accesibilidad. Desde una perspectiva de usabilidad, el hecho de que el elemento desencadenante de la pestaña que se muestra actualmente no sea visible inmediatamente (ya que está dentro del menú desplegable cerrado) puede causar confusión. Desde el punto de vista de la accesibilidad, actualmente no existe una forma sensata de asignar este tipo de construcción a un patrón WAI ARIA estándar, lo que significa que no puede hacerse comprensible fácilmente para los usuarios de tecnologías de asistencia.
 {{< /callout >}}
 
-{{< content-ads/middle-banner-4 >}}
-
 ### Usar atributos de datos {#using-data-attributes}
 
 Puedes activar una pestaña o píldora de navegación sin escribir ningún JavaScript simplemente especificando `data-bs-toggle="tab"` o `data-bs-toggle="pill"` en un elemento. Utiliza estos atributos de datos en `.nav-tabs` o `.nav-pills`.
+
+{{< content-ads/middle-banner-6 >}}
 
 ```html {filename="HTML"}
 <!-- Nav tabs -->
@@ -673,6 +677,8 @@ Puedes crear una instancia de pestaña con el constructor, por ejemplo:
 ```javascript {filename="JavaScript"}
 const bsTab = new bootstrap.Tab('#myTab')
 ```
+
+{{< content-ads/middle-banner-7 >}}
 
 | Método                | Descripción                                                                                                                                                                                                                                                                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

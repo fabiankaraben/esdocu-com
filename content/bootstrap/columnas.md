@@ -32,8 +32,6 @@ Usa las utilidades de alineación de Flexbox para alinear columnas vertical y ho
 
 Cambia la alineación vertical con cualquiera de las clases responsive `align-items-*`.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/columns/vertical-alignment-1.html" >}}
 ```html {filename="HTML"}
     <div class="container text-center">
@@ -108,6 +106,8 @@ O cambia la alineación de cada columna individualmente con cualquiera de las cl
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Alineación horizontal {#horizontal-alignment}
 
 Cambia la alineación horizontal con cualquiera de las clases responsive `justify-content-*`.
@@ -171,8 +171,6 @@ Cambia la alineación horizontal con cualquiera de las clases responsive `justif
 
 ### Envoltura de columnas {#column-wrapping}
 
-{{< content-ads/middle-banner-2 >}}
-
 Si se colocan más de 12 columnas dentro de una sola fila, cada grupo de columnas adicionales, como una unidad, se ajustará a una nueva línea.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/columns/column-wrapping.html" >}}
@@ -234,7 +232,7 @@ También puedes aplicar esta interrupción en puntos de interrupción específic
 
 ### Ordenar clases {#order-classes}
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 Usa las clases `.order-` para controlar el **orden visual** de tu contenido. Estas clases son responsive, por lo que puedes establecer el `order` por punto de interrupción (por ejemplo, `.order-1.order-md-2`). Incluye soporte para `1` a `5` en los seis niveles de la cuadrícula. Si necesitas más clases `.order-*` puedes modificar el número predeterminado mediante la variable Sass.
 
@@ -306,8 +304,6 @@ Mueve columnas hacia la derecha usando las clases `.offset-md-*`. Estas clases a
 
 Además de borrar las columnas en los puntos de interrupción responsive, es posible que necesites restablecer los offsets. Ve esto en acción en [el ejemplo de cuadrícula](https://getbootstrap.com/docs/5.3/examples/grid).
 
-{{< content-ads/middle-banner-4 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/columns/offset-classes-2.html" >}}
 ```html {filename="HTML"}
     <div class="container text-center">
@@ -350,6 +346,8 @@ Con el cambio a flexbox en v4, puedes usar utilidades de margen como `.me-auto` 
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Clases de columnas independientes {#standalone-column-classes}
 
 Las clases `.col-*` también se pueden usar fuera de un `.row` para darle a un elemento un ancho específico. Siempre que se utilizan clases de columnas como hijos indirectos de una fila, se omiten los rellenos.
@@ -369,8 +367,6 @@ Las clases `.col-*` también se pueden usar fuera de un `.row` para darle a un e
 {{< bootstrap/content-suggestion >}}
 
 Las clases se pueden usar junto con utilidades para crear imágenes flotantes responsive. Asegúrate de envolver el contenido en un contenedor [`.clearfix`](/bootstrap/helpers) para borrar el flotante si el texto es más corto.
-
-{{< content-ads/middle-banner-5 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/columns/standalone-column-classes-2.html" >}}
 ```html {filename="HTML"}

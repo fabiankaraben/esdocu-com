@@ -94,11 +94,11 @@ Puedes usar un enlace con el atributo `href`, o un botón con el atributo `data-
 
 {{< bootstrap/content-suggestion >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Desplazamiento del body {#body-scrolling}
 
 El desplazamiento del elemento `<body>` está deshabilitado cuando un offcanvas y su fondo son visibles. Utiliza el atributo `data-bs-scroll` para habilitar el desplazamiento de `<body>`.
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/offcanvas/body-scrolling.html" >}}
 ```html {filename="HTML"}
@@ -191,6 +191,8 @@ Cambia la apariencia de los lienzos con utilidades para que coincidan mejor con 
 
 ## Comportamiento responsive del componente {#responsive}
 
+{{< content-ads/middle-banner-2 >}}
+
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
 
@@ -217,8 +219,6 @@ Las clases responsive offcanvas ocultan el contenido fuera del viewport desde un
 {{< /demo-iframe >}}
 
 Las clases responsive offcanvas están disponibles para cada punto de interrupción.
-
-{{< content-ads/middle-banner-2 >}}
 
 * `.offcanvas`
 * `.offcanvas-sm`
@@ -292,6 +292,8 @@ Prueba los ejemplos superior, derecho e inferior a continuación.
 
 Dado que el panel offcanvas es conceptualmente un cuadro de diálogo modal, asegúrate de agregar `aria-labelledby="..."`, que hace referencia al título de offcanvas, a `.offcanvas`. Ten en cuenta que no necesitas agregar `role="dialog"` ya que ya lo agregamos a través de JavaScript.
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Personalización del CSS del componente {#css}
 
 ### Variables Sass del componente {#variables}
@@ -317,8 +319,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, offcanvas ah
 --#{$prefix}offcanvas-transition: #{transform $offcanvas-transition-duration ease-in-out};
 --#{$prefix}offcanvas-title-line-height: #{$offcanvas-title-line-height};
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Variables Sass generales relacionadas {#sass-variables}
 
@@ -357,6 +357,8 @@ Agrega un botón para descartar (cerrar) con el atributo `data-bs-dismiss="offca
 
 #### Alternar {#toggle}
 
+{{< content-ads/middle-banner-4 >}}
+
 Agrega `data-bs-toggle="offcanvas"` y un `data-bs-target` o `href` al elemento para asignar automáticamente el control de un elemento offcanvas. El atributo `data-bs-target` acepta un selector CSS al que aplicar el offcanvas. Asegúrate de agregar la clase `offcanvas` al elemento offcanvas. Si deseas que se abra de forma predeterminada, agrega la clase adicional `show`.
 
 #### Descartar {#dismiss}
@@ -379,8 +381,6 @@ Si bien se admiten ambas formas de descartar un offcanvas, ten en cuenta que des
 
 ### Vía JavaScript {#via-javascript}
 
-{{< content-ads/middle-banner-4 >}}
-
 Habilitar manualmente con:
 
 ```javascript {filename="JavaScript"}
@@ -401,6 +401,8 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 | `backdrop` | boolean o la cadena `static` | `true`         | Aplica un fondo en el cuerpo mientras el lienzo está abierto. Alternativamente, especifica `static` para un fondo que no cierre el lienzo cuando se haga clic en él. |
 | `keyboard` | boolean                      | `true`         | Cierra el lienzo cuando se presiona la tecla Escape.                                                                                                                 |
 | `scroll`   | boolean                      | `false`        | Permitir el desplazamiento del cuerpo mientras el lienzo está abierto.                                                                                               |
+
+{{< content-ads/middle-banner-5 >}}
 
 ### Métodos {#methods}
 

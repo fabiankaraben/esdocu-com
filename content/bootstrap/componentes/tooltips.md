@@ -66,13 +66,13 @@ Coloca el cursor sobre los enlaces a continuación para ver tooltips:
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="warning" emoji="" >}}
 Siéntete libre de utilizar `title` o `data-bs-title` en tu HTML. Cuando se usa `title`, Popper lo reemplazará automáticamente con `data-bs-title` cuando se renderice el elemento.
 {{< /callout >}}
 
 ### Tooltips personalizado {#custom-tooltips}
+
+{{< content-ads/middle-banner-1 >}}
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
@@ -128,8 +128,6 @@ Y con HTML personalizado agregado:
 </button>
 ```
 
-{{< content-ads/middle-banner-2 >}}
-
 Con un SVG:
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/tooltips/directions-2.html" >}}
@@ -146,6 +144,8 @@ Con un SVG:
 ## Personalización del CSS del componente {#css}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 ### Variables Sass del componente {#variables}
 
@@ -195,8 +195,6 @@ $tooltip-arrow-color:               null; // Deprecated in Bootstrap 5.2.0 for C
 
 ## Uso del componente Tooltip {#usage}
 
-{{< content-ads/middle-banner-3 >}}
-
 El complemento de tooltips genera contenido y marcado a pedido y, de forma predeterminada, coloca tooltips después de su elemento desencadenante. Activa el tooltips a través de JavaScript:
 
 ```javascript {filename="JavaScript"}
@@ -221,6 +219,8 @@ El marcado requerido para un tooltips es solo un atributo `data` y un `title` en
 {{< callout type="warning" emoji="" >}}
 **Mantén los tooltips accesibles para los usuarios de teclados y tecnologías de asistencia** agregándolos únicamente a elementos HTML que tradicionalmente son interactivos y enfocables mediante el teclado (como enlaces o controles de formulario). Si bien se pueden enfocar otros elementos HTML agregando `tabindex="0"`, esto puede crear tabulaciones molestas y confusas en elementos no interactivos para los usuarios del teclado, y la mayoría de las tecnologías de asistencia actualmente no anuncian tooltips en esta situación. Además, no confíes únicamente en `hover` como activador de tooltips, ya que esto hará que sea imposible activarlo para los usuarios del teclado.
 {{< /callout >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 ```html {filename="HTML"}
 <!-- HTML to write -->
@@ -252,8 +252,6 @@ Los elementos con el atributo `disabled` no son interactivos, lo que significa q
 ### Opciones {#options}
 
 Como las opciones se pueden pasar a través de atributos de datos o JavaScript, puedes agregar un nombre de opción a `data-bs-`, como en `data-bs-animation="{value}"`. Asegúrate de cambiar el tipo de caso del nombre de la opción de “_camelCase_” a “_kebab-case_” al pasar las opciones a través de atributos de datos. Por ejemplo, utiliza `data-bs-custom-class="beautifier"` en lugar de `data-bs-customClass="beautifier"`.
-
-{{< content-ads/middle-banner-4 >}}
 
 A partir de Bootstrap 5.2.0, todos los componentes admiten un atributo de datos **experimental** reservado `data-bs-config` que puede albergar datos simples de configuración del componente como una cadena JSON. Cuando un elemento tiene los atributos `data-bs-config='{"delay":0, "title":123}'` y `data-bs-title="456"`, el valor final de `title` será `456` y los atributos de datos separados sobrescribirán los valores proporcionados en `data-bs-config`. Además, los atributos de datos existentes pueden albergar valores JSON como `data-bs-delay='{"show":0,"hide":150}'`.
 
@@ -303,6 +301,8 @@ const tooltip = new bootstrap.Tooltip(element, {
 
 ### Métodos {#methods}
 
+{{< content-ads/middle-banner-4 >}}
+
 {{< callout type="error" emoji="" >}}
 **Todos los métodos API son asincrónicos e inician una transición.** Regresan al punto de la llamada tan pronto como se inicia la transición, pero antes de que finalice. Además, se ignorará una llamada a un método en un componente en transición. [Obtén más información en nuestra documentación de JavaScript.](/bootstrap/comenzando/#asynchronous-functions-and-transitions)
 {{< /callout >}}
@@ -333,8 +333,6 @@ El método `setContent` acepta un argumento `object`, donde cada clave de propie
 {{< /callout >}}
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-5 >}}
 
 ### Eventos {#events}
 

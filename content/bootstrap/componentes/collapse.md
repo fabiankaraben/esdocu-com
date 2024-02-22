@@ -54,8 +54,6 @@ Generalmente, recomendamos usar un `<button>` con el atributo `data-bs-target`. 
 
 El complemento de colapso admite el colapso horizontal. Agrea la clase modificadora `.collapse-horizontal` para realizar la transición del `width` en lugar de `height` y establece un `width` en el elemento hijo inmediato. Siéntete libre de escribir tu propio Sass personalizado, usar estilos en línea o usar nuestras [utilidades de ancho](/bootstrap/utilidades/otras-utilidades).
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="info" emoji="" >}}
 Ten en cuenta que, si bien el siguiente ejemplo tiene un `min-height` configurado para evitar repintados excesivos en nuestra documentación, esto no es un requisito explícito. **Solo se requiere el `width` en el elemento secundario.**
 {{< /callout >}}
@@ -118,6 +116,8 @@ Un elemento `<button>` o `<a>` puede mostrar y ocultar múltiples elementos haci
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 ## Accesibilidad del componente Collapse {#accessibility}
@@ -127,8 +127,6 @@ Asegúrate de agregar `aria-expanded` al elemento de control. Este atributo tran
 Si tu elemento de control apunta a un único elemento plegable, es decir, el atributo `data-bs-target` apunta a un selector `id`, debes agregar el atributo `aria-controls` al elemento de control, que contiene el `id` del elemento plegable. Los lectores de pantalla modernos y tecnologías de asistencia similares utilizan este atributo para proporcionar a los usuarios accesos directos adicionales para navegar directamente al elemento plegable.
 
 Ten en cuenta que la implementación actual de Bootstrap no cubre las diversas interacciones de teclado _opcionales_ descritas en [Patrón de acordeón de la Guía de prácticas de creación de ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/accordion), deberás incluirlos tú mismo con JavaScript personalizado.
-
-{{< content-ads/middle-banner-2 >}}
 
 ## Personalización del CSS del componente {#css}
 
@@ -171,7 +169,7 @@ Las clases de transición de collapse se pueden encontrar en `scss/_transitions.
 
 El complemento de colapso utiliza algunas clases para manejar el trabajo pesado:
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 * `.collapse` oculta el contenido
 * `.collapse.show` muestra el contenido
@@ -198,8 +196,6 @@ const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Co
 
 Como las opciones se pueden pasar a través de atributos de datos o JavaScript, puedes agregar un nombre de opción a `data-bs-`, como en `data-bs-animation="{value}"`. Asegúrate de cambiar el tipo de caso del nombre de la opción de “_camelCase_” a “_kebab-case_” al pasar las opciones a través de atributos de datos. Por ejemplo, utiliza `data-bs-custom-class="beautifier"` en lugar de `data-bs-customClass="beautifier"`.
 
-{{< content-ads/middle-banner-4 >}}
-
 A partir de Bootstrap 5.2.0, todos los componentes admiten un atributo de datos **experimental** reservado `data-bs-config` que puede albergar datos simples de configuración del componente como una cadena JSON. Cuando un elemento tiene los atributos `data-bs-config='{"delay":0, "title":123}'` y `data-bs-title="456"`, el valor final de `title` será `456` y los atributos de datos separados sobrescribirán los valores proporcionados en `data-bs-config`. Además, los atributos de datos existentes pueden albergar valores JSON como `data-bs-delay='{"show":0,"hide":150}'`.
 
 El objeto de configuración final es el resultado combinado de `data-bs-config`, `data-bs-` y `js object` donde el último valor-clave dado sobrescribe los demás.
@@ -214,6 +210,8 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 {{< callout type="error" emoji="️" >}}
 **Todos los métodos API son asincrónicos e inician una transición.** Regresan al punto de la llamada tan pronto como se inicia la transición, pero antes de que finalice. Además, se ignorará una llamada a un método en un componente en transición. [Obtén más información en nuestra documentación de JavaScript.](/bootstrap/comenzando/#asynchronous-functions-and-transitions)
 {{< /callout >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 Activa tu contenido como un elemento plegable. Acepta opciones opcionales `object`.
 
@@ -235,8 +233,6 @@ const bsCollapse = new bootstrap.Collapse('#myCollapse', {
 | `toggle`              | Cambia un elemento plegable para mostrarlo u ocultarlo. **Vuelve a la persona que llama antes de que el elemento plegable se haya mostrado u ocultado** (es decir, antes de que el evento `shown.bs.collapse` o `hidden.bs.collapse` ocurra). |
 
 ### Eventos {#events}
-
-{{< content-ads/middle-banner-5 >}}
 
 La clase de colapso de Bootstrap expone algunos eventos para conectarse a la funcionalidad de colapso.
 

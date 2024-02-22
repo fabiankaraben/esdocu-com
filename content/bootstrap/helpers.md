@@ -64,6 +64,8 @@ El siguiente ejemplo muestra cómo se puede usar clearfix. Sin clearfix, el div 
 
 Establece un color de fondo con un color de primer plano que contraste.
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Descripción general {#overview}
 
 Los ayudantes de color y fondo combinan el poder de nuestras [`.text-*` (utilidades)](/bootstrap/utilidades/colores) y [`.bg-*` (utilidades)](/bootstrap/utilidades/background) en una clase. Usando nuestra función Sass `color-contrast()`, determinamos automáticamente un `color` de contraste para un `background-color` particular.
@@ -131,6 +133,8 @@ Enlaces de colores con estados de desplazamiento.
 
 Puedes usar las clases `.link-*` para colorear enlaces. A diferencia de las [`.text-*` (clases)](/bootstrap/utilidades/colores), estas clases tienen un estado `:hover` y `:focus`. Algunos de los estilos de enlace utilizan un color de primer plano relativamente claro y solo deben usarse sobre un fondo oscuro para tener suficiente contraste.
 
+{{< content-ads/middle-banner-2 >}}
+
 {{< callout type="info" emoji="" >}}
 **¡Atención!** `.link-body-emphasis` es actualmente el único enlace de color que se adapta a los modos de color. Se trata como un caso especial hasta que llegue la versión 6 y podamos reconstruir más a fondo los colores de nuestro tema para los modos de color. Hasta entonces, es un color de enlace único y de alto contraste con estilos personalizados `:hover` y `:focus`. Sin embargo, todavía responde a las nuevas utilidades de enlace.
 {{< /callout >}}
@@ -182,8 +186,6 @@ Clases de utilidad que te permiten agregar y modificar estilos de anillos de enf
 
 El asistente `.focus-ring` elimina el `outline` predeterminado en `:focus`, reemplazándolo con un `box-shadow` que se puede personalizar de forma más amplia. La nueva sombra se compone de una serie de variables CSS, heredadas del nivel `:root`, que se pueden modificar para cualquier elemento o componente.
 
-{{< content-ads/middle-banner-1 >}}
-
 ### Ejemplo {#example}
 
 Haz clic directamente en el siguiente enlace para ver el anillo de enfoque en acción, o en el ejemplo siguiente y luego presiona Tab.
@@ -197,6 +199,8 @@ Haz clic directamente en el siguiente enlace para ver el anillo de enfoque en ac
 {{< /demo-iframe >}}
 
 ### Personalizar {#customize}
+
+{{< content-ads/middle-banner-3 >}}
 
 Modifica el estilo de un anillo de enfoque con nuestras variables CSS, variables Sass, utilidades o estilos personalizados.
 
@@ -249,6 +253,8 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
 #### API de utilidades de Sass {#sass-utilities-api}
 
 Además de `.focus-ring`, tenemos varias utilidades `.focus-ring-*` para modificar los valores predeterminados de la clase auxiliar. Modifica el color con cualquiera de nuestros [colores de tema](/bootstrap/personalizar/#theme-colors). Ten en cuenta que es posible que las variantes clara y oscura no sean visibles en todos los colores de fondo debido a la compatibilidad con el modo de color actual.
+
+{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/focus-ring/sass-utilities-api.html" >}}
 ```html {filename="HTML"}
@@ -318,6 +324,8 @@ Toma un elemento `<a>` normal, agrega `.icon-link` e inserta un ícono a la izqu
 
 ### Estilo al pasar el mouse {#style-on-hover}
 
+{{< content-ads/middle-banner-5 >}}
+
 Agrega `.icon-link-hover` para mover el ícono hacia la derecha al pasar el mouse.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/icon-link/style-on-hover.html" >}}
@@ -340,8 +348,6 @@ Modifica el estilo de un enlace de icono con nuestras variables CSS de enlace, v
 Modifica las variables CSS `--bs-link-*` y `--bs-icon-link-*` según sea necesario para cambiar la apariencia predeterminada.
 
 Personaliza la `transform` al pasar el mouse sobrescribendo la variable CSS `--bs-icon-link-transform`:
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/helpers/icon-link/css-variables-1.html" >}}
 ```html {filename="HTML"}
@@ -382,6 +388,8 @@ $icon-link-icon-size:         1em;
 $icon-link-icon-transition:   .2s ease-in-out transform;
 $icon-link-icon-transform:    translate3d(.25em, 0, 0);
 ```
+
+{{< content-ads/middle-banner-6 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
@@ -427,6 +435,8 @@ Coloca un elemento en la parte superior del viewport, de borde a borde, pero sol
 ```
 
 ### Pegajoso responsive superior {#responsive-sticky-top}
+
+{{< content-ads/middle-banner-7 >}}
 
 También existen variaciones responsive para la utilidad `.sticky-top`.
 
@@ -474,6 +484,8 @@ Las relaciones de aspecto se declaran en un mapa Sass y se incluyen en cada clas
 **¡Consejo profesional!** No necesitas `frameborder="0"` en tus `<iframe>`s, ya que lo sobrescribimos en [Reboot](/bootstrap/reboot).
 {{< /callout >}}
 
+{{< content-ads/middle-banner-8 >}}
+
 ### Ejemplo {#example}
 
 Envuelve cualquier incrustación, como un `<iframe>`, en un elemento padre con `.ratio` y una clase de relación de aspecto. El tamaño del elemento hijo inmediato se ajusta automáticamente gracias a nuestro selector universal `.ratio > *`.
@@ -486,8 +498,6 @@ Envuelve cualquier incrustación, como un `<iframe>`, en un elemento padre con `
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Relaciones de aspecto {#aspect-ratios}
 
@@ -545,6 +555,8 @@ Esta variable CSS facilita la modificación de la relación de aspecto entre pun
 ### Mapas de Sass {#sass-maps}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-9 >}}
 
 Dentro de `_variables.scss`, puedes cambiar las relaciones de aspecto que deseas usar. Aquí está nuestro mapa `$ratio-aspect-ratios` predeterminado. Modifica el mapa como quieras y vuelve a compilar tu Sass para usarlo.
 
@@ -608,6 +620,8 @@ Usar utilidades de margen horizontal como `.ms-auto` como espaciadores:
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-1 >}}
 
 Y con [reglas verticales](/bootstrap/helpers):
 
@@ -677,9 +691,9 @@ Haz que se pueda hacer clic en cualquier elemento HTML o componente Bootstrap "e
 
 Agrega `.stretched-link` a un enlace para que sea [bloque contenedor](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) en el que se puede hacer clic mediante un pseudoelemento `::after`. En la mayoría de los casos, esto significa que se puede hacer clic en un elemento con `position: relative;` que contiene un enlace con la clase `.stretched-link`. Ten en cuenta [cómo funciona `position` (CSS)](https://www.w3.org/TR/CSS21/visuren.html#propdef-position), `.stretched-link` no se puede mezclar con la mayoría de los elementos de la tabla.
 
-{{< content-ads/middle-banner-4 >}}
-
 Las tarjetas tienen `position: relative` de forma predeterminada en Bootstrap, por lo que en este caso puedes agregar de forma segura la clase `.stretched-link` a un enlace en la tarjeta sin ningún otro cambio de HTML.
+
+{{< content-ads/middle-banner-2 >}}
 
 No se recomiendan múltiples enlaces y objetivos táctiles con enlaces extendidos. Sin embargo, algunos estilos de `position` y `z-index` pueden ayudar si fuera necesario.
 
@@ -807,6 +821,8 @@ Para contenido más extenso, puedes agregar una clase `.text-truncate` para trun
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-3 >}}
+
 ## Uso del ayudante de Regla vertical en Bootstrap
 
 Utiliza el asistente de regla vertical personalizado para crear divisores verticales como el elemento `<hr>`.
@@ -857,6 +873,8 @@ También se pueden usar en [pilas](/bootstrap/helpers):
 {{< bootstrap/content-suggestion >}}
 
 ### Personalización del CSS {#css}
+
+{{< content-ads/middle-banner-4 >}}
 
 #### Variables Sass generales relacionadas {#sass-variables}
 

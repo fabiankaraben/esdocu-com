@@ -52,8 +52,6 @@ Cada lenguaje tiene sus propias *peculiaridades*: rarezas y sorpresas, y el humi
   const area = obj.width * obj.heigth;
   ```
 
-{{< content-ads/middle-banner-1 >}}
-
 La mayoría de los lenguajes de programación arrojarían un error cuando ocurren este tipo de errores, algunos lo harían durante la compilación, antes de ejecutar cualquier código.
 Al escribir programas pequeños, estas peculiaridades son molestas pero manejables; Al escribir aplicaciones con cientos o miles de líneas de código, estas constantes sorpresas son un problema grave.
 
@@ -69,6 +67,8 @@ Aquí está el error que encontró TypeScript:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYMEYBQBjOAO0QBdQ4AjAK1AF5QBvUAdwEsATUgC1WwAYANKG6Q2Ac26k+GUAF8A3AWJlQAQ2iQ19CjQB07Lt1AAqXdT2iJPBUA)
 
+{{< content-ads/middle-banner-1 >}}
+
 ```ts
 const obj = { width: 10, height: 15 };
 const area = obj.width * obj.heigth;
@@ -83,8 +83,6 @@ Property 'heigth' does not exist on type '{ width: number; height: number; }'. D
 ¿Cómo se relaciona TypeScript con JavaScript?
 
 #### Sintaxis {#syntax}
-
-{{< content-ads/middle-banner-2 >}}
 
 TypeScript es un lenguaje que es un *superconjunto* de JavaScript: la sintaxis JS es, por lo tanto, TS legal.
 La sintaxis se refiere a la forma en que escribimos texto para formar un programa.
@@ -117,7 +115,7 @@ console.log(4 / []);
 Este programa sintácticamente legal registra `Infinity`.
 Sin embargo, TypeScript considera que la división de un número por un array es una operación sin sentido y generará un error:
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYBsGBQBjOAO0TgBtIA6MuAcwAoAWUMAbQF0BKAbiA)
 
@@ -149,8 +147,6 @@ Mantener el mismo comportamiento de tiempo de ejecución que JavaScript es una p
 
 #### Tipos borrados {#erased-types}
 
-{{< content-ads/middle-banner-4 >}}
-
 En términos generales, una vez que el compilador de TypeScript termina de verificar tu código, *borra* los tipos para producir el código "compilado" resultante.
 Esto significa que una vez compilado el código, el código JS simple resultante no tiene información de tipo.
 
@@ -163,6 +159,8 @@ Tus programas utilizarán la misma biblioteca estándar (o bibliotecas externas)
 ## Aprendiendo JavaScript y TypeScript {#learning-javascript-and-typescript}
 
 Con frecuencia vemos la pregunta "¿Debería aprender JavaScript o TypeScript?".
+
+{{< content-ads/middle-banner-3 >}}
 
 ¡La respuesta es que no puedes aprender TypeScript sin aprender JavaScript!
 TypeScript comparte sintaxis y comportamiento de tiempo de ejecución con JavaScript, por lo que todo lo que aprendas sobre JavaScript te ayudará a aprender TypeScript al mismo tiempo.

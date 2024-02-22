@@ -74,8 +74,6 @@ Si no te apetece un spinner de bordes, cambia al spinner de crecimiento. Si bien
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/spinners/growing-spinner-1.html" >}}
 ```html {filename="HTML"}
 <div class="spinner-grow" role="status">
@@ -85,6 +83,8 @@ Si no te apetece un spinner de bordes, cambia al spinner de crecimiento. Si bien
 {{< /demo-iframe >}}
 
 Una vez más, esta ruleta está construida con `currentColor`, por lo que puedes cambiar fácilmente su apariencia con [utilidades de color de texto](/bootstrap/utilidades/colores). Aquí está en azul, junto con las variantes compatibles.
+
+{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/spinners/growing-spinner-2.html" >}}
 ```html {filename="HTML"}
@@ -149,8 +149,6 @@ Usa [utilidades flexbox](/bootstrap/utilidades/flex), [utilidades flotantes](/bo
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/spinners/flex-2.html" >}}
 ```html {filename="HTML"}
 <div class="d-flex align-items-center">
@@ -173,6 +171,8 @@ Usa [utilidades flexbox](/bootstrap/utilidades/flex), [utilidades flotantes](/bo
 {{< /demo-iframe >}}
 
 #### Alinear texto {#text-align}
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/spinners/text-align.html" >}}
 ```html {filename="HTML"}
@@ -218,8 +218,6 @@ O usa CSS personalizado o estilos en línea para cambiar las dimensiones según 
 
 Usa spinners dentro de los botones para indicar que una acción se está procesando o teniendo lugar actualmente. También puedes cambiar el texto del spinner y utilizar el texto del botón según sea necesario.
 
-{{< content-ads/middle-banner-3 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/spinners/buttons-1.html" >}}
 ```html {filename="HTML"}
 <button class="btn btn-primary" type="button" disabled="">
@@ -255,6 +253,8 @@ Usa spinners dentro de los botones para indicar que una acción se está procesa
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
 
+{{< content-ads/middle-banner-3 >}}
+
 Como parte del enfoque de evolución de variables CSS de Bootstrap, los spinners ahora usan variables CSS locales en `.spinner-border` y `.spinner-grow` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
 Variables de spinners de borde:
@@ -281,8 +281,6 @@ Variables spinners crecientes:
 --#{$prefix}spinner-animation-speed: #{$spinner-animation-speed};
 --#{$prefix}spinner-animation-name: spinner-grow;
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Para ambos spinners, se utilizan pequeñas clases modificadoras de spinners para actualizar los valores de estas variables CSS según sea necesario. Por ejemplo, la clase `.spinner-border-sm` hace lo siguiente:
 
@@ -313,6 +311,8 @@ $spinner-border-width-sm: .2em;
 {{< bootstrap/content-suggestion >}}
 
 ### Fotogramas clave {#keyframes}
+
+{{< content-ads/middle-banner-4 >}}
 
 Se utiliza para crear animaciones CSS para nuestros spinners. Incluido en `scss/_spinners.scss`.
 

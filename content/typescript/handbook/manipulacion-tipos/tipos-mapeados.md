@@ -37,8 +37,6 @@ type OptionsFlags<Type> = {
 };
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 En este ejemplo, `OptionsFlags` tomará todas las propiedades del tipo `Type` y cambiará sus valores para que sean booleanos.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA8mwEsD2A7AzgMQDYEMDmaAPACrgQB8UAvFAN4BQUUA2gAoBOSk7oUCKUANYQQSAGZRSkALoAuKACMkSLBBwoA3PQC+WgPR6oAWhMBjAK7ATR+qEhQMa4OfYQ01OoygATHO0EAskjeEPIAFACU1JQAbkgI3lpMKBAA7gCqaBDsHOIIquFRVLHxiTpatmQOTi4QcIio7jT1yOjY+ESOOM6uaOT6hkwAegD8QA)
@@ -63,8 +61,6 @@ Hay dos modificadores adicionales que se pueden aplicar durante el mapeo: `reado
 
 Puedes eliminar o agregar estos modificadores anteponiendo `-` o `+`. Si no agregas un prefijo, se supone `+`.
 
-{{< content-ads/middle-banner-2 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMFsHsDdIGdQHIBOkCGATWA7AGwE9VQsAXC9ASwCMBXC5UAM3VmnNAuIAdIqFHw4D0FGsgBQvAaADCmSpACyTLHUKQAPABV+kAHygAvKADeU0KAC0SvEWKgA2gAVRkcU5r5QAa0hiWFZQfQEAXQAuUIM3Dy9wgG4pAF9kmQNQABlYAGMAnABBXNzYBnwKUwsrUHsCElAaHGikah8Ac2TrOsdQfCxoSBa2-E7U9NlIUABVIjyC4tLyyrNFbGY1Cg0tbRz8yCKSsorDZJBrUAA9AH4gA)
 
 ```ts
@@ -87,6 +83,8 @@ type UnlockedAccount = {
 ```
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMFsHsDdIGdQHJYAcAuBLWA7AQwBtVRCssAnHAIwFctlQAzK2ac0LATw0lQoM7flVzIAUL36gAwgQDGVSEwA8AFT6QAfKAC8oAN4TQoANoAFEZDE9QOfKADWkHrBahN-ALoBaAPwAXJ5alta23gDcEgC+0VJaoACyhDy0kACqSDb6Rib2ACbBSNQOAObRpkTQkEGgJTT4FfmEZbXB+PTQ6VTRcRIJMlk5BvL4SiqQqilpmdlU2tEgpqAAev5AA)
+
+{{< content-ads/middle-banner-1 >}}
 
 ```ts
 // Elimina atributos 'optional' de las propiedades de un tipo
@@ -112,8 +110,6 @@ type User = {
 ## Remapeo de claves con `as` {#key-remapping-via-as}
 
 En TypeScript 4.1 y posteriores, puedes remapear claves en tipos mapeados con una cláusula `as` en un tipo mapeado:
-
-{{< content-ads/middle-banner-3 >}}
 
 ```ts
 type MappedTypeWithNewProperties<Type> = {
@@ -148,8 +144,6 @@ type LazyPerson = {
 Puedes filtrar claves generando `never` mediante un tipo condicional:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAECUFMFsHsDdKgC4AskHIDWBLAdgCYagAOATrCZGcgJ4BQdVEMCkA0vgQGI6QA2BADwAVWlQB8oALygA3vVBLQAbQAKFKjVqh8oLJFqwAZqDHMAhgGdQAUQAeAY34BXApCEbK1OgBpQAES4hAESALoAXGbikOqaPrRh9AC+ANz09PjI1MYWjkgAwjhkzkgKyvpcUQGOxaUB6RVkFgQ4LlZReC7QAEbU6ckZTEichPyQVlZFJeMyLHCIozx8gkLTpRLpIMoAegD8QA)
-
-{{< content-ads/middle-banner-4 >}}
 
 ```ts
 // Elimina la propiedad 'kind'
@@ -193,7 +187,7 @@ type Config = {
 
 Los tipos mapeados funcionan bien con otras características en esta sección de manipulación de tipos, por ejemplo aquí está [un tipo mapeado usando un tipo condicional](/typescript/handbook/manipulacion-tipos/tipos-condicionales) que devuelve `true` o `false` dependiendo de si un objeto tiene la propiedad `pii` establecida en el literal `true`:
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAogHsATgQwMbAAoEksB4Aq4EAfFALxQDeAUFFANoaID2kioUAlgHZQDWEEMwBmUQpAC6ALjFFGLNqAlQICCNwAmAZypQwnTjKQBXaAF8oAfignoM4cgA2WiAG5qZ99VCQoAEQAhADFOCEdtcipaLg0ZSihhZkQAW2RgGQAiHlRECGT1YB4AcwyoT2juZHy4myIZLSRi1z0DI0RTMvdy7yIoAHkAIwArCHQtADkICA1igHE-DAAlPzCIQuZeCngkNEwcXECQsO1idwB6M7ooAD1LIA)
 

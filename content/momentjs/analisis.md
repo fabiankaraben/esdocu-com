@@ -52,6 +52,8 @@ Esto es esencialmente lo mismo que llamar a `moment(new Date())`.
 
 ## Crear un Moment a partir de una cadena {#string}
 
+{{< content-ads/middle-banner-1 >}}
+
 ```javascript {filename="Firma del método"}
 moment(String);
 ```
@@ -123,6 +125,8 @@ Si se incluye una parte de tiempo, también se puede incluir un desplazamiento d
 2013-02-08 09:30:26.123+07      # +-HH
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 **Nota:** Se agregó soporte para los formatos semanales y ordinales en la versión **2.3.0**.
 
 Si una cadena no coincide con ninguno de los formatos anteriores y no se puede analizar con `Date.parse`, `moment#isValid` devolverá falso.
@@ -178,14 +182,14 @@ moment("12-25-1995", "MM-DD-YYYY");
 
 El parser ignora los caracteres no alfanuméricos de forma predeterminada, por lo que los siguientes ejemplos devolverán lo mismo.
 
+{{< content-ads/middle-banner-3 >}}
+
 ```javascript {filename="JavaScript"}
 moment("12-25-1995", "MM-DD-YYYY");
 moment("12/25/1995", "MM-DD-YYYY");
 ```
 
 Es posible que obtengas resultados inesperados al analizar tanto la fecha como la hora. Es posible que el siguiente ejemplo no se analice como esperaba:
-
-{{< content-ads/middle-banner-1 >}}
 
 ```javascript {filename="JavaScript"}
 moment('24/12/2019 09:15:00', "DD MM YYYY hh:mm:ss");
@@ -240,6 +244,8 @@ Para estos, los tokens en minúsculas usan los días de inicio de la semana que 
 | `W WW`     | `1..53`        | Semana ISO del año                                                            |
 | `E`        | `1..7`         | Día ISO de la semana                                                          |
 
+{{< content-ads/middle-banner-4 >}}
+
 ### Formatos compatibles con la configuración regional
 
 Los formatos de fecha y hora compatibles con la configuración regional también están disponibles usando `LT LTS L LL LLL LLLL`. Se agregaron en la versión **2.2.1**, excepto `LTS` que se agregó **2.8.4**.
@@ -287,6 +293,8 @@ Por ejemplo, `.12` siempre es 120 milisegundos; pasar `SS` no hará que se inter
 `k kk` se agregaron en la versión **2.13.0**.
 
 A menos que especifiques un desplazamiento de zona horaria, el análisis de una cadena creará una fecha en la zona horaria actual.
+
+{{< content-ads/middle-banner-5 >}}
 
 ```javascript {filename="JavaScript"}
 moment("2010-10-20 4:30",       "YYYY-MM-DD HH:mm");   // Analizado como 4:30 local time
@@ -343,6 +351,8 @@ moment('I am spartacus', 'h:hh A').isValid();     // true - 'am' se toma como un
 
 ```
 
+{{< content-ads/middle-banner-6 >}}
+
 A partir de la versión **2.3.0**, puedes especificar un valor booleano para el último argumento para que Moment utilice un análisis estricto. El análisis estricto requiere que el formato y la entrada coincidan exactamente, *incluidos los delimitadores*.
 
 ```javascript {filename="JavaScript"}
@@ -357,8 +367,6 @@ Puedes utilizar tanto la configuración regional (locale) como el modo estricto.
 ```javascript {filename="JavaScript"}
 moment('2012-10-14', 'YYYY-MM-DD', 'fr', true);
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 El análisis estricto suele ser la mejor opción de análisis. Para obtener más información sobre cómo elegir un análisis estricto o indulgente, consulta la [guía de análisis](https://momentjs.com/guides/#/parsing).
 
@@ -390,6 +398,8 @@ moment(String, String[], String, Boolean);
 Si no conoces el formato exacto de una cadena de entrada, pero sabes que podría ser una entre muchas, puedes utilizar una variedad de formatos.
 
 Esto es lo mismo que [Cadena + Formato](/momentjs/analisis#string-format), solo que intentará hacer coincidir la entrada con múltiples formatos.
+
+{{< content-ads/middle-banner-7 >}}
 
 ```javascript {filename="JavaScript"}
 moment("12-25-1995", ["MM-DD-YYYY", "YYYY-MM-DD"]);
@@ -449,6 +459,8 @@ A partir de la versión **2.20.0**, los siguientes formatos HTML5 están disponi
 
 ## Pasar un Objecto JavaScript {#object}
 
+{{< content-ads/middle-banner-8 >}}
+
 ```javascript {filename="Firma del método"}
 moment({unit: value, ...});
 ```
@@ -494,6 +506,8 @@ var day = moment(1318781876406);
 moment.unix(Number)
 ```
 
+{{< content-ads/middle-banner-9 >}}
+
 Para crear un moment a partir de una marca de tiempo de Unix (*segundos* desde la época de Unix), usa `moment.unix(Number)`.
 
 ```javascript {filename="JavaScript"}
@@ -511,8 +525,6 @@ var day = moment.unix(1318781876.721);
 ```javascript {filename="JavaScript"}
 var day = moment.unix(1318781876).utc();
 ```
-
-{{< content-ads/middle-banner-3 >}}
 
 ## Pasar un objeto Date {#date}
 
@@ -538,6 +550,8 @@ moment(Number[]);
 Puedes crear un moment con una serie de números que reflejen los parámetros pasados a [new Date()](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date)
 
 `[year, month, day, hour, minute, second, millisecond]`
+
+{{< content-ads/middle-banner-1 >}}
 
 ```javascript {filename="JavaScript"}
 moment([2010, 1, 14, 15, 25, 50, 125]); // February 14th, 3:25:50.125 PM
@@ -584,6 +598,8 @@ moment("/Date(1198908717056-0700)/"); // 2007-12-28T23:11:57.056-07:00
 ```
 
 ## Clonar un objeto Moment {#moment-clone}
+
+{{< content-ads/middle-banner-2 >}}
 
 ```javascript {filename="Firma del método"}
 moment(Moment);
@@ -646,6 +662,8 @@ moment.utc().seconds(30).valueOf() === new Date().setUTCSeconds(30);
 moment.utc().seconds()   === new Date().getUTCSeconds();
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 Es importante tener en cuenta que, aunque las visualizaciones anteriores difieren, ambas son el mismo momento en el tiempo.
 
 ```javascript {filename="JavaScript"}
@@ -681,8 +699,6 @@ moment.parseZone(String, String, String, Boolean)
 
 Las funciones de análisis de cadenas de Moment como `moment(string)` y `moment.utc(string)` aceptan información de desplazamiento si se proporciona, pero convierten el objeto Moment resultante a hora local o UTC. Por el contrario, `moment.parseZone()` analiza la cadena pero mantiene el objeto Moment resultante en una zona horaria con desplazamiento fijo con el desplazamiento proporcionado en la cadena.
 
-{{< content-ads/middle-banner-4 >}}
-
 ```javascript {filename="JavaScript"}
 moment.parseZone("2013-01-01T00:00:00-13:00").utcOffset(); // -780 ("-13:00" en minutos totales)
 moment.parseZone('2013 01 01 05 -13:00', 'YYYY MM DD HH ZZ').utcOffset(); // -780  ("-13:00" en minutos totales)
@@ -710,6 +726,8 @@ moment(s).utcOffset(s);
 ```javascript {filename="Firma del método"}
 moment().isValid();
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 Moment aplica reglas de inicialización más estrictas que el constructor `Date`.
 
@@ -761,6 +779,8 @@ El valor de retorno tiene el siguiente significado:
 7. milisegundos
 
 **Nota:** En caso de que haya varias unidades incorrectas, se devuelve la primera (porque la validez de los días puede depender del mes, por ejemplo).
+
+{{< content-ads/middle-banner-5 >}}
 
 ### Moments no válidos
 
@@ -843,6 +863,8 @@ moment("2013-01-02", "YYYY-MM-DD", true).creationData() === {
 ```
 
 ## Valores por defecto {#defaults}
+
+{{< content-ads/middle-banner-6 >}}
 
 ```javascript {filename="Firma del método"}
 moment("15", "hh")

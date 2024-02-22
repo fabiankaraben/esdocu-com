@@ -58,8 +58,6 @@ Generalmente recomendamos que las personas usen la generación anticipada (ahead
 
 El poder de los literales de plantilla surge cuando se define una nueva cadena basada en información dentro de un tipo.
 
-{{< content-ads/middle-banner-1 >}}
-
 Considera el caso en el que una función (`makeWatchedObject`) agrega una nueva función llamada `on()` a un objeto pasado. En JavaScript, su llamada podría verse así: `makeWatchedObject(baseObject)`. Podemos imaginar que el objeto base se parece a:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDsHsFECd7XgZwFAGNqRQF1AA4CGKKApgCYDyARgFZkb4C8oA3mqKAGYCWquAHJEAtmQBcoAEQBlItH7kpAGk6gANiSGiJ0gErYikFWqIBzXQCYAbKoC+AbiA)
@@ -71,6 +69,8 @@ const passedObject = {
   age: 26,
 };
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 La función `on` que se agregará al objeto base espera dos argumentos, un `eventName` (un `string`) y un `callback` (una `function`).
 
@@ -102,8 +102,6 @@ person.on("firstNameChanged", (newValue) => {
 Observa que `on` escucha el evento `"firstNameChanged"`, no solo `"firstName"`. Nuestra ingenua especificación de `on()` podría hacerse más sólida si nos aseguráramos de que el conjunto de nombres de eventos elegibles estuviera restringido por la unión de nombres de atributos en el objeto observado con "Changed" agregado al final. Si bien nos sentimos cómodos haciendo este tipo de cálculo en JavaScript, es decir, ```Object.keys(passedObject).map(x => `${x}Changed`)```, los literales de plantilla *dentro del sistema de tipos* proporcionan un enfoque similar para la manipulación de cadenas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACgTgezAUQG4QHbAMoIK5wDGEAPACrgQB8UAvFAN4BQUrUCGAFBOlgHIBDALYQAXFAAGAEgYBnYHACWGAOZQAZFADWEEAgBmUCpAC+AYQAWA1RAAmEgDRRCAgDauARgMJbxnDBAA7gBqbnhiUNYgAJR0NKgIirbR4glJANxMJplMAPT5UGZwEALA0AJQAESBpYQWduweAFYQhMCVUIGKwBaRGJIcElAiPQi2eQWyCFA9pVB6eM7WnbW9+ghwzlY2sjPTYIiQcMCKELIAdEy2ra4CxVD6eBhtihzDAjoA6qt2APLNrWA5EoVE4CGa4mMEBSRkoGlghzQmBw+CIpChVHSQA)
-
-{{< content-ads/middle-banner-2 >}}
 
 ```ts
 type PropEventSource<Type> = {
@@ -141,6 +139,8 @@ Argument of type '"firstName"' is not assignable to parameter of type '"firstNam
 ```
 
 ### Inferencia con literales de plantilla {#inference-with-template-literals}
+
+{{< content-ads/middle-banner-2 >}}
 
 Observa que no nos beneficiamos de toda la información proporcionada en el objeto pasado original. Dado el cambio de un `firstName` (es decir, un evento `firstNameChanged`), deberíamos esperar que la devolución de llamada reciba un argumento de tipo `string`. De manera similar, la devolución de llamada para un cambio en `age` debe recibir un argumento `number`. Estamos usando ingenuamente `any` para tipar el argumento de la "devolución de llamada" (`callback`). Nuevamente, los tipos literales de plantilla permiten garantizar que el tipo de datos de un atributo sea el mismo tipo que el primer argumento de la devolución de llamada de ese atributo.
 
@@ -184,8 +184,6 @@ person.on("ageChanged", newAge => {
 
 Aquí convertimos `on` en un método genérico.
 
-{{< content-ads/middle-banner-3 >}}
-
 Cuando un usuario llama con la cadena `"firstNameChanged"`, TypeScript intentará inferir el tipo correcto para `Key`.
 Para hacer eso, comparará `Key` con el contenido antes de `"Changed"` e inferirá la cadena `"firstName"`.
 Una vez que TypeScript se da cuenta de eso, el método `on` puede recuperar el tipo de `firstName` en el objeto original, que es `string` en este caso.
@@ -217,13 +215,13 @@ type MainID = ASCIICacheKey<"my_app">
 type MainID = "ID-MY_APP"
 ```
 
+{{< content-ads/middle-banner-3 >}}
+
 ### `Lowercase<StringType>` {#lowercasestringtype}
 
 Convierte cada carácter de la cadena al equivalente en minúsculas.
 
 ##### Ejemplo {#example-1}
-
-{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBA4gThCwCWA7A5lAvFARACQgBsiB7AGigHdS4iATXAKFEigEUBXZJeRFDNigAZUlQhwAxgEMAzhAA8fJGnQA+JgHpNUXQD0A-ExbhoAQQDKAYQCSNq9MkALCAGkIIBReBwoEAB7AEKj0slCyPqpqQgAGyPQAtAAkAN6i4lJyit5wagC+MSZsALLSaDYAIkKWtvaOLu6euMUAmgD6ZgAKnbga2rpQhkA)
 

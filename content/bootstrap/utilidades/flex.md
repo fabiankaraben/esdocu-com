@@ -109,6 +109,8 @@ También existen variaciones responsive para `flex-direction`.
 
 ## Justificar contenido {#justify-content}
 
+{{< content-ads/middle-banner-1 >}}
+
 Utiliza las utilidades `justify-content` en contenedores flexbox para cambiar la alineación de los elementos flexibles en el eje principal (el eje x para comenzar, el eje y si `flex-direction: column`). Elige entre `start` (predeterminado del navegador), `end`, `center`, `between`, `around`, o `evenly`.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/justify-content.html" >}}
@@ -121,8 +123,6 @@ Utiliza las utilidades `justify-content` en contenedores flexbox para cambiar la
     <div class="d-flex justify-content-evenly">...</div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -259,6 +259,8 @@ También existen variaciones responsive para `align-self`.
 * `.align-self-xxl-baseline`
 * `.align-self-xxl-stretch`
 
+{{< content-ads/middle-banner-2 >}}
+
 ## Rellenar {#fill}
 
 Usa la clase `.flex-fill` en una serie de elementos hermanos para forzarlos a tener anchos iguales a su contenido (o anchos iguales si su contenido no sobrepasan sus cuadros de borde) mientras ocupan todo el espacio horizontal disponible.
@@ -274,8 +276,6 @@ Usa la clase `.flex-fill` en una serie de elementos hermanos para forzarlos a te
 {{< /demo-iframe >}}
 
 También existen variaciones responsive para `flex-fill`.
-
-{{< content-ads/middle-banner-2 >}}
 
 * `.flex-fill`
 * `.flex-sm-fill`
@@ -330,6 +330,8 @@ También existen variaciones responsive para `flex-grow` y `flex-shrink`.
 
 Flexbox puede hacer cosas increíbles cuando combinas alineaciones flex con márgenes automáticos. A continuación se muestran tres ejemplos de control de elementos flex mediante márgenes automáticos: default (sin margen automático), empujando dos elementos hacia la derecha (`.me-auto`) y empujando dos elementos hacia la izquierda (`.ms-auto`).
 
+{{< content-ads/middle-banner-3 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/auto-margins-1.html" >}}
 ```html {filename="HTML"}
     <div class="d-flex mb-3">
@@ -375,8 +377,6 @@ Mueve verticalmente un elemento flexible a la parte superior o inferior de un co
 ## Wrap {#wrap}
 
 Cambia cómo se envuelven los elementos flexibles en un contenedor flex. Elige entre no ajustar nada (el valor predeterminado del navegador) con `.flex-nowrap`, ajusta con `.flex-wrap` o ajusta al revés con `.flex-wrap-reverse`.
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/wrap-1.html" >}}
 ```html {filename="HTML"}
@@ -438,6 +438,8 @@ Cambia el orden _visual_ de elementos flex específicos con un puñado de utilid
 {{< /demo-iframe >}}
 
 También existen variaciones responsive para `order`.
+
+{{< content-ads/middle-banner-4 >}}
 
 * `.order-0`
 * `.order-1`
@@ -506,8 +508,6 @@ Utiliza las utilidades `align-content` en contenedores flexbox para alinear elem
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/flex/align-content-2.html" >}}
 ```html {filename="HTML"}
@@ -578,6 +578,8 @@ También existen variaciones responsive para `align-content`.
 * `.align-content-xxl-around`
 * `.align-content-xxl-stretch`
 
+{{< content-ads/middle-banner-5 >}}
+
 ## Objeto media {#media-object}
 
 Buscando replicar el [componente de objeto media ⬀](https://getbootstrap.com/docs/4.6/components/media-object "Página todavía no traducida") de Bootstrap 4? Recrealo en poco tiempo con algunas utilidades flex que permiten aún más flexibilidad y personalización que antes.
@@ -633,8 +635,6 @@ Y decir que quieres centrar verticalmente el contenido al lado de la imagen:
 Las utilidades de Flexbox se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
-
-{{< content-ads/middle-banner-5 >}}
 
 ```scss {filename="scss/_utilities.scss"}
 "flex": (

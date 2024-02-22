@@ -60,6 +60,8 @@ Las media queries afectan los anchos de pantalla con el punto de interrupción d
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ### Ocultar elementos {#hiding-elements}
 
 Para un desarrollo más rápido y compatible con dispositivos móviles, usa clases de visualización responsive para mostrar y ocultar elementos por dispositivo. Evita crear versiones completamente diferentes del mismo sitio; en su lugar, oculta elementos de manera responsive para cada tamaño de pantalla.
@@ -126,6 +128,8 @@ Las clases print y display se pueden combinar.
 
 Las utilidades de visualización se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
+{{< content-ads/middle-banner-2 >}}
+
 [scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
 
 ```scss {filename="scss/_utilities.scss"}
@@ -191,11 +195,11 @@ Aquí están todas las clases de apoyo:
 * `.float-xxl-end`
 * `.float-xxl-none`
 
-{{< content-ads/middle-banner-1 >}}
-
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 #### API de utilidades de Sass {#sass-utilities-api}
 
@@ -248,6 +252,8 @@ Agrega la clase `object-fit-{value}` al [elemento reemplazado](https://developer
 ### Responsive {#responsive}
 
 También existen variaciones responsive para cada valor de `object-fit` usando el formato `.object-fit-{breakpoint}-{value}`, para las siguientes abreviaturas de puntos de interrupción: `sm`, `md`, `lg`, `xl` y `xxl`. Las clases se pueden combinar para obtener varios efectos según sea necesario.
+
+{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/object-fit/responsive.html" >}}
 ```html {filename="HTML"}
@@ -313,6 +319,8 @@ Establece la `opacity` de un elemento usando las utilidades `.opacity-{value}`.
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-5 >}}
+
 ### Personalización del CSS {#css}
 
 {{< bootstrap/content-suggestion >}}
@@ -353,8 +361,6 @@ Ajusta la propiedad `overflow` sobre la marcha con cuatro valores y clases prede
 ```
 {{< /demo-iframe >}}    
 
-{{< content-ads/middle-banner-2 >}}
-
 #### `overflow-x` {#overflow-x}
 
 Ajusta la propiedad `overflow-x` para afectar el desbordamiento del contenido horizontalmente.
@@ -369,6 +375,8 @@ Ajusta la propiedad `overflow-x` para afectar el desbordamiento del contenido ho
 {{< /demo-iframe >}}
 
 #### `overflow-y` {#overflow-y}
+
+{{< content-ads/middle-banner-6 >}}
 
 Ajusta la propiedad `overflow-y` para afectar el desbordamiento del contenido verticalmente.
 
@@ -425,6 +433,8 @@ Hay clases de posicionamiento rápido disponibles, aunque no responsive.
 ```
 
 ### Organizar elementos {#arrange-elements}
+
+{{< content-ads/middle-banner-7 >}}
 
 Organiza elementos fácilmente con las utilidades de posicionamiento de bordes. El formato es `{property}-{position}`.
 
@@ -500,6 +510,8 @@ Al agregar las clases `.translate-middle-x` o `.translate-middle-y`, los element
 
 Aquí tienes algunos ejemplos de la vida real de estas clases:
 
+{{< content-ads/middle-banner-8 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/position/examples-1.html" >}}
 ```html {filename="HTML"}
     <button type="button" class="btn btn-primary position-relative">
@@ -564,8 +576,6 @@ $position-values: (
 );
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 #### API de utilidades de Sass {#sass-utilities-api}
 
 Las utilidades de posición se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
@@ -609,6 +619,8 @@ Las utilidades de posición se declaran en nuestra API de utilidades en `scss/_u
 ## Uso de las utilidades de Sombras en Bootstrap
 
 Agrega o elimina sombras a elementos con utilidades de sombra box-shadow.
+
+{{< content-ads/middle-banner-9 >}}
 
 ### Ejemplos {#examples}
 
@@ -662,6 +674,8 @@ Las utilidades Shadow se declaran en nuestra API de utilidades en `scss/_utiliti
 Haz fácilmente un elemento tan ancho o tan alto con nuestras utilidades de ancho y alto.
 
 ### Relativo al padre {#relative-to-the-parent}
+
+{{< content-ads/middle-banner-1 >}}
 
 Las utilidades de ancho y alto se generan desde la API de utilidades en `_utilities.scss`. Incluye soporte para `25%`, `50%`, `75%`, `100%` y `auto` por defecto. Modifica esos valores según necesites generar diferentes utilidades aquí.
 
@@ -781,6 +795,8 @@ Las utilidades de tamaño se declaran en nuestra API de utilidades en `scss/_uti
 ),
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 ## Uso de las utilidades de Alineación vertical en Bootstrap
 
 Cambia fácilmente la alineación vertical de los elementos en línea, bloque en línea, tabla en línea y celda de tabla.
@@ -803,8 +819,6 @@ Con elementos en línea:
     <span class="align-text-bottom">texto-abajo</span>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 Con celdas de tabla:
 
@@ -842,6 +856,8 @@ Las utilidades de alineación vertical se declaran en nuestra API de utilidades 
     values: baseline top middle bottom text-bottom text-top
 ),
 ```
+
+{{< content-ads/middle-banner-3 >}}
 
 ## Uso de las utilidades de Visibilidad en Bootstrap
 
@@ -895,6 +911,8 @@ Las utilidades de visibilidad se declaran en nuestra API de utilidades en `scss/
 
 Utiliza nuestras utilidades z-index de bajo nivel para cambiar rápidamente el nivel de pila de un elemento o componente.
 
+{{< content-ads/middle-banner-4 >}}
+
 ### Ejemplo {#example}
 
 Utiliza las utilidades `z-index` para apilar elementos uno encima del otro. Requiere un valor de `position` distinto de `static`, que se puede configurar con estilos personalizados o usando nuestras [utilidades de posición](/bootstrap/utilidades/otras-utilidades).
@@ -942,6 +960,8 @@ $zindex-levels: (
   3: 3
 );
 ```
+
+{{< content-ads/middle-banner-5 >}}
 
 {{< bootstrap/content-suggestion >}}
 

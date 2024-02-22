@@ -25,8 +25,6 @@ El tipo de indexación es en sí mismo un tipo, por lo que podemos usar uniones,
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAChBOBnA9gOygXigbygQwHMIAuKVAVwFsAjBAbjL0pKkWHgEtUCG8AbDgDcW1ZMj4Q86AL50AUAHoFUALRqAxuWBqVc0JCgBJAIyZYCFKgDaAIkIQbUAD5QbqJg4C68pVD8A9AH45PXBoQwAmMzgkNCsAawgQZAAzc1jUb0VlAODQgwBBAWEAeXgAOQ8zO2KHZ1d3Zht5fXCAZmiLOKKhCDLK5izfXKA)
 
-{{< content-ads/middle-banner-1 >}}
-
 ```ts
 type I1 = Person["age" | "name"];
      
@@ -49,8 +47,6 @@ Incluso verás un error si intentas indexar una propiedad que no existe:
 ```ts
 type I1 = Person["alve"];
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 ```text {filename="Error generado"}
 Property 'alve' does not exist on type 'Person'.
@@ -83,8 +79,6 @@ type Age2 = Person["age"];
 type Age2 = number
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 Solo puedes usar tipos al indexar, lo que significa que no puedes usar `const` para hacer una referencia a una variable:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYDMAOdB2AFgE4AoAFwE8AHSUABRkTgDtQBeUAb1AEMBzSKhYBXALYAjGAG5QLXmKGhE5aAEsW-WbwA2agG5KJcODsi82AX2mkQoALSOAxiPKP7pJ6xWgA1pEoOUAAiAUhgmypaUABBQSDGJFYAbX9KAF1pIA)
@@ -97,8 +91,6 @@ type Age = Person[key];
 ```text {filename="Error generado"}
 Type 'key' cannot be used as an index type.'key' refers to a value, but is being used as a type here. Did you mean 'typeof key'?
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Sin embargo, puedes usar un alias de tipo para un estilo similar de refactorización:
 

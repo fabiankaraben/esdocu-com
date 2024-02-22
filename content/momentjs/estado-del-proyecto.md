@@ -48,8 +48,6 @@ En la práctica, esto significa:
 - No haremos *ningún* cambio importante (sin versión 3).
 - Es posible que optemos por no corregir errores o peculiaridades de comportamiento, especialmente si se trata de problemas conocidos desde hace mucho tiempo.
 
-{{< content-ads/middle-banner-1 >}}
-
 Con respecto específicamente a los archivos locales de internacionalización de Moment:
 
 - Podemos optar por no aceptar correcciones a cadenas de configuración regionales o formatos de fecha localizados, especialmente si se han argumentado exitosamente en su forma actual.
@@ -60,6 +58,8 @@ Sin embargo, como entendemos que Moment está bien establecido en millones de pr
 
 - *Abordaremos* los problemas críticos de seguridad a medida que surjan.
 - *Publicaremos* actualizaciones de datos para Moment-Timezone después de las publicaciones de la [base de datos de zonas horarias de la IANA](https://www.iana.org/time-zones).
+
+{{< content-ads/middle-banner-1 >}}
 
 ## Razones para seguir usando Moment
 
@@ -74,8 +74,6 @@ Otras bibliotecas también han tenido problemas con Safari, especialmente en dis
 Sin embargo, [Day.js informa compatibilidad con IE8 y superior](https://day.js.org/docs/en/installation/installation), por lo que es posible que desees considerar esa alternativa.
 
 ### Dependencia de otras bibliotecas
-
-{{< content-ads/middle-banner-2 >}}
 
 Varias otras bibliotecas, especialmente las bibliotecas de selección de fechas y de gráficos, toman Moment como una dependencia. Si estás utilizando dicho componente y no puedes encontrar una alternativa, entonces ya estás incluyendo Moment en tu proyecto.
 Por lo tanto, podría tener sentido seguir usando Moment en todo el proyecto en lugar de incluir otra biblioteca de fechas y horas.
@@ -96,6 +94,8 @@ Al elegir, considera que:
 
 **Aquí están las alternativas que recomendamos:**
 
+{{< content-ads/middle-banner-2 >}}
+
 ### [Luxon](https://moment.github.io/luxon)
 
 Se puede considerar a Luxon como la evolución de Moment. Su autor es [Isaac Cambron](https://github.com/icambron), colaborador de Moment desde hace mucho tiempo.
@@ -103,8 +103,6 @@ Lee las páginas [*¿Por qué existe Luxon?*](https://moment.github.io/luxon/#/w
 
 - Configuraciones regionales: `Intl` proporcionadas
 - Zonas horarias: `Intl` proporcionadas
-
-{{< content-ads/middle-banner-3 >}}
 
 ### [Day.js](https://day.js.org)
 
@@ -133,9 +131,9 @@ Si estás familiarizado con [`java.time`](https://docs.oracle.com/javase/8/docs/
 
 JavaScript siempre ha tenido un objeto [`Date`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date), especificación ECMAScript (ECMA-262) definida [aquí](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-date-objects).
 
-{{< content-ads/middle-banner-4 >}}
-
 Al utilizar objetos `Date`, ten en cuenta lo siguiente:
+
+{{< content-ads/middle-banner-3 >}}
 
 - El objeto `Date` representa internamente una marca de tiempo Unix con precisión de milisegundos. Ofrece funciones que convertirán hacia y desde la zona horaria local del sistema, pero *siempre* internamente es UTC. A diferencia de un objeto `Moment`, *no* se puede configurar para usar otra zona horaria; No tiene concepto de "mode".
 

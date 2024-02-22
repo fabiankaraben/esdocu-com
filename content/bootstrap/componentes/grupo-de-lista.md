@@ -97,6 +97,8 @@ Con `<button>`s, también puedes hacer uso del atributo `disabled` en lugar de l
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 ## Las clases Flush {#flush}
@@ -114,8 +116,6 @@ Agrega `.list-group-flush` para eliminar algunos bordes y esquinas redondeadas p
 </ul>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 ## Numerado en el componente Grupo de lista {#numbered}
 
@@ -206,6 +206,8 @@ Agrega `.list-group-horizontal` para cambiar el diseño de los elementos del gru
 
 {{< bootstrap/content-suggestion >}}
 
+{{< content-ads/middle-banner-2 >}}
+
 ## Variantes de estilo del componente Grupo de lista {#variants}
 
 {{< callout type="info" emoji="" >}}
@@ -253,8 +255,6 @@ Las clases contextuales también funcionan con `.list-group-item-action` para el
 {{< callout type="info" emoji="" >}}
 **Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
 {{< /callout >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 ## Grupo de listas con insignias {#with-badges}
 
@@ -315,6 +315,8 @@ Agrega casi cualquier HTML incluido, incluso para grupos de listas vinculadas co
 {{< /demo-iframe >}}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 ## Checkboxes y radios {#checkboxes-and-radios}
 
@@ -413,8 +415,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los grupos d
 --#{$prefix}list-group-active-border-color: #{$list-group-active-border-color};
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 ### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -447,6 +447,8 @@ $list-group-action-hover-color:     var(--#{$prefix}emphasis-color);
 $list-group-action-active-color:    var(--#{$prefix}body-color);
 $list-group-action-active-bg:       var(--#{$prefix}secondary-bg);
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -569,6 +571,8 @@ Utiliza el complemento JavaScript de pestañas (inclúyelo individualmente o med
 
 Puedes activar la navegación de un grupo de listas sin escribir ningún JavaScript simplemente especificando `data-bs-toggle="list"` o en un elemento. Utiliza estos atributos de datos en `.list-group-item`.
 
+{{< content-ads/middle-banner-5 >}}
+
 ```html {filename="HTML"}
 <div role="tabpanel">
     <!-- List group -->
@@ -588,8 +592,6 @@ Puedes activar la navegación de un grupo de listas sin escribir ningún JavaScr
     </div>
 </div>
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Vía JavaScript {#via-javascript}
 
@@ -650,6 +652,8 @@ const bsTab = new bootstrap.Tab('#myTab')
 | `getInstance`         | Método estático que te permite obtener la instancia de pestaña asociada con un elemento DOM, puedes usarlo así: `bootstrap.Tab.getInstance(element)`.                                                                                                                                                                                       |
 | `getOrCreateInstance` | Método estático que devuelve una instancia de pestaña asociada a un elemento DOM o crea una nueva en caso de que no haya sido inicializada. Puedes usarlo así: `bootstrap.Tab.getOrCreateInstance(element)`.                                                                                                                                |
 | `show`                | Selecciona la pestaña dada y muestra su panel asociado. Cualquier otra pestaña que se haya seleccionado previamente deja de estar seleccionada y su panel asociado se oculta. **Vuelve a la persona que llama antes de que se haya mostrado realmente el panel de pestañas** (es decir, antes de que se produzca el evento `shown.bs.tab`). |
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< bootstrap/content-suggestion >}}
 

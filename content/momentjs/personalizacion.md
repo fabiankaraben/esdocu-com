@@ -40,8 +40,6 @@ Las propiedades que no se especifican en la configuración regional se heredará
 
 A partir de **2.16.0** es posible definir una configuración regional con un padre que no se ha definido ni cargado.
 
-{{< content-ads/middle-banner-1 >}}
-
 ```javascript {filename="JavaScript"}
 moment.defineLocale('fakeLocale', {parentLocale:'xyz'})
 ```
@@ -64,9 +62,9 @@ Para revertir una actualización utiliza:
 moment.updateLocale('en', null);
 ```
 
-{{< content-ads/middle-banner-2 >}}
-
 En **2.12.0** quedó obsoleto el uso de `moment.locale()` para cambiar una configuración regional existente. Utiliza `moment.updateLocale()` en su lugar.
+
+{{< content-ads/middle-banner-1 >}}
 
 ## Nombres de meses {#month-names}
 
@@ -135,8 +133,6 @@ moment.updateLocale('en', {
 });
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 A partir de la versión **2.11.0** los meses también pueden ser un objeto, especificando las formas `standalone` y `format` (nominativo y acusativo). La expresión regular que se ejecuta en el formato para comprobar si se debe utilizar el formato `format` es `/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/`. A partir de la versión **2.14.0** se puede especificar uno diferente con la clave `isFormat`.
 
 ```javascript {filename="JavaScript"}
@@ -202,8 +198,6 @@ moment.updateLocale('en', {
 
 Al igual que `Locale#months`, `Locale#monthsShort` también puede ser una función de devolución de llamada.
 
-{{< content-ads/middle-banner-4 >}}
-
 ```javascript {filename="JavaScript"}
 moment.updateLocale('en', {
     monthsShort : function (momentToFormat, format) {
@@ -217,6 +211,8 @@ moment.updateLocale('en', {
 ```
 
 **Nota:** A partir de la versión **2.11.0**, al igual que `Locale#months`, `Locale#monthsShort` puede ser un objeto con casos `standalone` y `format`.
+
+{{< content-ads/middle-banner-2 >}}
 
 ```javascript {filename="JavaScript"}
 moment.updateLocale('en', {
@@ -278,8 +274,6 @@ moment.updateLocale('en', {
     ]
 });
 ```
-
-{{< content-ads/middle-banner-5 >}}
 
 `Locale#weekdays` también puede ser una función de devolución de llamada.
 

@@ -58,11 +58,11 @@ Desglosándolo, así es como se integra el sistema de grilla:
 
 Ten en cuenta las limitaciones y [errores alrededor de flexbox](https://github.com/philipwalton/flexbugs), como la [imposibilidad de utilizar algunos elementos HTML como contenedores flexibles](https://github.com/philipwalton/flexbugs#flexbug-9).
 
+{{< content-ads/middle-banner-1 >}}
+
 ## Opciones de grilla {#grid-options}
 
 El sistema de cuadrícula de Bootstrap puede adaptarse a los seis puntos de interrupción predeterminados y a cualquier punto de interrupción que personalices. Los seis niveles de cuadrícula predeterminados son los siguientes:
-
-{{< content-ads/middle-banner-1 >}}
 
 * Extra pequeño (xs)
 * Pequeño (sm)
@@ -154,6 +154,8 @@ El diseño automático para las columnas de la cuadrícula Flexbox también sign
 
 ### Contenido de ancho variable {#variable-width-content}
 
+{{< content-ads/middle-banner-2 >}}
+
 Usa las clases `col-{breakpoint}-auto` para dimensionar las columnas según el ancho natural de su contenido.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/grid/variable-width-content.html" >}}
@@ -188,8 +190,6 @@ Usa las clases `col-{breakpoint}-auto` para dimensionar las columnas según el a
 ## Clases responsive {#responsive-classes}
 
 La cuadrícula de Bootstrap incluye seis niveles de clases predefinidas para crear diseños responsive complejos. Personaliza el tamaño de tus columnas en dispositivos extra pequeños, pequeños, medianos, grandes o extra grandes como mejor te parezca.
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Todos los puntos de interrupción {#all-breakpoints}
 
@@ -265,6 +265,8 @@ Usando un único conjunto de clases `.col-sm-*`, puedes crear un sistema de cuad
 
 ### Filas columnas {#row-columns}
 
+{{< content-ads/middle-banner-3 >}}
+
 Utiliza las clases responsive `.row-cols-*` para establecer rápidamente el número de columnas que mejor representen tu contenido y diseño. Mientras que las clases `.col-*` normales se aplican a las columnas individuales (por ejemplo, `.col-md-4`), las clases de columnas de fila se establecen en el `.row` como acceso directo. Con `.row-cols-auto` puedes darle a las columnas su ancho natural.
 
 Usa estas clases de columnas de fila para crear rápidamente diseños de cuadrícula básicos o para controlar los diseños de tus tarjetas.
@@ -320,8 +322,6 @@ Usa estas clases de columnas de fila para crear rápidamente diseños de cuadrí
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/grid/row-columns-5.html" >}}
 ```html {filename="HTML"}
@@ -393,6 +393,8 @@ Para anidar tu contenido con la cuadrícula predeterminada, agrega un nuevo `.ro
 
 ## Personalización del CSS {#css}
 
+{{< content-ads/middle-banner-4 >}}
+
 Cuando usas los archivos fuente Sass de Bootstrap, tienes la opción de usar variables y mixins de Sass para crear diseños de página personalizados, semánticos y responsive. Nuestras clases de cuadrícula predefinidas utilizan estas mismas variables y combinaciones para proporcionar un conjunto completo de clases listas para usar para diseños de respuesta rápida.
 
 ### Variables Sass generales relacionadas {#sass-variables}
@@ -429,8 +431,6 @@ $container-max-widths: (
     xxl: 1320px
 );
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Sass mixins {#sass-mixins}
 
@@ -500,6 +500,8 @@ Puedes modificar las variables a tus propios valores personalizados, o simplemen
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-5 >}}
 
 ## Personalizando la grilla {#customizing-the-grid}
 

@@ -64,6 +64,8 @@ Esto nos permite enviar ese tipo de información por un lado de la función y po
 Decimos que esta versión de la función `identity` es genérica, ya que funciona con una variedad de tipos.
 A diferencia del uso de `any`, también es tan preciso (es decir, no pierde ninguna información) como la primera función `identity` que usaba `number` para el argumento y el tipo de retorno.
 
+{{< content-ads/middle-banner-1 >}}
+
 Una vez que hayamos escrito la función de identidad genérica, podemos llamarla de dos maneras.
 La primera forma es pasar todos los argumentos, incluido el argumento de tipo, a la función:
 
@@ -80,8 +82,6 @@ Aquí establecemos explícitamente `Type` como `string` como uno de los argument
 La segunda forma también es quizás la más común. Aquí usamos *inferencia de argumento de tipo*, es decir, queremos que el compilador establezca el valor de `Type` automáticamente según el tipo de argumento que le pasamos:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABDAJgUzLKBPAPAFWwAc0A+ACgEMAnAcwC5FCSBKR5tRAbwChFFqaKCGpIatANw8AvjwD0cxAFoVEEFBVKeAGyGI46ousQBeZOkwwc5AEQBbbAGUo1GGFo2WUhf1-8AegD8QA)
-
-{{< content-ads/middle-banner-1 >}}
 
 ```ts
 let output = identity("myString");
@@ -111,6 +111,8 @@ function identity<Type>(arg: Type): Type {
 Podríamos sentirnos tentados a escribir esto:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQAzAVwDsBjAFwEs5jQAbOAc0cuMYEkATSYq8gTwA8AFX4AHSAD4AFAENojVKIkBKJeMigA3rlChSNRHDqQAdA0ZyF5no3IALFQG5doaJHKFoteYxcBfIA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 function loggingIdentity<Type>(arg: Type): Type {
@@ -158,14 +160,14 @@ En la siguiente sección, cubriremos cómo puedes crear tus propios tipos generi
 
 ## Tipos generics {#generic-types}
 
-{{< content-ads/middle-banner-2 >}}
-
 En secciones anteriores, creamos funciones de identidad genéricas que funcionaban con una variedad de tipos.
 En esta sección, exploraremos el tipo de funciones en sí y cómo crear interfaces genéricas.
 
 El tipo de funciones genéricas es igual que el de las funciones no genéricas, con los parámetros de tipo enumerados primero, de manera similar a las declaraciones de funciones:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABDAJgUzLKBPAPAFWwAc0A+ACgEMAnAcwC5FCSBKR5tRAbwChFFqaKCGpIatANw8Avjx4AbIYgC22AJLpMMHIwLEyVOu30tEAXlJN955JqzYJQA)
+
+{{< content-ads/middle-banner-3 >}}
 
 ```ts
 function identity<Type>(arg: Type): Type {
@@ -242,14 +244,14 @@ Comprender cuándo colocar el parámetro de tipo directamente en la firma de lla
 Además de interfaces genéricas, también podemos crear clases genéricas.
 Ten en cuenta que no es posible crear enumeraciones y espacios de nombres genéricos.
 
+{{< content-ads/middle-banner-4 >}}
+
 ## Clases genéricas {#generic-classes}
 
 Una clase genérica tiene una forma similar a una interfaz genérica.
 Las clases genéricas tienen una lista de parámetros de tipo genérico entre corchetes angulares (`<>`) después del nombre de la clase.
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEGcBcCcEsDG0BcoBmBDANpApgFCLaaSSgDieAdngogHICuAtgEZ0A8zLAKgJ4AHPAD5QAbwKhQALzoB7AGo4meNDwHCA3FNCYAJvrQAKAB7rWmvABpQ-C3yF4AlKAC8YjU50BfAgWw8aFAWfipaeh4OWHdQWgB3Sho6JCiualZokWNnHVDwlMZMugA6OVglFTxYgAY8sOTI4tgSg31Y9CZqZHh5alAzW35XSWlYIKZYftNQAGo7Xy0gA)
-
-{{< content-ads/middle-banner-3 >}}
 
 ```ts
 class GenericNumber<NumType> {
@@ -306,6 +308,8 @@ En lugar de trabajar con todos y cada uno de los tipos, nos gustaría restringir
 Siempre que el tipo tenga este miembro, lo permitiremos, pero es necesario que tenga al menos este miembro.
 Para hacerlo, debemos enumerar nuestro requisito como una restricción sobre lo que puede ser `Type`.
 
+{{< content-ads/middle-banner-5 >}}
+
 Para hacerlo, crearemos una interfaz que describa nuestra restricción.
 Aquí, crearemos una interfaz que tenga una única propiedad `.length` y luego usaremos esta interfaz y la palabra clave `extends` para indicar nuestra restricción:
 
@@ -338,8 +342,6 @@ En lugar de eso, debemos pasar valores cuyo tipo tenga todas las propiedades req
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgDIRAczACwO7ADOKA3gFDLIA2G2OAXMiAK4C2ARtANxkC+ZZGMxAIwwAPYhq4zJlCYAkgBMMYsAE8APABV1ABxQQAHpBBLCaWrgLEAfAAo4UTI10GAlK-2kKyBJMJxGgA6KhlHZ1CrHHceSigIMGYoKSdMHn4AekzkAFp8hGYwfNyyMNl5ZVVgDXsSamjGAEYABgAaZAA3OCpmCEYAZmReWKA)
 
-{{< content-ads/middle-banner-4 >}}
-
 ```ts
 loggingIdentity({ length: 10, value: 3 });
 ```
@@ -366,6 +368,8 @@ getProperty(x, "m");
 ```text {filename="Error generado"}
 Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.
 ```
+
+{{< content-ads/middle-banner-6 >}}
 
 ## Usando tipos de clase en generics {#using-class-types-in-generics}
 

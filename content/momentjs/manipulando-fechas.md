@@ -39,8 +39,6 @@ moment().add(7, 'days');
 
 También hay algunas claves de atajo si te gusta todo ese asunto de la brevedad.
 
-{{< content-ads/middle-banner-1 >}}
-
 ```javascript {filename="JavaScript"}
 moment().add(7, 'd');
 ```
@@ -66,6 +64,8 @@ moment().add({days:7,months:1}); // con objeto literal
 
 No hay límites superiores para las cantidades, por lo que puedes sobrecargar cualquiera de los parámetros.
 
+{{< content-ads/middle-banner-1 >}}
+
 ```javascript {filename="JavaScript"}
 moment().add(1000000, 'milliseconds'); // un millón de milisegundos
 moment().add(360, 'days'); // 360 días
@@ -82,8 +82,6 @@ moment([2010, 0, 31]).add(1, 'months'); // February 28
 
 También hay consideraciones especiales a tener en cuenta al agregar tiempo que cruza el horario de verano.
 Si agregas años, meses, semanas o días, la hora original siempre coincidirá con la hora agregada.
-
-{{< content-ads/middle-banner-2 >}}
 
 Agregar un mes agregará la cantidad especificada de meses a la fecha.
 
@@ -123,7 +121,7 @@ moment().add(1, 'seconds');
 A partir de **2.12.0**, cuando se pasan valores decimales para días y meses, se redondean al número entero más cercano.
 Las semanas, cuartos (trimestres) y años se convierten a días o meses y luego se redondean al número entero más cercano.
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 ```javascript {filename="JavaScript"}
 moment().add(1.5, 'months') == moment().add(2, 'months')
@@ -161,8 +159,6 @@ moment().subtract(1.5, 'months') == moment().subtract(2, 'months')
 moment().subtract(.7, 'years') == moment().subtract(8, 'months') // .7*12 = 8.4, redondeado a 8
 ```
 
-{{< content-ads/middle-banner-4 >}}
-
 Ten en cuenta que para que las operaciones `moment.add(-.5, 'days')` y `moment.subtract(.5, 'days')` sean equivalentes, `-.5`, `-1.5`, `-2.5`, etc. se redondean hacia abajo.
 
 ## Al inicio de una unidad de tiempo {#start-of}
@@ -185,6 +181,8 @@ moment().startOf('hour');    // establecido a ahora, pero con 0 minutos, 0 segun
 moment().startOf('minute');  // establecido a ahora, pero con 0 segundos y 0 milisegundos
 moment().startOf('second');  // igual a moment().milliseconds(0);
 ```
+
+{{< content-ads/middle-banner-3 >}}
 
 Estos atajos son esencialmente los mismos que los siguientes.
 

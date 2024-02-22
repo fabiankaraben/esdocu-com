@@ -27,8 +27,6 @@ m.get('year');
 m.get('years');
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 Si estás ampliando la biblioteca, es posible que desees acceder a las instalaciones de Moment para alinear mejor tu funcionalidad con la de Moment.
 
 ```javascript {filename="JavaScript"}
@@ -44,8 +42,6 @@ moment.normalizeUnits('YeARS');  // 'year'
 ```javascript {filename="Firma del método"}
 moment.invalid(Object);
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 Puedes crear tus propios objetos Moment no válidos, lo cual resulta útil para crear tu propio analizador (parser).
 

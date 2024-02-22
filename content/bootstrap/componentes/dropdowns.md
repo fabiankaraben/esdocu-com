@@ -70,6 +70,8 @@ Si bien `<button>` es el control recomendado para un menú desplegable, puede ha
 
 La mejor parte es que también puedes hacer esto con cualquier variante de botón:
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/single-button-3.html" >}}
 ```html {filename="HTML"}
 <div class="btn-group">
@@ -347,11 +349,11 @@ Los menús desplegables de botones funcionan con botones de todos los tamaños, 
 
 Opta por menús desplegables más oscuros para que coincidan con una barra de navegación oscura o un estilo personalizado agregando `.dropdown-menu-dark` a un `.dropdown-menu`. No se requieren cambios en los elementos desplegables.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< callout type="warning" emoji="" >}}
 **¡Atención!** Las variantes oscuras para componentes quedaron obsoletas en la versión 5.3.0 con la introducción de modos de color. En lugar de agregar `.dropdown-menu-dark`, establece `data-bs-theme="dark"` en el elemento raíz, un contenedor padre o el componente mismo.
 {{< /callout >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/dark-dropdowns-1.html" >}}
 ```html {filename="HTML"}
@@ -495,6 +497,8 @@ Haz que el menú desplegable esté centrado encima del interruptor con `.dropup-
 
 ### Dropend {#dropend}
 
+{{< content-ads/middle-banner-3 >}}
+
 Activa menús desplegables a la derecha de los elementos agregando `.dropend` al elemento principal.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/dropend.html" >}}
@@ -616,8 +620,6 @@ También puedes crear elementos desplegables no interactivos con `.dropdown-item
 
 Agrega `.active` a los elementos en el menú desplegable para **diseñarlos como activos**. Para transmitir el estado activo a las tecnologías de asistencia, utiliza el atributo `aria-current`, utilizando el valor `page` para la página actual o `true` para la elemento actual en un conjunto.
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/active.html" >}}
 ```html {filename="HTML"}
 <ul class="dropdown-menu">
@@ -629,6 +631,8 @@ Agrega `.active` a los elementos en el menú desplegable para **diseñarlos como
 {{< /demo-iframe >}}
 
 ### Deshabilitado {#disabled}
+
+{{< content-ads/middle-banner-4 >}}
 
 Agrega `.disabled` a los elementos en el menú desplegable para **mostrarlos como deshabilitados**.
 
@@ -711,6 +715,8 @@ Para alinear **a la izquierda** el menú desplegable con el punto de interrupci�
 Ten en cuenta que no necesitas agregar un atributo `data-bs-display="static"` a los botones desplegables en las barras de navegación, ya que Popper no es utilizado en barras de navegación.
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-5 >}}
 
 ### Opciones de alineación {#alignment-options}
 
@@ -844,8 +850,6 @@ Separa grupos de elementos de menú relacionados con un divisor.
 
 Coloca cualquier texto de formato libre dentro de un menú desplegable con texto y usa [utilidades de espaciado](/bootstrap/utilidades/espaciado). Ten en cuenta que probablemente necesitarás estilos de tamaño adicionales para limitar el ancho del menú.
 
-{{< content-ads/middle-banner-3 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/text.html" >}}
 ```html {filename="HTML"}
     <div class="dropdown-menu p-4 text-body-secondary" style="max-width: 200px;">
@@ -862,6 +866,8 @@ Coloca cualquier texto de formato libre dentro de un menú desplegable con texto
 ### Formularios {#forms}
 
 Coloca un formulario dentro de un menú desplegable, o conviértelo en un menú desplegable, y usa [utilidades de margen o relleno.](/bootstrap/utilidades/espaciado) para darle el espacio negativo que necesitas.
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/dropdowns/forms-1.html" >}}
 ```html {filename="HTML"}
@@ -1062,6 +1068,8 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los menús d
 --#{$prefix}dropdown-header-padding-y: #{$dropdown-header-padding-y};
 ```
 
+{{< content-ads/middle-banner-7 >}}
+
 {{< callout type="info" emoji="" >}}
 Los elementos desplegables incluyen al menos una variable que no está configurada en `.dropdown`. Esto te permite proporcionar un nuevo valor mientras que Bootstrap utiliza de forma predeterminada un valor alternativo.
 
@@ -1135,8 +1143,6 @@ Variables para el [menú desplegable oscuro](#dark-dropdowns):
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
-{{< content-ads/middle-banner-4 >}}
-
 ```scss {filename="scss/_variables.scss"}
 $dropdown-dark-color:               $gray-300;
 $dropdown-dark-bg:                  $gray-800;
@@ -1161,6 +1167,8 @@ $caret-width:                 .3em;
 $caret-vertical-align:        $caret-width * .85;
 $caret-spacing:               $caret-width * .85;
 ```
+
+{{< content-ads/middle-banner-8 >}}
 
 ### Mixins Sass del componente {#sass-mixins}
 
@@ -1275,6 +1283,8 @@ const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootst
 ```
 
 ### Opciones {#options}
+
+{{< content-ads/middle-banner-9 >}}
 
 Como las opciones se pueden pasar a través de atributos de datos o JavaScript, puedes agregar un nombre de opción a `data-bs-`, como en `data-bs-animation="{value}"`. Asegúrate de cambiar el tipo de caso del nombre de la opción de “_camelCase_” a “_kebab-case_” al pasar las opciones a través de atributos de datos. Por ejemplo, utiliza `data-bs-custom-class="beautifier"` en lugar de `data-bs-customClass="beautifier"`.
 

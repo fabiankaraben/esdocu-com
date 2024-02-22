@@ -79,6 +79,8 @@ Ten en cuenta que la sintaxis es ligeramente diferente en comparación con una e
 
 ## Firmas de Constructores {#construct-signatures}
 
+{{< content-ads/middle-banner-1 >}}
+
 Las funciones de JavaScript también se pueden invocar con el operador `new`.
 TypeScript se refiere a estos como *constructores* porque normalmente crean un nuevo objeto.
 Puedes escribir una *firma de constructor* agregando la palabra clave `new` delante de una firma de llamada:
@@ -135,6 +137,8 @@ function firstElement<Type>(arr: Type[]): Type | undefined {
 
 Al agregar un parámetro de tipo `Type` a esta función y usarlo en dos lugares, hemos creado un vínculo entre la entrada de la función (el array) y la salida (el valor de retorno).
 Ahora cuando lo llamamos sale un tipo más específico:
+
+{{< content-ads/middle-banner-2 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtVKxgGcMBRCEAWxFQwB4AVATwAcQA+AClhgC55mbANoBdAJT9BCAD7w0oRFlQhgAbgCwAKAD02+AFpDYZBkP6tu+EXhZrORPAysEAchIwlAcxdaweElbwALwExGQU1LScQgBEUDEANPAxAEaJyWAx4ho6evi28PaOzvAuqMiUKSAwPpp+qAH4IYph5FQ0GNEAjEkATEkAzNkWesg2dg5ObHKoCkoqvv4YcsGhJG2RnaJiqkA)
 
@@ -206,6 +210,8 @@ Hay algunas cosas interesantes a tener en cuenta en este ejemplo.
 Permitimos que TypeScript *infiera* el tipo de retorno `longest`.
 La inferencia de tipos de retorno también funciona en funciones genéricas.
 
+{{< content-ads/middle-banner-3 >}}
+
 Debido a que restringimos `Type` a `{ length: number }`, se nos permitió acceder a la propiedad `.length` de los parámetros `a` y `b`.
 Sin la restricción de tipo, no podríamos acceder a esas propiedades porque los valores podrían haber sido de otro tipo sin una propiedad `length`.
 
@@ -217,8 +223,6 @@ Finalmente, tal como nos gustaría, la llamada a `longest(10, 100)` se rechaza p
 ### Trabajar con valores restringidos {#working-with-constrained-values}
 
 Aquí hay un error común cuando se trabaja con restricciones genéricas:
-
-{{< content-ads/middle-banner-1 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGY1oLACgAzAVwDsBjAFwEs4TQBbKkq+o+gGUhIHMKALADwAVAJ4AHSKEgAPClwAmiUAG9QAGy68+qEmwBGMUAF8AfAAp8oUHD0ArVKIkAaSwyYs2O-THwBKB+KSyq5UBKBmNrYAdBo8-KAmALxuzKz0viquVtCQFETQdJEA3K5GUmqIQVmgOXkFKuqa-KiMqWzGJXhWRvhGQA)
 
@@ -266,6 +270,8 @@ function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
   return arr1.concat(arr2);
 }
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 Normalmente sería un error llamar a esta función con arrays que no coinciden:
 
@@ -318,6 +324,8 @@ Su tipo de retorno inferido es `Type`, pero el tipo de retorno inferido de `firs
 
 > **Regla**: Cuando sea posible, usa el parámetro de tipo en sí en lugar de restringirlo
 >
+
+{{< content-ads/middle-banner-5 >}}
 
 #### Usa menos parámetros de tipo {#use-fewer-type-parameters}
 
@@ -376,6 +384,8 @@ Esto incluye el tipo de devolución inferido; por ejemplo, si `Str` fuera parte 
 > **Regla**: si un parámetro de tipo solo aparece en una ubicación, reconsidera seriamente si realmente lo necesitas
 >
 
+{{< content-ads/middle-banner-6 >}}
+
 ## Parámetros opcionales {#optional-parameters}
 
 Las funciones en JavaScript a menudo toman una cantidad variable de argumentos.
@@ -408,8 +418,6 @@ También puedes proporcionar un parámetro *predeterminado*:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABMAFAD0QXkQRgAwCUiA3gLABQiiA9NYgHSMUC+QA)
 
-{{< content-ads/middle-banner-2 >}}
-
 ```ts
 function f(x = 10) {
   // ...
@@ -431,6 +439,8 @@ f(undefined);
 ```
 
 ### Parámetros opcionales en Callbacks {#optional-parameters-in-callbacks}
+
+{{< content-ads/middle-banner-7 >}}
 
 Una vez que hayas aprendido acerca de los parámetros opcionales y las expresiones de tipo de función, es muy fácil cometer los siguientes errores al escribir funciones que invocan devoluciones de llamada (callbacks):
 
@@ -487,6 +497,8 @@ Las funciones con menos parámetros (del mismo tipo) siempre pueden reemplazar f
 
 > **Regla**: Al escribir un tipo de función para una devolución de llamada, *nunca* escribas un parámetro opcional a menos que tengas la intención de *llamar* la función sin pasar ese argumento
 >
+
+{{< content-ads/middle-banner-8 >}}
 
 ## Sobrecargas de funciones {#function-overloads}
 
@@ -550,6 +562,8 @@ Nuevamente, la firma utilizada para escribir el cuerpo de la función no se pued
 > Al escribir una función sobrecargada, siempre debe tener *dos* o más firmas encima de la implementación de la función.
 >
 
+{{< content-ads/middle-banner-9 >}}
+
 La firma de implementación también debe ser *compatible* con las firmas de sobrecarga.
 Por ejemplo, estas funciones tienen errores porque la firma de implementación no coincide con las sobrecargas de manera correcta:
 
@@ -609,7 +623,7 @@ len([0]); // OK
 len(Math.random() > 0.5 ? "hello" : [0]);
 ```
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-1 >}}
 
 ```text {filename="Error generado"}
 No overload matches this call.
@@ -673,6 +687,8 @@ Este patrón es común con las API de estilo callback, donde normalmente otro ob
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygOwAYAsBGdGc0BYAKAEsA7AFxgDMBDAY0lAFVEZQBvU0UMgCaoKAVwC2AIxgBuXv0QBBAWMqoJcOABtI9CrJIBfUgMiNN9aC0ZwKiKqADmkKgBEAQqgAUASlABeAD5Qd30QUABaSMYRKkjw0koaaAZmYLduOVoyTST2GERPLJyYLyoACzIUNg5oX0DQdS0dCm9UPOgAbQBdfSMSUmtbewEJf0dndx99QbtQemVKRDGRgDoi3JqCn38g8sqV+ZUW6SA)
 
+{{< content-ads/middle-banner-2 >}}
+
 ```ts
 interface DB {
   filterUsers(filter: (this: User) => boolean): User[];
@@ -726,6 +742,8 @@ Por esta razón, los tipos de funciones se consideran `object`s en TypeScript.
 
 ### El tipo `unknown` {#unknown}
 
+{{< content-ads/middle-banner-3 >}}
+
 El tipo `unknown` representa *cualquier* valor.
 Esto es similar al tipo `any`, pero es más seguro porque no es legal hacer nada con un valor `unknown`:
 
@@ -778,6 +796,8 @@ En un tipo de retorno, esto significa que la función genera una excepción o fi
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABMMAKAHgLkQZygJxjAHNEAfRMEAWwCMBTfASkQG8BYAKEURmEVRQAngAd6cfukQBeWYgBEeQiXksO3HogD0WxABM4uONXpQAFkWJceAX0T0ANjnq9+g0eMky58qnUaqbNaaOvqGOMamFiT2TvTBdo7OQRo86ADc2rpmAIY4iMJiiADkYPQAbozFAIQJXDZAA)
 
+{{< content-ads/middle-banner-4 >}}
+
 ```ts
 function fn(x: string | number) {
   if (typeof x === "string") {
@@ -802,8 +822,6 @@ function doSomething(f: Function) {
   return f(1, 2, 3);
 }
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Esta es una *llamada a función sin tipo* y generalmente es mejor evitarla debido al tipo de retorno inseguro `any`.
 
@@ -831,6 +849,8 @@ const a = multiply(10, 1, 2, 3, 4);
 ```
 
 En TypeScript, la anotación de tipo en estos parámetros es implícitamente `any[]` en lugar de `any`, y cualquier anotación de tipo proporcionada debe tener la forma `Array<T>` o `T []`, o un tipo de tupla (del que aprenderemos más adelante).
+
+{{< content-ads/middle-banner-5 >}}
 
 ### Argumentos Rest {#rest-arguments}
 
@@ -881,6 +901,8 @@ El uso de argumentos rest puede requerir activar [`downlevelIteration` ↗](http
 
 Puedes usar la desestructuración de parámetros para descomprimir convenientemente objetos proporcionados como argumento en una o más variables locales en el cuerpo de la función.
 En JavaScript, se ve así:
+
+{{< content-ads/middle-banner-6 >}}
 
 ```js
 function sum({ a, b, c }) {
@@ -938,6 +960,8 @@ const f3: voidFunc = function () {
 ```
 
 Y cuando el valor de retorno de una de estas funciones se asigna a otra variable, conservará el tipo de `void`:
+
+{{< content-ads/middle-banner-7 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAbg9gSwCYDECuA7AxlAvFACgEo8A+WRJAbgFgAoerODAZ2CgDMBGALguXTY8hErnIBvelCgAnCMDQyMUYDLQRadAL6bGzNpwBMfeAMw58xMirUb6e1uw4BmE5UEXO54AmYioknTScgpKNuqaOvQA9NFQALSJWGjAifEOBjBcwtzEunRMjrCGOYZ59gX67DDOOc55QA)
 

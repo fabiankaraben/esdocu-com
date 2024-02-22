@@ -40,10 +40,10 @@ Comparado con el sistema de cuadrícula predeterminado:
     
 * Los huecos reemplazan los gutters. La propiedad `gap` reemplaza el `padding` horizontal de nuestro sistema de cuadrícula predeterminado y funciona más como `margin`.
     
-{{< content-ads/middle-banner-1 >}}
-
 * Como tal, a diferencia de los `.row`, los `.grid` no tienen márgenes negativos y las utilidades de márgenes no se pueden utilizar para cambiar los márgenes de la cuadrícula. Los gaps de cuadrícula se aplican horizontal y verticalmente de forma predeterminada. Consulta la [sección de personalización](#customizing) para obtener más detalles.
     
+{{< content-ads/middle-banner-1 >}}
+
 * Los estilos en línea y personalizados deben verse como reemplazos de las clases modificadoras (por ejemplo, `style="--bs-columns: 3;"` vs `class="row-cols-3"`).
     
 * El anidamiento funciona de manera similar, pero puede requerir que restablezcas el recuento de columnas en cada instancia de un `.grid`anidado. Consulta la [sección de anidamiento](#nesting) para obtener más detalles.
@@ -92,8 +92,6 @@ Compáralo con este diseño de dos columnas en todos los viewports.
 
 ## Envoltura {#wrapping}
 
-{{< content-ads/middle-banner-2 >}}
-
 Los elementos de la cuadrícula pasan automáticamente a la siguiente línea cuando no hay más espacio horizontalmente. Ten en cuenta que el `gap` se aplica a los espacios horizontales y verticales entre los elementos de la cuadrícula.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/wrapping.html" >}}
@@ -107,6 +105,8 @@ Los elementos de la cuadrícula pasan automáticamente a la siguiente línea cua
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -168,8 +168,6 @@ Al igual que nuestro sistema de cuadrícula predeterminado, nuestro CSS Grid per
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 * Sobrescribimos el número predeterminado de columnas con una variable CSS local: `--bs-columns: 3`.
 * En la primera columna automática, el recuento de columnas se hereda y cada columna tiene un tercio del ancho disponible.
 * En la segunda columna automática, hemos restablecido el recuento de columnas en el `.grid` anidado a 12 (nuestro valor predeterminado).
@@ -199,6 +197,8 @@ En la práctica, esto permite diseños más complejos y personalizados en compar
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-3 >}}
 
 ## Personalización {#customizing}
 
@@ -248,8 +248,6 @@ Ajusta el número de columnas y el espacio.
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-4 >}}
-
 ### Agregar filas {#adding-rows}
 
 Agregar más filas y cambiar la ubicación de las columnas:
@@ -265,6 +263,8 @@ Agregar más filas y cambiar la ubicación de las columnas:
 {{< /demo-iframe >}}
 
 ### Gaps o huecos {#gaps}
+
+{{< content-ads/middle-banner-4 >}}
 
 Cambia los espacios verticales solo modificando el `row-gap`. Ten en cuenta que utilizamos `gap` en `.grid`s, pero `row-gap` y `column-gap` se pueden modificar cuando sea necesario.
 

@@ -63,9 +63,9 @@ Siéntete libre de utilizar `title` o `data-bs-title` en tu HTML. Cuando se usa 
 
 ### Cuatro direcciones {#four-directions}
 
-{{< content-ads/middle-banner-1 >}}
-
 Hay cuatro opciones disponibles: arriba, derecha, abajo e izquierda. Las instrucciones se reflejan cuando se usa Bootstrap en RTL. Establece `data-bs-placement` para cambiar la dirección.
+
+{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/popovers/four-directions.html" >}}
 ```html {filename="HTML"}
@@ -134,11 +134,11 @@ Puedes personalizar la apariencia de los popovers usando [variables CSS](#variab
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 ### Descartar en el siguiente clic {#dismiss-on-next-click}
 
 Utiliza el disparador `focus` para descartar ventanas emergentes en el siguiente clic del usuario en un elemento que no sea el elemento de alternancia.
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< callout type="error" emoji="️" >}}
 **Para descartar en el siguiente clic se requiere HTML específico para un comportamiento adecuado entre navegadores y plataformas.** Solo puedes usar elementos `<a>`, no elementos `<button>`s, y debes incluir un [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex).
@@ -186,8 +186,6 @@ Para los activadores de ventana emergente deshabilitados, también puedes prefer
 
 Como parte del enfoque de variables CSS en evolución de Bootstrap, los popovers ahora usan variables CSS locales en `.popover` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
-{{< content-ads/middle-banner-3 >}}
-
 [scss/_popover.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_popover.scss)
 
 ```scss {filename="scss/_popover.scss"}
@@ -214,6 +212,8 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los popovers
 ```
 
 ### Variables Sass generales relacionadas {#sass-variables}
+
+{{< content-ads/middle-banner-3 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -268,8 +268,6 @@ A partir de Bootstrap 5.2.0, todos los componentes admiten un atributo de datos 
 
 El objeto de configuración final es el resultado combinado de `data-bs-config`, `data-bs-` y `js object` donde el último valor-clave dado sobrescribe los demás.
 
-{{< content-ads/middle-banner-4 >}}
-
 {{< callout type="warning" emoji="" >}}
 Ten en cuenta que, por motivos de seguridad, las opciones `sanitize`, `sanitizeFn` y `allowList` no se pueden proporcionar mediante atributos de datos.
 {{< /callout >}}
@@ -302,6 +300,8 @@ Las opciones para ventanas emergentes individuales también se pueden especifica
 {{< /callout >}}
 
 #### Usar la función con `popperConfig` {#using-function-with-popperconfig}
+
+{{< content-ads/middle-banner-4 >}}
 
 ```javascript {filename="JavaScript"}
 const popover = new bootstrap.Popover(element, {

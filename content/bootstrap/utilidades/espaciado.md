@@ -30,8 +30,6 @@ Donde _property_ es una de:
 * `m` \- para clases que establecen `margin`
 * `p` \- para clases que configuran `padding`
 
-{{< content-ads/middle-banner-1 >}}
-
 Donde _sides_ es uno de:
 
 * `t` \- para clases que establecen `margin-top` o `padding-top`
@@ -58,6 +56,8 @@ Donde _size_ es uno de:
 
 Aquí tienes algunos ejemplos representativos de estas clases:
 
+{{< content-ads/middle-banner-1 >}}
+
 ```scss {filename="SCSS"}
 .mt-0 {
   margin-top: 0 !important;
@@ -76,8 +76,6 @@ Aquí tienes algunos ejemplos representativos de estas clases:
   padding: $spacer !important;
 }
 ```
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Centrado horizontal {#horizontal-centering}
 
@@ -105,8 +103,6 @@ La sintaxis es casi la misma que la de las utilidades de margen positivo predete
 }
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 ## Gap {#gap}
 
 Cuando usas `display: grid` o `display: flex`, puedes hacer uso de las utilidades `gap` en el elemento padre. Esto puede ahorrarte la necesidad de agregar utilidades de margen a elementos secundarios individuales de una cuadrícula o contenedor flexible. Las utilidades Gap son responsive de forma predeterminada y se generan a través de nuestra API de utilidades, basada en el mapa `$spacers` Sass.
@@ -128,6 +124,8 @@ El soporte incluye opciones responsive para todos los puntos de interrupción de
 
 `row-gap` establece el espacio vertical entre elementos secundarios en el contenedor especificado.
 
+{{< content-ads/middle-banner-2 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/utilities/spacing/row-gap.html" >}}
 ```html {filename="HTML"}
     <div class="grid gap-0 row-gap-3">
@@ -140,8 +138,6 @@ El soporte incluye opciones responsive para todos los puntos de interrupción de
 {{< /demo-iframe >}}
 
 ### column-gap {#column-gap}
-
-{{< content-ads/middle-banner-4 >}}
 
 `column-gap` establece el espacio horizontal entre elementos secundarios en el contenedor especificado.
 
@@ -177,8 +173,6 @@ $spacers: (
 ```
 
 ### API de utilidades de Sass {#sass-utilities-api}
-
-{{< content-ads/middle-banner-5 >}}
 
 Las utilidades de espaciado se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 

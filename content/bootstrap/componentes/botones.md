@@ -69,6 +69,8 @@ Cuando usas clases de botones en elementos `<a>` que se usan para activar la fun
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-1 >}}
+
 ## Botones con estilo de contorno {#outline-buttons}
 
 ¿Necesitas un botón, pero no los fuertes colores de fondo que traen? Reemplaza las clases modificadoras predeterminadas con las `.btn-outline-*` para eliminar todas las imágenes de fondo y colores en cualquier botón.
@@ -124,8 +126,6 @@ Incluso puedes crear tu propio tamaño personalizado con variables CSS:
 
 Haz que los botones parezcan inactivos agregando el atributo booleano `disabled` a cualquier elemento `<button>`. Los botones deshabilitados tienen `pointer-events: none` aplicados, lo que evita que se activen los estados active y hover.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/buttons/disabled-state-1.html" >}}
 ```html {filename="HTML"}
     <button type="button" class="btn btn-primary" disabled="">Botón principal</button>
@@ -136,6 +136,8 @@ Haz que los botones parezcan inactivos agregando el atributo booleano `disabled`
 {{< /demo-iframe >}}
 
 Los botones deshabilitados que usan el elemento `<a>` se comportan un poco diferente:
+
+{{< content-ads/middle-banner-2 >}}
 
 * `<a>` no admite el atributo `disabled`, por lo que debes agregar la clase `.disabled` para que parezca visualmente deshabilitado.
 * Se incluyen algunos estilos aptos para el futuro para deshabilitar todos los `pointer-events` en los botones de anclaje.
@@ -208,6 +210,8 @@ Se pueden usar utilidades adicionales para ajustar la alineación de los botones
 
 ## Complemento de botón {#button-plugin}
 
+{{< content-ads/middle-banner-3 >}}
+
 El complemento de botones te permite crear botones simples de activación/desactivación.
 
 {{< callout type="info" emoji="" >}}
@@ -265,8 +269,6 @@ const bsButton = new bootstrap.Button('#myButton')
 | `getOrCreateInstance` | Método estático que devuelve una instancia de botón asociada con un elemento DOM o crea uno nuevo en caso de que no haya sido inicializado. Puedes usarlo así: `bootstrap.Button.getOrCreateInstance(element)`. |
 | `toggle`              | Cambia el estado de presionado. Le da al botón la apariencia de que ha sido activado.                                                                                                                           |
 
-{{< content-ads/middle-banner-2 >}}
-
 Por ejemplo, para alternar todos los botones
 
 ```javascript {filename="JavaScript"}
@@ -279,6 +281,8 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
 ## Personalización del CSS del componente {#css}
 
 ### Variables Sass del componente {#variables}
+
+{{< content-ads/middle-banner-4 >}}
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
@@ -388,6 +392,8 @@ $btn-active-border-tint-amount:   10%;
 
 Hay tres combinaciones para botones: combinación de botón y variante de contorno de botón (ambas basadas en `$theme-colors`), además de una combinación de tamaño de botón.
 
+{{< content-ads/middle-banner-5 >}}
+
 [scss/mixins/_buttons.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_buttons.scss)
 
 ```scss {filename="scss/mixins/_buttons.scss"}
@@ -466,8 +472,6 @@ Hay tres combinaciones para botones: combinación de botón y variante de contor
 
 Las variantes de botones (para botones regulares y de contorno) usan sus respectivos mixins con nuestro mapa `$theme-colors` para generar las clases modificadoras en `scss/_buttons.scss`.
 
-{{< content-ads/middle-banner-3 >}}
-
 [scss/_buttons.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_buttons.scss)
 
 ```scss {filename="scss/_buttons.scss"}
@@ -511,6 +515,8 @@ Un botón de cierre genérico para descartar contenido como modales y alertas.
 ### Ejemplo del componente Botón cerrar {#example}
 
 Proporciona una opción para descartar o cerrar un componente con `.btn-close`. El estilo predeterminado es limitado, pero altamente personalizable. Modifica las variables de Sass para reemplazar la `background-image` predeterminada. **Asegúrate de incluir texto para lectores de pantalla**, como hemos hecho con `aria-label`.
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/close-button/example.html" >}}
 ```html {filename="HTML"}
@@ -570,6 +576,8 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, el botón de
 --#{$prefix}btn-close-white-filter: #{$btn-close-white-filter};
 ```
 
+{{< content-ads/middle-banner-7 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 #### Variables Sass generales relacionadas {#sass-variables}
@@ -596,8 +604,6 @@ $btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%);
 Agrupa una serie de botones en una sola línea o apílalos en una columna vertical.
 
 ### Ejemplo básico del componente Grupo de botones {#basic-example}
-
-{{< content-ads/middle-banner-4 >}}
 
 Envuelve una serie de botones con `.btn` en `.btn-group`.
 
@@ -640,6 +646,8 @@ Estas clases también se pueden agregar a grupos de enlaces, como alternativa al
 {{< /demo-iframe >}}
 
 ### Estilos outlined del componente Grupo de botones {#outlined-styles}
+
+{{< content-ads/middle-banner-8 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/button-group/outlined-styles.html" >}}
 ```html {filename="HTML"}
@@ -772,6 +780,8 @@ En lugar de aplicar clases de tamaño de botones a cada botón de un grupo, simp
 
 ### Anidamiento del componente Grupo de botones {#nesting}
 
+{{< content-ads/middle-banner-9 >}}
+
 Coloca un `.btn-group` dentro de otro `.btn-group` cuando quieras menús desplegables mezclados con una serie de botones.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/button-group/nesting.html" >}}
@@ -808,8 +818,6 @@ Haz que un conjunto de botones aparezcan apilados verticalmente en lugar de hori
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-5 >}}
 
 {{< bootstrap/content-suggestion >}}
 

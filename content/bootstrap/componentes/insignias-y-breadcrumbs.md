@@ -48,8 +48,6 @@ A menos que el contexto sea claro (como en el ejemplo de “Notificaciones”, d
 
 #### Posicionado {#positioned}
 
-{{< content-ads/middle-banner-1 >}}
-
 Usa utilidades para modificar un `.badge` y posicionarlo en la esquina de un enlace o botón.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/positioned-1.html" >}}
@@ -65,6 +63,8 @@ Usa utilidades para modificar un `.badge` y posicionarlo en la esquina de un enl
 {{< /demo-iframe >}}
 
 También puedes reemplazar la clase `.badge` con algunas utilidades más sin contar para un indicador más genérico.
+
+{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/positioned-2.html" >}}
 ```html {filename="HTML"}
@@ -108,8 +108,6 @@ Establece un `background-color` con un `color` de primer plano contrastante con 
 
 Utiliza la clase de utilidad `.rounded-pill` para hacer insignias más redondeadas con un `border-radius` más grande.
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/badge/pill-badges.html" >}}
 ```html {filename="HTML"}
     <span class="badge rounded-pill text-bg-primary">Primary</span>
@@ -133,6 +131,8 @@ Utiliza la clase de utilidad `.rounded-pill` para hacer insignias más redondead
 Como parte del enfoque de variables CSS en evolución de Bootstrap, las insignias ahora usan variables CSS locales en `.badge` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
 [scss/_badge.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_badge.scss)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="scss/_badge.scss"}
 --#{$prefix}badge-padding-x: #{$badge-padding-x};
@@ -159,8 +159,6 @@ $badge-border-radius:               var(--#{$prefix}border-radius);
 ## El componente Breadcrumb de Bootstrap
 
 Indica la ubicación de la página actual dentro de una jerarquía de navegación que agrega automáticamente separadores mediante CSS.
-
-{{< content-ads/middle-banner-3 >}}
 
 ### Ejemplo del componente Breadcrumb {#example}
 
@@ -214,6 +212,8 @@ $breadcrumb-divider: quote(">");
 
 También es posible usar un **icono SVG incrustado**. Aplícalo a través de nuestra propiedad personalizada CSS o usa la variable Sass.
 
+{{< content-ads/middle-banner-3 >}}
+
 {{< callout type="info" emoji="" >}}
 **El SVG incorporado requiere caracteres con escape adecuado.** Algunos caracteres reservados, como `<`, `>` y `#`, deben estar codificado en URL o con formato de escape. Hacemos esto con la variable `$breadcrumb-divider` usando nuestro [`escape-svg()` (función Sass)](/bootstrap/personalizar/#escape-svg). Al personalizar la variable CSS, debes manejarlo tú mismo. Lee las [explicaciones de Kevin Weber sobre CodePen](https://codepen.io/kevinweber/pen/dXWoRw) para obtener más información.
 {{< /callout >}}
@@ -232,8 +232,6 @@ También es posible usar un **icono SVG incrustado**. Aplícalo a través de nue
 ```scss {filename="SCSS"}
 $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 También puedes eliminar la configuración del divisor `--bs-breadcrumb-divider: '';` (las cadenas vacías en las propiedades personalizadas de CSS cuentan como un valor), o estableciendo la variable Sass en `$breadcrumb-divider: none;`.
 
@@ -271,7 +269,7 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las rutas de
 
 [scss/_breadcrumb.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_breadcrumb.scss)
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="scss/_breadcrumb.scss"}
 --#{$prefix}breadcrumb-padding-x: #{$breadcrumb-padding-x};

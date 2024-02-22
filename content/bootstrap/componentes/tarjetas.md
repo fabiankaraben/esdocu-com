@@ -80,6 +80,8 @@ Los subtítulos se usan agregando un `.card-subtitle` a una etiqueta `<h*>`. Si 
 
 ### Imágenes {#images}
 
+{{< content-ads/middle-banner-1 >}}
+
 `.card-img-top` coloca una imagen en la parte superior de la tarjeta. Con `.card-text`, se puede agregar texto a la tarjeta. El texto dentro de `.card-text` también se puede diseñar con las etiquetas HTML estándar.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/card/images.html" >}}
@@ -115,8 +117,6 @@ Crea listas de contenido en una tarjeta con un grupo de listas de descarga.
 {{< /demo-iframe >}}
 
 {{< bootstrap/content-suggestion >}}
-
-{{< content-ads/middle-banner-1 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/card/list-groups-2.html" >}}
 ```html {filename="HTML"}
@@ -213,6 +213,8 @@ Agrega un encabezado y/o pie de página opcional dentro de una tarjeta.
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/card/header-and-footer-3.html" >}}
 ```html {filename="HTML"}
@@ -316,8 +318,6 @@ Utiliza nuestras [utilidades de tamaño disponibles](/bootstrap/utilidades/otras
 
 ### Usar CSS personalizado {#using-custom-css}
 
-{{< content-ads/middle-banner-2 >}}
-
 Usa CSS personalizado en tus hojas de estilo o como estilos en línea para establecer un ancho.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/card/using-custom-css.html" >}}
@@ -334,6 +334,8 @@ Usa CSS personalizado en tus hojas de estilo o como estilos en línea para estab
 {{< /demo-iframe >}}
 
 ## Alineación de texto del componente Tarjeta {#text-alignment}
+
+{{< content-ads/middle-banner-3 >}}
 
 Puedes cambiar rápidamente la alineación del texto de cualquier tarjeta, en su totalidad o en partes específicas, con nuestras [clases de alineación de texto](/bootstrap/utilidades/textos/#text-alignment).
 
@@ -493,6 +495,8 @@ Convierte una imagen en el fondo de una tarjeta y superpón el texto de tu tarje
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-4 >}}
+
 {{< callout type="info" emoji="" >}}
 Ten en cuenta que el contenido no debe ser más grande que la altura de la imagen. Si el contenido es más grande que la imagen, el contenido se mostrará fuera de la imagen.
 {{< /callout >}}
@@ -500,8 +504,6 @@ Ten en cuenta que el contenido no debe ser más grande que la altura de la image
 ## Tarjetas horizontales {#horizontal}
 
 Utilizando una combinación de clases de cuadrícula y utilidades, las tarjetas se pueden hacer horizontales de una manera responsive y compatible con dispositivos móviles. En el siguiente ejemplo, eliminamos los márgenes de la cuadrícula con `.g-0` y usamos las clases `.col-md-*` para hacer que la tarjeta sea horizontal en el punto de interrupción `md`. Es posible que se necesiten más ajustes dependiendo del contenido de tu tarjeta.
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/card/horizontal.html" >}}
 ```html {filename="HTML"}
@@ -689,6 +691,8 @@ Usa [utilidades de borde](/bootstrap/utilidades/bordes) para cambiar solo el `bo
 ```
 {{< /demo-iframe >}}
 
+{{< content-ads/middle-banner-5 >}}
+
 ### Utilidades de Mixins {#mixins-utilities}
 
 También puedes cambiar los bordes en el encabezado y pie de página de la tarjeta según sea necesario, e incluso eliminar su `background-color` con `.bg-transparent`.
@@ -772,8 +776,6 @@ Utiliza grupos de tarjetas para representar las tarjetas como un único elemento
     </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-4 >}}
 
 Cuando uses grupos de tarjetas con pies de página, su contenido se alineará automáticamente.
 
@@ -912,6 +914,8 @@ Usa el sistema de grid de Bootstrap y sus [`.row-cols` (clases)](/bootstrap/gril
 {{< /demo-iframe >}}
 
 Cámbialo a `.row-cols-3` y verás la cuarta tarjeta con envoltura.
+
+{{< content-ads/middle-banner-6 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -1164,7 +1168,7 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las tarjetas
 --#{$prefix}card-group-margin: #{$card-group-margin};
 ```
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-7 >}}
 
 {{< bootstrap/content-suggestion >}}
 

@@ -35,8 +35,6 @@ Para cargar una configuración regional, pasa la clave y los valores de cadena a
 
 Se pueden encontrar más detalles sobre cada una de las partes del paquete local en la sección [personalización](/momentjs/personalizacion).
 
-{{< content-ads/middle-banner-1 >}}
-
 ```javascript {filename="JavaScript"}
 moment.locale('fr', {
     months : 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
@@ -125,9 +123,9 @@ m.fromNow(); // il y a une heure
 moment(1316116057189).fromNow(); // an hour ago
 ```
 
-{{< content-ads/middle-banner-2 >}}
-
 `moment.locale` devuelve la configuración regional utilizada. Esto es útil porque Moment no cambiará las configuraciones regionales si no conoce la que tú especificas.
+
+{{< content-ads/middle-banner-1 >}}
 
 ```javascript {filename="JavaScript"}
 moment.locale('fr'); // 'fr'
@@ -147,8 +145,6 @@ moment.locale('en-nz'); // 'en'
 ```
 
 Finalmente, Moment buscará de forma inteligente en una serie de configuraciones regionales y sus subcadenas.
-
-{{< content-ads/middle-banner-3 >}}
 
 ```javascript {filename="JavaScript"}
 moment.locale(['en-nz', 'en-au']); // 'en-au', not 'en'
@@ -171,8 +167,6 @@ luego se prueba primero "AA-BB", luego una solución ingenua probaría "AA", per
 
 ## Cambiar el locale localmente {#instance-locale}
 
-{{< content-ads/middle-banner-4 >}}
-
 ```javascript {filename="Firma del método"}
 // Desde la versión 2.8.1 en adelante
 moment().locale(String|String[]|Boolean);
@@ -182,6 +176,8 @@ moment().lang(String|String[]|Boolean);
 ```
 
 Una configuración regional global puede ser problemática cuando se pasan moments que pueden necesitar ser formateados en una configuración regional diferente.
+
+{{< content-ads/middle-banner-2 >}}
 
 ```javascript {filename="JavaScript"}
 moment.locale('en'); // por defecto la configuración regional es inglés

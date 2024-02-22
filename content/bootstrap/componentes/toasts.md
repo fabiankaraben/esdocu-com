@@ -82,9 +82,9 @@ Haz clic en el botón de abajo para mostrar un toast (ubicado con nuestras utili
 
 Utilizamos el siguiente JavaScript para activar nuestra demostración de toast en vivo:
 
-[site/assets/js/snippets.js](https://github.com/twbs/bootstrap/blob/v5.3.2/site/assets/js/snippets.js)
-
 {{< content-ads/middle-banner-1 >}}
+
+[site/assets/js/snippets.js](https://github.com/twbs/bootstrap/blob/v5.3.2/site/assets/js/snippets.js)
 
 ```scss {filename="site/assets/js/snippets.js"}
 const toastTrigger = document.getElementById('liveToastBtn')
@@ -198,6 +198,8 @@ Alternativamente, también puedes agregar controles y componentes adicionales a 
 
 ### Esquemas de colores {#color-schemes}
 
+{{< content-ads/middle-banner-2 >}}
+
 A partir del ejemplo anterior, puedes crear diferentes combinaciones de colores de toasts con nuestras utilidades de [color](/bootstrap/utilidades/colores) y [fondo](/bootstrap/utilidades/background). Aquí agregamos `.text-bg-primary` a `.toast` y luego agregamos `.btn-close-white` a nuestro botón de cerrar. Para obtener un borde nítido, eliminamos el borde predeterminado con `.border-0`.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/toasts/color-schemes.html" >}}
@@ -214,8 +216,6 @@ A partir del ejemplo anterior, puedes crear diferentes combinaciones de colores 
 </div>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 ## Ubicación del componente Toast {#placement}
 
@@ -345,6 +345,8 @@ Ten en cuenta que la región en vivo debe estar presente en el marcado _antes_ d
 
 También necesitas adaptar el nivel `role` y `aria-live` dependiendo del contenido. Si es un mensaje importante como un error, usa atributos `role="alert" aria-live="assertive"`; de lo contrario, usa `role="status" aria-live="polite"`.
 
+{{< content-ads/middle-banner-3 >}}
+
 A medida que cambia el contenido que estás mostrando, asegúrate de actualizar el [`delay` tiempo de espera](#options) para que los usuarios tengan tiempo suficiente para leer el toast.
 
 ```html {filename="HTML"}
@@ -354,8 +356,6 @@ A medida que cambia el contenido que estás mostrando, asegúrate de actualizar 
 ```
 
 Cuando uses `autohide: false`, debes agregar un botón de cierre para permitir a los usuarios descartar el toast.
-
-{{< content-ads/middle-banner-3 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/toasts/accessibility.html" >}}
 ```html {filename="HTML"}
@@ -431,6 +431,8 @@ $toast-header-background-color:     rgba(var(--#{$prefix}body-bg-rgb), .85);
 $toast-header-border-color:         $toast-border-color;
 ```
 
+{{< content-ads/middle-banner-4 >}}
+
 ## Uso del componente Toast {#usage}
 
 Inicializar toast mediante JavaScript:
@@ -441,8 +443,6 @@ const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, o
 ```
 
 ### Desencadenantes {#triggers}
-
-{{< content-ads/middle-banner-4 >}}
 
 El despido se puede lograr con el atributo `data-bs-dismiss` en un botón **dentro del toast** como se muestra a continuación:
 
@@ -475,6 +475,8 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 {{< callout type="error" emoji="️" >}}
 **Todos los métodos API son asincrónicos e inician una transición.** Regresan al punto de la llamada tan pronto como se inicia la transición, pero antes de que finalice. Además, se ignorará una llamada a un método en un componente en transición. [Obtén más información en nuestra documentación de JavaScript.](/bootstrap/comenzando/#asynchronous-functions-and-transitions)
 {{< /callout >}}
+
+{{< content-ads/middle-banner-5 >}}
 
 | Método                | Descripción                                                                                                                                                                                                                                                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

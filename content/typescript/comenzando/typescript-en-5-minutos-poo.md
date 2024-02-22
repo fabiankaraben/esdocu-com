@@ -41,8 +41,6 @@ Las funciones "libres" (aquellas no asociadas con una clase) que trabajan con da
 
 ### Clases estáticas {#static-classes}
 
-{{< content-ads/middle-banner-1 >}}
-
 Además, ciertas construcciones de C# y Java, como singletons y clases estáticas, son innecesarias en TypeScript.
 
 ## POO en TypeScript {#oop-in-typescript}
@@ -54,6 +52,8 @@ TypeScript admite muchos patrones comunes, como la implementación de interfaces
 Cubriremos las clases más adelante en esta guía.
 
 ## Repensando los tipos {#rethinking-types}
+
+{{< content-ads/middle-banner-1 >}}
 
 La comprensión de TypeScript sobre un *tipo* es en realidad bastante diferente de la de C# o Java.
 Exploremos algunas diferencias.
@@ -68,8 +68,6 @@ Estos aspectos describen un sistema de tipo *reificado, nominal*.
 Los tipos que escribimos en el código están presentes en tiempo de ejecución y los tipos están relacionados a través de sus declaraciones, no de sus estructuras.
 
 ### Tipos como Conjuntos {#types-as-sets}
-
-{{< content-ads/middle-banner-2 >}}
 
 En C# o Java, tiene sentido pensar en una correspondencia uno a uno entre los tipos de tiempo de ejecución y sus declaraciones en tiempo de compilación.
 
@@ -122,7 +120,7 @@ logName(obj);
 El sistema de tipos de TypeScript es *estructural*, no nominal: podemos usar `obj` como `Pointlike` porque tiene propiedades `x` e `y` que son ambas números.
 Las relaciones entre tipos están determinadas por las propiedades que contienen, no por si fueron declarados con alguna relación particular.
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-2 >}}
 
 El sistema de tipos de TypeScript también *no está cosificado*: no hay nada en tiempo de ejecución que nos diga que `obj` es `Pointlike`.
 De hecho, el tipo `Pointlike` no está presente *de ninguna forma* en tiempo de ejecución.
@@ -159,8 +157,6 @@ Esto puede parecer sorprendente, pero en última instancia es una relación muy 
 Una subclase no puede *eliminar* una propiedad de su clase base, porque hacerlo destruiría la relación de subtipo natural entre la clase derivada y su base.
 Los sistemas de tipos estructurales simplemente identifican esta relación implícitamente describiendo los subtipos en términos de tener propiedades de tipos compatibles.
 
-{{< content-ads/middle-banner-4 >}}
-
 #### Tipos Idénticos {#identical-types}
 
 Otra fuente frecuente de sorpresa viene con tipos idénticos:
@@ -185,6 +181,8 @@ Nuevamente, esto no es un error porque las *estructuras* de estas clases son las
 Si bien esto puede parecer una fuente potencial de confusión, en la práctica no son comunes clases idénticas que no deberían estar relacionadas.
 
 Aprenderemos más sobre cómo se relacionan las clases entre sí en el capítulo de Clases.
+
+{{< content-ads/middle-banner-3 >}}
 
 ### Reflexión {#reflection}
 

@@ -63,6 +63,8 @@ const n: number = obj;
 
 El tipo `any` es útil cuando no quieres escribir un tipo largo solo para convencer a TypeScript de que una línea de código en particular está bien.
 
+{{< content-ads/middle-banner-1 >}}
+
 ### El indicador `noImplicitAny` {#noimplicitany}
 
 Cuando no especificas un tipo y TypeScript no puede inferirlo del contexto, el compilador generalmente usará de manera predeterminada `any`.
@@ -105,6 +107,8 @@ TypeScript te permite especificar los tipos de valores de entrada y salida de fu
 
 ### Anotaciones de tipo de parámetros {#parameter-type-annotations}
 
+{{< content-ads/middle-banner-2 >}}
+
 Cuando declaras una función, puedes agregar anotaciones de tipo después de cada parámetro para declarar qué tipos de parámetros acepta la función.
 Las anotaciones de tipo de parámetro van después del nombre del parámetro:
 
@@ -138,8 +142,6 @@ Argument of type 'number' is not assignable to parameter of type 'string'.
 También puedes agregar anotaciones de tipo de retorno.
 Las anotaciones de tipo de retorno aparecen después de la lista de parámetros:
 
-{{< content-ads/middle-banner-1 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQGIEMBucBOMUqAciALYBGq+AFAJQBciYF1+iA3gLABQiiAPSCBoseIliAejNky+A-OhD4kAJgBsAbj4BfIA)
 
 ```ts
@@ -155,6 +157,8 @@ Algunas bases de código especificarán explícitamente un tipo de devolución c
 #### Funciones que devuelven Promises {#functions-which-return-promises}
 
 Si quieres anotar el tipo de retorno de una función que devuelve una promesa, debes usar el tipo `Promise`:
+
+{{< content-ads/middle-banner-3 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/IYZwngdgxgBAZgV2gFwJYHsIwOYFNkBiwAbugE6rK4ByCAtgEa5kAUAlAFwwAKZ6dqELgA8EekzIA+GAG8AsACgYMMvgRksAJgBsAbkUBfIA)
 
@@ -212,6 +216,8 @@ function printCoord(pt: { x: number; y: number }) {
 }
 printCoord({ x: 3, y: 7 });
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 Aquí, anotamos el parámetro con un tipo con dos propiedades, `x` e `y`, que son ambas del tipo `number`.
 Puedes usar `,` o `;` para separar las propiedades, y el último separador es opcional de cualquier manera.
@@ -271,6 +277,8 @@ Nos referimos a cada uno de estos tipos como los *miembros* de la unión.
 
 Escribamos una función que pueda operar con cadenas o números:
 
+{{< content-ads/middle-banner-5 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAkgCYAUNnqZEgFsARjFAAfUIiosyAcwCUoAN6FQoCvURwANpAB0uuPO4AiAJpwS0UOwAioGilBnQAaiedFAbkIBfQhBQAHkAaUJmVg4eAEYABljfILBwyLkY8zR4tDNkgmCAUVgEdOiubhVQIQBPB1Q0TCw0UH9fIA)
 
 ```ts
@@ -293,8 +301,6 @@ Argument of type '{ myID: number; }' is not assignable to parameter of type 'str
 
 Es fácil *proporcionar* un valor que coincida con un tipo de unión; simplemente proporciona un tipo que coincida con cualquiera de los miembros de la unión.
 Si *tienes* un valor de tipo unión, ¿cómo trabajas con él?
-
-{{< content-ads/middle-banner-2 >}}
 
 TypeScript solo permitirá una operación si es válida para *todos* los miembros de la unión.
 Por ejemplo, si tienes la unión `string | number`, no puedes usar métodos que solo están disponibles en `string`:
@@ -334,6 +340,8 @@ function printId(id: number | string) {
 Otro ejemplo es usar una función como `Array.isArray`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAdwKYBsJwLaoAqpwAO6qAFAB4BciAzlAE4xgDmA2gLqIA+djzLAJSIA3gFgAUIkQxgiMgEEGDAIYBPAHQxaS1WsqDh4qdMQB6M4gASqBqhoByCg5m1ED+k1acHk04iwwWjhSDXQ4FjIAIht0cIAaRCjEAGpECg0AKzhmaMQVMAATJMMAbj9EAF9EDFpUUQrpC2tbe3dnV3dPAV8TaUDg0PDIqIB1DCxcRHCwesYVADcMWyTU9MFyk0rJSqA)
+
+{{< content-ads/middle-banner-6 >}}
 
 ```ts
 function welcomePeople(x: string[] | string) {
@@ -408,6 +416,8 @@ Ten en cuenta que los alias son *solo* alias: no puedes usar alias de tipo para 
 Cuando usas el alias, es exactamente como si hubiera escrito el tipo que representa el alias.
 En otras palabras, este código puede *parecer* ilegal, pero está bien según TypeScript porque ambos tipos son alias para el mismo tipo:
 
+{{< content-ads/middle-banner-7 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBJVAB2QwAoBKALngGcMYtUCBuAWAChRIsBCnTY8zKKizYAXiGosYjRewINmrVT14B6HfAC0RsFSMG+GAJ7kEAVSYgYZShgDKk6VjnBXmjvABeDTYObT4RTFx8Jg9ZEGcqBVZlPzVGe0cEt1ivEB9U+ABvPnh4OAxkGGicuSSYWm0AXz4+PXgAYTgoDAQoCSk44Hh2Fz4IYnhkBycKKkD+zzks6iJSWZpaBpbdfXbJDSwICHgAIwQ4AygmJiwCVDz4AHdpAAt4PpV-DBecZAIXvhTTLreYAInuj2G61BnCAA)
 
 ```ts
@@ -471,7 +481,7 @@ En su mayor parte, puedes elegir según tus preferencias personales, y TypeScrip
 
 A veces tendrás información sobre el tipo de valor que TypeScript no puede conocer.
 
-{{< content-ads/middle-banner-3 >}}
+{{< content-ads/middle-banner-8 >}}
 
 Por ejemplo, si estás usando `document.getElementById`, TypeScript solo sabe que esto devolverá *algún* tipo de `HTMLElement`, pero es posible que sepas que tu página siempre tendrá un `HTMLCanvasElement` con un ID determinado.
 
@@ -514,6 +524,8 @@ A veces esta regla puede ser demasiado conservadora y no permitirá coacciones m
 Si esto sucede, puedes usar dos aserciones, primero para `any` (o `unknow`, que presentaremos más adelante), luego para el tipo deseado:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3iAHgBxgC54oUBPAbgFgAoDMvBAFXgF54BvE4gRgvgBGxAEz8wxAMzwAvtRoB6efAC0qsAFcMq5bWTosUNtnwwSaEuTPwmFIA)
+
+{{< content-ads/middle-banner-9 >}}
 
 ```ts
 const a = expr as any as T;
@@ -577,6 +589,8 @@ printText("G'day, mate", "centre");
 Argument of type '"centre"' is not assignable to parameter of type '"left" | "right" | "center"'.
 ```
 
+{{< content-ads/middle-banner-1 >}}
+
 Los tipos literales numéricos funcionan de la misma manera:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABBOBbADgQwE4FMAUmAXIgM5TYxgDmANIgEYnmU0CUJAtAIyIA+iAAz9EvAN4BYAFCJEeKCGxJMiALzrGiAPxDEJFQD5NO3l24BuaQF8gA)
@@ -616,8 +630,6 @@ El tipo `boolean` en sí mismo es en realidad solo un alias para la unión `true
 Cuando inicializas una variable con un objeto, TypeScript asume que las propiedades de ese objeto podrían cambiar los valores más adelante.
 Por ejemplo, si escribiste un código como este:
 
-{{< content-ads/middle-banner-4 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3mpBbEAwqsAJYYmoBc8ARkkhCFCgNwCwAUAPRfwC0AsAFcMAvp2TosSGgCt4AXngBvREiEoMIGNQAM8AL7sOJAGbwAFDnxEUpcqgCUKzvHgzZAOmQatMRfAAjMYGQA)
 
 ```ts
@@ -633,6 +645,8 @@ Otra forma de decir esto es que `obj.counter` debe tener el tipo `number`, no `0
 Lo mismo se aplica a las cadenas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgAWlTRcpABKkAI4NIiVgAoG0cqmnR2TAOYAaUAFtIrHnCKoARAHEAogBVjoAD6hjABQDyAZWsBKVADc47IgDchISkXNKgNGKgALygAN6g8ooOPKysAA4oIJAAHpTa6UIAdKHaxlq6+oYmFtagAL5BBHwCQqISUrKRRUla3ZUGRB4BQA)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```ts
 declare function handleRequest(url: string, method: "GET" | "POST"): void;
@@ -685,6 +699,8 @@ La falta de verificación de estos valores tiende a ser una fuente importante de
 
 ### Con la opción `strictNullChecks` en `on` {#strictnullchecks-on}
 
+{{< content-ads/middle-banner-3 >}}
+
 Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en *on*, cuando un valor es `null` o `undefined`, tendrás que probar esos valores antes de usar métodos o propiedades en ese valor.
 Al igual que verificar por `undefined` antes de usar una propiedad opcional, podemos usar *estrechamiento* para verificar valores que podrían ser `null`:
 
@@ -730,6 +746,8 @@ Aunque aquí no entraremos en profundidad.
 Desde ES2020 en adelante, hay una primitiva en JavaScript que se usa para enteros muy grandes, `BigInt`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEBcEMCcHMCmkBcpEGcBMAGXBYAKCJFAGFZFpIBLAO3lGlACMb57JQA3G5yABaJQAIXYBJOlwBmAVzoBjWgHs6RBaoxdViABLyAJpQNo2HKaAC8oiVIAUARhw4AlAG4iJMBSq0GTG3hJLl5+IVAAGxpIRFhoCNAMAE8paAAPdU0uaDplQVj9OiNEE1Z2TitQJxw6NyA)
+
+{{< content-ads/middle-banner-4 >}}
 
 ```ts
 // Crea un bigint mediante la función BigInt

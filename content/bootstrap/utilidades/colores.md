@@ -73,8 +73,6 @@ A partir de v5.1.0, las utilidades de color de texto se generan con Sass usando 
 
 Considera nuestra utilidad `.text-primary` predeterminada.
 
-{{< content-ads/middle-banner-1 >}}
-
 ```css {filename="CSS"}
 .text-primary {
   --bs-text-opacity: 1;
@@ -85,6 +83,8 @@ Considera nuestra utilidad `.text-primary` predeterminada.
 Usamos una versión RGB de nuestra variable CSS `--bs-primary` (con el valor de `13, 110, 253`) y se adjuntó una segunda variable CSS, `--bs-text-opacity`, para la transparencia alfa (con un valor predeterminado `1` gracias a una variable CSS local). Eso significa que cada vez que uses `.text-primary` ahora, tu valor de `color` calculado es `rgba(13, 110, 253, 1)`. La variable CSS local dentro de cada clase `.text-*` evita problemas de herencia, por lo que las instancias anidadas de las utilidades no tienen automáticamente una transparencia alfa modificada.
 
 ### Ejemplo {#example}
+
+{{< content-ads/middle-banner-1 >}}
 
 Para cambiar esa opacidad, sobrescribe `--bs-text-opacity` mediante estilos personalizados o estilos en línea.
 
@@ -115,8 +115,6 @@ A veces las clases contextuales no se pueden aplicar debido a la especificidad d
 {{< bootstrap/content-suggestion >}}
 
 Además de las siguientes funciones de Sass, considera leer sobre nuestras [propiedades personalizadas de CSS](/bootstrap/personalizar) incluidas (también conocidas como variables CSS) para colores y más.
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Variables Sass generales relacionadas {#sass-variables}
 
@@ -149,6 +147,8 @@ $danger:        $red;
 $light:         $gray-100;
 $dark:          $gray-900;
 ```
+
+{{< content-ads/middle-banner-2 >}}
 
 Los colores en escala de grises también están disponibles, pero solo se utiliza un subconjunto para generar utilidades.
 
@@ -184,8 +184,6 @@ $theme-colors-text: (
 ```
 
 Variables para configurar colores en utilidades `.text-*-emphasis` en modo claro y oscuro:
-
-{{< content-ads/middle-banner-3 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -234,6 +232,8 @@ $theme-colors: (
 
 Los colores en escala de grises también están disponibles como mapa Sass. **Este mapa no se utiliza para generar ninguna utilidad.**
 
+{{< content-ads/middle-banner-3 >}}
+
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
 ```scss {filename="scss/_variables.scss"}
@@ -251,8 +251,6 @@ $grays: (
 ```
 
 Los colores RGB se generan a partir de un mapa Sass separado:
-
-{{< content-ads/middle-banner-4 >}}
 
 [scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
 
@@ -323,7 +321,7 @@ $theme-colors-text-dark: (
 
 ### API de utilidades de Sass {#sass-utilities-api}
 
-{{< content-ads/middle-banner-5 >}}
+{{< content-ads/middle-banner-4 >}}
 
 Las utilidades de color se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 

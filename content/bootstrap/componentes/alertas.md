@@ -95,8 +95,6 @@ Utiliza la clase de utilidad `.alert-link` para proporcionar rápidamente enlace
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/alerts/link-color.html" >}}
 ```html {filename="HTML"}
     <div class="alert alert-primary" role="alert">
@@ -133,6 +131,8 @@ Utiliza la clase de utilidad `.alert-link` para proporcionar rápidamente enlace
     </div>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-1 >}}
 
 ### Agregar contenido adicional {#additional-content}
 
@@ -241,8 +241,6 @@ Usando el complemento JavaScript de alerta, es posible descartar cualquier alert
 
 Puedes ver esto en acción con una demostración en vivo:
 
-{{< content-ads/middle-banner-2 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/alerts/dismissing.html" >}}
 ```html {filename="HTML"}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -255,6 +253,8 @@ Puedes ver esto en acción con una demostración en vivo:
 {{< callout type="warning" emoji="" >}}
 Cuando se descarta una alerta, el elemento se elimina por completo de la estructura de la página. Si un usuario del teclado descarta la alerta usando el botón de cerrar, su atención se perderá repentinamente y, dependiendo del navegador, se restablecerá al inicio de la página/documento. Por este motivo, recomendamos incluir JavaScript adicional que escuche el evento `closed.bs.alert` y establezcas mediante programación `focus()` en la ubicación más adecuada de la página. Si planeas mover el foco a un elemento no interactivo que normalmente no recibe el foco, asegúrate de agregar `tabindex="-1"` al elemento.
 {{< /callout >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 ## Personalización del CSS del componente {#css}
 
@@ -300,8 +300,6 @@ $alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x pl
 
 Se usa en combinación con `$theme-colors` para crear clases de modificadores contextuales para nuestras alertas.
 
-{{< content-ads/middle-banner-3 >}}
-
 [scss/mixins/_alert.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_alert.scss)
 
 ```scss {filename="scss/mixins/_alert.scss"}
@@ -322,6 +320,8 @@ Se usa en combinación con `$theme-colors` para crear clases de modificadores co
 ```
 
 ### Bucles Sass del componente {#sass-loops}
+
+{{< content-ads/middle-banner-3 >}}
 
 Bucle que genera las clases modificadoras con el mixin `alert-variant()`.
 
@@ -358,8 +358,6 @@ Consulta la sección [desencadenantes](#triggers) para obtener más detalles.
 
 ### Desencadenantes {#triggers}
 
-{{< content-ads/middle-banner-4 >}}
-
 El despido (cierre) se puede lograr con el atributo `data-bs-dismiss` en un botón **dentro de la alerta** como se muestra a continuación:
 
 ```html {filename="HTML"}
@@ -371,6 +369,8 @@ o en un botón **fuera de la alerta** usando el `data-bs-target` adicional como 
 ```html {filename="HTML"}
 <button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 **Ten en cuenta que cerrar una alerta la eliminará del DOM.**
 
@@ -401,8 +401,6 @@ alert.close()
 {{< bootstrap/content-suggestion >}}
 
 ### Eventos {#events}
-
-{{< content-ads/middle-banner-5 >}}
 
 El complemento de alerta de Bootstrap expone algunos eventos para conectarse a la funcionalidad de alerta.
 

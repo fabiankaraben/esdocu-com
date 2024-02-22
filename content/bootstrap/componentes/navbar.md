@@ -99,6 +99,8 @@ El `.navbar-brand` se puede aplicar a la mayoría de los elementos, pero un ancl
 
 Agrega tu texto dentro de un elemento con la clase `.navbar-brand`.
 
+{{< content-ads/middle-banner-1 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/components/navbar/text.html" >}}
 ```html {filename="HTML"}
 <!-- As a link -->
@@ -152,8 +154,6 @@ También puedes hacer uso de algunas utilidades adicionales para agregar una ima
 {{< /demo-iframe >}}
 
 ### Nav {#nav}
-
-{{< content-ads/middle-banner-1 >}}
 
 Los enlaces de navegación de la barra de navegación se basan en nuestras opciones `.nav` con su propia clase modificadora y requieren el uso de [clases de alternancia](#toggler) para un estilo responsive adecuado. **La navegación en las barras de navegación también crecerá para ocupar tanto espacio horizontal como sea posible** para mantener el contenido de la barra de navegación alineado de forma segura.
 
@@ -217,6 +217,8 @@ Y debido a que usamos clases para nuestra navegación, puedes evitar por complet
 {{< /demo-iframe >}}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-2 >}}
 
 También puedes usar menús desplegables en tu barra de navegación. Los menús desplegables requieren un elemento envolvente para su posicionamiento, así que asegúrate de utilizar elementos separados y anidados para `.nav-item` y `.nav-link` como se muestra a continuación.
 
@@ -339,6 +341,8 @@ Las barras de navegación pueden contener fragmentos de texto con la ayuda de `.
 
 Mezcla y combina con otros componentes y utilidades según sea necesario.
 
+{{< content-ads/middle-banner-3 >}}
+
 {{< demo-iframe path="/demos/bootstrap/5.3/components/navbar/text-1-2.html" >}}
 ```html {filename="HTML"}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -368,8 +372,6 @@ Mezcla y combina con otros componentes y utilidades según sea necesario.
 </nav>
 ```
 {{< /demo-iframe >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 {{< bootstrap/content-suggestion >}}
 
@@ -444,6 +446,8 @@ Las barras de navegación fijas usan `position: fixed`, lo que significa que se 
 </nav>
 ```
 {{< /demo-iframe >}}
+
+{{< content-ads/middle-banner-4 >}}
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/navbar/placement-2.html" >}}
 ```html {filename="HTML"}
@@ -538,8 +542,6 @@ Aquí tienes una barra de navegación de ejemplo que usa `.navbar-nav-scroll` co
 ```
 {{< /demo-iframe >}}
 
-{{< content-ads/middle-banner-3 >}}
-
 {{< bootstrap/content-suggestion >}}
 
 ## Comportamientos responsive {#responsive-behaviors}
@@ -551,6 +553,8 @@ Para barras de navegación que nunca colapsan, agrega la clase `.navbar-expand` 
 ### Toggler {#toggler}
 
 Los alternadores de la barra de navegación están alineados a la izquierda de forma predeterminada, pero si siguen a un elemento hermano como `.navbar-brand`, se alinearán automáticamente con el más a la derecha. Revertir su marcado invertirá la ubicación del conmutador. A continuación se muestran ejemplos de diferentes estilos de alternancia.
+
+{{< content-ads/middle-banner-5 >}}
 
 Sin `.navbar-brand` mostrado en el punto de interrupción más pequeño:
 
@@ -737,6 +741,8 @@ En el siguiente ejemplo, para crear una barra de navegación offcanvas que siemp
 
 {{< bootstrap/content-suggestion >}}
 
+{{< content-ads/middle-banner-6 >}}
+
 Para crear una barra de navegación offcanvas que se expanda a una barra de navegación normal en un punto de interrupción específico como `lg`, usa `.navbar-expand-lg`.
 
 ```html
@@ -750,8 +756,6 @@ Para crear una barra de navegación offcanvas que se expanda a una barra de nave
     </div>
 </nav>
 ```
-
-{{< content-ads/middle-banner-4 >}}
 
 Cuando uses offcanvas en una barra de navegación oscura, ten en cuenta que es posible que necesites tener un fondo oscuro en el contenido offcanvas para evitar que el texto se vuelva ilegible. En el siguiente ejemplo, agregamos `.navbar-dark` y `.bg-dark` a `.navbar`, `.text-bg-dark` al `.offcanvas`, `.dropdown-menu-dark` al `.dropdown-menu` y `.btn-close-white` a `.btn-close` para un estilo adecuado con un lienzo oscuro.
 
@@ -858,6 +862,8 @@ La personalización a través de variables CSS se puede ver en la clase `.navbar
 
 [scss/_navbar.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_navbar.scss)
 
+{{< content-ads/middle-banner-7 >}}
+
 ```scss {filename="scss/_navbar.scss"}
 --#{$prefix}navbar-color: #{$navbar-dark-color};
 --#{$prefix}navbar-hover-color: #{$navbar-dark-hover-color};
@@ -925,8 +931,6 @@ $navbar-dark-brand-hover-color:     $navbar-dark-active-color;
 {{< bootstrap/content-suggestion >}}
 
 ### Bucles Sass del componente {#sass-loops}
-
-{{< content-ads/middle-banner-5 >}}
 
 [Clases de expansión/contraer de la barra de navegación responsive](#responsive-behaviors) (por ejemplo, `.navbar-expand-lg`) se combinan con el mapa `$breakpoints` y se generan a través de un bucle en `scss/_navbar.scss`.
 

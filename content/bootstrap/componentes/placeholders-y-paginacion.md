@@ -83,8 +83,6 @@ El uso de `aria-hidden="true"` solo indica que el elemento debe estar oculto par
 
 Puedes cambiar el `width` mediante clases de columnas de cuadrícula, utilidades de ancho o estilos en línea.
 
-{{< content-ads/middle-banner-1 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/placeholders/width.html" >}}
 ```html {filename="HTML"}
 <span class="placeholder col-6"></span>
@@ -94,6 +92,8 @@ Puedes cambiar el `width` mediante clases de columnas de cuadrícula, utilidades
 {{< /demo-iframe >}}
 
 {{< bootstrap/content-suggestion >}}
+
+{{< content-ads/middle-banner-1 >}}
 
 #### Color {#color}
 
@@ -146,8 +146,6 @@ Anima marcadores de posición con `.placeholder-glow` o `.placeholder-wave` para
 
 {{< bootstrap/content-suggestion >}}
 
-{{< content-ads/middle-banner-2 >}}
-
 #### Variables Sass generales relacionadas {#sass-variables}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
@@ -158,6 +156,8 @@ $placeholder-opacity-min:           .2;
 ```
 
 ## El componente de Paginación de Bootstrap
+
+{{< content-ads/middle-banner-2 >}}
 
 Documentación y ejemplos para mostrar la paginación para indicar que existe una serie de contenido relacionado en varias páginas.
 
@@ -209,8 +209,6 @@ Además, como las páginas probablemente tengan más de una sección de navegaci
 
 Los enlaces de paginación se pueden personalizar para diferentes circunstancias. Utiliza `.disabled` para enlaces en los que no se puedes hacer clic y `.active` para indicar la página actual.
 
-{{< content-ads/middle-banner-3 >}}
-
 Mientras que la clase `.disabled` usa `pointer-events: none` para _intentar_ deshabilitar el enlace funcionalidad de `<a>`s, esa propiedad CSS aún no está estandarizada y no tiene en cuenta la navegación con el teclado. Como tal, siempre debes agregar `tabindex="-1"` en los enlaces deshabilitados y usar JavaScript personalizado para deshabilitar completamente su funcionalidad.
 
 {{< demo-iframe path="/demos/bootstrap/5.3/components/pagination/disabled-and-active-states-1.html" >}}
@@ -258,6 +256,8 @@ Opcionalmente, puedes cambiar los anclajes activos o deshabilitados por `<span>`
 {{< bootstrap/content-suggestion >}}
 
 ### Tamaños del componente de Paginación {#sizing}
+
+{{< content-ads/middle-banner-3 >}}
 
 ¿Te apetece una paginación más grande o más pequeña? Agrega `.pagination-lg` o `.pagination-sm` para tamaños adicionales.
 
@@ -313,8 +313,6 @@ Cambiar la alineación de los componentes de paginación con [utilidades flexbox
 
 O con `.justify-content-end`:
 
-{{< content-ads/middle-banner-4 >}}
-
 {{< demo-iframe path="/demos/bootstrap/5.3/components/pagination/alignment-2.html" >}}
 ```html {filename="HTML"}
 <nav aria-label="Ejemplo de navegación de página">
@@ -368,6 +366,8 @@ Como parte del enfoque en evolución de variables CSS de Bootstrap, la paginaci�
 ```
 
 #### Variables Sass generales relacionadas {#sass-variables}
+
+{{< content-ads/middle-banner-4 >}}
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 

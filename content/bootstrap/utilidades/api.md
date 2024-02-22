@@ -84,6 +84,8 @@ Salida:
 
 Utiliza la clave `values` para especificar qué valores para la `property` especificada deben usarse en las reglas y nombres de clase generados. Puede ser una lista o un mapa (establecido en las utilidades o en una variable Sass).
 
+{{< content-ads/middle-banner-1 >}}
+
 Como una lista, como con las [`text-decoration` (utilidades)](/bootstrap/utilidades/textos/#text-decoration):
 
 ```scss {filename="SCSS"}
@@ -101,8 +103,6 @@ values: (
   100: 1,
 )
 ```
-
-{{< content-ads/middle-banner-1 >}}
 
 Como una variable Sass que establece la lista o mapa, como en nuestra [`position` (utilidades)](/bootstrap/utilidades/otras-utilidades):
 
@@ -159,6 +159,8 @@ $utilities: (
 
 Salida:
 
+{{< content-ads/middle-banner-2 >}}
+
 ```css {filename="CSS"}
 .visible { visibility: visible !important; }
 .invisible { visibility: hidden !important; }
@@ -197,8 +199,6 @@ Salida:
 
 ### Variables CSS locales {#local-css-variables}
 
-{{< content-ads/middle-banner-2 >}}
-
 Usa la opción `local-vars` para especificar un mapa Sass que generará variables CSS locales dentro del conjunto de reglas de la clase de utilidad. Ten en cuenta que puede requerir trabajo adicional consumir esas variables CSS locales en las reglas CSS generadas. Por ejemplo, considera nuestras utilidades `.bg-*`:
 
 ```scss {filename="SCSS"}
@@ -233,6 +233,8 @@ Salida:
 Usa la opción `state` para generar variaciones de pseudoclases. Ejemplos de pseudoclases son `:hover` y `:focus`. Cuando se proporciona una lista de estados, se crean nombres de clase para esa pseudoclase. Por ejemplo, para cambiar la opacidad al pasar el mouse, agrega `state: hover` y obtendrás `.opacity-hover:hover` en tu CSS compilado.
 
 ¿Necesitas múltiples pseudoclases? Utiliza una lista de estados separados por espacios: `state: hover focus`.
+
+{{< content-ads/middle-banner-3 >}}
 
 ```scss {filename="SCSS"}
 $utilities: (
@@ -353,8 +355,6 @@ $utilities: (
 );
 ```
 
-{{< content-ads/middle-banner-3 >}}
-
 Salida:
 
 ```css {filename="CSS"}
@@ -374,6 +374,8 @@ Salida:
 ```
 
 ## Importancia {#importance}
+
+{{< content-ads/middle-banner-4 >}}
 
 Todas las utilidades generadas por la API incluyen `!important` para garantizar que se sobrescriben los componentes y las clases modificadoras según lo previsto. Puedes alternar esta configuración globalmente con la variable `$enable-important-utilities` (el valor predeterminado es `true`).
 
@@ -476,9 +478,9 @@ $utilities: map-merge(
 @import "bootstrap/scss/utilities/api";
 ```
 
-{{< bootstrap/content-suggestion >}}
+{{< content-ads/middle-banner-5 >}}
 
-{{< content-ads/middle-banner-4 >}}
+{{< bootstrap/content-suggestion >}}
 
 Esto ahora generará variaciones responsive de `.border` y `.border-0` para cada punto de interrupción. El CSS generado se verá así:
 
@@ -612,6 +614,8 @@ $utilities: map-merge(
 ```
 
 #### Eliminar utilidad en RTL {#remove-utility-in-rtl}
+
+{{< content-ads/middle-banner-6 >}}
 
 Algunos casos extremos hacen [El estilo RTL es difícil](https://rtlstyling.com/posts/rtl-styling#common-things-that-might-not-work-for-rtl), como los saltos de línea en árabe. Por lo tanto, las utilidades se pueden eliminar de la salida RTL configurando la opción `rtl` en `false`:
 

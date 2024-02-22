@@ -73,8 +73,6 @@ Estas sobrecargas para `createLabel` describen una única función de JavaScript
 
 En lugar de eso, podemos codificar esa lógica en un tipo condicional:
 
-{{< content-ads/middle-banner-1 >}}
-
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgJIBMAycBGEA2yA3gFDLLDoBcyIArgLZ5TID0AVMgM4D2DKMYAXRdk7VgG4SAXxKhIsRCgBycftjyFS5EGog0uYKKADmbTjzAALaMkHDR4qbNatkAWk8I6YT+5JgAJ4ADip6APJQGAA8ACrIEAAekCAitIzMyAA+3EamAHzIALzI8UkpafRM0GTIAPxoWLgEtTSq6s34EkA)
 
 ```ts
@@ -82,6 +80,8 @@ type NameOrId<T extends number | string> = T extends number
   ? IdLabel
   : NameLabel;
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 Luego podemos usar ese tipo condicional para simplificar nuestras sobrecargas a una sola función sin sobrecargas.
 
@@ -127,8 +127,6 @@ Podríamos restringir `T` y TypeScript ya no se quejaría:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAshDO8CGBzCB5AZgHgCpQgA9gIA7AE3igG8oBbBZNALigFdSBrUgewHdSUAL4A+KAF4ouANoAiBolQRZAXQDcAKA0BLUiQBOmJAGNoAUTpJtAGxoao9Rktbxg+3Sk1CtoSFAtW1nCKaADCPHpkwFSSwUwYOAE2IpoA9KkOUAB6APxAA)
 
-{{< content-ads/middle-banner-2 >}}
-
 ```ts
 type MessageOf<T extends { message: unknown }> = T["message"];
  
@@ -166,6 +164,8 @@ type DogMessageContents = MessageOf<Dog>;
 type DogMessageContents = never
 ```
 
+{{< content-ads/middle-banner-2 >}}
+
 Dentro de la rama verdadera, TypeScript sabe que `T` *tendrá* una propiedad `message`.
 
 Como otro ejemplo, también podríamos escribir un tipo llamado `Flatten` que aplana los tipos de arrays a sus tipos de elementos, pero de lo contrario los deja tal cual:
@@ -199,8 +199,6 @@ Por ejemplo, podríamos haber inferido el tipo de elemento en `Flatten` en lugar
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAYgNgQ2MCA7APAFXBAfFAXim0iggA8VUATAZygEEAnJhEdAS1QDMImoAkigC2+APyCRUAFzEcAbiA)
 
-{{< content-ads/middle-banner-3 >}}
-
 ```ts
 type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
 ```
@@ -233,6 +231,8 @@ type Bools = boolean[]
 
 Cuando se infiere a partir de un tipo con múltiples firmas de llamada (como el tipo de una función sobrecargada), las inferencias se hacen a partir de la *última* firma (que, presumiblemente, es el caso más permisivo). No es posible realizar una resolución de sobrecarga basada en una lista de tipos de argumentos.
 
+{{< content-ads/middle-banner-3 >}}
+
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwGcMYtUBzAeRgDlkBbACgA8AuQ40sgSjdXoCMQMANwAoUJFgIU6bHnYlyVWo1bw+dQTB4LOYidDhI0mXPiKLKNeszYXO8AD7qBQnffJOXmoWNEYATwAHBAAVAEZ4AF54ACUQDGQYVFDgkAAeQJCcRF0lazoAPjEAehL4CoA9AH4gA)
 
 ```ts
@@ -257,8 +257,6 @@ type ToArray<Type> = Type extends any ? Type[] : never;
 ```
 
 Si conectamos un tipo de unión en `ToArray`, entonces el tipo condicional se aplicará a cada miembro de esa unión.
-
-{{< content-ads/middle-banner-4 >}}
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAKg9gQQE5IIYgDw3BAfFAXlhyggA9gIA7AEwGcpUqQoB+YyAbQF0oAuKFQgA3CEgDcAKEmhIUAMrAkyJAHkkAOQCuAWxWFYiFOgx0lASyoBzKAB9BugEZjcUgPRuoXgHqsgA)
 
@@ -285,6 +283,8 @@ y mapea cada tipo de miembro de la unión, a lo que es efectivamente:
 ```ts
   ToArray<string> | ToArray<number>;
 ```
+
+{{< content-ads/middle-banner-4 >}}
 
 lo cual nos deja con:
 

@@ -68,8 +68,6 @@ A partir de v5.1.0, las utilidades `background-color` se generan con Sass usando
 
 ### Cómo funciona {#how-it-works}
 
-{{< content-ads/middle-banner-1 >}}
-
 Considera nuestra utilidad `.bg-success` predeterminada.
 
 ```css {filename="CSS"}
@@ -78,6 +76,8 @@ Considera nuestra utilidad `.bg-success` predeterminada.
   background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
 }
 ```
+
+{{< content-ads/middle-banner-1 >}}
 
 Usamos una versión RGB de nuestra variable CSS `--bs-success` (con el valor de `25, 135, 84`) y se adjuntó una segunda variable CSS, `--bs-bg-opacity`, para la transparencia alfa (con un valor predeterminado `1` gracias a una variable CSS local). Eso significa que cada vez que uses `.bg-success` ahora, tu valor de `color` calculado es `rgba(25, 135, 84, 1)`. La variable CSS local dentro de cada clase `.bg-*` evita problemas de herencia, por lo que las instancias anidadas de las utilidades no tienen automáticamente una transparencia alfa modificada.
 
@@ -114,8 +114,6 @@ La mayoría de las utilidades `background-color` se generan a partir de los colo
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
-{{< content-ads/middle-banner-2 >}}
-
 ```scss {filename="scss/_variables.scss"}
 $blue:    #0d6efd;
 $indigo:  #6610f2;
@@ -143,6 +141,8 @@ $dark:          $gray-900;
 ```
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+{{< content-ads/middle-banner-2 >}}
 
 ```scss {filename="scss/_variables.scss"}
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0));
@@ -185,8 +185,6 @@ $dark-bg-subtle:          $gray-400;
 
 [scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
 
-{{< content-ads/middle-banner-3 >}}
-
 ```scss {filename="scss/_variables-dark.scss"}
 $primary-bg-subtle-dark:            shade-color($primary, 80%);
 $secondary-bg-subtle-dark:          shade-color($secondary, 80%);
@@ -219,6 +217,8 @@ $theme-colors: (
 
 Los colores en escala de grises también están disponibles como mapa Sass. **Este mapa no se utiliza para generar ninguna utilidad.**
 
+{{< content-ads/middle-banner-3 >}}
+
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
 ```scss {filename="scss/_variables.scss"}
@@ -246,8 +246,6 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 Las opacidades del color de fondo se basan en eso con su propio mapa que es consumido por la API de utilidades:
 
 [scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
-
-{{< content-ads/middle-banner-4 >}}
 
 ```scss {filename="scss/_maps.scss"}
 $utilities-bg: map-merge(
@@ -308,6 +306,8 @@ $theme-colors-bg-subtle-dark: (
 
 **No se utilizan mixins para generar nuestras utilidades en segundo plano**, pero sí tenemos algunos mixins adicionales para otras situaciones en las que te gustaría crear tus propios degradados.
 
+{{< content-ads/middle-banner-4 >}}
+
 {{< bootstrap/content-suggestion >}}
 
 [scss/mixins/_gradients.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_gradients.scss)
@@ -359,8 +359,6 @@ $theme-colors-bg-subtle-dark: (
   background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
 }
 ```
-
-{{< content-ads/middle-banner-5 >}}
 
 ### API de utilidades de Sass {#sass-utilities-api}
 

@@ -24,8 +24,6 @@ type P = keyof Point;
 type P = keyof Point
 ```
 
-{{< content-ads/middle-banner-1 >}}
-
 Si el tipo tiene una firma de índice `string` o `number`, `keyof` devolverá esos tipos en su lugar:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAggTnAhiAlgZwBZQLxQN5QDaAdgFxTECuAtgEYRwC65lxA1sQPYDuxUAvgG4AUKEiwcUNhBCcAZrATJ0GEQHo1ULQD0A-MNHhoAWURgVkgoTbk0wOCmIBzZlFqdOAGwiI+Qw+LGktKyCqbmmOqaOrpAA)
