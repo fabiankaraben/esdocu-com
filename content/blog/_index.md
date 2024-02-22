@@ -1,9 +1,9 @@
 ---
-title: Manual de Bootstrap 5.3
+title: Blog
 weight: 1
 cascade:
   type: docs
-redirect: /bootstrap/comenzando
+redirect: /blog/mejor-web-hosting
 noindex: true
 ---
 

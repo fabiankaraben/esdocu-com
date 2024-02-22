@@ -670,6 +670,10 @@ video {
 .m-auto {
   margin: auto;
 }
+.\!my-3 {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -729,6 +733,9 @@ video {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+.\!mt-0 {
+  margin-top: 0px !important;
 }
 .-mb-0 {
   margin-bottom: -0px;
@@ -1963,6 +1970,10 @@ video {
 }
 .p-\[5px\] {
   padding: 5px;
+}
+.\!py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 .px-1 {
   padding-left: 0.25rem;
