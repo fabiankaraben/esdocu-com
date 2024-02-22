@@ -1,11 +1,17 @@
 {{- $showHostingerMiddleBanner7 := .Site.Params.showHostingerMiddleBanner7 | default false -}}
 {{- if eq $showHostingerMiddleBanner7 true }}
     <!-- VPS Hosting with GEO target -->
-    <div class="my-5 flex w-full flex-row items-center justify-center">
+    <div class="mt-5 flex w-full flex-row items-center justify-center">
         <div class="animate-border inline-block rounded-md bg-white bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-[length:400%_400%] p-[5px]">
             <a href="https://www.hostg.xyz/SHEZq" target="_blank">
                 <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/1024x512.jpg" alt="El mejor hosting WordPress" />
             </a>
+        </div>
+    </div>
+    <div class="mb-5 px-2 pt-1 pb-2 rounded-md border border-dotted border-indigo-300 border-t-transparent dark:border-opacity-50">
+        <div class="mx-1 mt-1 text-xs sm:text-sm">
+            <strong>¿Sabías qué?</strong> Podrás evitar los principales errores al elegir tu empresa de Web Hosting leyendo nuestro artículo 
+            <a href="/blog/mejor-web-hosting">¿Cuál es el mejor web hosting?</a>.
         </div>
     </div>
     {{ if hugo.IsProduction -}}
