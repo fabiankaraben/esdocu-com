@@ -8,9 +8,13 @@ type: docs
 
 # Primeros pasos con Bootstrap
 
+Bootstrap es un conjunto de herramientas de interfaz potente y repleto de funciones.
+
+{{< content-ads/top-banner >}}
+
 ## Comienza con Bootstrap en 3 simples pasos
 
-Bootstrap es un conjunto de herramientas de interfaz potente y repleto de funciones. Construye cualquier cosa, desde el prototipo hasta la producción, en minutos.
+Construye cualquier cosa, desde el prototipo hasta la producción, en minutos.
 
 ### Inicio rápido {#quick-start}
 
@@ -297,6 +301,8 @@ Descubre lo que se incluye en Bootstrap, incluidas nuestras versiones de código
 
 ### Bootstrap compilado {#compiled-bootstrap}
 
+{{< content-ads/middle-banner-1 >}}
+
 Una vez descargado, descomprime la carpeta comprimida y verás algo como esto:
 
 ```
@@ -420,8 +426,6 @@ iOS >= 12
 Safari >= 12
 not Explorer <= 11
 ```    
-
-{{< content-ads/top-banner >}}
 
 Usamos [Autoprefixer](https://github.com/postcss/autoprefixer) para manejar la compatibilidad del navegador mediante prefijos CSS, que usa [Browserslist](https://github.com/browserslist/browserslist) para administrar estas versiones del navegador. Consulta su documentación para saber cómo integrar estas herramientas en tus proyectos.
 
@@ -668,6 +672,8 @@ carousel.to('2') // !! Will be ignored, as the transition to the slide 1 is not 
 
 ##### Método `dispose` {#dispose-method}
 
+{{< content-ads/middle-banner-2 >}}
+
 Si bien puede parecer correcto usar el método `dispose` inmediatamente después de `hide()`, conducirá a resultados incorrectos. A continuación se muestra un ejemplo del uso problemático:
 
 ```javascript {filename="JavaScript"}
@@ -796,8 +802,6 @@ $('[data-bs-toggle="tooltip"]').tooltip({
 // to trigger the `show` method
 $('#myTooltip').tooltip('show')
 ```
-
-{{< content-ads/middle-banner-1 >}}
 
 Lo mismo ocurre con nuestros otros componentes.
 
@@ -1234,6 +1238,8 @@ Con las dependencias instaladas y nuestra carpeta de proyecto lista para que com
     
     Parcel detectará automáticamente que estamos usando Sass e instalará el [complemento Sass de Parcel](https://parceljs.org/languages/sass) para apoyarlo. Sin embargo, si lo deseas, también puedes ejecutar manualmente `npm i --save-dev @parcel/transformer-sass`.
     
+{{< content-ads/middle-banner-3 >}}
+
 2.  **Agrega los scripts Parcel npm.** Abre el `package.json` y agrega el siguiente script `start` al objeto `scripts`. Usaremos este script para iniciar nuestro servidor de desarrollo de Parcel y renderizar el archivo HTML que creamos después de compilarlo en el directorio `dist`.
     ```json {filename="JSON"}
     {
@@ -1305,8 +1311,6 @@ La guía oficial sobre cómo incluir y agrupar CSS y JavaScript de Bootstrap en 
 {{< callout type="info" emoji="" >}}
 **¿Quieres ir hasta el final?** Descarga el código fuente y la demostración funcional de esta guía desde el repositorio [twbs/examples](https://github.com/twbs/examples/tree/main/vite). También puedes [abrir el ejemplo en StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/vite?file=index) para editarlo en vivo.
 {{< /callout >}}
-
-{{< content-ads/middle-banner-2 >}}
 
 ### Configuración {#setup}
 
@@ -1586,6 +1590,8 @@ Cuando no quieras usar los includes, también hay dos funciones:
 
 En este ejemplo, utilizamos uno de los [mixins de puntos de interrupción responsive](/bootstrap/layout) integrados en Bootstrap para aplicar solo estilo debajo del punto de interrupción `lg`.
 
+{{< content-ads/middle-banner-4 >}}
+
 ```css {filename="CSS"}
 .selector {
   @include media-breakpoint-down(lg) {
@@ -1676,8 +1682,6 @@ Puedes ver los requisitos anteriores reflejados en esta plantilla inicial RTL mo
 Empieza con uno de nuestros varios [ejemplos RTL](https://getbootstrap.com/docs/5.3/examples/#rtl).
 
 ### Acercarse {#approach}
-
-{{< content-ads/middle-banner-3 >}}
 
 Nuestro enfoque para crear soporte RTL en Bootstrap viene con dos decisiones importantes que afectan la forma en que escribimos y usamos nuestro CSS:
 
