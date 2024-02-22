@@ -176,3 +176,16 @@ params:
       # emitMetadata: 0
       # inputPosition: top
       # lang: en
+
+  # Hostinger banners.
+  showHostingerTopBanner: true # 
+  showHostingerMiddleBanner1: true # 
+  showHostingerMiddleBanner2: true # 
+  showHostingerMiddleBanner3: true # 
+  showHostingerMiddleBanner4: true # 
+  showHostingerMiddleBanner5: true # 
+  showHostingerMiddleBanner6: true # 
+  showHostingerMiddleBanner7: true # 
+  showHostingerMiddleBanner8: true # 
+  showHostingerMiddleBanner9: true # 
+  showHostingerBottomBanner: true # 

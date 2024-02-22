@@ -1,3 +1,16 @@
+{{- $showHostingerMiddleBanner1 := .Site.Params.showHostingerMiddleBanner1 | default true -}}
+{{- if eq $showHostingerMiddleBanner1 true }}
+    <!-- WordPress Hosting with GEO target -->
+    <div class="my-5 p-1 rounded-md border border-indigo-300">
+        <a href="https://www.hostg.xyz/SHEZo" target="_blank">
+            <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/WPT-970x250.png" alt="El mejor hosting WordPress" />
+        </a>
+    </div>
+    {{ if hugo.IsProduction -}}
+    <img src="https://www.hostg.xyz/aff_i?offer_id=6&aff_id=17787&url_id=1003&tiny_url=1" width="0" height="0" style="position:absolute;visibility:hidden;" border="0" />
+    {{ end -}}
+{{ end -}}
+
 {{- $showAdsterraMiddleBanner1 := .Site.Params.showAdsterraMiddleBanner1 | default false -}}
 {{- if eq $showAdsterraMiddleBanner1 true }}
 <div class="my-5">

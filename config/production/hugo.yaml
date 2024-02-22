@@ -3,17 +3,17 @@ services:
     ID: G-P9N8MVS57V
 params:
   # Hostinger banners.
-  showHostingerTopBanner: false # Donate
-  showHostingerMiddleBanner1: true # Donate
-  showHostingerMiddleBanner2: false # Donate
-  showHostingerMiddleBanner3: false # Donate
-  showHostingerMiddleBanner4: false # Donate
-  showHostingerMiddleBanner5: false # Donate
-  showHostingerMiddleBanner6: false # Donate
-  showHostingerMiddleBanner7: false # Donate
-  showHostingerMiddleBanner8: false # Donate
-  showHostingerMiddleBanner9: false # Donate
-  showHostingerBottomBanner: false # Donate
+  showHostingerTopBanner: true # 
+  showHostingerMiddleBanner1: true # 
+  showHostingerMiddleBanner2: true # 
+  showHostingerMiddleBanner3: true # 
+  showHostingerMiddleBanner4: true # 
+  showHostingerMiddleBanner5: true # 
+  showHostingerMiddleBanner6: true # 
+  showHostingerMiddleBanner7: true # 
+  showHostingerMiddleBanner8: true # 
+  showHostingerMiddleBanner9: true # 
+  showHostingerBottomBanner: true # 
 
   # TheMoneytizer Ads.
   # All formats: https://us.themoneytizer.com/ad-units
