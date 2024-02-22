@@ -75,7 +75,16 @@ module.exports = {
     extend: {
       colors: {
         dark: '#111'
-      }
+      },
+      animation: {
+        border: 'border 2s ease infinite',
+      },
+      keyframes: {
+        border: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
     }
   },
   darkMode: ['class', 'html[class~="dark"]']

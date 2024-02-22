@@ -1,10 +1,12 @@
 {{- $showHostingerMiddleBanner6 := .Site.Params.showHostingerMiddleBanner6 | default false -}}
 {{- if eq $showHostingerMiddleBanner6 true }}
     <!-- Website Builder with GEO target -->
-    <div class="my-5 p-1 rounded-md border border-indigo-300">
-        <a href="https://www.hostg.xyz/SHEZp" target="_blank">
-            <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/AFF-1024x512.jpg" alt="El mejor hosting WordPress" />
-        </a>
+    <div class="my-5 flex w-full flex-row items-center justify-center">
+        <div class="animate-border inline-block rounded-md bg-white bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-[length:400%_400%] p-1.5">
+            <a href="https://www.hostg.xyz/SHEZp" target="_blank">
+                <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/AFF-1024x512.jpg" alt="El mejor hosting WordPress" />
+            </a>
+        </div>
     </div>
     {{ if hugo.IsProduction -}}
     <img src="https://www.hostg.xyz/aff_i?offer_id=6&aff_id=17787&url_id=2949&tiny_url=1" width="0" height="0" style="position:absolute;visibility:hidden;" border="0" />
