@@ -759,7 +759,7 @@ void main() {
 }
 ```
 
-{{% details title="Ejemplo de solución para getters y setters" closed="true" %}}
+{{% details title="Solución para el ejemplo de getters y setters" closed="true" %}}
 Dos funciones son útiles para este ejercicio. Una es `fold`, que puede reducir una lista a un solo valor (úsela para calcular el total). La otra es `any`, que puede verificar cada item en una lista con una función que le asignas (úsala para verificar si hay precios negativos en el setter de precios).
 ```dart
 // Añade un getter "total" aquí:
@@ -887,7 +887,7 @@ void main() {
 }
 ```
 
-{{% details title="Ejemplo de solución para parámetros posicionales" closed="true" %}}
+{{% details title="Solución para el ejemplo de parámetros posicionales" closed="true" %}}
 Los parámetros `b`, `c`, `d` y `e` son nulos si no los proporciona el invocador de la función. Entonces, lo importante es verificar si esos argumentos son `null` antes de agregarlos a la cadena final.
 ```dart
 String joinWithCommas(int a, [int? b, int? c, int? d, int? e]) {
