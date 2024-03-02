@@ -4,7 +4,6 @@ title: "Iterable collections | Dart - Dart en Español"
 description: "An interactive guide to using Iterable objects such as lists and sets."
 weight: 3
 type: docs
-draft: true
 ---
 
 # Colecciones iterables
@@ -238,11 +237,11 @@ void main() {
 }
 ```
 
-{{% details title="Hint" closed="true" %}}
+{{% details title="Pista" closed="true" %}}
 Tu solución podría utilizar los métodos `contains` y `startsWith` de la clase `String`.
 {{% /details %}}
 
-{{% details title="Solución" cerrada="true" %}}
+{{% details title="Solución" closed="true" %}}
 ```dart
 String singleWhere(Iterable<String> items) {
   return items.singleWhere(
@@ -328,11 +327,11 @@ Usa `any()` y `every()` para implementar dos funciones:
 
 ```dart
 bool anyUserUnder18(Iterable<User> users) {
-  // TODO: Implement the anyUserUnder18 function.
+  // TODO: Implementa la función anyUserUnder18.
 }
 
 bool everyUserOver13(Iterable<User> users) {
-  // TODO: Implement the everyUserOver13 function.
+  // TODO: Implementa la función eachUserOver13.
 }
 
 class User {
@@ -345,8 +344,8 @@ class User {
   );
 }
 
-// The following code is used to provide feedback on your solution.
-// There is no need to read or modify it.
+// El siguiente código se utiliza para proporcionar comentarios sobre tu solución.
+// No es necesario leerlo ni modificarlo.
 void main() {
   final users = [
     User('Alice', 21),
@@ -444,11 +443,11 @@ void main() {
 }
 ```
 
-{{% details title="Hint" closed="true" %}}
-Remember to use the `any` and `every` methods from the `Iterable` class. For help and examples using these methods, refer to the [earlier discussion of them ↗](https://dart.dev/codelabs/iterables#example-using-any-and-every).
+{{% details title="Pista" closed="true" %}}
+Recuerda utilizar los métodos `any` y `every` de la clase `Iterable`. Para obtener ayuda y ejemplos sobre el uso de estos métodos, consulta la [discusión anterior sobre ellos](/dart/tutoriales-y-codelabs/codelabs/iterables#example-using-any-and-every).
 {{% /details %}}
 
-{{% details title="Solution" closed="true" %}}
+{{% details title="Solución" closed="true" %}}
 ```dart
 bool anyUserUnder18(Iterable<User> users) {
   return users.any((user) => user.age < 18);
@@ -460,102 +459,104 @@ bool everyUserOver13(Iterable<User> users) {
 ```
 {{% /details %}}
 
-## Filtering {#filtering}
+## Filtrado {#filtering}
 
-The previous sections cover methods like `firstWhere()` or `singleWhere()` that can help you find an element that satisfies a certain predicate.
+Las secciones anteriores cubren métodos como `firstWhere()` o `singleWhere()` que pueden ayudarte a encontrar un elemento que satisfaga un determinado predicado.
 
-But what if you want to find all the elements that satisfy a certain condition? You can accomplish that using the `where()` method.
+¿Pero qué pasa si quieres encontrar todos los elementos que satisfacen una determinada condición? Puedes lograrlo usando el método `where()`.
 
 ```dart
 var evenNumbers = numbers.where((number) => number.isEven);
 ```
 
-In this example, `numbers` contains an `Iterable` with multiple `int` values, and `where()` finds all the numbers that are even.
+En este ejemplo, `numbers` contiene un `Iterable` con múltiples valores `int`, y `where()` encuentra todos los números pares.
 
-The output of `where()` is another `Iterable`, and you can use it as such to iterate over it or apply other `Iterable` methods. In the next example, the output of `where()` is used directly inside the `for-in` loop.
+La salida de `where()` es otro `Iterable`, y puedes usarlo como tal para iterar sobre él o aplicar otros métodos `Iterable`. En el siguiente ejemplo, la salida de `where()` se usa directamente dentro del bucle `for-in`.
 
 ```dart
 var evenNumbers = numbers.where((number) => number.isEven);
 for (final number in evenNumbers) {
-  print('$number is even');
+  print('$number es par');
 }
 ```
 
-### Example: Using where() {#example-using-where}
+### Ejemplo: Usando `where()` {#example-using-where}
 
-Run this example to see how `where()` can be used together with other methods like `any()`.
+Ejecuta este ejemplo para ver cómo se puede usar `where()` junto con otros métodos como `any()`.
 
 ```dart
 void main() {
   var evenNumbers = const [1, -2, 3, 42].where((number) => number.isEven);
 
   for (final number in evenNumbers) {
-    print('$number is even.');
+    print('$number es par.');
   }
 
   if (evenNumbers.any((number) => number.isNegative)) {
-    print('evenNumbers contains negative numbers.');
+    print('evenNumbers contiene números negativos.');
   }
 
-  // If no element satisfies the predicate, the output is empty.
+  // Si ningún elemento satisface el predicado, la salida estará vacía.
   var largeNumbers = evenNumbers.where((number) => number > 1000);
   if (largeNumbers.isEmpty) {
-    print('largeNumbers is empty!');
+    print('largeNumbers está vacío!');
   }
 }
 ```
 
 {{< content-ads/middle-banner-6 >}}
 
-In this example, `where()` is used to find all numbers that are even, then `any()` is used to check if the results contain a negative number.
+En este ejemplo, `where()` se usa para encontrar todos los números pares, luego `any()` se usa para verificar si los resultados contienen un número negativo.
 
-Later in the example, `where()` is used again to find all numbers larger than 1000. Because there are none, the result is an empty `Iterable`.
+Más adelante en el ejemplo, `where()` se usa nuevamente para encontrar todos los números mayores que 1000. Como no hay ninguno, el resultado es un `Iterable` vacío.
 
-### Example: Using takeWhile {#example-using-takewhile}
+### Ejemplo: Usando `takeWhile` {#example-using-takewhile}
 
-The methods `takeWhile()` and `skipWhile()` can also help you filter elements from an `Iterable`.
+Los métodos `takeWhile()` y `skipWhile()` también pueden ayudarte a filtrar elementos de un `Iterable`.
 
-Run this example to see how `takeWhile()` and `skipWhile()` can split an `Iterable` containing numbers.
+Ejecuta este ejemplo para ver cómo `takeWhile()` y `skipWhile()` pueden dividir un `Iterable` que contiene números.
 
 ```dart
 void main() {
   const numbers = [1, 3, -2, 0, 4, 5];
 
   var numbersUntilZero = numbers.takeWhile((number) => number != 0);
-  print('Numbers until 0: $numbersUntilZero');
+  print('Números hasta el 0: $numbersUntilZero');
 
   var numbersStartingAtZero = numbers.skipWhile((number) => number != 0);
-  print('Numbers starting at 0: $numbersStartingAtZero');
+  print('Números comenzando desde 0: $numbersStartingAtZero');
 }
 ```
 
-In this example, `takeWhile()` returns an `Iterable` that contains all the elements before the one that satisfies the predicate. On the other hand, `skipWhile()` returns an `Iterable` that contains all elements after and including the first one that *doesn't* satisfy the predicate.
+En este ejemplo, `takeWhile()` devuelve un `Iterable` que contiene todos los elementos anteriores al que satisface el predicado. Por otro lado, `skipWhile()` devuelve un `Iterable` que contiene todos los elementos posteriores e incluido al primero que *no* satisfacen el predicado.
 
-After running the example, change `takeWhile()` to take elements until it reaches the first negative number.
+Después de ejecutar el ejemplo, cambia `takeWhile()` para tomar elementos hasta que alcance el primer número negativo.
 
 ```dart
 var numbersUntilNegative =
     numbers.takeWhile((number) => !number.isNegative);
 ```
 
-Notice that the condition `number.isNegative` is negated with `!`.
+Observa que la condición `number.isNegative` se niega con `!`.
 
-### Exercise: Filtering elements from a list {#exercise-filtering-elements-from-a-list}
+### Ejercicio: Filtrar elementos de una lista {#exercise-filtering-elements-from-a-list}
 
-The following exercise provides practice using the `where()` method with the class `User` from the previous exercise.
+El siguiente ejercicio proporciona práctica usando el método `where()` con la clase `User` del ejercicio anterior.
 
-Use `where()` to implement two functions:
+Usa `where()` para implementar dos funciones:
 
-- Part 1: Implement `filterOutUnder21()`.- Return an `Iterable` containing all users of age 21 or more.
-- Part 2: Implement `findShortNamed()`.- Return an `Iterable` containing all users with names of length 3 or less.
+- Parte 1: Implementa `filterOutUnder21()`.
+  - Devuelve un `Iterable` que contiene a todos los usuarios de 21 años o más.
+- Parte 2: Implementa `findShortNamed()`.
+  - Devuelve un `Iterable` que contiene todos los usuarios con nombres de longitud 3 o menos.
 
 ```dart
 Iterable<User> filterOutUnder21(Iterable<User> users) {
-  // TODO: Implement the filterOutUnder21 function.
+  // TODO: Implementa la función filterOutUnder21.
 }
 
 Iterable<User> findShortNamed(Iterable<User> users) {
-  // TODO: Implement the findShortNamed function.
+  // TODO: Implementa la función findShortNamed.
 }
 
 class User {
@@ -568,8 +569,8 @@ class User {
   );
 }
 
-// The following code is used to provide feedback on your solution.
-// There is no need to read or modify it.
+// El siguiente código se utiliza para proporcionar comentarios sobre tu solución.
+// No es necesario leerlo ni modificarlo.
 void main() {
   final users = [
     User('Alice', 21),
@@ -630,11 +631,11 @@ void main() {
 
 {{< content-ads/middle-banner-7 >}}
 
-{{% details title="Hint" closed="true" %}}
-Remember to take advantage of the `where` method from the `Iterable` class. For help and examples using `where`, refer to the [earlier discussion of it ↗](https://dart.dev/codelabs/iterables#example-using-where).
+{{% details title="Pista" closed="true" %}}
+Recuerda aprovechar el método `where` de la clase `Iterable`. Para obtener ayuda y ejemplos sobre el uso de `where`, consulta la [discusión anterior al respecto](/dart/tutoriales-y-codelabs/codelabs/iterables#example-using-where).
 {{% /details %}}
 
-{{% details title="Solution" closed="true" %}}
+{{% details title="Solución" closed="true" %}}
 ```dart
 Iterable<User> filterOutUnder21(Iterable<User> users) {
   return users.where((user) => user.age >= 21);
@@ -648,44 +649,44 @@ Iterable<User> findShortNamed(Iterable<User> users) {
 
 ## Mapping {#mapping}
 
-Mapping `Iterables` with the method `map()` enables you to apply a function over each of the elements, replacing each element with a new one.
+Mapear `Iterables` con el método `map()` te permite aplicar una función sobre cada uno de los elementos, reemplazando cada elemento por uno nuevo.
 
 ```dart
 Iterable<int> output = numbers.map((number) => number * 10);
 ```
 
-In this example, each element of the `Iterable` numbers is multiplied by 10.
+En este ejemplo, cada elemento de los números `Iterable` se multiplica por `10`.
 
-You can also use `map()` to transform an element into a different object—for example, to convert all `int` to `String`, as you can see in the following example:
+También puedes usar `map()` para transformar un elemento en un objeto diferente; por ejemplo, para convertir todo `int` en `String`, como puedes ver en el siguiente ejemplo:
 
 ```dart
 Iterable<String> output = numbers.map((number) => number.toString());
 ```
 
-### Example: Using map to change elements {#example-using-map-to-change-elements}
+### Ejemplo: Usar `map` para cambiar elementos {#example-using-map-to-change-elements}
 
-Run this example to see how to use `map()` to multiply all the elements of an `Iterable` by 2. What do you think the output will be?
+Ejecuta este ejemplo para ver cómo usar `map()` para multiplicar todos los elementos de un `Iterable` por `2`. ¿Cuál crees que será el resultado?
 
 ```dart
 void main() {
   var numbersByTwo = const [1, -2, 3, 42].map((number) => number * 2);
-  print('Numbers: $numbersByTwo');
+  print('Números: $numbersByTwo');
 }
 ```
 
-### Exercise: Mapping to a different type {#exercise-mapping-to-a-different-type}
+### Ejercicio: Mapeo a un tipo diferente {#exercise-mapping-to-a-different-type}
 
-In the previous example, you multiplied the elements of an `Iterable` by 2. Both the input and the output of that operation were an `Iterable` of `int`.
+En el ejemplo anterior, multiplicaste los elementos de un `Iterable` por `2`. Tanto la entrada como la salida de esa operación fueron un `Iterable` de `int`.
 
-In this exercise, your code takes an `Iterable` of `User`, and you need to return an `Iterable` that contains strings containing each user's name and age.
+En este ejercicio, tu código toma un `Iterable` de `User` y necesitas devolver un `Iterable` que contiene cadenas que contienen el nombre y la edad de cada usuario.
 
-Each string in the `Iterable` must follow this format: `'{name} is {age}'`—for example `'Alice is 21'`.
+Cada cadena en `Iterable` debe seguir este formato: `'{name} is {age}'`; por ejemplo, `'Alice is 21'`.
 
 {{< content-ads/middle-banner-8 >}}
 
 ```dart
 Iterable<String> getNameAndAges(Iterable<User> users) {
-  // TODO: Implement the getNameAndAges function.
+  // TODO: Implementa la función getNameAndAges.
 }
 
 class User {
@@ -698,8 +699,8 @@ class User {
   );
 }
 
-// The following code is used to provide feedback on your solution.
-// There is no need to read or modify it.
+// El siguiente código se utiliza para proporcionar comentarios sobre tu solución.
+// No es necesario leerlo ni modificarlo.
 void main() {
   final users = [
     User('Alice', 21),
@@ -740,12 +741,12 @@ bool _listEquals<T>(List<T>? a, List<T>? b) {
 }
 ```
 
-{{% details title="Hint" closed="true" %}}
-Remember to take advantage of the `map` method from the `Iterable` class. For help and examples using `map`, refer to the [earlier discussion of it ↗](https://dart.dev/codelabs/iterables#example-using-map-to-change-elements).
-To concatenate multiple values into a single string, consider using [string interpolation ↗](https://dart.dev/language/built-in-types#string-interpolation).
+{{% details title="Pista" closed="true" %}}
+Recuerda aprovechar el método `map` de la clase `Iterable`. Para obtener ayuda y ejemplos sobre el uso de `map`, consulta la [discusión anterior sobre el mismo](/dart/tutoriales-y-codelabs/codelabs/iterables#example-using-map-to-change-elements).
+Para concatenar varios valores en una sola cadena, considera usar [interpolación de cadenas ↗](https://dart.dev/language/built-in-types#string-interpolation).
 {{% /details %}}
 
-{{% details title="Solution" closed="true" %}}
+{{% details title="Solución" closed="true" %}}
 ```dart
 Iterable<String> getNameAndAges(Iterable<User> users) {
   return users.map((user) => '${user.name} is ${user.age}');
@@ -753,47 +754,47 @@ Iterable<String> getNameAndAges(Iterable<User> users) {
 ```
 {{% /details %}}
 
-## Exercise: Putting it all together {#exercise-putting-it-all-together}
+## Ejercicio: Poniéndolo todo junto {#exercise-putting-it-all-together}
 
-It's time to practice what you learned, in one final exercise.
+Es hora de practicar lo aprendido, en un ejercicio final.
 
-This exercise provides the class `EmailAddress`, which has a constructor that takes a string. Another provided function is `isValidEmailAddress()`, which tests whether an email address is valid.
+Este ejercicio proporciona la clase `EmailAddress`, que tiene un constructor que toma una cadena. Otra función proporcionada es `isValidEmailAddress()`, que verifica si una dirección de correo electrónico es válida.
 
-|Constructor/function|Type signature|Description|
+|Constructor/función|Firma|Descripción|
 |---|---|---|
-|EmailAddress()|`EmailAddress(String address)`|Creates an `EmailAddress` for the specified address.|
-|isValidEmailAddress()|`bool isValidEmailAddress(EmailAddress)`|Returns `true` if the provided `EmailAddress` is valid.|
+|EmailAddress()|`EmailAddress(String address)`|Crea una `EmailAddress` para la dirección especificada.|
+|isValidEmailAddress()|`bool isValidEmailAddress(EmailAddress)`|Devuelve `true` si la `EmailAddress` proporcionada es válida.|
 
-Write the following code:
+Escribe el siguiente código:
 
-Part 1: Implement `parseEmailAddresses()`.
+Parte 1: Implementar `parseEmailAddresses()`.
 
-- Write the function `parseEmailAddresses()`, which takes an `Iterable<String>` containing email addresses, and returns an `Iterable<EmailAddress>`.
-- Use the method `map()` to map from a `String` to `EmailAddress`.
-- Create the `EmailAddress` objects using the constructor `EmailAddress(String)`.
+- Escribe la función `parseEmailAddresses()`, que toma un `Iterable<String>` que contiene direcciones de correo electrónico y devuelve un `Iterable<EmailAddress>`.
+- Utiliza el método `map()` para asignar desde una `String` a `EmailAddress`.
+- Crea los objetos `EmailAddress` usando el constructor `EmailAddress(String)`.
 
-Part 2: Implement `anyInvalidEmailAddress()`.
+Parte 2: Implementar `anyInvalidEmailAddress()`.
 
-- Write the function `anyInvalidEmailAddress()`, which takes an `Iterable<EmailAddress>` and returns `true` if any `EmailAddress` in the `Iterable` isn't valid.
-- Use the method `any()` together with the provided function `isValidEmailAddress()`.
+- Escribe la función `anyInvalidEmailAddress()`, que toma un `Iterable<EmailAddress>` y devuelve `true` si alguna `EmailAddress` en el `Iterable` no es válida.
+- Utiliza el método `any()` junto con la función proporcionada `isValidEmailAddress()`.
 
-Part 3: Implement `validEmailAddresses()`.
+Parte 3: Implementar `validEmailAddresses()`.
 
-- Write the function `validEmailAddresses()`, which takes an `Iterable<EmailAddress>` and returns another `Iterable<EmailAddress>` containing only valid addresses.
-- Use the method `where()` to filter the `Iterable<EmailAddress>`.
-- Use the provided function `isValidEmailAddress()` to evaluate whether an `EmailAddress` is valid.
+- Escribe la función `validEmailAddresses()`, que toma un `Iterable<EmailAddress>` y devuelve otro `Iterable<EmailAddress>` que contiene solo direcciones válidas.
+- Utiliza el método `where()` para filtrar `Iterable<EmailAddress>`.
+- Utiliza la función proporcionada `isValidEmailAddress()` para evaluar si una `EmailAddress` es válida.
 
 ```dart
 Iterable<EmailAddress> parseEmailAddresses(Iterable<String> strings) {
-  // TODO: Implement the parseEmailAddresses function.
+  // TODO: Implementa la función parseEmailAddresses.
 }
 
 bool anyInvalidEmailAddress(Iterable<EmailAddress> emails) {
-  // TODO: Implement the anyInvalidEmailAddress function.
+  // TODO: Implementa la función anyInvalidEmailAddress.
 }
 
 Iterable<EmailAddress> validEmailAddresses(Iterable<EmailAddress> emails) {
-  // TODO: Implement the validEmailAddresses function.
+  // TODO: Implementa la función validEmailAddresses.
 }
 
 class EmailAddress {
@@ -813,8 +814,8 @@ class EmailAddress {
   String toString() => 'EmailAddress{address: $address}';
 }
 
-// The following code is used to provide feedback on your solution.
-// There is no need to read or modify it.
+// El siguiente código se utiliza para proporcionar comentarios sobre tu solución.
+// No es necesario leerlo ni modificarlo.
 void main() {
   const input = [
     'ali@gmail.com',
@@ -932,7 +933,7 @@ bool isValidEmailAddress(EmailAddress email) {
 
 {{< content-ads/middle-banner-9 >}}
 
-{{% details title="Solution" closed="true" %}}
+{{% details title="Solución" closed="true" %}}
 ```dart
 Iterable<EmailAddress> parseEmailAddresses(Iterable<String> strings) {
   return strings.map((s) => EmailAddress(s));
@@ -948,12 +949,12 @@ Iterable<EmailAddress> validEmailAddresses(Iterable<EmailAddress> emails) {
 ```
 {{% /details %}}
 
-## What's next {#whats-next}
+## ¿Qué sigue? {#whats-next}
 
-Congratulations, you finished the codelab! If you want to learn more, here are some suggestions for where to go next:
+¡Felicitaciones, terminaste el codelab! Si deseas obtener más información, aquí tiene algunas sugerencias sobre dónde ir a continuación:
 
-- Play with [DartPad. ↗](https://dartpad.dev)
-- Try another [codelab](/dart/tutoriales-y-codelabs/codelabs/codelabs).
-- Read the [Iterable API reference ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html) to learn about methods not covered by this codelab.
+- Juega con [DartPad ↗](https://dartpad.dev).
+- Pruebe con otro [codelab](/dart/tutoriales-y-codelabs/codelabs/codelabs).
+- Lee la [referencia de API de Iterable ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html) para obtener información sobre los métodos que no cubre este codelab.
 
 {{< content-ads/bottom-banner >}}

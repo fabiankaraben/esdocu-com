@@ -636,7 +636,7 @@ Future<String> changeUsername() async {
 ```
 {{% /details %}}
 
-## Exercise: Putting it all together {#exercise-putting-it-all-together}
+## Ejercicio: Poniéndolo todo junto {#exercise-putting-it-all-together}
 
 {{< content-ads/middle-banner-6 >}}
 
