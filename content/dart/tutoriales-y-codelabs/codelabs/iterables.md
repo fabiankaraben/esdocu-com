@@ -7,102 +7,88 @@ type: docs
 draft: true
 ---
 
-# Iterable collections
+# Colecciones iterables
 
-Contents *keyboard_arrow_down**keyboard_arrow_up*
-- [What are collections? ↗](https://dart.dev/codelabs/iterables#what-are-collections)
-- [What is an Iterable? ↗](https://dart.dev/codelabs/iterables#what-is-an-iterable)
-- [Reading elements ↗](https://dart.dev/codelabs/iterables#reading-elements)- [Example: Using a for-in loop ↗](https://dart.dev/codelabs/iterables#example-using-a-for-in-loop)
-  - [Example: Using first and last ↗](https://dart.dev/codelabs/iterables#example-using-first-and-last)
-  - [Example: Using firstWhere() ↗](https://dart.dev/codelabs/iterables#example-using-firstwhere)
-  - [Exercise: Practice writing a test predicate ↗](https://dart.dev/codelabs/iterables#exercise-practice-writing-a-test-predicate)
-- [Checking conditions ↗](https://dart.dev/codelabs/iterables#checking-conditions)- [Example: Using any() and every() ↗](https://dart.dev/codelabs/iterables#example-using-any-and-every)
-  - [Exercise: Verify that an Iterable satisfies a condition ↗](https://dart.dev/codelabs/iterables#exercise-verify-that-an-iterable-satisfies-a-condition)
-- [Filtering ↗](https://dart.dev/codelabs/iterables#filtering)- [Example: Using where() ↗](https://dart.dev/codelabs/iterables#example-using-where)
-  - [Example: Using takeWhile ↗](https://dart.dev/codelabs/iterables#example-using-takewhile)
-  - [Exercise: Filtering elements from a list ↗](https://dart.dev/codelabs/iterables#exercise-filtering-elements-from-a-list)
-- [Mapping ↗](https://dart.dev/codelabs/iterables#mapping)- [Example: Using map to change elements ↗](https://dart.dev/codelabs/iterables#example-using-map-to-change-elements)
-  - [Exercise: Mapping to a different type ↗](https://dart.dev/codelabs/iterables#exercise-mapping-to-a-different-type)
-- [Exercise: Putting it all together ↗](https://dart.dev/codelabs/iterables#exercise-putting-it-all-together)
-- [What's next ↗](https://dart.dev/codelabs/iterables#whats-next)
-*more_horiz*
+::
 
 {{< content-ads/top-banner >}}
 
-This codelab teaches you how to use collections that implement the [Iterable ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html) class—for example [List ↗](https://api.dart.dev/stable/dart-core/List-class.html) and [Set. ↗](https://api.dart.dev/stable/dart-core/Set-class.html) Iterables are basic building blocks for all sorts of Dart applications, and you're probably already using them, even without noticing. This codelab helps you make the most out of them.
+Este codelab te enseña cómo usar colecciones que implementan la clase [Iterable ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html), por ejemplo [List ↗](https://api.dart.dev/stable/dart-core/List-class.html) y [Set ↗](https://api.dart.dev/stable/dart-core/Set-class.html). Los iterables son bloques de construcción básicos para todo tipo de aplicaciones de Dart, y probablemente ya los estés usando, incluso sin darte cuenta. Este codelab te ayuda a aprovecharlos al máximo.
 
-Using the embedded DartPad editors, you can test your knowledge by running example code and completing exercises.
+Utilizando los editores integrados de DartPad, puedes probar tus conocimientos ejecutando código de ejemplo y completando ejercicios.
 
-To get the most out of this codelab, you should have basic knowledge of [Dart syntax ↗](https://dart.dev/language).
+Para aprovechar al máximo este codelab, debes tener conocimientos básicos de la [sintaxis de Dart ↗](https://dart.dev/language).
 
-This codelab covers the following material:
+Este codelab cubre el siguiente material:
 
-- How to read elements of an Iterable.
-- How to check if the elements of an Iterable satisfy a condition.
-- How to filter the contents of an Iterable.
-- How to map the contents of an Iterable to a different value.
+- Cómo leer elementos de un Iterable.
+- Cómo comprobar si los elementos de un Iterable cumplen una condición.
+- Cómo filtrar el contenido de un Iterable.
+- Cómo asignar el contenido de un Iterable a un valor diferente.
 
-Estimated time to complete this codelab: 60 minutes.
+Tiempo estimado para completar este codelab: 60 minutos.
 
-The exercises in this codelab have partially completed code snippets. You can use DartPad to test your knowledge by completing the code and clicking the **Run** button. **Don't edit the test code in the `main` function or below**.
+Los ejercicios de este codelab tienen fragmentos de código parcialmente completados. Puedes utilizar DartPad para poner a prueba tus conocimientos completando el código y haciendo clic en el botón **Run**. **No edites el código de tests en la función `main` o debajo**.
 
-If you need help, expand the **Hint** or **Solution** dropdown after each exercise.
+Si necesitas ayuda, expande el menú desplegable **Sugerencia** o **Solución** después de cada ejercicio.
 
-## What are collections? {#what-are-collections}
+## ¿Qué son las colecciones? {#what-are-collections}
 
-A collection is an object that represents a group of objects, which are called *elements*. Iterables are a kind of collection.
+Una colección es un objeto que representa un grupo de objetos, los cuales se llaman *elementos*. Los *Iterables* son un tipo de colección.
 
-A collection can be empty, or it can contain many elements. Depending on the purpose, collections can have different structures and implementations. These are some of the most common collection types:
+Una colección puede estar vacía o puede contener muchos elementos. Dependiendo del propósito, las colecciones pueden tener diferentes estructuras e implementaciones. Estos son algunos de los tipos de colección más comunes:
 
-- [List: ↗](https://api.dart.dev/stable/dart-core/List-class.html) Used to read elements by their indexes.
-- [Set: ↗](https://api.dart.dev/stable/dart-core/Set-class.html) Used to contain elements that can occur only once.
-- [Map: ↗](https://api.dart.dev/stable/dart-core/Map-class.html) Used to read elements using a key.
+- [List: ↗](https://api.dart.dev/stable/dart-core/List-class.html) Se utiliza para leer elementos por sus índices.
+- [Set: ↗](https://api.dart.dev/stable/dart-core/Set-class.html) Se utiliza para contener elementos que pueden aparecer solo una vez.
+- [Map: ↗](https://api.dart.dev/stable/dart-core/Map-class.html) Se utiliza para leer elementos usando una clave.
 
-## What is an Iterable? {#what-is-an-iterable}
+## ¿Qué es un `Iterable`? {#what-is-an-iterable}
 
-An `Iterable` is a collection of elements that can be accessed sequentially.
+Un `Iterable` es una colección de elementos a los que se puede acceder de forma secuencial.
 
-In Dart, an `Iterable` is an abstract class, meaning that you can't instantiate it directly. However, you can create a new `Iterable` by creating a new `List` or `Set`.
+En Dart, un `Iterable` es una clase abstracta, lo que significa que no puedes crear una instancia de él directamente. Sin embargo, puedes crear un nuevo `Iterable` creando una nueva `List` o `Set`.
 
 {{< content-ads/middle-banner-1 >}}
 
-Both `List` and `Set` are `Iterable`, so they have the same methods and properties as the `Iterable` class.
+Tanto `List` como `Set` son `Iterable`, por lo que tienen los mismos métodos y propiedades que la clase `Iterable`.
 
-A `Map` uses a different data structure internally, depending on its implementation. For example, [HashMap ↗](https://api.dart.dev/stable/dart-collection/HashMap-class.html) uses a hash table in which the elements (also called *values*) are obtained using a key. Elements of a `Map` can also be read as `Iterable` objects by using the map's `entries` or `values` property.
+Un `Map` utiliza una estructura de datos diferente internamente, dependiendo de su implementación. Por ejemplo, [HashMap ↗](https://api.dart.dev/stable/dart-collection/HashMap-class.html) usa una tabla hash en la que los elementos (también llamados *valores*) se obtienen usando una clave. Los elementos de un `Map` también se pueden leer como objetos `Iterable`s utilizando la propiedad `entries` o `values` del map.
 
-This example shows a `List` of `int`, which is also an `Iterable` of `int`:
+Este ejemplo muestra una `List` de `int`, que también es un `Iterable` de `int`:
 
 ```dart
 Iterable<int> iterable = [1, 2, 3];
 ```
 
-The difference with a `List` is that with the `Iterable`, you can't guarantee that reading elements by index will be efficient. `Iterable`, as opposed to `List`, doesn't have the `[]` operator.
+La diferencia con una `List` es que con `Iterable`, no puedes garantizar que la lectura de elementos por índice sea eficiente. `Iterable`, a diferencia de `List`, no tiene el operador `[]`.
 
-For example, consider the following code, which is **invalid**:
+Por ejemplo, considera el siguiente código, que es **inválido**:
 
-bad```dart
+```dart {filename="Código incorrecto"}
 Iterable<int> iterable = [1, 2, 3];
 int value = iterable;
 ```
 
-If you read elements with `[]`, the compiler tells you that the operator `'[]'` isn't defined for the class `Iterable`, which means that you can't use `[index]` in this case.
+Si lees elementos con `[]`, el compilador te dice que el operador `'[]'` no está definido para la clase `Iterable`, lo que significa que no puedes utilizar `[index]` en este caso.
 
-You can instead read elements with `elementAt()`, which steps through the elements of the iterable until it reaches that position.
+En su lugar, puedes leer elementos con `elementAt()`, que recorre los elementos del iterable hasta llegar a esa posición.
 
 ```dart
 Iterable<int> iterable = [1, 2, 3];
 int value = iterable.elementAt(1);
 ```
 
-Continue to the next section to learn more about how to access elements of an `Iterable`.
+Continúa con la siguiente sección para aprender más sobre cómo acceder a elementos de un `Iterable`.
 
-## Reading elements {#reading-elements}
+## Leyendo elementos {#reading-elements}
 
-You can read the elements of an iterable sequentially, using a `for-in` loop.
+Puedes leer los elementos de un iterable secuencialmente, usando un bucle `for-in`.
 
-### Example: Using a for-in loop {#example-using-a-for-in-loop}
+### Ejemplo: Usar un bucle for-in {#example-using-a-for-in-loop}
 
-The following example shows you how to read elements using a `for-in` loop.
+El siguiente ejemplo te muestra cómo leer elementos usando un bucle `for-in`.
+
+{{< content-ads/middle-banner-2 >}}
 
 ```dart
 void main() {
@@ -113,37 +99,37 @@ void main() {
 }
 ```
 
-### Example: Using first and last {#example-using-first-and-last}
+### Ejemplo: Usando `first` y `last` {#example-using-first-and-last}
 
-In some cases, you want to access only the first or the last element of an `Iterable`.
+En algunos casos, deseas acceder solo al primer o al último elemento de un `Iterable`.
 
-With the `Iterable` class, you can't access the elements directly, so you can't call `iterable[0]` to access the first element. Instead, you can use `first`, which gets the first element.
+Con la clase `Iterable`, no puedes acceder a los elementos directamente, por lo que no puedes llamar a `iterable[0]` para acceder al primer elemento. En su lugar, puedes usar `first`, que obtiene el primer elemento.
 
-Also, with the `Iterable` class, you can't use the operator `[]` to access the last element, but you can use the `last` property.
+Además, con la clase `Iterable`, no puedes usar el operador `[]` para acceder al último elemento, pero puedes usar la propiedad `last`.
 
 ```dart
 void main() {
   Iterable<String> iterable = const ['Salad', 'Popcorn', 'Toast'];
-  print('The first element is ${iterable.first}');
-  print('The last element is ${iterable.last}');
+  print('El primer elemento es ${iterable.first}');
+  print('El último elemento es ${iterable.last}');
 }
 ```
 
-In this example you saw how to use `first` and `last` to get the first and last elements of an `Iterable`. It's also possible to find the first element that satisfies a condition. The next section shows how to do that using a method called `firstWhere()`.
+En este ejemplo viste cómo usar `first` y `last` para obtener el primer y último elemento de un `Iterable`. También es posible encontrar el primer elemento que satisfaga una condición. La siguiente sección muestra cómo hacerlo usando un método llamado `firstWhere()`.
 
-### Example: Using firstWhere() {#example-using-firstwhere}
+### Ejemplo: Usando `firstWhere()` {#example-using-firstwhere}
 
-You already saw that you can access the elements of an `Iterable` sequentially, and you can easily get the first or last element.
+Ya viste que puedes acceder a los elementos de un `Iterable` de forma secuencial, y puedes obtener fácilmente el primer o el último elemento.
 
-Now, you learn how to use `firstWhere()` to find the first element that satisfies certain conditions. This method requires you to pass a *predicate*, which is a function that returns true if the input satisfies a certain condition.
+Ahora aprenderás a usar `firstWhere()` para encontrar el primer elemento que satisfaga ciertas condiciones. Este método requiere que pases un *predicado*, que es una función que devuelve verdadero si la entrada satisface una determinada condición.
 
 ```dart
 String element = iterable.firstWhere((element) => element.length > 5);
 ```
 
-For example, if you want to find the first `String` that has more than 5 characters, you must pass a predicate that returns true when the element size is greater than 5.
+Por ejemplo, si quieres encontrar el primer `String` que tenga más de 5 caracteres, debes pasar un predicado que devuelva `true` cuando el tamaño del elemento sea mayor que 5.
 
-Run the following example to see how `firstWhere()` works. Do you think all the functions will give the same result?
+Ejecuta el siguiente ejemplo para ver cómo funciona `firstWhere()`. ¿Crees que todas las funciones darán el mismo resultado?
 
 ```dart
 bool predicate(String item) {
@@ -153,21 +139,22 @@ bool predicate(String item) {
 void main() {
   const items = ['Salad', 'Popcorn', 'Toast', 'Lasagne'];
 
-  // You can find with a simple expression:
+  // Puedes buscar con una expresión simple:
   var foundItem1 = items.firstWhere((item) => item.length > 5);
   print(foundItem1);
 
-  // Or try using a function block:
+  // O prueba usando una función en bloque:
   var foundItem2 = items.firstWhere((item) {
     return item.length > 5;
   });
   print(foundItem2);
 
-  // Or even pass in a function reference:
+  // O incluso pasando una referencia a una función:
   var foundItem3 = items.firstWhere(predicate);
   print(foundItem3);
 
-  // You can also use an `orElse` function in case no value is found!
+  // ¡También puede usar una función `orElse` en 
+  // caso de que no se encuentre ningún valor!
   var foundItem4 = items.firstWhere(
     (item) => item.length > 10,
     orElse: () => 'None!',
@@ -176,40 +163,42 @@ void main() {
 }
 ```
 
-In this example, you can see three different ways to write a predicate:
+En este ejemplo, puedes ver tres formas diferentes de escribir un predicado:
 
-- **As an expression:** The test code has one line that uses arrow syntax (`=>`).
-- **As a block:** The test code has multiple lines between brackets and a return statement.
-- **As a function:** The test code is in an external function that's passed to the `firstWhere()` method as a parameter.
+{{< content-ads/middle-banner-3 >}}
 
-There is no right or wrong way. Use the way that works best for you, and that makes your code easier to read and understand.
+- **Como expresión:** El código de test tiene una línea que usa sintaxis de flecha (`=>`).
+- **Como bloque:** El código de test tiene varias líneas entre paréntesis y una declaración de devolución `return`.
+- **Como función:** El código de test está en una función externa que se pasa al método `firstWhere()` como parámetro.
 
-The final example calls `firstWhere()` with the optional named parameter `orElse`, which provides an alternative when an element isn't found. In this case, the text `'None!'` is returned because no element satisfies the provided condition.
+No existe un camino correcto o incorrecto. Utiliza la forma que mejor te funcione y que haz que tu código sea más fácil de leer y comprender.
 
-### Exercise: Practice writing a test predicate {#exercise-practice-writing-a-test-predicate}
+El ejemplo final llama a `firstWhere()` con el parámetro opcional denominado `orElse`, que proporciona una alternativa cuando no se encuentra un elemento. En este caso, se devuelve el texto `'None!'` porque ningún elemento satisface la condición proporcionada.
 
-The following exercise is a failing unit test that contains a partially complete code snippet. Your task is to complete the exercise by writing code to make the tests pass. You don't need to implement `main()`.
+### Ejercicio: Practica escribir un predicado de test {#exercise-practice-writing-a-test-predicate}
 
-This exercise introduces `singleWhere()` This method works similarly to `firstWhere()`, but in this case it expects only one element of the `Iterable` to satisfy the predicate. If more than one or no element in the `Iterable` satisfies the predicate condition, then the method throws a [StateError ↗](https://api.dart.dev/stable/dart-core/StateError-class.html) exception.
+El siguiente ejercicio es un test unitario fallido que contiene un fragmento de código parcialmente completo. Tu tarea es completar el ejercicio escribiendo código para aprobar los tests. No es necesario implementar `main()`.
 
-Your goal is to implement the predicate for `singleWhere()` that satisfies the following conditions:
+Este ejercicio presenta `singleWhere()`. Este método funciona de manera similar a `firstWhere()`, pero en este caso espera que solo un elemento de `Iterable` satisfaga el predicado. Si más de uno o ningún elemento en `Iterable` satisface la condición de predicado, entonces el método genera una excepción [StateError ↗](https://api.dart.dev/stable/dart-core/StateError-class.html).
 
-- The element contains the character `'a'`.
-- The element starts with the character `'M'`.
+Tu objetivo es implementar el predicado para `singleWhere()` que satisfaga las siguientes condiciones:
 
-All the elements in the test data are [strings ↗](https://api.dart.dev/stable/dart-core/String-class.html); you can check the class documentation for help.
+- El elemento contiene el carácter `'a'`.
+- El elemento comienza con el carácter `'M'`.
+
+Todos los elementos en los datos de test son [strings ↗](https://api.dart.dev/stable/dart-core/String-class.html); Puedes consultar la documentación de la clase para obtener ayuda.
 
 ```dart
-// Implement the predicate of singleWhere
-// with the following conditions
-// * The element contains the character `'a'`
-// * The element starts with the character `'M'`
+// Implementa el predicado de singleWhere
+// con las siguientes condiciones:
+// * El elemento contiene el caracter `'a'`
+// * El elemento comienza con el caracter `'M'`
 String singleWhere(Iterable<String> items) {
   return items.singleWhere(TODO('Implement the outlined predicate.'));
 }
 
-// The following code is used to provide feedback on your solution.
-// There is no need to read or modify it.
+// El siguiente código es usado para proveer un feedback a tu solución.
+// No hay necesidad de que lo modifiques.
 void main() {
   const items = [
     'Salad',
@@ -249,11 +238,11 @@ void main() {
 }
 ```
 
-{{% details title="title="Expand for a hint on the predicate exercise.">Hint" closed="true" %}}
-Your solution might make use of the `contains` and `startsWith` methods from the `String` class.
+{{% details title="Hint" closed="true" %}}
+Tu solución podría utilizar los métodos `contains` y `startsWith` de la clase `String`.
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the predicate exercise.">Solution" closed="true" %}}
+{{% details title="Solución" cerrada="true" %}}
 ```dart
 String singleWhere(Iterable<String> items) {
   return items.singleWhere(
@@ -262,13 +251,15 @@ String singleWhere(Iterable<String> items) {
 ```
 {{% /details %}}
 
-## Checking conditions {#checking-conditions}
+## Condiciones de verificación {#checking-conditions}
 
-When working with `Iterable`, sometimes you need to verify that all the elements of a collection satisfy some condition.
+Cuando trabajas con `Iterable`, a veces necesitas verificar que todos los elementos de una colección cumplan alguna condición.
 
-You might be tempted to write a solution using a `for-in` loop like this one:
+Podrías sentirte tentado a escribir una solución usando un bucle `for-in` como este:
 
-bad```dart
+{{< content-ads/middle-banner-4 >}}
+
+```dart {filename="Código incorrecto"}
 for (final item in items) {
   if (item.length < 5) {
     return false;
@@ -277,63 +268,63 @@ for (final item in items) {
 return true;
 ```
 
-However, you can accomplish the same using the `every()` method:
-
-{{< content-ads/middle-banner-2 >}}
+Sin embargo, puedes lograr lo mismo usando el método `every()`:
 
 ```dart
 return items.every((item) => item.length >= 5);
 ```
 
-Using the `every()` method results in code that is more readable, compact, and less error-prone.
+El uso del método `every()` da como resultado un código más legible, compacto y menos propenso a errores.
 
-### Example: Using any() and every() {#example-using-any-and-every}
+### Ejemplo: Usar `any()` y `every()` {#example-using-any-and-every}
 
-The `Iterable` class provides two methods that you can use to verify conditions:
+La clase `Iterable` proporciona dos métodos que puedes usar para verificar las condiciones:
 
-- `any()`: Returns true if at least one element satisfies the condition.
-- `every()`: Returns true if all elements satisfy the condition.
+- `any()`: Devuelve `true` si al menos un elemento satisface la condición.
+- `every()`: Devuelve `true` si todos los elementos cumplen la condición.
 
-Run this exercise to see them in action.
+Ejecuta este ejercicio para verlos en acción.
 
 ```dart
 void main() {
   const items = ['Salad', 'Popcorn', 'Toast'];
 
   if (items.any((item) => item.contains('a'))) {
-    print('At least one item contains "a"');
+    print('Al menos un elemento contiene "a"');
   }
 
   if (items.every((item) => item.length >= 5)) {
-    print('All items have length >= 5');
+    print('Todos los elementos tienen una longitud >= 5');
   }
 }
 ```
 
-In the example, `any()` verifies that at least one element contains the character `a`, and `every()` verifies that all elements have a length equal to or greater than 5.
+En el ejemplo, `any()` verifica que al menos un elemento contenga el carácter `a`, y `every()` verifica que todos los elementos tengan una longitud igual o mayor a `5` .
 
-After running the code, try changing the predicate of `any()` so it returns false:
+Después de ejecutar el código, intenta cambiar el predicado de `any()` para que devuelva `false`:
 
 ```dart
 if (items.any((item) => item.contains('Z'))) {
-  print('At least one item contains "Z"');
+  print('Al menos un elemento contiene "Z"');
 } else {
-  print('No item contains "Z"');
+  print('Ningún elemento contiene "Z"');
 }
 ```
 
-You can also use `any()` to verify that no element of an `Iterable` satisfies a certain condition.
+También puedes usar `any()` para verificar que ningún elemento de un `Iterable` satisfaga una determinada condición.
 
-### Exercise: Verify that an Iterable satisfies a condition {#exercise-verify-that-an-iterable-satisfies-a-condition}
+### Ejercicio: Verificar que un `Iterable` satisface una condición {#exercise-verify-that-an-iterable-satisfies-a-condition}
 
-The following exercise provides practice using the `any()` and `every()` methods, described in the previous example. In this case, you work with a group of users, represented by `User` objects that have the member field `age`.
+El siguiente ejercicio proporciona práctica en el uso de los métodos `any()` y `every()`, descritos en el ejemplo anterior. En este caso, trabaja con un grupo de usuarios, representado por objetos `User` que tienen el campo miembro `age`.
 
-Use `any()` and `every()` to implement two functions:
+{{< content-ads/middle-banner-5 >}}
 
-- Part 1: Implement `anyUserUnder18()`.- Return `true` if at least one user is 17 or younger.
-- Part 2: Implement `everyUserOver13()`.- Return `true` if all users are 14 or older.
+Usa `any()` y `every()` para implementar dos funciones:
 
-{{< content-ads/middle-banner-3 >}}
+- Parte 1: Implementa `anyUserUnder18()`.
+  - Devuelve `true` si al menos un usuario tiene 17 años o menos.
+- Parte 2: Implementa `everyUserOver13()`.
+  - Devuelve `true` si todos los usuarios tienen 14 años o más.
 
 ```dart
 bool anyUserUnder18(Iterable<User> users) {
@@ -453,11 +444,11 @@ void main() {
 }
 ```
 
-{{% details title="title="Expand for a hint on the conditional filtering exercise.">Hint" closed="true" %}}
+{{% details title="Hint" closed="true" %}}
 Remember to use the `any` and `every` methods from the `Iterable` class. For help and examples using these methods, refer to the [earlier discussion of them ↗](https://dart.dev/codelabs/iterables#example-using-any-and-every).
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the conditional filtering exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 bool anyUserUnder18(Iterable<User> users) {
   return users.any((user) => user.age < 18);
@@ -514,11 +505,11 @@ void main() {
 }
 ```
 
+{{< content-ads/middle-banner-6 >}}
+
 In this example, `where()` is used to find all numbers that are even, then `any()` is used to check if the results contain a negative number.
 
 Later in the example, `where()` is used again to find all numbers larger than 1000. Because there are none, the result is an empty `Iterable`.
-
-{{< content-ads/middle-banner-4 >}}
 
 ### Example: Using takeWhile {#example-using-takewhile}
 
@@ -637,11 +628,13 @@ void main() {
 }
 ```
 
-{{% details title="title="Expand for a hint on the filtering elements exercise.">Hint" closed="true" %}}
+{{< content-ads/middle-banner-7 >}}
+
+{{% details title="Hint" closed="true" %}}
 Remember to take advantage of the `where` method from the `Iterable` class. For help and examples using `where`, refer to the [earlier discussion of it ↗](https://dart.dev/codelabs/iterables#example-using-where).
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the filtering elements exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 Iterable<User> filterOutUnder21(Iterable<User> users) {
   return users.where((user) => user.age >= 21);
@@ -652,8 +645,6 @@ Iterable<User> findShortNamed(Iterable<User> users) {
 }
 ```
 {{% /details %}}
-
-{{< content-ads/middle-banner-5 >}}
 
 ## Mapping {#mapping}
 
@@ -689,6 +680,8 @@ In the previous example, you multiplied the elements of an `Iterable` by 2. Both
 In this exercise, your code takes an `Iterable` of `User`, and you need to return an `Iterable` that contains strings containing each user's name and age.
 
 Each string in the `Iterable` must follow this format: `'{name} is {age}'`—for example `'Alice is 21'`.
+
+{{< content-ads/middle-banner-8 >}}
 
 ```dart
 Iterable<String> getNameAndAges(Iterable<User> users) {
@@ -747,14 +740,12 @@ bool _listEquals<T>(List<T>? a, List<T>? b) {
 }
 ```
 
-{{% details title="title="Expand for a hint on the mapping elements exercise.">Hint" closed="true" %}}
+{{% details title="Hint" closed="true" %}}
 Remember to take advantage of the `map` method from the `Iterable` class. For help and examples using `map`, refer to the [earlier discussion of it ↗](https://dart.dev/codelabs/iterables#example-using-map-to-change-elements).
 To concatenate multiple values into a single string, consider using [string interpolation ↗](https://dart.dev/language/built-in-types#string-interpolation).
 {{% /details %}}
 
-{{< content-ads/middle-banner-6 >}}
-
-{{% details title="title="Expand for the solution of the mapping elements exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 Iterable<String> getNameAndAges(Iterable<User> users) {
   return users.map((user) => '${user.name} is ${user.age}');
@@ -939,7 +930,9 @@ bool isValidEmailAddress(EmailAddress email) {
 }
 ```
 
-{{% details title="title="Expand for the solution of the 'Putting it all together' exercise.">Solution" closed="true" %}}
+{{< content-ads/middle-banner-9 >}}
+
+{{% details title="Solution" closed="true" %}}
 ```dart
 Iterable<EmailAddress> parseEmailAddresses(Iterable<String> strings) {
   return strings.map((s) => EmailAddress(s));

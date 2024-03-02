@@ -34,7 +34,7 @@ To get the most out of this codelab, you should have the following:
 - Knowledge of [basic Dart syntax ↗](https://dart.dev/language).
 - Some experience writing asynchronous code in another language.
 
-This codelab covers the following material:
+Este codelab cubre el siguiente material:
 
 - How and when to use the `async` and `await` keywords.
 - How using `async` and `await` affects execution order.
@@ -42,9 +42,9 @@ This codelab covers the following material:
 
 Estimated time to complete this codelab: 40-60 minutes.
 
-The exercises in this codelab have partially completed code snippets. You can use DartPad to test your knowledge by completing the code and clicking the **Run** button. **Don't edit the test code in the `main` function or below**.
+Los ejercicios de este codelab tienen fragmentos de código parcialmente completados. Puedes utilizar DartPad para poner a prueba tus conocimientos completando el código y haciendo clic en el botón **Run**. **No edites el código de tests en la función `main` o debajo**.
 
-If you need help, expand the **Hint** or **Solution** dropdown after each exercise.
+Si necesitas ayuda, expande el menú desplegable **Sugerencia** o **Solución** después de cada ejercicio.
 
 ## Why asynchronous code matters {#why-asynchronous-code-matters}
 
@@ -444,13 +444,13 @@ Future<String> _asyncEquals({
 }
 ```
 
-{{% details title="title="Expand for a hint on the async-await exercise.">Hint" closed="true" %}}
+{{% details title="Hint" closed="true" %}}
 Did you remember to add the `async` keyword to the `reportUserRole` function?
 Did you remember to use the `await` keyword before invoking `fetchRole()`?
 Remember: `reportUserRole` needs to return a `Future`.
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the async-await exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 Future<String> reportUserRole() async {
   final username = await fetchRole();
@@ -619,12 +619,12 @@ const _passed = 'PASSED';
 const _noCatch = 'NO_CATCH';
 ```
 
-{{% details title="title="Expand for a hint on the error-handling exercise.">Hint" closed="true" %}}
+{{% details title="Hint" closed="true" %}}
 Implement `changeUsername` to return the string from `fetchNewUsername` or, if that fails, the string value of any error that occurs.
 Remember: You can use a [try-catch statement ↗](https://dart.dev/language/error-handling#catch) to catch and handle errors.
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the error-handling exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 Future<String> changeUsername() async {
   try {
@@ -849,12 +849,12 @@ String _failOnce() {
 bool _logoutSucceeds = false;
 ```
 
-{{% details title="title="Expand for a hint on the 'Putting it all together' exercise.">Hint" closed="true" %}}
+{{% details title="Hint" closed="true" %}}
 The `greetUser` and `sayGoodbye` functions should be asynchronous, while `addHello` should be a normal, synchronous function.
 Remember: You can use a [try-catch statement ↗](https://dart.dev/language/error-handling#catch) to catch and handle errors.
 {{% /details %}}
 
-{{% details title="title="Expand for the solution of the 'Putting it all together' exercise.">Solution" closed="true" %}}
+{{% details title="Solution" closed="true" %}}
 ```dart
 String addHello(String user) => 'Hello $user';
 
