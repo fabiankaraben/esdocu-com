@@ -321,9 +321,9 @@ El siguiente ejercicio proporciona práctica en el uso de los métodos `any()` y
 Usa `any()` y `every()` para implementar dos funciones:
 
 - Parte 1: Implementa `anyUserUnder18()`.
-  - Devuelve `true` si al menos un usuario tiene 17 años o menos.
+   - Devuelve `true` si al menos un usuario tiene 17 años o menos.
 - Parte 2: Implementa `everyUserOver13()`.
-  - Devuelve `true` si todos los usuarios tienen 14 años o más.
+   - Devuelve `true` si todos los usuarios tienen 14 años o más.
 
 ```dart
 bool anyUserUnder18(Iterable<User> users) {
@@ -760,10 +760,10 @@ Es hora de practicar lo aprendido, en un ejercicio final.
 
 Este ejercicio proporciona la clase `EmailAddress`, que tiene un constructor que toma una cadena. Otra función proporcionada es `isValidEmailAddress()`, que verifica si una dirección de correo electrónico es válida.
 
-|Constructor/función|Firma|Descripción|
-|---|---|---|
-|EmailAddress()|`EmailAddress(String address)`|Crea una `EmailAddress` para la dirección especificada.|
-|isValidEmailAddress()|`bool isValidEmailAddress(EmailAddress)`|Devuelve `true` si la `EmailAddress` proporcionada es válida.|
+| Constructor/función   | Firma                                    | Descripción                                                   |
+| --------------------- | ---------------------------------------- | ------------------------------------------------------------- |
+| EmailAddress()        | `EmailAddress(String address)`           | Crea una `EmailAddress` para la dirección especificada.       |
+| isValidEmailAddress() | `bool isValidEmailAddress(EmailAddress)` | Devuelve `true` si la `EmailAddress` proporcionada es válida. |
 
 Escribe el siguiente código:
 
