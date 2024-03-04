@@ -19,7 +19,7 @@ Estos tutoriales te enseñan cómo usar el lenguaje, las herramientas y las API 
 
 ## Lo básico {#the-basics}
 
-Los siguientes tours suponen una familiaridad básica con el lenguaje Dart, que puedes obtener hojeando el [tour del lenguaje ↗](https://dart.dev/language). A continuación, aprende sobre el *futures* siguiendo el [codelab de programación asincrónica](/dart/tutoriales-y-codelabs/codelabs/async-await).
+Los siguientes tours suponen una familiaridad básica con el lenguaje Dart, que puedes obtener hojeando el [tour del lenguaje](/dart/lenguaje/conceptos-basicos). A continuación, aprende sobre el *futures* siguiendo el [codelab de programación asincrónica](/dart/tutoriales-y-codelabs/codelabs/async-await).
 
 Una vez que estés familiarizado con el lenguaje y *futures*, aprende sobre *streams* y *packages*, que son fundamentales para la mayoría de los programas en Dart.
 

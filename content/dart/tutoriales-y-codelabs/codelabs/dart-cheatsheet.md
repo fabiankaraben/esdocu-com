@@ -1796,7 +1796,7 @@ class Recipe {
 Esperamos que hayas disfrutado usando este codelab para aprender o probar tu conocimiento de algunas de las características más interesantes del lenguaje Dart. Aquí hay algunas sugerencias sobre qué hacer ahora:
 
 - Prueba [otros codelabs de Dart](/dart/tutoriales-y-codelabs/codelabs/codelabs).
-- Lee el [Tour del lenguaje Dart ↗](https://dart.dev/language).
+- Lee el [Tour del lenguaje Dart](/dart/lenguaje/conceptos-basicos).
 - Juega con [DartPad. ↗](https://dartpad.dev)
 - [Obtén el SDK de Dart ↗](https://dart.dev/get-dart).
 

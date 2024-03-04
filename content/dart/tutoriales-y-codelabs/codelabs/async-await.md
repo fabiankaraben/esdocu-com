@@ -17,7 +17,7 @@ Este codelab te enseña cómo escribir código asincrónico usando *futures* y l
 
 Para aprovechar al máximo este codelab, debes tener lo siguiente:
 
-- Conocimiento de [sintaxis básica de Dart ↗](https://dart.dev/language).
+- Conocimiento de [sintaxis básica de Dart](/dart/lenguaje/conceptos-basicos).
 - Algo de experiencia escribiendo código asincrónico en otro lenguaje.
 
 Este codelab cubre el siguiente material:

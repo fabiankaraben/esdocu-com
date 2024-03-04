@@ -1,0 +1,420 @@
+---
+linkTitle: "Introducción"
+title: "Conceptos básicos de Dart - Dart en Español"
+description: "Una breve introducción a los programas Dart y conceptos importantes."
+weight: 1
+type: docs
+prev: /dart/tutorials-and-codelabs/codelabs/async-await
+---
+
+# Introducción a Dart
+
+::
+
+{{< content-ads/top-banner >}}
+
+Esta página proporciona una breve introducción al lenguaje Dart a través de ejemplos de sus características principales.
+
+Para obtener más información sobre el lenguaje Dart, visita las páginas detalladas de temas individuales que figuran en **Lenguaje** en el menú del lado izquierdo.
+
+Para conocer la cobertura de las bibliotecas principales de Dart, consulta la [documentación de la biblioteca core ↗](https://dart.dev/libraries). También puedes probar el [codelab de hoja de trucos de Dart](/dart/tutoriales-y-codelabs/codelabs/dart-cheatsheet), para obtener una introducción más práctica.
+
+## Hola Mundo {#hello-world}
+
+Cada aplicación requiere la función global `main()`, donde comienza la ejecución. Las funciones que no devuelven explícitamente un valor tienen el tipo de retorno `void`. Para mostrar texto en la consola, puedes usar la función global `print()`:
+
+```dart
+void main() {
+  print('Hola, Mundo!');
+}
+```
+
+Lee más sobre [la función `main()` ↗](https://dart.dev/language/functions#the-main-function) en Dart, incluidos los parámetros opcionales para los argumentos en la línea de comandos.
+
+## Variables {#variables}
+
+Incluso en el código [type-safe ↗](https://dart.dev/language/type-system) de Dart, puedes declarar la mayoría de las variables sin especificar explícitamente su tipo usando `var`. Gracias a la inferencia de tipos, los tipos de estas variables están determinados por sus valores iniciales:
+
+```dart
+var name = 'Voyager I';
+var year = 1977;
+var antennaDiameter = 3.7;
+var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var image = {
+  'tags': ['saturn'],
+  'url': '//path/to/saturn.jpg'
+};
+```
+
+[Lee más ↗](https://dart.dev/language/variables) sobre las variables en Dart, incluidos los valores predeterminados, las palabras clave `final` y `const`, y los tipos estáticos.
+
+## Declaraciones de control de flujo {#control-flow-statements}
+
+Dart admite las declaraciones de control de flujo habituales:
+
+```dart
+if (year >= 2001) {
+  print('21st century');
+} else if (year >= 1901) {
+  print('20th century');
+}
+
+for (final object in flybyObjects) {
+  print(object);
+}
+
+for (int month = 1; month <= 12; month++) {
+  print(month);
+}
+
+while (year < 2016) {
+  year += 1;
+}
+```
+
+Lee más sobre las declaraciones de control de flujo en Dart, incluyendo [`break` y `continue` ↗](https://dart.dev/language/loops), [`switch` y `case` ↗](https://dart.dev/language/branches) y [`assert` ↗](https://dart.dev/language/error-handling#assert).
+
+{{< content-ads/middle-banner-1 >}}
+
+## Tipos en Funciones {#functions}
+
+[Recomendamos ↗](https://dart.dev/effective-dart/design#types) especificar los tipos de argumentos de cada función y el valor de retorno:
+
+```dart
+int fibonacci(int n) {
+  if (n == 0 || n == 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+var result = fibonacci(20);
+```
+
+Una sintaxis abreviada `=>` (*flecha*) es útil para funciones que contienen una sola declaración. Esta sintaxis es especialmente útil cuando se pasan funciones anónimas como argumentos:
+
+```dart
+flybyObjects.where((name) => name.contains('turn')).forEach(print);
+```
+
+Además de mostrar una función anónima (el argumento de `where()`), este código muestra que puedes usar una función como argumento: la función global `print()` es un argumento para `forEach()`.
+
+[Lee más ↗](https://dart.dev/language/functions) sobre las funciones en Dart, incluidos los parámetros opcionales, los valores de los parámetros predeterminados y el alcance léxico.
+
+## Comentarios {#comments}
+
+Los comentarios de Dart generalmente comienzan con `//`.
+
+```dart
+// Este es un comentario normal de una sola línea.
+
+/// Este es un comentario de documentación, utilizado para documentar
+/// bibliotecas, clases y sus miembros. Herramientas como IDE y dartdoc
+/// tratan los comentarios de documentos de manera especial.
+
+/* Comentarios como estos también son compatibles. */
+```
+
+[Lee más ↗](https://dart.dev/language/comments) sobre los comentarios en Dart, incluido cómo funcionan las herramientas de documentación.
+
+## Importaciones {#imports}
+
+Para acceder a las API definidas en otras bibliotecas, usa `import`.
+
+```dart
+// Importa una bibliotecas del core
+import 'dart:math';
+
+// Importa una biblioteca desde un paquete externo
+import 'package:test/test.dart';
+
+// Importa un archivo
+import 'path/to/my_other_file.dart';
+```
+
+[Lee más ↗](https://dart.dev/language/libraries) sobre las bibliotecas y la visibilidad en Dart, incluidos los prefijos de bibliotecas, `show` y `hide`, y la carga diferida a través de la palabra clave `deferred`.
+
+{{< content-ads/middle-banner-2 >}}
+
+## Clases {#classes}
+
+Aquí tienes un ejemplo de una clase con tres propiedades, dos constructores y un método. Una de las propiedades no se puede establecer directamente, por lo que se define mediante un método getter (en lugar de una variable). El método utiliza interpolación de cadenas para imprimir los equivalentes de cadenas de las variables dentro de cadenas literales.
+
+```dart
+class Spacecraft {
+  String name;
+  DateTime? launchDate;
+
+  // Propiedad no final y de solo lectura.
+  int? get launchYear => launchDate?.year;
+
+  // Constructor, con azúcar sintáctico para asignaciones a miembros.
+  Spacecraft(this.name, this.launchDate) {
+    // El código de inicialización va aquí.
+  }
+
+  // Constructor con nombre que reenvía al predeterminado.
+  Spacecraft.unlaunched(String name) : this(name, null);
+
+  // Método.
+  void describe() {
+    print('Spacecraft: $name');
+    // La promoción de tipos no funciona en getters.
+    var launchDate = this.launchDate;
+    if (launchDate != null) {
+      int years = DateTime.now().difference(launchDate).inDays ~/ 365;
+      print('Launched: $launchYear ($years years ago)');
+    } else {
+      print('Unlaunched');
+    }
+  }
+}
+```
+
+[Lee más ↗](https://dart.dev/language/built-in-types#strings) sobre cadenas, incluida la interpolación de cadenas, literales, expresiones y el método `toString()`.
+
+Puedes usar la clase `Spacecraft` de esta manera:
+
+```dart
+var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
+voyager.describe();
+
+var voyager3 = Spacecraft.unlaunched('Voyager III');
+voyager3.describe();
+```
+
+[Lee más ↗](https://dart.dev/language/classes) sobre las clases en Dart, incluidas las listas de inicializadores, `new` y `const` opcionales, redirección de constructores, constructores `factory`, getters, setters y mucho más.
+
+## Enums {#enums}
+
+Las enumeraciones son una forma de enumerar un conjunto predefinido de valores o instancias de una manera que garantiza que no pueda haber otras instancias de ese tipo.
+
+Aquí hay un ejemplo de una `enum` simple que define una lista simple de tipos de planetas predefinidos:
+
+```dart
+enum PlanetType { terrestrial, gas, ice }
+```
+
+Aquí hay un ejemplo de una declaración de enumeración mejorada de una clase que describe planetas, con un conjunto definido de instancias constantes, es decir, los planetas de nuestro propio sistema solar.
+
+```dart
+/// Enum que enumera los diferentes planetas de nuestro
+/// sistema solar y algunas de sus propiedades.
+enum Planet {
+  mercury(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  venus(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  // ···
+  uranus(planetType: PlanetType.ice, moons: 27, hasRings: true),
+  neptune(planetType: PlanetType.ice, moons: 14, hasRings: true);
+
+  /// Un constructor generador constante.
+  const Planet(
+      {required this.planetType, required this.moons, required this.hasRings});
+
+  /// Todas las variables de instancia son finales.
+  final PlanetType planetType;
+  final int moons;
+  final bool hasRings;
+
+  /// Las enumeraciones mejoradas admiten getters y otros métodos
+  bool get isGiant =>
+      planetType == PlanetType.gas || planetType == PlanetType.ice;
+}
+```
+
+Puedes usar la enumeración `Planet` de esta manera:
+
+```dart
+final yourPlanet = Planet.earth;
+
+if (!yourPlanet.isGiant) {
+  print('Tu planeta no es un "planeta gigante".');
+}
+```
+
+{{< content-ads/middle-banner-3 >}}
+
+[Lee más ↗](https://dart.dev/language/enums) sobre enumeraciones en Dart, incluidos requisitos de enumeración mejorados, propiedades introducidas automáticamente, acceso a nombres de valores enumerados, compatibilidad con declaraciones `switch`, y mucho más.
+
+## Herencia {#inheritance}
+
+Dart tiene herencia única.
+
+```dart
+class Orbiter extends Spacecraft {
+  double altitude;
+
+  Orbiter(super.name, DateTime super.launchDate, this.altitude);
+}
+```
+
+[Leer má ↗](https://dart.dev/language/extend) sobre la extensión de clases, la anotación opcional `@override` y más.
+
+## Mixins {#mixins}
+
+Los mixins son una forma de reutilizar código en múltiples jerarquías de clases. La siguiente es una declaración mixin:
+
+```dart
+mixin Piloted {
+  int astronauts = 1;
+
+  void describeCrew() {
+    print('Número de astronautas: $astronauts');
+  }
+}
+```
+
+Para agregar las capacidades de un mixin a una clase, simplemente extiende la clase con el mixin.
+
+```dart
+class PilotedCraft extends Spacecraft mixin Piloted {
+  // ···
+}
+```
+
+`PilotedCraft` ahora tiene el campo `astronauts` así como el método `describeCrew()`.
+
+[Lee más ↗](https://dart.dev/language/mixins) sobre mixins.
+
+## Interfaces y clases abstractas {#interfaces-and-abstract-classes}
+
+Todas las clases definen implícitamente una interfaz. Por lo tanto, puedes implementar cualquier clase.
+
+```dart
+class MockSpaceship implements Spacecraft {
+  // ···
+}
+```
+
+{{< content-ads/middle-banner-4 >}}
+
+Lee más sobre [interfaces implícitas ↗](https://dart.dev/language/classes#implicit-interfaces), o sobre la [palabra clave `interface` ↗](https://dart.dev/language/class-modifiers#interface) explícita.
+
+Puedes crear una clase abstracta para ampliarla (o implementarla) con una clase concreta. Las clases abstractas pueden contener métodos abstractos (con cuerpos vacíos).
+
+```dart
+ class Describable {
+  void describe();
+
+  void describeWithEmphasis() {
+    print('=========');
+    describe();
+    print('=========');
+  }
+}
+```
+
+Cualquier clase que extienda `Describable` tiene el método `describeWithEmphasis()`, que llama a la implementación del extensor de `describe()`.
+
+[Lee más ↗](https://dart.dev/language/class-modifiers#abstract) sobre clases y métodos abstractos.
+
+## Async {#async}
+
+Evita el infierno de las devoluciones de llamadas y haz que tu código sea mucho más legible usando `async` y `await`.
+
+```dart
+const oneSecond = Duration(seconds: 1);
+// ···
+Future<void> printWithDelay(String message)  {
+  await Future.delayed(oneSecond);
+  print(message);
+}
+```
+
+El método anterior es equivalente a:
+
+```dart
+Future<void> printWithDelay(String message) {
+  return Future.delayed(oneSecond).then((_) {
+    print(message);
+  });
+}
+```
+
+Como muestra el siguiente ejemplo, `async` y `await` ayudan a que el código asincrónico sea fácil de leer.
+
+```dart
+Future<void> createDescriptions(Iterable<String> objects) async {
+  for (final object in objects) {
+    try {
+      var file = File('$object.txt');
+      if (await file.exists()) {
+        var modified = await file.lastModified();
+        print(
+            'El archivo para $object ya existe. Fue modificado el $modified.');
+        continue;
+      }
+      await file.create();
+      await file.writeAsString('Comienza a describir $object en este archivo.');
+    } on IOException catch (e) {
+      print('No se puede crear una descripción para $object: $e');
+    }
+  }
+}
+```
+
+También puedes usar `async*`, que te brinda una forma agradable y legible de crear streams.
+
+```dart
+Stream<String> report(Spacecraft craft, Iterable<String> objects) async* {
+  for (final object in objects) {
+    await Future.delayed(oneSecond);
+    yield '${craft.name} flies by $object';
+  }
+}
+```
+
+[Lee más ↗](https://dart.dev/language/async) sobre el soporte de asincronía, incluidas las funciones `async`, `Future`, `Stream` y el bucle asincrónico (`await for`).
+
+{{< content-ads/middle-banner-5 >}}
+
+## Excepciones {#exceptions}
+
+Para generar una excepción, usa `throw`:
+
+```dart
+if (astronauts == 0) {
+  throw StateError('Sin astronautas.');
+}
+```
+
+Para detectar una excepción, usa una declaración `try` con `on` o `catch` (o ambos):
+
+```dart
+Future<void> describeFlybyObjects(List<String> flybyObjects) async {
+  try {
+    for (final object in flybyObjects) {
+      var description = await File('$object.txt').readAsString();
+      print(description);
+    }
+  }  {
+    print('No se pudo describir el objeto: $e');
+  } finally {
+    flybyObjects.clear();
+  }
+}
+```
+
+Ten en cuenta que el código anterior es asíncrono; `try` funciona tanto para código síncrono como para código en una función `async`.
+
+[Lee más ↗](https://dart.dev/language/error-handling#exceptions) sobre las excepciones, incluidos los stack traces, `rethrow` y la diferencia entre `Error` y `Exception`.
+
+## Conceptos importantes {#important-concepts}
+
+A medida que continúes aprendiendo sobre el lenguaje Dart, ten en cuenta estos factos y conceptos:
+
+- Todo lo que puedes colocar en una variable es un *objeto*, y cada objeto es una instancia de una *clase*. Los números pares, las funciones y `null` son objetos. Con la excepción de `null` (si habilitas [null-safety ↗](https://dart.dev/null-safety)), todos los objetos heredan de la clase [`Object` ↗](https://api.dart.dev/stable/dart-core/Object-class.html).
+- Aunque Dart está fuertemente tipado, las anotaciones de tipo son opcionales porque Dart puede inferir tipos. En `var number = 101`, se infiere que `number` es de tipo `int`.
+- Si habilitas [null-safety ↗](https://dart.dev/null-safety), las variables no pueden contener `null` a menos que le digas que pueden hacerlo. Puedes hacer que una variable sea nullable (que acepta `null`) poniendo un signo de interrogación (`?`) al final de su tipo. Por ejemplo, una variable de tipo `int?` podría ser un número entero o podría ser `null`. Si *sabes* que una expresión nunca se evalúa como `null` pero Dart no está de acuerdo, puedes agregar `!` para afirmar que no es nula (y generar una excepción si lo es). Un ejemplo: `int x = nullableButNotNullInt!`.
+- Cuando quieras decir explícitamente que se permite cualquier tipo, usa el tipo `Object?` (si has habilitado null-safety), `Objeto` o, si debes posponer la verificación de tipos hasta el tiempo de ejecución, el [tipo especial `dynamic` ↗](https://dart.dev/effective-dart/design#avoid-using-dynamic-unless-you-want-to-disable-static-checking).
+- Dart admite tipos generics, como `List<int>` (una lista de números enteros) o `List<Object>` (una lista de objetos de cualquier tipo).
+- Dart admite funciones globales (como `main()`), así como funciones vinculadas a una clase u objeto (*métodos estáticos* y *de instancia*, respectivamente). También puedes crear funciones dentro de funciones (*anidadas* o *funciones locales*).
+- De manera similar, Dart admite *variables* globales, así como variables vinculadas a una clase u objeto (variables estáticas y de instancia). Las variables de instancia a veces se conocen como *campos* o *propiedades*.
+- A diferencia de Java, Dart no tiene las palabras clave `public`, `protected` y `private`. Si un identificador comienza con un guión bajo (`_`), es privado para su biblioteca. Para obtener más información, consulta [Bibliotecas e importaciones ↗](https://dart.dev/language/libraries).
+- Los *Identificadores* pueden comenzar con una letra o un guión bajo (`_`), seguido de cualquier combinación de esos caracteres más dígitos.
+- Dart tiene *expresiones* (que tienen valores de tiempo de ejecución) y *declaraciones* (que no los tienen). Por ejemplo, la [expresión condicional ↗](https://dart.dev/language/operators#conditional-expressions) `condition ? expr1 : expr2` tiene un valor de `expr1` o `expr2`. Compara eso con una [declaración if-else ↗](https://dart.dev/language/branches#if), que no tiene valor. Una declaración a menudo contiene una o más expresiones, pero una expresión no puede contener directamente una declaración.
+- Las herramientas Dart pueden informar dos tipos de problemas: *advertencias* y *errores*. Las advertencias son sólo indicaciones de que tu código podría no funcionar, pero no impiden que tu programa se ejecute. Los errores pueden ser en tiempo de compilación o en tiempo de ejecución. Un error en tiempo de compilación impide que el código se ejecute; un error en tiempo de ejecución da como resultado una [excepción ↗](https://dart.dev/language/error-handling#exceptions) que se genera mientras se ejecuta el código.
+
+## Recursos adicionales {#additional-resources}
+
+Puedes encontrar más documentación y ejemplos de código en la [documentación de la biblioteca del core ↗](https://dart.dev/libraries/dart-core) y la [referencia de la API de Dart ↗](https://api.dart.dev). El código de este sitio sigue las convenciones de la [guía de estilo de Dart ↗](https://dart.dev/effective-dart/style).
+
+{{< content-ads/bottom-banner >}}

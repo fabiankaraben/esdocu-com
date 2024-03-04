@@ -16,7 +16,7 @@ Este codelab te enseña cómo usar colecciones que implementan la clase [Iterabl
 
 Utilizando los editores integrados de DartPad, puedes probar tus conocimientos ejecutando código de ejemplo y completando ejercicios.
 
-Para aprovechar al máximo este codelab, debes tener conocimientos básicos de la [sintaxis de Dart ↗](https://dart.dev/language).
+Para aprovechar al máximo este codelab, debes tener conocimientos básicos de la [sintaxis de Dart](/dart/lenguaje/conceptos-basicos).
 
 Este codelab cubre el siguiente material:
 
@@ -546,9 +546,9 @@ El siguiente ejercicio proporciona práctica usando el método `where()` con la 
 Usa `where()` para implementar dos funciones:
 
 - Parte 1: Implementa `filterOutUnder21()`.
-  - Devuelve un `Iterable` que contiene a todos los usuarios de 21 años o más.
+   - Devuelve un `Iterable` que contiene a todos los usuarios de 21 años o más.
 - Parte 2: Implementa `findShortNamed()`.
-  - Devuelve un `Iterable` que contiene todos los usuarios con nombres de longitud 3 o menos.
+   - Devuelve un `Iterable` que contiene todos los usuarios con nombres de longitud 3 o menos.
 
 ```dart
 Iterable<User> filterOutUnder21(Iterable<User> users) {
@@ -760,10 +760,10 @@ Es hora de practicar lo aprendido, en un ejercicio final.
 
 Este ejercicio proporciona la clase `EmailAddress`, que tiene un constructor que toma una cadena. Otra función proporcionada es `isValidEmailAddress()`, que verifica si una dirección de correo electrónico es válida.
 
-| Constructor/función   | Firma                                    | Descripción                                                   |
-| --------------------- | ---------------------------------------- | ------------------------------------------------------------- |
-| EmailAddress()        | `EmailAddress(String address)`           | Crea una `EmailAddress` para la dirección especificada.       |
-| isValidEmailAddress() | `bool isValidEmailAddress(EmailAddress)` | Devuelve `true` si la `EmailAddress` proporcionada es válida. |
+|Constructor/función|Firma|Descripción|
+|---|---|---|
+|EmailAddress()|`EmailAddress(String address)`|Crea una `EmailAddress` para la dirección especificada.|
+|isValidEmailAddress()|`bool isValidEmailAddress(EmailAddress)`|Devuelve `true` si la `EmailAddress` proporcionada es válida.|
 
 Escribe el siguiente código:
 
