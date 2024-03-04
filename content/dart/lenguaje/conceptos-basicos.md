@@ -46,7 +46,7 @@ var image = {
 };
 ```
 
-[Lee más ↗](https://dart.dev/language/variables) sobre las variables en Dart, incluidos los valores predeterminados, las palabras clave `final` y `const`, y los tipos estáticos.
+[Lee más](/dart/lenguaje/sintaxis-basica/variables) sobre las variables en Dart, incluidos los valores predeterminados, las palabras clave `final` y `const`, y los tipos estáticos.
 
 ## Declaraciones de control de flujo {#control-flow-statements}
 
