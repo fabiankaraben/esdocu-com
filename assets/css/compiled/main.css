@@ -598,6 +598,9 @@ video {
 .top-full {
   top: 100%;
 }
+.isolate {
+  isolation: isolate;
+}
 .z-0 {
   z-index: 0;
 }
@@ -4364,9 +4367,6 @@ body {
 }
 :is(:where(html[class~="dark"]) .dark\:border-yellow-200\/30) {
   border-color: rgb(254 240 138 / 0.3);
-}
-:is(:where(html[class~="dark"]) .dark\:border-opacity-40) {
-  --tw-border-opacity: 0.4;
 }
 :is(:where(html[class~="dark"]) .dark\:border-opacity-50) {
   --tw-border-opacity: 0.5;

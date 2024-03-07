@@ -1,7 +1,7 @@
 # Configuration
-baseURL: "https://esdocu.net/"
+baseURL: "https://esdocu.com/"
 languageCode: es
-title: "Esdocu.net"
+title: "Esdocu.com"
 
 enableRobotsTXT: true
 enableGitInfo: true
@@ -111,7 +111,7 @@ menu:
   #     weight: 3
 
 params:
-  description: Manuales sobre Desarrollo de Software en español. Esdocu.net es la plataforma donde encontrarás manuales open source.
+  description: Manuales sobre Desarrollo de Software en español. Esdocu.com es la plataforma donde encontrarás manuales open source.
 
   navbar:
     displayTitle: false

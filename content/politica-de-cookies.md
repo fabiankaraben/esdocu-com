@@ -5,7 +5,7 @@ noindex: true
 ---
 
 Si quieres saber más sobre el uso de cookies que realiza este sitio web
-https://esdocu.net, estás en el lugar indicado. A continuación, vamos a explicarte qué
+https://esdocu.com, estás en el lugar indicado. A continuación, vamos a explicarte qué
 son exactamente las cookies; qué tipo de cookies utilizamos y para qué; y cómo puedes
 ejercer tu derecho para configurar tu navegador y desestimar el uso de cualquiera de
 ellas.
@@ -63,7 +63,7 @@ momento se encuentre publicada en la web.
 
 Para poder ofrecerte una mejor experiencia de usuario, obtener datos analíticos,
 almacenar y recuperar información sobre tus hábitos de navegación o de tu equipo y
-desarrollar su actividad, este sitio web https://esdocu.net, utiliza cookies propias y
+desarrollar su actividad, este sitio web https://esdocu.com, utiliza cookies propias y
 de terceros.
 
 ## ¿Qué tipos de cookies utiliza este sitio web?
@@ -104,7 +104,7 @@ usuarios obtenida a través de la observación continuada de sus hábitos de nav
 que permite desarrollar un perfil específico para mostrar publicidad en función del
 mismo.
 
-**Cookies de terceros**: Esta web https://esdocu.net puede utilizar
+**Cookies de terceros**: Esta web https://esdocu.com puede utilizar
 servicios de terceros que, por cuenta de Google, recopilarán información con fines
 estadísticos, de uso del sitio por parte del usuario y para la prestación de otros
 servicios relacionados con la actividad del sitio web y otros servicios de Internet.

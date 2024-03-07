@@ -5,7 +5,7 @@ noindex: true
 ---
 
 Si estás aquí es porque quieres saber más sobre las obligaciones y derechos que te
-corresponden como usuario de esta web https://esdocu.net y eso está muy bien. Nuestro
+corresponden como usuario de esta web https://esdocu.com y eso está muy bien. Nuestro
 deber es informarte y el tuyo estar debidamente informado.
 
 En esta Política de Privacidad te informaremos con total transparencia sobre la

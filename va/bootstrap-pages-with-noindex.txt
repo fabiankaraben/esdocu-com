@@ -1,12 +1,12 @@
 
-https://esdocu.net/bootstrap/5.1/getting-started/download/
--> al final de https://esdocu.net/bootstrap/5.1/getting-started/introduction/
+https://esdocu.com/bootstrap/5.1/getting-started/download/
+-> al final de https://esdocu.com/bootstrap/5.1/getting-started/introduction/
 
-https://esdocu.net/bootstrap/5.1/getting-started/contents/
--> al final de https://esdocu.net/bootstrap/5.1/getting-started/introduction/
+https://esdocu.com/bootstrap/5.1/getting-started/contents/
+-> al final de https://esdocu.com/bootstrap/5.1/getting-started/introduction/
 
-https://esdocu.net/bootstrap/5.1/getting-started/browsers-devices/
--> al final de https://esdocu.net/bootstrap/5.1/getting-started/introduction/
+https://esdocu.com/bootstrap/5.1/getting-started/browsers-devices/
+-> al final de https://esdocu.com/bootstrap/5.1/getting-started/introduction/
 
 
 

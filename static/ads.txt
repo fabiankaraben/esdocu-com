@@ -1,4 +1,4 @@
-OWNERDOMAIN=esdocu.net
+OWNERDOMAIN=esdocu.com
 MANAGERDOMAIN=themoneytizer.com
 google.com, pub-5376430835440290, DIRECT, f08c47fec0942fa0
 themoneytizer.com,109988,DIRECT
