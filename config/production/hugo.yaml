@@ -1,6 +1,6 @@
 services:
   googleAnalytics:
-    ID: G-P9N8MVS57V
+    ID: G-YPEZ7EJ1LQ
 params:
   # Hostinger banners.
   showHostingerTopBanner: true # 
