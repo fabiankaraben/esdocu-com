@@ -91,7 +91,7 @@ menu:
         type: search
     - name: GitHub
       weight: 7
-      url: "https://github.com/fabiankaraben/esdocu-net"
+      url: "https://github.com/fabiankaraben/esdocu-com"
       params:
         icon: github
 
@@ -154,7 +154,7 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/fabiankaraben/esdocu-net/content"
+    base: "https://github.com/fabiankaraben/esdocu-com/content"
 
   blog:
     list:
