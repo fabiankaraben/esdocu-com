@@ -1,7 +1,7 @@
 # Configuration
 baseURL: "https://esdocu.com/"
 languageCode: es
-title: "Esdocu.com"
+title: "Esdocu"
 
 enableRobotsTXT: true
 enableGitInfo: true
