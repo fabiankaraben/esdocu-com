@@ -1,22 +1,13 @@
 {{- $showHostingerMiddleBanner1 := .Site.Params.showHostingerMiddleBanner1 | default true -}}
 {{- if eq $showHostingerMiddleBanner1 true }}
-    <!-- WordPress Hosting with GEO target -->
+    <!-- Mejor hosting banner -->
     <div class="mt-5 flex w-full flex-row items-center justify-center">
         <div class="animate-border inline-block rounded-md bg-white bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-[length:400%_400%] p-[5px]">
-            <a href="https://www.hostg.xyz/SHEZo" target="_blank">
-                <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/WPT-1024x512.jpg" alt="El mejor hosting WordPress" />
+            <a href="https://esdocu.com/mejor-hosting" target="_blank" rel="nofollow">
+               <img class="rounded-md border-0 !m-0" src="/assets/banners/hostinger/mejor-hosting-banner-1.png" alt="El mejor hosting WordPress" />
             </a>
         </div>
     </div>
-    <div class="mb-5 px-2 pt-1 pb-2 rounded-md border border-dotted border-indigo-300 border-t-transparent dark:border-opacity-50">
-        <div class="mx-1 mt-1 text-xs sm:text-sm">
-            <strong>¿Sabías qué?</strong> Podrás evitar los principales errores al elegir tu empresa de Web Hosting leyendo nuestro artículo 
-            <a href="/blog/mejor-web-hosting">¿Cuál es el mejor web hosting?</a>.
-        </div>
-    </div>
-    {{ if hugo.IsProduction -}}
-    <!-- <img src="https://www.hostg.xyz/aff_i?offer_id=6&aff_id=17787&url_id=1003&tiny_url=1" width="0" height="0" style="position:absolute;visibility:hidden;" border="0" /> -->
-    {{ end -}}
 {{ end -}}
 
 {{- $showAdsterraMiddleBanner1 := .Site.Params.showAdsterraMiddleBanner1 | default false -}}
