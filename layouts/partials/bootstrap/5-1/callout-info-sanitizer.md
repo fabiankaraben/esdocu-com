@@ -1,1 +1,0 @@
-De forma predeterminada, este componente utiliza el desinfectante de contenido incorporado, que elimina los elementos HTML que no están permitidos explícitamente. Consulta la [sección de desinfección en nuestra documentación de JavaScript](/docs/5.1/getting-started/javascript/#sanitizer) para obtener más detalles.
