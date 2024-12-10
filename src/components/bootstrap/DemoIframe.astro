@@ -1,0 +1,29 @@
+---
+const { path } = Astro.props;
+const iframeId = path;
+---
+
+<div class="mt-5 px-2 pt-1 rounded-md border border-gray-500 border-opacity-25">
+  <div class="my-3 p-2 bg-white rounded-md">
+    <style>
+      iframe {
+        width: 1px;
+        min-width: 100%;
+      }
+    </style>
+    <iframe id={iframeId} class="demo-iframe" src={path}></iframe>
+  </div>
+  <div>
+    <!-- {{ .Inner | markdownify }} -->
+    <slot />
+  </div>
+</div>
+
+<script src="../../assets/js/iframeResizer.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("iframe.demo-iframe").forEach((e) => {
+      iFrameResize({ log: false }, e);
+    });
+  });
+</script>
