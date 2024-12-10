@@ -1,0 +1,317 @@
+---
+weight: 6
+linkTitle: Uso de la grilla CSS
+title: Uso de la cuadrícula CSS (CSS Grid) de Bootstrap · Bootstrap en Español v5.3
+description: Aprende cómo habilitar, usar y personalizar nuestro sistema de diseño layout alternativo creado en CSS Grid con ejemplos y fragmentos de código.
+---
+
+# Uso de la cuadrícula CSS (CSS Grid) de Bootstrap
+
+Aprende cómo habilitar, usar y personalizar nuestro sistema de diseño layout alternativo creado en CSS Grid con ejemplos y fragmentos de código.
+
+<TopBanner />
+
+El sistema de cuadrícula predeterminado de Bootstrap representa la culminación de más de una década de técnicas de diseño CSS, probadas por millones de personas. Pero también se creó sin muchas de las características y técnicas modernas de CSS que vemos en navegadores como el nuevo CSS Grid.
+
+{{< callout type="warning" emoji="" >}}
+**Atención: ¡nuestro sistema CSS Grid es experimental y está habilitado a partir de la versión 5.1.0!** Lo incluimos en el CSS de nuestra documentación para mostrártelo, pero está deshabilitado de forma predeterminada. Continúa leyendo para aprender cómo habilitarlo en tus proyectos.
+{{< /callout >}}
+
+## Cómo funciona {#how-it-works}
+
+Con Bootstrap 5, agregamos la opción de habilitar un sistema de cuadrícula separado construido en CSS Grid, pero con un toque de Bootstrap. Aún obtienes clases que puedes aplicar cuando quieras para crear diseños responsive, pero con un enfoque diferente bajo el capó.
+
+* **CSS Grid es opcional.** Deshabilita el sistema de cuadrícula predeterminado configurando `$enable-grid-classes: false` y habilita CSS Grid configurando `$enable-cssgrid: true`. Luego, vuelve a compilar tu Sass.
+    
+* **Reemplaza las instancias de `.row` con `.grid`.** La clase `.grid` establece `display: grid` y crea una `grid-template` que puedes desarrollar con tu HTML.
+    
+* **Reemplaza las clases `.col-*` con clases `.g-col-*` .** Esto se debe a que nuestras columnas CSS Grid usan el `grid-column` en lugar de `width`.
+    
+* **Los tamaños de columnas y gutter se configuran mediante variables CSS.** Configúralos en el `.grid` principal y personalízalos como desees, en línea o en una hoja de estilo, con `--bs-columns` y `--bs-gap`.
+    
+
+En el futuro, Bootstrap probablemente cambiará a una solución híbrida ya que la propiedad `gap` ha logrado soporte casi total del navegador para flexbox.
+
+## Diferencias clave {#key-differences}
+
+Comparado con el sistema de cuadrícula predeterminado:
+
+* Las utilidades Flex no afectan las columnas CSS Grid de la misma manera.
+    
+* Los huecos reemplazan los gutters. La propiedad `gap` reemplaza el `padding` horizontal de nuestro sistema de cuadrícula predeterminado y funciona más como `margin`.
+    
+* Como tal, a diferencia de los `.row`, los `.grid` no tienen márgenes negativos y las utilidades de márgenes no se pueden utilizar para cambiar los márgenes de la cuadrícula. Los gaps de cuadrícula se aplican horizontal y verticalmente de forma predeterminada. Consulta la [sección de personalización](#customizing) para obtener más detalles.
+    
+<MiddleBannerOne />
+
+* Los estilos en línea y personalizados deben verse como reemplazos de las clases modificadoras (por ejemplo, `style="--bs-columns: 3;"` vs `class="row-cols-3"`).
+    
+* El anidamiento funciona de manera similar, pero puede requerir que restablezcas el recuento de columnas en cada instancia de un `.grid`anidado. Consulta la [sección de anidamiento](#nesting) para obtener más detalles.
+    
+
+## Ejemplos {#examples}
+
+### Tres columnas {#three-columns}
+
+Se pueden crear tres columnas de igual ancho en todas los viewports y dispositivos usando las clases `.g-col-4`. Agrega [clases responsive](#responsive) para cambiar el diseño por tamaño de viewport.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/three-columns.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-4">.g-col-4</div>
+        <div class="g-col-4">.g-col-4</div>
+        <div class="g-col-4">.g-col-4</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Responsive {#responsive}
+
+Usa clases responsive para ajustar tu diseño en los viewports. Aquí comenzamos con dos columnas en los viewports más estrechos y luego crecemos hasta tres columnas en los viewports medianos y superiores.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/responsive-1.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+        <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+        <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+Compáralo con este diseño de dos columnas en todos los viewports.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/responsive-2.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Envoltura {#wrapping}
+
+Los elementos de la cuadrícula pasan automáticamente a la siguiente línea cuando no hay más espacio horizontalmente. Ten en cuenta que el `gap` se aplica a los espacios horizontales y verticales entre los elementos de la cuadrícula.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/wrapping.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+<MiddleBannerTwo />
+
+{{< bootstrap/content-suggestion >}}
+
+## Starts {#starts}
+
+Las clases `start` tienen como objetivo reemplazar las clases de compensación (offset) predeterminadas de nuestra cuadrícula, pero no son completamente iguales. CSS Grid crea una plantilla de cuadrícula a través de estilos que indican a los navegadores que "comiencen en esta columna" y "terminen en esta columna". Esas propiedades son `grid-column-start` y `grid-column-end`. Las clases iniciales son una abreviatura de las primeras. Combínalos con las clases de columnas para dimensionar y alinear sus columnas como lo necesites. Las clases `start` comienzan en `1` ya que `0` es un valor no válido para estas propiedades.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/starts.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-3 g-start-2">.g-col-3 .g-start-2</div>
+        <div class="g-col-4 g-start-6">.g-col-4 .g-start-6</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Columnas automáticas {#auto-columns}
+
+Cuando no hay clases en los elementos de la cuadrícula (los hijos inmediatos de un `.grid`), cada elemento de la cuadrícula se ajustará automáticamente a una columna.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/auto-columns-1.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+Este comportamiento se puede combinar con clases de columnas de cuadrícula.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/auto-columns-2.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center">
+        <div class="g-col-6">.g-col-6</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+## Anidamiento {#nesting}
+
+Al igual que nuestro sistema de cuadrícula predeterminado, nuestro CSS Grid permite anidar fácilmente `.grid`. Sin embargo, a diferencia del valor predeterminado, esta cuadrícula hereda los cambios en las filas, columnas y espacios. Considera el siguiente ejemplo:
+
+{{< bootstrap/content-suggestion >}}
+
+* Sobrescribimos el número predeterminado de columnas con una variable CSS local: `--bs-columns: 3`.
+* En la primera columna automática, el recuento de columnas se hereda y cada columna tiene un tercio del ancho disponible.
+* En la segunda columna automática, hemos restablecido el recuento de columnas en el `.grid` anidado a 12 (nuestro valor predeterminado).
+* La tercera columna automática no tiene contenido anidado.
+
+En la práctica, esto permite diseños más complejos y personalizados en comparación con nuestro sistema de cuadrícula predeterminado.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/nesting.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-columns: 3;">
+        <div>
+            Primera columna automática
+            <div class="grid">
+                <div>Columna automática</div>
+                <div>Columna automática</div>
+            </div>
+        </div>
+        <div>
+            Segunda columna automática
+            <div class="grid" style="--bs-columns: 12;">
+                <div class="g-col-6">6 de 12</div>
+                <div class="g-col-4">4 de 12</div>
+                <div class="g-col-2">2 de 12</div>
+            </div>
+        </div>
+        <div>Tercera columna automática</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+<MiddleBannerThree />
+
+## Personalización {#customizing}
+
+Personaliza el número de columnas, el número de filas y el ancho de los espacios con variables CSS locales.
+
+| Variable       | Valor fallback | Descripción                                                  |
+| -------------- | -------------- | ------------------------------------------------------------ |
+| `--bs-rows`    | `1`            | El número de filas en tu plantilla de cuadrícula.            |
+| `--bs-columns` | `12`           | El número de columnas en tu plantilla de cuadrícula.         |
+| `--bs-gap`     | `1.5rem`       | El tamaño del espacio entre columnas (vertical y horizontal) |
+
+Estas variables CSS no tienen valor predeterminado; en su lugar, aplican valores alternativos que se utilizan _hasta_ que se proporciona una instancia local. Por ejemplo, usamos `var(--bs-rows, 1)` para nuestras filas de CSS Grid, que ignora `--bs-rows` porque no se ha configurado en ninguna parte todavía. Una vez que lo esté, la instancia `.grid` usará ese valor en lugar del valor alternativo de `1`.
+
+### Sin clases de grilla {#no-grid-classes}
+
+Los elementos secundarios inmediatos de `.grid` son elementos de cuadrícula, por lo que se les ajustará el tamaño sin agregar explícitamente una clase `.g-col`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/no-grid-classes.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-columns: 3;">
+        <div>Auto-column</div>
+        <div>Auto-column</div>
+        <div>Auto-column</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Columnas y huecos {#columns-and-gaps}
+
+Ajusta el número de columnas y el espacio.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/columns-and-gaps-1.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-columns: 4; --bs-gap: 5rem;">
+        <div class="g-col-2">.g-col-2</div>
+        <div class="g-col-2">.g-col-2</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/columns-and-gaps-2.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-columns: 10; --bs-gap: 1rem;">
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-4">.g-col-4</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Agregar filas {#adding-rows}
+
+Agregar más filas y cambiar la ubicación de las columnas:
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/adding-rows.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
+        <div>Auto-column</div>
+        <div class="g-start-2" style="grid-row: 2">Auto-column</div>
+        <div class="g-start-3" style="grid-row: 3">Auto-column</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+### Gaps o huecos {#gaps}
+
+<MiddleBannerFour />
+
+Cambia los espacios verticales solo modificando el `row-gap`. Ten en cuenta que utilizamos `gap` en `.grid`s, pero `row-gap` y `column-gap` se pueden modificar cuando sea necesario.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/gaps-1.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="row-gap: 0;">
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+Por eso, puedes tener diferentes `gap` verticales y horizontales, que pueden tomar un solo valor (todos los lados) o un par de valores (verticales y horizontales). Esto se puede aplicar con un estilo en línea para `gap`, o con nuestra variable CSS `--bs-gap`.
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/gaps-2.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-gap: .25rem 1rem;">
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+
+        <div class="g-col-6">.g-col-6</div>
+        <div class="g-col-6">.g-col-6</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+{{< bootstrap/content-suggestion >}}
+
+## Sass {#sass}
+
+Una limitación de CSS Grid es que nuestras clases predeterminadas aún se generan mediante dos variables Sass, `$grid-columns` y `$grid-gutter-width`. Esto efectivamente predetermina la cantidad de clases generadas en nuestro CSS compilado. Tienes dos opciones aquí:
+
+* Modifica esas variables Sass predeterminadas y vuelve a compilar tu CSS.
+* Usa estilos en línea o personalizados para aumentar las clases proporcionadas.
+
+Por ejemplo, puedes aumentar el número de columnas y cambiar el tamaño del espacio, y luego dimensionar tus “columnas” con una combinación de estilos en línea y clases de columnas CSS Grid predefinidas (por ejemplo, `.g-col-4`).
+
+{{< demo-iframe path="/demos/bootstrap/5.3/layout/css-grid/sass.html" >}}
+```html {filename="HTML"}
+    <div class="grid text-center" style="--bs-columns: 18; --bs-gap: .5rem;">
+        <div style="grid-column: span 14;">14 columns</div>
+        <div class="g-col-4">.g-col-4</div>
+    </div>
+```
+{{< /demo-iframe >}}
+
+<BottomBanner />
