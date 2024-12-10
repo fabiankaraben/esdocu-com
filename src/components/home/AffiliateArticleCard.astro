@@ -1,0 +1,47 @@
+---
+import { Card, Icon } from "@astrojs/starlight/components";
+
+interface Props {
+  title: string;
+  imgPath: string;
+  href: string;
+  description: string;
+  linkLabel: string;
+}
+
+const { title, imgPath, href, description, linkLabel } = Astro.props;
+---
+
+<Card title="">
+  <div class="flex">
+    <a
+      href={href}
+      target="_blank"
+      class="w-12 h-12 inline-flex items-center justify-center rounded-full flex-shrink-0"
+    >
+      <Icon name="seti:todo" color="var(--sl-color-text-accent)" size="40px" />
+    </a>
+    <div class="flex-grow pl-6">
+      <h3 class="text-gray-900 dark:text-white text-lg title-font font-medium mb-2">
+        <a href={href} target="_blank" class="no-underline">{title}</a>
+      </h3>
+      <p class="leading-relaxed text-base">
+        {description}
+      </p>
+      <a class="no-underline mt-3 text-indigo-500 inline-flex items-center" href={href} target="_blank">
+        <span>{linkLabel}</span>
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="w-4 h-4 ml-2 mt-1"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Card>

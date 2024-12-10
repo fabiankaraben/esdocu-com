@@ -1,43 +1,86 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Manuales sobre Desarrollo de Software
+description: Manuales sobre Desarrollo de Software en español. Esdocu.com es la plataforma donde encontrarás manuales open source.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: En <strong>Esdocu.com</strong> creamos <strong>Manuales sobre desarrollo de software</strong> en Español intentando cubrir los mismos tópicos que cubren las documentaciones oficiales en inglés de las tecnologías en cuestión.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/home/header-programmer.jpg
   actions:
-    - text: Example Guide
-      link: /html/
+    - text: Lista de manuales
+      link: '#manuales'
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Bootstrap docs en Español
+      link: https://getbootstrap.esdocu.com
       icon: external
       variant: minimal
+      attrs:
+        target: _blank
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import TechnologyCard from '@components/home/TechnologyCard.astro';
+import AffiliateArticleCard from '@components/home/AffiliateArticleCard.astro';
+import Footer from '@components/home/Footer.astro';
 
-## Next steps
+## Nuestros Manuales Disponibles \{#manuales\}
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+Ten en cuenta que un manual puede tornarse en un contenido algo técnico y denso para iniciantes. Si estás comenzando tu carrera como programador te invitamos a buscar información adicional, existen excelentes cursos en español en YouTube o en sitios web gratuitos.
 
-<div>
-  <a href="/bootstrap/comenzando">Bootstrap</a><br />
-  <a href="/momentjs/comenzando">Moment.js</a><br />
-  <a href="/typescript/comenzando/typescript-desde-cero">TypeScript</a><br />
-  <a href="/dart/tutoriales-y-codelabs/tutoriales">Dart</a><br />
+<div class="py-10">
+  <CardGrid stagger>
+    <TechnologyCard
+      title="Manual de Bootstrap"
+      description="Bootstrap es un conjunto de herramientas para la construcción de interfaces gráficas web potente y repleto de funciones."
+      imgPath="/assets/home/tech-logos/bootstrap-logo.png"
+      href="/bootstrap/comenzando"
+      linkLabel="Ir al manual de Bootstrap"
+    />
+    <TechnologyCard
+      title="Manual de Moment.js"
+      description="Moment.js es una biblioteca JavaScript para analiza (parsing), validar, manipular, formatear y visualizar fechas de forma sencilla y elegante."
+      imgPath="/assets/home/tech-logos/momentjs-logo.png"
+      href="/momentjs/comenzando"
+      linkLabel="Ir al manual de Moment.js"
+    />
+    <TechnologyCard
+      title="Manual de TypeScript"
+      description="TypeScript es un lenguaje de programación fuertemente tipado que se basa en JavaScript y te brinda mejores herramientas a cualquier escala."
+      imgPath="/assets/home/tech-logos/typescript-logo.png"
+      href="/typescript/comenzando/typescript-desde-cero"
+      linkLabel="Ir al manual de TypeScript"
+    />
+    <TechnologyCard
+      title="Manual de Dart"
+      description="Dart es un lenguaje accesible, portable y productivo para aplicaciones de alta calidad en cualquier plataforma. Dart es gratuito y de código abierto."
+      imgPath="/assets/home/tech-logos/dart-logo.png"
+      href="/dart/tutoriales-y-codelabs/tutoriales"
+      linkLabel="Ir al manual de Dart"
+    />
+  </CardGrid>
 </div>
+
+## Comparativas de los mejores servicios
+
+Analizamos diferentes servicios y te presentamos comparativas con información muy interesante.
+
+<div class="py-10">
+  <CardGrid stagger>
+    <AffiliateArticleCard
+      title="El Mejor Hosting en 2024 - Top 10 mejores empresas"
+      description="Una recopilación de los mejores servicios de web hosting basados en las puntuaciones de miles de personas en Hostadvice y en nuestra propia experiencia como clientes."
+      imgPath="/assets/home/tech-logos/bootstrap-logo.png"
+      href="/mejor-hosting"
+      linkLabel="Mejor web hosting"
+    />
+    <AffiliateArticleCard
+      title="The Best Web Hosting in 2024 - Definitive Comparison"
+      description="A compilation of the best web hosting services based on the ratings of thousands of people on Hostadvice and our own experience as clients."
+      imgPath="/assets/home/tech-logos/momentjs-logo.png"
+      href="/best-hosting"
+      linkLabel="Best web hosting"
+    />
+  </CardGrid>
+</div>
+
+<Footer />
