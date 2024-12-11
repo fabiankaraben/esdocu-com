@@ -16,7 +16,6 @@
     "astro": "^4.16.10",
     "sharp": "^0.32.5",
     "starlight-sidebar-topics-dropdown": "^0.2.2",
-    "starlight-theme-rapide": "^0.2.1",
     "tailwindcss": "^3.4.16"
   },
   "devDependencies": {

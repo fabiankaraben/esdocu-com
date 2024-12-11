@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightSidebarTopicsDropdown from 'starlight-sidebar-topics-dropdown'
-// import starlightThemeRapide from 'starlight-theme-rapide'
 import remarkHeadingID from 'remark-heading-id';
 
 import tailwind from '@astrojs/tailwind';
@@ -50,7 +49,6 @@ export default defineConfig({
         './src/styles/tailwind.css',
       ],
       plugins: [
-        // starlightThemeRapide(),
         starlightSidebarTopicsDropdown([
           // {
           //   label: 'HTML',
