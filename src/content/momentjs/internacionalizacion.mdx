@@ -1,0 +1,229 @@
+---
+title: Internacionalización (i18n) en Moment.js
+description: Moment.js tiene un sólido soporte para la internacionalización. Puedes cargar varias configuraciones regionales y cambiar fácilmente entre ellas.
+head:
+  - tag: title
+    content: Cómo configuara la internacionalización (i18n) · Moment.js en Español
+sidebar:
+  label: Internacionalización (i18n)
+---
+
+import TopBanner from '@components/banners/TopBanner.astro';
+import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
+import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
+import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
+import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
+import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
+import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
+import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
+import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
+import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
+import BottomBanner from '@components/banners/BottomBanner.astro';
+
+Moment.js tiene un sólido soporte para la internacionalización.
+
+<TopBanner />
+
+Puedes cargar varias configuraciones regionales y cambiar fácilmente entre ellas.
+
+Además de asignar un locale global, puedes asignar una locale a un moment específico.
+
+## Cambiar el locale globalmente \{#changing-locale\}
+
+```javascript title="Firma del método"
+// Desde 2.8.1 en adelante
+moment.locale(String);
+moment.locale(String[]);
+moment.locale(String, Object);
+
+// Obsoleto en 2.8.1
+moment.lang(String);
+moment.lang(String[]);
+moment.lang(String, Object);
+```
+
+De forma predeterminada, Moment.js viene con cadenas de configuración regional en inglés (Estados Unidos). Si necesitas otras configuraciones regionales, puedes cargarlas en Moment.js para usarlas más adelante.
+
+Para cargar una configuración regional, pasa la clave y los valores de cadena a `moment.locale`.
+
+Se pueden encontrar más detalles sobre cada una de las partes del paquete local en la sección [personalización](/momentjs/personalizacion).
+
+```javascript title="JavaScript"
+moment.locale('fr', {
+    months : 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
+    monthsShort : 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split('_'),
+    monthsParseExact : true,
+    weekdays : 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
+    weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+    weekdaysMin : 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_'),
+    weekdaysParseExact : true,
+    longDateFormat : {
+        LT : 'HH:mm',
+        LTS : 'HH:mm:ss',
+        L : 'DD/MM/YYYY',
+        LL : 'D MMMM YYYY',
+        LLL : 'D MMMM YYYY HH:mm',
+        LLLL : 'dddd D MMMM YYYY HH:mm'
+    },
+    calendar : {
+        sameDay : '[Aujourd’hui à] LT',
+        nextDay : '[Demain à] LT',
+        nextWeek : 'dddd [à] LT',
+        lastDay : '[Hier à] LT',
+        lastWeek : 'dddd [dernier à] LT',
+        sameElse : 'L'
+    },
+    relativeTime : {
+        future : 'dans %s',
+        past : 'il y a %s',
+        s : 'quelques secondes',
+        m : 'une minute',
+        mm : '%d minutes',
+        h : 'une heure',
+        hh : '%d heures',
+        d : 'un jour',
+        dd : '%d jours',
+        M : 'un mois',
+        MM : '%d mois',
+        y : 'un an',
+        yy : '%d ans'
+    },
+    dayOfMonthOrdinalParse : /\d{1,2}(er|e)/,
+    ordinal : function (number) {
+        return number + (number === 1 ? 'er' : 'e');
+    },
+    meridiemParse : /PD|MD/,
+    isPM : function (input) {
+        return input.charAt(0) === 'M';
+    },
+    // En caso de que las unidades meridiem no estén separadas alrededor de 12, 
+    // implementa esta función (consulta locale/id.js para ver un ejemplo).
+    // meridiemHour : function (hour, meridiem) {
+    //     return /* 0-23 horas, dado el token de meridiem y la hora 1-12 */ ;
+    // },
+    meridiem : function (hours, minutes, isLower) {
+        return hours < 12 ? 'PD' : 'MD';
+    },
+    week : {
+        dow : 1, // El lunes es el primer día de la semana.
+        doy : 4  // Se utiliza para determinar la primera semana del año.
+    }
+});
+```
+
+Los detalles sobre `week.dow` y `week.doy` se pueden encontrar en la sección [personalización](/momentjs/personalizacion#dow-doy).
+
+Una vez que cargues una configuración regional, se convierte en la configuración regional activa. Para cambiar las configuraciones regionales activas, simplemente llama a `moment.locale` con la clave de una configuración regional cargada.
+
+```javascript title="JavaScript"
+moment.locale('fr');
+moment(1316116057189).fromNow(); // il y a une heure
+moment.locale('en');
+moment(1316116057189).fromNow(); // an hour ago
+```
+
+A partir de **2.21.0**, Moment anunciará mediante `console.warn` si la configuración regional no está disponible.
+
+A partir de **2.8.0**, cambiar la configuración regional (locale) global no afecta las instancias existentes.
+
+```javascript title="JavaScript"
+moment.locale('fr');
+var m = moment(1316116057189);
+m.fromNow(); // il y a une heure
+
+moment.locale('en');
+m.fromNow(); // il y a une heure
+moment(1316116057189).fromNow(); // an hour ago
+```
+
+`moment.locale` devuelve la configuración regional utilizada. Esto es útil porque Moment no cambiará las configuraciones regionales si no conoce la que tú especificas.
+
+<MiddleBannerOne />
+
+```javascript title="JavaScript"
+moment.locale('fr'); // 'fr'
+moment.locale('tq'); // 'fr'
+```
+
+También puedes especificar una lista de configuraciones regionales y Moment usará la primera para la que tenga localizaciones.
+
+```javascript title="JavaScript"
+moment.locale(['tq', 'fr']); // 'fr'
+```
+
+Moment también probará las subcadenas del especificador de configuración regional (locale) desde la más específica hasta la menos específica hasta que encuentre una configuración regional que conozca. Esto es útil cuando se proporciona a Moment una cadena de configuración regional extraída del entorno del usuario, como `window.navigator.language`.
+
+```javascript title="JavaScript"
+moment.locale('en-nz'); // 'en'
+```
+
+Finalmente, Moment buscará de forma inteligente en una serie de configuraciones regionales y sus subcadenas.
+
+```javascript title="JavaScript"
+moment.locale(['en-nz', 'en-au']); // 'en-au', not 'en'
+```
+
+La lógica funciona de la siguiente manera: se elige la siguiente configuración regional y se prueba tal como está.
+Si eso falla, el código normalmente intenta cortar el último bit (normalmente la designación del país) y vuelve a intentarlo. Sin embargo, si el siguiente elemento del array tiene el mismo prefijo o más largo que el que se va a probar, la iteración continúa.
+
+Entonces, por ejemplo, si el array tiene la secuencia
+
+```
+"AA-BB", "AA-CC", "XX-YY"
+```
+
+luego se prueba primero "AA-BB", luego una solución ingenua probaría "AA", pero esta en cambio comprueba que "AA-CC" es en realidad más concreta que "AA", por lo que prueba "AA-CC" a continuación, y sólo después de que falla (si falla), intenta "AA", porque "XX-YY" no tiene "AA" como prefijo. Entonces, al final, se prueban las siguientes configuraciones regionales en este orden (asumiendo que todas fallan, se prueba con la siguiente):
+
+```
+"AA-BB", "AA-CC", "AA", "XX-YY", "XX"
+```
+
+## Cambiar el locale localmente \{#instance-locale\}
+
+```javascript title="Firma del método"
+// Desde la versión 2.8.1 en adelante
+moment().locale(String|String[]|Boolean);
+
+// Obsoleto en la versión 2.8.1
+moment().lang(String|String[]|Boolean);
+```
+
+Una configuración regional global puede ser problemática cuando se pasan moments que pueden necesitar ser formateados en una configuración regional diferente.
+
+<MiddleBannerTwo />
+
+```javascript title="JavaScript"
+moment.locale('en'); // por defecto la configuración regional es inglés
+var localLocale = moment();
+
+localLocale.locale('fr'); // configurar esta instancia para usar francés
+localLocale.format('LLLL'); // dimanche 15 juillet 2012 11:01
+moment().format('LLLL'); // Sunday, July 15 2012 11:01 AM
+
+moment.locale('es'); // cambiar la configuración regional global a español
+localLocale.format('LLLL'); // dimanche 15 juillet 2012 11:01
+moment().format('LLLL'); // Domingo 15 Julio 2012 11:01
+
+localLocale.locale(['tq', 'fr']); // establecer esta instancia en la primera localización encontrada
+localLocale.format('LLLL'); // dimanche 15 juillet 2012 11:01
+moment().format('LLLL'); // Sunday, July 15 2012 11:01 AM
+
+localLocale.locale(false); // restablecer la configuración regional de la instancia
+localLocale.format('LLLL'); // Domingo 15 Julio 2012 11:01
+moment().format('LLLL'); // Domingo 15 Julio 2012 11:01
+```
+
+Si llamas a `moment#locale` sin parámetros, obtendrás la configuración regional que se usaría en ese momento.
+
+```javascript title="JavaScript"
+var fr = moment().locale('fr');
+fr.localeData().months(moment([2012, 0])) // "janvier"
+fr.locale('en');
+fr.localeData().months(moment([2012, 0])) // "January"
+```
+
+Si necesitas acceder a los datos locales por un moment, esta es la forma preferida de hacerlo.
+
+A partir de **2.3.0**, también puedes especificar una serie de identificadores locales. Funciona de la misma manera que en la [configuración regional global](/momentjs/internacionalizacion#changing-locale).
+
+<BottomBanner />

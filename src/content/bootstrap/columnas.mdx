@@ -1,0 +1,422 @@
+---
+title: Uso de Columnas de contenido en Bootstrap
+description: Aprende a modificar columnas con un puñado de opciones de alineación, orden y desplazamiento gracias a nuestro sistema de cuadrícula flexbox. Además, aprende cómo usar clases de columnas para administrar anchos de elementos que no son de cuadrícula.
+head:
+  - tag: title
+    content: Uso de Columnas de contenido en Bootstrap · Bootstrap en Español v5.3
+sidebar:
+  label: Columnas de contenido
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+import TopBanner from '@components/banners/TopBanner.astro';
+import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
+import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
+import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
+import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
+import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
+import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
+import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
+import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
+import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
+import BottomBanner from '@components/banners/BottomBanner.astro';
+
+import DemoIframe from '@components/bootstrap/DemoIframe.astro';
+import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+Aprende a modificar columnas con un puñado de opciones de alineación, orden y desplazamiento gracias a nuestro sistema de cuadrícula flexbox. Además, aprende cómo usar clases de columnas para administrar anchos de elementos que no son de cuadrícula.
+
+<TopBanner />
+
+<Aside>
+**¡Atención!** Asegúrate de [leer la página de cuadrícula](/bootstrap/grilla) antes de profundizar en cómo modificar y personalizar las columnas de tu cuadrícula.
+</Aside>
+
+## Cómo funcionan \{#how-they-work}
+
+* **Las columnas se basan en la arquitectura flexbox de la cuadrícula.** Flexbox significa que tenemos opciones para cambiar columnas individuales y [modificar grupos de columnas a nivel de fila](/bootstrap/grilla/#row-columns). Tú eliges cómo crecen, se reducen o cambian las columnas.
+    
+* **Al crear diseños de cuadrícula, todo el contenido va en columnas.** La jerarquía de la cuadrícula de Bootstrap va de [contenedor](/bootstrap/layout) a fila a columna a su contenido. En raras ocasiones, puedes combinar contenido y columna, pero ten en cuenta que puede haber consecuencias no deseadas.
+    
+* **Bootstrap incluye clases predefinidas para crear diseños rápidos y responsive.** Con [seis puntos de interrupción](/bootstrap/layout) y una docena de columnas en cada uno nivel de cuadrícula, tenemos docenas de clases ya creadas para que puedas crear los diseños que desees. Esto se puede desactivar a través de Sass si lo deseas.
+    
+
+## Alineación \{#alignment}
+
+Usa las utilidades de alineación de Flexbox para alinear columnas vertical y horizontalmente.
+
+### Alineación vertical \{#vertical-alignment}
+
+Cambia la alineación vertical con cualquiera de las clases responsive `align-items-*`.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/vertical-alignment-1.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row align-items-start">
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/vertical-alignment-2.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/vertical-alignment-3.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row align-items-end">
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+            <div class="col">
+                Una de tres columnas
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+O cambia la alineación de cada columna individualmente con cualquiera de las clases responsive `.align-self-*`.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/vertical-alignment-4.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col align-self-start">
+                Una de tres columnas
+            </div>
+            <div class="col align-self-center">
+                Una de tres columnas
+            </div>
+            <div class="col align-self-end">
+                Una de tres columnas
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+<MiddleBannerOne />
+
+### Alineación horizontal \{#horizontal-alignment}
+
+Cambia la alineación horizontal con cualquiera de las clases responsive `justify-content-*`.
+
+<ContentSuggestion />
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/horizontal-alignment.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row justify-content-start">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+        <div class="row justify-content-evenly">
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+            <div class="col-4">
+                Una de dos columnas
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+### Envoltura de columnas \{#column-wrapping}
+
+Si se colocan más de 12 columnas dentro de una sola fila, cada grupo de columnas adicionales, como una unidad, se ajustará a una nueva línea.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/column-wrapping.html" >
+```html title="HTML"
+    <div class="container">
+        <div class="row">
+            <div class="col-9">.col-9</div>
+            <div class="col-4">.col-4<br>Ya que 9 + 4 = 13 &gt; 12, este div de 4 columnas de ancho se incluye en
+                una nueva línea como una unidad contigua.</div>
+            <div class="col-6">.col-6<br>Las columnas siguientes continúan en la nueva línea.</div>
+        </div>
+    </div>    
+```
+</DemoIframe>
+
+### Saltos de columna \{#column-breaks}
+
+Dividir columnas en una nueva línea en flexbox requiere un pequeño truco: agrega un elemento con `width: 100%` donde quieras ajustar tus columnas a una nueva línea. Normalmente esto se logra con múltiples `.row`, pero no todos los métodos de implementación pueden tener en cuenta esto.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/column-breaks-1.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+
+            <!-- Force next columns to break to new line -->
+            <div class="w-100"></div>
+
+            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+También puedes aplicar esta interrupción en puntos de interrupción específicos con nuestras [utilidades de visualización responsive](/bootstrap/utilidades/otras-utilidades).
+
+<ContentSuggestion />
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/column-breaks-2.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+## Reordenar \{#reordering}
+
+### Ordenar clases \{#order-classes}
+
+<MiddleBannerTwo />
+
+Usa las clases `.order-` para controlar el **orden visual** de tu contenido. Estas clases son responsive, por lo que puedes establecer el `order` por punto de interrupción (por ejemplo, `.order-1.order-md-2`). Incluye soporte para `1` a `5` en los seis niveles de la cuadrícula. Si necesitas más clases `.order-*` puedes modificar el número predeterminado mediante la variable Sass.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/order-classes-1.html" >
+```html title="HTML"
+    <div class="bd-example m-0 border-0 bd-example-row">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    Primero en DOM, no se aplica ningún orden
+                </div>
+                <div class="col order-5">
+                    Segundo en DOM, con un orden mayor
+                </div>
+                <div class="col order-1">
+                    Tercero en DOM, con un orden de 1
+                </div>
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+También hay clases responsive `.order-first` y `.order-last` que cambian el `order` de un elemento aplicando `order: -1` y `order: 6`, respectivamente. Estas clases también se pueden mezclar con las clases numeradas `.order-*` según sea necesario.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/order-classes-2.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col order-last">
+                Primero en DOM, ordenado al final
+            </div>
+            <div class="col">
+                Segundo en DOM, desordenado
+            </div>
+            <div class="col order-first">
+                Tercero en DOM, ordenado primero
+            </div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+### Columnas compensadas (offset) \{#offsetting-columns}
+
+Puedes compensar las columnas de la cuadrícula de dos maneras: nuestras clases de cuadrícula `.offset-` responsive y nuestra [utilidades de margen](/bootstrap/utilidades/espaciado). Las clases de cuadrícula tienen un tamaño que coincide con las columnas, mientras que los márgenes son más útiles para diseños rápidos donde el ancho del desplazamiento es variable.
+
+#### Clases de offset \{#offset-classes}
+
+Mueve columnas hacia la derecha usando las clases `.offset-md-*`. Estas clases aumentan el margen izquierdo de una columna en `*` columnas. Por ejemplo, `.offset-md-4` mueve `.col-md-4` en cuatro columnas.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/offset-classes-1.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+Además de borrar las columnas en los puntos de interrupción responsive, es posible que necesites restablecer los offsets. Ve esto en acción en [el ejemplo de cuadrícula](https://getbootstrap.com/docs/5.3/examples/grid).
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/offset-classes-2.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+            <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2
+                .col-lg-6 .offset-lg-0</div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+#### Utilidades de margen \{#margin-utilities}
+
+Con el cambio a flexbox en v4, puedes usar utilidades de margen como `.me-auto` para alejar las columnas hermanas entre sí.
+
+<ContentSuggestion />
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/margin-utilities.html" >
+```html title="HTML"
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+            <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+        </div>
+        <div class="row">
+            <div class="col-auto me-auto">.col-auto .me-auto</div>
+            <div class="col-auto">.col-auto</div>
+        </div>
+    </div>
+```
+</DemoIframe>
+
+<MiddleBannerThree />
+
+## Clases de columnas independientes \{#standalone-column-classes}
+
+Las clases `.col-*` también se pueden usar fuera de un `.row` para darle a un elemento un ancho específico. Siempre que se utilizan clases de columnas como hijos indirectos de una fila, se omiten los rellenos.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/standalone-column-classes-1.html" >
+```html title="HTML"
+    <div class="col-3 p-3 mb-2">
+        .col-3: ancho del 25%
+    </div>
+
+    <div class="col-sm-9 p-3">
+        .col-sm-9: ancho del 75% por encima del punto de interrupción sm
+    </div>
+```
+</DemoIframe>
+
+<ContentSuggestion />
+
+Las clases se pueden usar junto con utilidades para crear imágenes flotantes responsive. Asegúrate de envolver el contenido en un contenedor [`.clearfix`](/bootstrap/helpers) para borrar el flotante si el texto es más corto.
+
+<DemoIframe path="/demos/bootstrap/5.3/layout/columns/standalone-column-classes-2.html" >
+```html title="HTML"
+    <div class="clearfix">
+        <svg class="bd-placeholder-img col-md-6 float-md-end mb-3 ms-md-3" width="100%" height="210" role="img"
+            aria-label="Marcador de posición: imagen flotante responsive" focusable="false"
+            preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <title>Marcador de posición</title>
+            <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
+                dy=".3em">Imagen flotante responsive</text>
+        </svg>
+
+        <p>
+            Un párrafo de texto de marcador de posición. Lo estamos usando aquí para mostrar el uso de la clase
+            clearfix. Estamos agregando bastantes frases sin sentido aquí para demostrar cómo interactúan las
+            columnas aquí con la imagen flotante.
+        </p>
+
+        <p>
+            Como puedes ver, los párrafos se envuelven elegantemente alrededor de la imagen flotante. Ahora imagina
+            cómo se vería esto con contenido real aquí, en lugar de solo este aburrido texto de marcador de posición
+            que sigue y sigue, pero que en realidad no transmite información tangible. Simplemente ocupa espacio y
+            no debería leerse.
+        </p>
+
+        <p>
+            Y, sin embargo, aquí estás, todavía perseverando en la lectura de este texto de marcador de posición,
+            esperando obtener más ideas o algún contenido escondido. Una broma, tal vez. Desgraciadamente aquí no
+            hay nada de eso.
+        </p>
+    </div>
+```
+</DemoIframe>
+
+<BottomBanner />

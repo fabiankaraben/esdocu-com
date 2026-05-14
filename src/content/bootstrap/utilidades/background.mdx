@@ -1,0 +1,421 @@
+---
+title: Uso de las utilidades de Background en Bootstrap
+description: Transmite significado a través del color de fondo y agrega decoración con degradados.
+head:
+  - tag: title
+    content: Uso de las utilidades de Background en Bootstrap · Bootstrap en Español v5.3
+sidebar:
+  label: Utilidades de background
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+import TopBanner from '@components/banners/TopBanner.astro';
+import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
+import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
+import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
+import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
+import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
+import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
+import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
+import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
+import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
+import BottomBanner from '@components/banners/BottomBanner.astro';
+
+import DemoIframe from '@components/bootstrap/DemoIframe.astro';
+import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+Transmitir significado a través de `background-color` y agregar decoración con degradados.
+
+<TopBanner />
+
+<Aside>
+**Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
+</Aside>
+
+## Color de fondo \{#background-color}
+
+Similar a las clases de color de texto contextual, establece el fondo de un elemento en cualquier clase contextual. Las utilidades de fondo background **no establecen `color`**, por lo que en algunos casos querrás usar `.text-*` [utilidades de color](/bootstrap/utilidades/colores).
+
+<Aside>
+Las utilidades de fondo como `.bg-*` que se generaron a partir de nuestro mapa original `$theme-colors` Sass aún no responden a los modos de color; sin embargo, cualquier `.bg-*-subtle` lo hará. Esto se resolverá en v6.
+</Aside>
+
+<DemoIframe path="/demos/bootstrap/5.3/utilities/background/background-color.html" >
+```html title="HTML"
+    <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+    <div class="p-3 mb-2 bg-primary-subtle text-emphasis-primary">.bg-primary-subtle</div>
+    <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+    <div class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">.bg-secondary-subtle</div>
+    <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+    <div class="p-3 mb-2 bg-success-subtle text-emphasis-success">.bg-success-subtle</div>
+    <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+    <div class="p-3 mb-2 bg-danger-subtle text-emphasis-danger">.bg-danger-subtle</div>
+    <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+    <div class="p-3 mb-2 bg-warning-subtle text-emphasis-warning">.bg-warning-subtle</div>
+    <div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+    <div class="p-3 mb-2 bg-info-subtle text-emphasis-info">.bg-info-subtle</div>
+    <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+    <div class="p-3 mb-2 bg-light-subtle text-emphasis-light">.bg-light-subtle</div>
+    <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+    <div class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">.bg-dark-subtle</div>
+    <p class="p-3 mb-2 bg-body-secondary">.bg-body-secondary</p>
+    <p class="p-3 mb-2 bg-body-tertiary">.bg-body-tertiary</p>
+    <div class="p-3 mb-2 bg-body text-body">.bg-body</div>
+    <div class="p-3 mb-2 bg-black text-white">.bg-black</div>
+    <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+    <div class="p-3 mb-2 bg-transparent text-body">.bg-transparent</div>
+```
+</DemoIframe>
+
+## Degradado de fondo \{#background-gradient}
+
+Al agregar una clase `.bg-gradient`, se agrega un degradado lineal como imagen de fondo a los fondos. Este degradado comienza con un blanco semitransparente que se desvanece hasta el fondo.
+
+¿Necesitas un degradado en tu CSS personalizado? Simplemente agrega `background-image: var(--bs-gradient);`.
+
+<DemoIframe path="/demos/bootstrap/5.3/utilities/background/background-gradient.html" >
+</DemoIframe>
+
+## Opacidad \{#opacity}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.1.0</span>
+
+A partir de v5.1.0, las utilidades `background-color` se generan con Sass usando variables CSS. Esto permite cambios de color en tiempo real sin compilación y cambios dinámicos de transparencia alfa.
+
+### Cómo funciona \{#how-it-works}
+
+Considera nuestra utilidad `.bg-success` predeterminada.
+
+```css title="CSS"
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+}
+```
+
+<MiddleBannerOne />
+
+Usamos una versión RGB de nuestra variable CSS `--bs-success` (con el valor de `25, 135, 84`) y se adjuntó una segunda variable CSS, `--bs-bg-opacity`, para la transparencia alfa (con un valor predeterminado `1` gracias a una variable CSS local). Eso significa que cada vez que uses `.bg-success` ahora, tu valor de `color` calculado es `rgba(25, 135, 84, 1)`. La variable CSS local dentro de cada clase `.bg-*` evita problemas de herencia, por lo que las instancias anidadas de las utilidades no tienen automáticamente una transparencia alfa modificada.
+
+### Ejemplo \{#example}
+
+Para cambiar esa opacidad, sobrescribe `--bs-bg-opacity` mediante estilos personalizados o estilos en línea.
+
+<DemoIframe path="/demos/bootstrap/5.3/utilities/background/example-1.html" >
+```html title="HTML"
+    <div class="bg-success p-2 text-white">Este es el fondo de éxito predeterminado</div>
+    <div class="bg-success p-2" style="--bs-bg-opacity: .5;">Este es un fondo de éxito con una opacidad del 50%.</div>
+```
+</DemoIframe>
+
+O elige cualquiera de las utilidades `.bg-opacity`:
+
+<DemoIframe path="/demos/bootstrap/5.3/utilities/background/example-2.html" >
+```html title="HTML"
+    <div class="bg-success p-2 text-white">Este es el fondo de éxito predeterminado</div>
+    <div class="bg-success p-2 text-white bg-opacity-75">Este es un fondo de éxito con una opacidad del 75%.</div>
+    <div class="bg-success p-2 text-dark bg-opacity-50">Este es un fondo de éxito con una opacidad del 50%.</div>
+    <div class="bg-success p-2 text-dark bg-opacity-25">Este es un fondo de éxito con una opacidad del 25%.</div>
+    <div class="bg-success p-2 text-dark bg-opacity-10">Este es un fondo de éxito con una opacidad del 10%.</div>
+```
+</DemoIframe>
+
+## Personalización del CSS \{#css}
+
+Además de las siguientes funciones de Sass, considera leer sobre nuestras [propiedades personalizadas de CSS](/bootstrap/personalizar) incluidas (también conocidas como variables CSS) para colores y más.
+
+### Variables Sass generales relacionadas \{#sass-variables}
+
+La mayoría de las utilidades `background-color` se generan a partir de los colores de nuestro tema, reasignados a partir de las variables genéricas de nuestra paleta de colores.
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+```
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+```
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+<MiddleBannerTwo />
+
+```scss title="scss/_variables.scss"
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0));
+```
+
+Los colores en escala de grises también están disponibles, pero solo se utiliza un subconjunto para generar utilidades.
+
+<ContentSuggestion />
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+```
+
+Variables para configurar `background-color` en las utilidades `.bg-*-subtle` en modo claro y oscuro:
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$primary-bg-subtle:       tint-color($primary, 80%);
+$secondary-bg-subtle:     tint-color($secondary, 80%);
+$success-bg-subtle:       tint-color($success, 80%);
+$info-bg-subtle:          tint-color($info, 80%);
+$warning-bg-subtle:       tint-color($warning, 80%);
+$danger-bg-subtle:        tint-color($danger, 80%);
+$light-bg-subtle:         mix($gray-100, $white);
+$dark-bg-subtle:          $gray-400;
+```
+
+[scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
+
+```scss title="scss/_variables-dark.scss"
+$primary-bg-subtle-dark:            shade-color($primary, 80%);
+$secondary-bg-subtle-dark:          shade-color($secondary, 80%);
+$success-bg-subtle-dark:            shade-color($success, 80%);
+$info-bg-subtle-dark:               shade-color($info, 80%);
+$warning-bg-subtle-dark:            shade-color($warning, 80%);
+$danger-bg-subtle-dark:             shade-color($danger, 80%);
+$light-bg-subtle-dark:              $gray-800;
+$dark-bg-subtle-dark:               mix($gray-800, $black);
+```
+
+### Mapas de Sass \{#sass-maps}
+
+Los colores del tema luego se colocan en un mapa de Sass para que podamos recorrerlos para generar nuestras utilidades, modificadores de componentes y más.
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+```
+
+Los colores en escala de grises también están disponibles como mapa Sass. **Este mapa no se utiliza para generar ninguna utilidad.**
+
+<MiddleBannerThree />
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+```
+
+Los colores RGB se generan a partir de un mapa Sass separado:
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss title="scss/_maps.scss"
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+```
+
+Las opacidades del color de fondo se basan en eso con su propio mapa que es consumido por la API de utilidades:
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss title="scss/_maps.scss"
+$utilities-bg: map-merge(
+  $utilities-colors,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body": to-rgb($body-bg)
+  )
+);
+$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg");
+
+$utilities-bg-subtle: (
+  "primary-subtle": var(--#{$prefix}primary-bg-subtle),
+  "secondary-subtle": var(--#{$prefix}secondary-bg-subtle),
+  "success-subtle": var(--#{$prefix}success-bg-subtle),
+  "info-subtle": var(--#{$prefix}info-bg-subtle),
+  "warning-subtle": var(--#{$prefix}warning-bg-subtle),
+  "danger-subtle": var(--#{$prefix}danger-bg-subtle),
+  "light-subtle": var(--#{$prefix}light-bg-subtle),
+  "dark-subtle": var(--#{$prefix}dark-bg-subtle)
+);
+```
+
+Los colores de fondo del modo Color también están disponibles como mapa Sass:
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss title="scss/_maps.scss"
+$theme-colors-bg-subtle: (
+  "primary": $primary-bg-subtle,
+  "secondary": $secondary-bg-subtle,
+  "success": $success-bg-subtle,
+  "info": $info-bg-subtle,
+  "warning": $warning-bg-subtle,
+  "danger": $danger-bg-subtle,
+  "light": $light-bg-subtle,
+  "dark": $dark-bg-subtle,
+);
+```
+
+[scss/_maps.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_maps.scss)
+
+```scss title="scss/_maps.scss"
+$theme-colors-bg-subtle-dark: (
+  "primary": $primary-bg-subtle-dark,
+  "secondary": $secondary-bg-subtle-dark,
+  "success": $success-bg-subtle-dark,
+  "info": $info-bg-subtle-dark,
+  "warning": $warning-bg-subtle-dark,
+  "danger": $danger-bg-subtle-dark,
+  "light": $light-bg-subtle-dark,
+  "dark": $dark-bg-subtle-dark,
+);
+```
+
+### Sass mixins \{#sass-mixins}
+
+**No se utilizan mixins para generar nuestras utilidades en segundo plano**, pero sí tenemos algunos mixins adicionales para otras situaciones en las que te gustaría crear tus propios degradados.
+
+<MiddleBannerFour />
+
+<ContentSuggestion />
+
+[scss/mixins/_gradients.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_gradients.scss)
+
+```scss title="scss/mixins/_gradients.scss"
+@mixin gradient-bg($color: null) {
+  background-color: $color;
+
+  @if $enable-gradients {
+    background-image: var(--#{$prefix}gradient);
+  }
+}
+```
+
+[scss/mixins/_gradients.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_gradients.scss)
+
+```scss title="scss/mixins/_gradients.scss"
+// Horizontal gradient, from left to right
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+@mixin gradient-x($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
+}
+
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+@mixin gradient-y($start-color: $gray-700, $end-color: $gray-800, $start-percent: null, $end-percent: null) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+}
+
+@mixin gradient-directional($start-color: $gray-700, $end-color: $gray-800, $deg: 45deg) {
+  background-image: linear-gradient($deg, $start-color, $end-color);
+}
+
+@mixin gradient-x-three-colors($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+}
+
+@mixin gradient-y-three-colors($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+}
+
+@mixin gradient-radial($inner-color: $gray-700, $outer-color: $gray-800) {
+  background-image: radial-gradient(circle, $inner-color, $outer-color);
+}
+
+@mixin gradient-striped($color: rgba($white, .15), $angle: 45deg) {
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+```
+
+### API de utilidades de Sass \{#sass-utilities-api}
+
+Las utilidades en segundo plano se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
+
+[scss/_utilities.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_utilities.scss)
+
+```scss title="scss/_utilities.scss"
+"background-color": (
+  property: background-color,
+  class: bg,
+  local-vars: (
+    "bg-opacity": 1
+  ),
+  values: map-merge(
+    $utilities-bg-colors,
+    (
+      "transparent": transparent,
+      "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
+      "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
+    )
+  )
+),
+"bg-opacity": (
+  css-var: true,
+  class: bg-opacity,
+  values: (
+    10: .1,
+    25: .25,
+    50: .5,
+    75: .75,
+    100: 1
+  )
+),
+"subtle-background-color": (
+  property: background-color,
+  class: bg,
+  values: $utilities-bg-subtle
+),
+```
+
+<BottomBanner />

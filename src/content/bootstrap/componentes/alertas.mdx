@@ -1,0 +1,439 @@
+---
+title: El componente Alerta de Bootstrap
+description: Proporciona mensajes de retroalimentación contextuales para las acciones típicas del usuario con los útiles y flexibles mensajes de alerta disponibles.
+head:
+  - tag: title
+    content: El componente Alerta de Bootstrap · Bootstrap en Español v5.3
+sidebar:
+  label: Alertas
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+import TopBanner from '@components/banners/TopBanner.astro';
+import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
+import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
+import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
+import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
+import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
+import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
+import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
+import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
+import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
+import BottomBanner from '@components/banners/BottomBanner.astro';
+
+import DemoIframe from '@components/bootstrap/DemoIframe.astro';
+import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+Proporciona mensajes de retroalimentación contextuales para las acciones típicas del usuario con los útiles y flexibles mensajes de alerta disponibles.
+
+<TopBanner />
+
+## Ejemplos del componente Alerta \{#examples}
+
+Las alertas están disponibles para cualquier longitud de texto, así como un botón de cierre opcional. Para lograr un estilo adecuado, utiliza una de las ocho clases contextuales **obligatorias** (por ejemplo, `.alert-success`). Para el cierre en línea, utiliza el [complemento JavaScript de alertas](#dismissing).
+
+<Aside>
+**¡Atención!** A partir de la versión 5.3.0, el mixin Sass `alert-variant()` está obsoleto. Las variantes de alerta ahora tienen sus variables CSS sobrescritas en un [un bucle Sass](#sass-loops).
+</Aside>
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/examples.html" >
+```html title="HTML"
+    <div class="alert alert-primary" role="alert">
+        Una alerta primaria simple: ¡compruébala!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        Una alerta secundaria simple: ¡compruébala!
+    </div>
+    <div class="alert alert-success" role="alert">
+        Una simple alerta de éxito: ¡compruébala!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Una alerta de peligro simple: ¡compruébala!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        Una simple alerta de advertencia: ¡compruébala!
+    </div>
+    <div class="alert alert-info" role="alert">
+        Una alerta de información simple: ¡compruébala!
+    </div>
+    <div class="alert alert-light" role="alert">
+        Una simple alerta clara: ¡compruébalo!
+    </div>
+    <div class="alert alert-dark" role="alert">
+        Una simple alerta oscura: ¡compruébala!
+    </div>
+```
+</DemoIframe>
+
+<Aside>
+**Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
+</Aside>
+
+### Ejemplo en vivo del componente \{#live-example}
+
+Haz clic en el botón a continuación para mostrar una alerta (inicialmente oculta con estilos en línea), luego deséchala (y destrúyela) con el botón de cierre incorporado.
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/live-example.html" >
+```html title="HTML"
+    <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Mostrar alerta en vivo</button>
+```
+</DemoIframe>
+
+Utilizamos el siguiente JavaScript para activar nuestra demostración de alerta en vivo:
+
+[site/assets/js/snippets.js](https://github.com/twbs/bootstrap/blob/v5.3.2/site/assets/js/snippets.js)
+
+```javascript title="site/assets/js/snippets.js"
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+    ].join('')
+
+    alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+    appendAlert('Nice, you triggered this alert message!', 'success')
+    })
+}
+```
+
+### Color de enlaces en el contenido \{#link-color}
+
+Utiliza la clase de utilidad `.alert-link` para proporcionar rápidamente enlaces de colores coincidentes dentro de cualquier alerta.
+
+<ContentSuggestion />
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/link-color.html" >
+```html title="HTML"
+    <div class="alert alert-primary" role="alert">
+        Una alerta principal sencilla con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        Una alerta secundaria simple con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+    <div class="alert alert-success" role="alert">
+        Una alerta de éxito sencilla con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Una alerta de peligro sencilla con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+    <div class="alert alert-warning" role="alert">
+        Una alerta de advertencia simple con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic
+        si quieres.
+    </div>
+    <div class="alert alert-info" role="alert">
+        Una alerta de información sencilla con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic
+        si quieres.
+    </div>
+    <div class="alert alert-light" role="alert">
+        Una alerta clara sencilla con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+    <div class="alert alert-dark" role="alert">
+        Una alerta oscura simple con <a href="#" class="alert-link">un enlace de ejemplo</a>. Dale un clic si
+        quieres.
+    </div>
+```
+</DemoIframe>
+
+<MiddleBannerOne />
+
+### Agregar contenido adicional \{#additional-content}
+
+Las alertas también pueden contener elementos HTML adicionales como encabezados, párrafos y divisores.
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/additional-content.html" >
+```html title="HTML"
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">¡Bien hecho!</h4>
+        <p>Ah sí, leíste correctamente este importante mensaje de alerta. Este texto de ejemplo se extenderá un poco
+            más para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.</p>
+        <hr>
+        <p class="mb-0">Siempre que lo necesites, asegúrate de usar utilidades de margen para mantener todo limpio y
+            ordenado.</p>
+    </div>
+```
+</DemoIframe>
+
+### Agregar íconos al contenido \{#icons}
+
+Del mismo modo, puedes usar [utilidades flexbox](/bootstrap/utilidades/flex) y [Bootstrap Icons](https://icons.getbootstrap.com) para crear alertas con iconos. Dependiendo de tus íconos y contenido, es posible que desees agregar más utilidades o estilos personalizados.
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/icons-1.html" >
+```html title="HTML"
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" role="img" aria-label="Warning:"
+            viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </svg>
+        <div>
+            Un ejemplo de alerta con un ícono
+        </div>
+    </div>
+```
+</DemoIframe>
+
+¿Necesitas más de un ícono para tus alertas? Considera usar más íconos Bootstrap y crear un objeto SVG local como este para hacer referencia fácilmente a los mismos íconos repetidamente.
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/icons-2.html" >
+```html title="HTML"
+    <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="check-circle-fill" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z">
+            </path>
+        </symbol>
+        <symbol id="info-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+            </path>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </symbol>
+    </svg>
+
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill"></use>
+        </svg>
+        <div>
+            Un ejemplo de alerta con un ícono
+        </div>
+    </div>
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill"></use>
+        </svg>
+        <div>
+            Un ejemplo de alerta de éxito con un ícono
+        </div>
+    </div>
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill"></use>
+        </svg>
+        <div>
+            Un ejemplo de alerta de advertencia con un ícono
+        </div>
+    </div>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
+            <use xlink:href="#exclamation-triangle-fill"></use>
+        </svg>
+        <div>
+            Un ejemplo de alerta de peligro con un ícono
+        </div>
+    </div>
+```
+</DemoIframe>
+
+<ContentSuggestion />
+
+### Cómo cerrar (descargar) un Alert \{#dismissing}
+
+Usando el complemento JavaScript de alerta, es posible descartar cualquier alerta en línea. Así es cómo:
+
+* Asegúrate de haber cargado el complemento de alerta o el JavaScript Bootstrap compilado.
+* Agrega un [botón de cerrar](/bootstrap/componentes/botones) y la clase `.alert-dismissible`, que agrega padding adicional a la derecha de la alerta y coloca el botón de cierre.
+* En el botón de cerrar, agrega el atributo `data-bs-dismiss="alert"`, que activa la funcionalidad de JavaScript. Asegúrate de utilizar el elemento `<button>` para lograr un comportamiento adecuado en todos los dispositivos.
+* Para animar las alertas cuando las descartes, asegúrate de agregar las clases `.fade` y `.show`.
+
+Puedes ver esto en acción con una demostración en vivo:
+
+<DemoIframe path="/demos/bootstrap/5.3/components/alerts/dismissing.html" >
+```html title="HTML"
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡Santo guacamole!</strong> Debes verificar algunos de los campos a continuación.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+```
+</DemoIframe>
+
+<Aside type="caution">
+Cuando se descarta una alerta, el elemento se elimina por completo de la estructura de la página. Si un usuario del teclado descarta la alerta usando el botón de cerrar, su atención se perderá repentinamente y, dependiendo del navegador, se restablecerá al inicio de la página/documento. Por este motivo, recomendamos incluir JavaScript adicional que escuche el evento `closed.bs.alert` y establezcas mediante programación `focus()` en la ubicación más adecuada de la página. Si planeas mover el foco a un elemento no interactivo que normalmente no recibe el foco, asegúrate de agregar `tabindex="-1"` al elemento.
+</Aside>
+
+<MiddleBannerTwo />
+
+## Personalización del CSS del componente \{#css}
+
+### Variables Sass del componente \{#variables}
+
+<br/>
+<span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
+
+Como parte del enfoque de variables CSS en evolución de Bootstrap, las alertas ahora usan variables CSS locales en `.alert` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
+
+[scss/_alert.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_alert.scss)
+
+```scss title="scss/_alert.scss"
+--#{$prefix}alert-bg: transparent;
+--#{$prefix}alert-padding-x: #{$alert-padding-x};
+--#{$prefix}alert-padding-y: #{$alert-padding-y};
+--#{$prefix}alert-margin-bottom: #{$alert-margin-bottom};
+--#{$prefix}alert-color: inherit;
+--#{$prefix}alert-border-color: transparent;
+--#{$prefix}alert-border: #{$alert-border-width} solid var(--#{$prefix}alert-border-color);
+--#{$prefix}alert-border-radius: #{$alert-border-radius};
+--#{$prefix}alert-link-color: inherit;
+```
+
+### Variables Sass generales relacionadas \{#sass-variables}
+
+[scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
+
+```scss title="scss/_variables.scss"
+$alert-padding-y:               $spacer;
+$alert-padding-x:               $spacer;
+$alert-margin-bottom:           1rem;
+$alert-border-radius:           var(--#{$prefix}border-radius);
+$alert-link-font-weight:        $font-weight-bold;
+$alert-border-width:            var(--#{$prefix}border-width);
+$alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
+```
+
+### Mixins Sass del componente \{#sass-mixins}
+
+<br/>
+<span class="py-1 px-3 text-yellow-600 border border-yellow-600 rounded-md">Obsoleto en v5.3.0</span>
+
+Se usa en combinación con `$theme-colors` para crear clases de modificadores contextuales para nuestras alertas.
+
+[scss/mixins/_alert.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_alert.scss)
+
+```scss title="scss/mixins/_alert.scss"
+@mixin alert-variant($background, $border, $color) {
+    --#{$prefix}alert-color: #{$color};
+    --#{$prefix}alert-bg: #{$background};
+    --#{$prefix}alert-border-color: #{$border};
+    --#{$prefix}alert-link-color: #{shade-color($color, 20%)};
+
+    @if $enable-gradients {
+    background-image: var(--#{$prefix}gradient);
+    }
+
+    .alert-link {
+    color: var(--#{$prefix}alert-link-color);
+    }
+}
+```
+
+### Bucles Sass del componente \{#sass-loops}
+
+<MiddleBannerThree />
+
+Bucle que genera las clases modificadoras con el mixin `alert-variant()`.
+
+[scss/_alert.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_alert.scss)
+
+```scss title="scss/_alert.scss"
+// Generate contextual modifier classes for colorizing the alert
+@each $state in map-keys($theme-colors) {
+    .alert-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
+    }
+}
+```
+
+<ContentSuggestion />
+
+## Comportamiento JavaScript del componente \{#javascript-behavior}
+
+### Inicializar \{#initialize}
+
+Inicializar elementos como alertas
+
+```javascript title="JavaScript"
+const alertList = document.querySelectorAll('.alert')
+const alerts = [...alertList].map(element => new bootstrap.Alert(element))
+``` 
+
+Con el único propósito de descartar una alerta, no es necesario inicializar el componente manualmente a través de la API JS. Al utilizar `data-bs-dismiss="alert"`, el componente se inicializará automáticamente y se descartará correctamente.
+
+Consulta la sección [desencadenantes](#triggers) para obtener más detalles.
+
+### Desencadenantes \{#triggers}
+
+El despido (cierre) se puede lograr con el atributo `data-bs-dismiss` en un botón **dentro de la alerta** como se muestra a continuación:
+
+```html title="HTML"
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+```
+
+o en un botón **fuera de la alerta** usando el `data-bs-target` adicional como se muestra a continuación:
+
+```html title="HTML"
+<button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
+```
+
+<MiddleBannerFour />
+
+**Ten en cuenta que cerrar una alerta la eliminará del DOM.**
+
+### Métodos \{#methods}
+
+Puedes crear una instancia de alerta con el constructor de alertas, por ejemplo:
+
+```javascript title="JavaScript"
+const bsAlert = new bootstrap.Alert('#myAlert')
+```
+
+Esto hace que una alerta escuche eventos de clic en elementos descendientes que tienen el atributo `data-bs-dismiss="alert"`. (No es necesario cuando se utiliza la inicialización automática de la API de datos).
+
+| Método                | Descripción                                                                                                                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `close`               | Cierra una alerta eliminándola del DOM. Si las clases `.fade` y `.show` están presentes en el elemento, la alerta desaparecerá antes de eliminarse.                                                           |
+| `dispose`             | Destruye la alerta de un elemento. (Elimina los datos almacenados en el elemento DOM)                                                                                                                         |
+| `getInstance`         | Método estático que te permite obtener la instancia de alerta asociada a un elemento DOM. Por ejemplo: `bootstrap.Alert.getInstance(alert)`.                                                                  |
+| `getOrCreateInstance` | Método estático que devuelve una instancia de alerta asociada a un elemento DOM o crea una nueva en caso de que no haya sido inicializada. Puedes usarlo así: `bootstrap.Alert.getOrCreateInstance(element)`. |
+
+Uso básico:
+
+```javascript title="JavaScript"
+const alert = bootstrap.Alert.getOrCreateInstance('#myAlert')
+alert.close()
+```
+
+<ContentSuggestion />
+
+### Eventos \{#events}
+
+El complemento de alerta de Bootstrap expone algunos eventos para conectarse a la funcionalidad de alerta.
+
+| Evento            | Descripción                                                               |
+| ----------------- | ------------------------------------------------------------------------- |
+| `close.bs.alert`  | Se activa inmediatamente cuando se llama al método de instancia `close`.  |
+| `closed.bs.alert` | Se activa cuando se cierra la alerta y se completan las transiciones CSS. |
+
+```javascript title="JavaScript"
+const myAlert = document.getElementById('myAlert')
+myAlert.addEventListener('closed.bs.alert', event => {
+    // do something, for instance, explicitly move focus to the most appropriate element,
+    // so it doesn't get lost/reset to the start of the page
+    // document.getElementById('...').focus()
+})
+```
+
+<BottomBanner />

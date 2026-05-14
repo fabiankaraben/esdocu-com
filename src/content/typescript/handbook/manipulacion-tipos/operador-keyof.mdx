@@ -1,0 +1,59 @@
+---
+title: El operador de tipo keyof
+description: Usa el operador keyof en contextos de tipo.
+head:
+  - tag: title
+    content: El operador de tipo keyof - TypeScript en Español
+sidebar:
+  label: El operador keyof
+---
+
+import TopBanner from '@components/banners/TopBanner.astro';
+import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
+import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
+import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
+import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
+import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
+import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
+import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
+import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
+import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
+import BottomBanner from '@components/banners/BottomBanner.astro';
+
+<TopBanner />
+
+## El operador de tipo `keyof` \{#the-keyof-type-operator}
+
+El operador `keyof` toma un tipo de objeto y produce una cadena o unión literal numérica de sus claves.
+El siguiente tipo `P` es el mismo tipo que `type P = "x" | "y"`:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBACg9gSwHbCgXigbygDwFxRICuAtgEYQBOA3FCAceVVAL7UBQoks6UA1hBBwAZrEQoOAeklRZAPQD8QA)
+
+```ts
+type Point = { x: number; y: number };
+type P = keyof Point;
+    
+type P = keyof Point
+```
+
+Si el tipo tiene una firma de índice `string` o `number`, `keyof` devolverá esos tipos en su lugar:
+
+[Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAggTnAhiAlgZwBZQLxQN5QDaAdgFxTECuAtgEYRwC65lxA1sQPYDuxUAvgG4AUKEiwcUNhBCcAZrATJ0GEQHo1ULQD0A-MNHhoAWURgVkgoTbk0wOCmIBzZlFqdOAGwiI+Qw+LGktKyCqbmmOqaOrpAA)
+
+```ts
+type Arrayish = { [n: number]: unknown };
+type A = keyof Arrayish;
+    
+type A = number
+ 
+type Mapish = { [k: string]: boolean };
+type M = keyof Mapish;
+    
+type M = string | number
+```
+
+Ten en cuenta que en este ejemplo, `M` es `string | number`: esto se debe a que las claves de objetos de JavaScript siempre se convierten en una cadena, por lo que `obj[0]` es siempre lo mismo que `obj["0"]`.
+
+Los tipos `keyof` se vuelven especialmente útiles cuando se combinan con tipos mapeados, sobre los cuales aprenderemos más adelante.
+
+<BottomBanner />
