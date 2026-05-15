@@ -1,4 +1,5 @@
-import { getAllDocSlugs, getDocBySlug, getFirstArticleSlug, generateSlug } from "@/lib/docs";
+import { getAllDocSlugs, getDocBySlug, getFirstArticleSlug, getSidebarForRoot } from "@/lib/docs";
+import { generateSlug } from "@/lib/slugs";
 import { notFound, redirect } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
@@ -97,11 +98,14 @@ export default async function DocPage({ params }: PageProps) {
     notFound();
   }
 
+  const root = slug[0];
+  const sidebarItems = getSidebarForRoot(root);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="container mx-auto flex justify-center">
-        <Sidebar currentSlug={slug} />
+        <Sidebar currentSlug={slug} items={sidebarItems} root={root} />
         <main className="flex-1 p-6 md:p-12 max-w-4xl overflow-hidden">
           <div className="mb-12">
             <div className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{slug[0]}</div>

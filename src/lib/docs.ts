@@ -5,18 +5,14 @@ import { sidebarConfig, SidebarItem } from "@/config/sidebar";
 
 const DOCS_PATH = path.join(process.cwd(), "src/content");
 
+import { TocItem, generateSlug } from "./slugs";
+
 export interface Doc {
   slug: string[];
   title: string;
   content: string;
   data: { [key: string]: any };
   toc: TocItem[];
-}
-
-export interface TocItem {
-  id: string;
-  text: string;
-  level: number;
 }
 
 export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = []): string[][] {
@@ -95,24 +91,6 @@ export function getDocBySlug(slug: string[]): Doc | null {
   }
 
   return null;
-}
-
-export function generateSlug(text: string): string {
-  // Try to find custom ID like {#id} or \{#id}
-  const idMatch = text.match(/\\?\{#([^\}]+)\}/);
-  if (idMatch) {
-    // Return only the captured ID, ensuring no backslashes or extra spaces
-    return idMatch[1].replace(/\\/g, "").trim();
-  }
-  
-  // Fallback to auto-slugify
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }
 
 export function getSidebarForRoot(root: string): SidebarItem[] {

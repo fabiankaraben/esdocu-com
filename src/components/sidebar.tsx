@@ -1,34 +1,83 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
-import { getSidebarForRoot } from "@/lib/docs";
 import { cn } from "@/lib/utils";
 import { SidebarItem } from "@/config/sidebar";
+import { Menu, X, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SidebarProps {
   currentSlug: string[];
+  items: SidebarItem[];
+  root: string;
 }
 
-export function Sidebar({ currentSlug }: SidebarProps) {
-  const root = currentSlug[0];
-  const items = getSidebarForRoot(root);
+export function Sidebar({ currentSlug, items, root }: SidebarProps) {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const sidebarContent = (
+    <div className="space-y-4">
+      <div>
+        <h4 className="font-bold mb-4 uppercase text-xs tracking-wider text-muted-foreground flex items-center gap-2">
+          <ChevronRight className="h-3 w-3 text-primary" />
+          {root}
+        </h4>
+        <nav className="flex flex-col space-y-1">
+          {items.map((item, index) => (
+            <SidebarNavItem key={index} item={item} currentSlug={currentSlug} onClick={() => setIsOpen(false)} />
+          ))}
+        </nav>
+      </div>
+    </div>
+  );
 
   return (
-    <aside className="w-64 hidden lg:block border-r min-h-[calc(100vh-4rem)] p-6 overflow-y-auto sticky top-16">
-      <div className="space-y-4">
-        <div>
-          <h4 className="font-bold mb-4 uppercase text-xs tracking-wider text-muted-foreground">{root}</h4>
-          <nav className="flex flex-col space-y-1">
-            {items.map((item, index) => (
-              <SidebarNavItem key={index} item={item} currentSlug={currentSlug} />
-            ))}
-          </nav>
-        </div>
+    <>
+      {/* Mobile Trigger - Left */}
+      <div className="lg:hidden fixed bottom-6 left-6 z-50">
+        <Button 
+          onClick={() => setIsOpen(true)} 
+          size="icon" 
+          className="rounded-full shadow-lg h-12 w-12 bg-primary text-primary-foreground hover:scale-110 transition-transform"
+        >
+          <Menu className="h-6 w-6" />
+        </Button>
       </div>
-    </aside>
+
+      {/* Mobile Drawer - Left */}
+      {isOpen && (
+        <div className="fixed inset-0 z-[60] lg:hidden">
+          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+          <div className="fixed inset-y-0 left-0 w-72 bg-background border-r p-6 shadow-xl animate-in slide-in-from-left duration-300 overflow-y-auto">
+            <div className="flex items-center justify-between mb-8">
+              <span className="font-bold text-lg">Navegación</span>
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
+            {sidebarContent}
+          </div>
+        </div>
+      )}
+
+      {/* Desktop Sidebar */}
+      <aside className="w-64 hidden lg:block border-r h-[calc(100vh-4rem)] p-6 overflow-y-auto sticky top-16 custom-scrollbar">
+        {sidebarContent}
+      </aside>
+    </>
   );
 }
 
-function SidebarNavItem({ item, currentSlug }: { item: SidebarItem, currentSlug: string[] }) {
+function SidebarNavItem({ 
+  item, 
+  currentSlug, 
+  onClick 
+}: { 
+  item: SidebarItem, 
+  currentSlug: string[],
+  onClick?: () => void
+}) {
   const currentPath = currentSlug.join("/");
   const isActive = item.slug === currentPath;
 
@@ -42,7 +91,7 @@ function SidebarNavItem({ item, currentSlug }: { item: SidebarItem, currentSlug:
         )}
         <div className="flex flex-col space-y-1 pl-2 border-l ml-3">
           {item.items.map((subItem, index) => (
-            <SidebarNavItem key={index} item={subItem} currentSlug={currentSlug} />
+            <SidebarNavItem key={index} item={subItem} currentSlug={currentSlug} onClick={onClick} />
           ))}
         </div>
       </div>
@@ -53,6 +102,7 @@ function SidebarNavItem({ item, currentSlug }: { item: SidebarItem, currentSlug:
     return (
       <Link
         href={`/${item.slug}`}
+        onClick={onClick}
         className={cn(
           "text-sm py-2 px-3 rounded-md transition-colors block",
           isActive
