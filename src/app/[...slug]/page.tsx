@@ -1,7 +1,8 @@
-import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
-import { notFound } from "next/navigation";
+import { getAllDocSlugs, getDocBySlug, getFirstArticleSlug, generateSlug } from "@/lib/docs";
+import { notFound, redirect } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
+import { Toc } from "@/components/toc";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -29,6 +30,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+const getTextContent = (children: any): string => {
+  if (typeof children === "string") return children;
+  if (Array.isArray(children)) return children.map(getTextContent).join("");
+  if (children?.props?.children) return getTextContent(children.props.children);
+  return "";
+};
+
 const mdxComponents: any = {
   ...MdxUI,
   code({ node, inline, className, children, ...props }: any) {
@@ -52,8 +60,18 @@ const mdxComponents: any = {
     );
   },
   h1: (props: any) => <h1 className="text-4xl font-display font-bold mt-12 mb-6" {...props} />,
-  h2: (props: any) => <h2 className="text-2xl font-display font-bold mt-10 mb-4 pb-2 border-b" {...props} />,
-  h3: (props: any) => <h3 className="text-xl font-display font-bold mt-8 mb-3" {...props} />,
+  h2: ({ children, ...props }: any) => {
+    const text = getTextContent(children);
+    const id = generateSlug(text);
+    const cleanText = text.replace(/\\?\{#.*?\}/g, "").trim();
+    return <h2 id={id} className="text-2xl font-display font-bold mt-10 mb-4 pb-2 border-b scroll-mt-24" {...props}>{cleanText}</h2>;
+  },
+  h3: ({ children, ...props }: any) => {
+    const text = getTextContent(children);
+    const id = generateSlug(text);
+    const cleanText = text.replace(/\\?\{#.*?\}/g, "").trim();
+    return <h3 id={id} className="text-xl font-display font-bold mt-8 mb-3 scroll-mt-24" {...props}>{cleanText}</h3>;
+  },
   p: (props: any) => <p className="leading-relaxed mb-4" {...props} />,
   ul: (props: any) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
   ol: (props: any) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
@@ -64,6 +82,15 @@ const mdxComponents: any = {
 
 export default async function DocPage({ params }: PageProps) {
   const { slug } = await params;
+  
+  // If it's a root path (e.g., /momentjs), redirect to the first article
+  if (slug.length === 1) {
+    const firstArticle = getFirstArticleSlug(slug[0]);
+    if (firstArticle && firstArticle !== slug[0]) {
+      redirect(`/${firstArticle}`);
+    }
+  }
+
   const doc = getDocBySlug(slug);
 
   if (!doc) {
@@ -73,9 +100,9 @@ export default async function DocPage({ params }: PageProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="container mx-auto flex">
+      <div className="container mx-auto flex justify-center">
         <Sidebar currentSlug={slug} />
-        <main className="flex-1 p-6 md:p-12 max-w-4xl mx-auto overflow-hidden">
+        <main className="flex-1 p-6 md:p-12 max-w-4xl overflow-hidden">
           <div className="mb-12">
             <div className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{slug[0]}</div>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">{doc.title}</h1>
@@ -98,6 +125,7 @@ export default async function DocPage({ params }: PageProps) {
             </a>
           </div>
         </main>
+        <Toc items={doc.toc} />
       </div>
     </div>
   );

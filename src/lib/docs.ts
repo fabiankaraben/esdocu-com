@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { sidebarConfig, SidebarItem } from "@/config/sidebar";
 
 const DOCS_PATH = path.join(process.cwd(), "src/content");
 
@@ -9,6 +10,13 @@ export interface Doc {
   title: string;
   content: string;
   data: { [key: string]: any };
+  toc: TocItem[];
+}
+
+export interface TocItem {
+  id: string;
+  text: string;
+  level: number;
 }
 
 export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = []): string[][] {
@@ -59,11 +67,29 @@ export function getDocBySlug(slug: string[]): Doc | null {
       fileContent = fileContent.replace(/\sstyle="[^"]*"/g, "");
 
       const { data, content } = matter(fileContent);
+      
+      // Extract TOC
+      const toc: TocItem[] = [];
+      const headingRegex = /^(##|###)\s+(.*)$/gm;
+      let match;
+      
+      while ((match = headingRegex.exec(content)) !== null) {
+        const level = match[1].length;
+        let text = match[2].trim();
+        
+        // Remove custom IDs if present in the text like {#id} or \{#id}
+        const id = generateSlug(text);
+        text = text.replace(/\\?\{#.*?\}/g, "").trim();
+        
+        toc.push({ id, text, level });
+      }
+
       return {
         slug,
         title: data.title || slug[slug.length - 1],
         content,
         data,
+        toc,
       };
     }
   }
@@ -71,11 +97,70 @@ export function getDocBySlug(slug: string[]): Doc | null {
   return null;
 }
 
-export function getSidebar() {
-  // This should ideally parse astro.config.mjs, but for simplicity we can hardcode or auto-generate
-  // Since we want to maintain existing paths, auto-generating from the filesystem is safest
-  // but we might want to group them by top-level folder.
+export function generateSlug(text: string): string {
+  // Try to find custom ID like {#id} or \{#id}
+  const idMatch = text.match(/\\?\{#([^\}]+)\}/);
+  if (idMatch) {
+    // Return only the captured ID, ensuring no backslashes or extra spaces
+    return idMatch[1].replace(/\\/g, "").trim();
+  }
   
+  // Fallback to auto-slugify
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getSidebarForRoot(root: string): SidebarItem[] {
+  const config = sidebarConfig[root];
+  
+  if (config) {
+    return config.map(item => resolveSidebarItem(item));
+  }
+
+  // Fallback to auto-generation if no config for this root
+  const slugs = getAllDocSlugs().filter(slug => slug[0] === root);
+  return slugs.map(slug => ({
+    slug: slug.join("/"),
+    label: getLabelForSlug(slug)
+  }));
+}
+
+function resolveSidebarItem(item: SidebarItem): SidebarItem {
+  if (item.items) {
+    return {
+      ...item,
+      items: item.items.map(subItem => resolveSidebarItem(subItem))
+    };
+  }
+  
+  if (item.slug && !item.label) {
+    return {
+      ...item,
+      label: getLabelForSlug(item.slug.split("/"))
+    };
+  }
+  
+  return item;
+}
+
+function getLabelForSlug(slug: string[]): string {
+  const doc = getDocBySlug(slug);
+  if (doc && doc.data && doc.data.sidebar && doc.data.sidebar.label) {
+    return doc.data.sidebar.label;
+  }
+  if (doc && doc.title) {
+    return doc.title;
+  }
+  const lastPart = slug[slug.length - 1];
+  return lastPart.charAt(0).toUpperCase() + lastPart.slice(1).replace(/-/g, " ");
+}
+
+export function getSidebar() {
   const slugs = getAllDocSlugs();
   const sidebar: { [key: string]: any } = {};
 
@@ -86,4 +171,21 @@ export function getSidebar() {
   });
 
   return sidebar;
+}
+
+export function getFirstArticleSlug(root: string): string | null {
+  const items = getSidebarForRoot(root);
+  
+  function findFirst(items: SidebarItem[]): string | null {
+    for (const item of items) {
+      if (item.slug) return item.slug;
+      if (item.items) {
+        const first = findFirst(item.items);
+        if (first) return first;
+      }
+    }
+    return null;
+  }
+  
+  return findFirst(items);
 }
