@@ -28,9 +28,28 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const doc = getDocBySlug(slug);
+  
+  const title = doc?.title || "Documentación";
+  const description = doc?.data?.description || "Documentación técnica en español.";
+  const path = `/${slug.join("/")}`;
+
   return {
-    title: `${doc?.title || "Documentación"} | Esdocu`,
-    description: doc?.data?.description || "Documentación técnica en español.",
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title,
+      description,
+      url: path,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

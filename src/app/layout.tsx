@@ -15,8 +15,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Esdocu - Documentación en Español",
-  description: "Documentación técnica de alta calidad traducida al español.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://esdocu.com"),
+  title: {
+    template: "%s | Esdocu",
+    default: "Esdocu - Aprende Tecnología en tu Idioma",
+  },
+  description: "Documentación técnica de alta calidad traducida al español. Bootstrap, Moment.js y más.",
+  openGraph: {
+    title: "Esdocu - Documentación en Español",
+    description: "Documentación técnica de alta calidad traducida al español. Bootstrap, Moment.js y más.",
+    url: "/",
+    siteName: "Esdocu",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Esdocu - Documentación en Español",
+    description: "Documentación técnica de alta calidad traducida al español.",
+  },
   icons: {
     icon: "/favicon.svg",
   },
