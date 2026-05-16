@@ -1,0 +1,148 @@
+{
+  "slug": "dart",
+  "locale": "es",
+  "title": "Dart",
+  "subtitle": "Programación moderna para aplicaciones rápidas y robustas",
+  "author": "Wordsus Team",
+  "description": "Domina Dart, el lenguaje optimizado para el cliente detrás de Flutter. Aprende desde los fundamentos básicos hasta técnicas avanzadas de asincronía y concurrencia.",
+  "cover": "",
+  "category": "programacion",
+  "tags": ["dart", "programacion", "google", "flutter"],
+  "featured": false,
+  "publishedAt": "2024-05-16",
+  "language": "es",
+  "chapters": [
+    {
+      "slug": "introduccion-a-dart",
+      "title": "Introducción a Dart",
+      "order": 1,
+      "description": "Conoce los orígenes de Dart, sus principales ventajas y casos de uso. Aprende a instalar el SDK, configurar tu editor de código favorito y escribir tu primer programa funcional paso a paso."
+    },
+    {
+      "slug": "tipos-de-datos-y-variables",
+      "title": "Tipos de Datos y Variables",
+      "order": 2,
+      "description": "Explora cómo Dart maneja la información en memoria. Descubre los tipos de datos primitivos, la declaración de variables, el uso de constantes y la crucial característica de seguridad nula."
+    },
+    {
+      "slug": "operadores-y-expresiones",
+      "title": "Operadores y Expresiones",
+      "order": 3,
+      "description": "Comprende cómo manipular y evaluar datos usando los distintos operadores que ofrece Dart. Abarca desde cálculos matemáticos básicos hasta evaluaciones lógicas complejas y asignaciones."
+    },
+    {
+      "slug": "estructuras-de-control",
+      "title": "Estructuras de Control",
+      "order": 4,
+      "description": "Domina el flujo de ejecución de tus aplicaciones. Aprende a tomar decisiones en el código con condicionales y a repetir tareas de manera eficiente utilizando las diversas estructuras de bucles."
+    },
+    {
+      "slug": "clases-y-objetos",
+      "title": "Clases y Objetos",
+      "order": 5,
+      "description": "Sumérgete en la programación orientada a objetos. Descubre cómo modelar entidades del mundo real mediante clases, crear instancias, y controlar el acceso a los datos internos de tus objetos."
+    },
+    {
+      "slug": "herencia-y-polimorfismo",
+      "title": "Herencia y Polimorfismo",
+      "order": 6,
+      "description": "Avanza en el diseño orientado a objetos. Aprende a reutilizar código mediante la herencia, definir comportamientos genéricos con clases abstractas e implementar interfaces para mayor flexibilidad."
+    },
+    {
+      "slug": "mixins-y-extensiones",
+      "title": "Mixins y Extensiones",
+      "order": 7,
+      "description": "Añade funcionalidad a clases existentes de forma elegante. Comprende cómo los Mixins evitan la herencia múltiple y cómo las extensiones enriquecen bibliotecas sin modificar su código fuente."
+    },
+    {
+      "slug": "funciones-en-profundidad",
+      "title": "Funciones en Profundidad",
+      "order": 8,
+      "description": "Convierte bloques de código en unidades reutilizables y potentes. Domina los diferentes tipos de parámetros, cierres (closures) y el paso de funciones como argumentos a otras funciones."
+    },
+    {
+      "slug": "colecciones-y-genericos",
+      "title": "Colecciones y Genéricos",
+      "order": 9,
+      "description": "Organiza y gestiona grupos de datos con eficacia. Explora las estructuras de datos fundamentales como listas, sets y mapas, asegurando la seguridad de tipos mediante el uso de genéricos."
+    },
+    {
+      "slug": "excepciones-y-errores",
+      "title": "Excepciones y Errores",
+      "order": 10,
+      "description": "Construye aplicaciones robustas que no colapsen ante imprevistos. Aprende a identificar, capturar y manejar correctamente los errores de ejecución, y a crear tus propias alertas personalizadas."
+    },
+    {
+      "slug": "programacion-asincrona-basica",
+      "title": "Programación Asíncrona Básica",
+      "order": 11,
+      "description": "Descubre cómo ejecutar tareas que toman tiempo sin bloquear tu aplicación. Entiende el funcionamiento del ciclo de eventos, los objetos Future y la sintaxis moderna para código asíncrono."
+    },
+    {
+      "slug": "streams-y-asincronia-avanzada",
+      "title": "Streams y Asincronía Avanzada",
+      "order": 12,
+      "description": "Maneja flujos continuos de datos a lo largo del tiempo. Domina la creación, escucha y manipulación de Streams, esenciales para la programación reactiva y la lectura de datos en tiempo real."
+    },
+    {
+      "slug": "aislamiento-y-concurrencia",
+      "title": "Aislamiento y Concurrencia",
+      "order": 13,
+      "description": "Lleva el rendimiento de tus aplicaciones al máximo utilizando múltiples núcleos del procesador. Aprende a usar Isolates para ejecutar cálculos pesados en paralelo sin detener la interfaz."
+    },
+    {
+      "slug": "metaprogramacion-y-anotaciones",
+      "title": "Metaprogramación y Anotaciones",
+      "order": 14,
+      "description": "Explora técnicas avanzadas para escribir código que escribe código. Comprende el uso de anotaciones para agregar semántica y cómo automatizar tareas repetitivas mediante la generación de código."
+    },
+    {
+      "slug": "pruebas-y-despliegue",
+      "title": "Pruebas y Despliegue",
+      "order": 15,
+      "description": "Garantiza la calidad de tu software antes de compartirlo. Aprende a escribir pruebas automatizadas para verificar tu lógica y conoce las estrategias de compilación para distribuir tus proyectos."
+    }
+  ],
+  "parts": [
+    {
+      "title": "Parte I: Fundamentos de Dart",
+      "chapterSlugs": [
+        "introduccion-a-dart",
+        "tipos-de-datos-y-variables",
+        "operadores-y-expresiones",
+        "estructuras-de-control"
+      ]
+    },
+    {
+      "title": "Parte II: Programación Orientada a Objetos",
+      "chapterSlugs": [
+        "clases-y-objetos",
+        "herencia-y-polimorfismo",
+        "mixins-y-extensiones"
+      ]
+    },
+    {
+      "title": "Parte III: Funciones y Colecciones",
+      "chapterSlugs": [
+        "funciones-en-profundidad",
+        "colecciones-y-genericos"
+      ]
+    },
+    {
+      "title": "Parte IV: Manejo de Errores y Asincronía",
+      "chapterSlugs": [
+        "excepciones-y-errores",
+        "programacion-asincrona-basica",
+        "streams-y-asincronia-avanzada"
+      ]
+    },
+    {
+      "title": "Parte V: Dart Avanzado y Ecosistema",
+      "chapterSlugs": [
+        "aislamiento-y-concurrencia",
+        "metaprogramacion-y-anotaciones",
+        "pruebas-y-despliegue"
+      ]
+    }
+  ]
+}

@@ -164,9 +164,42 @@ export function getDocBySlug(slug: string[]): Doc | null {
         toc.push({ id, text, level });
       }
 
+      let finalTitle = data.title;
+      let finalDescription = data.description;
+
+      // Fallback to book.json if frontmatter title or description is missing
+      if (!finalTitle || !finalDescription) {
+        try {
+          const root = slug[0];
+          const bookJsonPath = path.join(BOOKS_PATH, root, "book.json");
+          if (fs.existsSync(bookJsonPath)) {
+            const bookData = JSON.parse(fs.readFileSync(bookJsonPath, "utf-8"));
+            const targetSlug = slug[slug.length - 1];
+            
+            if (slug.length === 1 || targetSlug === "index") {
+              if (!finalTitle) finalTitle = bookData.title;
+              if (!finalDescription) finalDescription = bookData.description;
+            } else {
+              const chapters = bookData.chapters || [];
+              const chapter = chapters.find((c: any) => c.slug === targetSlug);
+              if (chapter) {
+                if (!finalTitle) finalTitle = chapter.title;
+                if (!finalDescription) finalDescription = chapter.description;
+              }
+            }
+          }
+        } catch (error) {
+          console.error("Error reading book.json for fallback data in getDocBySlug:", error);
+        }
+      }
+
+      // Ensure data object contains the resolved title and description
+      if (!data.title && finalTitle) data.title = finalTitle;
+      if (!data.description && finalDescription) data.description = finalDescription;
+
       return {
         slug,
-        title: data.title || slug[slug.length - 1],
+        title: finalTitle || slug[slug.length - 1],
         content,
         data,
         toc,

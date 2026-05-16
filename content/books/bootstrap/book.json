@@ -7,69 +7,310 @@
   "description": "Documentación en español para Bootstrap 5. Aprende a crear sitios web rápidos y responsive con este potente framework.",
   "cover": "",
   "category": "programacion",
-  "tags": ["css", "frontend", "bootstrap"],
+  "tags": [
+    "css",
+    "frontend",
+    "bootstrap"
+  ],
   "featured": false,
   "publishedAt": "2024-01-01",
   "language": "es",
   "chapters": [
-    { "slug": "comenzando", "title": "Comenzando", "order": 1, "description": "" },
-    { "slug": "personalizar", "title": "Personalizar", "order": 2, "description": "" },
-    { "slug": "layout", "title": "Layout", "order": 3, "description": "" },
-    { "slug": "grilla", "title": "Grilla", "order": 4, "description": "" },
-    { "slug": "columnas", "title": "Columnas", "order": 5, "description": "" },
-    { "slug": "grilla-css", "title": "Grilla CSS", "order": 6, "description": "" },
-    { "slug": "reboot", "title": "Reboot", "order": 7, "description": "" },
-    { "slug": "tipografias-e-imagenes", "title": "Tipografías e Imágenes", "order": 8, "description": "" },
-    { "slug": "tablas", "title": "Tablas", "order": 9, "description": "" },
-    { "slug": "formularios", "title": "Formularios", "order": 10, "description": "" },
-    { "slug": "acordion", "title": "Acordeón", "order": 11, "description": "" },
-    { "slug": "alertas", "title": "Alertas", "order": 12, "description": "" },
-    { "slug": "insignias-y-breadcrumbs", "title": "Insignias y Breadcrumbs", "order": 13, "description": "" },
-    { "slug": "botones", "title": "Botones", "order": 14, "description": "" },
-    { "slug": "tarjetas", "title": "Tarjetas", "order": 15, "description": "" },
-    { "slug": "carrusel", "title": "Carrusel", "order": 16, "description": "" },
-    { "slug": "collapse", "title": "Collapse", "order": 17, "description": "" },
-    { "slug": "dropdowns", "title": "Dropdowns", "order": 18, "description": "" },
-    { "slug": "grupo-de-lista", "title": "Grupo de lista", "order": 19, "description": "" },
-    { "slug": "modal", "title": "Modal", "order": 20, "description": "" },
-    { "slug": "navbar", "title": "Navbar", "order": 21, "description": "" },
-    { "slug": "navs-tabs", "title": "Navs y Tabs", "order": 22, "description": "" },
-    { "slug": "offcanvas", "title": "Offcanvas", "order": 23, "description": "" },
-    { "slug": "placeholders-y-paginacion", "title": "Placeholders y Paginación", "order": 24, "description": "" },
-    { "slug": "popovers", "title": "Popovers", "order": 25, "description": "" },
-    { "slug": "progreso", "title": "Progreso", "order": 26, "description": "" },
-    { "slug": "scrollspy", "title": "Scrollspy", "order": 27, "description": "" },
-    { "slug": "spinners", "title": "Spinners", "order": 28, "description": "" },
-    { "slug": "toasts", "title": "Toasts", "order": 29, "description": "" },
-    { "slug": "tooltips", "title": "Tooltips", "order": 30, "description": "" },
-    { "slug": "helpers", "title": "Helpers", "order": 31, "description": "" },
-    { "slug": "api", "title": "API", "order": 32, "description": "" },
-    { "slug": "background", "title": "Background", "order": 33, "description": "" },
-    { "slug": "bordes", "title": "Bordes", "order": 34, "description": "" },
-    { "slug": "colores", "title": "Colores", "order": 35, "description": "" },
-    { "slug": "flex", "title": "Flex", "order": 36, "description": "" },
-    { "slug": "enlaces-e-interacciones", "title": "Enlaces e interacciones", "order": 37, "description": "" },
-    { "slug": "espaciado", "title": "Espaciado", "order": 38, "description": "" },
-    { "slug": "textos", "title": "Textos", "order": 39, "description": "" },
-    { "slug": "otras-utilidades", "title": "Otras utilidades", "order": 40, "description": "" }
+    {
+      "slug": "comenzando",
+      "title": "Comenzando",
+      "order": 1,
+      "description": "Bootstrap es un conjunto de herramientas de interfaz potente y repleto de funciones. Construye cualquier cosa, desde el prototipo hasta la producción, en minutos."
+    },
+    {
+      "slug": "personalizar",
+      "title": "Personalizar",
+      "order": 2,
+      "description": "Aprende a crear temas, personalizar y ampliar Bootstrap con Sass, una gran cantidad de opciones globales, un sistema de color expansivo y más."
+    },
+    {
+      "slug": "layout",
+      "title": "Layout",
+      "order": 3,
+      "description": "Los puntos de interrupción son anchos personalizables que determinan cómo se comporta tu diseño responsive en todos los tamaños de dispositivos o viewports en Bootstrap."
+    },
+    {
+      "slug": "grilla",
+      "title": "Grilla",
+      "order": 4,
+      "description": "Utiliza nuestra poderosa grilla flexbox para dispositivos móviles para crear diseños de todas las formas y tamaños gracias a un sistema de doce columnas, seis niveles responsive predeterminados, variables y mixins Sass, y docenas de clases predefinidas."
+    },
+    {
+      "slug": "columnas",
+      "title": "Columnas",
+      "order": 5,
+      "description": "Aprende a modificar columnas con un puñado de opciones de alineación, orden y desplazamiento gracias a nuestro sistema de cuadrícula flexbox. Además, aprende cómo usar clases de columnas para administrar anchos de elementos que no son de cuadrícula."
+    },
+    {
+      "slug": "grilla-css",
+      "title": "Grilla CSS",
+      "order": 6,
+      "description": "Aprende cómo habilitar, usar y personalizar nuestro sistema de diseño layout alternativo creado en CSS Grid con ejemplos y fragmentos de código."
+    },
+    {
+      "slug": "reboot",
+      "title": "Reboot",
+      "order": 7,
+      "description": "Reboot, una colección de cambios de CSS específicos de elementos en un solo archivo, el inicio de Bootstrap para proporcionar una línea de base elegante, consistente y simple sobre la cual construir."
+    },
+    {
+      "slug": "tipografias-e-imagenes",
+      "title": "Tipografías e Imágenes",
+      "order": 8,
+      "description": "Documentación y ejemplos para tipografía de Bootstrap, incluidas configuraciones globales, encabezados, cuerpo de texto, listas y más."
+    },
+    {
+      "slug": "tablas",
+      "title": "Tablas",
+      "order": 9,
+      "description": "Documentación y ejemplos para el diseño de tablas (dado su uso frecuente en complementos de JavaScript) con Bootstrap."
+    },
+    {
+      "slug": "formularios",
+      "title": "Formularios",
+      "order": 10,
+      "description": "Ejemplos y pautas de uso para estilos de control de formularios, opciones de diseño y componentes personalizados para crear una amplia variedad de formularios."
+    },
+    {
+      "slug": "acordion",
+      "title": "Acordeón",
+      "order": 11,
+      "description": "Construye acordeones que se contraen verticalmente en combinación con nuestro complemento Collapse JavaScript."
+    },
+    {
+      "slug": "alertas",
+      "title": "Alertas",
+      "order": 12,
+      "description": "Proporciona mensajes de retroalimentación contextuales para las acciones típicas del usuario con los útiles y flexibles mensajes de alerta disponibles."
+    },
+    {
+      "slug": "insignias-y-breadcrumbs",
+      "title": "Insignias y Breadcrumbs",
+      "order": 13,
+      "description": "Documentación y ejemplos para insignias, nuestro componente de etiquetado y recuento."
+    },
+    {
+      "slug": "botones",
+      "title": "Botones",
+      "order": 14,
+      "description": "Usa los estilos de botones personalizados de Bootstrap para acciones en formularios, cuadros de diálogo y más con soporte para múltiples tamaños, estados y más."
+    },
+    {
+      "slug": "tarjetas",
+      "title": "Tarjetas",
+      "order": 15,
+      "description": "Las tarjetas de Bootstrap proporcionan un contenedor de contenido flexible y extensible con múltiples variantes y opciones."
+    },
+    {
+      "slug": "carrusel",
+      "title": "Carrusel",
+      "order": 16,
+      "description": "Un componente de presentación de diapositivas para recorrer elementos (imágenes o diapositivas de texto) como un carrusel."
+    },
+    {
+      "slug": "collapse",
+      "title": "Collapse",
+      "order": 17,
+      "description": "Alterna la visibilidad del contenido en tu proyecto con algunas clases y nuestros complementos de JavaScript."
+    },
+    {
+      "slug": "dropdowns",
+      "title": "Dropdowns",
+      "order": 18,
+      "description": "Alterna superposiciones contextuales para mostrar listas de enlaces y más con el complemento desplegable de Bootstrap."
+    },
+    {
+      "slug": "grupo-de-lista",
+      "title": "Grupo de lista",
+      "order": 19,
+      "description": "Los grupos de listas son un componente flexible y poderoso para mostrar una serie de contenidos. Modifícalos y amplíalos para admitir casi cualquier contenido que contenga."
+    },
+    {
+      "slug": "modal",
+      "title": "Modal",
+      "order": 20,
+      "description": "Usa el complemento modal JavaScript de Bootstrap para agregar cuadros de diálogo a tu sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado."
+    },
+    {
+      "slug": "navbar",
+      "title": "Navbar",
+      "order": 21,
+      "description": "Documentación y ejemplos para el potente encabezado de navegación responsive de Bootstrap, la barra de navegación. Incluye soporte para marca, navegación y más, incluido soporte para nuestro complemento collapse."
+    },
+    {
+      "slug": "navs-tabs",
+      "title": "Navs y Tabs",
+      "order": 22,
+      "description": "Documentación y ejemplos sobre cómo usar los componentes de navegación incluidos en Bootstrap."
+    },
+    {
+      "slug": "offcanvas",
+      "title": "Offcanvas",
+      "order": 23,
+      "description": "Crea barras laterales ocultas en tu proyecto para navegación, carritos de compras y más con algunas clases y nuestro complemento JavaScript."
+    },
+    {
+      "slug": "placeholders-y-paginacion",
+      "title": "Placeholders y Paginación",
+      "order": 24,
+      "description": "Usa marcadores de posición de carga para tus componentes o páginas para indicar que es posible que aún se esté cargando algo."
+    },
+    {
+      "slug": "popovers",
+      "title": "Popovers",
+      "order": 25,
+      "description": "Documentación y ejemplos para agregar ventanas emergentes de Bootstrap, como las que se encuentran en iOS, a cualquier elemento de tu sitio."
+    },
+    {
+      "slug": "progreso",
+      "title": "Progreso",
+      "order": 26,
+      "description": "Documentación y ejemplos para usar barras de progreso personalizadas de Bootstrap que admiten barras apiladas, fondos animados y etiquetas de texto."
+    },
+    {
+      "slug": "scrollspy",
+      "title": "Scrollspy",
+      "order": 27,
+      "description": "Actualiza automáticamente la navegación de Bootstrap o enumera los componentes del grupo según la posición de desplazamiento para indicar qué enlace está activo actualmente en el viewport."
+    },
+    {
+      "slug": "spinners",
+      "title": "Spinners",
+      "order": 28,
+      "description": "Indica el estado de carga de un componente o página con controles giratorios Bootstrap, construidos completamente con HTML, CSS y sin JavaScript."
+    },
+    {
+      "slug": "toasts",
+      "title": "Toasts",
+      "order": 29,
+      "description": "Notificaciones push a tus visitantes con un toast, un mensaje de alerta liviano y fácilmente personalizable."
+    },
+    {
+      "slug": "tooltips",
+      "title": "Tooltips",
+      "order": 30,
+      "description": "Documentación y ejemplos para agregar tooltips Bootstrap personalizados con CSS y JavaScript usando CSS3 para animaciones y atributos de datos para el almacenamiento de títulos local."
+    },
+    {
+      "slug": "helpers",
+      "title": "Helpers",
+      "order": 31,
+      "description": "Borra rápida, posiciona o aplica formato fácilmente al contenido utilizando una estas utilidades."
+    },
+    {
+      "slug": "api",
+      "title": "API",
+      "order": 32,
+      "description": "La API de utilidad es una herramienta basada en Sass para generar clases de utilidad."
+    },
+    {
+      "slug": "background",
+      "title": "Background",
+      "order": 33,
+      "description": "Transmite significado a través del color de fondo y agrega decoración con degradados."
+    },
+    {
+      "slug": "bordes",
+      "title": "Bordes",
+      "order": 34,
+      "description": "Usa utilidades de bordes para diseñar rápidamente el borde y el radio del borde de un elemento. Ideal para imágenes, botones o cualquier otro elemento."
+    },
+    {
+      "slug": "colores",
+      "title": "Colores",
+      "order": 35,
+      "description": "Transmite significado a través del color con un puñado de clases de utilidad de color. También incluye soporte para diseñar enlaces con estados de desplazamiento."
+    },
+    {
+      "slug": "flex",
+      "title": "Flex",
+      "order": 36,
+      "description": "Administra rápidamente el diseño, la alineación y el tamaño de las columnas de la cuadrícula, la navegación, los componentes y más con un conjunto completo de utilidades flex responsive. Para implementaciones más complejas, puede ser necesario CSS personalizado."
+    },
+    {
+      "slug": "enlaces-e-interacciones",
+      "title": "Enlaces e interacciones",
+      "order": 37,
+      "description": "Las utilidades de enlace se utilizan para estilizar tus anchors y ajustar su color, opacidad, desplazamiento de subrayado, color de subrayado y más."
+    },
+    {
+      "slug": "espaciado",
+      "title": "Espaciado",
+      "order": 38,
+      "description": "Bootstrap incluye una amplia gama de clases de utilidad responsive de margen, relleno y espacio gap para modificar la apariencia de un elemento."
+    },
+    {
+      "slug": "textos",
+      "title": "Textos",
+      "order": 39,
+      "description": "Documentación y ejemplos de utilidades de texto comunes para controlar la alineación, el ajuste, el peso y más."
+    },
+    {
+      "slug": "otras-utilidades",
+      "title": "Otras utilidades",
+      "order": 40,
+      "description": "Alterna la flotación de cualquier elemento, su opacidad, desbordamiento, entre otras utilidades responsive."
+    }
   ],
   "parts": [
     {
       "title": "Parte I: Core y Layout",
       "chapterSlugs": [
-        "comenzando", "personalizar", "layout", "grilla", "columnas", "grilla-css", "reboot", "tipografias-e-imagenes", "tablas", "formularios"
+        "comenzando",
+        "personalizar",
+        "layout",
+        "grilla",
+        "columnas",
+        "grilla-css",
+        "reboot",
+        "tipografias-e-imagenes",
+        "tablas",
+        "formularios"
       ]
     },
     {
       "title": "Parte II: Todos los componentes",
       "chapterSlugs": [
-        "acordion", "alertas", "insignias-y-breadcrumbs", "botones", "tarjetas", "carrusel", "collapse", "dropdowns", "grupo-de-lista", "modal", "navbar", "navs-tabs", "offcanvas", "placeholders-y-paginacion", "popovers", "progreso", "scrollspy", "spinners", "toasts", "tooltips"
+        "acordion",
+        "alertas",
+        "insignias-y-breadcrumbs",
+        "botones",
+        "tarjetas",
+        "carrusel",
+        "collapse",
+        "dropdowns",
+        "grupo-de-lista",
+        "modal",
+        "navbar",
+        "navs-tabs",
+        "offcanvas",
+        "placeholders-y-paginacion",
+        "popovers",
+        "progreso",
+        "scrollspy",
+        "spinners",
+        "toasts",
+        "tooltips"
       ]
     },
     {
       "title": "Parte III: Utilidades",
       "chapterSlugs": [
-        "helpers", "api", "background", "bordes", "colores", "flex", "enlaces-e-interacciones", "espaciado", "textos", "otras-utilidades"
+        "helpers",
+        "api",
+        "background",
+        "bordes",
+        "colores",
+        "flex",
+        "enlaces-e-interacciones",
+        "espaciado",
+        "textos",
+        "otras-utilidades"
       ]
     }
   ]
