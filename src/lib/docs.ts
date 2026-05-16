@@ -1,7 +1,12 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { sidebarConfig, SidebarItem } from "@/config/sidebar";
+
+export interface SidebarItem {
+  label?: string;
+  slug?: string;
+  items?: SidebarItem[];
+}
 
 const DOCS_PATH = path.join(process.cwd(), "src/content");
 
@@ -26,15 +31,18 @@ export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = 
       getAllDocSlugs(filePath, slugs);
     } else if (file.endsWith(".md") || file.endsWith(".mdx")) {
       const relativePath = path.relative(DOCS_PATH, filePath);
-      const slug = relativePath.replace(/\.mdx?$/, "").split(path.sep);
+      const slugParts = relativePath.replace(/\.mdx?$/, "").split(path.sep);
+      
+      const lastPart = slugParts[slugParts.length - 1];
+      slugParts[slugParts.length - 1] = lastPart.replace(/^\d+-/, "");
       
       // Handle index files
-      if (slug[slug.length - 1] === "index") {
-        slug.pop();
+      if (slugParts[slugParts.length - 1] === "index") {
+        slugParts.pop();
       }
       
-      if (slug.length > 0) {
-        slugs.push(slug);
+      if (slugParts.length > 0) {
+        slugs.push(slugParts);
       }
     }
   });
@@ -43,12 +51,28 @@ export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = 
 }
 
 export function getDocBySlug(slug: string[]): Doc | null {
+  const dirPath = path.join(DOCS_PATH, ...slug.slice(0, -1));
+  const targetSlug = slug[slug.length - 1] || "index";
+  
+  let actualFileName = targetSlug;
+  
+  if (fs.existsSync(dirPath)) {
+    const files = fs.readdirSync(dirPath);
+    for (const file of files) {
+      const nameWithoutExt = file.replace(/\.mdx?$/, "").replace(/\.md$/, "");
+      if (nameWithoutExt === targetSlug || nameWithoutExt.replace(/^\d+-/, "") === targetSlug) {
+        actualFileName = nameWithoutExt;
+        break;
+      }
+    }
+  }
+
   // Try several possible file paths
   const possiblePaths = [
-    path.join(DOCS_PATH, ...slug) + ".mdx",
-    path.join(DOCS_PATH, ...slug) + ".md",
-    path.join(DOCS_PATH, ...slug, "index.mdx"),
-    path.join(DOCS_PATH, ...slug, "index.md"),
+    path.join(dirPath, actualFileName) + ".mdx",
+    path.join(dirPath, actualFileName) + ".md",
+    path.join(dirPath, actualFileName, "index.mdx"),
+    path.join(dirPath, actualFileName, "index.md"),
   ];
 
   for (const filePath of possiblePaths) {
@@ -94,10 +118,31 @@ export function getDocBySlug(slug: string[]): Doc | null {
 }
 
 export function getSidebarForRoot(root: string): SidebarItem[] {
-  const config = sidebarConfig[root];
-  
-  if (config) {
-    return config.map(item => resolveSidebarItem(item));
+  try {
+    const bookJsonPath = path.join(DOCS_PATH, root, "book.json");
+    if (fs.existsSync(bookJsonPath)) {
+      const bookData = JSON.parse(fs.readFileSync(bookJsonPath, "utf-8"));
+      
+      const parts = bookData.parts || [];
+      const chapters = bookData.chapters || [];
+      
+      if (parts.length > 0) {
+        return parts.map((part: any) => {
+          return {
+            label: part.title,
+            items: part.chapterSlugs.map((slug: string) => {
+              const chapter = chapters.find((c: any) => c.slug === slug);
+              return {
+                label: chapter ? chapter.title : getLabelForSlug([root, slug]),
+                slug: `${root}/${slug}`
+              };
+            })
+          };
+        });
+      }
+    }
+  } catch (error) {
+    console.error("Error reading book.json for root:", root, error);
   }
 
   // Fallback to auto-generation if no config for this root

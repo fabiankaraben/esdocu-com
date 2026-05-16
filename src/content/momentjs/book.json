@@ -1,0 +1,42 @@
+{
+  "slug": "momentjs",
+  "locale": "es",
+  "title": "Moment.js",
+  "subtitle": "Manipulación de fechas en JavaScript",
+  "author": "Wordsus Team",
+  "description": "Documentación en español para Moment.js. Analiza, valida, manipula y muestra fechas y horas en JavaScript.",
+  "cover": "",
+  "category": "programacion",
+  "tags": ["javascript", "fechas", "momentjs"],
+  "featured": false,
+  "publishedAt": "2024-01-01",
+  "language": "es",
+  "chapters": [
+    { "slug": "comenzando", "title": "Comenzando", "order": 1, "description": "" },
+    { "slug": "analisis", "title": "Análisis", "order": 2, "description": "" },
+    { "slug": "get-y-set", "title": "Get y Set", "order": 3, "description": "" },
+    { "slug": "manipulando-fechas", "title": "Manipulando fechas", "order": 4, "description": "" },
+    { "slug": "mostrando-fechas", "title": "Mostrando fechas", "order": 5, "description": "" },
+    { "slug": "consultas", "title": "Consultas", "order": 6, "description": "" },
+    { "slug": "internacionalizacion", "title": "Internacionalización", "order": 7, "description": "" },
+    { "slug": "personalizacion", "title": "Personalización", "order": 8, "description": "" },
+    { "slug": "duraciones", "title": "Duraciones", "order": 9, "description": "" },
+    { "slug": "utilidades", "title": "Utilidades", "order": 10, "description": "" },
+    { "slug": "complementos", "title": "Complementos", "order": 11, "description": "" },
+    { "slug": "estado-del-proyecto", "title": "Estado del proyecto", "order": 12, "description": "" }
+  ],
+  "parts": [
+    {
+      "title": "Parte I: Core",
+      "chapterSlugs": [
+        "comenzando", "analisis", "get-y-set", "manipulando-fechas", "mostrando-fechas", "consultas"
+      ]
+    },
+    {
+      "title": "Parte II: Avanzado",
+      "chapterSlugs": [
+        "internacionalizacion", "personalizacion", "duraciones", "utilidades", "complementos", "estado-del-proyecto"
+      ]
+    }
+  ]
+}
