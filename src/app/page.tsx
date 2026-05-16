@@ -2,11 +2,14 @@ import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Zap, Shield, Globe } from "lucide-react";
+import { getCategoriesWithBooks } from "@/lib/docs";
 
 export default function Home() {
+  const categories = getCategoriesWithBooks();
+
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <Navbar categoriesWithBooks={categories} />
       
       <main className="flex-grow">
         {/* Hero Section */}
@@ -70,23 +73,29 @@ export default function Home() {
         {/* Documentation Grid */}
         <section className="py-24">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-12">Bibliotecas Disponibles</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-16">Documentaciones Disponibles</h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <DocCard 
-                title="Bootstrap" 
-                href="/bootstrap/comenzando" 
-                color="bg-[#7952b3]" 
-                description="El framework CSS más popular del mundo."
-              />
-              <DocCard 
-                title="Moment.js" 
-                href="/momentjs/comenzando" 
-                color="bg-[#1b2b34]" 
-                description="Manipulación de fechas y horas en JavaScript."
-              />
-
-            </div>
+            {categories.map((category) => (
+              category.books?.length > 0 && (
+                <div key={category.slug} className="mb-20 last:mb-0">
+                  <div className="flex items-center mb-8 border-b pb-4">
+                    {/* We can optionally render an icon here if category.icon is available */}
+                    <h3 className="text-2xl font-bold text-left">{category.title}</h3>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {category.books.map((book: any) => (
+                      <DocCard 
+                        key={book.slug}
+                        title={book.title} 
+                        href={`/${book.slug}/${book.chapters?.[0]?.slug || 'comenzando'}`} 
+                        color={book.slug === 'bootstrap' ? "bg-[#7952b3]" : "bg-[#1b2b34]"} 
+                        description={book.description}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            ))}
           </div>
         </section>
       </main>

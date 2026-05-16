@@ -8,7 +8,7 @@ export interface SidebarItem {
   items?: SidebarItem[];
 }
 
-const DOCS_PATH = path.join(process.cwd(), "src/content");
+const DOCS_PATH = path.join(process.cwd(), "content");
 const BOOKS_PATH = path.join(DOCS_PATH, "books");
 
 import { TocItem, generateSlug } from "./slugs";
@@ -20,6 +20,64 @@ export interface Doc {
   data: { [key: string]: any };
   toc: TocItem[];
   filePath: string;
+}
+
+export interface Category {
+  slug: string;
+  locale: string;
+  title: string;
+  description: string;
+  icon?: string;
+  order: number;
+}
+
+export interface BookMetadata {
+  slug: string;
+  locale: string;
+  title: string;
+  subtitle: string;
+  author: string;
+  description: string;
+  cover: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
+  publishedAt: string;
+  language: string;
+}
+
+export function getAllCategories(): Category[] {
+  const categoriesPath = path.join(DOCS_PATH, "categories");
+  if (!fs.existsSync(categoriesPath)) return [];
+  const files = fs.readdirSync(categoriesPath);
+  return files
+    .filter(f => f.endsWith('.json'))
+    .map(file => JSON.parse(fs.readFileSync(path.join(categoriesPath, file), "utf-8")))
+    .sort((a, b) => (a.order || 0) - (b.order || 0));
+}
+
+export function getAllBooks(): BookMetadata[] {
+  if (!fs.existsSync(BOOKS_PATH)) return [];
+  const dirs = fs.readdirSync(BOOKS_PATH);
+  const books: BookMetadata[] = [];
+  
+  for (const dir of dirs) {
+    const bookJsonPath = path.join(BOOKS_PATH, dir, "book.json");
+    if (fs.existsSync(bookJsonPath)) {
+      books.push(JSON.parse(fs.readFileSync(bookJsonPath, "utf-8")));
+    }
+  }
+  return books;
+}
+
+export function getCategoriesWithBooks() {
+  const categories = getAllCategories();
+  const books = getAllBooks();
+  
+  return categories.map(category => ({
+    ...category,
+    books: books.filter(book => book.category === category.slug)
+  }));
 }
 
 export function getAllDocSlugs(dirPath: string = BOOKS_PATH, slugs: string[][] = []): string[][] {
