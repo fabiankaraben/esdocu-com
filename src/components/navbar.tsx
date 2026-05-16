@@ -37,8 +37,7 @@ export function Navbar() {
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           <Link href="/bootstrap/comenzando" className="hover:text-primary/80 transition-colors">Bootstrap</Link>
           <Link href="/momentjs/comenzando" className="hover:text-primary/80 transition-colors">Moment.js</Link>
-          <Link href="/dart/tutoriales-y-codelabs/tutoriales" className="hover:text-primary/80 transition-colors">Dart</Link>
-          <Link href="/typescript/comenzando/typescript-desde-cero" className="hover:text-primary/80 transition-colors">TypeScript</Link>
+
         </nav>
 
         <div className="flex items-center space-x-2">
@@ -74,8 +73,7 @@ export function Navbar() {
           <nav className="flex flex-col space-y-4">
             <Link href="/bootstrap/comenzando" onClick={() => setIsMenuOpen(false)}>Bootstrap</Link>
             <Link href="/momentjs/comenzando" onClick={() => setIsMenuOpen(false)}>Moment.js</Link>
-            <Link href="/dart/tutoriales-y-codelabs/tutoriales" onClick={() => setIsMenuOpen(false)}>Dart</Link>
-            <Link href="/typescript/comenzando/typescript-desde-cero" onClick={() => setIsMenuOpen(false)}>TypeScript</Link>
+
           </nav>
         </div>
       )}

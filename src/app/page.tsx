@@ -26,7 +26,7 @@ export default function Home() {
             
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
               Esdocu ofrece traducciones de alta calidad de las documentaciones técnicas más populares. 
-              Bootstrap, Moment.js, Dart, TypeScript y más, todo en un solo lugar.
+              Bootstrap, Moment.js y más, todo en un solo lugar.
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000">
@@ -85,18 +85,7 @@ export default function Home() {
                 color="bg-[#1b2b34]" 
                 description="Manipulación de fechas y horas en JavaScript."
               />
-              <DocCard 
-                title="Dart" 
-                href="/dart/tutoriales-y-codelabs/tutoriales" 
-                color="bg-[#00d2b8]" 
-                description="Lenguaje optimizado para aplicaciones en cualquier plataforma."
-              />
-              <DocCard 
-                title="TypeScript" 
-                href="/typescript/comenzando/typescript-desde-cero" 
-                color="bg-[#3178c6]" 
-                description="JavaScript con tipos de datos estáticos."
-              />
+
             </div>
           </div>
         </section>
