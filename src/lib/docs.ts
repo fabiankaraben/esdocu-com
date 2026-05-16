@@ -9,6 +9,7 @@ export interface SidebarItem {
 }
 
 const DOCS_PATH = path.join(process.cwd(), "src/content");
+const BOOKS_PATH = path.join(DOCS_PATH, "books");
 
 import { TocItem, generateSlug } from "./slugs";
 
@@ -18,9 +19,10 @@ export interface Doc {
   content: string;
   data: { [key: string]: any };
   toc: TocItem[];
+  filePath: string;
 }
 
-export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = []): string[][] {
+export function getAllDocSlugs(dirPath: string = BOOKS_PATH, slugs: string[][] = []): string[][] {
   const files = fs.readdirSync(dirPath);
 
   files.forEach((file) => {
@@ -30,7 +32,7 @@ export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = 
     if (stat.isDirectory()) {
       getAllDocSlugs(filePath, slugs);
     } else if (file.endsWith(".md") || file.endsWith(".mdx")) {
-      const relativePath = path.relative(DOCS_PATH, filePath);
+      const relativePath = path.relative(BOOKS_PATH, filePath);
       const slugParts = relativePath.replace(/\.mdx?$/, "").split(path.sep);
       
       const lastPart = slugParts[slugParts.length - 1];
@@ -51,7 +53,7 @@ export function getAllDocSlugs(dirPath: string = DOCS_PATH, slugs: string[][] = 
 }
 
 export function getDocBySlug(slug: string[]): Doc | null {
-  const dirPath = path.join(DOCS_PATH, ...slug.slice(0, -1));
+  const dirPath = path.join(BOOKS_PATH, ...slug.slice(0, -1));
   const targetSlug = slug[slug.length - 1] || "index";
   
   let actualFileName = targetSlug;
@@ -110,6 +112,7 @@ export function getDocBySlug(slug: string[]): Doc | null {
         content,
         data,
         toc,
+        filePath: path.relative(process.cwd(), filePath),
       };
     }
   }
@@ -119,7 +122,7 @@ export function getDocBySlug(slug: string[]): Doc | null {
 
 export function getSidebarForRoot(root: string): SidebarItem[] {
   try {
-    const bookJsonPath = path.join(DOCS_PATH, root, "book.json");
+    const bookJsonPath = path.join(BOOKS_PATH, root, "book.json");
     if (fs.existsSync(bookJsonPath)) {
       const bookData = JSON.parse(fs.readFileSync(bookJsonPath, "utf-8"));
       

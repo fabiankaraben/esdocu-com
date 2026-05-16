@@ -148,7 +148,7 @@ export default async function DocPage({ params }: PageProps) {
           
           <div className="mt-20 pt-8 border-t flex justify-between items-center text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} Esdocu. Contenido bajo licencia MIT.</p>
-            <a href={`https://github.com/fabiankaraben/esdocu-com/edit/main/src/content/${slug.join("/")}.mdx`} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+            <a href={`https://github.com/fabiankaraben/esdocu-com/edit/main/${doc.filePath}`} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
               Editar esta página
             </a>
           </div>
