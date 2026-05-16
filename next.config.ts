@@ -3,6 +3,7 @@ import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
   output: 'export',
+  transpilePackages: ["next-image-export-optimizer"],
   images: {
     loader: "custom",
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
