@@ -77,9 +77,9 @@ const mdxComponents: any = {
     return <h3 id={id} className="text-xl font-display font-bold mt-8 mb-3 scroll-mt-24" {...props}>{cleanText}</h3>;
   },
   p: (props: any) => <p className="leading-relaxed mb-4" {...props} />,
-  ul: (props: any) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
-  ol: (props: any) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
-  li: (props: any) => <li className="ml-4" {...props} />,
+  ul: (props: any) => <ul className="list-disc pl-6 mb-4 space-y-2" {...props} />,
+  ol: (props: any) => <ol className="list-decimal pl-6 mb-4 space-y-2" {...props} />,
+  li: (props: any) => <li className="leading-relaxed" {...props} />,
   blockquote: (props: any) => <blockquote className="border-l-4 border-primary/20 pl-4 italic my-6 bg-muted/30 py-2 pr-4 rounded-r-lg" {...props} />,
   a: (props: any) => <a className="text-primary font-medium underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all" {...props} />,
   table: (props: any) => (

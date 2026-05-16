@@ -150,15 +150,19 @@
 }
 
 .prose-custom ul {
-  @apply list-disc list-inside mb-4 space-y-2;
+  @apply list-disc pl-6 mb-4 space-y-2;
 }
 
 .prose-custom ol {
-  @apply list-decimal list-inside mb-4 space-y-2;
+  @apply list-decimal pl-6 mb-4 space-y-2;
 }
 
 .prose-custom li {
-  @apply ml-4;
+  @apply leading-relaxed;
+}
+
+.prose-custom li > p {
+  @apply inline m-0;
 }
 
 .prose-custom blockquote {
