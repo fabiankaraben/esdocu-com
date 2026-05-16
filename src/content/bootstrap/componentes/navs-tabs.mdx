@@ -8,11 +8,11 @@ sidebar:
   label: Navegación y pestañas
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Documentación y ejemplos sobre cómo usar los componentes de navegación incluidos en Bootstrap.
 
@@ -112,7 +112,7 @@ Alineado a la derecha con `.justify-content-end`:
 </DemoIframe>
 
 
-<ContentSuggestion />
+
 
 ### Vertical \{#vertical}
 
@@ -196,7 +196,7 @@ Toma el mismo HTML, pero usa `.nav-pills` en su lugar:
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Subrayado \{#underline}
 
@@ -314,7 +314,7 @@ Si estás usando navs para proporcionar una barra de navegación, asegúrate de 
 
 Ten en cuenta que las barras de navegación, incluso si están diseñadas visualmente como pestañas con la clase `.nav-tabs`, **no** deben darse `role="tablist"`, `role="tab"` o `role="tabpanel"`. Estos solo son apropiados para interfaces dinámicas con pestañas, como se describe en el [patrón de pestañas de la Guía de prácticas de creación de ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel). Consulta [comportamiento de JavaScript](#javascript-behavior) para interfaces dinámicas con pestañas en esta sección para ver un ejemplo. El atributo `aria-current` no es necesario en interfaces dinámicas con pestañas ya que nuestro JavaScript maneja el estado seleccionado agregando `aria-selected="true"` en la pestaña activa.
 
-<ContentSuggestion />
+
 
 ## Usar menús desplegables \{#using-dropdowns}
 
@@ -480,7 +480,7 @@ $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
 Utiliza el complemento JavaScript de pestañas (inclúyelo individualmente o mediante el archivo `bootstrap.js` compilado) para ampliar nuestras pestañas y píldoras de navegación para crear paneles con pestañas de paneles con contenido local.
 
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/components/navs-tabs/javascript-behavior-1.html" >
 ```html title="HTML"
@@ -649,7 +649,7 @@ const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
 bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
 ```
 
-<ContentSuggestion />
+
 
 ### Efecto desvanecimiento \{#fade-effect}
 
@@ -695,7 +695,7 @@ Cuando se muestra una nueva pestaña, los eventos se activan en el siguiente ord
 3.  `hidden.bs.tab` (en la pestaña activa anterior, la misma que para el evento `hide.bs.tab`)
 4.  `shown.bs.tab` (en la pestaña recién mostrada recién activa, la misma que para el evento `show.bs.tab`)
 
-<ContentSuggestion />
+
 
 Si ninguna pestaña ya estaba activa, entonces los eventos `hide.bs.tab` y `hidden.bs.tab` no se activarán.
 

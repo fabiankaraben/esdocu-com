@@ -8,11 +8,11 @@ sidebar:
   label: Popovers
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Documentación y ejemplos para agregar ventanas emergentes de Bootstrap, como las que se encuentran en iOS, a cualquier elemento de tu sitio.
 
@@ -107,7 +107,7 @@ const popover = new bootstrap.Popover('.example-popover', {
 })
 ```
 
-<ContentSuggestion />
+
 
 ### Popovers personalizados \{#custom-popovers}
 
@@ -181,7 +181,7 @@ Para los activadores de ventana emergente deshabilitados, también puedes prefer
 
 ## Personalización del CSS del componente \{#css}
 
-<ContentSuggestion />
+
 
 ### Variables Sass del componente \{#variables}
 
@@ -261,7 +261,7 @@ Evita agregar una cantidad excesiva de contenido en los popovers con la opción 
 Los popovers no administran el orden de enfoque del teclado y su ubicación puede ser aleatoria en el DOM, así que ten cuidado al agregar elementos interactivos (como formularios o enlaces), ya que puede llevar a un orden de enfoque ilógico o hacer que el contenido emergente sea completamente inaccesible para los usuarios de teclado. En los casos en los que debas utilizar estos elementos, considera utilizar un diálogo modal en su lugar.
 </Aside>
 
-<ContentSuggestion />
+
 
 ### Opciones \{#options}
 
@@ -350,7 +350,7 @@ myPopover.setContent({
 El método `setContent` acepta un argumento `object`, donde cada clave de propiedad es un selector `string` válido dentro de la plantilla emergente, y cada valor de propiedad relacionado puede ser `string` | `element` | `function` | `null`
 </Aside>
 
-<ContentSuggestion />
+
 
 ### Eventos \{#events}
 

@@ -8,11 +8,11 @@ sidebar:
   label: Diseño de layouts
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 
 ## Uso de Puntos de interrupción en Bootstrap
@@ -92,7 +92,7 @@ Bootstrap utiliza principalmente los siguientes rangos de media query (o puntos 
 }
 ```
 
-<ContentSuggestion />
+
 
 Estos mixins de Sass se traducen en nuestro CSS compilado usando los valores declarados en nuestras variables de Sass. Por ejemplo:
 
@@ -182,7 +182,7 @@ Por ejemplo, `@include media-breakpoint-only(md) { ... }` dará como resultado:
 @media (min-width: 768px) and (max-width: 991.98px) { ... }
 ```
 
-<ContentSuggestion />
+
 
 #### Entre puntos de interrupción \{#between-breakpoints}
 
@@ -282,7 +282,7 @@ $container-max-widths: (
 
 Para obtener más información y ejemplos sobre cómo modificar nuestros mapas y variables de Sass, consulta la [sección de Sass de la documentación de Grid (cuadrícula)](/bootstrap/grilla/#css).
 
-<ContentSuggestion />
+
 
 #### Sass mixins \{#sass-mixins}
 
@@ -378,7 +378,7 @@ Una solución alternativa es agregar un contenedor alrededor del `.row` con la c
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Gutters horizontales y verticales \{#horizontal--vertical-gutters}
 
@@ -465,7 +465,7 @@ En la práctica, así es como se ve. Ten en cuenta que puedes continuar usando e
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Cambia los gutters \{#change-the-gutters}
 
@@ -497,7 +497,7 @@ Bootstrap está construido con flexbox, pero no se ha cambiado el `display` de c
 
 Si necesitas agregar `display: flex` a un elemento, hazlo con `.d-flex` o uno de las variantes responsive (por ejemplo `.d-sm-flex`). Necesitarás esta clase o valor `display` para permitir el uso de nuestras [utilidades flexbox](/bootstrap/utilidades/flex) adicionales para dimensionar, alinear, espaciar y más.
 
-<ContentSuggestion />
+
 
 
 ### Margen y relleno \{#margin-and-padding}
@@ -518,7 +518,7 @@ Estos valores más altos comienzan en un número arbitrario, lo suficientemente 
 
 No fomentamos la personalización de estos valores individuales; si cambias uno, es probable que debas cambiarlos todos.
 
-<ContentSuggestion />
+
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 

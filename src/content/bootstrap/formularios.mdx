@@ -8,11 +8,11 @@ sidebar:
   label: Formularios con Bootstrap
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Ejemplos y pautas de uso para estilos de control de formularios, opciones de diseño y componentes personalizados para crear una amplia variedad de formularios.
 
@@ -116,7 +116,7 @@ Al usar contenido visualmente oculto (`.visually-hidden`, `aria-label` e incluso
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 Muchas variables de formulario se configuran a nivel general para ser reutilizadas y ampliadas por componentes de formulario individuales. Los verás con mayor frecuencia como variables `$input-btn-*` y `$input-*`.
 
@@ -249,7 +249,7 @@ Agrega el atributo booleano `readonly` en una entrada para evitar la modificaci�
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Texto plano de solo lectura \{#readonly-plain-text}
 
@@ -356,7 +356,7 @@ Obtén más información sobre [soporte para elementos de lista de datos](https:
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -430,7 +430,7 @@ $form-label-font-weight:                null;
 $form-label-color:                      null;
 ```
 
-<ContentSuggestion />
+
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -538,7 +538,7 @@ Agrega el atributo booleano `disabled` en una selección para darle una aparienc
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -706,7 +706,7 @@ Agrega el atributo `disabled` y los `<label>` asociados reciben un estilo autom�
 
 Un interruptor (switch) tiene el marcado de una casilla de verificación personalizada pero usa la clase `.form-switch` para representar un interruptor de palanca. Considera utilizar `role="switch"` para transmitir con mayor precisión la naturaleza del control a las tecnologías de asistencia que respaldan esta función. En tecnologías de asistencia más antiguas, simplemente se anunciará como una casilla de verificación normal. Estos conmutadores también admiten el atributo `disabled`.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/checks-radios/switches.html" >
 ```html title="HTML"
@@ -819,7 +819,7 @@ Agrupa casillas de verificación o radios en la misma fila horizontal agregando 
 
 Pon tus casillas de verificación, radios e interruptores en el lado opuesto con la clase modificadora `.form-check-reverse`.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/checks-radios/reverse.html" >
 ```html title="HTML"
@@ -953,7 +953,7 @@ Se admiten diferentes variantes de `.btn`, como los distintos estilos descritos.
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -1069,7 +1069,7 @@ De forma predeterminada, las entradas de rango se “ajustan” a valores entero
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -1209,7 +1209,7 @@ Coloca cualquier casilla de verificación u opción de radio dentro del compleme
 
 Si bien se admiten visualmente varios `<input>`, los estilos de validación solo están disponibles para grupos de entrada con un único `<input>`.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/input-group/multiple-inputs.html" >
 ```html title="HTML"
@@ -1368,7 +1368,7 @@ Se admiten múltiples complementos y se pueden combinar con versiones de casilla
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Formularios personalizados \{#custom-forms}
 
@@ -1448,7 +1448,7 @@ Los grupos de entradas incluyen soporte para selects personalizados y entradas d
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -1584,7 +1584,7 @@ Agrega el atributo booleano `disabled` en una entrada, un área de texto o un se
 
 Las etiquetas flotantes también admiten `.form-control-plaintext`, lo que puede ser útil para alternar entre un `<input>` editable a un valor de texto sin formato sin afectar el diseño de la página.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/floating-labels/readonly-plaintext.html" >
 ```html title="HTML"
@@ -1663,7 +1663,7 @@ Cuando trabajes con el sistema de cuadrícula Bootstrap, asegúrate de colocar l
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
@@ -1805,7 +1805,7 @@ También se pueden crear diseños más complejos con el sistema de cuadrícula.
 
 Crea formularios horizontales con el grid agregando la clase `.row` para formar grupos y usando las clases `.col-*-*` para especificar el ancho de tus etiquetas y controles. Asegúrate de agregar `.col-form-label` a tus `<label>`s también para que queden centrados verticalmente con tus controles de formulario asociados.
 
-<ContentSuggestion />
+
 
 
 A veces, tal vez necesites usar utilidades de margen o relleno para crear la alineación perfecta que necesitas. Por ejemplo, hemos eliminado el `padding-top` de nuestra etiqueta de entradas de radio apiladas para alinear mejor la línea base del texto.
@@ -1956,7 +1956,7 @@ El siguiente ejemplo utiliza una utilidad flexbox para centrar verticalmente el 
 
 Luego puedes remezclarlo una vez más con clases de columna de tamaño específico.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/layout/auto-sizing-2.html" >
 ```html title="HTML"
@@ -2215,7 +2215,7 @@ Si bien estos estilos de comentarios no se pueden diseñar con CSS, aún puedes 
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Del lado del servidor \{#server-side}
 
@@ -2362,7 +2362,7 @@ Los estilos de validación están disponibles para los siguientes controles y co
 Si el diseño de tu formulario lo permite, puedes intercambiar las clases `.{valid|invalid}-feedback` por `.{valid|invalid}-tooltip` para mostrar comentarios de validación en un tooltips con estilo. Asegúrate de tener un elemento padre con `position: relative` para el posicionamiento del tooltips. En el siguiente ejemplo, nuestras clases de columnas ya tienen esto, pero es posible que tu proyecto requiera una configuración alternativa.
 
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/validation/tooltips.html" >
 ```html title="HTML"
@@ -2640,7 +2640,7 @@ Se combinan dos mixins, a través de nuestro [bucle](#sass-loops), para generar 
 
 Este es el mapa Sass de validación de `_variables.scss`. Sobrescribe o extiende esto para generar estados diferentes o adicionales.
 
-<ContentSuggestion />
+
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 

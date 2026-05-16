@@ -8,11 +8,11 @@ sidebar:
   label: Toasts
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Notificaciones push a tus visitantes con un toast, un mensaje de alerta liviano y fácilmente personalizable.
 
@@ -58,7 +58,7 @@ Los toast son tan flexibles como necesites y requieren muy poco margen de benefi
 Anteriormente, nuestros scripts agregaban dinámicamente la clase `.hide` para ocultar completamente un toast (con `display:none`, en lugar de solo con `opacity:0`) . Esto ya no es necesario. Sin embargo, para lograr compatibilidad con versiones anteriores, nuestro script continuará alternando la clase (aunque no sea necesario en la práctica) hasta la próxima versión principal.
 </Aside>
 
-<ContentSuggestion />
+
 
 ### Ejemplo en vivo \{#live-example}
 
@@ -166,7 +166,7 @@ Puedes apilar toasts envolviéndolos en un recipiente para toasts, lo que agrega
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Contenido personalizado \{#custom-content}
 
@@ -225,7 +225,7 @@ A partir del ejemplo anterior, puedes crear diferentes combinaciones de colores 
 
 Coloca toast con CSS personalizado cuando los necesites. La parte superior derecha se utiliza a menudo para notificaciones, al igual que la parte superior central. Si solo vas a mostrar un toast a la vez, coloca los estilos de posicionamiento directamente en `.toast`.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/components/toasts/placement-1.html" >
 ```html title="HTML"
@@ -315,7 +315,7 @@ Para los sistemas que generan más notificaciones, considera usar un elemento en
 
 También puedes usar las utilidades de Flexbox para alinear las tostadas horizontal y/o verticalmente.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/components/toasts/placement-3.html" >
 ```html title="HTML"
@@ -383,7 +383,7 @@ Si bien técnicamente es posible agregar controles enfocables/accionables (como 
 
 ## Personalización del CSS del componente \{#css}
 
-<ContentSuggestion />
+
 
 ### Variables Sass del componente \{#variables}
 
@@ -488,7 +488,7 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 | `isShown`             | Devuelve un valor booleano según el estado de visibilidad del toast.                                                                                                                                                                                                                                                                    |
 | `show`                | Revela el toast de un elemento. **Vuelve al punto de la llamada antes de que se haya mostrado el toast** (es decir, antes de que ocurra el evento `shown.bs.toast`). Tienes que llamar manualmente a este método; en su lugar, tu toast no se mostrará.                                                                                 |
 
-<ContentSuggestion />
+
 
 ### Eventos \{#events}
 

@@ -8,11 +8,11 @@ sidebar:
   label: Tablas HTML con Bootstrap
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Documentación y ejemplos para el diseño de tablas (dado su uso frecuente en complementos de JavaScript) con Bootstrap.
 
@@ -160,7 +160,7 @@ Usa `.table-striped-columns` para agregar rayas de cebra a cualquier columna de 
 
 Estas clases también se pueden agregar a las variantes de la tabla:
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/striped-columns-2.html" >
 ```html title="HTML"
@@ -285,7 +285,7 @@ Para las tablas acentuadas ([filas rayadas](#striped-rows), [columnas rayadas](#
 * Para cada variante de tabla, generamos un color `--bs-table-accent-bg` con el mayor contraste dependiendo de ese color. Por ejemplo, el color de acento de `.table-primary` es más oscuro, mientras que `.table-dark` tiene un color de acento más claro.
 * Los colores del texto y del borde se generan de la misma manera y sus colores se heredan de forma predeterminada.
 
-<ContentSuggestion />
+
 
 Detrás de escena se ve así:
 
@@ -423,7 +423,7 @@ Agrega un borde más grueso y más oscuro entre los grupos de tablas—`<thead>`
 
 Las celdas de la tabla de `<thead>` siempre están alineadas verticalmente hacia abajo. Las celdas de la tabla en `<tbody>` heredan su alineación de `<table>` y están alineadas en la parte superior de forma predeterminada. Utiliza las clases de [alineación vertical](/bootstrap/utilidades/otras-utilidades) para realinear donde sea necesario.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/vertical-alignment.html" >
 ```html title="HTML"
@@ -592,7 +592,7 @@ También puedes poner el `<caption>` en la parte superior de la tabla con `.capt
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ## Tablas responsive \{#responsive-tables}
 
@@ -748,7 +748,7 @@ $table-variants: (
 );
 ```    
 
-<ContentSuggestion />
+
 
 ### Personalización \{#customizing}
 

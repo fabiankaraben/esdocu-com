@@ -8,11 +8,11 @@ sidebar:
   label: Modal
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Usa el complemento modal JavaScript de Bootstrap para agregar cuadros de diálogo a tu sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado.
 
@@ -105,7 +105,7 @@ Alterna una demostración modal funcional haciendo clic en el botón a continuac
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 
 ### Fondo estático \{#static-backdrop}
@@ -270,7 +270,7 @@ A continuación se muestra una demostración en vivo seguida de ejemplos de HTML
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 [site/assets/js/snippets.js](https://github.com/twbs/bootstrap/blob/v5.3.2/site/assets/js/snippets.js)
 
@@ -414,7 +414,7 @@ Pantalla completa Pantalla completa debajo de sm Pantalla completa debajo de md 
 
 ## Personalización del CSS del componente \{#css}
 
-<ContentSuggestion />
+
 
 ### Variables Sass del componente \{#variables}
 
@@ -542,7 +542,7 @@ $modal-scale-transform:             scale(1.02);
 }
 ```
 
-<ContentSuggestion />
+
 
 ## Uso del componente Modal \{#usage}
 
@@ -628,7 +628,7 @@ const myModal = new bootstrap.Modal('#myModal', {
 | `show`                | Abre manualmente un modal. **Vuelve al punto de la llamada antes de que el modal se haya mostrado realmente** (es decir, antes de que ocurra el evento `shown.bs.modal`). Además, puedes pasar un elemento DOM como argumento que se puede recibir en los eventos modales (como la propiedad `relatedTarget`). (es decir, `const modalToggle = document.getElementById('toggleMyModal'); myModal.show(modalToggle)`. |
 | `toggle`              | Conmuta manualmente un modal. **Vuelve al punto de la llamada antes de que el modal se haya mostrado u oculto** (es decir, antes del evento `shown.bs.modal` o `hidden.bs.modal`).                                                                                                                                                                                                                                   |
 
-<ContentSuggestion />
+
 
 ### Eventos \{#events}
 

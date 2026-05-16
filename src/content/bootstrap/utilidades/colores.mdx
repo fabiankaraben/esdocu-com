@@ -8,11 +8,11 @@ sidebar:
   label: Utilidades de colores
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Transmitir significado a través del `color` con un puñado de clases de utilidad de color. También incluye soporte para diseñar enlaces con estados hover.
 
@@ -117,7 +117,7 @@ A veces las clases contextuales no se pueden aplicar debido a la especificidad d
 
 ## Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 Además de las siguientes funciones de Sass, considera leer sobre nuestras [propiedades personalizadas de CSS](/bootstrap/personalizar) incluidas (también conocidas como variables CSS) para colores y más.
 
@@ -261,7 +261,7 @@ Los colores RGB se generan a partir de un mapa Sass separado:
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 ```
 
-<ContentSuggestion />
+
 
 Las opacidades de color se basan en eso con su propio mapa que es consumido por la API de utilidades:
 

@@ -8,11 +8,11 @@ sidebar:
   label: Sistema de grilla
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Utiliza nuestra poderosa grilla flexbox para dispositivos móviles para crear diseños de todas las formas y tamaños gracias a un sistema de doce columnas, seis niveles responsive predeterminados, variables y mixins Sass, y docenas de clases predefinidas.
 
@@ -126,7 +126,7 @@ Por ejemplo, aquí hay dos diseños de cuadrícula que se aplican a cada disposi
 
 El diseño automático para las columnas de la cuadrícula Flexbox también significa que puedes establecer el ancho de una columna y hacer que las columnas hermanas cambien de tamaño automáticamente a su alrededor. Puedes utilizar clases de cuadrícula predefinidas (como se muestra a continuación), combinaciones de cuadrícula o anchos en línea. Ten en cuenta que las otras columnas cambiarán de tamaño sin importar el ancho de la columna central.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/layout/grid/setting-one-column-width.html" >
 ```html title="HTML"
@@ -240,7 +240,7 @@ Usando un único conjunto de clases `.col-sm-*`, puedes crear un sistema de cuad
 
 ¿No quieres que tus columnas simplemente se apilen en algunos niveles de la cuadrícula? Utiliza una combinación de diferentes clases para cada nivel según sea necesario. Ve el ejemplo a continuación para tener una mejor idea de cómo funciona todo.
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/layout/grid/mix-and-match.html" >
 ```html title="HTML"
@@ -370,7 +370,7 @@ También puedes usar el mixin de Sass adjunto, `row-cols()`:
 
 Para anidar tu contenido con la cuadrícula predeterminada, agrega un nuevo `.row` y un conjunto de columnas `.col-sm-*` dentro de una columna `.col-sm-*` existente. Las filas anidadas deben incluir un conjunto de columnas que sumen 12 o menos (no es necesario que utilices las 12 columnas disponibles).
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/layout/grid/nesting.html" >
 ```html title="HTML"
@@ -518,7 +518,7 @@ $grid-gutter-width: 1.5rem !default;
 $grid-row-columns: 6 !default;
 ```
 
-<ContentSuggestion />
+
 
 ### Niveles de cuadrícula \{#grid-tiers}
 

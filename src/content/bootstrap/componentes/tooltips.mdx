@@ -8,11 +8,11 @@ sidebar:
   label: Tooltips
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Documentación y ejemplos para agregar tooltips Bootstrap personalizados con CSS y JavaScript usando CSS3 para animaciones y atributos de datos para el almacenamiento de títulos local.
 
@@ -50,7 +50,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 ```
 
-<ContentSuggestion />
+
 
 ### Tooltips en enlaces \{#tooltips-on-links}
 
@@ -101,7 +101,7 @@ Puedes personalizar la apariencia de los tooltips usando [variables CSS](#variab
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Direcciones \{#directions}
 
@@ -147,7 +147,7 @@ Con un SVG:
 
 ## Personalización del CSS del componente \{#css}
 
-<ContentSuggestion />
+
 
 
 ### Variables Sass del componente \{#variables}
@@ -249,7 +249,7 @@ Los elementos con el atributo `disabled` no son interactivos, lo que significa q
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Opciones \{#options}
 
@@ -333,7 +333,7 @@ tooltip.setContent({ '.tooltip-inner': 'another title' })
 El método `setContent` acepta un argumento `object`, donde cada clave de propiedad es un selector `string` válido dentro de la plantilla de tooltips, y cada valor de propiedad relacionado puede ser `string` | `element` | `function` | `null`
 </Aside>
 
-<ContentSuggestion />
+
 
 ### Eventos \{#events}
 

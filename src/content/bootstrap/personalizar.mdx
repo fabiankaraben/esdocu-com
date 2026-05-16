@@ -8,11 +8,11 @@ sidebar:
   label: Personalizar Bootstrap
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Aprende a crear temas, personalizar y ampliar Bootstrap con Sass, una gran cantidad de opciones globales, un sistema de color expansivo y más.
 
@@ -42,7 +42,7 @@ Para aquellos que quieran utilizar los archivos de distribución, revisa la [pá
 
 A medida que te familiarices con Bootstrap, continúa explorando esta sección para obtener más detalles sobre cómo utilizar nuestras opciones globales, cómo usar y cambiar nuestro sistema de color, cómo construimos nuestros componentes, cómo usar nuestro lista cada vez mayor de propiedades personalizadas de CSS y cómo optimizar tu código al compilar con Bootstrap.
 
-<ContentSuggestion />
+
 
 ### CSP y SVG integrados \{#csps-and-embedded-svgs}
 
@@ -166,7 +166,7 @@ Obtén más información sobre tus opciones en [sass-lang.com/install](https://s
 **¿Utilizas Bootstrap con otra herramienta de compilación?** Considera leer nuestras guías para compilar con [Webpack](/bootstrap/comenzando), [Parcel](/bootstrap/comenzando) o [Vite](/bootstrap/comenzando). También tenemos demostraciones listas para producción en [nuestro repositorio de ejemplos en GitHub](https://github.com/twbs/examples).
 </Aside>
 
-<ContentSuggestion />
+
 
 ### Incluyendo \{#including}
 
@@ -294,7 +294,7 @@ Por ejemplo, usamos las claves `primary`, `success` y `danger` de `$theme-colors
 
 ### Funciones \{#functions}
 
-<ContentSuggestion />
+
 
 #### Colores \{#colors}
 
@@ -420,7 +420,7 @@ $border-width: 0;
 Nuestro directorio `scss/mixins/` tiene un montón de mixins que potencian partes de Bootstrap y también se pueden usar en tu propio proyecto.
 
 
-<ContentSuggestion />
+
 
 #### Esquemas de colores \{#color-schemes}
 
@@ -454,7 +454,7 @@ Personaliza rápidamente Bootstrap con variables integradas para alternar fácil
 
 Personaliza Bootstrap con nuestro archivo de variables personalizadas incorporado y alterna fácilmente las preferencias globales de CSS con las nuevas variables `$enable-*` Sass. Sobrescribe el valor de una variable y vuelve a compilar con `npm run test` según sea necesario.
 
-<ContentSuggestion />
+
 
 Puedes encontrar y personalizar estas variables para opciones globales clave en el archivo `scss/_variables.scss` de Bootstrap.
 
@@ -607,7 +607,7 @@ Consulta [nuestra documentación de mapas y bucles de Sass](/bootstrap/personali
 
 Todos los colores de Bootstrap están disponibles como variables Sass y un mapa Sass en el archivo `scss/_variables.scss`. Para evitar un aumento en el tamaño de los archivos, no creamos clases de texto o color de fondo para cada una de estas variables. En su lugar, elegimos un subconjunto de estos colores para una [paleta de tema](#theme-colors).
 
-<ContentSuggestion />
+
 
 Asegúrate de controlar las relaciones de contraste mientras personalizas los colores. Como se muestra a continuación, hemos agregado tres relaciones de contraste a cada uno de los colores principales: una para los colores actuales de la muestra, otra para el blanco y otra para el negro.
 
@@ -1028,7 +1028,7 @@ Bootstrap no incluye las utilidades `color` y `background-color` para cada varia
 2.  Utiliza nuestra función `map-merge-multiple()` para fusionar rápidamente varios mapas de Sass en un nuevo mapa.
 3.  Combina este nuevo mapa combinado para ampliar cualquier utilidad con un nombre de clase `{color}-{level}`.
 
-<ContentSuggestion />
+
 
 Aquí tienes un ejemplo que genera utilidades de color de texto (por ejemplo, `.text-purple-500`) siguiendo los pasos anteriores.
 
@@ -1165,7 +1165,7 @@ Habilita el modo de color oscuro integrado en todo tu proyecto agregando el atri
 
 Bootstrap aún no viene con un selector de modo de color incorporado, pero puedes usar el de nuestra propia documentación si lo deseas. [Obtén más información en la sección JavaScript.](#javascript)
 
-<ContentSuggestion />
+
 
 #### Construyendo con Sass \{#building-with-sass}
 
@@ -1356,7 +1356,7 @@ Aquí tienes un vistazo al JavaScript que lo impulsa. No dudes en inspeccionar n
 
 Agregar un nuevo color en `$theme-colors` no es suficiente para algunos de nuestros componentes como las [alertas](/bootstrap/componentes/alertas) y [grupo de listas](/bootstrap/componentes/grupo-de-lista). También se deben definir nuevos colores en `$theme-colors-text`, `$theme-colors-bg-subtle` y `$theme-colors-border-subtle` para el tema light (claro); pero también en `$theme-colors-text-dark`, `$theme-colors-bg-subtle-dark` y `$theme-colors-border-subtle-dark` para el tema dark (oscuro).
 
-<ContentSuggestion />
+
 
 Este es un proceso manual porque Sass no puede generar sus propias variables Sass a partir de una variable o mapa existente. En futuras versiones de Bootstrap, revisaremos esta configuración para reducir la duplicación.
 
@@ -1537,7 +1537,7 @@ $accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://
 $accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 ```
 
-<ContentSuggestion />    
+    
 
 
 #### Sass mixins \{#sass-mixins}
@@ -1625,7 +1625,7 @@ Aquí hay dos ejemplos de cómo recorremos el mapa `$theme-colors` para generar 
 }
 ```
 
-<ContentSuggestion />
+
 
 ### Responsive \{#responsive}
 
@@ -1929,7 +1929,7 @@ Bootstrap 5 utiliza cada vez más propiedades personalizadas como variables loca
 
 Echa un vistazo a nuestra documentación de tablas para ver la [visión de cómo utilizamos las variables CSS](/bootstrap/tablas/#how-do-the-variants-and-accented-tables-work). Nuestras [barras de navegación también utilizan variables CSS](/bootstrap/componentes/navbar/#css) a partir de v5.2.0. También estamos usando variables CSS en nuestras cuadrículas, principalmente para los gutters, la [nueva cuadrícula CSS opcional](/bootstrap/grilla-css), con un mayor uso de componentes en camino.
 
-<ContentSuggestion />
+
 
 Siempre que sea posible, asignaremos variables CSS en el nivel del componente base (por ejemplo, `.navbar` para la barra de navegación y sus subcomponentes). Esto reduce las conjeturas sobre dónde y cómo personalizar, y permite que nuestro equipo realice modificaciones sencillas en futuras actualizaciones.
 
@@ -2101,7 +2101,7 @@ Por último, este [artículo de CSS Tricks sobre CSS no utilizado](https://css-t
 
 Siempre que sea posible, asegúrate de comprimir todo el código que entregas a tus visitantes. Si estás utilizando archivos dist Bootstrap, intenta utilizar las versiones minimizadas (indicadas por las extensiones `.min.css` y `.min.js`). Si estás compilando Bootstrap desde el código fuente con tu propio sistema de compilación, asegúrate de implementar tus propios minificadores para HTML, CSS y JS.
 
-<ContentSuggestion />
+
 
 
 ### Archivos sin bloqueo \{#non-blocking-files}

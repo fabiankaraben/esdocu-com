@@ -8,11 +8,11 @@ sidebar:
   label: Helpers de Bootstrap
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 
 ## Uso del ayudante Clearfix en Bootstrap
@@ -41,7 +41,7 @@ El código fuente del mixin:
 }
 ```
 
-<ContentSuggestion />
+
 
 Usa el mixin en SCSS:
 
@@ -105,7 +105,7 @@ Los ayudantes de color y fondo combinan el poder de nuestras [`.text-*` (utilida
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 O en [tarjetas](/bootstrap/componentes/tarjetas/#background-and-color):
 
@@ -166,7 +166,7 @@ Puedes usar las clases `.link-*` para colorear enlaces. A diferencia de las [`.t
 
 Los enlaces de colores también pueden modificarse mediante nuestras [utilidades de enlaces](/bootstrap/utilidades/enlaces-e-interacciones).
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/helpers/colored-links/link-utilities.html" >
 ```html title="HTML"
@@ -269,7 +269,7 @@ Además de `.focus-ring`, tenemos varias utilidades `.focus-ring-*` para modific
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 Las utilidades de Focus Ring se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprenda a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -361,7 +361,7 @@ Personaliza la `transform` al pasar el mouse sobrescribendo la variable CSS `--b
 
 Personaliza el color sobrescribendo la variable CSS `--bs-link-*`:
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/helpers/icon-link/css-variables-2.html" >
 ```html title="HTML"
@@ -453,7 +453,7 @@ Coloca un elemento en la parte inferior del viewport, de borde a borde, pero sol
 <div class="sticky-bottom">...</div>
 ```
 
-<ContentSuggestion />
+
 
 ### Pegajoso responsive inferior \{#responsive-sticky-bottom}
 
@@ -550,7 +550,7 @@ Esta variable CSS facilita la modificación de la relación de aspecto entre pun
 
 ### Mapas de Sass \{#sass-maps}
 
-<ContentSuggestion />
+
 
 
 Dentro de `_variables.scss`, puedes cambiar las relaciones de aspecto que deseas usar. Aquí está nuestro mapa `$ratio-aspect-ratios` predeterminado. Modifica el mapa como quieras y vuelve a compilar tu Sass para usarlo.
@@ -659,7 +659,7 @@ Crea un formulario en línea con `.hstack`:
 
 ### Personalización del CSS \{#css}
 
-<ContentSuggestion />
+
 
 [scss/helpers/_stacks.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/helpers/_stacks.scss)
 
@@ -757,7 +757,7 @@ La mayoría de los componentes personalizados no tienen `position: relative` de 
 
 Si el enlace extendido no parece funcionar, el [bloque contenedor](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block) probablemente será la causa. Las siguientes propiedades CSS convertirán a un elemento en el bloque contenedor:
 
-<ContentSuggestion />
+
 
 * Un valor de `position` distinto de `static`
 * Un valor de `transform` o `perspective` distinto de `none`
@@ -796,7 +796,7 @@ Truncar largas cadenas de texto con puntos suspensivos.
 
 Para contenido más extenso, puedes agregar una clase `.text-truncate` para truncar el texto con puntos suspensivos. **Requiere `display: inline-block` o `display: block`.**
 
-<ContentSuggestion />
+
 
 <DemoIframe path="/demos/bootstrap/5.3/helpers/text-truncation/index.html" >
 ```html title="HTML"
@@ -862,7 +862,7 @@ También se pueden usar en [pilas](/bootstrap/helpers):
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 ### Personalización del CSS \{#css}
 
@@ -891,7 +891,7 @@ Oculta visualmente un elemento y al mismo tiempo permite que esté expuesto a te
 ```
 </DemoIframe>
 
-<ContentSuggestion />
+
 
 Tanto `visually-hidden` como `visually-hidden-focusable` también se pueden usar como mixins.
 

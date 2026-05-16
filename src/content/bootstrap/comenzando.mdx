@@ -8,11 +8,11 @@ sidebar:
   label: ¿Qué es Bootstrap?
 ---
 
-import { Aside } from '@astrojs/starlight/components';
 
 
-import DemoIframe from '@components/bootstrap/DemoIframe.astro';
-import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
+
+
+
 
 Bootstrap es un conjunto de herramientas de interfaz potente y repleto de funciones.
 
@@ -68,7 +68,7 @@ Comienza incluyendo CSS y JavaScript listos para producción de Bootstrap a trav
 
 3. **¡Hola mundo!** Abre la página en el navegador de tu elección para ver tu página Bootstrapped. Ahora puedes empezar a construir con Bootstrap creando tu propio [layout](/bootstrap/grilla), agregando docenas de [componentes](/bootstrap/componentes/botones) y utilizando [nuestros ejemplos oficiales](/bootstrap/comenzando/#:~:text=nuestros%20ejemplos%20oficiales).
 
-<ContentSuggestion />
+
 
 ### Enlaces CDN \{#cdn-links}
 
@@ -110,7 +110,7 @@ También puedes usar la CDN para obtener cualquiera de nuestras [compilaciones a
 
 Bootstrap emplea un puñado de estilos y configuraciones globales importantes, todos los cuales están casi exclusivamente orientados a la normalización de estilos entre navegadores. Vamos a sumergirnos.
 
-<ContentSuggestion />
+
 
 #### HTML5 doctype \{#html5-doctype}
 
@@ -154,7 +154,7 @@ Obtén más información sobre [model box y tamaños en CSS Tricks](https://css-
 
 Para mejorar el renderizado entre navegadores, utilizamos [Reboot](/bootstrap/reboot) para corregir inconsistencias entre navegadores y dispositivos mientras proporcionando restablecimientos un poco más obstinados de elementos HTML comunes.
 
-<ContentSuggestion />
+
 
 ### Community \{#community}
 
@@ -243,7 +243,7 @@ Incorpora los archivos fuente de Bootstrap a casi cualquier proyecto con algunos
 
 Instala Bootstrap en tus aplicaciones con tecnología Node.js con el [paquete npm](https://www.npmjs.com/package/bootstrap):
 
-<ContentSuggestion />
+
 
 
 ```shell title="Terminal"
@@ -387,7 +387,7 @@ De manera similar, tenemos opciones para incluir parte o la totalidad de nuestro
 | `bootstrap.bundle.js`<br/>`bootstrap.bundle.min.js` | Incluido |
 | `bootstrap.js`<br/>`bootstrap.min.js`               | -        |
 
-<ContentSuggestion />
+
 
 ### Código fuente de Bootstrap \{#bootstrap-source-code}
 
@@ -481,7 +481,7 @@ A partir de iOS 9.2, mientras un modal está abierto, si el toque inicial de un 
 
 El elemento `.dropdown-backdrop` no se usa en iOS en la navegación debido a la complejidad de la indexación z (z-index). Por lo tanto, para cerrar los menús desplegables en las barras de navegación, debes hacer clic directamente en el elemento desplegable (o [cualquier otro elemento que activará un evento de clic en iOS](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#Safari_Mobile)).
 
-<ContentSuggestion />
+
 
 ### Zoom del navegador \{#browser-zooming}
 
@@ -599,7 +599,7 @@ A partir de Bootstrap 5.2.0, todos los componentes admiten un atributo de datos 
 
 El objeto de configuración final es el resultado combinado de `data-bs-config`, `data-bs-` y `js object` donde el último valor-clave dado sobrescribe los demás.
 
-<ContentSuggestion />
+
 
 ### Selectores \{#selectors}
 
@@ -708,7 +708,7 @@ Puedes cambiar la configuración predeterminada de un complemento modificando el
 bootstrap.Modal.Default.keyboard = false 
 ```
 
-<ContentSuggestion />
+
 
 ### Métodos y propiedades. \{#methods-and-properties}
 
@@ -824,7 +824,7 @@ Lo mismo ocurre con nuestros otros componentes.
 
 A veces es necesario usar complementos Bootstrap con otros marcos de UI. En estas circunstancias, ocasionalmente pueden ocurrir colisiones de espacios de nombres. Si esto sucede, puedes llamar a `.noConflict` en el complemento cuyo valor deseas revertir.
 
-<ContentSuggestion />
+
 
 ```javascript title="JavaScript"
 const bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
@@ -981,7 +981,7 @@ En la siguiente y última sección de esta guía, configuraremos los cargadores 
 
 Importar Bootstrap a Webpack requiere los cargadores que instalamos en la primera sección. Los instalamos con npm, pero ahora es necesario configurar Webpack para usarlos.
 
-<ContentSuggestion />
+
 
 1.  **Configura los cargadores en `webpack.config.js`.** Tu archivo de configuración ahora está completo y debe coincidir con el siguiente fragmento. La única parte nueva aquí es la sección `module`.
     ```javascript title="JavaScript"
@@ -1089,7 +1089,7 @@ npm install --save-dev mini-css-extract-plugin
 
 Luego crea una instancia y usa el complemento en la configuración de Webpack:
 
-<ContentSuggestion />
+
 
 ```diff title="Diff"
 --- a/webpack.config.js
@@ -1144,7 +1144,7 @@ Después de ejecutar `npm run build` nuevamente, habrá un nuevo archivo `dist/m
 
 El CSS de Bootstrap incluye múltiples referencias a archivos SVG a través de URI `data:` en línea. Si defines una Política de seguridad de contenido para tu proyecto que bloquea los URI `data:` para imágenes, estos archivos SVG no se cargarán. Puedes solucionar este problema extrayendo los archivos SVG en línea utilizando la función de módulos de assets de Webpack.
 
-<ContentSuggestion />
+
 
 Configura Webpack para extraer archivos SVG en línea como este:
 
@@ -1279,7 +1279,7 @@ Con las dependencias instaladas y nuestra carpeta de proyecto lista para que com
 En la siguiente y última sección de esta guía, importaremos todo el CSS y JavaScript de Bootstrap.
 
 
-<ContentSuggestion />
+
 
 ### Importar Bootstrap \{#import-bootstrap}
 
@@ -1447,7 +1447,7 @@ Con las dependencias instaladas y nuestra carpeta de proyecto lista para que com
 
 En la siguiente y última sección de esta guía, importaremos todo el CSS y JavaScript de Bootstrap.
 
-<ContentSuggestion />
+
 
 ### Importar Bootstrap \{#import-bootstrap}
 
@@ -1538,7 +1538,7 @@ Bootstrap incluye soporte para las preferencias [`prefers-reduced-motion`.](http
 
 En navegadores que admiten `prefers-reduced-motion`, y donde el usuario _no_ ha indicado explícitamente que preferiría movimiento reducido (es decir, donde `prefers-reduced-motion: no-preference`), Bootstrap activa un desplazamiento suave usando la propiedad `scroll-behavior` .
 
-<ContentSuggestion />
+
 
 
 ### Recursos adicionales \{#additional-resources}
@@ -1633,7 +1633,7 @@ En este ejemplo, utilizamos uno de los [mixins de puntos de interrupción respon
 }
 ```
 
-<ContentSuggestion />
+
 
 ### Documentación extendida \{#extended-documentation}
 
@@ -1731,7 +1731,7 @@ Usando la [directivas de valor RTLCSS](https://rtlcss.com/learn/usage-guide/valu
 $font-weight-bold: 700 #{/* rtl:600 */} !default;
 ```
 
-<ContentSuggestion />
+
 
 Lo que generaría lo siguiente para nuestro CSS y RTL predeterminados:
 
@@ -1811,7 +1811,7 @@ Después de ejecutar Sass y luego RTLCSS, cada selector en tus archivos CSS tend
 3.  Anidar estilos de esta manera evitará que nuestro mixin `form-validation-state()` funcione según lo previsto, por lo que requerirá que lo modifiques un poco por tu cuenta. [Ver #31223](https://github.com/twbs/bootstrap/issues/31223).
 </Aside>
 
-<ContentSuggestion />
+
 
 ### El caso del breadcrumb \{#the-breadcrumb-case}
 
@@ -1871,7 +1871,7 @@ Mantenemos la lista de navegadores compatibles con Autoprefixer en un archivo se
 Bootstrap usa [RTLCSS](https://rtlcss.com) para procesar CSS compilado y convertirlos a RTL, básicamente reemplazando las propiedades que reconocen la dirección horizontal (por ejemplo `padding-left`) con su opuesto. Nos permite escribir nuestro CSS solo una vez y realizar ajustes menores usando las directivas de RTLCSS [control](https://rtlcss.com/learn/usage-guide/control-directives) y [value](https://rtlcss.com/learn/usage-guide/value-directives).
 
 
-<ContentSuggestion />
+
 
 ### Documentación local \{#local-documentation}
 

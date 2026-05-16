@@ -46,46 +46,6 @@ export function DemoIframe({ path, height = "400px", children }: { path: string,
   );
 }
 
-export function TopBanner() {
-  return (
-    <div className="my-8 p-6 rounded-2xl bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg">
-      <h3 className="text-xl font-bold mb-2">¡Bienvenido a Esdocu!</h3>
-      <p className="opacity-90">Explora la documentación oficial traducida y mejorada para una mejor experiencia de aprendizaje.</p>
-    </div>
-  );
-}
-
-export function BottomBanner() {
-  return (
-    <div className="my-12 p-8 rounded-2xl border bg-muted/50 flex flex-col items-center text-center">
-      <h4 className="text-lg font-bold mb-2">¿Necesitas más ayuda?</h4>
-      <p className="text-muted-foreground mb-4">Únete a nuestra comunidad y aprende con otros desarrolladores.</p>
-      <div className="flex gap-4">
-        <a href="https://github.com/fabiankaraben/esdocu-com" className="text-primary font-bold hover:underline">GitHub</a>
-        <span className="text-muted-foreground">•</span>
-        <a href="/" className="text-primary font-bold hover:underline">Inicio</a>
-      </div>
-    </div>
-  );
-}
-
-export const GenericBanner = ({ title }: { title?: string }) => (
-  <div className="my-12 p-8 rounded-2xl border border-dashed flex flex-col items-center text-center">
-    {title && <h4 className="text-lg font-bold mb-2">{title}</h4>}
-    <p className="text-muted-foreground">Esdocu: Documentación de calidad en español.</p>
-  </div>
-);
-
-export const MiddleBannerOne = () => <GenericBanner title="Contribuye al conocimiento" />;
-export const MiddleBannerTwo = () => <GenericBanner title="Aprende sin límites" />;
-export const MiddleBannerThree = () => <GenericBanner title="Documentación oficial" />;
-export const MiddleBannerFour = () => <GenericBanner title="Traducciones precisas" />;
-export const MiddleBannerFive = () => <GenericBanner title="Crecimiento constante" />;
-export const MiddleBannerSix = () => <GenericBanner title="Únete al equipo" />;
-export const MiddleBannerSeven = () => <GenericBanner title="Compartir es aprender" />;
-export const MiddleBannerEight = () => <GenericBanner title="Esdocu es para ti" />;
-export const MiddleBannerNine = () => <GenericBanner title="Sigue aprendiendo" />;
-
 export const CardGrid = ({ children }: { children: React.ReactNode }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">{children}</div>
 );
@@ -104,9 +64,7 @@ export const Fallback = ({ children, name }: { children?: React.ReactNode, name?
 );
 
 // Define all known components from the grep
-export const ContentSuggestion = Fallback;
 export const TechnologyCard = Fallback;
-export const AffiliateArticleCard = Fallback;
 export const Apple = Marker;
 export const BaseType = Marker;
 export const Circle = Marker;
