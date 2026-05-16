@@ -11,6 +11,9 @@ import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import * as MdxUI from "@/components/mdx-components";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 
 
 
@@ -158,8 +161,8 @@ export default async function DocPage({ params }: PageProps) {
               components={mdxComponents} 
               options={{
                 mdxOptions: {
-                  remarkPlugins: [remarkGfm],
-                  rehypePlugins: [],
+                  remarkPlugins: [remarkGfm, remarkMath],
+                  rehypePlugins: [rehypeKatex],
                 }
               }}
             />

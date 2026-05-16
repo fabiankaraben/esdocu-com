@@ -169,7 +169,7 @@ void main() {
 
 En muchas ocasiones, querrás asegurarte de que un mixin solo pueda ser utilizado por clases que pertenezcan a una familia específica. Para limitar qué clases pueden adoptar un mixin, se utiliza la palabra clave `on` seguida del nombre de la clase requerida (que puede ser una clase normal o abstracta).
 
-Al hacer esto, el mixin adquiere una superpotencia: **puede acceder a los métodos y propiedades de la clase especificada en la cláusula `on**` utilizando la palabra clave `super`.
+Al hacer esto, el mixin adquiere una superpotencia: **puede acceder a los métodos y propiedades de la clase especificada en la cláusula `on`** utilizando la palabra clave `super`.
 
 ```dart
 abstract class Vehiculo {

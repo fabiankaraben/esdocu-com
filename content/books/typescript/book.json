@@ -1,0 +1,149 @@
+{
+  "slug": "typescript",
+  "locale": "es",
+  "title": "TypeScript",
+  "subtitle": "Programación robusta y escalable con tipado estático",
+  "author": "Esdocu Team",
+  "description": "Domina TypeScript desde sus fundamentos hasta las técnicas más avanzadas de manipulación de tipos. Aprende a escribir código más seguro, mantenible y escalable para tus aplicaciones web modernas.",
+  "cover": "",
+  "category": "programacion",
+  "tags": [
+    "typescript",
+    "javascript",
+    "programacion",
+    "web",
+    "frontend"
+  ],
+  "featured": false,
+  "publishedAt": "2024-05-16",
+  "language": "es",
+  "chapters": [
+    {
+      "slug": "introduccion-a-typescript",
+      "title": "Introducción a TypeScript",
+      "order": 1,
+      "description": "Descubre qué es TypeScript, sus ventajas frente a JavaScript puro, cómo configurar tu entorno de desarrollo local y escribe tu primer programa usando el compilador para entender su funcionamiento."
+    },
+    {
+      "slug": "tipos-basicos-y-variables",
+      "title": "Tipos Básicos y Variables",
+      "order": 2,
+      "description": "Aprende a declarar variables y domina los tipos de datos primitivos más comunes. Comprende la inferencia de tipos y cómo TypeScript te ayuda a prevenir errores comunes desde el momento de escribir."
+    },
+    {
+      "slug": "arreglos-tuplas-y-enums",
+      "title": "Arreglos, Tuplas y Enums",
+      "order": 3,
+      "description": "Explora cómo trabajar con colecciones de datos mediante arreglos tipados, descubre el poder de las tuplas para estructuras fijas y utiliza enumeraciones para definir conjuntos de constantes con nombre."
+    },
+    {
+      "slug": "funciones-en-typescript",
+      "title": "Funciones en TypeScript",
+      "order": 4,
+      "description": "Domina el tipado de funciones, incluyendo parámetros, valores de retorno y funciones de flecha. Aprende a definir parámetros opcionales y por defecto para crear código más flexible y robusto en tus apps."
+    },
+    {
+      "slug": "objetos-y-tipos-personalizados",
+      "title": "Objetos y Tipos Personalizados",
+      "order": 5,
+      "description": "Crea estructuras de datos complejas utilizando tipos literales y alias de tipos. Entiende cómo definir el esqueleto de tus objetos para mantener la consistencia de los datos en toda tu aplicación."
+    },
+    {
+      "slug": "interfaces",
+      "title": "Interfaces",
+      "order": 6,
+      "description": "Profundiza en las interfaces, la herramienta principal para definir contratos en tu código. Aprende a extenderlas, implementar propiedades indexables y entender las diferencias clave con los Type Aliases."
+    },
+    {
+      "slug": "clases-y-modificadores-de-acceso",
+      "title": "Clases y Modificadores de Acceso",
+      "order": 7,
+      "description": "Implementa el paradigma de Programación Orientada a Objetos con soporte completo de tipos. Descubre cómo encapsular datos usando modificadores de acceso, crear clases abstractas y manejar la herencia."
+    },
+    {
+      "slug": "tipos-de-union-e-interseccion",
+      "title": "Tipos de Unión e Intersección",
+      "order": 8,
+      "description": "Combina tipos existentes para crear estructuras más potentes. Usa uniones para variables que aceptan múltiples tipos e intersecciones para fusionar varias definiciones en una sola entidad estructurada."
+    },
+    {
+      "slug": "generics-tipos-genericos",
+      "title": "Generics (Tipos Genéricos)",
+      "order": 9,
+      "description": "Construye componentes de software altamente reutilizables. Los genéricos te permiten escribir funciones, clases e interfaces que trabajan con cualquier tipo sin perder la estricta verificación estática."
+    },
+    {
+      "slug": "tipos-utilitarios-nativos",
+      "title": "Tipos Utilitarios Nativos",
+      "order": 10,
+      "description": "Aprovecha los tipos globales integrados en TypeScript para transformar otros tipos rápidamente. Modifica propiedades para que sean opcionales, requeridas o extrae subconjuntos de datos con gran facilidad."
+    },
+    {
+      "slug": "manipulacion-avanzada-de-tipos",
+      "title": "Manipulación Avanzada de Tipos",
+      "order": 11,
+      "description": "Lleva tus habilidades al siguiente nivel creando tipos dinámicos basados en otras estructuras. Aprende sobre tipos mapeados, tipos condicionales y cómo extraer el tipo de retorno de funciones complejas."
+    },
+    {
+      "slug": "configuracion-del-compilador",
+      "title": "Configuración del Compilador",
+      "order": 12,
+      "description": "Analiza en profundidad el archivo tsconfig.json. Entiende las opciones de compilación más importantes, cómo habilitar el modo estricto y cómo gestionar las rutas y la salida de tus proyectos compilados."
+    },
+    {
+      "slug": "modulos-y-namespaces",
+      "title": "Módulos y Namespaces",
+      "order": 13,
+      "description": "Organiza tu código en aplicaciones a gran escala. Domina la importación y exportación de módulos ES6 y aprende cuándo es apropiado usar namespaces para estructurar y aislar la lógica de tu aplicación."
+    },
+    {
+      "slug": "integracion-en-frontend",
+      "title": "Integración en Frontend",
+      "order": 14,
+      "description": "Integra TypeScript con las herramientas y frameworks modernos del desarrollo web. Aprende a tipar componentes en React o Angular y a utilizar empaquetadores como Webpack y Vite en tus proyectos."
+    },
+    {
+      "slug": "decoradores-y-patrones",
+      "title": "Decoradores y Patrones",
+      "order": 15,
+      "description": "Explora las características experimentales y avanzadas, incluyendo los decoradores para metaprogramación. Aplica patrones de diseño comunes aprovechando el sistema de tipos para crear código escalable."
+    }
+  ],
+  "parts": [
+    {
+      "title": "Parte 1: Fundamentos de TypeScript",
+      "chapterSlugs": [
+        "introduccion-a-typescript",
+        "tipos-basicos-y-variables",
+        "arreglos-tuplas-y-enums",
+        "funciones-en-typescript"
+      ]
+    },
+    {
+      "title": "Parte 2: Estructuras y Programación Orientada a Objetos",
+      "chapterSlugs": [
+        "objetos-y-tipos-personalizados",
+        "interfaces",
+        "clases-y-modificadores-de-acceso"
+      ]
+    },
+    {
+      "title": "Parte 3: Tipos Avanzados y Manipulación",
+      "chapterSlugs": [
+        "tipos-de-union-e-interseccion",
+        "generics-tipos-genericos",
+        "tipos-utilitarios-nativos",
+        "manipulacion-avanzada-de-tipos"
+      ]
+    },
+    {
+      "title": "Parte 4: Configuración, Ecosistema y Buenas Prácticas",
+      "chapterSlugs": [
+        "configuracion-del-compilador",
+        "modulos-y-namespaces",
+        "integracion-en-frontend",
+        "decoradores-y-patrones"
+      ]
+    }
+  ]
+}

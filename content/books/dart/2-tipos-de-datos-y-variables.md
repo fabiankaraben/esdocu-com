@@ -21,9 +21,9 @@ Para entender cómo Dart gestiona la memoria y la inferencia de tipos, podemos v
 
 Dart ofrece tres estrategias principales para dar vida a una variable:
 
-1. **Inferencia de tipos con `var**`: Es la forma más común y recomendada para variables locales. Dart analiza el valor inicial asignado a la variable y deduce automáticamente el tipo de dato. Una vez que Dart infiere el tipo, este queda congelado; no puedes cambiarlo más adelante.
+1. **Inferencia de tipos con `var`**: Es la forma más común y recomendada para variables locales. Dart analiza el valor inicial asignado a la variable y deduce automáticamente el tipo de dato. Una vez que Dart infiere el tipo, este queda congelado; no puedes cambiarlo más adelante.
 2. **Tipado explícito**: Consiste en escribir directamente el nombre del tipo de dato (`int`, `String`, `double`, etc.) en lugar de `var`. Es útil si deseas ser sumamente estricto o cuando no vas a inicializar la variable inmediatamente.
-3. **El tipo comodín `Object**`: En Dart, casi todo es un objeto. Si declaras una variable usando `Object`, le estás diciendo al compilador que esa variable puede contener *cualquier* tipo de dato y, a diferencia de `var`, sí te permitirá cambiar el tipo de información almacenada en el futuro.
+3. **El tipo comodín `Object`**: En Dart, casi todo es un objeto. Si declaras una variable usando `Object`, le estás diciendo al compilador que esa variable puede contener *cualquier* tipo de dato y, a diferencia de `var`, sí te permitirá cambiar el tipo de información almacenada en el futuro.
 
 El siguiente bloque de código ilustra la sintaxis y las diferencias de comportamiento entre estas tres estrategias:
 
@@ -425,7 +425,7 @@ Una de las situaciones más comunes en el desarrollo de software es recibir dato
 Para lograr esto, las clases `int` y `double` exponen dos métodos estáticos fundamentales:
 
 1. **`parse()`**: Toma una cadena de texto e intenta convertirla directamente. Si el texto no representa un número válido (por ejemplo, `'32s'`), el método fallará inmediatamente lanzando una excepción (`FormatException`) que romperá el programa si no se maneja de forma adecuada.
-2. **`tryParse()`**: Es la alternativa segura. Realiza el mismo intento de conversión, pero si el formato del texto es incorrecto o inválido, en lugar de lanzar un error, **devuelve un valor `null**`. Por esta razón, su tipo de retorno siempre es nullable (`int?` o `double?`), obligándote a gestionar la ausencia del dato mediante las reglas de Null Safety.
+2. **`tryParse()`**: Es la alternativa segura. Realiza el mismo intento de conversión, pero si el formato del texto es incorrecto o inválido, en lugar de lanzar un error, **devuelve un valor `null`**. Por esta razón, su tipo de retorno siempre es nullable (`int?` o `double?`), obligándote a gestionar la ausencia del dato mediante las reglas de Null Safety.
 
 ```dart
 void main() {

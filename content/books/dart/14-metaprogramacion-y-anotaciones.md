@@ -181,7 +181,7 @@ En Dart, cualquier objeto cuyo constructor pueda ser evaluado como una constante
 Para construir una anotación personalizada se deben seguir dos pasos principales:
 
 1. **Definir una clase** que represente los datos que se desean asociar.
-2. **Declarar un constructor `const**` para dicha clase, asegurando que todas sus propiedades sean inmutables (`final`).
+2. **Declarar un constructor `const`** para dicha clase, asegurando que todas sus propiedades sean inmutables (`final`).
 
 ```text
 +-------------------------------------+

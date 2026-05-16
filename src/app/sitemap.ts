@@ -1,9 +1,11 @@
 import { MetadataRoute } from 'next';
 import { getAllDocSlugs } from '@/lib/docs';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://esdocu.com';
-  
+
   const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -14,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const slugs = getAllDocSlugs();
-  
+
   const docRoutes = slugs.map((slug) => ({
     url: `${baseUrl}/${slug.join('/')}`,
     lastModified: new Date(),

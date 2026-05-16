@@ -3,11 +3,16 @@
   "locale": "es",
   "title": "Dart",
   "subtitle": "Programación moderna para aplicaciones rápidas y robustas",
-  "author": "Wordsus Team",
+  "author": "Esdocu Team",
   "description": "Domina Dart, el lenguaje optimizado para el cliente detrás de Flutter. Aprende desde los fundamentos básicos hasta técnicas avanzadas de asincronía y concurrencia.",
   "cover": "",
   "category": "programacion",
-  "tags": ["dart", "programacion", "google", "flutter"],
+  "tags": [
+    "dart",
+    "programacion",
+    "google",
+    "flutter"
+  ],
   "featured": false,
   "publishedAt": "2024-05-16",
   "language": "es",

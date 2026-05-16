@@ -367,7 +367,7 @@ void main() {
 
 En muchos lenguajes de programación orientados a objetos, como Java o C#, una interfaz es una estructura explícita que se declara con una palabra clave propia (como `interface`) y que sirve exclusivamente para definir un contrato de comportamiento sin implementar lógica.
 
-Dart adopta un enfoque diferente y sumamente elegante: **no existe la palabra clave `interface**`. En su lugar, **toda clase define implícitamente una interfaz** que contiene todos los miembros de instancia de la clase (tanto sus métodos como sus propiedades/getters/setters), independientemente de si la clase es normal o abstracta.
+Dart adopta un enfoque diferente y sumamente elegante: **no existe la palabra clave `interface`**. En su lugar, **toda clase define implícitamente una interfaz** que contiene todos los miembros de instancia de la clase (tanto sus métodos como sus propiedades/getters/setters), independientemente de si la clase es normal o abstracta.
 
 Esta característica significa que cualquier clase en Dart puede ser utilizada como un molde de implementación (mediante herencia con `extends`) o como un contrato puro (mediante acoplamiento de interfaz con `implements`).
 
@@ -397,7 +397,7 @@ Para comprender cuándo utilizar cada una, es útil contrastar sus comportamient
 | **Cantidad** | Solo se puede extender **una** clase base. | Se pueden implementar **múltiples** interfaces. |
 | **Reutilización** | Hereda código, lógica y variables de la superclase. | No hereda código; solo adopta la estructura (las firmas). |
 | **Obligación** | Solo obliga a implementar métodos abstractos. | Obliga a implementar **todos** los métodos y propiedades. |
-| **Uso de `super**` | Permite invocar métodos de la clase base. | No permite usar `super` (no hay código base que llamar). |
+| **Uso de `super`** | Permite invocar métodos de la clase base. | No permite usar `super` (no hay código base que llamar). |
 
 ### Ejemplo práctico
 

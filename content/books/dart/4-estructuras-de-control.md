@@ -284,7 +284,7 @@ La sintaxis se lee de forma muy natural: *"Para cada `juego` de tipo `String` de
 ### Comparativa: ¿Cuál deberías elegir?
 
 * Usa el **bucle `for` tradicional** si necesitas conocer explícitamente la posición o el índice numérico de la iteración actual, o si quieres saltarte elementos (por ejemplo, avanzar de 2 en 2 con `i += 2`).
-* Usa el **bucle `for-in**` siempre que necesites evaluar o procesar todos los elementos de una colección secuencialmente, ya que reduce la posibilidad de cometer errores de desbordamiento de índice y hace que tu código sea mucho más limpio y legible.
+* Usa el **bucle `for-in`** siempre que necesites evaluar o procesar todos los elementos de una colección secuencialmente, ya que reduce la posibilidad de cometer errores de desbordamiento de índice y hace que tu código sea mucho más limpio y legible.
 
 ## 4.4 Bucles while y do-while
 

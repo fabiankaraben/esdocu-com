@@ -283,10 +283,10 @@ Aunque son pocas líneas, este programa contiene los bloques de construcción fu
 
 * **`void`**: Es una palabra clave que indica el tipo de retorno de la función. En este caso, `void` (vacío) significa que la función realiza una acción pero no devuelve ningún valor numérico, de texto o de otro tipo de dato al finalizar.
 * **`main()`**: Es la función más importante de tu código. En Dart, `main` representa el **punto de entrada obligatorio** de cualquier aplicación. El compilador y la máquina virtual buscan específicamente esta función para saber exactamente dónde comenzar a ejecutar las instrucciones. Los paréntesis `()` indican que es una función y que, de momento, no recibe parámetros externos.
-* **Las llaves `{ }**`: Delimitan el cuerpo de la función. Todo el código que se encuentre atrapado entre la llave de apertura y la de cierre será lo que se ejecute cuando el programa se ponga en marcha.
+* **Las llaves `{ }`**: Delimitan el cuerpo de la función. Todo el código que se encuentre atrapado entre la llave de apertura y la de cierre será lo que se ejecute cuando el programa se ponga en marcha.
 * **`print(...)`**: Es una función integrada de la biblioteca central de Dart. Su único propósito es tomar el contenido que le pases entre los paréntesis y mostrarlo en la consola del sistema o terminal de salida.
-* **Las comillas simples `' '**`: Se utilizan para definir una cadena de texto plano (*String*). En Dart puedes usar tanto comillas simples como dobles (`" "`), pero la guía de estilo oficial del lenguaje recomienda priorizar el uso de comillas simples para mantener la consistencia visual en el código.
-* **El punto y coma `;**`: Al final de la instrucción `print`, el uso del punto y coma es **estrictamente obligatorio**. A diferencia de lenguajes como JavaScript o Python, omitir un punto y coma en Dart provocará un error de compilación inmediato. Le indica al analizador que esa línea de instrucción específica ha terminado.
+* **Las comillas simples `' '`**: Se utilizan para definir una cadena de texto plano (*String*). En Dart puedes usar tanto comillas simples como dobles (`" "`), pero la guía de estilo oficial del lenguaje recomienda priorizar el uso de comillas simples para mantener la consistencia visual en el código.
+* **El punto y coma `;`**: Al final de la instrucción `print`, el uso del punto y coma es **estrictamente obligatorio**. A diferencia de lenguajes como JavaScript o Python, omitir un punto y coma en Dart provocará un error de compilación inmediato. Le indica al analizador que esa línea de instrucción específica ha terminado.
 
 ---
 
