@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Aprende a crear temas, personalizar y ampliar Bootstrap con Sass, una gran cantidad de opciones globales, un sistema de color expansivo y más.
 
-<TopBanner />
 
 | <span class="mx-14">Tópico</span>                   | Descripción                                                                                                      |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +63,6 @@ Basado en la [conversación comunitaria](https://github.com/twbs/bootstrap/issue
 
 Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y funciones que te ayudarán a construir más rápido y personalizar tu proyecto.
 
-<MiddleBannerOne />
 
 Utiliza nuestros archivos fuente Sass para aprovechar variables, mapas, mixins y más.
 
@@ -172,7 +159,6 @@ npm install -g sass
 sass --watch ./scss/custom.scss ./css/custom.css
 ```
 
-<MiddleBannerTwo />
 
 Obtén más información sobre tus opciones en [sass-lang.com/install](https://sass-lang.com/install) y [compilando con VS Code](https://code.visualstudio.com/docs/languages/css#_transpiling-sass-and-less-into-css).
 
@@ -240,7 +226,6 @@ Repite según sea necesario para cualquier variable en Bootstrap, incluidas las 
 
 ### Mapas y bucles \{#maps-and-loops}
 
-<MiddleBannerThree />
 
 Bootstrap incluye un puñado de mapas Sass, pares clave-valor que facilitan la generación de familias de CSS relacionados. Usamos mapas de Sass para nuestros colores, puntos de interrupción de cuadrícula y más. Al igual que las variables de Sass, todos los mapas de Sass incluyen el indicador `!default` y se pueden sobrescribir y ampliar.
 
@@ -304,7 +289,6 @@ $theme-colors: map-remove($theme-colors, "info", "light", "dark");
 
 Bootstrap asume la presencia de algunas claves específicas dentro de los mapas de Sass, ya que las usamos y ampliamos nosotros mismos. A medida que personalizas los mapas incluidos, puedes encontrar errores cuando se utiliza la clave de un mapa Sass específico.
 
-<MiddleBannerFour />
 
 Por ejemplo, usamos las claves `primary`, `success` y `danger` de `$theme-colors` para enlaces, botones y estados de formulario. Reemplazar los valores de estas claves no debería presentar problemas, pero eliminarlas puede causar problemas de compilación de Sass. En estos casos, deberás modificar el código Sass que utiliza esos valores.
 
@@ -364,7 +348,6 @@ Para ayudar con esto, incluimos la función `color-contrast` en Bootstrap. Utili
 
 Por ejemplo, para generar muestras de color desde nuestro mapa `$theme-colors`:
 
-<MiddleBannerFive />
 
 ```scss title="SCSS"
 @each $color, $value in $theme-colors {
@@ -436,7 +419,6 @@ $border-width: 0;
 
 Nuestro directorio `scss/mixins/` tiene un montón de mixins que potencian partes de Bootstrap y también se pueden usar en tu propio proyecto.
 
-<MiddleBannerSix />
 
 <ContentSuggestion />
 
@@ -502,7 +484,6 @@ Bootstrap está respaldado por un extenso sistema de colores que tematiza nuestr
 
 ### Colores \{#colors}
 
-<MiddleBannerSeven />
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.3.0</span>
@@ -590,7 +571,6 @@ Danger
 Warning
 </div>
 
-<MiddleBannerEight />
 
 <div class="my-5 p-3 rounded-md font-bold bg-[#0dcaf0] text-black">
 Info
@@ -755,7 +735,6 @@ $pink-800
 $pink-900
 </div>
 
-<MiddleBannerNine />
 
 <div class="mt-8 mb-2 p-3 rounded-md font-bold bg-[#dc3545] text-white">
 <strong>red</strong> #dc3545
@@ -994,7 +973,6 @@ Nuestras funciones `tint-color()` y `shade-color()` usan `mix()` junto con nuest
 
 Los archivos fuente Sass de Bootstrap incluyen tres mapas para ayudarte a recorrer rápida y fácilmente una lista de colores y sus valores hexadecimales.
 
-<MiddleBannerOne />
 
 * `$colors` enumera todos nuestros colores base disponibles (`500`)
 * `$theme-colors` enumera todos los colores de tema con nombres semánticos (que se muestran a continuación)
@@ -1054,7 +1032,6 @@ Bootstrap no incluye las utilidades `color` y `background-color` para cada varia
 
 Aquí tienes un ejemplo que genera utilidades de color de texto (por ejemplo, `.text-purple-500`) siguiendo los pasos anteriores.
 
-<MiddleBannerTwo />
 
 ```scss title="SCSS"
 @import "bootstrap/scss/functions";
@@ -1153,7 +1130,6 @@ Por ejemplo, para cambiar el modo de color de un menú desplegable, agrega `data
     
 * Para cada modo de color que desees admitir, necesitarás agregar nuevas sobrescrituras para las variables CSS globales compartidas. Ya hacemos esto en nuestra hoja de estilo `_root.scss` para el modo oscuro, siendo el modo claro los valores predeterminados. Al escribir estilos específicos del modo de color, utiliza el mixin:
 
-<MiddleBannerThree />
 
   ```scss title="SCSS"
   // Color mode variables in _root.scss
@@ -1212,7 +1188,6 @@ $color-mode-type: data;
 
 Salidas a:
 
-<MiddleBannerFour />
 
 ```css title="CSS"
 [data-bs-theme=dark] .element {
@@ -1376,7 +1351,6 @@ Aquí tienes un vistazo al JavaScript que lo impulsa. No dudes en inspeccionar n
 })()
 ```
 
-<MiddleBannerFive />
 
 ### Agregar colores al tema \{#adding-theme-colors}
 
@@ -1565,7 +1539,6 @@ $accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://
 
 <ContentSuggestion />    
 
-<MiddleBannerSix />
 
 #### Sass mixins \{#sass-mixins}
 
@@ -1627,7 +1600,6 @@ Aquí hay dos ejemplos de cómo recorremos el mapa `$theme-colors` para generar 
 }
 ```
 
-<MiddleBannerSeven />
 
 [scss/_list-group.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_list-group.scss)
 
@@ -1722,7 +1694,6 @@ Te animamos a que adoptes estas pautas cuando construyas con Bootstrap para crea
 
 En tu CSS, tendrías algo como lo siguiente donde la mayor parte del estilo se realiza a través de `.callout`. Luego, los estilos únicos entre cada variante se controlan mediante una clase modificadora.
 
-<MiddleBannerEight />
 
 ```css title="CSS"
 // Base class
@@ -1951,7 +1922,6 @@ Estas variables tienen como alcance nuestro modo oscuro incorporado.
 }
 ```
 
-<MiddleBannerNine />
 
 ### Variables de componentes \{#component-variables}
 
@@ -1991,7 +1961,6 @@ Bootstrap proporciona estilos `:focus` personalizados usando una combinación de
 
 En nuestro Sass, configuramos valores predeterminados que se pueden personalizar antes de compilar.
 
-<MiddleBannerOne />
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -2080,7 +2049,6 @@ Si no estás usando un componente, coméntalo o elimínalo por completo. Por eje
 
 ### JavaScript optimizado \{#lean-javascript}
 
-<MiddleBannerTwo />
 
 El JavaScript de Bootstrap incluye todos los componentes de nuestros archivos dist primarios (`bootstrap.js` y `bootstrap.min.js`), e incluso nuestra dependencia principal (Popper) con nuestros archivos de paquete (`bootstrap.bundle.js` y `bootstrap.bundle.min.js`). Mientras personalizas a través de Sass, asegúrate de eliminar el JavaScript relacionado.
 
@@ -2135,7 +2103,6 @@ Siempre que sea posible, asegúrate de comprimir todo el código que entregas a 
 
 <ContentSuggestion />
 
-<MiddleBannerThree />
 
 ### Archivos sin bloqueo \{#non-blocking-files}
 
@@ -2158,4 +2125,3 @@ Tu sitio web solo debe estar disponible a través de conexiones HTTPS en producc
 
 Los sitios servidos a través de HTTPS también deben acceder a todas las hojas de estilo, scripts y otros activos a través de conexiones HTTPS. De lo contrario, enviarás a los usuarios [contenido activo mixto](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content), lo que generará vulnerabilidades potenciales en las que un sitio puede verse comprometido al alterar una dependencia. Esto puede provocar problemas de seguridad y mostrar advertencias en el navegador a los usuarios. Ya sea que obtengas Bootstrap desde una CDN o lo proporciones tú mismo, asegúrate de acceder solo a través de conexiones HTTPS.
 
-<BottomBanner />

@@ -8,19 +8,7 @@ sidebar:
   label: Variables
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
-<TopBanner />
 
 Aquí tienes un ejemplo de cómo crear una variable e inicializarla:
 
@@ -63,7 +51,6 @@ La null-safety introduce tres cambios clave:
 2. Debes inicializar las variables antes de usarlas. Las variables que admiten valores `null` tienen el valor predeterminado `null`, por lo que se inicializan de forma predeterminada. Dart no establece valores iniciales para tipos que no aceptan valores `null`. Te obliga a establecer un valor inicial. Dart no te permite observar una variable no inicializada. Esto te impide acceder a propiedades o llamar a métodos donde el tipo del receptor puede ser `null`, y `nulo` no admite el método o propiedad utilizada.
 3. No puedes acceder a propiedades ni llamar a métodos en una expresión con un tipo que acepta valores `null`. La misma excepción se aplica cuando es una propiedad o método que admite `null` como `hashCode` o `toString()`.
 
-<MiddleBannerOne />
 
 Null safety cambia los posibles **errores de tiempo de ejecución** en errores de análisis de **tiempo de edición**. Null-safety marca una variable no nula cuando ha sido:
 
@@ -112,7 +99,6 @@ El modificador `late` tiene dos casos de uso:
 
 A menudo, el análisis de control de flujo de Dart puede detectar cuando una variable que no acepta valores null se establece en un valor no nulo antes de usarse, pero a veces el análisis falla. Dos casos comunes son las variables globales y las variables de instancia: Dart a menudo no puede determinar si están configuradas, por lo que no lo intenta.
 
-<MiddleBannerTwo />
 
 Si estás seguro de que una variable está configurada antes de usarse, pero Dart no está de acuerdo, puedes corregir el error marcando la variable como `late`:
 
@@ -163,7 +149,6 @@ const double atm = 1.01325 * bar; // Standard atmosphere
 
 La palabra clave `const` no es solo para declarar variables constantes. También puedes usarlo para crear *valores* constantes, así como para declarar constructores que *crean* valores constantes. Cualquier variable puede tener un valor constante.
 
-<MiddleBannerThree />
 
 ```dart
 var foo = const [];
@@ -196,4 +181,3 @@ const set = {if (list is List<int>) ...list}; // ...y un spread.
 
 Para obtener más información sobre el uso de `const` para crear valores constantes, consulta [Lists ↗](https://dart.dev/language/collections#lists), [Maps ↗](https://dart.dev/language/collections#maps) y [Clases ↗](https://dart.dev/language/classes).
 
-<BottomBanner />

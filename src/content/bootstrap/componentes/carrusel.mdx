@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Un componente de presentación de diapositivas para recorrer elementos (imágenes o diapositivas de texto) como un carrusel.
 
-<TopBanner />
 
 ## Cómo funciona el componente Carrusel \{#how-it-works}
 
@@ -155,7 +143,6 @@ Puedes agregar indicadores al carrusel, junto con los controles anterior/siguien
 ```
 </DemoIframe>
 
-<MiddleBannerOne />
 
 ### Subtítulos \{#captions}
 
@@ -387,7 +374,6 @@ Cuando la opción `ride` está configurada en `true`, en lugar de `carousel`, el
 
 Agrega `data-bs-interval=""` a un `.carousel-item` para cambiar la cantidad de tiempo de retraso entre cada paso automático al siguiente elemento.
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/carousel/individual-carousel-item-interval.html" >
 ```html title="HTML"
@@ -608,7 +594,6 @@ Agrega `.carousel-dark` al `.carousel` para obtener controles, indicadores y sub
 
 ## Transición personalizada \{#custom-transition}
 
-<MiddleBannerThree />
 
 La duración de la transición de `.carousel-item` se puede cambiar con la variable Sass `$carousel-transition-duration` antes de compilar o estilos personalizados si estás utilizando el CSS compilado. Si se aplican varias transiciones, asegúrate de que la transición de transformación esté definida primero (por ejemplo, `transition: transform 2s ease, opacity .5s ease-out`).
 
@@ -674,7 +659,6 @@ Llama al carrusel manualmente con:
 const carousel = new bootstrap.Carousel('#myCarousel')
 ```
 
-<MiddleBannerFour />
 
 ### Opciones \{#options}
 
@@ -746,4 +730,3 @@ myCarousel.addEventListener('slide.bs.carousel', event => {
 })
 ```
 
-<BottomBanner />

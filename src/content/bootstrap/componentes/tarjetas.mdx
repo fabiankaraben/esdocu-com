@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Las tarjetas de Bootstrap proporcionan un contenedor de contenido flexible y extensible con múltiples variantes y opciones.
 
-<TopBanner />
 
 Una **tarjeta** es un contenedor de contenido flexible y extensible. Incluye opciones para encabezados y pies de página, una amplia variedad de contenido, colores de fondo contextuales y potentes opciones de visualización. Si estás familiarizado con Bootstrap 3, las tarjetas reemplazan nuestros paneles, wells y thumbnails. Una funcionalidad similar a esos componentes está disponible como clases modificadoras para tarjetas.
 
@@ -98,7 +86,6 @@ Los subtítulos se usan agregando un `.card-subtitle` a una etiqueta `<h*>`. Si 
 
 ### Imágenes \{#images}
 
-<MiddleBannerOne />
 
 `.card-img-top` coloca una imagen en la parte superior de la tarjeta. Con `.card-text`, se puede agregar texto a la tarjeta. El texto dentro de `.card-text` también se puede diseñar con las etiquetas HTML estándar.
 
@@ -232,7 +219,6 @@ Agrega un encabezado y/o pie de página opcional dentro de una tarjeta.
 ```
 </DemoIframe>
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/card/header-and-footer-3.html" >
 ```html title="HTML"
@@ -353,7 +339,6 @@ Usa CSS personalizado en tus hojas de estilo o como estilos en línea para estab
 
 ## Alineación de texto del componente Tarjeta \{#text-alignment}
 
-<MiddleBannerThree />
 
 Puedes cambiar rápidamente la alineación del texto de cualquier tarjeta, en su totalidad o en partes específicas, con nuestras [clases de alineación de texto](/bootstrap/utilidades/textos/#text-alignment).
 
@@ -513,7 +498,6 @@ Convierte una imagen en el fondo de una tarjeta y superpón el texto de tu tarje
 ```
 </DemoIframe>
 
-<MiddleBannerFour />
 
 <Aside>
 Ten en cuenta que el contenido no debe ser más grande que la altura de la imagen. Si el contenido es más grande que la imagen, el contenido se mostrará fuera de la imagen.
@@ -709,7 +693,6 @@ Usa [utilidades de borde](/bootstrap/utilidades/bordes) para cambiar solo el `bo
 ```
 </DemoIframe>
 
-<MiddleBannerFive />
 
 ### Utilidades de Mixins \{#mixins-utilities}
 
@@ -933,7 +916,6 @@ Usa el sistema de grid de Bootstrap y sus [`.row-cols` (clases)](/bootstrap/gril
 
 Cámbialo a `.row-cols-3` y verás la cuarta tarjeta con envoltura.
 
-<MiddleBannerSix />
 
 <ContentSuggestion />
 
@@ -1186,7 +1168,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las tarjetas
 --#{$prefix}card-group-margin: #{$card-group-margin};
 ```
 
-<MiddleBannerSeven />
 
 <ContentSuggestion />
 
@@ -1216,4 +1197,3 @@ $card-img-overlay-padding:          $spacer;
 $card-group-margin:                 $grid-gutter-width * .5;
 ```
 
-<BottomBanner />

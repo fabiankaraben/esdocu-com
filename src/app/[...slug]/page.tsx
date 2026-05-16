@@ -10,6 +10,9 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import * as MdxUI from "@/components/mdx-components";
+import remarkGfm from "remark-gfm";
+
+
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -79,7 +82,21 @@ const mdxComponents: any = {
   li: (props: any) => <li className="ml-4" {...props} />,
   blockquote: (props: any) => <blockquote className="border-l-4 border-primary/20 pl-4 italic my-6 bg-muted/30 py-2 pr-4 rounded-r-lg" {...props} />,
   a: (props: any) => <a className="text-primary font-medium underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all" {...props} />,
+  table: (props: any) => (
+    <div className="my-8 w-full overflow-hidden rounded-xl border border-muted shadow-sm">
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-left" {...props} />
+      </div>
+    </div>
+  ),
+  thead: (props: any) => <thead className="bg-muted/50 border-b border-muted" {...props} />,
+  tbody: (props: any) => <tbody className="divide-y divide-muted/50" {...props} />,
+  tr: (props: any) => <tr className="hover:bg-muted/20 transition-colors" {...props} />,
+  th: (props: any) => <th className="px-4 py-3 text-sm font-bold text-foreground/80" {...props} />,
+  td: (props: any) => <td className="px-4 py-3 text-sm leading-relaxed text-muted-foreground" {...props} />,
 };
+
+
 
 export default async function DocPage({ params }: PageProps) {
   const { slug } = await params;
@@ -119,7 +136,14 @@ export default async function DocPage({ params }: PageProps) {
             <MDXRemote 
               source={doc.content} 
               components={mdxComponents} 
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [],
+                }
+              }}
             />
+
           </div>
           
           <div className="mt-20 pt-8 border-t flex justify-between items-center text-sm text-muted-foreground">

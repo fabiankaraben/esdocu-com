@@ -10,22 +10,10 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
-<TopBanner />
 
 ## Uso de Tipografía con Bootstrap
 
@@ -91,7 +79,6 @@ Usa las clases de utilidad incluidas para recrear el pequeño texto del encabeza
 ```
 </DemoIframe>
 
-<MiddleBannerOne />
 
 ### Mostrar encabezados \{#display-headings}
 
@@ -163,7 +150,6 @@ Estilo para elementos HTML5 en línea comunes.
 
 Ten en cuenta que esas etiquetas deben usarse con fines semánticos:
 
-<MiddleBannerTwo />
 
 * `<mark>` representa texto que está marcado o resaltado con fines de referencia o notación.
 * `<small>` representa comentarios secundarios y letra pequeña, como derechos de autor y texto legal.
@@ -212,7 +198,6 @@ Para citar bloques de contenido de otra fuente dentro de tu documento. Envuelve 
 
 La especificación HTML requiere que la atribución de cita en bloque se coloque fuera del `<blockquote>`. Al proporcionar atribución, incluye tu `<blockquote>` en un `<figure>` y usa un `<figcaption>` o un elemento de nivel de bloque (por ejemplo, `<p>`) con la clase `.blockquote-footer`. Asegúrate de incluir también el nombre del trabajo fuente en `<cite>`.
 
-<MiddleBannerThree />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/typography/naming-a-source.html" >
 ```html title="HTML"
@@ -299,7 +284,6 @@ Elimina las viñetas de una lista y aplica un poco de `margin` con una combinaci
 
 Alinear términos y descripciones horizontalmente usando las clases predefinidas de nuestro sistema de cuadrícula (o mixins semánticos). Para plazos más largos, puedes agregar opcionalmente una clase `.text-truncate` para truncar el texto con puntos suspensivos.
 
-<MiddleBannerFour />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/typography/description-list-alignment.html" >
 ```html title="HTML"
@@ -412,7 +396,6 @@ No hay mixins dedicados para tipografía, pero Bootstrap usa [Tamaño de fuente 
 
 ## Uso de Imágenes con Bootstrap
 
-<MiddleBannerFive />
 
 Documentación y ejemplos para optar por imágenes para que tengan un comportamiento responsive (para que nunca sean más anchas que sus padres) y agregarles estilos livianos, todo a través de clases.
 
@@ -467,7 +450,6 @@ Alinear imágenes con las [clases flotantes auxiliares](/bootstrap/utilidades/ot
 
 Si estás usando el elemento `<picture>` para especificar múltiples elementos `<source>` para un `<img>`, asegúrate de agregar las clases `.img-*` al `<img>` y no al `<picture>`.
 
-<MiddleBannerSix />
 
 ```html title="HTML"
 <picture>
@@ -536,4 +518,3 @@ $figure-caption-font-size:          $small-font-size;
 $figure-caption-color:              var(--#{$prefix}secondary-color);
 ```
 
-<BottomBanner />

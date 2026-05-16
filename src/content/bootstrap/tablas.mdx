@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Documentación y ejemplos para el diseño de tablas (dado su uso frecuente en complementos de JavaScript) con Bootstrap.
 
-<TopBanner />
 
 ## Descripción general \{#overview}
 
@@ -161,7 +149,6 @@ Usa `.table-striped` para agregar rayas de cebra a cualquier fila de la tabla de
 
 Usa `.table-striped-columns` para agregar rayas de cebra a cualquier columna de la tabla.
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/striped-columns-1.html" >
 ```html title="HTML"
@@ -241,7 +228,6 @@ Estas filas flotantes también se pueden combinar con la variante de filas rayad
 
 Resalta una fila o celda de una tabla agregando una clase `.table-active`.
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/active-tables-1.html" >
 ```html title="HTML"
@@ -354,7 +340,6 @@ Agrega `.table-bordered` para los bordes en todos los lados de la tabla y las ce
 ```
 </DemoIframe>
 
-<MiddleBannerThree />
 
 ### Tablas sin bordes \{#tables-without-borders}
 
@@ -468,7 +453,6 @@ Las celdas de la tabla de `<thead>` siempre están alineadas verticalmente hacia
 ```
 </DemoIframe>
 
-<MiddleBannerFour />
 
 ## Anidamiento \{#nesting}
 
@@ -555,7 +539,6 @@ Similar a las tablas y las tablas oscuras, usa las clases modificadoras `.table-
 
 Un `<caption>` funciona como el encabezado de una tabla. Ayuda a los usuarios con lectores de pantalla a encontrar una tabla, comprender de qué se trata y decidir si quieren leerla.
 
-<MiddleBannerFive />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/captions-1.html" >
 ```html title="HTML"
@@ -661,7 +644,6 @@ Usa `.table-responsive{-sm|-md|-lg|-xl|-xxl}` según sea necesario para crear ta
 ```
 </DemoIframe>
 
-<MiddleBannerSix />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/tables/breakpoint-specific-3.html" >
 ```html title="HTML"
@@ -773,4 +755,3 @@ $table-variants: (
 * Las variables de factor (`$table-striped-bg-factor`, `$table-active-bg-factor` y `$table-hover-bg-factor`) se utilizan para determinar el contraste en las variantes de la tabla.
 * Aparte de las variantes claro y oscuro de tabla, los colores del tema se aclaran con la variable `$table-bg-scale`.
 
-<BottomBanner />

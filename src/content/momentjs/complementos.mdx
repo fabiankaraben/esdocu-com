@@ -8,21 +8,9 @@ sidebar:
   label: Complementos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Algunas personas han creado complementos para Moment.js que pueden resultarte útiles.
 
-<TopBanner />
 
 ## El complemento Strftime \{#strftime\}
 
@@ -62,7 +50,6 @@ Si deseas trabajar con `java.text.DateFormat`, puedes utilizar este complemento.
 
 Por ejemplo,
 
-<MiddleBannerOne />
 
 ```javascript title="JavaScript"
 moment("2013-12-24 14:30").formatWithJDF("dd.MM.yyyy");  // devuelve la fecha formateada "24.12.2013"
@@ -109,7 +96,6 @@ Está disponible en npm así:
 npm install twix
 ```
 
-<MiddleBannerTwo />
 
 O simplemente toma el archivo JS desde [aquí](https://raw.github.com/icambron/twix.js/master/dist/twix.js).
 
@@ -156,7 +142,6 @@ Llamar al método `isocalendar` en un moment devolverá un array como el siguien
 moment().isocalendar(); // [2012, 8, 5, 870]
 ```
 
-<MiddleBannerThree />
 
 También puedes reconstruir un moment a partir de un array isocalendaria.
 
@@ -184,4 +169,3 @@ m.format('jYYYY/jM/jD [is] YYYY/M/D'); // 1360/5/26 is 1981/8/17
 
 El repositorio está ubicado en [github.com/behrang/moment-jalaali](https://github.com/behrang/moment-jalaali).
 
-<BottomBanner />

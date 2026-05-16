@@ -10,22 +10,10 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
-<TopBanner />
 
 ## Uso de Puntos de interrupción en Bootstrap
 
@@ -72,7 +60,6 @@ $grid-breakpoints: (
 
 Para obtener más información y ejemplos sobre cómo modificar nuestros mapas y variables de Sass, consulta [la sección CSS de la documentación de Grid](/bootstrap/grilla/#css).
 
-<MiddleBannerOne />
 
 ### Media queries \{#media-queries}
 
@@ -177,7 +164,6 @@ Estos mixins toman esos puntos de interrupción declarados, les restan `.02px` y
 
 #### Punto de interrupción único \{#single-breakpoint}
 
-<MiddleBannerTwo />
 
 También existen media queries y mixins para apuntar a un solo segmento de tamaños de pantalla utilizando los anchos de punto de interrupción mínimo y máximo.
 
@@ -224,7 +210,6 @@ Los contenedores son el elemento de diseño más básico en Bootstrap y son **re
 
 Bootstrap viene con tres contenedores diferentes:
 
-<MiddleBannerThree />
 
 * `.container`, que establece un `max-width` en cada punto de interrupción responsive
 * `.container-{breakpoint}`, que es `width: 100%` hasta el punto de interrupción especificado
@@ -280,7 +265,6 @@ Usa `.container-fluid` para un contenedor de ancho completo, que abarque todo el
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
-<MiddleBannerFour />
 
 Como se muestra arriba, Bootstrap genera una serie de clases contenedoras predefinidas para ayudarte a crear los diseños que deseas. Puedes personalizar estas clases de contenedores predefinidas modificando el mapa Sass (que se encuentra en `_variables.scss`) que las impulsa:
 
@@ -334,7 +318,6 @@ Los gutteres son el relleno entre tus columnas, que se utilizan para espaciar y 
     
 ## Gutters horizontales \{#horizontal-gutters}
 
-<MiddleBannerFive />
 
 `.gx-*` (clases) se pueden usar para controlar el ancho del gutter horizontal. Es posible que sea necesario ajustar el padre `.container` o `.container-fluid` si también se utilizan gutters más grandes para evitar desbordamientos no deseados, utilizando una utilidad de relleno coincidente. Por ejemplo, en el siguiente ejemplo hemos aumentado el relleno con `.px-4`:
 
@@ -468,7 +451,6 @@ Las clases de canal también se pueden agregar a [columnas de fila](/bootstrap/g
 
 Los márgenes entre columnas en nuestras clases de cuadrícula predefinidas se pueden eliminar con `.g-0`. Esto elimina los `margin` negativos de `.row` y el `padding` horizontal de todas las columnas secundarias inmediatas.
 
-<MiddleBannerSix />
 
 **¿Necesitas un diseño de borde a borde?** Suelta el `.container` o `.container-fluid` principal y agrega `.mx-0` al `.row` para evitar el desbordamiento.
 
@@ -517,7 +499,6 @@ Si necesitas agregar `display: flex` a un elemento, hazlo con `.d-flex` o uno de
 
 <ContentSuggestion />
 
-<MiddleBannerSeven />
 
 ### Margen y relleno \{#margin-and-padding}
 
@@ -556,4 +537,3 @@ $zindex-toast:                      1090;
 
 Para manejar los bordes superpuestos dentro de los componentes (por ejemplo, botones y entradas en grupos de entrada), utilizamos valores bajos de `z-index` de un solo dígito de `1`, `2` y `3` para los estados predeterminado, hover y active. Al producirse hover/focus/active, colocamos un elemento en particular en primer plano con un valor de `z-index` más alto para mostrar su borde sobre los elementos hermanos.
 
-<BottomBanner />

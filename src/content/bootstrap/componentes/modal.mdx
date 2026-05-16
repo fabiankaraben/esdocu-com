@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Usa el complemento modal JavaScript de Bootstrap para agregar cuadros de diálogo a tu sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado.
 
-<TopBanner />
 
 ## Cómo funciona el componente Modal \{#how-it-works}
 
@@ -119,7 +107,6 @@ Alterna una demostración modal funcional haciendo clic en el botón a continuac
 
 <ContentSuggestion />
 
-<MiddleBannerOne />
 
 ### Fondo estático \{#static-backdrop}
 
@@ -206,7 +193,6 @@ Agrega `.modal-dialog-centered` a `.modal-dialog` para centrar verticalmente el 
 
 ### Usando la grilla \{#using-the-grid}
 
-<MiddleBannerTwo />
 
 Utiliza el sistema de cuadrícula Bootstrap dentro de un modal anidando `.container-fluid` dentro de `.modal-body`. Luego, utiliza las clases normales del sistema grid como lo harías en cualquier otro lugar.
 
@@ -357,7 +343,6 @@ La variable `$modal-fade-transform` determina el estado de transformación de `.
 
 Si quieres, por ejemplo, una animación con zoom, puedes configurar `$modal-fade-transform: scale(.8)`.
 
-<MiddleBannerThree />
 
 ### Quitar animación \{#remove-animation}
 
@@ -404,7 +389,6 @@ Nuestro modal predeterminado sin clase modificadora constituye el modal de tama�
 
 ## Modal de pantalla completa \{#fullscreen-modal}
 
-<MiddleBannerFour />
 
 Otra sobrescritura es la opción de mostrar un modal que cubra el viewport del usuario, disponible a través de clases modificadoras que se colocan en un `.modal-dialog`.
 
@@ -477,7 +461,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los modales 
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
-<MiddleBannerFive />
 
 ```scss title="scss/_variables.scss"
 $modal-inner-padding:               $spacer;
@@ -583,7 +566,6 @@ El despido se puede lograr con el atributo `data-bs-dismiss` en un botón **dent
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 ```
 
-<MiddleBannerSix />
 
 o en un botón **fuera del modal** usando el `data-bs-target` adicional como se muestra a continuación:
 
@@ -629,7 +611,6 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 
 Activa tu contenido como modal. Acepta opciones opcionales `object`.
 
-<MiddleBannerSeven />
 
 ```javascript title="JavaScript"
 const myModal = new bootstrap.Modal('#myModal', {
@@ -668,4 +649,3 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
 })
 ```
 
-<BottomBanner />

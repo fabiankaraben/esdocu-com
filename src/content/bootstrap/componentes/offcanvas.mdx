@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Crea barras laterales ocultas en tu proyecto para navegación, carritos de compras y más con algunas clases y nuestro complemento JavaScript.
 
-<TopBanner />
 
 ## Cómo funciona el componente Offcanvas \{#how-it-works}
 
@@ -112,7 +100,6 @@ Puedes usar un enlace con el atributo `href`, o un botón con el atributo `data-
 
 <ContentSuggestion />
 
-<MiddleBannerOne />
 
 ### Desplazamiento del body \{#body-scrolling}
 
@@ -209,7 +196,6 @@ Cambia la apariencia de los lienzos con utilidades para que coincidan mejor con 
 
 ## Comportamiento responsive del componente \{#responsive}
 
-<MiddleBannerTwo />
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
@@ -310,7 +296,6 @@ Prueba los ejemplos superior, derecho e inferior a continuación.
 
 Dado que el panel offcanvas es conceptualmente un cuadro de diálogo modal, asegúrate de agregar `aria-labelledby="..."`, que hace referencia al título de offcanvas, a `.offcanvas`. Ten en cuenta que no necesitas agregar `role="dialog"` ya que ya lo agregamos a través de JavaScript.
 
-<MiddleBannerThree />
 
 ## Personalización del CSS del componente \{#css}
 
@@ -375,7 +360,6 @@ Agrega un botón para descartar (cerrar) con el atributo `data-bs-dismiss="offca
 
 #### Alternar \{#toggle}
 
-<MiddleBannerFour />
 
 Agrega `data-bs-toggle="offcanvas"` y un `data-bs-target` o `href` al elemento para asignar automáticamente el control de un elemento offcanvas. El atributo `data-bs-target` acepta un selector CSS al que aplicar el offcanvas. Asegúrate de agregar la clase `offcanvas` al elemento offcanvas. Si deseas que se abra de forma predeterminada, agrega la clase adicional `show`.
 
@@ -420,7 +404,6 @@ El objeto de configuración final es el resultado combinado de `data-bs-config`,
 | `keyboard` | boolean                      | `true`         | Cierra el lienzo cuando se presiona la tecla Escape.                                                                                                                 |
 | `scroll`   | boolean                      | `false`        | Permitir el desplazamiento del cuerpo mientras el lienzo está abierto.                                                                                               |
 
-<MiddleBannerFive />
 
 ### Métodos \{#methods}
 
@@ -465,4 +448,3 @@ myOffcanvas.addEventListener('hidden.bs.offcanvas', event => {
 })
 ```
 
-<BottomBanner />

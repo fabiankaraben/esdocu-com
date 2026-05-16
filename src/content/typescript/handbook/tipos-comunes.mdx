@@ -8,22 +8,10 @@ sidebar:
   label: Tipos cotidianos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 En este capítulo, cubriremos algunos de los tipos de valores más comunes que encontrarás en el código JavaScript y explicaremos las formas correspondientes de describir esos tipos en TypeScript.
 Esta no es una lista exhaustiva y los capítulos futuros describirán más formas de nombrar y utilizar otros tipos.
 
-<TopBanner />
 
 Los tipos también pueden aparecer en muchos más *lugares* que solo anotaciones de tipo.
 A medida que aprendamos sobre los tipos en sí, también aprenderemos sobre los lugares donde podemos referirnos a estos tipos para formar nuevas construcciones.
@@ -75,7 +63,6 @@ const n: number = obj;
 
 El tipo `any` es útil cuando no quieres escribir un tipo largo solo para convencer a TypeScript de que una línea de código en particular está bien.
 
-<MiddleBannerOne />
 
 ### El indicador `noImplicitAny` \{#noimplicitany}
 
@@ -119,7 +106,6 @@ TypeScript te permite especificar los tipos de valores de entrada y salida de fu
 
 ### Anotaciones de tipo de parámetros \{#parameter-type-annotations}
 
-<MiddleBannerTwo />
 
 Cuando declaras una función, puedes agregar anotaciones de tipo después de cada parámetro para declarar qué tipos de parámetros acepta la función.
 Las anotaciones de tipo de parámetro van después del nombre del parámetro:
@@ -170,7 +156,6 @@ Algunas bases de código especificarán explícitamente un tipo de devolución c
 
 Si quieres anotar el tipo de retorno de una función que devuelve una promesa, debes usar el tipo `Promise`:
 
-<MiddleBannerThree />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/IYZwngdgxgBAZgV2gFwJYHsIwOYFNkBiwAbugE6rK4ByCAtgEa5kAUAlAFwwAKZ6dqELgA8EekzIA+GAG8AsACgYMMvgRksAJgBsAbkUBfIA)
 
@@ -229,7 +214,6 @@ function printCoord(pt: { x: number; y: number }) {
 printCoord({ x: 3, y: 7 });
 ```
 
-<MiddleBannerFour />
 
 Aquí, anotamos el parámetro con un tipo con dos propiedades, `x` e `y`, que son ambas del tipo `number`.
 Puedes usar `,` o `;` para separar las propiedades, y el último separador es opcional de cualquier manera.
@@ -289,7 +273,6 @@ Nos referimos a cada uno de estos tipos como los *miembros* de la unión.
 
 Escribamos una función que pueda operar con cadenas o números:
 
-<MiddleBannerFive />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFABmArgHYDGALgJZxmgAO0NZVAkgCYAUNnqZEgFsARjFAAfUIiosyAcwCUoAN6FQoCvURwANpAB0uuPO4AiAJpwS0UOwAioGilBnQAaiedFAbkIBfQhBQAHkAaUJmVg4eAEYABljfILBwyLkY8zR4tDNkgmCAUVgEdOiubhVQIQBPB1Q0TCw0UH9fIA)
 
@@ -353,7 +336,6 @@ Otro ejemplo es usar una función como `Array.isArray`:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAdwKYBsJwLaoAqpwAO6qAFAB4BciAzlAE4xgDmA2gLqIA+djzLAJSIA3gFgAUIkQxgiMgEEGDAIYBPAHQxaS1WsqDh4qdMQB6M4gASqBqhoByCg5m1ED+k1acHk04iwwWjhSDXQ4FjIAIht0cIAaRCjEAGpECg0AKzhmaMQVMAATJMMAbj9EAF9EDFpUUQrpC2tbe3dnV3dPAV8TaUDg0PDIqIB1DCxcRHCwesYVADcMWyTU9MFyk0rJSqA)
 
-<MiddleBannerSix />
 
 ```ts
 function welcomePeople(x: string[] | string) {
@@ -428,7 +410,6 @@ Ten en cuenta que los alias son *solo* alias: no puedes usar alias de tipo para 
 Cuando usas el alias, es exactamente como si hubiera escrito el tipo que representa el alias.
 En otras palabras, este código puede *parecer* ilegal, pero está bien según TypeScript porque ambos tipos son alias para el mismo tipo:
 
-<MiddleBannerSeven />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwHMQMBJVAB2QwAoBKALngGcMYtUCBuAWAChRIsBCnTY8zKKizYAXiGosYjRewINmrVT14B6HfAC0RsFSMG+GAJ7kEAVSYgYZShgDKk6VjnBXmjvABeDTYObT4RTFx8Jg9ZEGcqBVZlPzVGe0cEt1ivEB9U+ABvPnh4OAxkGGicuSSYWm0AXz4+PXgAYTgoDAQoCSk44Hh2Fz4IYnhkBycKKkD+zzks6iJSWZpaBpbdfXbJDSwICHgAIwQ4AygmJiwCVDz4AHdpAAt4PpV-DBecZAIXvhTTLreYAInuj2G61BnCAA)
 
@@ -493,7 +474,6 @@ En su mayor parte, puedes elegir según tus preferencias personales, y TypeScrip
 
 A veces tendrás información sobre el tipo de valor que TypeScript no puede conocer.
 
-<MiddleBannerEight />
 
 Por ejemplo, si estás usando `document.getElementById`, TypeScript solo sabe que esto devolverá *algún* tipo de `HTMLElement`, pero es posible que sepas que tu página siempre tendrá un `HTMLCanvasElement` con un ID determinado.
 
@@ -537,7 +517,6 @@ Si esto sucede, puedes usar dos aserciones, primero para `any` (o `unknow`, que 
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEYD2A7AzgF3iAHgBxgC54oUBPAbgFgAoDMvBAFXgF54BvE4gRgvgBGxAEz8wxAMzwAvtRoB6efAC0qsAFcMq5bWTosUNtnwwSaEuTPwmFIA)
 
-<MiddleBannerNine />
 
 ```ts
 const a = expr as any as T;
@@ -601,7 +580,6 @@ printText("G'day, mate", "centre");
 Argument of type '"centre"' is not assignable to parameter of type '"left" | "right" | "center"'.
 ```
 
-<MiddleBannerOne />
 
 Los tipos literales numéricos funcionan de la misma manera:
 
@@ -658,7 +636,6 @@ Lo mismo se aplica a las cadenas:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWAsAFAAmkAxgDYCG0koAZgK4B2pALgJZxOgAWlTRcpABKkAI4NIiVgAoG0cqmnR2TAOYAaUAFtIrHnCKoARAHEAogBVjoAD6hjABQDyAZWsBKVADc47IgDchISkXNKgNGKgALygAN6g8ooOPKysAA4oIJAAHpTa6UIAdKHaxlq6+oYmFtagAL5BBHwCQqISUrKRRUla3ZUGRB4BQA)
 
-<MiddleBannerTwo />
 
 ```ts
 declare function handleRequest(url: string, method: "GET" | "POST"): void;
@@ -711,7 +688,6 @@ La falta de verificación de estos valores tiende a ser una fuente importante de
 
 ### Con la opción `strictNullChecks` en `on` \{#strictnullchecks-on}
 
-<MiddleBannerThree />
 
 Con [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks) en *on*, cuando un valor es `null` o `undefined`, tendrás que probar esos valores antes de usar métodos o propiedades en ese valor.
 Al igual que verificar por `undefined` antes de usar una propiedad opcional, podemos usar *estrechamiento* para verificar valores que podrían ser `null`:
@@ -759,7 +735,6 @@ Desde ES2020 en adelante, hay una primitiva en JavaScript que se usa para entero
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEBcEMCcHMCmkBcpEGcBMAGXBYAKCJFAGFZFpIBLAO3lGlACMb57JQA3G5yABaJQAIXYBJOlwBmAVzoBjWgHs6RBaoxdViABLyAJpQNo2HKaAC8oiVIAUARhw4AlAG4iJMBSq0GTG3hJLl5+IVAAGxpIRFhoCNAMAE8paAAPdU0uaDplQVj9OiNEE1Z2TitQJxw6NyA)
 
-<MiddleBannerFour />
 
 ```ts
 // Crea un bigint mediante la función BigInt
@@ -792,4 +767,3 @@ This comparison appears to be unintentional because the types 'typeof firstName'
 
 Puedes obtener más información sobre ellos en la [Página de referencia de símbolos ↗](https://www.typescriptlang.org/docs/handbook/symbols.html).
 
-<BottomBanner />

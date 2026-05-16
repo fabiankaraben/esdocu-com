@@ -8,22 +8,10 @@ sidebar:
   label: Módulos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 JavaScript tiene una larga historia de diferentes formas de manejar el código modularizado.
 TypeScript existe desde 2012 y ha implementado soporte para muchos de estos formatos, pero con el tiempo la comunidad y la especificación de JavaScript han convergido en un formato llamado ES Modules (o módulos ES6). Quizás la conozcas como la sintaxis `importa`/`export`.
 
-<TopBanner />
 
 ES Modules se agregó a la especificación de JavaScript en 2015 y, para 2020, tenía un amplio soporte en la mayoría de los navegadores web y runtimes de JavaScript.
 
@@ -61,7 +49,6 @@ lo que cambiará el archivo para que sea un módulo que no exporta nada. Esta si
 > Lectura adicional: [Impatient JS (Modules) ↗](https://exploringjs.com/impatient-js/ch_modules.html#overview-syntax-of-ecmascript-modules) y [MDN : Módulos de JavaScript ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 >
 
-<MiddleBannerOne />
 
 Hay tres cosas principales a considerar al escribir código basado en módulos en TypeScript:
 
@@ -122,7 +109,6 @@ const absPhi = absolute(phi);
 const absPhi: number
 ```
 
-<MiddleBannerTwo />
 
 ### Sintaxis de importación adicional \{#additional-import-syntax}
 
@@ -191,7 +177,6 @@ En este caso, el `import` no hace nada. Sin embargo, se evaluó todo el código 
 
 #### Sintaxis específica de ES Module de TypeScript \{#typescript-specific-es-module-syntax}
 
-<MiddleBannerThree />
 
 Los tipos se pueden exportar e importar usando la misma sintaxis que los valores de JavaScript:
 
@@ -256,7 +241,6 @@ Juntos permiten que un transpilador que no sea TypeScript como Babel, swc o esbu
 
 #### Sintaxis de ES Module con comportamiento CommonJS \{#es-module-syntax-with-commonjs-behavior}
 
-<MiddleBannerFour />
 
 TypeScript tiene una sintaxis de ES Module que *directamente* se correlaciona con un `require` de CommonJS y AMD. Las importaciones usando ES Module son *en la mayoría de los casos* iguales que el `require` de esos entornos, pero esta sintaxis garantiza que tengas una coincidencia 1 a 1 en tu archivo TypeScript con la salida de CommonJS:
 
@@ -308,7 +292,6 @@ O puedes simplificar un poco usando la función de desestructuración en JavaScr
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFsHsBMFcA2BTAXKAxtSMB2ArAZwFgAoECAMwEsVcBDSNUSegFwAtCA6Nk8igB4ATskrJRuDMlBsAngAdkhALwAiXHGRrQwAHxlK8KW2rRcoegCNC0RPDbIAFLniR0ryFYkBKUAG8yUFBqSlAXN1BBUAAGP1E2eGELT1AAKlAAWgBGAG4g0ASklLd80gBfMjIYBBRuZAAPBWhhPlAVAIKFanQAZm5sgBYAGgLCAEd4elEAFQB3aHRs7kHs0dJghQ4e0GWANjWC61t7R3XysopwGjpGZmpcWEbefgpM94wHd8yyLFxCNgBUATKazBagcrtQrISbUURONTcYCsTiENQ+Mog6bIebQS5gAB6AH4gA)
 
-<MiddleBannerFive />
 
 ```ts
 const { squareTwo } = require("./maths");
@@ -348,7 +331,6 @@ Por ejemplo, aquí hay un archivo TypeScript que usa la sintaxis de ES Module, q
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEDMEsBsFMB2BDAtvAXKAxge0QM4AuyiRBAdOQLABQ8AHgA64BORO+xoAbsrAFd4AeUgAFaKAC8oAMwUAjABYATAG46ICDAQp0WaIgAmjKgU1gAtNewCi1y3WioW7UAG9e-IaImgAvqCQrLiooABEFMB4hCRklABWBOEatHSMrhwx3EQA7rh+MnyCIuKSAFSg6kA)
 
-<MiddleBannerSix />
 
 ```ts
 import { valueOfPi } from "./constants.js";
@@ -411,4 +393,3 @@ Puedes ver todas las opciones disponibles y cómo se ve el código JavaScript em
 
 TypeScript tiene su propio formato de módulo llamado `namespaces` que es anterior al estándar de ES Module. Esta sintaxis tiene muchas características útiles para crear archivos de definición complejos y todavía se usa activamente [en DefinitelyTyped ↗](https://github.com/DefinitelyTyped/DefinitelyTyped). Si bien no están obsoletas, la mayoría de las funciones en los espacios de nombres existen en ES Module y te recomendamos que las utilices para alinearte con la dirección de JavaScript. Puedes obtener más información sobre los espacios de nombres en [la página de referencia de espacios de nombres ↗](https://www.typescriptlang.org/docs/handbook/namespaces.html).
 
-<BottomBanner />

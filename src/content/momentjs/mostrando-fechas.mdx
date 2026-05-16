@@ -8,21 +8,9 @@ sidebar:
   label: Mostrar contenido
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Una vez finalizados el análisis (parsing) y la manipulación, necesitas alguna forma de mostrar el moment.
 
-<TopBanner />
 
 ## Opciones de Formato \{#format\}
 
@@ -134,7 +122,6 @@ Hay variaciones de mayúsculas y minúsculas en los mismos formatos. La versión
 
 `l ll lll llll` están disponibles en **2.0.0**.
 
-<MiddleBannerOne />
 
 `LTS` se agregó en **2.8.4**.
 
@@ -174,7 +161,6 @@ moment('20.07.2018 09:19').toDate() // Invalid date
 moment('20.07.2018 09:19', moment.defaultFormat).toDate() // Fri Jul 20 2018 09:19:00 GMT+0300
 ```
 
-<MiddleBannerTwo />
 
 ## Tiempo desde ahora \{#fromnow\}
 
@@ -234,7 +220,6 @@ var b = moment([2007, 0, 29]);
 a.from(b) // "a day ago"
 ```
 
-<MiddleBannerThree />
 
 El primer parámetro es cualquier cosa que puedas pasar a `moment()` o a un `Moment` existente.
 
@@ -286,7 +271,6 @@ Las cadenas base están [personalizadas según la configuración regional actual
 
 El desglose de qué cadena se muestra para cada período de tiempo se describe en la siguiente tabla.
 
-<MiddleBannerFour />
 
 | Rango                     | Clave | Salida de muestra              |
 | ------------------------- | ----- | ------------------------------ |
@@ -304,4 +288,3 @@ El desglose de qué cadena se muestra para cada período de tiempo se describe e
 
 A partir de la versión **2.10.3**, si el objeto moment objetivo no es válido, el resultado es la cadena `'Invalid date'` localizada.
 
-<BottomBanner />

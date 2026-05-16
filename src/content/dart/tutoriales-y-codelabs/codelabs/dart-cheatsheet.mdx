@@ -10,19 +10,7 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
-<TopBanner />
 
 El lenguaje Dart está diseñado para que sea fácil de aprender para programadores que provienen de otros lenguajes, pero tiene algunas características únicas. Este codelab te guiará a través de las características más importantes de estos lenguajes.
 
@@ -78,7 +66,6 @@ Por ejemplo, considera el siguiente código. Con null-safety, este código devue
 int a = ; // INVALIDO.
 ```
 
-<MiddleBannerOne />
 
 Al crear una variable, agrega `?` al tipo para indicar que la variable puede ser `null`:
 
@@ -145,7 +132,6 @@ print(a); // <-- Aún imprime 3.
 
 Otro operador que reconoce nulos es `??`, que devuelve la expresión de su izquierda a menos que el valor de esa expresión sea nulo, en cuyo caso evalúa y devuelve la expresión de su derecha:
 
-<MiddleBannerTwo />
 
 ```dart
 print(1 ?? 3); // <-- Imprime 1.
@@ -229,7 +215,6 @@ El código anterior devuelve `null` (y nunca llama a `someMethod()`) si `myObjec
 
 ### Ejemplo de código \{#code-example-3\}
 
-<MiddleBannerThree />
 
 La siguiente función toma una cadena que acepta valores null como parámetro. Intenta utilizar el acceso condicional a la propiedad para que devuelva la versión mayúscula de `str`, o `null` si `str` es `null`.
 
@@ -407,7 +392,6 @@ final anEmptyMapOfDoublesToInts = <double, int>{};
 ```
 </Aside>
 
-<MiddleBannerFour />
 
 ## Sintaxis de flecha \{#arrow-syntax\}
 
@@ -528,7 +512,6 @@ Invoca `someMethod()` en `myObject`, y el resultado de la expresión es el valor
 
 Aquí tienes la misma expresión con una cascada:
 
-<MiddleBannerFive />
 
 ```dart
 myObject..someMethod()
@@ -658,7 +641,6 @@ class MyClass {
 
 También puedes usar un getter para definir una propiedad calculada:
 
-<MiddleBannerSix />
 
 ```dart
 class MyClass {
@@ -811,7 +793,6 @@ int sumUpToFive(int a, [int b = 2, int c = 3, int d = 4, int e = 5]) {
 
 ### Ejemplo de código \{#code-example-8\}
 
-<MiddleBannerSeven />
 
 Implementa una función llamada `joinWithCommas()` que acepte de uno a cinco números enteros y luego devuelve una cadena de esos números separados por comas. A continuación se muestran algunos ejemplos de llamadas a funciones y valores devueltos:
 
@@ -930,7 +911,6 @@ Una función no puede tener parámetros posicionales y con nombre opcionales.
 
 Agrega un método de instancia `copyWith()` a la clase `MyDataObject`. Debería tomar tres parámetros con nombre que acepten valores `null`:
 
-<MiddleBannerEight />
 
 - `int? newInt`
 - `String? newString`
@@ -1061,7 +1041,6 @@ try {
 
 Para ejecutar código independientemente de que se produzca una excepción o no, usa `finally`:
 
-<MiddleBannerNine />
 
 ```dart
 try {
@@ -1258,7 +1237,6 @@ MyColor({this.red = 0, this.green = 0, this.blue = 0});
 
 Agrega un constructor de una línea a `MyClass` que use la sintaxis `this.` para recibir y asignar valores para las tres propiedades de la clase.
 
-<MiddleBannerOne />
 
 Ignora todos los errores iniciales en DartPad.
 
@@ -1400,7 +1378,6 @@ Es necesario que se realicen dos asignaciones: a `letterOne` se le debe asignar 
 
 Para permitir que las clases tengan múltiples constructores, Dart admite constructores con nombre:
 
-<MiddleBannerTwo />
 
 ```dart
 class Point {
@@ -1625,7 +1602,6 @@ void main() {
 }
 ```
 
-<MiddleBannerThree />
 
 <Aside title="Solución del ejemplo para constructores factory">
 Dentro del constructor factory, verifica la longitud de la lista, luego crea y devuelve un `IntegerSingle`, `IntegerDouble` o `IntegerTriple` según corresponda.
@@ -1745,7 +1721,6 @@ Modifica la clase `Recipe` para que sus instancias puedan ser constantes y crea 
 - Utiliza la sintaxis `this.` para asignar automáticamente los valores de los parámetros a las propiedades del objeto del mismo nombre.
 - Es constante, con la palabra clave `const` justo antes de `Recipe` en la declaración del constructor.
 
-<MiddleBannerFour />
 
 Ignora todos los errores iniciales en DartPad.
 
@@ -1812,4 +1787,3 @@ Esperamos que hayas disfrutado usando este codelab para aprender o probar tu con
 - Juega con [DartPad. ↗](https://dartpad.dev)
 - [Obtén el SDK de Dart ↗](https://dart.dev/get-dart).
 
-<BottomBanner />

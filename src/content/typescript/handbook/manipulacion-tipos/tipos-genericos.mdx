@@ -8,22 +8,10 @@ sidebar:
   label: Tipos genéricos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Una parte importante de la ingeniería de software es crear componentes que no solo tengan API consistentes y bien definidas, sino que también sean reutilizables.
 Los componentes que son capaces de trabajar con los datos de hoy y con los datos del mañana te brindarán las capacidades más flexibles para construir grandes sistemas de software.
 
-<TopBanner />
 
 En lenguajes como C# y Java, una de las principales herramientas en la caja de herramientas para crear componentes reutilizables son los *generics*, es decir, poder crear un componente que pueda funcionar en una variedad de tipos en lugar de uno solo.
 Esto permite a los usuarios consumir estos componentes y utilizar sus propios tipos.
@@ -76,7 +64,6 @@ Esto nos permite enviar ese tipo de información por un lado de la función y po
 Decimos que esta versión de la función `identity` es genérica, ya que funciona con una variedad de tipos.
 A diferencia del uso de `any`, también es tan preciso (es decir, no pierde ninguna información) como la primera función `identity` que usaba `number` para el argumento y el tipo de retorno.
 
-<MiddleBannerOne />
 
 Una vez que hayamos escrito la función de identidad genérica, podemos llamarla de dos maneras.
 La primera forma es pasar todos los argumentos, incluido el argumento de tipo, a la función:
@@ -124,7 +111,6 @@ Podríamos sentirnos tentados a escribir esto:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQAzAVwDsBjAFwEs5jQAbOAc0cuMYEkATSYq8gTwA8AFX4AHSAD4AFAENojVKIkBKJeMigA3rlChSNRHDqQAdA0ZyF5no3IALFQG5doaJHKFoteYxcBfIA)
 
-<MiddleBannerTwo />
 
 ```ts
 function loggingIdentity<Type>(arg: Type): Type {
@@ -179,7 +165,6 @@ El tipo de funciones genéricas es igual que el de las funciones no genéricas, 
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABDAJgUzLKBPAPAFWwAc0A+ACgEMAnAcwC5FCSBKR5tRAbwChFFqaKCGpIatANw8Avjx4AbIYgC22AJLpMMHIwLEyVOu30tEAXlJN955JqzYJQA)
 
-<MiddleBannerThree />
 
 ```ts
 function identity<Type>(arg: Type): Type {
@@ -256,7 +241,6 @@ Comprender cuándo colocar el parámetro de tipo directamente en la firma de lla
 Además de interfaces genéricas, también podemos crear clases genéricas.
 Ten en cuenta que no es posible crear enumeraciones y espacios de nombres genéricos.
 
-<MiddleBannerFour />
 
 ## Clases genéricas \{#generic-classes}
 
@@ -320,7 +304,6 @@ En lugar de trabajar con todos y cada uno de los tipos, nos gustaría restringir
 Siempre que el tipo tenga este miembro, lo permitiremos, pero es necesario que tenga al menos este miembro.
 Para hacerlo, debemos enumerar nuestro requisito como una restricción sobre lo que puede ser `Type`.
 
-<MiddleBannerFive />
 
 Para hacerlo, crearemos una interfaz que describa nuestra restricción.
 Aquí, crearemos una interfaz que tenga una única propiedad `.length` y luego usaremos esta interfaz y la palabra clave `extends` para indicar nuestra restricción:
@@ -381,7 +364,6 @@ getProperty(x, "m");
 Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.
 ```
 
-<MiddleBannerSix />
 
 ## Usando tipos de clase en generics \{#using-class-types-in-generics}
 
@@ -475,4 +457,3 @@ Un parámetro genérico predeterminado sigue las siguientes reglas:
 - Una declaración de clase o interfaz que se fusiona con una declaración de clase o interfaz existente puede introducir un valor predeterminado para un parámetro de tipo existente.
 - Una declaración de clase o interfaz que se fusiona con una declaración de clase o interfaz existente puede introducir un nuevo parámetro de tipo siempre que especifique un valor predeterminado.
 
-<BottomBanner />

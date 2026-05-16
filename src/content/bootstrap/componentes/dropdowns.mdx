@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Alterna superposiciones contextuales para mostrar listas de enlaces y más con el complemento desplegable de Bootstrap.
 
-<TopBanner />
 
 ## Descripción general del componente Desplegable \{#overview}
 
@@ -88,7 +76,6 @@ Si bien `<button>` es el control recomendado para un menú desplegable, puede ha
 
 La mejor parte es que también puedes hacer esto con cualquier variante de botón:
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/dropdowns/single-button-3.html" >
 ```html title="HTML"
@@ -371,7 +358,6 @@ Opta por menús desplegables más oscuros para que coincidan con una barra de na
 **¡Atención!** Las variantes oscuras para componentes quedaron obsoletas en la versión 5.3.0 con la introducción de modos de color. En lugar de agregar `.dropdown-menu-dark`, establece `data-bs-theme="dark"` en el elemento raíz, un contenedor padre o el componente mismo.
 </Aside>
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/dropdowns/dark-dropdowns-1.html" >
 ```html title="HTML"
@@ -515,7 +501,6 @@ Haz que el menú desplegable esté centrado encima del interruptor con `.dropup-
 
 ### Dropend \{#dropend}
 
-<MiddleBannerThree />
 
 Activa menús desplegables a la derecha de los elementos agregando `.dropend` al elemento principal.
 
@@ -650,7 +635,6 @@ Agrega `.active` a los elementos en el menú desplegable para **diseñarlos como
 
 ### Deshabilitado \{#disabled}
 
-<MiddleBannerFour />
 
 Agrega `.disabled` a los elementos en el menú desplegable para **mostrarlos como deshabilitados**.
 
@@ -734,7 +718,6 @@ Ten en cuenta que no necesitas agregar un atributo `data-bs-display="static"` a 
 
 <ContentSuggestion />
 
-<MiddleBannerFive />
 
 ### Opciones de alineación \{#alignment-options}
 
@@ -885,7 +868,6 @@ Coloca cualquier texto de formato libre dentro de un menú desplegable con texto
 
 Coloca un formulario dentro de un menú desplegable, o conviértelo en un menú desplegable, y usa [utilidades de margen o relleno.](/bootstrap/utilidades/espaciado) para darle el espacio negativo que necesitas.
 
-<MiddleBannerSix />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/dropdowns/forms-1.html" >
 ```html title="HTML"
@@ -1086,7 +1068,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los menús d
 --#{$prefix}dropdown-header-padding-y: #{$dropdown-header-padding-y};
 ```
 
-<MiddleBannerSeven />
 
 <Aside>
 Los elementos desplegables incluyen al menos una variable que no está configurada en `.dropdown`. Esto te permite proporcionar un nuevo valor mientras que Bootstrap utiliza de forma predeterminada un valor alternativo.
@@ -1186,7 +1167,6 @@ $caret-vertical-align:        $caret-width * .85;
 $caret-spacing:               $caret-width * .85;
 ```
 
-<MiddleBannerEight />
 
 ### Mixins Sass del componente \{#sass-mixins}
 
@@ -1302,7 +1282,6 @@ const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootst
 
 ### Opciones \{#options}
 
-<MiddleBannerNine />
 
 Como las opciones se pueden pasar a través de atributos de datos o JavaScript, puedes agregar un nombre de opción a `data-bs-`, como en `data-bs-animation="{value}"`. Asegúrate de cambiar el tipo de caso del nombre de la opción de “_camelCase_” a “_kebab-case_” al pasar las opciones a través de atributos de datos. Por ejemplo, utiliza `data-bs-custom-class="beautifier"` en lugar de `data-bs-customClass="beautifier"`.
 
@@ -1363,4 +1342,3 @@ myDropdown.addEventListener('show.bs.dropdown', event => {
 })
 ```
 
-<BottomBanner />

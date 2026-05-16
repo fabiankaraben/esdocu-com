@@ -8,18 +8,6 @@ sidebar:
   label: Uso de Moment.js
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
-
 *Moment* fue diseñado para funcionar tanto en el navegador como en Node.js.
 
 Todo el código debería funcionar en ambos entornos y todas las pruebas unitarias se ejecutan en ambos entornos.
@@ -61,7 +49,6 @@ Si también deseas incluir *Moment Timezone*, consulta la [documentación separa
 
 Si tu preferencia es utilizar Moment.js directamente en el navegador web, puedes hacerlo añadiendo el paquete `moment.js` previamente descargado o bien utilizando uno de los CDNs disponibles:
 
-<MiddleBannerOne />
 
 ```html title="HTML"
 <script src="moment.js"></script>
@@ -149,7 +136,6 @@ require.config({
 });
 ```
 
-<MiddleBannerTwo />
 
 Si no especificas `noGlobal`, el `moment` exportado globalmente imprimirá una advertencia de obsolescencia. A partir de la próxima versión importante, tendrás que exportarlo tú mismo si deseas ese comportamiento.
 
@@ -190,7 +176,6 @@ var moment = require('moment');
 moment().format();
 ```
 
-<MiddleBannerThree />
 
 **Nota:** Hay un error que impide que se cargue `moment.locale`.
 
@@ -256,7 +241,6 @@ Existen otros recursos para optimizar Moment.js con webpack, [por ejemplo este](
 
 ## Usar Moment en TypeScript \{#typescript\}
 
-<MiddleBannerFour />
 
 A partir de la versión **2.13.0**, Moment incluye un archivo de definición para TypeScript.
 
@@ -315,7 +299,6 @@ Luego impórtalo a tu página.
  </script>
 ```
 
-<MiddleBannerFive />
 
 Si necesitas que moment se cargue como global, puedes hacerlo con la configuración en `meta`:
 
@@ -362,4 +345,3 @@ Además, Moment tiene un [Gitter](https://gitter.im/moment/moment) donde el equi
 Para obtener ayuda general para la resolución de problemas, [Stack Overflow](https://stackoverflow.com/questions/tagged/momentjs) es el foro preferido.
 Los mantenedores de Moment son muy activos en Stack Overflow, al igual que otros usuarios expertos. La respuesta más rápida estará ahí.
 
-<BottomBanner />

@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 La API de utilidad es una herramienta basada en Sass para generar clases de utilidad.
 
-<TopBanner />
 
 Las utilidades Bootstrap se generan con nuestra API de utilidades y se pueden usar para modificar o ampliar nuestro conjunto predeterminado de clases de utilidades a través de Sass. Nuestra API de utilidad se basa en una serie de mapas y funciones de Sass para generar familias de clases con varias opciones. Si no estás familiarizado con los mapas de Sass, lee la [documentación oficial de Sass](https://sass-lang.com/documentation/values/maps) para comenzar.
 
@@ -101,7 +89,6 @@ Salida:
 
 Utiliza la clave `values` para especificar qué valores para la `property` especificada deben usarse en las reglas y nombres de clase generados. Puede ser una lista o un mapa (establecido en las utilidades o en una variable Sass).
 
-<MiddleBannerOne />
 
 Como una lista, como con las [`text-decoration` (utilidades)](/bootstrap/utilidades/textos/#text-decoration):
 
@@ -176,7 +163,6 @@ $utilities: (
 
 Salida:
 
-<MiddleBannerTwo />
 
 ```css title="CSS"
 .visible { visibility: visible !important; }
@@ -251,7 +237,6 @@ Usa la opción `state` para generar variaciones de pseudoclases. Ejemplos de pse
 
 ¿Necesitas múltiples pseudoclases? Utiliza una lista de estados separados por espacios: `state: hover focus`.
 
-<MiddleBannerThree />
 
 ```scss title="SCSS"
 $utilities: (
@@ -392,7 +377,6 @@ Salida:
 
 ## Importancia \{#importance}
 
-<MiddleBannerFour />
 
 Todas las utilidades generadas por la API incluyen `!important` para garantizar que se sobrescriben los componentes y las clases modificadoras según lo previsto. Puedes alternar esta configuración globalmente con la variable `$enable-important-utilities` (el valor predeterminado es `true`).
 
@@ -495,7 +479,6 @@ $utilities: map-merge(
 @import "bootstrap/scss/utilities/api";
 ```
 
-<MiddleBannerFive />
 
 <ContentSuggestion />
 
@@ -632,7 +615,6 @@ $utilities: map-merge(
 
 #### Eliminar utilidad en RTL \{#remove-utility-in-rtl}
 
-<MiddleBannerSix />
 
 Algunos casos extremos hacen [El estilo RTL es difícil](https://rtlstyling.com/posts/rtl-styling#common-things-that-might-not-work-for-rtl), como los saltos de línea en árabe. Por lo tanto, las utilidades se pueden eliminar de la salida RTL configurando la opción `rtl` en `false`:
 
@@ -662,4 +644,3 @@ Salida:
 
 Esto no genera nada en RTL, gracias a [la directiva de control `remove` RTLCSS](https://rtlcss.com/learn/usage-guide/control-directives/#remove).
 
-<BottomBanner />

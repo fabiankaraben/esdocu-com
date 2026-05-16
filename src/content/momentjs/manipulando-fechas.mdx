@@ -8,21 +8,9 @@ sidebar:
   label: Manipular contenido
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Una vez que tengas un `Moment`, es posible que desees manipularlo de alguna manera. Hay varios métodos para ayudar con esto.
 
-<TopBanner />
 
 Moment.js utiliza el [patrón de interfaz fluido](https://en.wikipedia.org/wiki/Fluent_interface), también conocido como [encadenamiento de métodos](https://en.wikipedia.org/wiki/Method_chaining). Esto te permite hacer locuras como las siguientes.
 
@@ -77,7 +65,6 @@ moment().add({days:7,months:1}); // con objeto literal
 
 No hay límites superiores para las cantidades, por lo que puedes sobrecargar cualquiera de los parámetros.
 
-<MiddleBannerOne />
 
 ```javascript title="JavaScript"
 moment().add(1000000, 'milliseconds'); // un millón de milisegundos
@@ -134,7 +121,6 @@ moment().add(1, 'seconds');
 A partir de **2.12.0**, cuando se pasan valores decimales para días y meses, se redondean al número entero más cercano.
 Las semanas, cuartos (trimestres) y años se convierten a días o meses y luego se redondean al número entero más cercano.
 
-<MiddleBannerTwo />
 
 ```javascript title="JavaScript"
 moment().add(1.5, 'months') == moment().add(2, 'months')
@@ -195,7 +181,6 @@ moment().startOf('minute');  // establecido a ahora, pero con 0 segundos y 0 mil
 moment().startOf('second');  // igual a moment().milliseconds(0);
 ```
 
-<MiddleBannerThree />
 
 Estos atajos son esencialmente los mismos que los siguientes.
 
@@ -219,4 +204,3 @@ A partir de la versión **2.1.0**, `moment#startOf('week')` utiliza el día de i
 
 **Nota:** `moment#startOf('date')` se agregó como alias para el día en **2.13.0**
 
-<BottomBanner />

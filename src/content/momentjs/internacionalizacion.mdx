@@ -8,21 +8,9 @@ sidebar:
   label: Internacionalización (i18n)
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Moment.js tiene un sólido soporte para la internacionalización.
 
-<TopBanner />
 
 Puedes cargar varias configuraciones regionales y cambiar fácilmente entre ellas.
 
@@ -138,7 +126,6 @@ moment(1316116057189).fromNow(); // an hour ago
 
 `moment.locale` devuelve la configuración regional utilizada. Esto es útil porque Moment no cambiará las configuraciones regionales si no conoce la que tú especificas.
 
-<MiddleBannerOne />
 
 ```javascript title="JavaScript"
 moment.locale('fr'); // 'fr'
@@ -190,7 +177,6 @@ moment().lang(String|String[]|Boolean);
 
 Una configuración regional global puede ser problemática cuando se pasan moments que pueden necesitar ser formateados en una configuración regional diferente.
 
-<MiddleBannerTwo />
 
 ```javascript title="JavaScript"
 moment.locale('en'); // por defecto la configuración regional es inglés
@@ -226,4 +212,3 @@ Si necesitas acceder a los datos locales por un moment, esta es la forma preferi
 
 A partir de **2.3.0**, también puedes especificar una serie de identificadores locales. Funciona de la misma manera que en la [configuración regional global](/momentjs/internacionalizacion#changing-locale).
 
-<BottomBanner />

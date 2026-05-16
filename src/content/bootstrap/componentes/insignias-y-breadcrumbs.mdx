@@ -10,22 +10,10 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
-<TopBanner />
 
 ## El componente de Insignia de Bootstrap
 
@@ -82,7 +70,6 @@ Usa utilidades para modificar un `.badge` y posicionarlo en la esquina de un enl
 
 También puedes reemplazar la clase `.badge` con algunas utilidades más sin contar para un indicador más genérico.
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/badge/positioned-2.html" >
 ```html title="HTML"
@@ -150,7 +137,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las insignia
 
 [scss/_badge.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_badge.scss)
 
-<MiddleBannerTwo />
 
 ```scss title="scss/_badge.scss"
 --#{$prefix}badge-padding-x: #{$badge-padding-x};
@@ -230,7 +216,6 @@ $breadcrumb-divider: quote(">");
 
 También es posible usar un **icono SVG incrustado**. Aplícalo a través de nuestra propiedad personalizada CSS o usa la variable Sass.
 
-<MiddleBannerThree />
 
 <Aside>
 **El SVG incorporado requiere caracteres con escape adecuado.** Algunos caracteres reservados, como `<`, `>` y `#`, deben estar codificado en URL o con formato de escape. Hacemos esto con la variable `$breadcrumb-divider` usando nuestro [`escape-svg()` (función Sass)](/bootstrap/personalizar/#escape-svg). Al personalizar la variable CSS, debes manejarlo tú mismo. Lee las [explicaciones de Kevin Weber sobre CodePen](https://codepen.io/kevinweber/pen/dXWoRw) para obtener más información.
@@ -287,7 +272,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las rutas de
 
 [scss/_breadcrumb.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_breadcrumb.scss)
 
-<MiddleBannerFour />
 
 ```scss title="scss/_breadcrumb.scss"
 --#{$prefix}breadcrumb-padding-x: #{$breadcrumb-padding-x};
@@ -319,4 +303,3 @@ $breadcrumb-divider-flipped:        $breadcrumb-divider;
 $breadcrumb-border-radius:          null;
 ```
 
-<BottomBanner />

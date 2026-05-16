@@ -8,23 +8,11 @@ sidebar:
   label: Tipos condicionales
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 En el corazón de la mayoría de los programas útiles, tenemos que tomar decisiones basadas en las entradas.
 Los programas JavaScript no son diferentes, pero dado que los valores pueden ser fácilmente introspeccionados, esas decisiones también se basan en los tipos de entradas.
 Los *tipos condicionales* ayudan a describir la relación entre los tipos de entradas y salidas.
 
-<TopBanner />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgIImAWzgG2QbwChlkdgA3CACgEoAuZcge2ABMBuQgX0NElkQoAIkwDmyCAA9IIVgGc0GbHiIkA7kyYxaDZm049CYAJ4AHFAFFJcTKZwQAjMgC8yEeKkz5irLmQB+ZBAAV0wAI2hkBjkwKFBRTgB6RJJkAD1-QiMzS2tbewAmF2QAJQhRK1MJaQhZBXRfPECQ8Mjo2PiklJIMoA)
 
@@ -93,7 +81,6 @@ type NameOrId<T extends number | string> = T extends number
   : NameLabel;
 ```
 
-<MiddleBannerOne />
 
 Luego podemos usar ese tipo condicional para simplificar nuestras sobrecargas a una sola función sin sobrecargas.
 
@@ -176,7 +163,6 @@ type DogMessageContents = MessageOf<Dog>;
 type DogMessageContents = never
 ```
 
-<MiddleBannerTwo />
 
 Dentro de la rama verdadera, TypeScript sabe que `T` *tendrá* una propiedad `message`.
 
@@ -243,7 +229,6 @@ type Bools = boolean[]
 
 Cuando se infiere a partir de un tipo con múltiples firmas de llamada (como el tipo de una función sobrecargada), las inferencias se hacen a partir de la *última* firma (que, presumiblemente, es el caso más permisivo). No es posible realizar una resolución de sobrecarga basada en una lista de tipos de argumentos.
 
-<MiddleBannerThree />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwGcMYtUBzAeRgDlkBbACgA8AuQ40sgSjdXoCMQMANwAoUJFgIU6bHnYlyVWo1bw+dQTB4LOYidDhI0mXPiKLKNeszYXO8AD7qBQnffJOXmoWNEYATwAHBAAVAEZ4AF54ACUQDGQYVFDgkAAeQJCcRF0lazoAPjEAehL4CoA9AH4gA)
 
@@ -296,7 +281,6 @@ y mapea cada tipo de miembro de la unión, a lo que es efectivamente:
   ToArray<string> | ToArray<number>;
 ```
 
-<MiddleBannerFour />
 
 lo cual nos deja con:
 
@@ -320,4 +304,3 @@ type ArrOfStrOrNum = ToArrayNonDist<string | number>;
 type ArrOfStrOrNum = (string | number)[]
 ```
 
-<BottomBanner />

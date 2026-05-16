@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Documentación y ejemplos para el potente encabezado de navegación responsive de Bootstrap, la barra de navegación. Incluye soporte para marca, navegación y más, incluido soporte para nuestro complemento collapse.
 
-<TopBanner />
 
 ## Cómo funciona el componente Barra de navegación \{#how-it-works}
 
@@ -117,7 +105,6 @@ El `.navbar-brand` se puede aplicar a la mayoría de los elementos, pero un ancl
 
 Agrega tu texto dentro de un elemento con la clase `.navbar-brand`.
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/navbar/text.html" >
 ```html title="HTML"
@@ -236,7 +223,6 @@ Y debido a que usamos clases para nuestra navegación, puedes evitar por complet
 
 <ContentSuggestion />
 
-<MiddleBannerTwo />
 
 También puedes usar menús desplegables en tu barra de navegación. Los menús desplegables requieren un elemento envolvente para su posicionamiento, así que asegúrate de utilizar elementos separados y anidados para `.nav-item` y `.nav-link` como se muestra a continuación.
 
@@ -359,7 +345,6 @@ Las barras de navegación pueden contener fragmentos de texto con la ayuda de `.
 
 Mezcla y combina con otros componentes y utilidades según sea necesario.
 
-<MiddleBannerThree />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/navbar/text-1-2.html" >
 ```html title="HTML"
@@ -465,7 +450,6 @@ Las barras de navegación fijas usan `position: fixed`, lo que significa que se 
 ```
 </DemoIframe>
 
-<MiddleBannerFour />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/navbar/placement-2.html" >
 ```html title="HTML"
@@ -572,7 +556,6 @@ Para barras de navegación que nunca colapsan, agrega la clase `.navbar-expand` 
 
 Los alternadores de la barra de navegación están alineados a la izquierda de forma predeterminada, pero si siguen a un elemento hermano como `.navbar-brand`, se alinearán automáticamente con el más a la derecha. Revertir su marcado invertirá la ubicación del conmutador. A continuación se muestran ejemplos de diferentes estilos de alternancia.
 
-<MiddleBannerFive />
 
 Sin `.navbar-brand` mostrado en el punto de interrupción más pequeño:
 
@@ -759,7 +742,6 @@ En el siguiente ejemplo, para crear una barra de navegación offcanvas que siemp
 
 <ContentSuggestion />
 
-<MiddleBannerSix />
 
 Para crear una barra de navegación offcanvas que se expanda a una barra de navegación normal en un punto de interrupción específico como `lg`, usa `.navbar-expand-lg`.
 
@@ -880,7 +862,6 @@ La personalización a través de variables CSS se puede ver en la clase `.navbar
 
 [scss/_navbar.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_navbar.scss)
 
-<MiddleBannerSeven />
 
 ```scss title="scss/_navbar.scss"
 --#{$prefix}navbar-color: #{$navbar-dark-color};
@@ -1026,4 +1007,3 @@ $navbar-dark-brand-hover-color:     $navbar-dark-active-color;
 }
 ```
 
-<BottomBanner />

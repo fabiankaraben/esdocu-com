@@ -8,21 +8,9 @@ sidebar:
   label: Estrechamiento de tipos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 Imagina que tenemos una función llamada `padLeft`.
 
-<TopBanner />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABABwIYBMAyBTYUAUa66MYA5gFyJggC2ARtgE6IA+iAzlE6WQDSJSyEFCpce5AJRjuvRAG8AUIkRQAFkzgB3ath0BRJpqb4ARADk4UQbWQAbbLWxgo2dIgCe2KAEJTkgG5FAF8gA)
 
@@ -93,7 +81,6 @@ function padLeft(padding: number | string, input: string): string {
 
 Hay un par de construcciones diferentes que TypeScript entiende para estrechar.
 
-<MiddleBannerOne />
 
 ## El operador type guard `typeof` \{#typeof-type-guards}
 
@@ -153,7 +140,6 @@ Por ejemplo, las declaraciones `if` no esperan que su condición siempre tenga e
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/GYVwdgxgLglg9mABAcwKZQKoGdUCcsDyYANjGKgLKpZYCGaAFGCALbZ6ElmoBcizLAEZ4AlIgDeAKESIYwRE1bt8RUuTFSZM3OhC4kAAwAqACzypEtHYgAk4gcs5rUAX0QJn-OAHcAhAYBuaUQXYJ0oPSQAIgA5OEE4ABMATwByLEQzHQA6RB4GKKCXIA)
 
-<MiddleBannerTwo />
 
 ```ts
 function getUsersOnlineMessage(numUsersOnline: number) {
@@ -234,7 +220,6 @@ function printAll(strs: string | string[] | null) {
 
 Envolvimos todo el cuerpo de la función en una verificación veraz, pero esto tiene una desventaja sutil: es posible que ya no estemos manejando correctamente la cadena vacía.
 
-<MiddleBannerThree />
 
 TypeScript no nos hace ningún daño aquí, pero vale la pena señalar este comportamiento si estás menos familiarizado con JavaScript.
 TypeScript a menudo puede ayudarle a detectar errores desde el principio, pero si eliges no hacer *nada* con un valor, hay mucho que puedes hacer sin ser demasiado prescriptivo.
@@ -329,7 +314,6 @@ function multiplyValue(container: Container, factor: number) {
 }
 ```
 
-<MiddleBannerFour />
 
 ## El operador de estrechamiento `in` \{#the-in-operator-narrowing}
 
@@ -401,7 +385,6 @@ Como mencionamos anteriormente, cuando asignamos cualquier variable, TypeScript 
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/DYUwLgBAHhC8EFkCGYAWA6ATkgdgEwHsBbACgEoIAeCABnQFYIB+CARhogC4IAiVEYMAIQA7gUzA8AQh4BuAFAB6RRAgA9JvJjxWC+QGMCOAM4FQ6IQHMSUMguWrHT9Zu29LBAngBGATxAyeoYmZiAWBNa29irOThpAA)
 
-<MiddleBannerFive />
 
 ```ts
 let x = Math.random() < 0.5 ? 10 : "hello world!";
@@ -500,7 +483,6 @@ function example() {
 
 ## Usando predicados de tipo \{#using-type-predicates}
 
-<MiddleBannerSix />
 
 Hemos trabajado con construcciones de JavaScript existentes para manejar el estrechamiento hasta ahora, sin embargo, a veces desearás un control más directo sobre cómo cambian los tipos a lo largo de tu código.
 
@@ -558,7 +540,6 @@ Además, las clases pueden [usar `this is Type`](/typescript/handbook/clases#thi
 
 Los tipos también se pueden limitar usando [Funciones de aserción ↗](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions).
 
-<MiddleBannerSeven />
 
 # Uniones discriminadas \{#discriminated-unions}
 
@@ -618,7 +599,6 @@ Pero ¿qué pasa si realizamos las comprobaciones apropiadas en la propiedad `ki
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYDMbQEYAOABgBYCAoASwDsAXGAMwEMBjSUAZQAsmAHdgN7lQoANY0AJqgBELStBYAbSNNAAfUNMQBHAK5NoKgNzDQ0JhMq7EAflTVdAWwBGMEyMSUJkADKRqAOa0XHagDi5u5AC+5OQgoAC0SSy6tEkJ5Ay61Cy0lHDUoAGQtACChkwAFIg8-KjcfJAAlKBCIpQMoNW1kAB04tQSoAC8o5pyCsrSLW0iZiW60IUAskzBvQAKAJKgAFSgNY295pbWe-to7qAxUUA)
 
-<MiddleBannerEight />
 
 ```ts
 function getArea(shape: Shape) {
@@ -693,7 +673,6 @@ Cuando `radius` era opcional, obtuvimos un error (con [`strictNullChecks` ↗](h
 Ahora que `Shape` es una unión, TypeScript nos dice que `shape` podría ser un `Square`, ¡y los `Square` no tienen un `radius` definido!
 Ambas interpretaciones son correctas, pero solo la codificación de unión de `Shape` causará un error independientemente de cómo esté configurado [`strictNullChecks` ↗](https://www.typescriptlang.org/tsconfig#strictNullChecks).
 
-<MiddleBannerNine />
 
 ¿Pero qué pasaría si intentáramos verificar la propiedad `kind` nuevamente?
 
@@ -754,7 +733,6 @@ En esos casos, TypeScript usará un tipo `never` para representar un estado que 
 
 El tipo `never` se puede asignar a todos los tipos; sin embargo, ningún tipo se puede asignar a `never` (excepto el propio `never`). Esto significa que puedes utilizar el estrechamiento y confiar en que `never` aparezca para realizar una verificación exhaustiva en una declaración `switch`.
 
-<MiddleBannerOne />
 
 Por ejemplo, agregar un valor `default` a nuestra función `getArea` que intenta asignar `never` a `shape` no generará un error cuando se hayan manejado todos los casos posibles.
 
@@ -805,4 +783,3 @@ function getArea(shape: Shape) {
 Type 'Triangle' is not assignable to type 'never'.
 ```
 
-<BottomBanner />

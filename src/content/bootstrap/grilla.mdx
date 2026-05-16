@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Utiliza nuestra poderosa grilla flexbox para dispositivos móviles para crear diseños de todas las formas y tamaños gracias a un sistema de doce columnas, seis niveles responsive predeterminados, variables y mixins Sass, y docenas de clases predefinidas.
 
-<TopBanner />
 
 ## Ejemplo \{#example}
 
@@ -76,7 +64,6 @@ Desglosándolo, así es como se integra el sistema de grilla:
 
 Ten en cuenta las limitaciones y [errores alrededor de flexbox](https://github.com/philipwalton/flexbugs), como la [imposibilidad de utilizar algunos elementos HTML como contenedores flexibles](https://github.com/philipwalton/flexbugs#flexbug-9).
 
-<MiddleBannerOne />
 
 ## Opciones de grilla \{#grid-options}
 
@@ -172,7 +159,6 @@ El diseño automático para las columnas de la cuadrícula Flexbox también sign
 
 ### Contenido de ancho variable \{#variable-width-content}
 
-<MiddleBannerTwo />
 
 Usa las clases `col-{breakpoint}-auto` para dimensionar las columnas según el ancho natural de su contenido.
 
@@ -283,7 +269,6 @@ Usando un único conjunto de clases `.col-sm-*`, puedes crear un sistema de cuad
 
 ### Filas columnas \{#row-columns}
 
-<MiddleBannerThree />
 
 Utiliza las clases responsive `.row-cols-*` para establecer rápidamente el número de columnas que mejor representen tu contenido y diseño. Mientras que las clases `.col-*` normales se aplican a las columnas individuales (por ejemplo, `.col-md-4`), las clases de columnas de fila se establecen en el `.row` como acceso directo. Con `.row-cols-auto` puedes darle a las columnas su ancho natural.
 
@@ -411,7 +396,6 @@ Para anidar tu contenido con la cuadrícula predeterminada, agrega un nuevo `.ro
 
 ## Personalización del CSS \{#css}
 
-<MiddleBannerFour />
 
 Cuando usas los archivos fuente Sass de Bootstrap, tienes la opción de usar variables y mixins de Sass para crear diseños de página personalizados, semánticos y responsive. Nuestras clases de cuadrícula predefinidas utilizan estas mismas variables y combinaciones para proporcionar un conjunto completo de clases listas para usar para diseños de respuesta rápida.
 
@@ -519,7 +503,6 @@ Puedes modificar las variables a tus propios valores personalizados, o simplemen
 ```
 </DemoIframe>
 
-<MiddleBannerFive />
 
 ## Personalizando la grilla \{#customizing-the-grid}
 
@@ -558,4 +541,3 @@ $container-max-widths: (
 
 Al realizar cambios en las variables o mapas de Sass, deberás guardar los cambios y volver a compilarlos. Al hacerlo, se generará un nuevo conjunto de clases de cuadrícula predefinidas para anchos de columna, desplazamientos y ordenamiento. Las utilidades de visibilidad responsive también se actualizarán para utilizar puntos de interrupción personalizados. Asegúrate de establecer los valores de la cuadrícula en `px` (no en `rem`, `em` o `%`).
 
-<BottomBanner />

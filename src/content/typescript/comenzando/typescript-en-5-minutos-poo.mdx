@@ -8,21 +8,9 @@ sidebar:
   label: Programadores Java/C#
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 TypeScript es una opción popular para programadores acostumbrados a otros lenguajes con tipado estático, como C# y Java.
 
-<TopBanner />
 
 El sistema de tipos de TypeScript ofrece muchos de los mismos beneficios, como una mejor completado del código, detección más temprana de errores y una comunicación más clara entre las partes de tu programa.
 Si bien TypeScript proporciona muchas características familiares para estos desarrolladores, vale la pena retroceder para ver en qué se diferencia JavaScript (y por lo tanto TypeScript) de los lenguajes OOP tradicionales.
@@ -65,7 +53,6 @@ Cubriremos las clases más adelante en esta guía.
 
 ## Repensando los tipos \{#rethinking-types}
 
-<MiddleBannerOne />
 
 La comprensión de TypeScript sobre un *tipo* es en realidad bastante diferente de la de C# o Java.
 Exploremos algunas diferencias.
@@ -132,7 +119,6 @@ logName(obj);
 El sistema de tipos de TypeScript es *estructural*, no nominal: podemos usar `obj` como `Pointlike` porque tiene propiedades `x` e `y` que son ambas números.
 Las relaciones entre tipos están determinadas por las propiedades que contienen, no por si fueron declarados con alguna relación particular.
 
-<MiddleBannerTwo />
 
 El sistema de tipos de TypeScript también *no está cosificado*: no hay nada en tiempo de ejecución que nos diga que `obj` es `Pointlike`.
 De hecho, el tipo `Pointlike` no está presente *de ninguna forma* en tiempo de ejecución.
@@ -194,7 +180,6 @@ Si bien esto puede parecer una fuente potencial de confusión, en la práctica n
 
 Aprenderemos más sobre cómo se relacionan las clases entre sí en el capítulo de Clases.
 
-<MiddleBannerThree />
 
 ### Reflexión \{#reflection}
 
@@ -219,4 +204,3 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
 - Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
 
-<BottomBanner />

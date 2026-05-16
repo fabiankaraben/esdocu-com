@@ -8,22 +8,10 @@ sidebar:
   label: Clases
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 > Lectura previa: [Clases (MDN) ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 >
 
-<TopBanner />
 
 TypeScript ofrece soporte completo para la palabra clave `class` introducida en ES2015.
 
@@ -75,7 +63,6 @@ const pt = new Point();
 console.log(`${pt.x}, ${pt.y}`);
 ```
 
-<MiddleBannerOne />
 
 Al igual que con `const`, `let` y `var`, el inicializador de una propiedad de clase se usará para inferir su tipo:
 
@@ -132,7 +119,6 @@ class OKGreeter {
 }
 ```
 
-<MiddleBannerTwo />
 
 ### El prefijo `readonly` \{#readonly}
 
@@ -206,7 +192,6 @@ Solo existen algunas diferencias entre las firmas de constructores de clases y l
 
 #### Llamadas a super \{#super-calls}
 
-<MiddleBannerThree />
 
 Al igual que en JavaScript, si tienes una clase base, necesitarás llamar a `super();` en el cuerpo de tu constructor antes de usar cualquier miembro de `this.`:
 
@@ -278,7 +263,6 @@ class C {
 Type 'string' is not assignable to type 'number'.
 ```
 
-<MiddleBannerFour />
 
 ### Getters / Setters \{#getters--setters}
 
@@ -354,7 +338,6 @@ class MyClass {
 Debido a que el tipo de firma de índice también debe capturar los tipos de métodos, no es fácil utilizar estos tipos de manera útil.
 Generalmente es mejor almacenar los datos indexados en otro lugar en lugar de en la instancia de la clase misma.
 
-<MiddleBannerFive />
 
 ## Herencia de clase \{#class-heritage}
 
@@ -423,7 +406,6 @@ No lo es: las cláusulas `implements` no cambian la forma en que se verifica el 
 
 De manera similar, implementar una interfaz con una propiedad opcional no crea esa propiedad:
 
-<MiddleBannerSix />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4CwAoASwDsAXGAMwEMBjSUAQVAG8DRQAPVYgVwFsARjADcbUAE8A-N35Doo-AF8CNADZVEiUAGFQhPgAdVkPpDJamrfOw6gAvKAAMC5fhpxiiUqBr3QxSAB3HQAKAEoFGgA6cT8ARmcgA)
 
@@ -512,7 +494,6 @@ d.greet();
 d.greet("reader");
 ```
 
-<MiddleBannerSeven />
 
 Es importante que una clase derivada siga su contrato de clase base.
 Recuerda que es muy común (¡y siempre legal!) hacer referencia a una instancia de clase derivada a través de una referencia de clase base:
@@ -594,7 +575,6 @@ class DogHouse extends AnimalHouse {
 
 #### Orden de inicialización \{#initialization-order}
 
-<MiddleBannerEight />
 
 El orden en que se inicializan las clases de JavaScript puede resultar sorprendente en algunos casos.
 Consideremos este código:
@@ -657,7 +637,6 @@ class MsgError extends Error {
 
 es posible que encuentres que:
 
-<MiddleBannerNine />
 
 - Los métodos pueden ser `undefined` en los objetos devueltos al construir estas subclases, por lo que llamar a `sayHello` resultará en un error.
 - `instanceof` se dividirá entre las instancias de la subclase y sus instancias, por lo que `(new MsgError()) instanceof MsgError` devolverá `false`.
@@ -714,7 +693,6 @@ Debido a que `public` ya es el modificador de visibilidad predeterminado, nunca 
 
 Los miembros `protected` solo son visibles para las subclases de la clase en la que están declarados.
 
-<MiddleBannerOne />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwBYMFYCwAoAYwBsBDRRUAcWkkgBcZQBvA0UABwFcAjYgS0KgA5rQYAKAJQs27UITgA7RHGKQAdMTjDxAIgASkYloA0oXaADUoegAt+idcIYA5UgFtIUyQG5ZAX1kOeEZCRgATEVcPL2lWfDlQWnouaEVze10-BNBA-DyCEnJKAGUOSEJ+UmIaOkZoUEgAD0ZFcMpahiZ49m4+QVBbOAB3cIBPKRkc9hBQAHkAaRs4UFJCQkgKThCKiNBPdx4mWxhIWXYFZVUNLR0DEfGzC2s7Bydoz29sxNnEv-+AXIAHog0FgsEBAh5S6IegiUAAXlAikgw1AZQqVRqYnqUmywicOLxoFmiwIBOc9Dcn18QA)
 
@@ -798,7 +776,6 @@ Por otro lado, C# y C++ optaron por que este código fuera ilegal.
 TypeScript está del lado de C# y C++ aquí, porque acceder a `x` en `Derived2` solo debería ser legal desde las subclases de `Derived2`, y `Derived1` no es una de ellas.
 Además, si acceder a `x` a través de una referencia `Derived1` es ilegal (¡y ciertamente debería serlo!), entonces acceder a través de una referencia de clase base nunca debería mejorar la situación.
 
-<MiddleBannerTwo />
 
 Consulta también [¿Por qué no puedo acceder a un miembro protegido desde una clase derivada? ↗](https://blogs.msdn.microsoft.com/ericlippert/2005/11/09/why-cant-i-access-a-protected-member-from-a-derived-class/) que explica más del razonamiento de C#.
 
@@ -859,7 +836,6 @@ Class 'Derived' incorrectly extends base class 'Base'.
 Diferentes lenguajes de programación orientada a objetos no están de acuerdo sobre si diferentes instancias de la misma clase pueden acceder a los miembros `private` de cada uno.
 Mientras que lenguajes como Java, C#, C++, Swift y PHP lo permiten, Ruby no.
 
-<MiddleBannerThree />
 
 TypeScript permite el acceso `private` entre instancias:
 
@@ -923,7 +899,6 @@ A diferencia del `private` de TypeScripts, los [campos privados de JavaScript �
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEAiD2BzaBvAsAKGtAxAIzACcBrAQQFt4BXAOwBdoBeaABgG5NsAHAU0Ing0wIAJZ0Ank2gAiABZguXcdI4ZO0YIIh1CVYHXiEAFAEpUAX0zmgA)
 
-<MiddleBannerFour />
 
 ```ts
 class Dog {
@@ -998,7 +973,6 @@ class MyClass {
 console.log(MyClass.x);
 ```
 
-<MiddleBannerFive />
 
 ```text {filename="Error generado"}
 Property 'x' is private and only accessible within class 'MyClass'.
@@ -1063,7 +1037,6 @@ const MyHelperObject = {
 };
 ```
 
-<MiddleBannerSix />
 
 ##  Bloques `static` en clases \{#static-blocks-in-classes}
 
@@ -1132,7 +1105,6 @@ En tiempo de ejecución, solo hay *un* espacio de propiedad `Box.defaultValue`.
 Esto significa que configurar `Box<string>.defaultValue` (si fuera posible) *también* cambiaría `Box<number>.defaultValue` - no es bueno.
 Los miembros `static` de una clase genérica nunca pueden hacer referencia a los parámetros de tipo de la clase.
 
-<MiddleBannerSeven />
 
 ## `this` en clases en tiempo de ejecución \{#this-at-runtime-in-classes}
 
@@ -1196,7 +1168,6 @@ Esto tiene algunas compensaciones:
 - Esto utilizará más memoria, porque cada instancia de clase tendrá su propia copia de cada función definida de esta manera.
 - No puedes usar `super.getName` en una clase derivada, porque no hay ninguna entrada en la cadena del prototipo para recuperar el método de la clase base.
 
-<MiddleBannerEight />
 
 ### Parámetros `this` \{#this-parameters}
 
@@ -1269,7 +1240,6 @@ class Box {
 }
 ```
 
-<MiddleBannerNine />
 
 Aquí, TypeScript infirió que el tipo de retorno de `set` era `this`, en lugar de `Box`.
 Ahora hagamos una subclase de `Box`:
@@ -1382,7 +1352,6 @@ const fso: Networked & FileSystemObject
 
 Un caso de uso común para una protección de tipos basada en esto es permitir la validación diferida (lazy) de un campo en particular. Por ejemplo, este caso elimina un `undefined` del valor contenido dentro del cuadro cuando se ha verificado que `hasValue` es verdadero:
 
-<MiddleBannerOne />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEBCD2APAPAFQHzQN4FgBQ00AbmCAK4CmA-AFzSoDc++hAFpAGqmUAUAlHQAurAJYwx2Ytwp1U0AL7YWhaACcKgsqoB20YWIB0JchWgBCALwXoZbQBMKAMxHaKdpgQX55zPMHjaEILQAEZI0NauAO5wSPweYYhG0hHQAEQA4mAAthRhAJ5pHviJySYeAPQVhAB6VL4ijtA8pewQXCb8fEqepcaUHoRVtfV48kA)
 
@@ -1467,7 +1436,6 @@ Las clases de JavaScript se instancian con el operador `new`. Dado el tipo de un
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/MYGwhgzhAEAKD2BLAdgF2gbwLAChrWACcBTMVYgEwEFUAuaZAVwFsAjYwgbl3wA96mbDtzzQAngJbtCPAvGQRUhRsFTxCACn4MpHADTjJQwgEpMs-KgAWiCADoipctXQBeaABEyxO8ngB3DRMLaGtbO15od14RfEsbezEo8VjoAF9cDJxUMQAHYjgkNABJBVQwZGAC91LFCqqAFTziAB4c-PgAM0KUVAA+XFxOxkrURHloZngAN2IAJUQAcytUDVyiuh6SsvriM2xRdd6I6ABqdwBWESzcYHlFaCO0ZORify3VgGYDABYTESmswWy1WT1Q-1wYIinGgAHpYVE+tAABxAA)
 
-<MiddleBannerTwo />
 
 ```ts
 class Point {
@@ -1547,7 +1515,6 @@ class Derived extends Base {
 }
 ```
 
-<MiddleBannerThree />
 
 ```text {filename="Error generado"}
 Non-abstract class 'Derived' does not implement inherited abstract member 'getName' from class 'Base'.
@@ -1602,7 +1569,6 @@ Argument of type 'typeof Base' is not assignable to parameter of type 'new () =>
 
 Ahora TypeScript te informa correctamente qué funciones constructoras de clase se pueden invocar: `Derived` puede porque es concreta, pero `Base` no.
 
-<MiddleBannerFour />
 
 ## Relaciones Entre Clases \{#relationships-between-classes}
 
@@ -1668,4 +1634,3 @@ fn({});
 fn(fn);
 ```
 
-<BottomBanner />

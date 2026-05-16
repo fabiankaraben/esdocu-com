@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Transmitir significado a través del `color` con un puñado de clases de utilidad de color. También incluye soporte para diseñar enlaces con estados hover.
 
-<TopBanner />
 
 <Aside>
 **Consejo de accesibilidad:** El uso de colores para agregar significado solo proporciona una indicación visual, que no se transmitirá a los usuarios de tecnologías de asistencia como lectores de pantalla. Asegúrate de que el significado sea obvio a partir del contenido mismo (por ejemplo, el texto visible con un [_suficiente_ contraste de color](/bootstrap/comenzando#color-contrast)) o se incluye a través de medios alternativos, como texto adicional oculto con la clase `.visually-hidden`.
@@ -102,7 +90,6 @@ Usamos una versión RGB de nuestra variable CSS `--bs-primary` (con el valor de 
 
 ### Ejemplo \{#example}
 
-<MiddleBannerOne />
 
 Para cambiar esa opacidad, sobrescribe `--bs-text-opacity` mediante estilos personalizados o estilos en línea.
 
@@ -166,7 +153,6 @@ $light:         $gray-100;
 $dark:          $gray-900;
 ```
 
-<MiddleBannerTwo />
 
 Los colores en escala de grises también están disponibles, pero solo se utiliza un subconjunto para generar utilidades.
 
@@ -250,7 +236,6 @@ $theme-colors: (
 
 Los colores en escala de grises también están disponibles como mapa Sass. **Este mapa no se utiliza para generar ninguna utilidad.**
 
-<MiddleBannerThree />
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -339,7 +324,6 @@ $theme-colors-text-dark: (
 
 ### API de utilidades de Sass \{#sass-utilities-api}
 
-<MiddleBannerFour />
 
 Las utilidades de color se declaran en nuestra API de utilidades en `scss/_utilities.scss`. [Aprende a utilizar la API de utilidades.](/bootstrap/utilidades/api/#using-the-api)
 
@@ -382,4 +366,3 @@ Las utilidades de color se declaran en nuestra API de utilidades en `scss/_utili
 ),
 ```
 
-<BottomBanner />

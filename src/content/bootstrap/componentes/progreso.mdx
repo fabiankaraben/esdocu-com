@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Documentación y ejemplos para usar barras de progreso personalizadas de Bootstrap que admiten barras apiladas, fondos animados y etiquetas de texto.
 
-<TopBanner />
 
 <Aside>
 **Nuevo marcado en v5.3.0:** Hemos dejado de utilizar la estructura HTML anterior para las barras de progreso y la reemplazamos por una más accesible. La estructura anterior seguirá funcionando hasta la v6. [Mira los cambios en nuestra guía de migración.](https://getbootstrap.com/docs/5.3/migration/#improved-markup-for-progress-bars)
@@ -98,7 +86,6 @@ Solo estableces un valor de `height` en el contenedor `.progress`, por lo que si
 
 ## Etiquetas en el componente Progress \{#labels}
 
-<MiddleBannerOne />
 
 Agrega etiquetas a tus barras de progreso colocando texto dentro de la `.progress-bar`.
 
@@ -196,7 +183,6 @@ Puedes incluir múltiples componentes de progreso dentro de un contenedor con `.
 ```
 </DemoIframe>
 
-<MiddleBannerTwo />
 
 <ContentSuggestion />
 
@@ -262,7 +248,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, las barras d
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
-<MiddleBannerThree />
 
 ```scss title="scss/_variables.scss"
 $progress-height:                   1rem;
@@ -292,4 +277,3 @@ Se utiliza para crear animaciones CSS para `.progress-bar-animated`. Incluido en
 }
 ```
 
-<BottomBanner />

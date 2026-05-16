@@ -10,19 +10,7 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
-<TopBanner />
 
 Este codelab te enseña cómo escribir código asincrónico usando *futures* y las palabras clave `async` y `await`. Con los editores DartPad integrados, puedes poner a prueba tus conocimientos ejecutando código de ejemplo y completando ejercicios.
 
@@ -59,7 +47,6 @@ Para interactuar con estos resultados asincrónicos, puedes usar las palabras cl
 
 El siguiente ejemplo muestra la forma incorrecta de usar una función asincrónica (`fetchUserOrder()`). Más adelante arreglarás el ejemplo usando `async` y `await`. Antes de ejecutar este ejemplo, intenta detectar el problema: ¿cuál crees que será el resultado?
 
-<MiddleBannerOne />
 
 ```dart
 // Este ejemplo muestra cómo *no* escribir código Dart asíncrono.
@@ -112,7 +99,6 @@ Si la operación asincrónica que realiza la función falla por algún motivo, e
 
 ### Ejemplo: Introducción a futuros \{#example-introducing-futures\}
 
-<MiddleBannerTwo />
 
 En el siguiente ejemplo, `fetchUserOrder()` devuelve un futuro que se completa después de imprimir en la consola. Debido a que no devuelve un valor utilizable, `fetchUserOrder()` tiene el tipo `Future<void>`. Antes de ejecutar el ejemplo, intenta predecir cuál se imprimirá primero: "Latte grande" o "Obteniendo pedido del usuario...".
 
@@ -170,7 +156,6 @@ void main()  { ··· }
 
 Si la función tiene un tipo de retorno declarado, entonces actualiza el tipo para que sea `Future<T>`, donde `T` es el tipo del valor que devuelve la función. Si la función no devuelve explícitamente un valor, entonces el tipo de retorno es `Future<void>`:
 
-<MiddleBannerThree />
 
 ```dart
  main() async { ··· }
@@ -248,7 +233,6 @@ Una función `async` se ejecuta sincrónicamente hasta la primera palabra clave 
 
 ### Ejemplo: Ejecución dentro de funciones asíncronas \{#example-execution-within-async-functions\}
 
-<MiddleBannerFour />
 
 Ejecuta el siguiente ejemplo para ver cómo procede la ejecución dentro del cuerpo de una función `async`. ¿Cuál crees que será el resultado?
 
@@ -315,7 +299,6 @@ Implementa una función `async` llamada `reportLogins()` para que haga lo siguie
    - Valor de retorno de ejemplo de `reportLogins()`: `"Número total de inicios de sesión: 57"`
 - Obtiene el número de inicios de sesión llamando a la función proporcionada `fetchLoginAmount()`.
 
-<MiddleBannerFive />
 
 ```dart
 // Parte 1
@@ -525,7 +508,6 @@ Usa `async` y `await` para implementar una función asincrónica `changeUsername
 - Detecta cualquier error que ocurra y devuelve el valor de cadena del error. 
    - Puedes usar el método [toString() ↗](https://api.dart.dev/stable/dart-core/ArgumentError/toString.html) para encadenar tanto [Excepciones ↗](https://api.dart.dev/stable/dart-core/Exception-class.html) como [Errores. ↗](https://api.dart.dev/stable/dart-core/Error-class.html)
 
-<MiddleBannerSix />
 
 ```dart
 // TODO: Implementa changeUsername aquí.
@@ -854,7 +836,6 @@ Las funciones `greetUser` y `sayGoodbye` deben ser asincrónicas, mientras que `
 Recuerda: puedes utilizar una [sentencia `try-catch` ↗](https://dart.dev/language/error-handling#catch) para detectar y manejar errores.
 </Aside>
 
-<MiddleBannerSeven />
 
 <Aside title="Solución">
 ```dart
@@ -889,4 +870,3 @@ Future<String> sayGoodbye() async {
    - [Vídeos de Dart de Google ↗](https://www.youtube.com/playlist): mira uno o más vídeos sobre programación asincrónica.
 - ¡Obtén el [Dart SDK ↗](https://dart.dev/get-dart)!
 
-<BottomBanner />

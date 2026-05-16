@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Administra rápidamente el diseño, la alineación y el tamaño de las columnas de la cuadrícula, la navegación, los componentes y más con un conjunto completo de utilidades flex responsive. Para implementaciones más complejas, puede ser necesario CSS personalizado.
 
-<TopBanner />
 
 ## Habilitar comportamientos flex \{#enable-flex-behaviors}
 
@@ -127,7 +115,6 @@ También existen variaciones responsive para `flex-direction`.
 
 ## Justificar contenido \{#justify-content}
 
-<MiddleBannerOne />
 
 Utiliza las utilidades `justify-content` en contenedores flexbox para cambiar la alineación de los elementos flexibles en el eje principal (el eje x para comenzar, el eje y si `flex-direction: column`). Elige entre `start` (predeterminado del navegador), `end`, `center`, `between`, `around`, o `evenly`.
 
@@ -277,7 +264,6 @@ También existen variaciones responsive para `align-self`.
 * `.align-self-xxl-baseline`
 * `.align-self-xxl-stretch`
 
-<MiddleBannerTwo />
 
 ## Rellenar \{#fill}
 
@@ -348,7 +334,6 @@ También existen variaciones responsive para `flex-grow` y `flex-shrink`.
 
 Flexbox puede hacer cosas increíbles cuando combinas alineaciones flex con márgenes automáticos. A continuación se muestran tres ejemplos de control de elementos flex mediante márgenes automáticos: default (sin margen automático), empujando dos elementos hacia la derecha (`.me-auto`) y empujando dos elementos hacia la izquierda (`.ms-auto`).
 
-<MiddleBannerThree />
 
 <DemoIframe path="/demos/bootstrap/5.3/utilities/flex/auto-margins-1.html" >
 ```html title="HTML"
@@ -457,7 +442,6 @@ Cambia el orden _visual_ de elementos flex específicos con un puñado de utilid
 
 También existen variaciones responsive para `order`.
 
-<MiddleBannerFour />
 
 * `.order-0`
 * `.order-1`
@@ -596,7 +580,6 @@ También existen variaciones responsive para `align-content`.
 * `.align-content-xxl-around`
 * `.align-content-xxl-stretch`
 
-<MiddleBannerFive />
 
 ## Objeto media \{#media-object}
 
@@ -753,4 +736,3 @@ Las utilidades de Flexbox se declaran en nuestra API de utilidades en `scss/_uti
 ),
 ```
 
-<BottomBanner />

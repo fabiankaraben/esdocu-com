@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Documentación y ejemplos para agregar ventanas emergentes de Bootstrap, como las que se encuentran en iOS, a cualquier elemento de tu sitio.
 
-<TopBanner />
 
 Cosas que debes saber al usar el complemento popover:
 
@@ -83,7 +71,6 @@ Siéntete libre de utilizar `title` o `data-bs-title` en tu HTML. Cuando se usa 
 
 Hay cuatro opciones disponibles: arriba, derecha, abajo e izquierda. Las instrucciones se reflejan cuando se usa Bootstrap en RTL. Establece `data-bs-placement` para cambiar la dirección.
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/popovers/four-directions.html" >
 ```html title="HTML"
@@ -156,7 +143,6 @@ Puedes personalizar la apariencia de los popovers usando [variables CSS](#variab
 
 Utiliza el disparador `focus` para descartar ventanas emergentes en el siguiente clic del usuario en un elemento que no sea el elemento de alternancia.
 
-<MiddleBannerTwo />
 
 <Aside type="danger">
 **Para descartar en el siguiente clic se requiere HTML específico para un comportamiento adecuado entre navegadores y plataformas.** Solo puedes usar elementos `<a>`, no elementos `<button>`s, y debes incluir un [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex).
@@ -231,7 +217,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, los popovers
 
 ### Variables Sass generales relacionadas \{#sass-variables}
 
-<MiddleBannerThree />
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -319,7 +304,6 @@ Las opciones para ventanas emergentes individuales también se pueden especifica
 
 #### Usar la función con `popperConfig` \{#using-function-with-popperconfig}
 
-<MiddleBannerFour />
 
 ```javascript title="JavaScript"
 const popover = new bootstrap.Popover(element, {
@@ -385,4 +369,3 @@ myPopoverTrigger.addEventListener('hidden.bs.popover', () => {
 })
 ```
 
-<BottomBanner />

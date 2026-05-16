@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Proporciona mensajes de retroalimentación contextuales para las acciones típicas del usuario con los útiles y flexibles mensajes de alerta disponibles.
 
-<TopBanner />
 
 ## Ejemplos del componente Alerta \{#examples}
 
@@ -150,7 +138,6 @@ Utiliza la clase de utilidad `.alert-link` para proporcionar rápidamente enlace
 ```
 </DemoIframe>
 
-<MiddleBannerOne />
 
 ### Agregar contenido adicional \{#additional-content}
 
@@ -272,7 +259,6 @@ Puedes ver esto en acción con una demostración en vivo:
 Cuando se descarta una alerta, el elemento se elimina por completo de la estructura de la página. Si un usuario del teclado descarta la alerta usando el botón de cerrar, su atención se perderá repentinamente y, dependiendo del navegador, se restablecerá al inicio de la página/documento. Por este motivo, recomendamos incluir JavaScript adicional que escuche el evento `closed.bs.alert` y establezcas mediante programación `focus()` en la ubicación más adecuada de la página. Si planeas mover el foco a un elemento no interactivo que normalmente no recibe el foco, asegúrate de agregar `tabindex="-1"` al elemento.
 </Aside>
 
-<MiddleBannerTwo />
 
 ## Personalización del CSS del componente \{#css}
 
@@ -339,7 +325,6 @@ Se usa en combinación con `$theme-colors` para crear clases de modificadores co
 
 ### Bucles Sass del componente \{#sass-loops}
 
-<MiddleBannerThree />
 
 Bucle que genera las clases modificadoras con el mixin `alert-variant()`.
 
@@ -388,7 +373,6 @@ o en un botón **fuera de la alerta** usando el `data-bs-target` adicional como 
 <button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
 ```
 
-<MiddleBannerFour />
 
 **Ten en cuenta que cerrar una alerta la eliminará del DOM.**
 
@@ -436,4 +420,3 @@ myAlert.addEventListener('closed.bs.alert', event => {
 })
 ```
 
-<BottomBanner />

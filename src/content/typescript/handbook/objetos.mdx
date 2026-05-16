@@ -8,22 +8,10 @@ sidebar:
   label: Tipos de Objetos
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 En JavaScript, la forma fundamental en que agrupamos y pasamos datos es a través de objetos.
 En TypeScript, los representamos a través de *tipos de objetos*.
 
-<TopBanner />
 
 Como hemos visto, pueden ser anónimos:
 
@@ -77,7 +65,6 @@ Cada propiedad en un tipo de objeto puede especificar un par de cosas: el tipo, 
 
 ### Propiedades opcionales \{#optional-properties}
 
-<MiddleBannerOne />
 
 La mayor parte del tiempo, nos encontraremos tratando con objetos que *podrían* tener una propiedad establecida.
 En esos casos, podemos marcar esas propiedades como *opcionales* agregando un signo de interrogación (`?`) al final de sus nombres.
@@ -176,7 +163,6 @@ Ahora, `xPos` y `yPos` están definitivamente presentes dentro del cuerpo de `pa
 > Del mismo modo `xPos: number` crea una variable llamada `number` cuyo valor se basa en el parámetro `xPos`.
 >
 
-<MiddleBannerTwo />
 
 ### Propiedades `readonly` \{#readonly-properties}
 
@@ -268,7 +254,6 @@ Usando [modificadores de mapeo](/typescript/handbook/manipulacion-tipos/tipos-ma
 
 A veces no conoces todos los nombres de las propiedades de un tipo de antemano, pero sí conoces la forma de los valores.
 
-<MiddleBannerThree />
 
 En esos casos puedes usar una firma de índice para describir los tipos de valores posibles, por ejemplo:
 
@@ -334,7 +319,6 @@ let myArray: ReadonlyStringArray = getReadOnlyStringArray();
 myArray[2] = "Mallory";
 ```
 
-<MiddleBannerFour />
 
 ```text {filename="Error generado"}
 Index signature in type 'ReadonlyStringArray' only permits reading.
@@ -395,7 +379,6 @@ El método más sencillo es simplemente utilizar una aserción de tipo:
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYAsBWdB2DATgCgBLAOwBcYAzAQwGNJQBlARwFd7pIBhOBVpkA5qADeJUKEZwANggD8qRFWiURAbimgA7mQAmVABbLQFTgFsARjG0BfEiVqcKjKmUEze9Gh268ABSyQqKo-jz8gsIiAJSo4jLyCCpqGpqgkfSoFjYwoPYSOrxUnNAURdLSsgrQqCExAHQ1CKAAPm2gAES8Bl0ANDrSWfXRoo36RsagikmhIhOGJqAAVHNNk8uoaAAMg9L2DiQgoAC054ycVOenJHKQVKCWAJ4RvKAAvN6QvpBvkIFEptjKgAIw7PagOAAByYZCoz1QO0aeEK9EQbC4kQE81imiAA)
 
-<MiddleBannerFive />
 
 ```ts
 let mySquare = createSquare({ width: 100, opacity: 0.5 } as SquareConfig);
@@ -448,7 +431,6 @@ En este caso, si está bien pasar un objeto con una propiedad `color` o `colour`
 
 ## Tipos extendidos \{#extending-types}
 
-<MiddleBannerSix />
 
 Es bastante común tener tipos que podrían ser versiones más específicas de otros tipos.
 Por ejemplo, podríamos tener un tipo `BasicAddress` que describa los campos necesarios para enviar cartas y paquetes en los EE. UU.
@@ -530,7 +512,6 @@ const cc: ColorfulCircle = {
 La `interface` nos permitió crear nuevos tipos a partir de otros tipos extendiéndolos.
 TypeScript proporciona otra construcción llamada *tipos de intersección* que se utiliza principalmente para combinar tipos de objetos existentes.
 
-<MiddleBannerSeven />
 
 Un tipo de intersección se define usando el operador `&`.
 
@@ -591,7 +572,6 @@ En este momento, la propiedad `content` está tipada como `any`, lo cual funcion
 
 En su lugar podríamos usar `unknown`, pero eso significaría que en los casos en los que ya conocemos el tipo de `contents`, necesitaríamos realizar comprobaciones de precaución o usar aserciones de tipo propensas a errores.
 
-<MiddleBannerEight />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeAoZZBdcCcAZwC5kBXEAaxHQHcQBuPAXzzwBsIwyTNQzYAvLgJESkCtQBEACwi9e6ZM3RReAE3kAaLhzwB6ExpTEauosoT1kAckwA6YqQqO8wGMgAUYACeAA4Q6L6u7rJg5Mhi8cjy5GBQoADm8gCUkoTu5Oj8LmppfpEyZDEuYOgAMizQAMJw5BB+mZkc3KbmWhbS1jq0LchwyEGhI+QtUGDAJHh5BRBF6CWlbuUUk8jJqSBpmVW19VBNLW0dQA)
 
@@ -666,7 +646,6 @@ Más adelante, cuando nos referimos a `Box`, tenemos que dar un *argumento de ti
 let box: Box<string>;
 ```
 
-<MiddleBannerNine />
 
 Piensa en `Box` como una plantilla para un tipo real, donde `Type` es un marcador de posición que será reemplazado por algún otro tipo.
 Cuando TypeScript ve `Box<string>`, reemplazará cada instancia de `Type` en `Box<Type>` con `string` y terminará trabajando con algo como `{ content: string }`.
@@ -740,7 +719,6 @@ type Box<Type> = {
 };
 ```
 
-<MiddleBannerOne />
 
 Dado que los alias de tipos, a diferencia de las interfaces, pueden describir más que solo tipos de objetos, también podemos usarlos para escribir otros tipos de tipos auxiliares genéricos.
 
@@ -816,7 +794,6 @@ Todo lo que esto realmente significa es que debido a cómo se comportan `Map`, `
 
 `ReadonlyArray` es un tipo especial que describe arrays que no deben cambiarse.
 
-<MiddleBannerTwo />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwGYME4BQAzAVwDsBjAFwEs5jQATOAZXMP3wAoA3AQwBtDIKUACVI3BsV4BPAIKxuUgDyJy0SsQDmAPgCUoAN65QoEKADqkUKW61oYuqHzwAtqADkPfoLcA6P0asaFUCABylQAF5QTwFEH0ReSlJIdh0AbgDSILheSB9eOA12AAMAFQALS3xKJHJovgFQSkRQABJ9GMEAbQAGAF0AX2L03ADTPx8AI0I6gHdLa2I3OucZ7nJLDwbvHwDOuJDCRHL2ACJK3gKAQlORgaA)
 
@@ -877,7 +854,6 @@ function doStuff(values: readonly string[]) {
 Property 'push' does not exist on type 'readonly string[]'.
 ```
 
-<MiddleBannerThree />
 
 Una última cosa a tener en cuenta es que, a diferencia del modificador de propiedad `readonly`, la asignabilidad no es bidireccional entre `Array`s y `ReadonlyArray`s normales.
 
@@ -941,7 +917,6 @@ function doSomething(pair: [string, number]) {
 Tuple type '[string, number]' of length '2' has no element at index '2'.
 ```
 
-<MiddleBannerFour />
 
 También podemos [deestructurar tuplas ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring) usando la desestructuración de arrays de JavaScript.
 
@@ -1018,7 +993,6 @@ type BooleansStringNumber = [...boolean[], string, number];
 
 Una tupla con un elemento rest no tiene un `length` establecido; solo tiene un conjunto de elementos conocidos en diferentes posiciones.
 
-<MiddleBannerFive />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/C4TwDgpgBAysBOBLAdgcwHIFcC2AjC8AQgPbEA2EAhsgM5QC8UA2jQiqgDRTI77xcA6IblIVqTALoSA3ACgA9PKgBaVQGNMwVctlritYFEoAuWGzRY8BEuSq0GzAEQALCGTLFHXAIwzd+1ihcUzgkC15rUTs6RiZHfEpNRAAzTDIvKAAmLgRMCD89Ayg1EPMMCKIo6hinAHdieDIAEwyAZhz4PK5kyjIaCA6uqB6+gahc-OkgA)
 
@@ -1069,7 +1043,6 @@ Como es de esperar, escribir en cualquier propiedad de una tupla `readonly` no e
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/PTAEAEFMCdoe2gZwFygEwFYAsAGAUAGYCuAdgMYAuAlnCaACZwDKcAtpBQBZUkDmAFAAcAhlWipokYYxIAbAJ6gA2ogrQevADSgSRVgCMYAXQCUoAN55QoEWKU4joALygARJ0izZcAISuA3HgAvkA)
 
-<MiddleBannerSix />
 
 ```ts
 function doSomething(pair: readonly [string, number]) {
@@ -1104,4 +1077,3 @@ Argument of type 'readonly [3, 4]' is not assignable to parameter of type '[numb
 Aquí, `distanceFromOrigin` nunca modifica sus elementos, pero espera una tupla mutable.
 Dado que el tipo de `point` se dedujo como `readonly [3, 4]`, no será compatible con `[number, number]`, ya que ese tipo no puede garantizar que los elementos de `point` no sean mutados.
 
-<BottomBanner />

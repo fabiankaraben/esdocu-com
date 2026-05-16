@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Reboot, una colección de cambios de CSS específicos de elementos en un solo archivo, el inicio de Bootstrap para proporcionar una línea de base elegante, consistente y simple sobre la cual construir.
 
-<TopBanner />
 
 Reboot se basa en Normalize, proporcionando muchos elementos HTML con estilos un tanto obstinados usando solo selectores de elementos. El estilo adicional se realiza solo con clases. Por ejemplo, reiniciamos algunos estilos `<table>` para obtener una línea base más simple y luego proporcionamos `.table`, `.table-bordered` y más.
 
@@ -109,7 +97,6 @@ Lo cual te permite realizar personalizaciones en tiempo real como quieras:
 
 ## Valores predeterminados de página \{#page-defaults}
 
-<MiddleBannerOne />
 
 Los elementos `<html>` y `<body>` se actualizan para proporcionar mejores valores predeterminados en toda la página. Más específicamente:
 
@@ -176,7 +163,6 @@ Todos los elementos `<p>` tienen su `margin-top` eliminado y `margin-bottom: 1re
 
 ## Enlaces \{#links}
 
-<MiddleBannerTwo />
 
 Los enlaces tienen un `color` predeterminado y se aplica un subrayado. Si bien los enlaces cambian al `:hover`, no cambian en función de si alguien `:visited` el enlace. Tampoco reciben estilos `:focus` especiales.
 
@@ -263,7 +249,6 @@ Para un estilo más simple, una jerarquía clara y un mejor espaciado, las lista
 
 ## Código en línea \{#inline-code}
 
-<MiddleBannerThree />
 
 Ajusta fragmentos de código en línea con `<code>`. Asegúrate de evitar los corchetes angulares HTML.
 
@@ -318,7 +303,6 @@ Para indicar resultados de muestra de un programa usa la etiqueta `<samp>`.
 ```
 </DemoIframe>
 
-<MiddleBannerFour />
 
 ## Tablas \{#tables}
 
@@ -398,7 +382,6 @@ Reboot incluye una mejora para que `role="button"` cambie el cursor predetermina
 
 El elemento `<address>` se actualiza para restablecer el `font-style` predeterminado del navegador de `italic` a `normal`. Ahora también se hereda `line-height` y se ha agregado `margin-bottom: 1rem`. Los `<address>` sirven para presentar información de contacto del antepasado más cercano (o de todo un trabajo). Conserva el formato terminando las líneas con `<br>`.
 
-<MiddleBannerFive />
 
 <DemoIframe path="/demos/bootstrap/5.3/content/reboot/misc-elements.html" >
 ```html title="HTML"
@@ -477,4 +460,3 @@ Dado que `[hidden]` no es compatible con los métodos de jQuery `$(...).hide()` 
 
 Para simplemente alternar la visibilidad de un elemento, es decir, su `display` no se modifica y el elemento aún puede afectar el flujo del documento, usa [la clase `.invisible`,](/bootstrap/utilidades/otras-utilidades) en su lugar.
 
-<BottomBanner />

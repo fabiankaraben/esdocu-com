@@ -10,19 +10,7 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
-<TopBanner />
 
 Este codelab te enseña cómo usar colecciones que implementan la clase [Iterable ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html), por ejemplo [List ↗](https://api.dart.dev/stable/dart-core/List-class.html) y [Set ↗](https://api.dart.dev/stable/dart-core/Set-class.html). Los iterables son bloques de construcción básicos para todo tipo de aplicaciones de Dart, y probablemente ya los estés usando, incluso sin darte cuenta. Este codelab te ayuda a aprovecharlos al máximo.
 
@@ -59,7 +47,6 @@ Un `Iterable` es una colección de elementos a los que se puede acceder de forma
 
 En Dart, un `Iterable` es una clase abstracta, lo que significa que no puedes crear una instancia de él directamente. Sin embargo, puedes crear un nuevo `Iterable` creando una nueva `List` o `Set`.
 
-<MiddleBannerOne />
 
 Tanto `List` como `Set` son `Iterable`, por lo que tienen los mismos métodos y propiedades que la clase `Iterable`.
 
@@ -99,7 +86,6 @@ Puedes leer los elementos de un iterable secuencialmente, usando un bucle `for-i
 
 El siguiente ejemplo te muestra cómo leer elementos usando un bucle `for-in`.
 
-<MiddleBannerTwo />
 
 ```dart
 void main() {
@@ -176,7 +162,6 @@ void main() {
 
 En este ejemplo, puedes ver tres formas diferentes de escribir un predicado:
 
-<MiddleBannerThree />
 
 - **Como expresión:** El código de test tiene una línea que usa sintaxis de flecha (`=>`).
 - **Como bloque:** El código de test tiene varias líneas entre paréntesis y una declaración de devolución `return`.
@@ -268,7 +253,6 @@ Cuando trabajas con `Iterable`, a veces necesitas verificar que todos los elemen
 
 Podrías sentirte tentado a escribir una solución usando un bucle `for-in` como este:
 
-<MiddleBannerFour />
 
 ```dart {filename="Código incorrecto"}
 for (final item in items) {
@@ -328,7 +312,6 @@ También puedes usar `any()` para verificar que ningún elemento de un `Iterable
 
 El siguiente ejercicio proporciona práctica en el uso de los métodos `any()` y `every()`, descritos en el ejemplo anterior. En este caso, trabaja con un grupo de usuarios, representado por objetos `User` que tienen el campo miembro `age`.
 
-<MiddleBannerFive />
 
 Usa `any()` y `every()` para implementar dos funciones:
 
@@ -516,7 +499,6 @@ void main() {
 }
 ```
 
-<MiddleBannerSix />
 
 En este ejemplo, `where()` se usa para encontrar todos los números pares, luego `any()` se usa para verificar si los resultados contienen un número negativo.
 
@@ -641,7 +623,6 @@ void main() {
 }
 ```
 
-<MiddleBannerSeven />
 
 <Aside title="Pista">
 Recuerda aprovechar el método `where` de la clase `Iterable`. Para obtener ayuda y ejemplos sobre el uso de `where`, consulta la [discusión anterior al respecto](/dart/tutoriales-y-codelabs/codelabs/iterables#example-using-where).
@@ -694,7 +675,6 @@ En este ejercicio, tu código toma un `Iterable` de `User` y necesitas devolver 
 
 Cada cadena en `Iterable` debe seguir este formato: `'{name} is {age}'`; por ejemplo, `'Alice is 21'`.
 
-<MiddleBannerEight />
 
 ```dart
 Iterable<String> getNameAndAges(Iterable<User> users) {
@@ -943,7 +923,6 @@ bool isValidEmailAddress(EmailAddress email) {
 }
 ```
 
-<MiddleBannerNine />
 
 <Aside title="Solución">
 ```dart
@@ -969,4 +948,3 @@ Iterable<EmailAddress> validEmailAddresses(Iterable<EmailAddress> emails) {
 - Pruebe con otro [codelab](/dart/tutoriales-y-codelabs/codelabs/codelabs).
 - Lee la [referencia de API de Iterable ↗](https://api.dart.dev/stable/dart-core/Iterable-class.html) para obtener información sobre los métodos que no cubre este codelab.
 
-<BottomBanner />

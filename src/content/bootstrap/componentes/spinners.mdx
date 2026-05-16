@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Indica el estado de carga de un componente o página con controles giratorios Bootstrap, construidos completamente con HTML, CSS y sin JavaScript.
 
-<TopBanner />
 
 Los “spinners” de Bootstrap se pueden usar para mostrar el estado de carga en tus proyectos. Están creados únicamente con HTML y CSS, lo que significa que no necesitas JavaScript para crearlos. Sin embargo, necesitarás algo de JavaScript personalizado para alternar su visibilidad. Su apariencia, alineación y tamaño se pueden personalizar fácilmente con nuestras increíbles clases de utilidad.
 
@@ -102,7 +90,6 @@ Si no te apetece un spinner de bordes, cambia al spinner de crecimiento. Si bien
 
 Una vez más, esta ruleta está construida con `currentColor`, por lo que puedes cambiar fácilmente su apariencia con [utilidades de color de texto](/bootstrap/utilidades/colores). Aquí está en azul, junto con las variantes compatibles.
 
-<MiddleBannerOne />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/spinners/growing-spinner-2.html" >
 ```html title="HTML"
@@ -190,7 +177,6 @@ Usa [utilidades flexbox](/bootstrap/utilidades/flex), [utilidades flotantes](/bo
 
 #### Alinear texto \{#text-align}
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/spinners/text-align.html" >
 ```html title="HTML"
@@ -271,7 +257,6 @@ Usa spinners dentro de los botones para indicar que una acción se está procesa
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
 
-<MiddleBannerThree />
 
 Como parte del enfoque de evolución de variables CSS de Bootstrap, los spinners ahora usan variables CSS locales en `.spinner-border` y `.spinner-grow` para una personalización mejorada en tiempo real. Los valores de las variables CSS se establecen a través de Sass, por lo que la personalización de Sass también es compatible.
 
@@ -330,7 +315,6 @@ $spinner-border-width-sm: .2em;
 
 ### Fotogramas clave \{#keyframes}
 
-<MiddleBannerFour />
 
 Se utiliza para crear animaciones CSS para nuestros spinners. Incluido en `scss/_spinners.scss`.
 
@@ -356,4 +340,3 @@ Se utiliza para crear animaciones CSS para nuestros spinners. Incluido en `scss/
 }
 ```
 
-<BottomBanner />

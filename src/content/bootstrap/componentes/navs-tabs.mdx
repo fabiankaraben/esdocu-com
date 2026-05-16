@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Documentación y ejemplos sobre cómo usar los componentes de navegación incluidos en Bootstrap.
 
-<TopBanner />
 
 ## Navegación base del componente \{#base-nav}
 
@@ -123,7 +111,6 @@ Alineado a la derecha con `.justify-content-end`:
 ```
 </DemoIframe>
 
-<MiddleBannerOne />
 
 <ContentSuggestion />
 
@@ -215,7 +202,6 @@ Toma el mismo HTML, pero usa `.nav-pills` en su lugar:
 
 Toma el mismo HTML, pero usa `.nav-underline` en su lugar:
 
-<MiddleBannerTwo />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/navs-tabs/underline.html" >
 ```html title="HTML"
@@ -325,7 +311,6 @@ Si necesitas variaciones de nav responsive, considera usar una serie de [utilida
 
 Si estás usando navs para proporcionar una barra de navegación, asegúrate de agregar un `role="navigation"` al contenedor padre más lógico del `<ul>`, o envuelve un elemento `<nav>` alrededor de toda la navegación. No agregues el rol al `<ul>` en sí, ya que esto evitaría que las tecnologías de asistencia lo anuncien como una lista real.
 
-<MiddleBannerThree />
 
 Ten en cuenta que las barras de navegación, incluso si están diseñadas visualmente como pestañas con la clase `.nav-tabs`, **no** deben darse `role="tablist"`, `role="tab"` o `role="tabpanel"`. Estos solo son apropiados para interfaces dinámicas con pestañas, como se describe en el [patrón de pestañas de la Guía de prácticas de creación de ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel). Consulta [comportamiento de JavaScript](#javascript-behavior) para interfaces dinámicas con pestañas en esta sección para ver un ejemplo. El atributo `aria-current` no es necesario en interfaces dinámicas con pestañas ya que nuestro JavaScript maneja el estado seleccionado agregando `aria-selected="true"` en la pestaña activa.
 
@@ -420,7 +405,6 @@ En la clase base `.nav`:
 --#{$prefix}nav-link-disabled-color: #{$nav-link-disabled-color};
 ```
 
-<MiddleBannerFour />
 
 En la clase modificadora `.nav-tabs`:
 
@@ -495,7 +479,6 @@ $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
 
 Utiliza el complemento JavaScript de pestañas (inclúyelo individualmente o mediante el archivo `bootstrap.js` compilado) para ampliar nuestras pestañas y píldoras de navegación para crear paneles con pestañas de paneles con contenido local.
 
-<MiddleBannerFive />
 
 <ContentSuggestion />
 
@@ -613,7 +596,6 @@ El complemento JavaScript con pestañas **no** admite interfaces con pestañas q
 
 Puedes activar una pestaña o píldora de navegación sin escribir ningún JavaScript simplemente especificando `data-bs-toggle="tab"` o `data-bs-toggle="pill"` en un elemento. Utiliza estos atributos de datos en `.nav-tabs` o `.nav-pills`.
 
-<MiddleBannerSix />
 
 ```html title="HTML"
 <!-- Nav tabs -->
@@ -696,7 +678,6 @@ Puedes crear una instancia de pestaña con el constructor, por ejemplo:
 const bsTab = new bootstrap.Tab('#myTab')
 ```
 
-<MiddleBannerSeven />
 
 | Método                | Descripción                                                                                                                                                                                                                                                                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -733,4 +714,3 @@ tabEl.addEventListener('shown.bs.tab', event => {
 })
 ```
 
-<BottomBanner />

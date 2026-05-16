@@ -8,21 +8,9 @@ sidebar:
   label: Programadores JavaScript
 ---
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 TypeScript tiene una relación inusual con JavaScript. TypeScript ofrece todas las funciones de JavaScript y una capa adicional además de ellas: el sistema de tipos de TypeScript.
 
-<TopBanner />
 
 Por ejemplo, JavaScript proporciona primitivos de lenguaje como `string` y `number`, pero no verifica que los hayas asignado de manera consistente. TypeScript lo hace.
 
@@ -64,7 +52,6 @@ const user = {
 
 Puedes describir explícitamente la forma de este objeto usando una declaración de `interface`:
 
-<MiddleBannerOne />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgKoGdrIN4ChnIhwC2EAXMumFKAOYDc+ywAJhSAK7EBG0jAvkA)
 
@@ -144,7 +131,6 @@ function getAdminUser(): User {
 }
 ```
 
-<MiddleBannerTwo />
 
 Ya existe un pequeño conjunto de tipos primitivos disponibles en JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol` y `undefined`, que puedes usar en una interfaz. TypeScript amplía esta lista con algunos más, como `any` (permitir cualquier cosa), [`unknown` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (asegúrate de que alguien que use este tipo declare cuál es el tipo), [`never` ↗](https://www.typescriptlang.org/play#example/unknown-and-never) (no es posible que este tipo pueda suceder), y `void ` (una función que devuelve `undefined` o no tiene valor de retorno).
 
@@ -186,7 +172,6 @@ function getLength(obj: string | string[]) {
 }
 ```
 
-<MiddleBannerThree />
 
 Para conocer el tipo de una variable, puedes usar `typeof`:
 
@@ -255,7 +240,6 @@ Uno de los principios básicos de TypeScript es que la verificación de tipos se
 
 En un sistema de tipo estructural, si dos objetos tienen la misma forma, se consideran del mismo tipo.
 
-<MiddleBannerFour />
 
 [Prueba este código ↗](https://www.typescriptlang.org/play#code/JYOwLgpgTgZghgYwgAgAoHtRmQbwFDLIAeAXMiAK4C2ARtANwHICeZltDeAvnnjBSARhg6EMgA26AOYYsACgAOZWeACUuJglEBndOIgA6SVLkADACQ4FBolwA0yS9eZdTqxjzwB6LxOnbkACIARgAmB1CANkC8LRBtbAVMcGQAXlxiMjCHVmQo5C5GYxUwRWSwdyA)
 
@@ -324,4 +308,3 @@ Esta fue una breve descripción general de la sintaxis y las herramientas utiliz
 - Lee el Manual completo [de principio a fin](/typescript/handbook/intro)
 - Explora los [ejemplos de Playground ↗](https://www.typescriptlang.org/play#show-examples)
 
-<BottomBanner />

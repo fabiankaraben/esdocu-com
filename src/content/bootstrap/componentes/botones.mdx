@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Usa los estilos de botones personalizados de Bootstrap para acciones en formularios, cuadros de diálogo y más con soporte para múltiples tamaños, estados y más.
 
-<TopBanner />
 
 ## Clase base de Botones \{#base-class}
 
@@ -87,7 +75,6 @@ Cuando usas clases de botones en elementos `<a>` que se usan para activar la fun
 ```
 </DemoIframe>
 
-<MiddleBannerOne />
 
 ## Botones con estilo de contorno \{#outline-buttons}
 
@@ -155,7 +142,6 @@ Haz que los botones parezcan inactivos agregando el atributo booleano `disabled`
 
 Los botones deshabilitados que usan el elemento `<a>` se comportan un poco diferente:
 
-<MiddleBannerTwo />
 
 * `<a>` no admite el atributo `disabled`, por lo que debes agregar la clase `.disabled` para que parezca visualmente deshabilitado.
 * Se incluyen algunos estilos aptos para el futuro para deshabilitar todos los `pointer-events` en los botones de anclaje.
@@ -228,7 +214,6 @@ Se pueden usar utilidades adicionales para ajustar la alineación de los botones
 
 ## Complemento de botón \{#button-plugin}
 
-<MiddleBannerThree />
 
 El complemento de botones te permite crear botones simples de activación/desactivación.
 
@@ -300,7 +285,6 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
 
 ### Variables Sass del componente \{#variables}
 
-<MiddleBannerFour />
 
 <br/>
 <span class="py-1 px-3 text-green-700 border border-green-700 rounded-md">Agregado en v5.2.0</span>
@@ -410,7 +394,6 @@ $btn-active-border-tint-amount:   10%;
 
 Hay tres combinaciones para botones: combinación de botón y variante de contorno de botón (ambas basadas en `$theme-colors`), además de una combinación de tamaño de botón.
 
-<MiddleBannerFive />
 
 [scss/mixins/_buttons.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/mixins/_buttons.scss)
 
@@ -534,7 +517,6 @@ Un botón de cierre genérico para descartar contenido como modales y alertas.
 
 Proporciona una opción para descartar o cerrar un componente con `.btn-close`. El estilo predeterminado es limitado, pero altamente personalizable. Modifica las variables de Sass para reemplazar la `background-image` predeterminada. **Asegúrate de incluir texto para lectores de pantalla**, como hemos hecho con `aria-label`.
 
-<MiddleBannerSix />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/close-button/example.html" >
 ```html title="HTML"
@@ -594,7 +576,6 @@ Como parte del enfoque de variables CSS en evolución de Bootstrap, el botón de
 --#{$prefix}btn-close-white-filter: #{$btn-close-white-filter};
 ```
 
-<MiddleBannerSeven />
 
 <ContentSuggestion />
 
@@ -665,7 +646,6 @@ Estas clases también se pueden agregar a grupos de enlaces, como alternativa al
 
 ### Estilos outlined del componente Grupo de botones \{#outlined-styles}
 
-<MiddleBannerEight />
 
 <DemoIframe path="/demos/bootstrap/5.3/components/button-group/outlined-styles.html" >
 ```html title="HTML"
@@ -798,7 +778,6 @@ En lugar de aplicar clases de tamaño de botones a cada botón de un grupo, simp
 
 ### Anidamiento del componente Grupo de botones \{#nesting}
 
-<MiddleBannerNine />
 
 Coloca un `.btn-group` dentro de otro `.btn-group` cuando quieras menús desplegables mezclados con una serie de botones.
 
@@ -897,4 +876,3 @@ Haz que un conjunto de botones aparezcan apilados verticalmente en lugar de hori
 ```
 </DemoIframe>
 
-<BottomBanner />

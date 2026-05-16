@@ -10,24 +10,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-import TopBanner from '@components/banners/TopBanner.astro';
-import MiddleBannerOne from '@components/banners/MiddleBannerOne.astro';
-import MiddleBannerTwo from '@components/banners/MiddleBannerTwo.astro';
-import MiddleBannerThree from '@components/banners/MiddleBannerThree.astro';
-import MiddleBannerFour from '@components/banners/MiddleBannerFour.astro';
-import MiddleBannerFive from '@components/banners/MiddleBannerFive.astro';
-import MiddleBannerSix from '@components/banners/MiddleBannerSix.astro';
-import MiddleBannerSeven from '@components/banners/MiddleBannerSeven.astro';
-import MiddleBannerEight from '@components/banners/MiddleBannerEight.astro';
-import MiddleBannerNine from '@components/banners/MiddleBannerNine.astro';
-import BottomBanner from '@components/banners/BottomBanner.astro';
 
 import DemoIframe from '@components/bootstrap/DemoIframe.astro';
 import ContentSuggestion from '@components/bootstrap/ContentSuggestion.astro';
 
 Ejemplos y pautas de uso para estilos de control de formularios, opciones de diseño y componentes personalizados para crear una amplia variedad de formularios.
 
-<TopBanner />
 
 | <span class="mx-16">Tópico</span>                    | Descripción                                                                                                                       |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -116,7 +104,6 @@ Asegúrate de que todos los controles de formulario tengan un nombre accesible a
 
 Para situaciones en las que no es posible incluir un `<label>` visible o contenido de texto apropiado, existen formas alternativas de proporcionar un nombre accesible, como como:
 
-<MiddleBannerOne />
 
 * `<label>` elementos ocultos usando `.visually-hidden` (clase)
 * Apuntar a un elemento existente que puede actuar como etiqueta usando `aria-labelledby`
@@ -184,7 +171,6 @@ Los controles de formulario están diseñados con una combinación de variables 
 ```
 </DemoIframe>
 
-<MiddleBannerTwo />
 
 ### Tamaños \{#sizing}
 
@@ -256,7 +242,6 @@ Agrega el atributo booleano `disabled` en una entrada para darle una apariencia 
 
 Agrega el atributo booleano `readonly` en una entrada para evitar la modificación del valor de la entrada. Las entradas `readonly` aún se pueden enfocar y seleccionar, mientras que las entradas `disabled` no.
 
-<MiddleBannerThree />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/form-control/readonly.html" >
 ```html title="HTML"
@@ -368,7 +353,6 @@ Obtén más información sobre [soporte para elementos de lista de datos](https:
 ```
 </DemoIframe>
 
-<MiddleBannerFour />
 
 ### Personalización del CSS \{#css}
 
@@ -468,7 +452,6 @@ $form-file-button-bg:             var(--#{$prefix}tertiary-bg);
 $form-file-button-hover-bg:       var(--#{$prefix}secondary-bg);
 ```
 
-<MiddleBannerFive />
 
 ## Uso de elementos Select en Bootstrap
 
@@ -552,7 +535,6 @@ Agrega el atributo booleano `disabled` en una selección para darle una aparienc
 ```
 </DemoIframe>
 
-<MiddleBannerSix />
 
 ### Personalización del CSS \{#css}
 
@@ -650,7 +632,6 @@ Las casillas de verificación pueden utilizar la pseudoclase `:indeterminate` cu
 ```
 </DemoIframe>
 
-<MiddleBannerSeven />
 
 #### Deshabilitado \{#disabled}
 
@@ -769,7 +750,6 @@ De forma predeterminada, cualquier número de casillas de verificación y radios
 ```
 </DemoIframe>
 
-<MiddleBannerEight />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/checks-radios/default-stacked-2.html" >
 ```html title="HTML"
@@ -885,7 +865,6 @@ Crea casillas de verificación y botones de opción similares a botones usando e
 
 #### Botones de alternancia de casilla de verificación \{#checkbox-toggle-buttons}
 
-<MiddleBannerNine />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/checks-radios/toggle-buttons-1.html" >
 ```html title="HTML"
@@ -1018,7 +997,6 @@ $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
 $form-check-inline-margin-end:    1rem;
 ```
 
-<MiddleBannerOne />
 
 Variables para interruptores:
 
@@ -1079,7 +1057,6 @@ Las entradas de rango tienen valores implícitos para `min` y `max`—`0` y `100
 
 ### Pasos \{#steps}
 
-<MiddleBannerTwo />
 
 De forma predeterminada, las entradas de rango se “ajustan” a valores enteros. Para cambiar esto, puedes especificar un valor de `step`. En el siguiente ejemplo, duplicamos el número de pasos usando `step="0.5"`.
 
@@ -1180,7 +1157,6 @@ Los grupos de entradas se ajustan de forma predeterminada mediante `flex-wrap: w
 ```
 </DemoIframe>
 
-<MiddleBannerThree />
 
 ### Tamaños \{#sizing}
 
@@ -1267,7 +1243,6 @@ Se admiten múltiples complementos y se pueden combinar con versiones de casilla
 
 ### Complementos de botones \{#button-addons}
 
-<MiddleBannerFour />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/input-group/button-addons.html" >
 ```html title="HTML"
@@ -1477,7 +1452,6 @@ Los grupos de entradas incluyen soporte para selects personalizados y entradas d
 
 #### Variables Sass generales relacionadas \{#sass-variables}
 
-<MiddleBannerFive />
 
 [scss/_variables.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables.scss)
 
@@ -1548,7 +1522,6 @@ Por defecto, `<textarea>`s con `.form-control` tendrán la misma altura que `<in
 
 Para establecer una altura personalizada en tu `<textarea>`, no uses el atributo `rows`. En su lugar, establece una `height` explícita (ya sea en línea o mediante CSS personalizado).
 
-<MiddleBannerSix />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/floating-labels/textareas-2.html" >
 ```html title="HTML"
@@ -1644,7 +1617,6 @@ Las etiquetas flotantes también admiten `.input-group`.
 
 Cuando usas `.input-group` y `.form-floating` junto con la validación del formulario, el `-feedback` debe colocarse fuera de `.form-floating`, pero dentro de `.input-group`. Esto significa que los comentarios deberán mostrarse mediante javascript.
 
-<MiddleBannerSeven />
 
 <DemoIframe path="/demos/bootstrap/5.3/forms/floating-labels/input-groups-2.html" >
 ```html title="HTML"
@@ -1724,7 +1696,6 @@ Cada grupo de campos de formulario debe residir en un elemento `<form>`. Bootstr
 
 Dado que Bootstrap aplica `display: block` y `width: 100%` a casi todos nuestros controles de formulario, los formularios se apilarán verticalmente de forma predeterminada. Se pueden utilizar clases adicionales para variar este diseño según el rendimiento.
 
-<MiddleBannerEight />
 
 ### Utilidades \{#utilities}
 
@@ -1836,7 +1807,6 @@ Crea formularios horizontales con el grid agregando la clase `.row` para formar 
 
 <ContentSuggestion />
 
-<MiddleBannerNine />
 
 A veces, tal vez necesites usar utilidades de margen o relleno para crear la alineación perfecta que necesitas. Por ejemplo, hemos eliminado el `padding-top` de nuestra etiqueta de entradas de radio apiladas para alinear mejor la línea base del texto.
 
@@ -2028,7 +1998,6 @@ Luego puedes remezclarlo una vez más con clases de columna de tamaño específi
 
 ### Formularios en línea \{#inline-forms}
 
-<MiddleBannerOne />
 
 Usa las clases `.row-cols-*` para crear diseños horizontales responsive. Al agregar [clases modificadoras de gutters](/bootstrap/layout), tendremos gutters en direcciones horizontales y verticales. En viewports móviles estrechos, `.col-12` ayuda a apilar los controles del formulario y más. `.align-items-center` alinea los elementos del formulario en el medio, haciendo que `.form-check` se alinee correctamente.
 
@@ -2192,7 +2161,6 @@ Los estilos de comentarios personalizados aplican colores, bordes, estilos de en
 
 ### Valores predeterminados del navegador \{#browser-defaults}
 
-<MiddleBannerTwo />
 
 ¿No te interesan los mensajes de validación personalizados o escribir JavaScript para cambiar el comportamiento de los formularios? Todo bien, puedes usar los valores predeterminados del navegador. Intenta enviar el formulario a continuación. Dependiendo de gu navegador y sistema operativo, verás un estilo de comentarios ligeramente diferente.
 
@@ -2393,7 +2361,6 @@ Los estilos de validación están disponibles para los siguientes controles y co
 
 Si el diseño de tu formulario lo permite, puedes intercambiar las clases `.{valid|invalid}-feedback` por `.{valid|invalid}-tooltip` para mostrar comentarios de validación en un tooltips con estilo. Asegúrate de tener un elemento padre con `position: relative` para el posicionamiento del tooltips. En el siguiente ejemplo, nuestras clases de columnas ya tienen esto, pero es posible que tu proyecto requiera una configuración alternativa.
 
-<MiddleBannerThree />
 
 <ContentSuggestion />
 
@@ -2504,7 +2471,6 @@ $form-invalid-border-color:         $form-feedback-invalid-color;
 
 [scss/_variables-dark.scss](https://github.com/twbs/bootstrap/blob/v5.3.2/scss/_variables-dark.scss)
 
-<MiddleBannerFour />
 
 ```scss title="scss/_variables-dark.scss"
 $form-valid-color-dark:             $green-300;
@@ -2717,4 +2683,3 @@ Se utiliza para iterar sobre los valores del mapa `$form-validation-states` para
 
 Los estados de validación se pueden personalizar a través de Sass con el mapa `$form-validation-states`. Ubicado en nuestro archivo `_variables.scss`, este mapa Sass es cómo generamos los estados de validación predeterminados `valid`/`invalid`. Se incluye un mapa anidado para personalizar el color, el icono, el color del tooltips y la sombra de enfoque de cada estado. Si bien los navegadores no admiten otros estados, aquellos que usan estilos personalizados pueden agregar fácilmente comentarios a formularios más complejos.
 
-<BottomBanner />
