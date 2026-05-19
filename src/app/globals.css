@@ -126,23 +126,27 @@
 }
 
 .prose-custom {
-  @apply text-muted-foreground leading-relaxed;
+  @apply text-muted-foreground leading-relaxed xl:leading-[1.8] text-[1.05rem] md:text-[1.1rem];
 }
 
 .prose-custom h1, .prose-custom h2, .prose-custom h3 {
-  @apply text-foreground font-display font-bold tracking-tight mt-12 mb-6;
+  @apply text-foreground font-display font-bold tracking-tight;
+}
+
+.prose-custom h1 {
+  @apply text-4xl mt-16 mb-8;
 }
 
 .prose-custom h2 {
-  @apply text-2xl pb-2 border-b;
+  @apply text-2xl mt-16 mb-6 pb-2 border-b scroll-mt-24;
 }
 
 .prose-custom h3 {
-  @apply text-xl;
+  @apply text-xl mt-12 mb-4 scroll-mt-24;
 }
 
 .prose-custom p {
-  @apply mb-4;
+  @apply mb-6 leading-relaxed xl:leading-[1.8];
 }
 
 .prose-custom a {
@@ -150,15 +154,15 @@
 }
 
 .prose-custom ul {
-  @apply list-disc pl-6 mb-4 space-y-2;
+  @apply list-disc pl-6 mb-6 space-y-3 xl:space-y-4;
 }
 
 .prose-custom ol {
-  @apply list-decimal pl-6 mb-4 space-y-2;
+  @apply list-decimal pl-6 mb-6 space-y-3 xl:space-y-4;
 }
 
 .prose-custom li {
-  @apply leading-relaxed;
+  @apply leading-relaxed xl:leading-[1.8] mb-2;
 }
 
 .prose-custom li > p {
@@ -166,16 +170,17 @@
 }
 
 .prose-custom blockquote {
-  @apply border-l-4 border-primary/20 pl-4 italic my-6 bg-muted/30 py-2 pr-4 rounded-r-lg;
+  @apply border-l-4 border-primary/20 pl-6 pr-4 py-4 italic my-8 bg-muted/30 rounded-r-lg;
 }
 
 .prose-custom img {
-  @apply rounded-xl border shadow-sm my-8;
+  @apply rounded-xl border shadow-sm my-10;
 }
 
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
   }
   
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -203,4 +208,26 @@
   .dark .custom-scrollbar:hover::-webkit-scrollbar-thumb {
     @apply bg-primary/30;
   }
+}
+
+/* Evita que los tokens de sintaxis tengan fondos que parezcan texto seleccionado */
+.prose-custom pre span {
+  background-color: transparent !important;
+}
+
+/* Evita que el tag code dentro de pre herede fondos de código inline (como bg-muted) o de temas de Prism */
+.prose-custom pre,
+.prose-custom pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Personaliza la selección de texto en los bloques de código para que sea sumamente sutil y elegante */
+.prose-custom pre ::selection,
+.prose-custom pre *::selection,
+.prose-custom code ::selection,
+.prose-custom code *::selection {
+  background-color: rgba(14, 165, 233, 0.15) !important;
+  color: inherit !important;
 }

@@ -6,6 +6,7 @@ export interface SidebarItem {
   label?: string;
   slug?: string;
   items?: SidebarItem[];
+  order?: number;
 }
 
 const DOCS_PATH = path.join(process.cwd(), "content");
@@ -247,11 +248,18 @@ export function getSidebarForRoot(root: string): SidebarItem[] {
               const chapter = chapters.find((c: any) => c.slug === slug);
               return {
                 label: chapter ? chapter.title : getLabelForSlug([root, slug]),
-                slug: `${root}/${slug}`
+                slug: `${root}/${slug}`,
+                order: chapter ? chapter.order : undefined
               };
             })
           };
         });
+      } else if (chapters.length > 0) {
+        return chapters.map((chapter: any) => ({
+          label: chapter.title,
+          slug: `${root}/${chapter.slug}`,
+          order: chapter.order
+        }));
       }
     }
   } catch (error) {
@@ -260,10 +268,17 @@ export function getSidebarForRoot(root: string): SidebarItem[] {
 
   // Fallback to auto-generation if no config for this root
   const slugs = getAllDocSlugs().filter(slug => slug[0] === root);
-  return slugs.map(slug => ({
-    slug: slug.join("/"),
-    label: getLabelForSlug(slug)
-  }));
+  return slugs.map(slug => {
+    const lastPart = slug[slug.length - 1] || "";
+    const match = lastPart.match(/^(\d+)-/);
+    const order = match ? parseInt(match[1], 10) : undefined;
+    
+    return {
+      slug: slug.join("/"),
+      label: getLabelForSlug(slug),
+      order
+    };
+  });
 }
 
 function resolveSidebarItem(item: SidebarItem): SidebarItem {

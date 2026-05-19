@@ -6,14 +6,23 @@ import { useTheme } from "next-themes";
 import { Sun, Moon, ExternalLink, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next-image-export-optimizer";
+import { cn } from "@/lib/utils";
 
-export function Navbar({ categoriesWithBooks = [] }: { categoriesWithBooks?: any[] }) {
+interface NavbarProps {
+  categoriesWithBooks?: any[];
+  wide?: boolean;
+}
+
+export function Navbar({ categoriesWithBooks = [], wide = false }: NavbarProps) {
   const { setTheme, theme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full glass border-b">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className={cn(
+        "mx-auto px-4 h-16 flex items-center justify-between",
+        wide ? "w-full max-w-none md:px-6" : "container"
+      )}>
         <Link href="/" className="flex items-center space-x-2">
           <div className="relative h-8 w-32">
             <Image

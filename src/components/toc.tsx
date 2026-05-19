@@ -15,6 +15,10 @@ export function Toc({ items }: TocProps) {
   const [activeId, setActiveId] = React.useState<string>("");
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const filteredItems = React.useMemo(() => {
+    return (items || []).filter(item => item.level === 2 || item.level === 3);
+  }, [items]);
+
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,36 +31,41 @@ export function Toc({ items }: TocProps) {
       { rootMargin: "-80px 0px -80% 0px" }
     );
 
-    items.forEach((item) => {
+    filteredItems.forEach((item) => {
       const element = document.getElementById(item.id);
       if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
-  }, [items]);
+  }, [filteredItems]);
 
-  if (!items || items.length === 0) {
+  if (filteredItems.length === 0) {
     return null;
   }
 
   const tocContent = (
-    <div className="space-y-4">
-      <h4 className="font-bold uppercase text-xs tracking-wider text-muted-foreground">En esta página</h4>
-      <nav className="flex flex-col space-y-2 border-l ml-0.5">
-        {items.map((item, index) => (
+    <div className="space-y-5">
+      <h4 className="font-bold uppercase text-[11px] tracking-wider text-muted-foreground/80 select-none">
+        En esta página
+      </h4>
+      <nav className="flex flex-col space-y-2 border-l border-border/50">
+        {filteredItems.map((item, index) => (
           <Link
             key={index}
             href={`#${item.id}`}
             onClick={() => setIsOpen(false)}
             className={cn(
-              "text-sm transition-colors hover:text-primary py-1 px-4 -ml-px border-l border-transparent flex items-center gap-2",
+              "transition-all duration-200 py-1.5 pr-3.5 -ml-px border-l block leading-normal text-left",
               activeId === item.id 
-                ? "text-primary font-medium border-primary bg-primary/5" 
-                : "text-muted-foreground",
-              item.level === 3 && "pl-8"
+                ? [
+                    "text-primary font-semibold border-primary bg-primary/5",
+                    item.level === 2 ? "text-[13.5px] pl-6" : "pl-10 text-[12.5px]"
+                  ]
+                : item.level === 2
+                  ? "text-foreground/85 hover:text-primary border-transparent font-medium text-[13.5px] pl-6"
+                  : "text-muted-foreground/70 hover:text-primary border-transparent pl-10 text-[12.5px] font-normal"
             )}
           >
-            {item.level === 2 && <Hash className="h-3 w-3 opacity-50" />}
             {item.text}
           </Link>
         ))}
@@ -94,7 +103,7 @@ export function Toc({ items }: TocProps) {
       )}
 
       {/* Desktop TOC */}
-      <aside className="w-64 hidden xl:block p-6 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto custom-scrollbar">
+      <aside className="w-72 xl:w-80 hidden xl:block py-6 pl-0 pr-6 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto custom-scrollbar shrink-0">
         {tocContent}
       </aside>
     </>

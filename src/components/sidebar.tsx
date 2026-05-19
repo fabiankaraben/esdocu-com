@@ -15,6 +15,28 @@ interface SidebarProps {
 
 export function Sidebar({ currentSlug, items, root }: SidebarProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const asideRef = React.useRef<HTMLDivElement | null>(null);
+
+  // Restore scroll position when slug or root changes
+  React.useEffect(() => {
+    try {
+      const savedScroll = sessionStorage.getItem(`sidebar-scroll-${root}`);
+      if (savedScroll && asideRef.current) {
+        asideRef.current.scrollTop = parseInt(savedScroll, 10);
+      }
+    } catch (e) {
+      console.warn("Could not restore sidebar scroll position", e);
+    }
+  }, [root, currentSlug]);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    try {
+      const scrollTop = e.currentTarget.scrollTop;
+      sessionStorage.setItem(`sidebar-scroll-${root}`, String(scrollTop));
+    } catch (e) {
+      // Ignore storage errors in private browsing modes
+    }
+  };
 
   const sidebarContent = (
     <div className="space-y-4">
@@ -62,7 +84,11 @@ export function Sidebar({ currentSlug, items, root }: SidebarProps) {
       )}
 
       {/* Desktop Sidebar */}
-      <aside className="w-64 hidden lg:block border-r h-[calc(100vh-4rem)] p-6 overflow-y-auto sticky top-16 custom-scrollbar">
+      <aside 
+        ref={asideRef}
+        onScroll={handleScroll}
+        className="w-72 xl:w-80 hidden lg:block border-r h-[calc(100vh-4rem)] p-6 overflow-y-auto sticky top-16 custom-scrollbar shrink-0"
+      >
         {sidebarContent}
       </aside>
     </>
@@ -104,13 +130,21 @@ function SidebarNavItem({
         href={`/${item.slug}`}
         onClick={onClick}
         className={cn(
-          "text-sm py-2 px-3 rounded-md transition-colors block",
+          "text-sm py-2 px-3 rounded-md transition-colors block flex items-start gap-2.5",
           isActive
             ? "bg-primary/10 text-primary font-semibold"
             : "hover:bg-muted text-muted-foreground hover:text-foreground"
         )}
       >
-        {item.label}
+        {item.order !== undefined && (
+          <span className={cn(
+            "font-mono text-xs mt-0.5 shrink-0 transition-colors",
+            isActive ? "text-primary/70" : "text-muted-foreground/45"
+          )}>
+            {String(item.order).padStart(2, '0')}
+          </span>
+        )}
+        <span className="flex-1">{item.label}</span>
       </Link>
     );
   }

@@ -5,8 +5,6 @@ import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
 import { Toc } from "@/components/toc";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import * as MdxUI from "@/components/mdx-components";
@@ -65,44 +63,25 @@ const getTextContent = (children: any): string => {
 
 const mdxComponents: any = {
   ...MdxUI,
-  code({ node, inline, className, children, ...props }: any) {
-    const match = /language-(\w+)/.exec(className || "");
-    return !inline && match ? (
-      <div className="rounded-xl overflow-hidden my-6 border shadow-sm">
-        <SyntaxHighlighter
-          style={atomDark}
-          language={match[1]}
-          PreTag="div"
-          customStyle={{ margin: 0, padding: '1.5rem', fontSize: '0.9rem', background: '#1e1e1e' }}
-          {...props}
-        >
-          {String(children).replace(/\n$/, "")}
-        </SyntaxHighlighter>
-      </div>
-    ) : (
-      <code className={cn("bg-muted px-1.5 py-0.5 rounded text-primary font-mono text-sm", className)} {...props}>
-        {children}
-      </code>
-    );
-  },
-  h1: (props: any) => <h1 className="text-4xl font-display font-bold mt-12 mb-6" {...props} />,
+  code: MdxUI.CodeBlock,
+  h1: (props: any) => <h1 className="text-4xl font-display font-bold mt-16 mb-8" {...props} />,
   h2: ({ children, ...props }: any) => {
     const text = getTextContent(children);
     const id = generateSlug(text);
     const cleanText = text.replace(/\\?\{#.*?\}/g, "").trim();
-    return <h2 id={id} className="text-2xl font-display font-bold mt-10 mb-4 pb-2 border-b scroll-mt-24" {...props}>{cleanText}</h2>;
+    return <h2 id={id} className="text-2xl font-display font-bold mt-16 mb-6 pb-2 border-b scroll-mt-24" {...props}>{cleanText}</h2>;
   },
   h3: ({ children, ...props }: any) => {
     const text = getTextContent(children);
     const id = generateSlug(text);
     const cleanText = text.replace(/\\?\{#.*?\}/g, "").trim();
-    return <h3 id={id} className="text-xl font-display font-bold mt-8 mb-3 scroll-mt-24" {...props}>{cleanText}</h3>;
+    return <h3 id={id} className="text-xl font-display font-bold mt-12 mb-4 scroll-mt-24" {...props}>{cleanText}</h3>;
   },
-  p: (props: any) => <p className="leading-relaxed mb-4" {...props} />,
-  ul: (props: any) => <ul className="list-disc pl-6 mb-4 space-y-2" {...props} />,
-  ol: (props: any) => <ol className="list-decimal pl-6 mb-4 space-y-2" {...props} />,
-  li: (props: any) => <li className="leading-relaxed" {...props} />,
-  blockquote: (props: any) => <blockquote className="border-l-4 border-primary/20 pl-4 italic my-6 bg-muted/30 py-2 pr-4 rounded-r-lg" {...props} />,
+  p: (props: any) => <p className="leading-relaxed xl:leading-[1.8] mb-6 text-[1.05rem] md:text-[1.1rem]" {...props} />,
+  ul: (props: any) => <ul className="list-disc pl-6 mb-6 space-y-3 xl:space-y-4" {...props} />,
+  ol: (props: any) => <ol className="list-decimal pl-6 mb-6 space-y-3 xl:space-y-4" {...props} />,
+  li: (props: any) => <li className="leading-relaxed xl:leading-[1.8] text-[1.05rem] md:text-[1.1rem] mb-2" {...props} />,
+  blockquote: (props: any) => <blockquote className="border-l-4 border-primary/20 pl-6 pr-4 py-4 italic my-8 bg-muted/30 rounded-r-lg" {...props} />,
   a: (props: any) => <a className="text-primary font-medium underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all" {...props} />,
   table: (props: any) => (
     <div className="my-8 w-full overflow-hidden rounded-xl border border-muted shadow-sm">
@@ -143,10 +122,10 @@ export default async function DocPage({ params }: PageProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar categoriesWithBooks={categoriesWithBooks} />
-      <div className="container mx-auto flex justify-center">
+      <Navbar categoriesWithBooks={categoriesWithBooks} wide />
+      <div className="w-full max-w-none px-4 md:px-6 flex gap-6 xl:gap-8">
         <Sidebar currentSlug={slug} items={sidebarItems} root={root} />
-        <main className="flex-1 p-6 md:p-12 max-w-4xl overflow-hidden">
+        <main className="flex-1 py-6 px-2 md:py-12 md:px-4 xl:py-16 xl:px-4 max-w-none overflow-hidden">
           <div className="mb-12">
             <div className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{slug[0]}</div>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">{doc.title}</h1>
