@@ -50,20 +50,21 @@ export default function RootLayout({
         {/* Google tag (gtag.js) */}
         {process.env.NODE_ENV === "production" && (
           <>
-            <Script
+            <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=G-YPEZ7EJ1LQ"
-              strategy="afterInteractive"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
 
-                gtag('config', 'G-YPEZ7EJ1LQ');
-              `}
-            </Script>
+                  gtag('config', 'G-YPEZ7EJ1LQ');
+                `,
+              }}
+            />
           </>
         )}
       </head>
