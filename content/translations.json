@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Bootstrap",
+    "url": "https://getbootstrap.esdocu.com",
+    "description": "El framework CSS más popular del mundo para crear diseños responsivos y móviles primero de manera rápida y sencilla.",
+    "color": "bg-[#7952b3]",
+    "gradient": "from-[#7952b3]/10 to-[#7952b3]/5"
+  },
+  {
+    "title": "Tailwind CSS",
+    "url": "https://tailwindcss.esdocu.com",
+    "description": "Un framework CSS de utilidad primero para crear interfaces de usuario personalizadas directamente en tu código HTML.",
+    "color": "bg-[#38bdf8]",
+    "gradient": "from-[#38bdf8]/10 to-[#38bdf8]/5"
+  },
+  {
+    "title": "NestJS",
+    "url": "https://nestjs.esdocu.com",
+    "description": "Un framework de Node.js progresivo y robusto para construir aplicaciones altamente eficientes, confiables y escalables.",
+    "color": "bg-[#e0234e]",
+    "gradient": "from-[#e0234e]/10 to-[#e0234e]/5"
+  }
+]

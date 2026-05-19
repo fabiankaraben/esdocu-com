@@ -1,37 +1,38 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, Zap, Shield, Globe } from "lucide-react";
-import { getCategoriesWithBooks } from "@/lib/docs";
+import { ArrowRight, BookOpen, Zap, Shield, Globe, ArrowUpRight } from "lucide-react";
+import { getCategoriesWithBooks, getOfficialTranslations } from "@/lib/docs";
 
 export default function Home() {
   const categories = getCategoriesWithBooks();
+  const officialTranslations = getOfficialTranslations();
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar categoriesWithBooks={categories} />
-      
+
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_50%_50%,hsl(var(--primary)/0.05)_0%,transparent_100%)]" />
-          
+
           <div className="container mx-auto px-4 text-center">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-muted text-muted-foreground mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2" />
               Documentación técnica en Español
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
-              Aprende <span className="gradient-text">Tecnología</span> <br /> 
+              Aprende <span className="gradient-text">Tecnología</span> <br />
               en tu Idioma.
             </h1>
-            
+
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              Esdocu ofrece traducciones de alta calidad de las documentaciones técnicas más populares. 
+              Esdocu ofrece traducciones de alta calidad de las documentaciones técnicas más populares.
               Bootstrap, Moment.js y más, todo en un solo lugar.
             </p>
-            
+
             <div className="flex flex-wrap items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000">
               <Button size="lg" asChild className="rounded-full px-8">
                 <Link href="/bootstrap/comenzando">
@@ -51,17 +52,17 @@ export default function Home() {
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <FeatureCard 
+              <FeatureCard
                 icon={<Zap className="h-8 w-8 text-primary" />}
                 title="Rápido y Moderno"
                 description="Construido con las últimas tecnologías para una experiencia de lectura fluida y veloz."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<BookOpen className="h-8 w-8 text-primary" />}
                 title="Contenido Curado"
                 description="Seleccionamos y traducimos las bibliotecas más importantes del ecosistema dev."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<Globe className="h-8 w-8 text-primary" />}
                 title="100% en Español"
                 description="Eliminamos la barrera del idioma para que puedas enfocarte en aprender a programar."
@@ -74,7 +75,7 @@ export default function Home() {
         <section className="py-24">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-16">Documentaciones Disponibles</h2>
-            
+
             {categories.map((category) => (
               category.books?.length > 0 && (
                 <div key={category.slug} className="mb-20 last:mb-0">
@@ -84,11 +85,11 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {category.books.map((book: any) => (
-                      <DocCard 
+                      <DocCard
                         key={book.slug}
-                        title={book.title} 
-                        href={`/${book.slug}/${book.chapters?.[0]?.slug || 'comenzando'}`} 
-                        color={book.slug === 'bootstrap' ? "bg-[#7952b3]" : "bg-[#1b2b34]"} 
+                        title={book.title}
+                        href={`/${book.slug}/${book.chapters?.[0]?.slug || 'comenzando'}`}
+                        color={book.slug === 'bootstrap' ? "bg-[#7952b3]" : "bg-[#1b2b34]"}
                         description={book.description}
                       />
                     ))}
@@ -98,6 +99,42 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Official Translations Section */}
+        {officialTranslations.length > 0 && (
+          <section className="py-24 bg-muted/20 relative overflow-hidden border-t">
+            {/* Background elements for rich aesthetics */}
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,hsl(var(--primary)/0.02)_0%,transparent_100%)]" />
+
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <div className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-primary/10 text-primary mb-4">
+                  <Globe className="h-3.5 w-3.5 mr-1.5 animate-pulse" />
+                  Ecosistema Web
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                  Docs Oficiales en Español
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Realizamos traducciones al español de las documentaciones oficiales más importantes para impulsar la educación sin barreras de idioma.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {officialTranslations.map((translation) => (
+                  <OfficialTranslationCard
+                    key={translation.title}
+                    title={translation.title}
+                    url={translation.url}
+                    description={translation.description}
+                    color={translation.color}
+                    gradient={translation.gradient}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
 
       {/* Footer */}
@@ -136,3 +173,46 @@ function DocCard({ title, href, color, description }: { title: string, href: str
     </Link>
   );
 }
+
+function OfficialTranslationCard({ title, url, description, color, gradient }: { title: string, url: string, description: string, color: string, gradient: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block p-8 rounded-2xl border bg-card hover:shadow-2xl transition-all duration-500 overflow-hidden text-left h-full border-muted/50 hover:border-primary/30"
+    >
+      {/* Background glow using the gradient custom to each technology */}
+      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient} opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-500`} />
+
+      {/* Premium subtle corner accent line matching the theme color of the tech */}
+      <div className={`absolute top-0 left-0 w-1.5 h-0 ${color} group-hover:h-full transition-all duration-500 rounded-tl-2xl rounded-bl-2xl`} />
+
+      <div className="relative z-10 flex flex-col h-full justify-between">
+        <div>
+          <div className="flex items-start justify-between mb-4">
+            <h3 className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
+              {title}
+            </h3>
+            <span className="p-2 rounded-xl bg-muted group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300 transform group-hover:-translate-y-1 group-hover:translate-x-1">
+              <ArrowUpRight className="h-5 w-5" />
+            </span>
+          </div>
+          <p className="text-muted-foreground leading-relaxed mb-6 group-hover:text-muted-foreground/80 transition-colors duration-300">
+            {description}
+          </p>
+        </div>
+
+        <div className="pt-2 border-t border-muted/40 flex items-center justify-between">
+          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 group-hover:text-primary transition-colors duration-300">
+            Documentación Oficial
+          </span>
+          <span className="text-sm font-semibold inline-flex items-center text-primary group-hover:translate-x-1 transition-transform duration-300">
+            Visitar sitio <ArrowRight className="ml-1.5 h-4 w-4" />
+          </span>
+        </div>
+      </div>
+    </a>
+  );
+}
+

@@ -46,6 +46,25 @@ export interface BookMetadata {
   language: string;
 }
 
+export interface OfficialTranslation {
+  title: string;
+  url: string;
+  description: string;
+  color: string;
+  gradient: string;
+}
+
+export function getOfficialTranslations(): OfficialTranslation[] {
+  const filePath = path.join(DOCS_PATH, "translations.json");
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  } catch (error) {
+    console.error("Error reading translations.json:", error);
+    return [];
+  }
+}
+
 export function getAllCategories(): Category[] {
   const categoriesPath = path.join(DOCS_PATH, "categories");
   if (!fs.existsSync(categoriesPath)) return [];
