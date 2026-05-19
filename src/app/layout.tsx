@@ -46,6 +46,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning className={`${outfit.variable} ${inter.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-YPEZ7EJ1LQ"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-YPEZ7EJ1LQ');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider
           attribute="class"
