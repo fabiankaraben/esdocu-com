@@ -147,8 +147,6 @@ En la sección anterior comprendimos cómo el Event Loop gestiona las tareas enc
 
 Un `Future` (Futuro) representa el resultado de una operación asíncrona que aún no se ha completado. Es, literalmente, una promesa de que se entregará un valor o un error en un momento posterior. Cuando ejecutas una función que devuelve un `Future`, la función no se detiene a esperar a que la tarea termine; en su lugar, devuelve inmediatamente este objeto "contenedor" vacío y permite que el hilo principal continúe con otras tareas.
 
----
-
 ### Los Estados de un Future
 
 A lo largo de su ciclo de vida, un `Future` transita por una serie de estados internos inmutables. Es fundamental entender este flujo para saber cómo reaccionará nuestro código.
@@ -179,8 +177,6 @@ A lo largo de su ciclo de vida, un `Future` transita por una serie de estados in
 
 * **Completed with a value (Completado con éxito):** La operación tuvo éxito y el contenedor ahora guarda el valor resultante (un `String`, un `int`, un objeto personalizado, etc.).
 * **Completed with an error (Completado con error):** La operación falló debido a una excepción (un fallo de red, un archivo no encontrado, etc.). El `Future` almacena la información del fallo para que el programa pueda gestionarlo.
-
----
 
 ### Sintaxis basada en Métodos (API Fluida)
 
@@ -249,8 +245,6 @@ void main() {
 
 Note cómo el mensaje `3` se imprime antes que el `4` y el `5`. El programa síncrono principal termina por completo su ejecución, liberando el hilo. El `Future.delayed` coloca el callback dentro de la *Event Queue*. Transcurridos los dos segundos, el Event Loop detecta el evento, ejecuta el código interno de la función, resuelve el valor y dispara secuencialmente las cláusulas `.then()` y `.whenComplete()`.
 
----
-
 ### Constructores Especializados de Future
 
 La clase `Future` provee varios constructores de fábrica útiles para resolver escenarios específicos de manera limpia sin tener que escribir lógica compleja:
@@ -272,8 +266,6 @@ void demostracionConstructores() {
 }
 
 ```
-
----
 
 ### Operaciones en Paralelo: `Future.wait`
 
@@ -320,16 +312,12 @@ Aunque la API fluida de los `Futures` mediante métodos como `.then()` y `.catch
 
 Para resolver esto, Dart introduce las palabras clave **`async`** y **`await`**. Esta sintaxis no cambia el modelo de ejecución basado en el Event Loop ni altera el funcionamiento de los `Futures`; se trata de un mecanismo de **azúcar sintáctico** (*syntactic sugar*). Su propósito es permitirnos escribir código asíncrono con una estructura visual idéntica a la del código síncrono o secuencial.
 
----
-
 ### Las reglas de oro de `async` y `await`
 
 Para utilizar esta sintaxis, se deben cumplir dos reglas estructurales estrictas en el lenguaje:
 
 1. **La palabra clave `async`:** Se coloca justo antes del cuerpo de una función. Su presencia le indica a Dart dos cosas: que la función se ejecutará de manera asíncrona y que el valor de retorno de dicha función se empaquetará automáticamente dentro de un `Future`.
 2. **La palabra clave `await`:** Solo se puede usar **dentro** de una función que haya sido declarada como `async`. Se coloca justo antes de una expresión que devuelva un `Future`. Su efecto es suspender temporalmente la ejecución de esa función específica hasta que el `Future` se complete (ya sea devolviendo un valor o un error).
-
----
 
 ### Transformación de código: De `.then()` a `async` / `await`
 
@@ -372,8 +360,6 @@ Future<void> procesarPedidoModerno() async {
 
 Ambas estructuras realizan exactamente lo mismo en el Event Loop, pero la versión con `async` y `await` se lee de arriba a abajo de forma natural, eliminando la anidación progresiva de paréntesis y llaves.
 
----
-
 ### ¿Cómo funciona `await` bajo el capó?
 
 Es un error común pensar que `await` detiene o bloquea el hilo único de ejecución de Dart. Si `await` bloqueara el hilo, toda la aplicación se congelaría durante la espera.
@@ -400,8 +386,6 @@ Línea síncrona dentro de la función async
 Asigna el valor resuelto a la variable
 
 ```
-
----
 
 ### Ejemplo práctico ejecutable
 
@@ -468,8 +452,6 @@ Toda operación que depende de agentes externos (como servidores que pueden caer
 
 Afortunadamente, Dart ofrece mecanismos robustos para interceptar y gestionar estas excepciones de manera limpia. Dependiendo de si estás utilizando la sintaxis de métodos (*API fluida*) o la sintaxis estructural moderna (`async`/`await`), la estrategia de captura se adaptará para mantener el código legible y controlado.
 
----
-
 ### Manejo de errores con la sintaxis async/await
 
 La mayor ventaja de usar la combinación `async`/`await` es que nos permite reutilizar la misma estructura estándar de manejo de errores que ya conocemos de la programación síncrona: el bloque **`try-catch-finally`** (estudiado a fondo en el Capítulo 10).
@@ -518,8 +500,6 @@ Error de formato específico interceptado: El servidor devolvió un JSON corrupt
 Limpieza de recursos: Proceso finalizado.
 
 ```
-
----
 
 ### Manejo de errores en la API fluida (.catchError)
 
@@ -583,8 +563,6 @@ Future.value(10)
 
 ```
 
----
-
 ### Errores no capturados (*Uncaught Errors*)
 
 ¿Qué sucede si un `Future` se completa con un error y no proveemos ningún bloque `try-catch` ni método `.catchError()`?
@@ -592,8 +570,6 @@ Future.value(10)
 En Dart, los errores asíncronos no capturados viajan hacia arriba en la zona de ejecución (*Zone*). Si llegan al nivel más alto sin ser interceptados, el programa imprimirá el *stack trace* (traza de la pila) en la consola de depuración. En aplicaciones de consola, esto puede detener el flujo; en entornos como Flutter, puede provocar pantallas de error visuales o fallos silenciosos en la lógica de negocio.
 
 Por ello, la regla de oro de la asincronía en Dart dicta: **Todo `Future` susceptible de fallar debe contar con una estrategia explícita de captura.**
-
----
 
 ## Resumen del capítulo
 

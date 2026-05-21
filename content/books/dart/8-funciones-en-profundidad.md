@@ -406,8 +406,6 @@ void main() {
 
 ```
 
----
-
 ## Resumen del capítulo
 
 En este capítulo hemos profundizado en la versatilidad y potencia que ofrecen las funciones en Dart, elevándolas de simples subrutinas a componentes de diseño de software avanzados:

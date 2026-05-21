@@ -48,7 +48,7 @@ export function Navbar({ categoriesWithBooks = [], wide = false }: NavbarProps) 
             category.books?.length > 0 && (
               <div key={category.slug} className="relative group">
                 <button className="flex items-center hover:text-primary/80 transition-colors py-2">
-                  {category.title} <ChevronDown className="ml-1 h-4 w-4" />
+                  {category.shortTitle ?? category.title} <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
                 <div className="absolute top-full left-0 w-48 rounded-md shadow-lg bg-background border hidden group-hover:block transition-all z-50">
                   <div className="py-2">

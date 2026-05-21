@@ -295,8 +295,6 @@ void main() {
 
 ```
 
----
-
 ### Booleanos: `bool`
 
 El tipo de dato `bool` en Dart representa valores de lógica booleana elemental. Solo existen dos instancias u objetos válidos para este tipo: los literales `true` (verdadero) y `false` (falso).
@@ -493,8 +491,6 @@ void main() {
 }
 
 ```
-
----
 
 ## Resumen del capítulo
 

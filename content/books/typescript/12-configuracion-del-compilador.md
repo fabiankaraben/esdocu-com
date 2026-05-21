@@ -117,8 +117,6 @@ Cuando estableces `"strict": true`, TypeScript activa automáticamente un conjun
 
 A continuación, analizamos las reglas individuales más importantes que se habilitan bajo este modo.
 
----
-
 ### 1. `noImplicitAny`
 
 Cuando TypeScript no puede inferir el tipo de una variable o parámetro, y este no tiene una anotación explícita, el compilador le asigna de forma predeterminada el tipo `any`. Con `noImplicitAny` activado, el compilador emitirá un error cada vez que esto ocurra.
@@ -145,8 +143,6 @@ function saludar(usuario: Usuario) {
 }
 
 ```
-
----
 
 ### 2. `strictNullChecks`
 
@@ -183,16 +179,12 @@ Con `strictNullChecks` activo, `null` y `undefined` obtienen sus propios tipos i
 
 ```
 
----
-
 ### 3. `strictFunctionTypes`
 
 Esta opción asegura que los parámetros de las funciones se verifiquen de forma más segura (contravariante). Impide que pases una función que espera un tipo más específico en un lugar donde se requiere una función que maneja un tipo más genérico, evitando fallos estructurales al invocar callbacks.
 
 * **Ejemplo de comportamiento:**
 Si una función del sistema espera procesar un `Animal`, no puedes pasarle una función que requiera obligatoriamente un `Perro`, porque el sistema podría enviarle un `Gato` y romper la ejecución.
-
----
 
 ### 4. `strictBindCallApply`
 
@@ -209,8 +201,6 @@ Garantiza que los métodos nativos de JavaScript para manipular el contexto de l
   calcularEnvio.call(null, 100, "20"); 
 
 ```
-
----
 
 ### 5. `strictPropertyInitialization`
 
@@ -250,8 +240,6 @@ class Alerta {
 }
 
 ```
-
----
 
 ### 6. `noImplicitThis`
 
@@ -294,8 +282,6 @@ El estándar de la industria consiste en aislar todo el código fuente escrito p
 
 ```
 
----
-
 ### La propiedad `outDir`
 
 La opción `outDir` especifica el directorio de salida donde el compilador debe colocar todos los archivos JavaScript traducidos (`.js`), así como los archivos de mapas de código (`.js.map`) o archivos de declaración (`.d.ts`) si estuvieran activos.
@@ -312,8 +298,6 @@ Si la carpeta especificada no existe, el compilador `tsc` la creará automática
 ```
 
 Al compilar con esta opción, TypeScript replicará exactamente la estructura de carpetas original del código fuente dentro del directorio de destino.
-
----
 
 ### La propiedad `rootDir`
 
@@ -333,8 +317,6 @@ Es un error común pensar que `rootDir` define qué archivos se van a compilar (
 #### Restricción fundamental de `rootDir`
 
 Si configuras `"rootDir": "./src"`, todos los archivos TypeScript que participen en la compilación **deben** estar ubicados dentro de la carpeta `src`. Si el compilador encuentra un archivo fuera de esa ruta (por ejemplo, si `index.ts` importa un archivo ubicado en una carpeta `/test` al mismo nivel que `src`), la compilación fallará emitiendo un error indicando que ese archivo no está bajo el directorio raíz especificado.
-
----
 
 ### Combinación de propiedades en la práctica
 
@@ -372,8 +354,6 @@ tsc -b --clean
 Para culminar la configuración de nuestro compilador, debemos entender cómo TypeScript se comunica con el entorno de ejecución externo. A diferencia de otros lenguajes compilados que generan código máquina binario, TypeScript compila a JavaScript, un lenguaje que se ejecuta en entornos muy diversos (motores de navegadores antiguos, navegadores modernos, diferentes versiones de Node.js, Cloudflare Workers, etc.).
 
 Para controlar con precisión qué características de JavaScript puede usar el compilador y qué herramientas del entorno reconoce, disponemos de dos propiedades fundamentales: `target` y `lib`.
-
----
 
 ### La propiedad `target`
 
@@ -423,8 +403,6 @@ const saludar = (nombre) => `Hola, ${nombre}`;
 * `ES6` o `ES2015`: El estándar moderno base, soportado por prácticamente cualquier entorno actual.
 * `ES2022` o `ESNext`: Utiliza las características más recientes del lenguaje. `ESNext` apunta siempre a la versión más alta que soporte la versión actual de tu compilador TypeScript.
 
----
-
 ### La propiedad `lib`
 
 Mientras que `target` define la **sintaxis** del código generado, la propiedad `lib` define qué **APIs globales** y objetos en tiempo de ejecución conoce TypeScript al momento de compilar.
@@ -451,8 +429,6 @@ Al configurar `lib` de manera precisa, aíslas las APIs disponibles:
 
 * **Para una aplicación Web Moderna:** `["ES2022", "DOM", "DOM.Iterable"]`
 * **Para una aplicación de Backend (Node.js):** `["ES2022"]` (sin añadir `DOM`).
-
----
 
 ## Resumen del capítulo
 

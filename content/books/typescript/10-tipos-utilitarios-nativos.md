@@ -133,8 +133,6 @@ Es perfectamente válido encadenar o cruzar estos utilitarios con otras herramie
 
 Continuando con el estudio de los tipos utilitarios globales, TypeScript provee herramientas para controlar la mutabilidad de las estructuras de datos y para simplificar la creación de diccionarios o mapas de objetos. En esta sección nos enfocaremos en `Readonly<T>`, que restringe la modificación de propiedades, y en `Record<K, T>`, diseñado para mapear propiedades de un tipo a otro.
 
----
-
 ### El Tipo Utilitario `Readonly<T>`
 
 El tipo utilitario `Readonly<T>` toma un tipo existente $T$ y transforma todas sus propiedades para que sean de **solo lectura**. Esto significa que, una vez que se inicializa un objeto con este tipo, el compilador de TypeScript arrojará un error si se intenta reasignar el valor de cualquiera de sus atributos.
@@ -176,8 +174,6 @@ const configConstante: Readonly<ConfiguracionServidor> = {
 
 > ⚠️ **Nota importante sobre la profundidad (Shallow Readonly):**
 > `Readonly<T>` solo afecta al primer nivel de propiedades del objeto. Si el objeto contiene objetos anidados, las propiedades de esos objetos internos siguen siendo mutables a menos que se aplique un proceso recursivo.
-
----
 
 ### El Tipo Utilitario `Record<K, T>`
 
@@ -234,8 +230,6 @@ console.log(bibliotecaRoles.Mago.magia); // Salida: 95
 
 ```
 
----
-
 ### Flexibilidad con Índices Dinámicos
 
 Si no conoces de antemano los nombres exactos de las claves, pero sabes que serán cadenas de texto generales, puedes utilizar `string` como el primer parámetro genérico:
@@ -254,8 +248,6 @@ carrito["PROD-1024"] = { nombre: "Teclado Mecánico", precio: 85 };
 carrito["PROD-5512"] = { nombre: "Ratón Ergonómico", precio: 45 };
 
 ```
-
----
 
 ### Combinación de Ambos Utilitarios
 
@@ -279,8 +271,6 @@ const MENSAJES_API: Readonly<Record<RutasCodigosRendimiento, string>> = {
 En las secciones anteriores aprendimos a modificar la obligatoriedad y la mutabilidad de todas las propiedades de un tipo. Sin embargo, existen escenarios donde no queremos transformar las propiedades existentes, sino **filtrarlas**.
 
 Cuando necesitamos crear un nuevo tipo seleccionando únicamente un subconjunto de propiedades de un tipo base, o bien descartando unas pocas y conservando el resto, TypeScript nos provee de dos tipos utilitarios fundamentales: `Pick<T, K>` y `Omit<T, K>`.
-
----
 
 ### El Tipo Utilitario `Pick<T, K>`
 
@@ -338,8 +328,6 @@ const productoCatalogo: TarjetaProducto = {
 
 ```
 
----
-
 ### El Tipo Utilitario `Omit<T, K>`
 
 El tipo utilitario `Omit<T, K>` realiza la acción inversa a `Pick`. En lugar de declarar qué propiedades queremos conservar, declaramos **qué propiedades queremos eliminar** del tipo base $T$. El tipo resultante contendrá todas las propiedades originales de $T$ excepto aquellas especificadas en $K$.
@@ -394,8 +382,6 @@ function obtenerPerfil(id: string): PerfilPublico {
 
 ```
 
----
-
 ### Criterio de Elección: ¿Cuándo usar Pick y cuándo Omit?
 
 La elección entre `Pick` y `Omit` no es solo una cuestión de preferencia; afecta directamente a la mantenibilidad del código a largo plazo:
@@ -408,8 +394,6 @@ La elección entre `Pick` y `Omit` no es solo una cuestión de preferencia; afec
 A lo largo de este capítulo hemos trabajado transformando las propiedades de objetos completos (`Partial`, `Required`, `Readonly`), mapeando diccionarios (`Record`), o filtrando las claves de estructuras complejas (`Pick`, `Omit`).
 
 En esta última sección, cambiaremos el enfoque para trabajar directamente sobre los **tipos de unión** (uniones de literales o de tipos primitivos). Para manipular, filtrar y segregar elementos dentro de una unión, TypeScript nos proporciona dos herramientas de precisión matemática basadas en conjuntos: `Exclude<T, U>` y `Extract<T, U>`.
-
----
 
 ### El Tipo Utilitario `Exclude<T, U>`
 
@@ -453,8 +437,6 @@ estadoActual = "Rechazada";  // Válido
 
 ```
 
----
-
 ### El Tipo Utilitario `Extract<T, U>`
 
 El tipo utilitario `Extract<T, U>` realiza la operación opuesta a `Exclude`. En lugar de descartar los elementos coincidentes, **extrae y conserva** únicamente los miembros de la unión $T$ que son asignables al tipo $U$. Siguiendo la analogía matemática, representa la **intersección de conjuntos** ($T \cap U$).
@@ -496,8 +478,6 @@ const accionPermitida: AccionesComunes = "crear";
 
 ```
 
----
-
 ### Diferencia Fundamental: Pick/Omit vs Exclude/Extract
 
 Es sumamente común confundir estas herramientas debido a que sus propósitos suenan similares (quitar o dejar elementos). Sin embargo, operan en dimensiones completamente distintas del sistema de tipos:
@@ -521,8 +501,6 @@ type TareaSinId = Omit<Tarea, "id">;
 // type ErrorComun = Exclude<Tarea, "id">; // No producirá el resultado esperado en el objeto
 
 ```
-
----
 
 ## Resumen del capítulo 10
 

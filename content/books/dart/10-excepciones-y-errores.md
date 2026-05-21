@@ -138,8 +138,6 @@ La gestión de excepciones funciona como una red de seguridad. El código que ti
 2. **`catch`:** Entra en acción *únicamente* si se lanza una excepción dentro del bloque `try`. Su función es capturar el objeto de la excepción para que puedas inspeccionarlo o registrarlo.
 3. **`finally`:** Es un bloque opcional que **siempre se ejecuta**, sin importar si el código en el `try` tuvo éxito o si se produjo una excepción que activó el `catch`. Es el lugar ideal para tareas de limpieza.
 
----
-
 ### Sintaxis básica y el objeto de excepción
 
 La forma más simple de implementar esta estructura requiere los bloques `try` y `catch`. El bloque `catch` puede recibir hasta dos parámetros: el objeto de la excepción propiamente dicho y la traza de la pila (*stack trace*).
@@ -165,8 +163,6 @@ void main() {
 ```
 
 Si ejecutas este código, notarás que el programa no se detiene con un *crash*. El flujo salta directamente al bloque `catch`, procesa las instrucciones de depuración y luego continúa con la última línea del `main`.
-
----
 
 ### Captura selectiva con la palabra clave `on`
 
@@ -201,8 +197,6 @@ void procesarEntrada(String dato) {
 ```
 
 > **Regla de oro:** Al encadenar bloques `on`, colócalos siempre de lo más específico a lo más general. Si pones un bloque `catch (e)` genérico al principio, este absorberá todas las excepciones y los bloques `on` inferiores quedarán inaccesibles.
-
----
 
 ### El bloque `finally`: Garantía de ejecución
 
@@ -246,8 +240,6 @@ Hasta ahora hemos aprendido cómo reaccionar ante las excepciones que el propio 
 
 Lanzar una excepción rompe inmediatamente el flujo lineal de la función actual y transfiere el control de la ejecución hacia arriba en la pila de llamadas, buscando el bloque `try-catch` más cercano que sepa cómo manejar la situación.
 
----
-
 ### La palabra clave `throw`
 
 En Dart, el lanzamiento de una anomalía se realiza mediante la palabra clave `throw`. A diferencia de otros lenguajes de programación estrictos donde solo puedes lanzar objetos que hereden de una clase base específica, **Dart permite lanzar cualquier objeto que no sea nulo**, incluyendo cadenas de texto, números enteros o instancias de clases personalizadas.
@@ -270,8 +262,6 @@ void verificarEdad(int edad) {
 ```
 
 > **Buena práctica:** Aunque Dart te permita técnicamente lanzar un entero (`throw 404;`) o un texto, la convención profesional dicta que siempre debes lanzar instancias de clases que implementen `Exception` o que extiendan de `Error`. Esto dota a tu código de semántica y facilita el uso de bloques `on` para capturas selectivas.
-
----
 
 ### Flujo de propagación de una excepción
 
@@ -312,8 +302,6 @@ void main() {
 }
 
 ```
-
----
 
 ### Relanzamiento de excepciones con `rethrow`
 
@@ -357,8 +345,6 @@ A medida que tus aplicaciones crecen, las excepciones nativas que proporciona Da
 
 Dart permite crear excepciones personalizadas de forma muy sencilla. Esto mejora drásticamente la legibilidad del código y permite a las capas superiores de la aplicación (como la interfaz de usuario) reaccionar con precisión quirúrgica ante diferentes escenarios de fallo.
 
----
-
 ### Implementando la interfaz `Exception`
 
 Para crear una excepción propia, basta con definir una clase que implemente la interfaz `Exception`. Aunque Dart no te obliga técnicamente a hacerlo (vimos que se puede lanzar cualquier objeto), implementar `Exception` es la norma profesional para que tu clase sea reconocida formalmente dentro del ecosistema del lenguaje.
@@ -380,8 +366,6 @@ class SaldoInsuficienteException implements Exception {
 }
 
 ```
-
----
 
 ### Caso práctico de uso
 
@@ -429,8 +413,6 @@ void main() {
 ```
 
 Al ejecutar este código, el bloque `on SaldoInsuficienteException` interceptará el problema. Gracias a que guardamos las propiedades `saldoActual` y `montoSolicitado` dentro del objeto de la excepción, la sección encargada de capturarla puede tomar decisiones inteligentes o construir mensajes de interfaz de usuario mucho más detallados.
-
----
 
 ## Resumen del capítulo
 

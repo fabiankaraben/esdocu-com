@@ -30,8 +30,6 @@ El ecosistema de TypeScript ha experimentado una transición importante respecto
 
 > **Nota:** Aunque los decoradores estándar son el futuro del lenguaje, los decoradores experimentales siguen siendo ampliamente requeridos en el ámbito profesional debido al software heredado y a las arquitecturas de frameworks consolidados.
 
----
-
 ### Cómo habilitar los decoradores
 
 Debido a la bifurcación histórica mencionada, la forma en que configuras tu proyecto determinará qué tipo de decoradores estarás utilizando.
@@ -67,8 +65,6 @@ A partir de TypeScript 5.0, si deseas utilizar los decoradores nativos estandari
 }
 
 ```
-
----
 
 ### Anatomía y firma de un decorador básico
 
@@ -144,8 +140,6 @@ Una vez comprendida la naturaleza de los decoradores y cómo habilitarlos, es mo
 
 En esta sección nos enfocaremos en los dos tipos de decoradores más utilizados en la arquitectura de software: los **decoradores de clases** y los **decoradores de métodos**.
 
----
-
 ### Decoradores de Clases
 
 Un decorador de clase se declara justo antes de la definición de la clase. El decorador se aplica al constructor de la clase y permite inspeccionar, modificar o incluso sustituir por completo la definición de la misma.
@@ -185,8 +179,6 @@ console.log(alumno1.nombre); // Sofía
 console.log((alumno1 as any).creadoEn); // Imprime la fecha y hora actual
 
 ```
-
----
 
 ### Decoradores de Métodos
 
@@ -251,8 +243,6 @@ pasarela.procesar(150, "USD");
 
 ```
 
----
-
 ### Flujo de Ejecución y Composición
 
 Cuando se aplican múltiples decoradores a un mismo elemento, TypeScript los evalúa de arriba hacia abajo (orden de declaración), pero los ejecuta de **abajo hacia arriba** (orden de evaluación matemática de funciones compuestas: $f(g(x))$).
@@ -305,8 +295,6 @@ Entender esta jerarquía y orden de precedencia es vital cuando construyes siste
 
 Mientras que los decoradores de clases y métodos permiten modificar el comportamiento estructural y funcional, los decoradores de **propiedades** y **parámetros** se utilizan principalmente para la **metaprogramación**. Su función no es transformar el valor del elemento directamente (ya que tienen limitaciones técnicas para ello), sino "marcarlo" con metadatos que luego serán procesados por otros decoradores o librerías externas.
 
----
-
 ### Decoradores de Propiedades
 
 Un decorador de propiedad se declara justo antes de una propiedad de clase. En el modelo experimental de TypeScript, estos decoradores tienen una limitación importante: no reciben un descriptor de propiedad (`PropertyDescriptor`) y no pueden devolver uno. Por lo tanto, no pueden interceptar fácilmente el acceso a la propiedad por sí mismos.
@@ -356,8 +344,6 @@ console.log(validar(registro)); // false (email y usuario son undefined)
 
 ```
 
----
-
 ### Decoradores de Parámetros
 
 Los decoradores de parámetros se aplican a los argumentos de un método o constructor. Su única misión es registrar información sobre qué posición ocupa un parámetro específico para que el método que lo contiene sepa cómo tratarlo.
@@ -395,8 +381,6 @@ class ServicioEnvio {
 ```
 
 Observe que el orden de ejecución de los decoradores de parámetros es de **derecha a izquierda** (del último parámetro al primero).
-
----
 
 ### Sinergia: Combinando todos los decoradores
 
@@ -447,8 +431,6 @@ Los patrones de diseño son soluciones estandarizadas a problemas recurrentes en
 
 En esta sección, aplicaremos todo lo aprendido en el capítulo para estructurar dos de los patrones más utilizados en la arquitectura de software: **Singleton** (Creacional) e **Inyección de Dependencias** (Estructural).
 
----
-
 ### 1. El Patrón Singleton con Decoradores
 
 El objetivo del patrón *Singleton* es garantizar que una clase tenga una **única instancia** en toda la aplicación y proporcionar un punto de acceso global a ella. Es ideal para servicios de configuración, clientes de bases de datos o gestores de estado.
@@ -493,8 +475,6 @@ console.log(config1.theme); // "light"
 console.log(config1 === config2); // true (Ambas variables apuntan exactamente al mismo objeto)
 
 ```
-
----
 
 ### 2. Patrón Inyección de Dependencias (IoC / DI)
 
@@ -609,8 +589,6 @@ controlador.crearUsuario("Alejandro");
 ```
 
 Este enfoque desacopla por completo la creación de las dependencias de su consumo, facilitando enormemente las pruebas unitarias (*testing*), ya que permite sustituir el objeto `Logger` real por un sustituto (*mock*) en el contenedor IoC sin alterar una sola línea de la clase `ControladorUsuarios`.
-
----
 
 ## Resumen del capítulo
 

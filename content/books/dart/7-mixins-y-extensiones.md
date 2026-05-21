@@ -511,7 +511,7 @@ StringNullableUtils.get$esNuloOVacio(textoNulo)
 
 Dado que pasar un argumento `null` a una función es una operación perfectamente válida y segura en Dart, el código se ejecuta sin ninguna clase de contratiempo.
 
-### Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo hemos explorado dos de las herramientas más dinámicas y modernas de Dart para potenciar la reutilización de código y la legibilidad sintáctica: los **Mixins** y las **Extensiones**.
 

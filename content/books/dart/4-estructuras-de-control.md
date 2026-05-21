@@ -487,7 +487,7 @@ Número impar encontrado: 5
 
 ```
 
-### Resumen del capítulo
+## Resumen del capítulo
 
 En este **Capítulo 4: Estructuras de Control**, hemos aprendido a gobernar el flujo de ejecución de nuestras aplicaciones en Dart.
 

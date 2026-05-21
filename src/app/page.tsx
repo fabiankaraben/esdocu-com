@@ -79,9 +79,11 @@ export default function Home() {
             {categories.map((category) => (
               category.books?.length > 0 && (
                 <div key={category.slug} className="mb-20 last:mb-0">
-                  <div className="flex items-center mb-8 border-b pb-4">
-                    {/* We can optionally render an icon here if category.icon is available */}
-                    <h3 className="text-2xl font-bold text-left">{category.title}</h3>
+                  <div className="mb-8 border-b pb-4 text-left">
+                    <h3 className="text-2xl font-bold">{category.title}</h3>
+                    {category.description && (
+                      <p className="mt-2 text-muted-foreground">{category.description}</p>
+                    )}
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {category.books.map((book: any) => (

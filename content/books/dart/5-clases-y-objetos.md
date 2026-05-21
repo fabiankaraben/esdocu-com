@@ -308,8 +308,6 @@ void main() {
 
 Las clases en Dart actúan como contenedores lógicos que agrupan tanto datos como comportamientos. A nivel técnico, estos elementos se conocen como **miembros de una clase**: los datos se definen mediante **propiedades** (también llamadas variables de instancia o atributos), mientras que los comportamientos se implementan a través de **métodos** (funciones integradas dentro de la clase).
 
----
-
 ### Propiedades (Variables de instancia)
 
 Las propiedades definen las características o el estado de un objeto. En Dart, cualquier variable declarada dentro de una clase, pero fuera de un método, se convierte en una propiedad de dicha clase.
@@ -347,8 +345,6 @@ class Contador {
 }
 
 ```
-
----
 
 ### Métodos (Funciones de instancia)
 
@@ -399,8 +395,6 @@ void main() {
 
 ```
 
----
-
 ### Visibilidad: El concepto de miembros privados
 
 A diferencia de lenguajes como Java o C# que usan palabras clave como `public` o `private`, Dart gestiona la visibilidad a **nivel de biblioteca (archivo)** utilizando el guion bajo (`_`).
@@ -448,8 +442,6 @@ void main() {
 
 ```
 
----
-
 ### Operador de cascada (`..` y `?..`)
 
 Dart ofrece un operador especial muy útil cuando se trabaja con propiedades y métodos: la cascada. Permite encadenar una secuencia de operaciones (asignaciones de propiedades o llamadas a métodos) sobre un mismo objeto, evitando tener que repetir el nombre de la variable en cada línea.
@@ -486,8 +478,6 @@ void main() {
 Los **getters** y **setters** son métodos especiales que permiten interceptar el acceso a la lectura y escritura de las propiedades de un objeto. Proporcionan una forma limpia de implementar el pilar del **encapsulamiento**, permitiendo añadir validaciones, transformar datos sobre la marcha o crear propiedades virtuales sin cambiar la forma en que el mundo exterior interactúa con la clase.
 
 En Dart, la gran ventaja es que no es necesario escribir métodos verbosos como `getPropiedad()` o `setPropiedad(valor)` al estilo de Java. Dart define palabras clave nativas (`get` y `set`) que exponen una sintaxis idéntica a la de una propiedad común.
-
----
 
 ### Sintaxis básica
 
@@ -527,8 +517,6 @@ void main() {
 
 ```
 
----
-
 ### Propiedades calculadas (Read-only)
 
 Un caso de uso sumamente común para los getters es la creación de **propiedades calculadas**. Estas son propiedades dinámicas que no ocupan un espacio físico en la memoria del objeto, sino que se calculan en tiempo real cada vez que alguien solicita su lectura.
@@ -560,8 +548,6 @@ void main() {
 
 ```
 
----
-
 ### ¿Cuándo usar Getters y Setters?
 
 Una regla de diseño fundamental en Dart es: **no envuelvas propiedades públicas en getters y setters si no hacen nada más**. Si una propiedad simplemente se lee y se escribe sin modificaciones ni validaciones, déjala como una propiedad normal.
@@ -571,8 +557,6 @@ Deberías implementar getters y setters cuando necesites:
 1. **Validar datos:** Asegurarte de que los valores asignados a un objeto sean correctos (por ejemplo, que una edad no sea negativa o que un correo tenga un formato válido).
 2. **Abstracción de almacenamiento:** Modificar cómo se guardan internamente los datos sin romper el código de las personas que ya usan tu clase.
 3. **Inmutabilidad controlada:** Exponer una propiedad como de "solo lectura" para el exterior mediante un getter, manteniendo su contraparte privada mutable dentro de la clase.
-
----
 
 ## Resumen del capítulo
 

@@ -496,8 +496,6 @@ function calcularTarifaPeaje(v: Vehiculo): number {
 
 Como el tipo `"BICICLETA"` no se puede asignar al tipo `never`, el compilador **arrojará un error de inmediato**, obligando al desarrollador a controlar el nuevo caso antes de poder compilar la aplicación.
 
----
-
 ## Resumen del capítulo
 
 En este **Capítulo 8: Tipos de Unión e Intersección**, hemos explorado las herramientas clave de TypeScript para flexibilizar y enriquecer nuestro sistema de tipos mediante la combinación de estructuras preexistentes:

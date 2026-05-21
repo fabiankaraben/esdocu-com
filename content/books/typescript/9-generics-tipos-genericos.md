@@ -511,8 +511,6 @@ const nombreUsuario = obtenerPropiedad(usuario, "nombre"); // Tipo inferido: str
 
 Gracias a `<K T extends keyof>`, el compilador analiza el primer argumento (`usuario`), deduce que sus claves válidas son `"id" | "nombre" | "rol"`, y restringe el segundo argumento (`clave`) para que solo acepte una de esas tres opciones literales.
 
----
-
 ## Resumen del capítulo
 
 En este **Capítulo 9: Generics (Tipos Genéricos)**, hemos explorado en profundidad una de las características más potentes y avanzadas de TypeScript para crear componentes de software altamente reutilizables y tipados de forma segura:

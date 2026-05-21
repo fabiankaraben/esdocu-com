@@ -27,6 +27,7 @@ export interface Category {
   slug: string;
   locale: string;
   title: string;
+  shortTitle?: string;
   description: string;
   icon?: string;
   order: number;
@@ -339,4 +340,24 @@ export function getFirstArticleSlug(root: string): string | null {
   }
   
   return findFirst(items);
+}
+
+/** Returns a flat, ordered list of leaf chapter slugs for a book root. */
+export function getFlatChapterSlugs(root: string): Array<{ slug: string; label: string }> {
+  const items = getSidebarForRoot(root);
+  const result: Array<{ slug: string; label: string }> = [];
+
+  function collect(items: SidebarItem[]) {
+    for (const item of items) {
+      if (item.slug) {
+        result.push({ slug: item.slug, label: item.label ?? item.slug });
+      }
+      if (item.items) {
+        collect(item.items);
+      }
+    }
+  }
+
+  collect(items);
+  return result;
 }

@@ -422,8 +422,6 @@ void main() {
 
 ```
 
----
-
 ## Resumen del capítulo
 
 En este capítulo hemos explorado en profundidad las herramientas que ofrece Dart para manipular datos y construir expresiones lógicas y matemáticas:

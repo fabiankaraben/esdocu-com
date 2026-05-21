@@ -434,8 +434,6 @@ miAlmacen.metadatos.version = 2;
 
 Si deseas mitigar este comportamiento y hacer que todo un objeto anidado sea completamente inmutable, debes aplicar `readonly` explícitamente a cada nivel de la estructura o recurrir a aserciones literales como `as const`.
 
----
-
 ## Resumen del capítulo
 
 El **Capítulo 5: Objetos y Tipos Personalizados** ha establecido los pilares para estructurar datos complejos con total seguridad en TypeScript. A lo largo de sus lecciones, aprendimos a:

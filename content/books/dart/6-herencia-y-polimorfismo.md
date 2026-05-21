@@ -467,8 +467,6 @@ class Ciudadano implements Persona {
 
 Las interfaces implícitas reducen drásticamente la necesidad de duplicar estructuras en el código de Dart, permitiendo que cualquier biblioteca o clase de terceros pueda ser utilizada como un contrato seguro sin que su diseñador original tuviera que preverlo expresamente.
 
----
-
 ## Resumen del capítulo
 
 En este capítulo hemos explorado en profundidad las herramientas que ofrece Dart para construir arquitecturas de software robustas, escalables y organizadas mediante relaciones jerárquicas y contratos de comportamiento.

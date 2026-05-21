@@ -97,8 +97,6 @@ Adoptar TypeScript en el flujo de desarrollo de proyectos modernos aporta benefi
 
 Para comenzar a escribir y ejecutar código TypeScript de manera profesional, es necesario preparar un entorno de desarrollo en tu máquina local. Este entorno consta de tres componentes principales: el entorno de ejecución de JavaScript (Node.js), el administrador de paquetes (npm) y el compilador oficial de TypeScript (tsc), además de un editor de código optimizado.
 
----
-
 ### Paso 1: Instalación de Node.js y npm
 
 Dado que el compilador de TypeScript está escrito en JavaScript y se ejecuta como una herramienta de línea de comandos, necesitamos **Node.js** instalado en el sistema. Al instalar Node.js, se incluye de forma automática **npm** (Node Package Manager), que utilizaremos para descargar las herramientas de TypeScript.
@@ -116,8 +114,6 @@ npm -v
 ```
 
 Ambos comandos deberían retornar la versión de software instalada (por ejemplo, `v20.x.x` y `10.x.x`).
-
----
 
 ### Paso 2: Instalación del Compilador de TypeScript
 
@@ -148,8 +144,6 @@ tsc -v
 
 Este comando invocará al **TypeScript Compiler (tsc)** y mostrará la versión actual en pantalla (por ejemplo, `Version 5.x.x`).
 
----
-
 ### Paso 3: Configuración del Editor de Código (IDE)
 
 Aunque puedes escribir TypeScript en cualquier editor de texto plano, la experiencia óptima se logra con un editor que entienda el lenguaje de manera nativa para ofrecer autocompletado y detección de errores en tiempo real.
@@ -158,8 +152,6 @@ La opción estándar en la industria es **Visual Studio Code (VS Code)**, desarr
 
 1. Descarga e instala VS Code desde su [sitio web oficial](https://code.visualstudio.com/).
 2. Al abrir un archivo con la extensión `.ts`, el editor activará automáticamente su motor de inferencia estática.
-
----
 
 ### Paso 4: Creación y estructura del espacio de trabajo
 
@@ -207,8 +199,6 @@ Con Node.js corriendo, el compilador `tsc` instalado globalmente y un proyecto i
 
 Con el entorno de desarrollo perfectamente configurado, es momento de escribir, compilar y ejecutar tu primer programa en TypeScript. Este ejercicio te permitirá experimentar de primera mano el flujo de trabajo típico de un desarrollador de TypeScript: escribir código con tipado, invocar al compilador y ejecutar el archivo JavaScript resultante.
 
----
-
 ### Paso 1: Creación del archivo TypeScript
 
 Abre la carpeta `curso-typescript` que creamos en la sección anterior dentro de tu editor de código (Visual Studio Code).
@@ -227,8 +217,6 @@ console.log(mensaje);
 ```
 
 A nivel de sintaxis, puedes notar de inmediato la diferencia con JavaScript tradicional: después del nombre de la variable (`mensaje`), hemos añadido dos puntos (`:`) seguidos de la palabra clave `string`. Esta es una **anotación de tipo**, y le indica firmemente al editor y al compilador que esta variable solo puede almacenar texto.
-
----
 
 ### Paso 2: Compilación de TypeScript a JavaScript
 
@@ -254,8 +242,6 @@ console.log(mensaje);
 
 ```
 
----
-
 ### Paso 3: Ejecución del programa
 
 Ahora que tienes el archivo JavaScript puro listo (`hola.js`), puedes ejecutarlo en tu computadora utilizando el entorno de ejecución de Node.js que instalamos previamente.
@@ -273,8 +259,6 @@ La terminal imprimirá inmediatamente el resultado esperado de tu programa:
 ¡Hola Mundo desde TypeScript!
 
 ```
-
----
 
 ### El flujo de trabajo cíclico
 
@@ -323,8 +307,6 @@ Para dominar TypeScript de forma profesional, es indispensable comprender exacta
 
 El compilador toma tu código TypeScript de alto nivel y lo traduce a JavaScript de alto nivel, removiendo por completo la capa de tipado en el camino.
 
----
-
 ### Las dos responsabilidades del compilador
 
 El TypeScript Compiler (`tsc`) trabaja realizando dos tareas completamente independientes al mismo tiempo:
@@ -333,8 +315,6 @@ El TypeScript Compiler (`tsc`) trabaja realizando dos tareas completamente indep
 2. **La transformación de código (Transpilation):** Elimina las anotaciones de tipo, interfaces y alias para generar un archivo con sintaxis JavaScript pura. Además, adapta las características modernas del lenguaje a versiones de JavaScript más antiguas si así se lo configuras.
 
 Un concepto fundamental que debes asimilar es que **estas dos tareas no dependen la una de la otra**. Por defecto, incluso si el comprobador encuentra errores de tipo en tu archivo, el compilador completará la transpilación y generará el archivo `.js` resultante. Esto se debe a que TypeScript asume que tú, como desarrollador, tienes el control de la lógica y podrías querer probar el código en ejecución a pesar de las advertencias.
-
----
 
 ### Anatomía del proceso de compilación
 
@@ -373,8 +353,6 @@ Cuando el comando `tsc` procesa un archivo, el compilador ejecuta de forma inter
 2. **Comprobación (Type Checking):** El validador recorre el AST examinando cada variable y operación. Si intentas invocar un método que no existe en un objeto, esta fase detiene el flujo para imprimir los errores en la terminal.
 3. **Emisión (Emit):** Si el análisis concluye, el emisor toma el AST, remueve quirúrgicamente los tipos (como `: string`, `: number` o las declaraciones de interfaces) y escribe el código limpio en el archivo `.js` final.
 
----
-
 ### Borrado de tipos en acción (Type Erasure)
 
 La consecuencia directa de este proceso es el fenómeno conocido como **borrado de tipos** (Type Erasure). En el entorno de ejecución (runtime), los tipos de TypeScript no existen. No ocupan espacio en memoria ni consumen ciclos de procesamiento.
@@ -405,8 +383,6 @@ function darBienvenida(persona) {
 ```
 
 La interfaz `Usuario` desapareció y el parámetro `persona` perdió su restricción de tipo. El resultado es JavaScript sumamente limpio y optimizado para cualquier navegador.
-
----
 
 ## Resumen del capítulo
 

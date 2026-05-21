@@ -1,0 +1,9 @@
+{
+  "slug": "ecosistema-python",
+  "locale": "es",
+  "title": "Ecosistema Python",
+  "shortTitle": "Python",
+  "description": "Explora documentación en español sobre bibliotecas, frameworks y herramientas clave del ecosistema de Python.",
+  "icon": "terminal",
+  "order": 2
+}

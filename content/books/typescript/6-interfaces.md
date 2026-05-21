@@ -315,8 +315,6 @@ En TypeScript, tanto las interfaces (`interface`) como los alias de tipos (`type
 
 Aunque en las versiones modernas del lenguaje puedes usar ambas para resolver la mayoría de los problemas cotidianos, existen diferencias fundamentales en su comportamiento, restricciones y propósito arquitectónico.
 
----
-
 ### 1. Extensibilidad y combinación (Extends vs. Intersección)
 
 La diferencia más notable radica en la sintaxis y el comportamiento interno al momento de combinar o heredar estructuras.
@@ -342,8 +340,6 @@ type Auto = Vehiculo & {
 };
 
 ```
-
----
 
 ### 2. Combinación de declaraciones (*Declaration Merging*)
 
@@ -379,8 +375,6 @@ type Usuario = { nombre: string; };
 
 Esta propiedad hace que las interfaces sean la opción obligatoria al escribir librerías o definiciones de tipos globales (`.d.ts`), ya que permiten a otros desarrolladores extender las funcionalidades de la librería sin modificar el código fuente original.
 
----
-
 ### 3. Capacidades exclusivas de los Types
 
 Los alias de tipos son herramientas mucho más expresivas que las interfaces cuando se trata de modelar tipos avanzados. Existen estructuras que una interfaz simplemente **no puede** representar por sí misma:
@@ -397,8 +391,6 @@ type EstadoSemaforo = "rojo" | "amarillo" | "verde"; // Tipo literal de unión
 
 ```
 
----
-
 ### Tabla comparativa de características
 
 A continuación, se presenta un resumen detallado de las capacidades de cada herramienta para facilitar la toma de decisiones en el diseño de software:
@@ -411,8 +403,6 @@ A continuación, se presenta un resumen detallado de las capacidades de cada her
 | **Soporte de Uniones** | No puede definir uniones directamente (`A \| B`). | **Sí**. Es su fuerte principal. |
 | **Soporte de Tuplas** | No (puede simularse, pero no es sintaxis nativa). | **Sí**. Soporte nativo y directo. |
 | **Implementación en Clases** | Se puede implementar de forma nativa (`implements`). | Se puede implementar (con restricciones si usa uniones). |
-
----
 
 ### Resumen de criterios de elección
 
@@ -505,8 +495,6 @@ Sin embargo, debes optar por una `interface` en los siguientes escenarios:
 
 1. **Tipos Híbridos:** Cuando la función requiera propiedades o métodos adicionales adjuntos a ella.
 2. **Extensibilidad:** Si necesitas que la firma de la función pueda ser extendida por otros desarrolladores mediante la combinación automática de declaraciones (*Declaration Merging*).
-
----
 
 ## Resumen del capítulo
 

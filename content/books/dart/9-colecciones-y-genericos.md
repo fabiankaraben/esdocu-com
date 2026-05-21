@@ -605,8 +605,6 @@ void main() {
 
 Si intentáramos instanciar `RepositorioApi<int>()` o pasarle cualquier otra clase que no implemente `Serializable`, el compilador detendría la ejecución inmediatamente, evitando errores accidentales en producción.
 
----
-
 ## Resumen del capítulo
 
 En este **Capítulo 9: Colecciones y Genéricos**, hemos explorado las herramientas fundamentales que ofrece Dart para agrupar, organizar y manipular volúmenes de datos con la máxima eficiencia y seguridad.

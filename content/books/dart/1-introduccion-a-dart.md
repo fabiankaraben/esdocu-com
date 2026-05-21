@@ -61,8 +61,6 @@ Para comenzar a escribir código en Dart, el primer paso es instalar el **SDK (S
 
 A continuación, se detallan los pasos de instalación oficiales para los tres sistemas operativos principales.
 
----
-
 ### Instalación en Windows
 
 La forma más recomendada y sencilla de instalar Dart en Windows es utilizando el gestor de paquetes **Chocolatey**.
@@ -86,8 +84,6 @@ choco install dart-sdk
 
 ```
 
----
-
 ### Instalación en macOS
 
 En macOS, el método estándar y más eficiente es a través de **Homebrew**, el gestor de paquetes por excelencia para el sistema operativo de Apple.
@@ -110,8 +106,6 @@ brew tap dart-lang/dart
 brew install dart
 
 ```
-
----
 
 ### Instalación en Linux
 
@@ -149,8 +143,6 @@ sudo apt-get install dart
 
 ```
 
----
-
 ### Verificación de la instalación
 
 Sin importar el sistema operativo que utilices, es fundamental comprobar que el proceso se haya completado correctamente y que el sistema reconozca los comandos de Dart.
@@ -176,8 +168,6 @@ Dart SDK version: 3.x.x (stable) (fecha de lanzamiento) on "macos_arm64"
 Con el SDK de Dart correctamente instalado en el sistema, el siguiente paso es preparar el entorno de desarrollo donde escribirás, depurarás y gestionarás tu código de forma eficiente. Aunque Dart se puede escribir en cualquier editor de texto plano, utilizar un **IDE (Entorno de Desarrollo Integrado)** o un editor de código moderno con las extensiones adecuadas transforma radicalmente la experiencia gracias al autocompletado inteligente, la detección de errores en tiempo real y la ejecución integrada.
 
 En el ecosistema Dart, existen dos opciones principales y ampliamente adoptadas por la comunidad: **Visual Studio Code** y los entornos de **JetBrains (Android Studio o IntelliJ IDEA)**.
-
----
 
 ### Opción 1: Visual Studio Code (Recomendado)
 
@@ -211,8 +201,6 @@ Si aún no lo tienes, descarga e instala la versión correspondiente a tu sistem
 
 > **Consejo de productividad:** Al instalar la extensión de Dart, VS Code habilitará automáticamente herramientas como *Linter* (que analiza tu código en busca de malas prácticas), formateo automático al guardar el archivo y soporte para la ejecución directa de programas con la tecla `F5`.
 
----
-
 ### Opción 2: Android Studio / IntelliJ IDEA
 
 Si prefieres un entorno de desarrollo más robusto y pesado, las herramientas de JetBrains ofrecen una integración nativa profunda con refactorizaciones avanzadas y herramientas de inspección de memoria muy completas.
@@ -227,8 +215,6 @@ Descarga e instala **Android Studio** (común si planeas desarrollar aplicacione
 2. En la pantalla de bienvenida, selecciona **Plugins** en el menú izquierdo (si ya tienes un proyecto abierto, ve a `Settings` o `Preferences` -> `Plugins`).
 3. Selecciona la pestaña **Marketplace** y busca **"Dart"**.
 4. Haz clic en **Install**. El IDE te solicitará reiniciarse para aplicar los cambios.
-
----
 
 ### Herramientas adicionales del ecosistema
 
@@ -253,16 +239,12 @@ Ha llegado el momento de escribir, comprender y ejecutar tu primer programa func
 
 A diferencia de otros lenguajes que requieren configuraciones complejas de clases o plantillas extensas sólo para mostrar un texto, Dart mantiene una estructura limpia, directa y fácil de leer.
 
----
-
 ### Creación del archivo
 
 1. Abre tu editor de código (como Visual Studio Code).
 2. Crea un archivo nuevo y nómbralo `hola_mundo.dart`.
 
 > **Regla de estilo:** En Dart, por convención oficial, todos los nombres de los archivos deben escribirse en minúsculas y, si contienen varias palabras, se separan mediante guiones bajos (`snake_case`).
-
----
 
 ### Escribiendo el código
 
@@ -275,8 +257,6 @@ void main() {
 
 ```
 
----
-
 ### Anatomía del código paso a paso
 
 Aunque son pocas líneas, este programa contiene los bloques de construcción fundamentales de cualquier aplicación en Dart. Vamos a analizar cada elemento:
@@ -287,8 +267,6 @@ Aunque son pocas líneas, este programa contiene los bloques de construcción fu
 * **`print(...)`**: Es una función integrada de la biblioteca central de Dart. Su único propósito es tomar el contenido que le pases entre los paréntesis y mostrarlo en la consola del sistema o terminal de salida.
 * **Las comillas simples `' '`**: Se utilizan para definir una cadena de texto plano (*String*). En Dart puedes usar tanto comillas simples como dobles (`" "`), pero la guía de estilo oficial del lenguaje recomienda priorizar el uso de comillas simples para mantener la consistencia visual en el código.
 * **El punto y coma `;`**: Al final de la instrucción `print`, el uso del punto y coma es **estrictamente obligatorio**. A diferencia de lenguajes como JavaScript o Python, omitir un punto y coma en Dart provocará un error de compilación inmediato. Le indica al analizador que esa línea de instrucción específica ha terminado.
-
----
 
 ### Ejecución del programa
 
@@ -313,8 +291,6 @@ Si todo está bien configurado, verás la salida directamente en tu terminal:
 ```
 
 ¡Felicidades! Has programado y ejecutado con éxito tu primera línea de código en Dart. Tu entorno de desarrollo está completamente validado y listo para afrontar estructuras de software mucho más avanzadas.
-
----
 
 ## Resumen del capítulo
 

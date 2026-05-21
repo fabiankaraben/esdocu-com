@@ -1,0 +1,161 @@
+{
+  "slug": "python-requests",
+  "locale": "es",
+  "title": "Requests",
+  "subtitle": "Peticiones HTTP para humanos en Python",
+  "author": "Esdocu Team",
+  "description": "Domina Requests, la biblioteca HTTP para Python más popular, sencilla y elegante. Aprende a realizar peticiones web de forma eficiente, manejar parámetros, gestionar cabeceras, procesar respuestas en formato JSON, trabajar con autenticación, optimizar sesiones y mucho más.",
+  "cover": "",
+  "category": "ecosistema-python",
+  "tags": [
+    "python",
+    "requests",
+    "http",
+    "api",
+    "backend"
+  ],
+  "featured": false,
+  "publishedAt": "2026-05-20",
+  "language": "es",
+  "chapters": [
+    {
+      "slug": "instalacion-y-configuracion",
+      "title": "Instalación y Configuración",
+      "order": 1,
+      "description": "Aprende a preparar tu entorno de desarrollo instalando la biblioteca requests mediante pip. Este capítulo cubre la instalación básica, actualización y verificación de la versión en tu sistema."
+    },
+    {
+      "slug": "el-primer-request",
+      "title": "El Primer Request",
+      "order": 2,
+      "description": "Descubre cómo realizar tus primeras peticiones HTTP. Exploraremos el método GET, cómo hacer una solicitud simple a una API pública y entender la estructura básica del objeto de respuesta devuelto."
+    },
+    {
+      "slug": "parametros-y-urls",
+      "title": "Parámetros y URLs",
+      "order": 3,
+      "description": "Domina la construcción de URLs dinámicas pasando parámetros de consulta. Aprenderás a enviar datos estructurados en tus peticiones GET de forma segura sin tener que concatenar cadenas manualmente."
+    },
+    {
+      "slug": "cabeceras-y-cookies",
+      "title": "Cabeceras y Cookies",
+      "order": 4,
+      "description": "Aprende a personalizar las cabeceras HTTP para simular navegadores y enviar metadatos. También cubriremos cómo leer, enviar y gestionar cookies para mantener estados simples con el servidor remoto."
+    },
+    {
+      "slug": "analizando-la-respuesta",
+      "title": "Analizando la Respuesta",
+      "order": 5,
+      "description": "Profundiza en el objeto Response devuelto por requests. Descubre cómo extraer el texto sin formato, acceder a las cabeceras del servidor y entender la codificación de caracteres empleada."
+    },
+    {
+      "slug": "manejo-de-contenido-json",
+      "title": "Manejo de Contenido JSON",
+      "order": 6,
+      "description": "El formato JSON es el estándar en las APIs modernas. Este capítulo enseña cómo enviar datos JSON en tus peticiones POST y cómo decodificar automáticamente las respuestas JSON recibidas del servidor."
+    },
+    {
+      "slug": "respuestas-binarias-y-archivos",
+      "title": "Respuestas Binarias y Archivos",
+      "order": 7,
+      "description": "Descubre cómo trabajar con datos no textuales, como imágenes o documentos PDF. Aprenderás a descargar archivos grandes eficientemente y a subir contenido multimedia utilizando peticiones multiparte."
+    },
+    {
+      "slug": "codigos-de-estado-y-errores",
+      "title": "Códigos de Estado y Errores",
+      "order": 8,
+      "description": "Un aspecto crucial del desarrollo web es el manejo de fallos. Explora cómo evaluar los códigos de estado HTTP, lanzar excepciones automáticas y manejar errores de conexión o tiempos de espera agotados."
+    },
+    {
+      "slug": "metodos-de-autenticacion",
+      "title": "Métodos de Autenticación",
+      "order": 9,
+      "description": "Muchas APIs requieren autenticación. Aprende a integrar diferentes esquemas de seguridad, desde la simple autenticación básica HTTP hasta el uso de tokens y mecanismos personalizados más complejos."
+    },
+    {
+      "slug": "ssl-y-certificados",
+      "title": "SSL y Certificados",
+      "order": 10,
+      "description": "La seguridad es primordial. Este capítulo detalla cómo requests verifica automáticamente los certificados SSL, cómo usar certificados personalizados y cómo deshabilitar alertas en entornos de prueba."
+    },
+    {
+      "slug": "proxies-y-redirecciones",
+      "title": "Proxies y Redirecciones",
+      "order": 11,
+      "description": "Domina el enrutamiento de tu tráfico HTTP. Configura proxies para evadir bloqueos o analizar el tráfico, y aprende a controlar minuciosamente cómo la biblioteca sigue las redirecciones del servidor."
+    },
+    {
+      "slug": "sesiones-y-persistencia",
+      "title": "Sesiones y Persistencia",
+      "order": 12,
+      "description": "Optimiza tus peticiones mediante el uso de sesiones. Las sesiones permiten reutilizar conexiones TCP subyacentes, mejorando el rendimiento, y mantienen estados como cookies entre múltiples solicitudes."
+    },
+    {
+      "slug": "tiempos-de-espera-timeouts",
+      "title": "Tiempos de Espera (Timeouts)",
+      "order": 13,
+      "description": "Evita que tus aplicaciones se bloqueen indefinidamente. Aprende a establecer límites de tiempo para conectar y leer datos, protegiendo así tus sistemas contra servidores lentos o caídas de la red."
+    },
+    {
+      "slug": "adaptadores-de-transporte",
+      "title": "Adaptadores de Transporte",
+      "order": 14,
+      "description": "Adéntrate en la arquitectura interna configurando adaptadores de transporte. Podrás definir el número máximo de reintentos automáticos y afinar la forma en que requests interactúa con urllib3."
+    },
+    {
+      "slug": "pruebas-y-mocking",
+      "title": "Pruebas y Mocking",
+      "order": 15,
+      "description": "Asegura la calidad de tu código simulando respuestas HTTP en tus pruebas unitarias. Exploraremos herramientas como responses y requests-mock para testear tus peticiones sin necesidad de red externa."
+    },
+    {
+      "slug": "transmision-streaming",
+      "title": "Transmisión (Streaming)",
+      "order": 16,
+      "description": "Gestiona eficientemente el consumo de memoria al lidiar con grandes cantidades de datos. Aprende a descargar archivos enormes fragmento a fragmento utilizando peticiones de flujo de datos continuos."
+    }
+  ],
+  "parts": [
+    {
+      "title": "Parte 1: Introducción y Fundamentos",
+      "chapterSlugs": [
+        "instalacion-y-configuracion",
+        "el-primer-request",
+        "parametros-y-urls",
+        "cabeceras-y-cookies"
+      ]
+    },
+    {
+      "title": "Parte 2: Manejo de Respuestas",
+      "chapterSlugs": [
+        "analizando-la-respuesta",
+        "manejo-de-contenido-json",
+        "respuestas-binarias-y-archivos",
+        "codigos-de-estado-y-errores"
+      ]
+    },
+    {
+      "title": "Parte 3: Autenticación y Seguridad",
+      "chapterSlugs": [
+        "metodos-de-autenticacion",
+        "ssl-y-certificados",
+        "proxies-y-redirecciones"
+      ]
+    },
+    {
+      "title": "Parte 4: Rendimiento y Optimización",
+      "chapterSlugs": [
+        "sesiones-y-persistencia",
+        "tiempos-de-espera-timeouts",
+        "adaptadores-de-transporte"
+      ]
+    },
+    {
+      "title": "Parte 5: Técnicas Avanzadas y Ecosistema",
+      "chapterSlugs": [
+        "pruebas-y-mocking",
+        "transmision-streaming"
+      ]
+    }
+  ]
+}

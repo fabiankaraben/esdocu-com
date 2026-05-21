@@ -89,8 +89,6 @@ Una vez que comprendes qué es un `Stream`, el siguiente paso crucial es aprende
 
 Dart ofrece dos mecanismos principales para consumir Streams: el método tradicional `.listen()` y la estructura moderna `await for`.
 
----
-
 ### El método `.listen()`
 
 La forma más flexible y de bajo nivel para consumir un `Stream` es invocando su método `.listen()`. Al hacerlo, creas una suscripción activa (representada por un objeto de tipo `StreamSubscription`) y pasas funciones de devolución de llamada (*callbacks*) para manejar los diferentes eventos del ciclo de vida del flujo.
@@ -146,8 +144,6 @@ Dato recibido: 3
 
 > **Nota:** Observa cómo la línea posterior al `.listen()` se imprime *antes* de que los datos comiencen a llegar. Esto confirma que el consumo del Stream ocurre de manera asíncrona y no bloquea el hilo principal de ejecución.
 
----
-
 ### Gestión de la suscripción (`StreamSubscription`)
 
 Cuando invocas `.listen()`, la llamada retorna una instancia de `StreamSubscription`. Guardar esta referencia es fundamental para el control de flujo y la prevención de fugas de memoria (*memory leaks*), especialmente en Streams que emiten datos de forma infinita (como un temporizador o un WebSocket).
@@ -180,8 +176,6 @@ void main() async {
 }
 
 ```
-
----
 
 ### Consumo con la estructura `await for`
 
@@ -243,8 +237,6 @@ Future<void> consumirConErrores(Stream<int> flujo) async {
 
 ```
 
----
-
 ### Comparativa: ¿Cuándo usar `.listen()` vs `await for`?
 
 | Característica | Método `.listen()` | Estructura `await for` |
@@ -262,8 +254,6 @@ En las secciones previas has aprendido cómo consumir flujos de datos y cómo in
 
 Un `StreamController` es, literalmente, el controlador y administrador de un `Stream`. Actúa como un puente con dos extremos bien definidos: una entrada para introducir datos (el **`Sink`**) y una salida para escucharlos (el **`Stream`**).
 
----
-
 ### La anatomía de un StreamController
 
 Para entender un `StreamController`, imagina una tubería industrial. El controlador es la estructura completa de la tubería, pero expone dos interfaces de acceso distintas:
@@ -280,8 +270,6 @@ Para entender un `StreamController`, imagina una tubería industrial. El control
                +-----------------------------------+
 
 ```
-
----
 
 ### Implementación básica de un StreamController
 
@@ -330,8 +318,6 @@ El Stream ha sido cerrado permanentemente.
 
 > **¡Regla crucial de rendimiento!** Siempre debes invocar al método `controller.close()` cuando un flujo termine su ciclo de vida. Dejar un `StreamController` abierto indefinidamente mantiene recursos reservados en memoria, provocando fugas de rendimiento graves (*memory leaks*).
 
----
-
 ### Creación de un Broadcast StreamController
 
 Por defecto, un `StreamController` ordinario genera un **Stream de suscripción única**. Si intentas llamar a `controller.stream.listen()` en más de una sección del código simultáneamente, tu aplicación fallará con un `StateError`.
@@ -363,8 +349,6 @@ void main() {
 }
 
 ```
-
----
 
 ### Buenas prácticas: Encapsulamiento de controladores
 
@@ -418,8 +402,6 @@ Los flujos de datos en crudo rara vez vienen exactamente en el formato, estructu
 
 Dart trata a los `Streams` como ciudadanos de primera clase y hereda muchas de las operaciones funcionales que ya conoces de las colecciones (como las listas). Al aplicar una transformación a un `Stream`, no modificas el flujo original; en su lugar, creas un **nuevo Stream** que emite los datos modificados a medida que viajan por la tubería.
 
----
-
 ### Operadores de transformación esenciales
 
 La clase `Stream` incluye métodos nativos listos para encadenarse y transformar el flujo de eventos sobre la marcha. Veamos los más importantes:
@@ -456,8 +438,6 @@ Limita la cantidad de elementos que el Stream puede emitir. Una vez que se alcan
 // Salida:  Stream terminado          ---> [ 1, 2, 3 ] || [Fin]
 
 ```
-
----
 
 ### Ejemplo práctico: Encadenamiento de operadores
 
@@ -496,8 +476,6 @@ Dato transformado recibido: USER_3
 Tubería cerrada de forma segura.
 
 ```
-
----
 
 ### Transformaciones complejas con `StreamTransformer`
 
@@ -560,8 +538,6 @@ A lo largo de este capítulo has aprendido a consumir `Streams` y a controlarlos
 
 Un generador asíncrono es una función que produce una secuencia de valores asíncronos bajo demanda. En lugar de calcular todos los valores de golpe y devolverlos en una colección, un generador asíncrono calcula y entrega cada elemento de manera perezosa (*lazy*), es decir, solo cuando el consumidor solicita el siguiente dato.
 
----
-
 ### Las palabras clave: `async*` y `yield`
 
 Para indicarle a Dart que una función es un generador asíncrono, se combinan dos palabras clave especiales dentro de la sintaxis del lenguaje:
@@ -614,8 +590,6 @@ Faltan: 0 segundos
 
 Cuando invocas a `cuentaRegresiva(3)`, el código dentro de la función no se ejecuta inmediatamente. En su lugar, Dart crea y devuelve un `Stream` vacío. Es únicamente cuando el bucle `await for` se suscribe al flujo que la función `cuentaRegresiva` despierta, ejecuta el bucle interno, espera el segundo de retraso y emite el número `3` con `yield`. En ese instante la función se congela hasta que el `await for` procesa el `3` y vuelve a pedir el siguiente.
 
----
-
 ### Emisión delegada con `yield*`
 
 Existen escenarios donde un generador asíncrono necesita delegar la producción de datos a otro `Stream` o a otra función generadora. En lugar de consumir el segundo flujo con un bucle para volver a emitir sus datos uno por uno, Dart provee la palabra clave **`yield*`** (ceder asterisco).
@@ -655,9 +629,7 @@ Valor: 4
 
 ```
 
----
-
-### Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo hemos explorado a fondo el manejo de flujos asíncronos en Dart, una herramienta indispensable para crear aplicaciones modernas, reactivas y altamente eficientes.
 

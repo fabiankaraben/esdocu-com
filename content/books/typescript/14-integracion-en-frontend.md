@@ -508,8 +508,6 @@ function ComponenteGlobal(): React.JSX.Element {
 
 ```
 
----
-
 ## Resumen del capítulo
 
 En este **Capítulo 14: Integración en Frontend**, hemos explorado la convergencia entre el ecosistema estricto de TypeScript y las herramientas de desarrollo de interfaces modernas. Comenzamos analizando la configuración del entorno **TSX**, donde aprendimos cómo la directiva `jsx` en el archivo `tsconfig.json` gestiona la transformación de las estructuras de interfaz de usuario, y cómo estructurar de forma limpia componentes funcionales utilizando los tipos de retorno de React.

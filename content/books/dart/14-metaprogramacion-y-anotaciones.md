@@ -26,8 +26,6 @@ El analizador de Dart utiliza las anotaciones estándar para realizar un anális
 
 Dart ofrece varias anotaciones predefinidas en su núcleo (`dart:core`) y en paquetes oficiales estrechamente integrados como `meta/meta.dart`. A continuación, se detallan las más utilizadas e importantes en el desarrollo diario.
 
----
-
 ### 1. `@override`
 
 Esta es la anotación más común en Dart. Se utiliza exclusivamente dentro de la programación orientada a objetos para indicarle explícitamente al compilador que un método, getter o setter está redefiniendo un miembro heredado de una clase superior (clase base o interfaz).
@@ -55,8 +53,6 @@ class Auto extends Vehiculo {
 ```
 
 Si en la clase `Auto` se intentara anotar con `@override` un método llamado `encenderMotores()`, el analizador de Dart mostrará un error estático indicando que `encenderMotores` no existe en la clase `Vehiculo`.
-
----
 
 ### 2. `@deprecated` y `@Deprecated`
 
@@ -97,8 +93,6 @@ void main() {
 
 ```
 
----
-
 ### 3. `@mustCallSuper`
 
 Disponible a través del paquete `package:meta/meta.dart`, esta anotación exige que cualquier subclase que invalide (haga `@override`) este método, invoque obligatoriamente a `super.nombreDelMetodo()`.
@@ -126,8 +120,6 @@ class Boton extends Componente {
 ```
 
 Si se omite la línea `super.inicializar();`, el entorno de desarrollo marcará un error de análisis estático en la estructura de `Boton`.
-
----
 
 ### 4. `@protected`
 
@@ -202,8 +194,6 @@ Para construir una anotación personalizada se deben seguir dos pasos principale
 
 Existen dos enfoques comunes para estructurar anotaciones personalizadas según las necesidades del diseño: mediante una instancia constante única o mediante la invocación directa del constructor.
 
----
-
 ### Enfoque 1: Instancia constante única (Sin parámetros)
 
 Si la anotación solo actúa como una "etiqueta" o bandera y no requiere configurar variables internas, se suele instanciar una constante global y usar su identificador como el metadato.
@@ -229,8 +219,6 @@ class Usuario {
 ```
 
 > **Nota de estilo:** Por convención en la comunidad de Dart, cuando una anotación no requiere parámetros, se prefiere usar la instancia en minúscula (`@serializable`) en lugar de llamar al constructor (`@Serializable()`), logrando un código más limpio y legible.
-
----
 
 ### Enfoque 2: Anotaciones con parámetros
 
@@ -263,8 +251,6 @@ class ControladorUsuarios {
 
 Es un requisito estricto que todos los argumentos pasados a la anotación (`path` y `metodo` en este caso) sean literales o expresiones constantes en tiempo de compilación. No es posible pasar variables cuyo valor se determine en tiempo de ejecución.
 
----
-
 ### Restricciones críticas en las anotaciones
 
 Debido a que las anotaciones se evalúan antes de que el programa se ejecute, se deben respetar las siguientes reglas:
@@ -282,8 +268,6 @@ class Tarea {
 }
 
 ```
-
----
 
 ### ¿Cómo se procesan las anotaciones personalizadas?
 
@@ -338,8 +322,6 @@ A diferencia de otros lenguajes de programación que dependen de la **reflexión
 
 ```
 
----
-
 ### ¿Por qué es necesaria la generación de código?
 
 A medida que una aplicación crece, los desarrolladores se enfrentan a la escritura de código repetitivo y propenso a errores, comúnmente denominado *boilerplate*. La generación de código automatiza de forma segura estas tareas en escenarios críticos:
@@ -348,8 +330,6 @@ A medida que una aplicación crece, los desarrolladores se enfrentan a la escrit
 * **Inyección de dependencias:** Configuración y acoplamiento de servicios del sistema de manera tipada y estática.
 * **Mapeo de bases de datos:** Sincronización de clases orientadas a objetos con tablas o esquemas de persistencia local (ORMs).
 * **Inmutabilidad y copia:** Creación automática de métodos como `copyWith` o comparaciones de igualdad campo por campo (`==`).
-
----
 
 ### El concepto de archivos de correspondencia (`part` y `part of`)
 
@@ -406,8 +386,6 @@ Map<String, dynamic> _$UsuarioToJson(Usuario instance) => <String, dynamic>{
 
 ```
 
----
-
 ### Ventajas y Desventajas del enfoque AOT de Dart
 
 Adoptar la generación de código en tiempo de compilación (Ahead-Of-Time) en lugar de la resolución dinámica en tiempo de ejecución (Run-Time) presenta un balance de beneficios y compromisos de ingeniería:
@@ -431,8 +409,6 @@ Para orquestar este flujo de escaneo y escritura de archivos de forma estandariz
 El paquete `build_runner` es la herramienta estándar y oficial del ecosistema de Dart utilizada para ejecutar generadores de código. Actúa como el motor que orquesta todo el flujo de trabajo: se encarga de escanear los archivos del proyecto, detectar cuáles contienen las anotaciones personalizadas, pasar esa información a los paquetes encargados de la generación (como `json_serializable`, `freezed` o `riverpod_generator`) y, finalmente, escribir los archivos `.g.dart` resultantes.
 
 En lugar de que cada generador implemente su propio sistema para leer y escribir archivos, todos se acoplan a `build_runner` para garantizar que el proceso sea eficiente, ordenado y seguro.
-
----
 
 ### Configuración del archivo `pubspec.yaml`
 
@@ -459,8 +435,6 @@ dev_dependencies:
   json_serializable: ^6.7.1 
 
 ```
-
----
 
 ### Comandos esenciales de ejecución
 
@@ -493,8 +467,6 @@ dart run build_runner build --delete-conflicting-outputs
 
 ```
 
----
-
 ### Personalización mediante el archivo `build.yaml`
 
 El comportamiento de `build_runner` se puede personalizar de forma granular creando un archivo opcional en la raíz del proyecto llamado `build.yaml`. Este archivo permite, entre otras cosas, cambiar la ruta de salida de los archivos, aplicar filtros para que solo se analicen ciertas carpetas, o configurar opciones específicas de un generador.
@@ -514,8 +486,6 @@ targets:
       - lib/** # Limita el escaneo únicamente a la carpeta de código fuente
 
 ```
-
----
 
 ## Resumen del capítulo
 

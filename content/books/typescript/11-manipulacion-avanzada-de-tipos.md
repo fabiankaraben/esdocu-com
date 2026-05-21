@@ -8,8 +8,6 @@ TypeScript destaca por su capacidad para generar nuevos tipos a partir de estruc
 
 Aunque ambos operan en el "mundo de los tipos" durante la compilación, resuelven problemas opuestos y complementarios.
 
----
-
 ### El operador `typeof` en el contexto de tipos
 
 En JavaScript vanilla, el operador `typeof` es un operador de ejecución (*runtime*) que devuelve una cadena de texto indicando el tipo básico de una variable (por ejemplo, `"string"`, `"object"` o `"undefined"`).
@@ -71,8 +69,6 @@ const clonProcesar: FirmaProcesar = (id, name) => {
 
 ```
 
----
-
 ### El operador `keyof` (Operador de tipo índice)
 
 El operador `keyof` toma un **tipo de objeto** y devuelve una **unión de tipos literales de cadena** con los nombres de sus propiedades (sus llaves o *keys*).
@@ -107,8 +103,6 @@ let propiedadInvalida: PropiedadesProducto = "descripcion";
 
 ```
 
----
-
 ### Combinando `keyof` y `typeof`
 
 La verdadera potencia de la manipulación de tipos emerge cuando combinamos ambos operadores. `keyof` requiere un **tipo**, no un valor de JavaScript. Si intentas aplicar `keyof` directamente a un objeto de ejecución, TypeScript lanzará un error. Primero debes convertir el valor en un tipo usando `typeof`.
@@ -135,8 +129,6 @@ asignarRol("admin"); // Válido
 asignarRol("superusuario"); // Error de compilación
 
 ```
-
----
 
 ### Casos de uso prácticos
 
@@ -191,8 +183,6 @@ actualizarUsuario(1, "password", "123456"); // Error: 'password' no existe en Us
 
 La verdadera flexibilidad del sistema de tipos de TypeScript se manifiesta cuando podemos introducir lógica condicional directamente en la definición de los tipos. Los **tipos condicionales** (*conditional types*) permiten que un tipo cambie de forma dinámica basándose en una condición, funcionando de manera análoga a una expresión ternaria (`condicion ? true : false`) en tiempo de ejecución, pero operando exclusivamente sobre los tipos del compilador.
 
----
-
 ### Sintaxis de los tipos condicionales
 
 La sintaxis básica utiliza la palabra clave `extends` para evaluar una condición de asignación o compatibilidad de tipos:
@@ -238,8 +228,6 @@ let trackingNumero = crearInstancia(101);       // Tipo: IdNumerico
 
 ```
 
----
-
 ### Distributividad en tipos condicionales
 
 Cuando se pasa un **tipo de unión** (como `string | number`) a un tipo condicional genérico, TypeScript aplica una propiedad llamada **distributividad**. Esto significa que la condición se evalúa individualmente para cada miembro de la unión, y el resultado final es una nueva unión de los resultados parciales.
@@ -271,8 +259,6 @@ type ColoresFiltrados = Filtrar<Colores, "rojo" | "azul">;
 ```
 
 > **Nota:** El tipo `never` actúa como el elemento neutro en las uniones de TypeScript. Al unirse con cualquier otro tipo, desaparece (`"verde" | "amarillo" | never` se reduce a `"verde" | "amarillo"`).
-
----
 
 ### La palabra clave `infer`
 
@@ -344,8 +330,6 @@ type TipoNoArreglo = TipoDelElemento<SoloUnValor>; // Resultado: boolean (cae en
 
 Cuando necesitas crear nuevos tipos basados en las propiedades de un tipo existente de manera uniforme y repetitiva, los **tipos mapeados** (*mapped types*) son la herramienta ideal. Funcionan de forma muy similar al método `.map()` de los arreglos en JavaScript: en lugar de transformar elementos de una lista, los tipos mapeados iteran sobre una unión de llaves (generalmente obtenidas mediante `keyof`) para transformar las propiedades de un tipo en un nuevo conjunto de propiedades.
 
----
-
 ### Sintaxis fundamental
 
 La sintaxis de un tipo mapeado utiliza una estructura de firma de índice combinada con el operador `in`:
@@ -393,8 +377,6 @@ const permisos: PermisosUsuario = {
 };
 
 ```
-
----
 
 ### Modificadores de mapeo (`+` y `-`)
 
@@ -447,8 +429,6 @@ type ConfigEstricta = {
 */
 
 ```
-
----
 
 ### Remapeo de llaves con la palabra clave `as`
 
@@ -519,8 +499,6 @@ Los **Template Literal Types** (tipos literales de plantilla) introducen a los t
 
 Cuando un tipo de plantilla literal se combina con un tipo de unión, TypeScript expande automáticamente la estructura para generar todas las permutaciones y combinaciones posibles de cadenas en tiempo de compilación.
 
----
-
 ### Sintaxis y combinación básica
 
 La sintaxis utiliza las comillas invertidas junto con el marcador `${}` para interpolar otros tipos literales dentro de una cadena de texto:
@@ -542,8 +520,6 @@ const urlInvalida: URLDeConexion = "ftp://api.com";   // Error de compilación
 
 ```
 
----
-
 ### Tipos utilitarios para la manipulación de texto
 
 Para maximizar la utilidad de los Template Literal Types, TypeScript incluye de forma nativa cuatro tipos genéricos globales diseñados específicamente para transformar texto. Estos operadores se aplican directamente dentro de las plantillas:
@@ -562,8 +538,6 @@ type EventoDireccion = `irAl${Capitalize<Direccion>}`;
 const accion: EventoDireccion = "irAlNorte";
 
 ```
-
----
 
 ### Aplicación práctica avanzada: Arquitectura basada en eventos
 
@@ -597,8 +571,6 @@ const escucharEventos: EventosUI = {
 };
 
 ```
-
----
 
 ## Resumen del capítulo
 

@@ -23,8 +23,6 @@ La modularidad se basa en un contrato simple: un archivo expone una parte de su 
 
 ```
 
----
-
 ### 1. Exportaciones
 
 Para que un componente (función, clase, interfaz, alias de tipo o variable) esté disponible en otros archivos, se debe anteponer la palabra clave `export`. Existen dos estrategias principales para exportar elementos: **exportaciones nombradas** y **exportaciones por defecto**.
@@ -87,8 +85,6 @@ export default class Logger {
 ```
 
 *Nota: No se puede utilizar `export default` directamente junto con `let`, `const` o `var` de forma directa si no se asignan a una expresión evaluada inmediatamente, pero sí se puede con funciones y clases anónimas o nombradas.*
-
----
 
 ### 2. Importaciones
 
@@ -157,8 +153,6 @@ import Autenticador, { login, logout } from "./auth";
 
 ```
 
----
-
 ### 3. Re-exportación de Módulos (Agregación)
 
 En arquitecturas complejas de software, es una buena práctica crear archivos centralizados de exportación (comúnmente llamados `index.ts` o *barrels*). Estos archivos agrupan las exportaciones de múltiples submódulos internos para ofrecer una interfaz pública única hacia el exterior, simplificando las rutas de importación de los consumidores.
@@ -209,8 +203,6 @@ export * from "./usuarios";
 export * from "./productos";
 
 ```
-
----
 
 ### 4. Importación Exclusiva de Tipos (`import type`)
 
@@ -272,8 +264,6 @@ Cuando escribes una instrucción de importación como `import { algo } from "./m
 
 Comprender este mecanismo es fundamental para resolver errores comunes de compilación como `Cannot find module...` y para estructurar correctamente proyectos complejos.
 
----
-
 ### 1. Tipos de Importaciones: Relativas vs. No Relativas
 
 TypeScript divide las estrategias de búsqueda en dos categorías principales dependiendo de cómo empiece la cadena de texto de la ruta de importación:
@@ -306,8 +296,6 @@ Son aquellas que no comienzan con ninguno de los caracteres anteriores.
 
 * **Ejemplos:** `import * as React from "react"`, `import { Component } from "@angular/core"`, `import { api } from "src/servicios/api"`.
 * **Comportamiento:** No dependen de la posición del archivo actual. El compilador las busca dentro de carpetas externas especiales (como `node_modules`), en las librerías estándar de tipos de Node.js, o aplicando configuraciones de alias de rutas personalizadas configuradas en el archivo `tsconfig.json`.
-
----
 
 ### 2. Estrategias de Resolución: `Classic` vs. `Node`
 
@@ -364,8 +352,6 @@ Si en `/root/src/app.ts` se invoca `import { algo } from "modulo-externo"`, el c
 4. *Si no lo encuentra en ese nivel, sube un escalón:* `/root/node_modules/modulo-externo.ts`...
 5. *Siguiente nivel:* `/node_modules/modulo-externo.ts`...
 
----
-
 ### 3. Resoluciones Modernas: `Node16` y `NodeNext`
 
 Con la adopción masiva de los módulos de ECMAScript nativos dentro de Node.js, las estrategias de resolución tradicionales se quedaron cortas. TypeScript introdujo los modos `node16` y `nodenext` para soportar las nuevas reglas estrictas del ecosistema.
@@ -386,8 +372,6 @@ import { calcular } from "./util";
 
 ```
 
----
-
 ### 4. Banderas de Rastreo de Resolución (Trace Resolution)
 
 Cuando las rutas de importación fallan o se comportan de manera inesperada (por ejemplo, importando una versión incorrecta de un tipo), TypeScript ofrece una herramienta de diagnóstico interna. Puedes compilar tu proyecto utilizando el modificador `--traceResolution` a través de la terminal:
@@ -404,8 +388,6 @@ Este comando imprimirá en la consola un informe detallado paso a paso de cada u
 En las primeras versiones de TypeScript (cuando el estándar de módulos de JavaScript aún no estaba consolidado), la comunidad necesitaba una forma nativa de agrupar lógica relacionada y evitar la contaminación del espacio de nombres global. Para resolver esto, TypeScript introdujo los **Namespaces** (conocidos en versiones muy antiguas como *módulos internos*).
 
 Aunque hoy en día los Módulos de ES (vistos en la sección 13.1) son el estándar recomendado para estructurar aplicaciones modernas, los namespaces siguen siendo una herramienta útil para organizar código en scripts globales, agrupar tipos complejos o empaquetar librerías que no utilizan un cargador de módulos tradicional.
-
----
 
 ### 1. ¿Qué es un Namespace?
 
@@ -438,8 +420,6 @@ const validador = new Validacion.ValidadorDePassword();
 ```
 
 Si intentas acceder a `Validacion.emailRegex` desde fuera del bloque, el compilador generará un error de acceso, protegiendo la lógica interna y simulando un modificador de acceso privado a nivel de bloque.
-
----
 
 ### 2. Namespaces Multiarchivo
 
@@ -494,8 +474,6 @@ tsc --outFile salida.js ValidacionBase.ts ValidacionEmail.ts app.ts
 
 ```
 
----
-
 ### 3. Namespaces Anidados (Nested Namespaces)
 
 Al igual que los objetos en JavaScript, los namespaces se pueden anidar jerárquicamente para estructurar APIs profundas o subsistemas complejos dentro de una misma organización.
@@ -531,8 +509,6 @@ const secretoCorto = HerramientaCripto.encriptar("Texto");
 
 *Nota: Es importante no confundir este uso de `import` (creación de alias para elementos internos) con la instrucción `import` de los Módulos de ES orientada a cargar archivos externos.*
 
----
-
 ### 4. Módulos vs. Namespaces: ¿Cuál deberías elegir?
 
 A menudo surge la duda sobre cuál de estas dos herramientas de organización implementar. La documentación oficial de TypeScript establece directrices muy claras basadas en los estándares modernos de desarrollo.
@@ -553,8 +529,6 @@ Hasta ahora, todas las importaciones que hemos visto en este capítulo se realiz
 
 Sin embargo, en aplicaciones de gran escala, cargar absolutamente todo el código desde el inicio penaliza drásticamente el rendimiento y el tiempo de carga inicial. Para solucionar esto, TypeScript y JavaScript moderno admiten las **importaciones dinámicas**, una característica que habilita el **Lazy Loading** (carga diferida o perezosa): la capacidad de descargar e interpretar fragmentos de código solo cuando el usuario realmente los necesita.
 
----
-
 ### 1. La sintaxis `import()` como función
 
 A diferencia de la declaración estática, la importación dinámica se invoca como una función utilizando la sintaxis `import("ruta")`.
@@ -573,8 +547,6 @@ Importación Dinámica (Lazy Loading bajo demanda):
                           └───> ¿Usuario hace clic en un botón? ───> [Descargar Módulo A al vuelo]
 
 ```
-
----
 
 ### 2. Implementación Práctica con `async / await`
 
@@ -627,8 +599,6 @@ if (botonExportar) {
 
 ```
 
----
-
 ### 3. Preservación y tipado estático en cargas dinámicas
 
 Uno de los mayores desafíos al cargar módulos dinámicamente en JavaScript puro es perder la noción de qué formas o tipos tienen los datos que devuelve el archivo. TypeScript soluciona esto de raíz permitiéndote extraer la firma de los tipos del módulo en tiempo de compilación sin forzar su carga en tiempo de ejecución.
@@ -650,8 +620,6 @@ async function ejecutarCalculoAvanzado() {
 
 ```
 
----
-
 ### 4. Requisitos de Configuración (`tsconfig.json`)
 
 Para que las importaciones dinámicas funcionen correctamente, el compilador de TypeScript necesita saber qué estrategia de código final debe emitir. Si estás transpilando a un estándar muy antiguo (como ES5 o CommonJS tradicional), TypeScript alterará el `import()` nativo por llamadas sintéticas de entornos antiguos (como `require()`).
@@ -670,8 +638,6 @@ Para asegurar el soporte nativo de Lazy Loading mediante ES Modules en navegador
 ```
 
 Cuando un empaquetador moderno (como Vite o Webpack) detecta la sintaxis `import()`, realiza de forma automática un proceso llamado **Code-Splitting** (división de código). El empaquetador segmentará el código de tu aplicación separando el módulo dinámico en un archivo `.js` independiente (un *chunk*), el cual se almacenará en el servidor y solo viajará por la red de internet en el instante exacto en que la función `import()` sea ejecutada.
-
----
 
 ## Resumen del capítulo
 

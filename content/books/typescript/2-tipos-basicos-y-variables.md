@@ -10,8 +10,6 @@ Los tres tipos primitivos fundamentales en TypeScript son `string`, `number` y `
 
 > **Nota de estilo:** Evita usar las versiones con mayúscula inicial (`String`, `Number`, `Boolean`). Estas últimas se refieren a los objetos envoltura (*wrapper objects*) de JavaScript y casi nunca son lo que deseas utilizar para tipar variables.
 
----
-
 ### El tipo `string`
 
 El tipo `string` se utiliza para representar datos de texto o secuencias de caracteres. Al igual que en JavaScript, puedes definir cadenas de texto utilizando tres tipos de delimitadores:
@@ -32,8 +30,6 @@ const edad: number = 28;
 const presentacion: string = `Hola, mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`;
 
 ```
-
----
 
 ### El tipo `number`
 
@@ -57,8 +53,6 @@ const infinito: number = Infinity;
 
 ```
 
----
-
 ### El tipo `boolean`
 
 El tipo `boolean` es el más simple de los tres, ya que solo puede aceptar dos valores lógicos: `true` (verdadero) y `false` (falso). Es la estructura base para el control de flujo, evaluaciones lógicas y condiciones.
@@ -71,8 +65,6 @@ const tieneAcceso: boolean = false;
 const esMayorDeEdad: boolean = edad >= 18;
 
 ```
-
----
 
 ### Garantía de tipo en tiempo de desarrollo
 
@@ -115,8 +107,6 @@ En JavaScript moderno y, por extensión, en TypeScript, la forma en que declaram
 
 Atrás quedó el uso de `var`, el cual introducía comportamientos impredecibles debido al alcance de función y al *hoisting* (elevación). TypeScript desaconseja su uso para alinearse con las mejores prácticas de desarrollo.
 
----
-
 ### Declaración con `let`
 
 La palabra clave `let` se utiliza para declarar variables cuyo valor se planea reasignar a lo largo de la ejecución del programa. Su principal característica es que posee un **enfoque de bloque**, lo que significa que la variable solo existe dentro del par de llaves `{}` donde fue creada.
@@ -150,8 +140,6 @@ if (usuarioActivo) {
 
 ```
 
----
-
 ### Declaración con `const`
 
 La palabra clave `const` se utiliza para declarar constantes, es decir, variables cuyo valor se asigna una sola vez al momento de su definición y no puede ser modificado ni reasignado posteriormente. Al igual que `let`, `const` tiene un alcance de bloque.
@@ -172,8 +160,6 @@ Debido a que una constante no puede cambiar de valor, TypeScript requiere obliga
 // ERROR: Las declaraciones 'const' deben inicializarse.
 
 ```
-
----
 
 ### Mutabilidad en objetos y arreglos con `const`
 
@@ -208,8 +194,6 @@ perfilUsuario.puntos = 200;
 
 ```
 
----
-
 ### Resumen de diferencias clave
 
 Para determinar cuándo utilizar cada palabra clave en TypeScript, puedes guiarte por la siguiente tabla comparativa:
@@ -229,8 +213,6 @@ Hasta ahora hemos visto cómo indicar explícitamente el tipo de una variable ut
 
 La inferencia de tipos permite escribir código más limpio, fluido y menos redundante, manteniendo exactamente la misma seguridad y robustez que si hubieras tipado cada línea manualmente.
 
----
-
 ### ¿Cómo funciona la inferencia básica?
 
 Cuando declaras una variable y la inicializas con un valor en la misma línea, el compilador de TypeScript examina el lado derecho de la expresión, identifica el tipo de dato del valor asignado y fija ese tipo para la variable de manera permanente.
@@ -248,8 +230,6 @@ let longitud = mensaje.length;
 ```
 
 En el ejemplo anterior, aunque no se escribió explícitamente `: string`, el compilador se comporta exactamente como si estuviera ahí. Si pasas el cursor sobre la variable `mensaje` en tu editor de código, verás que TypeScript la reconoce internamente como `let mensaje: string`.
-
----
 
 ### Inferencia en `let` vs. `const`
 
@@ -285,8 +265,6 @@ El siguiente diagrama muestra cómo el compilador bifurca su criterio de inferen
 
 ```
 
----
-
 ### El peligro de la asignación tardía (Inferencia Tipo `any`)
 
 La inferencia de tipos solo funciona de forma óptima si inicializas la variable en el mismo momento en que la declaras. Si creas una variable con `let` pero no le asignas un valor inmediato, TypeScript no tiene información suficiente para deducir su tipo. En ese caso, le asignará temporalmente el tipo `any` (cualquiera), desactivando el control estricto de tipos.
@@ -301,8 +279,6 @@ resultado = true;       // Funciona como boolean sin lanzar errores
 
 > **Regla de oro:** Si vas a inicializar tu variable en la misma línea de su declaración, confía en la inferencia de tipos y no escribas anotaciones redundantes. Si vas a declarar la variable ahora pero asignarás su valor más adelante, añade siempre una anotación de tipo explícita (`let resultado: string;`).
 
----
-
 ### Beneficios de la inferencia
 
 * **Legibilidad:** El código se vuelve mucho más limpio y cercano a JavaScript puro, libre de anotaciones visuales innecesarias.
@@ -314,8 +290,6 @@ resultado = true;       // Funciona como boolean sin lanzar errores
 El tipo `any` es un tipo de dato especial en TypeScript que actúa como un "comodín" o una vía de escape al sistema de tipado estático. Cuando una variable se define con el tipo `any`, el compilador de TypeScript suspende por completo la validación de tipos sobre ella, permitiéndole almacenar cualquier tipo de valor y aceptar cualquier operación, por destructiva o errónea que sea.
 
 Aunque puede parecer una herramienta útil para resolver errores de compilación rápidamente, el uso indiscriminado de `any` contradice el propósito fundamental de utilizar TypeScript.
-
----
 
 ### ¿Cómo funciona el tipo `any`?
 
@@ -333,8 +307,6 @@ datoComodin.metodoInexistente(); // Compila con éxito, pero fallará en el nave
 console.log(datoComodin.nombre.apellido); // Compila con éxito, pero lanzará un error de ejecución
 
 ```
-
----
 
 ### ¿Por qué debes evitarlo?
 
@@ -371,8 +343,6 @@ console.log(nombreUsuario.toUpperCase());
 
 ```
 
----
-
 ### Cuándo se permite (excepcionalmente) usar `any`
 
 Existen escenarios muy limitados donde te encontrarás con `any`, principalmente vinculados a la migración o la interoperabilidad:
@@ -381,8 +351,6 @@ Existen escenarios muy limitados donde te encontrarás con `any`, principalmente
 * **Consumo de librerías externas de terceros:** Cuando utilizas librerías antiguas de JavaScript que no cuentan con archivos de definición de tipos (`.d.ts`).
 
 > **Consejo proactivo:** En TypeScript moderno, cuando realmente desconoces el tipo de un dato que viene del exterior (como una API pública), es drásticamente mejor utilizar el tipo primitivo `unknown` en lugar de `any`. `unknown` te obliga a verificar el tipo de dato mediante código de control antes de permitirte operar con él, manteniendo a salvo la seguridad de tu aplicación.
-
----
 
 ## Resumen del capítulo
 

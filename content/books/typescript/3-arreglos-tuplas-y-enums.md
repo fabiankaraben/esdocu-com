@@ -459,8 +459,6 @@ for (const fila of matrizLetras) {
 
 ```
 
----
-
 ## Resumen del capítulo
 
 En el **Capítulo 3: Arreglos, Tuplas y Enums**, hemos explorado cómo TypeScript robustece el manejo de colecciones y conjuntos de constantes fijas frente a las debilidades nativas de JavaScript:

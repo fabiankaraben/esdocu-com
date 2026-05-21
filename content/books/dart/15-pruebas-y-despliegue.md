@@ -449,8 +449,6 @@ Entorno de Producción (Fase de Distribución)
 
 ```
 
----
-
 ### Compilación JIT (Just-In-Time)
 
 La compilación **JIT** o *"Justo a tiempo"* se activa por defecto durante la etapa de desarrollo. En este modo, el código fuente en Dart se compila a código máquina intermedio o nativo **mientras el programa se está ejecutando**.
@@ -460,8 +458,6 @@ La compilación **JIT** o *"Justo a tiempo"* se activa por defecto durante la et
 * **Carga inicial dinámica:** Cuando ejecutas un script con `dart run`, la Máquina Virtual de Dart (Dart VM) lee el código y lo compila dinámicamente a medida que las funciones son requeridas.
 * **Hot Reload (Recarga en caliente):** Al compilar en tiempo de ejecución, la Dart VM puede inyectar modificaciones de código fuente directamente en el proceso activo sin necesidad de reiniciar la aplicación ni perder el estado actual del programa. Esto reduce el ciclo de desarrollo a fracciones de segundo.
 * **Perfilado en vivo:** JIT analiza el comportamiento de la aplicación en tiempo real, lo que facilita la recolección de métricas de rendimiento y la depuración (*debugging*) a través de herramientas de telemetría.
-
----
 
 ### Compilación AOT (Ahead-Of-Time)
 
@@ -473,8 +469,6 @@ La compilación **AOT** o *"Antes de tiempo"* se utiliza exclusivamente cuando e
 * **Inicio instantáneo (Instant Startup):** Al no tener que compilar código durante la ejecución, el programa se inicia de forma inmediata, optimizando los tiempos de respuesta críticos.
 * **Optimización del tamaño (Tree Shaking):** Durante el proceso de compilación AOT, el compilador realiza un análisis estático para identificar y remover de forma permanente todo el código muerto, funciones o librerías importadas que nunca se llegan a mandar a llamar, reduciendo drásticamente el peso del binario final.
 
----
-
 ### Comparativa: JIT vs. AOT
 
 | Característica | Compilación JIT (Desarrollo) | Compilación AOT (Producción) |
@@ -484,8 +478,6 @@ La compilación **AOT** o *"Antes de tiempo"* se utiliza exclusivamente cuando e
 | **Velocidad de inicio** | Más lenta (debe compilar al arrancar). | Ultra rápida (código máquina listo). |
 | **Soporte de Hot Reload** | Sí, completo. | No compatible. |
 | **Destino principal** | Pruebas, depuración y desarrollo diario. | Despliegue en servidores, móviles y escritorio. |
-
----
 
 ### Comandos prácticos en Dart
 
@@ -522,8 +514,6 @@ Antes de subir un paquete a pub.dev, el SDK de Dart exige el cumplimiento de cie
 3. **`CHANGELOG.md`**: Un registro histórico de los cambios introducidos en cada versión del paquete. Sigue el versionado semántico (por ejemplo, `1.0.0`).
 4. **`LICENSE`**: El texto completo de la licencia de código abierto (por ejemplo, MIT, BSD-3-Clause o Apache 2.0). pub.dev no aceptará paquetes sin una licencia válida detectada automáticamente.
 
----
-
 ### Verificación y puntuación del paquete
 
 El equipo de Dart proporciona una herramienta automatizada de análisis que evalúa tu paquete y le otorga una puntuación basada en las buenas prácticas de diseño, plataforma de soporte, documentación y formato del código.
@@ -544,8 +534,6 @@ dart pub publish --dry-run
 
 El comando `dart pub publish --dry-run` es un paso crucial. Analiza la estructura completa de los archivos y simula la subida al servidor sin llegar a publicar nada. Si encuentra algún error (como enlaces rotos, archivos faltantes o configuraciones incorrectas), la consola te advertirá de inmediato.
 
----
-
 ### El proceso de publicación
 
 Una vez que la simulación (`--dry-run`) se complete con éxito y sin advertencias, estás listo para realizar la publicación definitiva.
@@ -564,8 +552,6 @@ Al presionar Enter, el CLI de Dart realizará el siguiente flujo:
 3. **Subida:** Tras otorgar los permisos, el SDK empaquetará tus archivos de código fuente y los enviará a los servidores de pub.dev.
 
 En pocos minutos, tu paquete dispondrá de un perfil público propio en la plataforma y estará disponible para ser importado por la comunidad global de Dart.
-
----
 
 ## Resumen del capítulo
 

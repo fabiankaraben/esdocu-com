@@ -1,4 +1,6 @@
-import { getAllDocSlugs, getDocBySlug, getFirstArticleSlug, getSidebarForRoot, getCategoriesWithBooks } from "@/lib/docs";
+import { getAllDocSlugs, getDocBySlug, getFirstArticleSlug, getSidebarForRoot, getCategoriesWithBooks, getFlatChapterSlugs } from "@/lib/docs";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { generateSlug } from "@/lib/slugs";
 import { notFound, redirect } from "next/navigation";
 import { Navbar } from "@/components/navbar";
@@ -120,6 +122,13 @@ export default async function DocPage({ params }: PageProps) {
   const sidebarItems = getSidebarForRoot(root);
   const categoriesWithBooks = getCategoriesWithBooks();
 
+  // Compute prev / next chapter navigation
+  const currentSlugStr = slug.join("/");
+  const flatChapters = getFlatChapterSlugs(root);
+  const currentIndex = flatChapters.findIndex((c) => c.slug === currentSlugStr);
+  const prevChapter = currentIndex > 0 ? flatChapters[currentIndex - 1] : null;
+  const nextChapter = currentIndex >= 0 && currentIndex < flatChapters.length - 1 ? flatChapters[currentIndex + 1] : null;
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar categoriesWithBooks={categoriesWithBooks} wide />
@@ -147,8 +156,41 @@ export default async function DocPage({ params }: PageProps) {
             />
 
           </div>
-          
-          <div className="mt-20 pt-8 border-t flex justify-between items-center text-sm text-muted-foreground">
+
+          {/* Previous / Next chapter navigation */}
+          {(prevChapter || nextChapter) && (
+            <nav className="mt-16 pt-8 border-t grid grid-cols-1 sm:grid-cols-2 gap-4" aria-label="Navegación de capítulos">
+              {prevChapter ? (
+                <Link
+                  href={`/${prevChapter.slug}`}
+                  className="group flex flex-col gap-1 p-5 rounded-xl border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                >
+                  <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                    Capítulo anterior
+                  </span>
+                  <span className="text-sm font-medium line-clamp-2 mt-1">{prevChapter.label}</span>
+                </Link>
+              ) : (
+                <div />
+              )}
+
+              {nextChapter && (
+                <Link
+                  href={`/${nextChapter.slug}`}
+                  className="group flex flex-col gap-1 p-5 rounded-xl border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-300 sm:items-end sm:text-right"
+                >
+                  <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors sm:flex-row-reverse">
+                    <ArrowRight className="h-3.5 w-3.5" />
+                    Capítulo siguiente
+                  </span>
+                  <span className="text-sm font-medium line-clamp-2 mt-1">{nextChapter.label}</span>
+                </Link>
+              )}
+            </nav>
+          )}
+
+          <div className="mt-10 pt-8 border-t flex justify-between items-center text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} Esdocu. Contenido bajo licencia MIT.</p>
             <a href={`https://github.com/fabiankaraben/esdocu-com/edit/main/${doc.filePath}`} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
               Editar esta página

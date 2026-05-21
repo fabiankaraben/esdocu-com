@@ -190,8 +190,6 @@ miMascota.emitirSonido();       // Correcto: Acceso permitido desde fuera
 
 > **Buenas prácticas:** Aunque omitir `public` es perfectamente válido, muchos desarrolladores prefieren escribirlo explícitamente para hacer el código más legible y dejar claras sus intenciones de diseño.
 
----
-
 ### El modificador `private` (Privado)
 
 Cuando marcas una propiedad o un método como `private`, restringes su acceso de forma estricta. Un miembro privado **solo puede ser accedido o modificado dentro de la misma clase** en la que fue definido. Ni las instancias externas ni las clases derivadas (hijas) pueden acceder a él.
@@ -239,8 +237,6 @@ class Candado {
 
 ```
 
----
-
 ### El modificador `protected` (Protegido)
 
 El modificador `protected` actúa como un punto medio entre `public` y `private`. Los miembros protegidos **no pueden ser accedidos desde instancias externas**, pero **sí son completamente accesibles desde dentro de la clase que los define y por cualquier clase que herede (hija) de ella**.
@@ -280,8 +276,6 @@ jefe.mostrarDetalles(); // Correcto
 
 ```
 
----
-
 ### Resumen de visibilidad
 
 El siguiente cuadro compara de manera visual los límites de acceso de cada modificador:
@@ -296,8 +290,6 @@ El siguiente cuadro compara de manera visual los límites de acceso de cada modi
 +------------------------------------+------------+-------------+-----------+
 
 ```
-
----
 
 ### Parámetros de Propiedades (Parameter Properties)
 
@@ -345,8 +337,6 @@ Esta sintaxis limpia y compacta es ampliamente utilizada en el ecosistema de Typ
 ## 7.3 Propiedades estáticas y de solo lectura
 
 TypeScript añade un control todavía más fino sobre cómo se comportan las propiedades de nuestras clases mediante dos modificadores de comportamiento muy potentes: `static` y `readonly`. A diferencia de los modificadores de acceso (`public`, `private`, `protected`), que controlan *quién* puede ver los datos, estos modificadores controlan *cómo* y *dónde* existen esos datos, así como si pueden modificarse una vez creados.
-
----
 
 ### Miembros estáticos con el modificador `static`
 
@@ -408,8 +398,6 @@ console.log(resultado); // Salida: 15
 ```
 
 > **Regla de oro de `static`:** Un método estático **no puede** acceder a propiedades no estáticas de la clase utilizando la palabra clave `this`, debido a que el método se ejecuta en el contexto de la clase y no sobre un objeto instanciado.
-
----
 
 ### Inmutabilidad con el modificador `readonly`
 
@@ -496,8 +484,6 @@ console.log(celular.numeroSerie); // Correcto: Lectura permitida
 
 La programación orientada a objetos brilla especialmente cuando necesitamos modelar relaciones del mundo real donde unas entidades comparten características con otras, pero añaden comportamientos especializados. En TypeScript, implementamos estas relaciones mediante los conceptos de **herencia** (reutilizar y extender código) y **abstracción** (definir contratos estructurales que no pueden instanciarse directamente).
 
----
-
 ### Herencia con la palabra clave `extends`
 
 La herencia permite crear una nueva clase (llamada clase hija o subclase) basada en una clase existente (llamada clase padre o superclase). La clase hija hereda de forma automática todas las propiedades y métodos públicos o protegidos de la clase padre.
@@ -534,8 +520,6 @@ console.log(programador.lenguajeFavorito);   // Salida: TypeScript (Propio de De
 
 Cuando una clase hija define su propio método `constructor`, **debe invocar a `super()` antes de intentar acceder a cualquier propiedad mediante `this`**. La llamada a `super()` ejecuta el constructor de la clase padre y mapea correctamente los datos en memoria. Si olvidas ponerlo, TypeScript generará un error de compilación inmediato.
 
----
-
 ### Sobrescritura de Métodos (Method Overriding)
 
 Una clase hija no está obligada a usar los métodos del padre exactamente como fueron escritos. Si el comportamiento de la superclase no se ajusta por completo a las necesidades de la subclase, esta última puede **sobrescribir** (redefinir) el método manteniendo el mismo nombre.
@@ -559,8 +543,6 @@ console.log(gerenteVentas.calcularPago()); // Salida: 5500 (4000 base + 1500 bon
 ```
 
 > **La palabra clave `override`:** Aunque TypeScript permite sobrescribir métodos de forma implícita, el uso del modificador `override` es una excelente práctica (y obligatoria bajo ciertas configuraciones del compilador). Le avisa explícitamente a otros desarrolladores que el método viene de la clase base y evita errores si el método del padre cambia de nombre en el futuro.
-
----
 
 ### Abstracción con clases y métodos `abstract`
 
@@ -635,8 +617,6 @@ En el Capítulo 6 aprendiste que las interfaces sirven para definir contratos es
 
 Mientras que una clase solo puede heredar de una única superclase (herencia simple), una clase puede implementar **múltiples interfaces** simultáneamente, otorgándole una enorme flexibilidad al diseño de tus aplicaciones.
 
----
-
 ### La palabra clave `implements`
 
 Para indicarle a TypeScript que una clase debe someterse a la estructura definida por una interfaz, utilizamos la palabra clave `implements`. Al hacer esto, la clase asume el compromiso de dar una definición real a cada propiedad y método listado en la interfaz. Si falta alguno de ellos, el compilador generará un error inmediatamente.
@@ -678,8 +658,6 @@ notificarAlerta(correo, "Base de datos llena"); // Salida: Enviando Email con el
 notificarAlerta(celular, "Base de datos llena"); // Salida: Enviando SMS con el texto: "Base de datos llena"
 
 ```
-
----
 
 ### Implementación de múltiples interfaces
 
@@ -736,16 +714,12 @@ miReporte.guardar("Reporte_2026");
 
 ```
 
----
-
 ### Interfaces frente a Clases Abstractas
 
 Es común confundir cuándo usar una clase abstracta (Sección 7.4) y cuándo usar una interfaz. La diferencia clave radica en la presencia de **lógica de ejecución**:
 
 * **Usa Clases Abstractas** cuando desees compartir código real y reutilizable (métodos concretos) entre varias clases relacionadas y establecer una jerarquía directa de herencia ("un perro *es un* animal").
 * **Usa Interfaces** cuando únicamente quieras definir un plano conceptual o comportamiento sin aportar ninguna línea de lógica interna, uniendo clases que podrían no tener relación alguna entre sí ("un usuario y un botón pueden ser ambos *Hacéclic*").
-
----
 
 ## Resumen del capítulo
 

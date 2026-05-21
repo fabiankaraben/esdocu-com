@@ -422,8 +422,6 @@ function loguearId(id: string | number): void {
 
 ```
 
----
-
 ## Resumen del capítulo
 
 En este **Capítulo 4: Funciones en TypeScript**, hemos transformado la manera en que estructuramos y protegemos la lógica de nuestras aplicaciones mediante el control de los bloques de código ejecutables:

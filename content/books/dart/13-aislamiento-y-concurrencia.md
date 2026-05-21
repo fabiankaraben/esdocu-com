@@ -399,8 +399,6 @@ Aunque simplifica drásticamente el desarrollo, `compute` no es una solución un
 * **Costo de apertura:** Debido a que crea y destruye un Isolate en cada llamada, usar `compute` repetidamente dentro de un bucle para tareas muy pequeñas perjudicará el rendimiento general en lugar de mejorarlo.
 * **Sin comunicación continua:** Solo admite una ráfaga de comunicación: una entrada y una salida. Si tu aplicación requiere un flujo constante de mensajes de ida y vuelta en tiempo real (como la lectura de datos de un socket persistente), debes recurrir a la creación manual con `Isolate.spawn`.
 
----
-
 ## Resumen del capítulo
 
 En este capítulo hemos explorado el pilar avanzado de la concurrencia en Dart: los **Isolates**.
