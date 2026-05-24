@@ -1,0 +1,168 @@
+{
+  "slug": "python-pydantic",
+  "locale": "es",
+  "title": "Pydantic",
+  "subtitle": "Validación de datos y gestión de configuraciones para Python",
+  "author": "Esdocu Team",
+  "description": "Domina Pydantic, la biblioteca de validación de datos y gestión de configuraciones más utilizada en el ecosistema Python. Aprende a definir modelos de datos robustos utilizando anotaciones de tipo nativas, validar entradas complejas, personalizar la serialización, gestionar variables de entorno con BaseSettings y aprovechar el rendimiento extremo de la versión 2 impulsada por Rust.",
+  "cover": "",
+  "category": "ecosistema-python",
+  "tags": [
+    "python",
+    "pydantic",
+    "fastapi",
+    "validation",
+    "backend"
+  ],
+  "featured": false,
+  "publishedAt": "2026-05-24",
+  "language": "es",
+  "chapters": [
+    {
+      "slug": "introduccion-y-configuracion",
+      "title": "Introducción y Configuración",
+      "order": 1,
+      "description": "Este capítulo abarca los conceptos iniciales, la instalación de la biblioteca y la configuración del entorno de desarrollo. Ideal para dar los primeros pasos y entender el propósito central de Pydantic."
+    },
+    {
+      "slug": "modelos-basicos-en-pydantic",
+      "title": "Modelos Básicos en Pydantic",
+      "order": 2,
+      "description": "Aprende a definir estructuras de datos utilizando la clase BaseModel. Exploraremos cómo crear instancias, acceder a sus atributos y comprender el ciclo de vida básico de un modelo dentro de la librería."
+    },
+    {
+      "slug": "tipos-de-datos-estandar",
+      "title": "Tipos de Datos Estándar",
+      "order": 3,
+      "description": "Descubre cómo Pydantic maneja la conversión automática de tipos de datos nativos de Python. Se analizan enteros, cadenas, booleanos y listas, garantizando que la información ingresada sea la correcta."
+    },
+    {
+      "slug": "uso-de-campos-field",
+      "title": "Uso de Campos (Field)",
+      "order": 4,
+      "description": "Profundiza en la función Field para personalizar atributos. Aprenderás a definir valores por defecto, alias de entrada y salida, así como restricciones básicas de longitud y tamaño para tus variables."
+    },
+    {
+      "slug": "validadores-de-campo",
+      "title": "Validadores de Campo",
+      "order": 5,
+      "description": "Este apartado enseña a crear funciones personalizadas para validar campos específicos. Utilizaremos decoradores para inyectar lógica de negocio y garantizar que cada dato cumpla reglas muy particulares."
+    },
+    {
+      "slug": "validadores-de-modelo",
+      "title": "Validadores de Modelo",
+      "order": 6,
+      "description": "Aquí se explica cómo validar múltiples campos simultáneamente o el modelo en su totalidad. Es fundamental para verificar dependencias entre atributos y asegurar la consistencia global de la información."
+    },
+    {
+      "slug": "manejo-de-errores",
+      "title": "Manejo de Errores",
+      "order": 7,
+      "description": "Domina la captura y comprensión de las excepciones de Pydantic. Aprenderás a interpretar el ValidationError, extraer mensajes legibles para el usuario final y formatear las respuestas de error en APIs."
+    },
+    {
+      "slug": "serializacion-de-datos",
+      "title": "Serialización de Datos",
+      "order": 8,
+      "description": "Explora los mecanismos para exportar tus modelos a diccionarios o formato JSON. Este capítulo cubre la exclusión de campos, la serialización condicional y la transformación de tipos complejos a cadenas."
+    },
+    {
+      "slug": "modelos-anidados",
+      "title": "Modelos Anidados",
+      "order": 9,
+      "description": "Aborda la creación de estructuras de datos jerárquicas componiendo múltiples modelos. Aprende a definir relaciones complejas, listas de objetos y cómo Pydantic valida este árbol de información anidado."
+    },
+    {
+      "slug": "modelos-genericos",
+      "title": "Modelos Genéricos",
+      "order": 10,
+      "description": "Conoce cómo implementar GenericModel para crear plantillas de modelos reutilizables con tipado estricto. Ideal para respuestas de API paginadas o estructuras envolventes que comparten la misma lógica."
+    },
+    {
+      "slug": "dataclasses-y-pydantic",
+      "title": "Dataclasses y Pydantic",
+      "order": 11,
+      "description": "Descubre las diferencias y similitudes entre BaseModel y los dataclasses estándar de Python. Aprenderás a usar el decorador pydantic.dataclasses para agregar validación a tus estructuras preexistentes."
+    },
+    {
+      "slug": "configuracion-de-modelos",
+      "title": "Configuración de Modelos",
+      "order": 12,
+      "description": "Administra el comportamiento global de tus clases mediante ModelConfig. Veremos cómo prohibir campos adicionales, ignorar atributos no definidos y ajustar el rigor de la conversión de tipos en general."
+    },
+    {
+      "slug": "tipos-especiales-y-extras",
+      "title": "Tipos Especiales y Extras",
+      "order": 13,
+      "description": "Explora los tipos avanzados incluidos en Pydantic, como URLs, correos electrónicos y rutas de archivos. Estas clases especializadas ahorran tiempo al incluir validaciones complejas de forma automática."
+    },
+    {
+      "slug": "creacion-de-tipos-propios",
+      "title": "Creación de Tipos Propios",
+      "order": 14,
+      "description": "Aprende a extender Pydantic definiendo tus propios tipos de datos con lógica de validación incrustada. Utilizaremos Annotated para adjuntar metadatos y crear validaciones reutilizables en tu proyecto."
+    },
+    {
+      "slug": "basesettings-y-entorno",
+      "title": "BaseSettings y Entorno",
+      "order": 15,
+      "description": "Gestiona la configuración de tu aplicación cargando variables de entorno y archivos dotenv. BaseSettings facilita el tipado estricto de configuraciones para que los despliegues sean seguros y robustos."
+    },
+    {
+      "slug": "json-schema-y-openapi",
+      "title": "JSON Schema y OpenAPI",
+      "order": 16,
+      "description": "Pydantic brilla al generar esquemas JSON compatibles con estándares internacionales. Este capítulo detalla cómo personalizar el esquema de tus modelos para integrarlo en documentaciones tipo OpenAPI."
+    },
+    {
+      "slug": "rendimiento-con-pydantic-v2",
+      "title": "Rendimiento con Pydantic V2",
+      "order": 17,
+      "description": "Explora las mejoras drásticas de velocidad introducidas en la versión 2 gracias al motor pydantic-core escrito en Rust. Analizaremos técnicas de optimización y medición de rendimiento computacional."
+    }
+  ],
+  "parts": [
+    {
+      "title": "Parte 1: Fundamentos de Pydantic",
+      "chapterSlugs": [
+        "introduccion-y-configuracion",
+        "modelos-basicos-en-pydantic",
+        "tipos-de-datos-estandar",
+        "uso-de-campos-field"
+      ]
+    },
+    {
+      "title": "Parte 2: Validación y Procesamiento",
+      "chapterSlugs": [
+        "validadores-de-campo",
+        "validadores-de-modelo",
+        "manejo-de-errores",
+        "serializacion-de-datos"
+      ]
+    },
+    {
+      "title": "Parte 3: Modelado Avanzado",
+      "chapterSlugs": [
+        "modelos-anidados",
+        "modelos-genericos",
+        "dataclasses-y-pydantic",
+        "configuracion-de-modelos"
+      ]
+    },
+    {
+      "title": "Parte 4: Tipos Personalizados y Entorno",
+      "chapterSlugs": [
+        "tipos-especiales-y-extras",
+        "creacion-de-tipos-propios",
+        "basesettings-y-entorno"
+      ]
+    },
+    {
+      "title": "Parte 5: Ecosistema, Rendimiento y V2",
+      "chapterSlugs": [
+        "json-schema-y-openapi",
+        "rendimiento-con-pydantic-v2"
+      ]
+    }
+  ]
+}
